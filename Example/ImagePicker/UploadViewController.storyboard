@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ad3-2d-GgY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Uploading-->
+        <scene sceneID="RSG-V3-GVN">
+            <objects>
+                <viewController title="Uploading" id="ad3-2d-GgY" customClass="UploadViewController" customModule="Helium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hez-j8-gMw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vbe-y5-sww"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0rA-RL-Jpj">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h5y-Jx-Xa1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="123 KB of 2.48 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6t-wD-Ubv">
+                                <rect key="frame" x="20" y="508" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOs-8D-HVP" customClass="ImagePreviewArea" customModule="Helium" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="2" width="600" height="501"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="oiTop">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="oiBottom">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="oiLeft">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="oiRight">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GOs-8D-HVP" secondAttribute="trailing" id="5gm-MN-LpW"/>
+                            <constraint firstItem="h5y-Jx-Xa1" firstAttribute="leading" secondItem="0rA-RL-Jpj" secondAttribute="leading" id="6Oc-WW-yfC"/>
+                            <constraint firstItem="Vbe-y5-sww" firstAttribute="top" secondItem="w6t-wD-Ubv" secondAttribute="bottom" constant="7" id="7NY-J0-4uJ"/>
+                            <constraint firstItem="w6t-wD-Ubv" firstAttribute="top" secondItem="GOs-8D-HVP" secondAttribute="bottom" constant="5" id="LLj-OS-ohT"/>
+                            <constraint firstAttribute="trailing" secondItem="h5y-Jx-Xa1" secondAttribute="trailing" id="OMf-93-Ucp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w6t-wD-Ubv" secondAttribute="trailing" id="Pip-O4-gH9"/>
+                            <constraint firstItem="GOs-8D-HVP" firstAttribute="leading" secondItem="0rA-RL-Jpj" secondAttribute="leading" id="QVq-mp-LhC"/>
+                            <constraint firstItem="GOs-8D-HVP" firstAttribute="top" secondItem="h5y-Jx-Xa1" secondAttribute="bottom" id="gGZ-Nj-0Fk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="w6t-wD-Ubv" secondAttribute="leading" id="nN4-IJ-EcH"/>
+                            <constraint firstItem="h5y-Jx-Xa1" firstAttribute="top" secondItem="Hez-j8-gMw" secondAttribute="bottom" id="xKp-Hr-uo7"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imagePreviewArea" destination="GOs-8D-HVP" id="la5-7Y-KQQ"/>
+                        <outlet property="progressText" destination="w6t-wD-Ubv" id="1E4-5j-Sv7"/>
+                        <outlet property="progressView" destination="h5y-Jx-Xa1" id="ot3-4M-ZSq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JbL-hX-p4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="791" y="701"/>
+        </scene>
+    </scenes>
+</document>
