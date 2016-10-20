@@ -82,6 +82,16 @@ public class DumpVisitor: FormItemVisitor {
 		dict["value"] = object.value?.string as AnyObject?
 	}
 	
+	public func visit(object: NumberFieldFormItem) {
+		dict["class"] = "NumberFieldFormItem" as AnyObject?
+		dict["elementIdentifier"] = object.elementIdentifier as AnyObject?
+		dict["styleIdentifier"] = object.styleIdentifier as AnyObject?
+		dict["styleClass"] = object.styleClass as AnyObject?
+		dict["title"] = object.title as AnyObject?
+		dict["value"] = object.value as AnyObject?
+		dict["placeholder"] = object.placeholder as AnyObject?
+	}
+	
 	public func visit(object: TextFieldFormItem) {
 		dict["class"] = "TextFieldFormItem" as AnyObject?
 		dict["elementIdentifier"] = object.elementIdentifier as AnyObject?

@@ -207,6 +207,13 @@ class PopulateTableView: FormItemVisitor {
 	}
 	
 	
+	// MARK: NumberFieldFormItem
+	
+	func visit(object: NumberFieldFormItem) {
+		// TODO: number field
+	}
+
+	
 	// MARK: MetaFormItem
 	
 	func visit(object: MetaFormItem) {
