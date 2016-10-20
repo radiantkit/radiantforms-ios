@@ -2,20 +2,6 @@
 import UIKit
 
 
-//public class CustomTextField: UITextField {
-//	
-//	public func configure() {
-//		backgroundColor = UIColor.white
-//		autocapitalizationType = .sentences
-//		autocorrectionType = .default
-//		spellCheckingType = .no
-//		returnKeyType = .done
-//		clearButtonMode = .whileEditing
-//	}
-//	
-//}
-//
-//
 //public enum TextCellState {
 //	case noMessage
 //	case temporaryMessage(message: String)
@@ -51,7 +37,7 @@ public struct NumberFieldFormItemCellModel {
 public class NumberFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHeightProvider {
 	public let model: NumberFieldFormItemCellModel
 	public let titleLabel = UILabel()
-	public let textField = CustomTextField()
+	private let textField = CustomTextField()
 	public let errorLabel = UILabel()
 	
 	public var state: TextCellState = .noMessage
@@ -74,7 +60,7 @@ public class NumberFieldFormItemCell: UITableViewCell, UITextFieldDelegate, Cell
 		textField.configure()
 		textField.delegate = self
 		
-		textField.addTarget(self, action: #selector(TextFieldFormItemCell.valueDidChange(_:)), for: UIControlEvents.editingChanged)
+		textField.addTarget(self, action: #selector(valueDidChange(_:)), for: UIControlEvents.editingChanged)
 		
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(textField)
@@ -82,12 +68,6 @@ public class NumberFieldFormItemCell: UITableViewCell, UITextFieldDelegate, Cell
 
 		titleLabel.text = model.title
 		textField.placeholder = model.placeholder
-		textField.autocapitalizationType = .none
-		textField.autocorrectionType = .no
-		textField.keyboardType = .numberPad
-		textField.returnKeyType = .default
-		textField.spellCheckingType = .no
-		textField.isSecureTextEntry = false
 		
 		if self.model.toolbarMode == .simple {
 			textField.inputAccessoryView = toolbar
@@ -402,4 +382,19 @@ public class NumberFieldFormItemCell: UITableViewCell, UITextFieldDelegate, Cell
 		return textField.resignFirstResponder()
 	}
 	
+}
+
+
+fileprivate class CustomTextField: UITextField {
+	func configure() {
+		autocapitalizationType = .none
+		autocorrectionType = .no
+		backgroundColor = UIColor.white
+		clearButtonMode = .never
+		isSecureTextEntry = false
+		keyboardType = .numberPad
+		returnKeyType = .default
+		spellCheckingType = .no
+		textAlignment = .right
+	}
 }
