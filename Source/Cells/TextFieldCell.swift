@@ -2,20 +2,6 @@
 import UIKit
 
 
-public class CustomTextField: UITextField {
-	
-	public func configure() {
-		backgroundColor = UIColor.white
-		autocapitalizationType = .sentences
-		autocorrectionType = .default
-		spellCheckingType = .no
-		returnKeyType = .done
-		clearButtonMode = .whileEditing
-	}
-	
-}
-
-
 public enum TextCellState {
 	case noMessage
 	case temporaryMessage(message: String)
@@ -57,7 +43,7 @@ public struct TextFieldFormItemCellModel {
 public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHeightProvider {
 	public let model: TextFieldFormItemCellModel
 	public let titleLabel = UILabel()
-	public let textField = CustomTextField()
+	private let textField = CustomTextField()
 	public let errorLabel = UILabel()
 	
 	public var state: TextCellState = .noMessage
@@ -408,4 +394,16 @@ public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHe
 		return textField.resignFirstResponder()
 	}
 	
+}
+
+
+fileprivate class CustomTextField: UITextField {
+	func configure() {
+		autocapitalizationType = .sentences
+		autocorrectionType = .default
+		backgroundColor = UIColor.white
+		clearButtonMode = .whileEditing
+		returnKeyType = .done
+		spellCheckingType = .no
+	}
 }
