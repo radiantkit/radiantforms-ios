@@ -210,7 +210,54 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: NumberFieldFormItem
 	
 	func visit(object: NumberFieldFormItem) {
-		// TODO: number field
+		var model = NumberFieldFormItemCellModel()
+		model.toolbarMode = self.model.toolbarMode
+		model.title = object.title
+		model.placeholder = object.placeholder
+		model.keyboardType = object.keyboardType
+		model.returnKeyType = object.returnKeyType
+		model.autocorrectionType = object.autocorrectionType
+		model.autocapitalizationType = object.autocapitalizationType
+		model.spellCheckingType = object.spellCheckingType
+		model.secureTextEntry = object.secureTextEntry
+		model.model = object
+		weak var weakObject = object
+		model.valueDidChange = { (value: String) in
+			SwiftyFormLog("value \(value)")
+			weakObject?.textDidChange(value)
+			return
+		}
+		let cell = NumberFieldFormItemCell(model: model)
+		cell.setValueWithoutSync(object.value)
+		cells.append(cell)
+		lastItemType = .item
+		
+		weak var weakCell = cell
+		object.syncCellWithValue = { (value: String) in
+			SwiftyFormLog("sync value \(value)")
+			weakCell?.setValueWithoutSync(value)
+			return
+		}
+		
+		object.reloadPersistentValidationState = {
+			weakCell?.reloadPersistentValidationState()
+			return
+		}
+		
+		object.obtainTitleWidth = {
+			if let cell = weakCell {
+				let size = cell.titleLabel.intrinsicContentSize
+				return size.width
+			}
+			return 0
+		}
+		
+		object.assignTitleWidth = { (width: CGFloat) in
+			if let cell = weakCell {
+				cell.titleWidthMode = NumberFieldFormItemCell.TitleWidthMode.assign(width: width)
+				cell.setNeedsUpdateConstraints()
+			}
+		}
 	}
 
 	

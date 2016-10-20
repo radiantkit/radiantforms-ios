@@ -35,6 +35,7 @@
 		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
 		4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* Specification.swift */; };
 		4219E1CD1DB91C3E00B3204A /* NumberFieldFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1CC1DB91C3E00B3204A /* NumberFieldFormItem.swift */; };
+		4219E1CF1DB93C2800B3204A /* NumberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1CE1DB93C2800B3204A /* NumberFieldCell.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
 		422437E21D71924400EC41E8 /* PickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* PickerViewCell.swift */; };
 		4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */; };
@@ -150,6 +151,7 @@
 		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
 		4219E1C41DB827CF00B3204A /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 		4219E1CC1DB91C3E00B3204A /* NumberFieldFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFieldFormItem.swift; sourceTree = "<group>"; };
+		4219E1CE1DB93C2800B3204A /* NumberFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFieldCell.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
 		422437E11D71924400EC41E8 /* PickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewCell.swift; sourceTree = "<group>"; };
 		4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderTests.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				739649121D2B6B7400E12A96 /* AttributedTextCell.swift */,
 				428682FA1B346CFE0028DB2F /* ButtonCell.swift */,
 				428682FB1B346CFE0028DB2F /* DatePickerCell.swift */,
+				4219E1CE1DB93C2800B3204A /* NumberFieldCell.swift */,
 				428682FD1B346CFE0028DB2F /* OptionCell.swift */,
 				428682FE1B346CFE0028DB2F /* OptionViewControllerCell.swift */,
 				422437E11D71924400EC41E8 /* PickerViewCell.swift */,
@@ -572,6 +575,7 @@
 				42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */,
 				42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */,
 				428683341B346CFE0028DB2F /* StaticTextCell.swift in Sources */,
+				4219E1CF1DB93C2800B3204A /* NumberFieldCell.swift in Sources */,
 				423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */,
 				428683531B346CFE0028DB2F /* DebugViewController.swift in Sources */,
 				428683461B346CFE0028DB2F /* PopulateTableView.swift in Sources */,
