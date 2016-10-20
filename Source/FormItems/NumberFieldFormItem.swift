@@ -6,29 +6,6 @@ public class NumberFieldFormItem: FormItem {
 		visitor.visit(object: self)
 	}
 	
-	public var keyboardType: UIKeyboardType = .default
-
-	@discardableResult
-	public func keyboardType(_ keyboardType: UIKeyboardType) -> Self {
-		self.keyboardType = keyboardType
-		return self
-	}
-	
-	
-	public var autocorrectionType: UITextAutocorrectionType = .no
-	public var autocapitalizationType: UITextAutocapitalizationType = .none
-	public var spellCheckingType: UITextSpellCheckingType = .no
-	public var secureTextEntry = false
-	
-	public var returnKeyType: UIReturnKeyType = .default
-
-	@discardableResult
-	public func returnKeyType(_ returnKeyType: UIReturnKeyType) -> Self {
-		self.returnKeyType = returnKeyType
-		return self
-	}
-	
-	
 	public typealias SyncBlock = (_ value: String) -> Void
 	public var syncCellWithValue: SyncBlock = { (string: String) in
 		SwiftyFormLog("sync is not overridden")
@@ -84,12 +61,6 @@ public class NumberFieldFormItem: FormItem {
 	@discardableResult
 	public func title(_ title: String) -> Self {
 		self.title = title
-		return self
-	}
-	
-	@discardableResult
-	public func password() -> Self {
-		self.secureTextEntry = true
 		return self
 	}
 	

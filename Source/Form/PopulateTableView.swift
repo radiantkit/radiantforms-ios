@@ -214,12 +214,6 @@ class PopulateTableView: FormItemVisitor {
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
 		model.placeholder = object.placeholder
-		model.keyboardType = object.keyboardType
-		model.returnKeyType = object.returnKeyType
-		model.autocorrectionType = object.autocorrectionType
-		model.autocapitalizationType = object.autocapitalizationType
-		model.spellCheckingType = object.spellCheckingType
-		model.secureTextEntry = object.secureTextEntry
 		model.model = object
 		weak var weakObject = object
 		model.valueDidChange = { (value: String) in

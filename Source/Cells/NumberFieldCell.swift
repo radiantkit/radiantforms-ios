@@ -41,12 +41,6 @@ public struct NumberFieldFormItemCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
 	var placeholder: String = ""
-	var keyboardType: UIKeyboardType = .default
-	var returnKeyType: UIReturnKeyType = .default
-	var autocorrectionType: UITextAutocorrectionType = .no
-	var autocapitalizationType: UITextAutocapitalizationType = .none
-	var spellCheckingType: UITextSpellCheckingType = .no
-	var secureTextEntry = false
 	var model: NumberFieldFormItem! = nil
 
 	var valueDidChange: (String) -> Void = { (value: String) in
@@ -88,12 +82,12 @@ public class NumberFieldFormItemCell: UITableViewCell, UITextFieldDelegate, Cell
 
 		titleLabel.text = model.title
 		textField.placeholder = model.placeholder
-		textField.autocapitalizationType = model.autocapitalizationType
-		textField.autocorrectionType = model.autocorrectionType
-		textField.keyboardType = model.keyboardType
-		textField.returnKeyType = model.returnKeyType
-		textField.spellCheckingType = model.spellCheckingType
-		textField.isSecureTextEntry = model.secureTextEntry
+		textField.autocapitalizationType = .none
+		textField.autocorrectionType = .no
+		textField.keyboardType = .numberPad
+		textField.returnKeyType = .default
+		textField.spellCheckingType = .no
+		textField.isSecureTextEntry = false
 		
 		if self.model.toolbarMode == .simple {
 			textField.inputAccessoryView = toolbar
