@@ -52,7 +52,7 @@ public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHe
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 
-		self.addGestureRecognizer(tapGestureRecognizer)
+		addGestureRecognizer(tapGestureRecognizer)
 		
 		selectionStyle = .none
 		
@@ -66,7 +66,7 @@ public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHe
 		textField.configure()
 		textField.delegate = self
 		
-		textField.addTarget(self, action: #selector(TextFieldFormItemCell.valueDidChange(_:)), for: UIControlEvents.editingChanged)
+		textField.addTarget(self, action: #selector(valueDidChange(_:)), for: UIControlEvents.editingChanged)
 		
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(textField)
@@ -145,7 +145,7 @@ public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHe
 	}
 	
 	public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldFormItemCell.handleTap(_:)))
+		let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
 		return gr
 		}()
 	
@@ -267,7 +267,7 @@ public class TextFieldFormItemCell: UITableViewCell, UITextFieldDelegate, CellHe
 	
 	public func installTimer() {
 		invalidateTimer()
-		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldFormItemCell.timerUpdate), userInfo: nil, repeats: false)
+		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: false)
 		hideErrorMessageAfterFewSecondsTimer = timer
 	}
 	
