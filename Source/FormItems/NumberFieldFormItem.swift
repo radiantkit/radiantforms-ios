@@ -39,6 +39,24 @@ public class NumberFieldFormItem: FormItem {
 	public var reloadPersistentValidationState: (Void) -> Void = {}
 	
 	
+	/**
+	# Number of decimal places
+	
+	The number can go from 0 to +5.
+	*/
+	public var decimalPlaces: UInt = 3  {
+		willSet {
+			assert(newValue <= 10, "PrecisionSlider cannot handle so many decimalPlaces. Too big a number.")
+		}
+	}
+	
+	@discardableResult
+	public func decimalPlaces(_ decimalPlaces: UInt) -> Self {
+		self.decimalPlaces = decimalPlaces
+		return self
+	}
+
+	
 	public var obtainTitleWidth: (Void) -> CGFloat = {
 		return 0
 	}
