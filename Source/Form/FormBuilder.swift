@@ -66,6 +66,9 @@ public class FormBuilder {
 			v.installZeroHeightHeader()
 		}
 		for item in innerItems {
+            if item.isHidden {
+                continue
+            }
 			item.accept(visitor: v)
 		}
 		v.closeLastSection()
