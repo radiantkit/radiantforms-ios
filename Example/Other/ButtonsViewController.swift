@@ -13,6 +13,9 @@ class ButtonsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title("Alert Buttons")
 		builder += alertButton0
 		builder += alertButton1
+        
+        builder += SectionHeaderTitleFormItem().title("Style")
+        builder += style
 	}
 
     lazy var toggleButton0: ButtonFormItem = {
@@ -59,4 +62,11 @@ class ButtonsViewController: FormViewController {
         return instance
     }()
 
+    lazy var style: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("Style").placeholder("required")
+        instance.append("Light").append("Gray").append("Dark")
+        instance.selectOptionWithTitle("Gray")
+        return instance
+    }()
 }
