@@ -5,26 +5,47 @@ import SwiftyFORM
 class AmountTextFieldViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = "Amounts"
-        builder.toolbarMode = .none
+        builder.toolbarMode = .simple
 
-        builder += SectionHeaderTitleFormItem().title("Amount TextFields")
-        builder += amountTextField0
-        builder += amountTextField1
-        builder += amountTextField2
+        builder += SectionHeaderTitleFormItem().title("Placeholder")
+        builder += noPlaceholder
+        builder += zeroPlaceholder
+        builder += multiZeroPlaceholder
+        builder += xPlaceholder
+        builder += requiredPlaceholder
     }
     
-    lazy var amountTextField0: AmountTextFieldFormItem = {
+    lazy var noPlaceholder: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
+        instance.title("No placeholder")
+        return instance
+    }()
+
+    lazy var zeroPlaceholder: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("Zero")
+        instance.placeholder("0")
         return instance
     }()
     
-    lazy var amountTextField1: AmountTextFieldFormItem = {
+    lazy var multiZeroPlaceholder: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
+        instance.title("Multi Zero")
+        instance.placeholder("0.00")
         return instance
     }()
     
-    lazy var amountTextField2: AmountTextFieldFormItem = {
+    lazy var xPlaceholder: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
+        instance.title("X")
+        instance.placeholder("x.xx")
+        return instance
+    }()
+    
+    lazy var requiredPlaceholder: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("Required")
+        instance.placeholder("Required")
         return instance
     }()
 }
