@@ -87,7 +87,54 @@ class PopulateTableView: FormItemVisitor {
     // MARK: AmountTextFieldFormItem
     
     func visit(object: AmountTextFieldFormItem) {
+        var model = AmountTextFieldFormItemCellModel()
+        model.toolbarMode = self.model.toolbarMode
+        model.title = object.title
+        model.placeholder = object.placeholder
+        model.returnKeyType = object.returnKeyType
+        model.model = object
+        weak var weakObject = object
+        model.valueDidChange = { (value: String) in
+            SwiftyFormLog("value \(value)")
+            weakObject?.textDidChange(value)
+            return
+        }
+        model.didEndEditing = { (value: String) in
+            SwiftyFormLog("value \(value)")
+            weakObject?.editingEnd(value)
+            return
+        }
+        let cell = AmountTextFieldCell(model: model)
+        cell.setValueWithoutSync(object.value)
+        cells.append(cell)
+        lastItemType = .item
         
+        weak var weakCell = cell
+        object.syncCellWithValue = { (value: String) in
+            SwiftyFormLog("sync value \(value)")
+            weakCell?.setValueWithoutSync(value)
+            return
+        }
+        
+        object.reloadPersistentValidationState = {
+            weakCell?.reloadPersistentValidationState()
+            return
+        }
+        
+        object.obtainTitleWidth = {
+            if let cell = weakCell {
+                let size = cell.titleLabel.intrinsicContentSize
+                return size.width
+            }
+            return 0
+        }
+        
+        object.assignTitleWidth = { (width: CGFloat) in
+            if let cell = weakCell {
+                cell.titleWidthMode = AmountTextFieldCell.TitleWidthMode.assign(width: width)
+                cell.setNeedsUpdateConstraints()
+            }
+        }
     }
 
     // MARK: AttributedTextFormItem
