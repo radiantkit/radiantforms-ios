@@ -58,6 +58,7 @@
 		42685D4D1D340733008ABC3D /* PrecisionSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4C1D340733008ABC3D /* PrecisionSliderCell.swift */; };
 		42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */; };
 		4280F7192264A7BA0098EF22 /* AmountTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* AmountTextFieldCell.swift */; };
+		4280F71B2264A99F0098EF22 /* AmountTextFieldFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountTextFieldFormItem.swift */; };
 		4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 428682F71B346CFE0028DB2F /* SwiftyFORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4286832E1B346CFE0028DB2F /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FA1B346CFE0028DB2F /* ButtonCell.swift */; };
 		4286832F1B346CFE0028DB2F /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* DatePickerCell.swift */; };
@@ -174,6 +175,7 @@
 		42685D4C1D340733008ABC3D /* PrecisionSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderCell.swift; sourceTree = "<group>"; };
 		42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellArray.swift; sourceTree = "<group>"; };
 		4280F7182264A7BA0098EF22 /* AmountTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldCell.swift; sourceTree = "<group>"; };
+		4280F71A2264A99F0098EF22 /* AmountTextFieldFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldFormItem.swift; sourceTree = "<group>"; };
 		428682F71B346CFE0028DB2F /* SwiftyFORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFORM.h; sourceTree = "<group>"; };
 		428682FA1B346CFE0028DB2F /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		428682FB1B346CFE0028DB2F /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
+				4280F71A2264A99F0098EF22 /* AmountTextFieldFormItem.swift */,
 				739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */,
 				42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */,
 				42D0050D1B96241100986B3B /* CustomFormItem.swift */,
@@ -566,6 +569,7 @@
 				42685D4D1D340733008ABC3D /* PrecisionSliderCell.swift in Sources */,
 				420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */,
 				4286833B1B346CFE0028DB2F /* DumpVisitor.swift in Sources */,
+				4280F71B2264A99F0098EF22 /* AmountTextFieldFormItem.swift in Sources */,
 				42108D201B34E9F60067FEAA /* SwitchFormItem.swift in Sources */,
 				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* TextViewCell.swift in Sources */,

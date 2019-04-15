@@ -14,6 +14,7 @@ class ReloadPersistentValidationStateVisitor: FormItemVisitor {
 		object.reloadPersistentValidationState()
 	}
 
+    func visit(object: AmountTextFieldFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}

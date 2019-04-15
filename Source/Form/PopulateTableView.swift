@@ -84,7 +84,13 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: AttributedTextFormItem
+    // MARK: AmountTextFieldFormItem
+    
+    func visit(object: AmountTextFieldFormItem) {
+        
+    }
+
+    // MARK: AttributedTextFormItem
 
 	func visit(object: AttributedTextFormItem) {
 		var model = AttributedTextCellModel()
