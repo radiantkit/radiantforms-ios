@@ -57,7 +57,7 @@ public class AmountTextFieldCell: UITableViewCell {
     public let textField = CustomAmountTextField()
     public let errorLabel = UILabel()
     
-    public var state: TextCellState = .noMessage
+    public var state: AmountTextCellState = .noMessage
     
     public init(model: AmountTextFieldFormItemCellModel) {
         self.model = model
