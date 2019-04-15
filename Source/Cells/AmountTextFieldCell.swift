@@ -4,11 +4,14 @@ import UIKit
 public class CustomAmountTextField: UITextField {
     public func configure() {
         backgroundColor = UIColor.white
-        autocapitalizationType = .sentences
-        autocorrectionType = .default
+        autocapitalizationType = .none
+        autocorrectionType = .no
         spellCheckingType = .no
         returnKeyType = .done
-        clearButtonMode = .whileEditing
+        clearButtonMode = .never
+        isSecureTextEntry = false
+        keyboardType = .numberPad
+        textAlignment = .right
     }
 }
 
@@ -51,7 +54,7 @@ public struct AmountTextFieldFormItemCellModel {
 public class AmountTextFieldCell: UITableViewCell {
     public let model: AmountTextFieldFormItemCellModel
     public let titleLabel = UILabel()
-    public let textField = CustomTextField()
+    public let textField = CustomAmountTextField()
     public let errorLabel = UILabel()
     
     public var state: TextCellState = .noMessage
@@ -83,11 +86,6 @@ public class AmountTextFieldCell: UITableViewCell {
         titleLabel.text = model.title
         textField.placeholder = model.placeholder
         textField.returnKeyType = model.returnKeyType
-        textField.autocapitalizationType = UITextAutocapitalizationType.none
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.keyboardType = UIKeyboardType.numberPad
-        textField.spellCheckingType = UITextSpellCheckingType.no
-        textField.isSecureTextEntry = false
         
         if self.model.toolbarMode == .simple {
             textField.inputAccessoryView = toolbar
