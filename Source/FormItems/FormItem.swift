@@ -32,6 +32,8 @@ open class FormItem {
 	}
 
 	func accept(visitor: FormItemVisitor) {}
+    
+    public var isHidden: Bool = false
 
 	// For serialization to json purposes, eg. "firstName"
 	public var elementIdentifier: String?
