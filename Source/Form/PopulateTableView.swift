@@ -92,6 +92,7 @@ class PopulateTableView: FormItemVisitor {
         model.title = object.title
         model.placeholder = object.placeholder
         model.unitSuffix = object.unitSuffix
+        model.fractionDigits = object.fractionDigits
         model.returnKeyType = object.returnKeyType
         model.model = object
         weak var weakObject = object

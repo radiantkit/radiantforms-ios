@@ -41,6 +41,7 @@ public struct AmountTextFieldFormItemCellModel {
     var placeholder: String = ""
     var unitSuffix: String = ""
     var returnKeyType: UIReturnKeyType = .default
+    var fractionDigits: UInt8 = 3
     var model: AmountTextFieldFormItem! = nil
     
     var valueDidChange: (String) -> Void = { (value: String) in
@@ -53,6 +54,8 @@ public struct AmountTextFieldFormItemCellModel {
 }
 
 public class AmountTextFieldCell: UITableViewCell {
+    private let amountFormatter: AmountFormatter
+
     public let model: AmountTextFieldFormItemCellModel
     public let titleLabel = UILabel()
     public let textField = CustomAmountTextField()
@@ -62,6 +65,7 @@ public class AmountTextFieldCell: UITableViewCell {
     
     public init(model: AmountTextFieldFormItemCellModel) {
         self.model = model
+        self.amountFormatter = AmountFormatter(fractionDigits: model.fractionDigits)
         super.init(style: .default, reuseIdentifier: nil)
         
         self.addGestureRecognizer(tapGestureRecognizer)
@@ -432,11 +436,10 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             return false
         }
         let decimal0: Decimal = Decimal(uint64Value)
-        let decimal1: Decimal = Decimal(integerLiteral: 100)
-        let decimal2: Decimal = decimal0 / decimal1
         
-        let formatter: NumberFormatter = AmountFormatter.shared
-        let s: String = formatter.string(from: decimal2 as NSNumber) ?? ""
+        let negativeExponent: Int = -Int(self.model.fractionDigits)
+        let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
+        let s: String = self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
         
         textField.text = s
         return false
@@ -464,13 +467,8 @@ extension AmountTextFieldCell: CellHeightProvider {
 }
 
 fileprivate class AmountFormatter: NumberFormatter {
-    static let shared = AmountFormatter()
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override init() {
+    /// `fractionDigits` is typically between 0 and 5
+    init(fractionDigits: UInt8) {
         super.init()
         self.numberStyle = .decimal
         self.currencyCode = ""
@@ -478,10 +476,14 @@ fileprivate class AmountFormatter: NumberFormatter {
         self.currencyGroupingSeparator = ""
         self.perMillSymbol = ""
         self.groupingSeparator = ""
-        self.minimumFractionDigits = 2
-        self.maximumFractionDigits = 2
+        self.minimumFractionDigits = Int(fractionDigits)
+        self.maximumFractionDigits = Int(fractionDigits)
         self.negativeSuffix = ""
         self.negativePrefix = "-"
         self.decimalSeparator = "."
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

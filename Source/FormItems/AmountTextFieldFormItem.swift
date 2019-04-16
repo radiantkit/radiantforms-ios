@@ -70,7 +70,15 @@ public class AmountTextFieldFormItem: FormItem {
         self.placeholder = placeholder
         return self
     }
+
+    public var fractionDigits: UInt8 = 3
     
+    @discardableResult
+    public func fractionDigits(_ fractionDigits: UInt8) -> Self {
+        self.fractionDigits = fractionDigits
+        return self
+    }
+
     public var title: String = ""
     
     @discardableResult

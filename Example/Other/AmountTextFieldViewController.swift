@@ -23,8 +23,9 @@ class AmountTextFieldViewController: FormViewController {
     lazy var suffixDKK: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
         instance.title("DKK")
-        instance.placeholder("0.00")
+        instance.placeholder("0")
         instance.unitSuffix("DKK")
+        instance.fractionDigits(0)
         return instance
     }()
     
@@ -33,20 +34,23 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("EUR")
         instance.placeholder("0.00")
         instance.unitSuffix("EUR")
+        instance.fractionDigits(2)
         return instance
     }()
     
     lazy var suffixEuroSymbol: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
         instance.title("Symbol")
-        instance.placeholder("0.00")
+        instance.placeholder("0.0000")
         instance.unitSuffix("€")
+        instance.fractionDigits(4)
         return instance
     }()
     
     lazy var noPlaceholder: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
         instance.title("No placeholder")
+        instance.fractionDigits(3)
         return instance
     }()
 
@@ -54,6 +58,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Zero")
         instance.placeholder("0")
+        instance.fractionDigits(0)
         return instance
     }()
     
@@ -61,6 +66,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Multi Zero")
         instance.placeholder("0.00")
+        instance.fractionDigits(2)
         return instance
     }()
     
@@ -68,6 +74,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("X")
         instance.placeholder("x.xx")
+        instance.fractionDigits(2)
         return instance
     }()
     
@@ -75,6 +82,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Required")
         instance.placeholder("Required")
+        instance.fractionDigits(0)
         return instance
     }()
 }
