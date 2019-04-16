@@ -7,9 +7,10 @@ class AmountTextFieldViewController: FormViewController {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple
 
-        builder += SectionHeaderTitleFormItem().title("Typical")
-        builder += typical0
-        builder += typical1
+        builder += SectionHeaderTitleFormItem().title("Suffix")
+        builder += suffixDKK
+        builder += suffixEUR
+        builder += suffixEuroSymbol
 
         builder += SectionHeaderTitleFormItem().title("Placeholder")
         builder += noPlaceholder
@@ -19,19 +20,27 @@ class AmountTextFieldViewController: FormViewController {
         builder += requiredPlaceholder
     }
     
-    lazy var typical0: AmountTextFieldFormItem = {
+    lazy var suffixDKK: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
-        instance.title("Typical0")
+        instance.title("DKK")
+        instance.placeholder("0.00")
+        instance.unitSuffix("DKK")
+        return instance
+    }()
+    
+    lazy var suffixEUR: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("EUR")
         instance.placeholder("0.00")
         instance.unitSuffix("EUR")
         return instance
     }()
     
-    lazy var typical1: AmountTextFieldFormItem = {
+    lazy var suffixEuroSymbol: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
-        instance.title("Typical1")
+        instance.title("Symbol")
         instance.placeholder("0.00")
-        instance.unitSuffix("DKK")
+        instance.unitSuffix("€")
         return instance
     }()
     
