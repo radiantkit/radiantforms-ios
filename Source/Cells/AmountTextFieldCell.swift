@@ -39,6 +39,7 @@ public struct AmountTextFieldFormItemCellModel {
     var title: String = ""
     var toolbarMode: ToolbarMode = .simple
     var placeholder: String = ""
+    var unitSuffix: String = ""
     var returnKeyType: UIReturnKeyType = .default
     var model: AmountTextFieldFormItem! = nil
     
@@ -97,11 +98,40 @@ public class AmountTextFieldCell: UITableViewCell {
         //        textField.backgroundColor = UIColor.greenColor()
         //        errorLabel.backgroundColor = UIColor.yellowColor()
         clipsToBounds = true
+        
+        installRightView()
     }
     
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    // MARK: - RightView, for unit indicators or currency codes
+    
+    private func installRightView() {
+        let text: String = model.unitSuffix
+        guard !text.isEmpty else {
+            return
+        }
+        let label: UILabel = self.rightView
+        label.font = textField.font
+        textField.rightView = label
+        textField.rightViewMode = .always
+        label.text = text
+        label.sizeToFit()
+    }
+    
+    public lazy var rightView: UILabel = {
+        let instance = EdgeInsetLabel(frame: .zero)
+        instance.textColor = UIColor.black
+        instance.textAlignment = .right
+        instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        return instance
+    }()
+    
+    
+    // MARK: - Toolbar, Prev/Next Buttons
     
     public lazy var toolbar: SimpleToolbar = {
         let instance = SimpleToolbar()

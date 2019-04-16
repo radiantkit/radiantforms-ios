@@ -91,6 +91,7 @@ class PopulateTableView: FormItemVisitor {
         model.toolbarMode = self.model.toolbarMode
         model.title = object.title
         model.placeholder = object.placeholder
+        model.unitSuffix = object.unitSuffix
         model.returnKeyType = object.returnKeyType
         model.model = object
         weak var weakObject = object

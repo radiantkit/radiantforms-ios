@@ -79,6 +79,14 @@ public class AmountTextFieldFormItem: FormItem {
         return self
     }
 
+    public var unitSuffix: String = ""
+    
+    @discardableResult
+    public func unitSuffix(_ unitSuffix: String) -> Self {
+        self.unitSuffix = unitSuffix
+        return self
+    }
+    
     public let validatorBuilder = ValidatorBuilder()
     
     @discardableResult
