@@ -7,6 +7,10 @@ class AmountTextFieldViewController: FormViewController {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple
 
+        builder += SectionHeaderTitleFormItem().title("Examples")
+        builder += soundLevel
+        builder += numberOfTrees
+
         builder += SectionHeaderTitleFormItem().title("Suffix")
         builder += suffixDKK
         builder += suffixEUR
@@ -19,6 +23,24 @@ class AmountTextFieldViewController: FormViewController {
         builder += xPlaceholder
         builder += requiredPlaceholder
     }
+    
+    lazy var soundLevel: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("Sound Level")
+        instance.placeholder("0.0")
+        instance.unitSuffix("dB")
+        instance.fractionDigits(1)
+        return instance
+    }()
+    
+    lazy var numberOfTrees: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("Number Of Trees")
+        instance.placeholder("None")
+        instance.unitSuffix("")
+        instance.fractionDigits(0)
+        return instance
+    }()
     
     lazy var suffixDKK: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
