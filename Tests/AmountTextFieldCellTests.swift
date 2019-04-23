@@ -9,38 +9,46 @@ class AmountTextFieldCellTests: XCTestCase {
     
     func testInitialValue0() {
         let formItem = AmountTextFieldFormItem()
-        formItem.maxIntegerDigits = 10
-        formItem.fractionDigits = 0
+        formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = "1234567890"
         let cell: AmountTextFieldCell = createCell(formItem)
-        _ = cell
+        XCTAssertEqual(cell.formatAmount(0), "0")
+        XCTAssertEqual(cell.formatAmount(1), "1")
+        XCTAssertEqual(cell.formatAmount(123), "123")
+        XCTAssertEqual(cell.formatAmount(123456), "123,456")
     }
     
     func testInitialValue1() {
         let formItem = AmountTextFieldFormItem()
-        formItem.maxIntegerDigits = 4
-        formItem.fractionDigits = 2
+        formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = "123456"
         let cell: AmountTextFieldCell = createCell(formItem)
-        _ = cell
+        XCTAssertEqual(cell.formatAmount(0), "0.00")
+        XCTAssertEqual(cell.formatAmount(1), "0.01")
+        XCTAssertEqual(cell.formatAmount(123), "1.23")
+        XCTAssertEqual(cell.formatAmount(123456), "1,234.56")
     }
     
     // MARK: - Don't set any initial value
     
     func testNoInitialValue0() {
         let formItem = AmountTextFieldFormItem()
-        formItem.maxIntegerDigits = 5
-        formItem.fractionDigits = 0
+        formItem.maxIntegerDigits(5).fractionDigits(0)
         let cell: AmountTextFieldCell = createCell(formItem)
-        _ = cell
+        XCTAssertEqual(cell.formatAmount(0), "0")
+        XCTAssertEqual(cell.formatAmount(1), "1")
+        XCTAssertEqual(cell.formatAmount(123), "123")
+        XCTAssertEqual(cell.formatAmount(123456), "123,456")
     }
     
     func testNoInitialValue1() {
         let formItem = AmountTextFieldFormItem()
-        formItem.maxIntegerDigits = 5
-        formItem.fractionDigits = 2
+        formItem.maxIntegerDigits(5).fractionDigits(2)
         let cell: AmountTextFieldCell = createCell(formItem)
-        _ = cell
+        XCTAssertEqual(cell.formatAmount(0), "0.00")
+        XCTAssertEqual(cell.formatAmount(1), "0.01")
+        XCTAssertEqual(cell.formatAmount(123), "1.23")
+        XCTAssertEqual(cell.formatAmount(123456), "1,234.56")
     }
     
     // MARK: - Helper

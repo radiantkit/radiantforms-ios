@@ -276,6 +276,13 @@ public class AmountTextFieldCell: UITableViewCell {
         }
     }
     
+    public func formatAmount(_ value: UInt64) -> String {
+        let decimal0: Decimal = Decimal(value)
+        let negativeExponent: Int = -Int(self.model.fractionDigits)
+        let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
+        return self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
+    }
+    
     public func setValueWithoutSync(_ value: String) {
         SwiftyFormLog("set value \(value)")
         textField.text = value
@@ -450,12 +457,7 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             return false
         }
         
-        let decimal0: Decimal = Decimal(uint64Value)
-        
-        let negativeExponent: Int = -Int(self.model.fractionDigits)
-        let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
-        let s: String = self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
-        
+        let s: String = self.formatAmount(uint64Value)
         textField.text = s
         return false
     }
