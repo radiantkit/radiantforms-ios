@@ -478,7 +478,7 @@ fileprivate class AmountFormatter: NumberFormatter {
         self.currencySymbol = ""
         self.currencyGroupingSeparator = ""
         self.perMillSymbol = ""
-        self.groupingSeparator = ""
+        self.groupingSeparator = ","
         self.minimumFractionDigits = Int(fractionDigits)
         self.maximumFractionDigits = Int(fractionDigits)
         self.negativeSuffix = ""
