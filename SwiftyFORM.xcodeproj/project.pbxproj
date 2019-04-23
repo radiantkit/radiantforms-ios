@@ -60,6 +60,7 @@
 		4280F7192264A7BA0098EF22 /* AmountTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* AmountTextFieldCell.swift */; };
 		4280F71B2264A99F0098EF22 /* AmountTextFieldFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountTextFieldFormItem.swift */; };
 		4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */; };
+		4280F722226F4C340098EF22 /* AmountTextFieldCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* AmountTextFieldCellTests.swift */; };
 		4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 428682F71B346CFE0028DB2F /* SwiftyFORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4286832E1B346CFE0028DB2F /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FA1B346CFE0028DB2F /* ButtonCell.swift */; };
 		4286832F1B346CFE0028DB2F /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* DatePickerCell.swift */; };
@@ -178,6 +179,7 @@
 		4280F7182264A7BA0098EF22 /* AmountTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldCell.swift; sourceTree = "<group>"; };
 		4280F71A2264A99F0098EF22 /* AmountTextFieldFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldFormItem.swift; sourceTree = "<group>"; };
 		4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
+		4280F721226F4C340098EF22 /* AmountTextFieldCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldCellTests.swift; sourceTree = "<group>"; };
 		428682F71B346CFE0028DB2F /* SwiftyFORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFORM.h; sourceTree = "<group>"; };
 		428682FA1B346CFE0028DB2F /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		428682FB1B346CFE0028DB2F /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		4286835D1B346D0C0028DB2F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4280F721226F4C340098EF22 /* AmountTextFieldCellTests.swift */,
 				4286835F1B346D0C0028DB2F /* Info.plist */,
 				4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */,
 				4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */,
@@ -665,6 +668,7 @@
 				4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */,
 				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
 				4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */,
+				4280F722226F4C340098EF22 /* AmountTextFieldCellTests.swift in Sources */,
 				4245B3FC1DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift in Sources */,
 				4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */,
 				4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */,

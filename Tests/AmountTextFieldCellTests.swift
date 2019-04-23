@@ -1,0 +1,62 @@
+// MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
+import XCTest
+import UIKit
+@testable import SwiftyFORM
+
+class AmountTextFieldCellTests: XCTestCase {
+
+    // MARK: - Set initial value
+    
+    func testInitialValue0() {
+        let formItem = AmountTextFieldFormItem()
+        formItem.maxIntegerDigits = 10
+        formItem.fractionDigits = 0
+        formItem.value = "1234567890"
+        let cell: AmountTextFieldCell = createCell(formItem)
+        _ = cell
+    }
+    
+    func testInitialValue1() {
+        let formItem = AmountTextFieldFormItem()
+        formItem.maxIntegerDigits = 4
+        formItem.fractionDigits = 2
+        formItem.value = "123456"
+        let cell: AmountTextFieldCell = createCell(formItem)
+        _ = cell
+    }
+    
+    // MARK: - Don't set any initial value
+    
+    func testNoInitialValue0() {
+        let formItem = AmountTextFieldFormItem()
+        formItem.maxIntegerDigits = 5
+        formItem.fractionDigits = 0
+        let cell: AmountTextFieldCell = createCell(formItem)
+        _ = cell
+    }
+    
+    func testNoInitialValue1() {
+        let formItem = AmountTextFieldFormItem()
+        formItem.maxIntegerDigits = 5
+        formItem.fractionDigits = 2
+        let cell: AmountTextFieldCell = createCell(formItem)
+        _ = cell
+    }
+    
+    // MARK: - Helper
+    
+    func createCell(_ formItem: AmountTextFieldFormItem) -> AmountTextFieldCell {
+        let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
+        let populateTableView = PopulateTableView(model: populateTableViewModel)
+        assert(populateTableView.cells.allItems.count == 0)
+        formItem.accept(visitor: populateTableView)
+        assert(populateTableView.cells.allItems.count == 1)
+        guard let item: TableViewCellArrayItem = populateTableView.cells.allItems.first else {
+            fatalError("Expected PopulateTableView to have created at least 1 item")
+        }
+        guard let cell: AmountTextFieldCell = item.cell as? AmountTextFieldCell else {
+            fatalError("Expected firstItem.cell to be of type AmountTextFieldCell")
+        }
+        return cell
+    }
+}
