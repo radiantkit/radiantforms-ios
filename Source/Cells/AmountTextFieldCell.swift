@@ -428,6 +428,9 @@ extension AmountTextFieldCell: UITextFieldDelegate {
         let updatedText2: String = updatedText1.replacingOccurrences(of: ".", with: "")
         let updatedText: String = updatedText2
 
+        if updatedText.isEmpty {
+            return true
+        }
         guard let uint64Value: UInt64 = UInt64(updatedText) else {
             return false
         }
