@@ -432,7 +432,7 @@ extension AmountTextFieldCell: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText: String = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else {
-            SwiftyFormLog("Unable to create Range from NSRange")
+            SwiftyFormLog("ERROR: Unable to create Range from NSRange")
             return false
         }
         
