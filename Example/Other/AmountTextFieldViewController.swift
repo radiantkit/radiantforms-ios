@@ -31,6 +31,7 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Sound Level")
         instance.placeholder("0.0")
         instance.unitSuffix("dB")
+        instance.maxIntegerDigits(0)
         instance.fractionDigits(1)
         return instance
     }()
@@ -40,6 +41,7 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Number Of Trees")
         instance.placeholder("None")
         instance.unitSuffix("")
+        instance.maxIntegerDigits(1)
         instance.fractionDigits(0)
         return instance
     }()
@@ -49,6 +51,7 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Money DKK")
         instance.placeholder("0")
         instance.unitSuffix("DKK")
+        instance.maxIntegerDigits(2)
         instance.fractionDigits(0)
         return instance
     }()
@@ -58,6 +61,7 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Money EUR")
         instance.placeholder("0.00")
         instance.unitSuffix("EUR")
+        instance.maxIntegerDigits(3)
         instance.fractionDigits(2)
         return instance
     }()
@@ -67,6 +71,7 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Money Symbol")
         instance.placeholder("0.0000")
         instance.unitSuffix("€")
+        instance.maxIntegerDigits(4)
         instance.fractionDigits(4)
         return instance
     }()
@@ -74,6 +79,7 @@ class AmountTextFieldViewController: FormViewController {
     lazy var noPlaceholder: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
         instance.title("No placeholder")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(3)
         return instance
     }()
@@ -82,6 +88,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Zero")
         instance.placeholder("0")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(0)
         return instance
     }()
@@ -90,6 +97,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Multi Zero")
         instance.placeholder("0.00")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(2)
         return instance
     }()
@@ -98,6 +106,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("X")
         instance.placeholder("x.xx")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(2)
         return instance
     }()
@@ -106,6 +115,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("Required")
         instance.placeholder("Required")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(0)
         return instance
     }()
@@ -114,6 +124,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("ValidA")
         instance.placeholder("value")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(0)
         instance.value = "12345"
         return instance
@@ -123,6 +134,7 @@ class AmountTextFieldViewController: FormViewController {
         let instance = AmountTextFieldFormItem()
         instance.title("ValidB")
         instance.placeholder("value")
+        instance.maxIntegerDigits(10)
         instance.fractionDigits(4)
         instance.value = "12345"
         return instance

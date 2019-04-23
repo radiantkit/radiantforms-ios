@@ -41,6 +41,7 @@ public struct AmountTextFieldFormItemCellModel {
     var placeholder: String = ""
     var unitSuffix: String = ""
     var returnKeyType: UIReturnKeyType = .default
+    var maxIntegerDigits: UInt8 = 10
     var fractionDigits: UInt8 = 3
     var model: AmountTextFieldFormItem! = nil
     
@@ -50,6 +51,10 @@ public struct AmountTextFieldFormItemCellModel {
     
     var didEndEditing: (String) -> Void = { (value: String) in
         SwiftyFormLog("value \(value)")
+    }
+    
+    var maxIntegerAndFractionDigits: UInt {
+        return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
     }
 }
 
@@ -439,6 +444,12 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             textField.text = nil
             return false
         }
+        
+        let uint64ValueString: String = String(uint64Value)
+        guard uint64ValueString.count <= self.model.maxIntegerAndFractionDigits else {
+            return false
+        }
+        
         let decimal0: Decimal = Decimal(uint64Value)
         
         let negativeExponent: Int = -Int(self.model.fractionDigits)

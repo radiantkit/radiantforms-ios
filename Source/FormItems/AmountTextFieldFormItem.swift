@@ -71,6 +71,14 @@ public class AmountTextFieldFormItem: FormItem {
         return self
     }
 
+    public var maxIntegerDigits: UInt8 = 10
+    
+    @discardableResult
+    public func maxIntegerDigits(_ count: UInt8) -> Self {
+        self.maxIntegerDigits = count
+        return self
+    }
+
     public var fractionDigits: UInt8 = 3
     
     @discardableResult
