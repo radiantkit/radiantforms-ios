@@ -22,6 +22,10 @@ class AmountTextFieldViewController: FormViewController {
         builder += multiZeroPlaceholder
         builder += xPlaceholder
         builder += requiredPlaceholder
+
+        builder += SectionHeaderTitleFormItem().title("Initial Value")
+        builder += initialValueValidA
+        builder += initialValueValidB
     }
     
     lazy var soundLevel: AmountTextFieldFormItem = {
@@ -105,6 +109,24 @@ class AmountTextFieldViewController: FormViewController {
         instance.title("Required")
         instance.placeholder("Required")
         instance.fractionDigits(0)
+        return instance
+    }()
+    
+    lazy var initialValueValidA: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("ValidA")
+        instance.placeholder("value")
+        instance.fractionDigits(0)
+        instance.value = "12345"
+        return instance
+    }()
+
+    lazy var initialValueValidB: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("ValidB")
+        instance.placeholder("value")
+        instance.fractionDigits(4)
+        instance.value = "12345"
         return instance
     }()
 }
