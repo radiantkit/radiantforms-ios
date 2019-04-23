@@ -98,9 +98,10 @@ public class AmountTextFieldCell: UITableViewCell {
         
         updateErrorLabel(model.model.liveValidateValueText())
         
-        //        titleLabel.backgroundColor = UIColor.blueColor()
-        //        textField.backgroundColor = UIColor.greenColor()
-        //        errorLabel.backgroundColor = UIColor.yellowColor()
+//        titleLabel.backgroundColor = UIColor.blue
+//        textField.backgroundColor = UIColor.green
+//        errorLabel.backgroundColor = UIColor.yellow
+//        rightView.backgroundColor = UIColor.blue
         clipsToBounds = true
         
         installRightView()
