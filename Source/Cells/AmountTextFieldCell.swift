@@ -276,6 +276,13 @@ public class AmountTextFieldCell: UITableViewCell {
         }
     }
     
+    public static func removeFormatFromString(_ formattedText: String) -> String {
+        let string0: String = formattedText.trimmingCharacters(in: CharacterSet.whitespaces)
+        let string1: String = string0.replacingOccurrences(of: ",", with: "")
+        let string2: String = string1.replacingOccurrences(of: ".", with: "")
+        return string2
+    }
+    
     public func formatAmount(_ internalValue: UInt64) -> String {
         let decimal0: Decimal = Decimal(internalValue)
         let negativeExponent: Int = -Int(self.model.fractionDigits)
