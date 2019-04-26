@@ -463,11 +463,14 @@ extension AmountTextFieldCell: UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //SwiftyFormLog("enter. NSRange: \(range)   replacementString: '\(string)'")
+        
         let currentText: String = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else {
             SwiftyFormLog("ERROR: Unable to create Range from NSRange")
             return false
         }
+        //SwiftyFormLog("stringRange: \(stringRange)   NSRange: \(range)   currentText: '\(currentText)'")
 
         let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
         
@@ -476,20 +479,25 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             return true
         }
         guard let internalValue: UInt64 = self.createInternalValue(unformattedString) else {
+            SwiftyFormLog("Cannot create an internalValue")
             return false
         }
         if internalValue == 0 {
             textField.text = nil
+            SwiftyFormLog("Show placeholder, when the internalValue is zero")
             return false
         }
         
         let internalValueString: String = String(internalValue)
         guard internalValueString.count <= self.model.maxIntegerAndFractionDigits else {
+            SwiftyFormLog("The internalValue must stay shorter than the max number of digits")
             return false
         }
         
         let s: String = self.formatAmount(internalValue)
         textField.text = s
+        
+        //SwiftyFormLog("Leave.  s: '\(s)'")
         return false
     }
     
