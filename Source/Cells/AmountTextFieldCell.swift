@@ -283,17 +283,43 @@ public class AmountTextFieldCell: UITableViewCell {
         return string2
     }
     
+    public func createInternalValue(_ unformattedString: String) -> UInt64? {
+        guard let internalValue: UInt64 = UInt64(unformattedString) else {
+            SwiftyFormLog("Failed to create internalValue from string")
+            return nil
+        }
+        return internalValue
+    }
+    
     public func formatAmount(_ internalValue: UInt64) -> String {
         let decimal0: Decimal = Decimal(internalValue)
         let negativeExponent: Int = -Int(self.model.fractionDigits)
         let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
         return self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
     }
-    
+
+    public func parseAndFormatAmount(_ textField_text: String) -> String {
+        let unformattedString: String = type(of: self).removeFormatFromString(textField_text)
+        if unformattedString.isEmpty {
+            SwiftyFormLog("Cannot create an internalValue from empty string")
+            return textField_text
+        }
+        guard let internalValue: UInt64 = self.createInternalValue(unformattedString) else {
+            SwiftyFormLog("Cannot create an internalValue")
+            return textField_text
+        }
+        if internalValue == 0 {
+            SwiftyFormLog("The internalValue is zero")
+            return ""
+        }
+        return self.formatAmount(internalValue)
+    }
+
     public func setValueWithoutSync(_ value: String) {
         SwiftyFormLog("set value \(value)")
-        textField.text = value
-        _ = validateAndUpdateErrorIfNeeded(value, shouldInstallTimer: false, checkSubmitRule: false)
+        let formattedValue: String = self.parseAndFormatAmount(value)
+        textField.text = formattedValue
+        _ = validateAndUpdateErrorIfNeeded(formattedValue, shouldInstallTimer: false, checkSubmitRule: false)
     }
     
     public func updateErrorLabel(_ result: ValidateResult) {
@@ -442,16 +468,14 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             SwiftyFormLog("ERROR: Unable to create Range from NSRange")
             return false
         }
-        
-        let updatedText0: String = currentText.replacingCharacters(in: stringRange, with: string)
-        let updatedText1: String = updatedText0.replacingOccurrences(of: ",", with: "")
-        let updatedText2: String = updatedText1.replacingOccurrences(of: ".", with: "")
-        let updatedText: String = updatedText2
 
-        if updatedText.isEmpty {
+        let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        let unformattedString: String = type(of: self).removeFormatFromString(updatedText)
+        if unformattedString.isEmpty {
             return true
         }
-        guard let internalValue: UInt64 = UInt64(updatedText) else {
+        guard let internalValue: UInt64 = self.createInternalValue(unformattedString) else {
             return false
         }
         if internalValue == 0 {
