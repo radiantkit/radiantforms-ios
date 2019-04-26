@@ -483,8 +483,8 @@ extension AmountTextFieldCell: UITextFieldDelegate {
             return false
         }
         
-        let uint64ValueString: String = String(internalValue)
-        guard uint64ValueString.count <= self.model.maxIntegerAndFractionDigits else {
+        let internalValueString: String = String(internalValue)
+        guard internalValueString.count <= self.model.maxIntegerAndFractionDigits else {
             return false
         }
         
