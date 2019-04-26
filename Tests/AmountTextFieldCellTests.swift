@@ -9,6 +9,15 @@ class AmountTextFieldCellTests: XCTestCase {
         XCTAssertEqual(AmountTextFieldCell.removeFormatFromString(" 1,234.56 "), "123456")
         XCTAssertEqual(AmountTextFieldCell.removeFormatFromString("0001234"), "0001234")
     }
+    
+    func testParseAndFormatAmount() {
+        let formItem = AmountTextFieldFormItem()
+        formItem.maxIntegerDigits(4).fractionDigits(2)
+        let cell: AmountTextFieldCell = createCell(formItem)
+        XCTAssertEqual(cell.parseAndFormatAmount(""), "")
+        XCTAssertEqual(cell.parseAndFormatAmount("0"), "")
+        XCTAssertEqual(cell.parseAndFormatAmount(" 00123456 "), "1,234.56", "discard leading zeroes")
+    }
 
     // MARK: - Set initial value
     
