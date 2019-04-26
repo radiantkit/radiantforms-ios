@@ -276,8 +276,8 @@ public class AmountTextFieldCell: UITableViewCell {
         }
     }
     
-    public func formatAmount(_ value: UInt64) -> String {
-        let decimal0: Decimal = Decimal(value)
+    public func formatAmount(_ internalValue: UInt64) -> String {
+        let decimal0: Decimal = Decimal(internalValue)
         let negativeExponent: Int = -Int(self.model.fractionDigits)
         let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
         return self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
@@ -444,20 +444,20 @@ extension AmountTextFieldCell: UITextFieldDelegate {
         if updatedText.isEmpty {
             return true
         }
-        guard let uint64Value: UInt64 = UInt64(updatedText) else {
+        guard let internalValue: UInt64 = UInt64(updatedText) else {
             return false
         }
-        if uint64Value == 0 {
+        if internalValue == 0 {
             textField.text = nil
             return false
         }
         
-        let uint64ValueString: String = String(uint64Value)
+        let uint64ValueString: String = String(internalValue)
         guard uint64ValueString.count <= self.model.maxIntegerAndFractionDigits else {
             return false
         }
         
-        let s: String = self.formatAmount(uint64Value)
+        let s: String = self.formatAmount(internalValue)
         textField.text = s
         return false
     }
