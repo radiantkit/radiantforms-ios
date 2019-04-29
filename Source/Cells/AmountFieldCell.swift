@@ -15,11 +15,11 @@ public class CustomAmountTextField: UITextField {
     }
 }
 
-public enum AmountFieldCellState {
-    case noMessage
-    case temporaryMessage(message: String)
-    case persistentMessage(message: String)
-}
+//public enum AmountFieldCellState {
+//    case noMessage
+//    case temporaryMessage(message: String)
+//    case persistentMessage(message: String)
+//}
 
 public class AmountFieldCellSizes {
     public let titleLabelFrame: CGRect
@@ -66,7 +66,7 @@ public class AmountFieldCell: UITableViewCell {
     public let textField = CustomAmountTextField()
     public let errorLabel = UILabel()
     
-    public var state: AmountFieldCellState = .noMessage
+//    public var state: AmountFieldCellState = .noMessage
     
     public init(model: AmountFieldCellModel) {
         self.model = model
