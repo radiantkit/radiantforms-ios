@@ -23,6 +23,10 @@ public struct AmountCellModel {
     var fractionDigits: UInt8 = 3
     var model: AmountFormItem! = nil
     
+    var valueDidChange: (AmountValue) -> Void = { (value: AmountValue) in
+        SwiftyFormLog("value \(value)")
+    }
+    
     var maxIntegerAndFractionDigits: UInt {
         return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
     }
@@ -49,7 +53,9 @@ public class AmountCell: UITableViewCell {
         
         textField.configure()
         textField.delegate = self
-        
+
+        textField.addTarget(self, action: #selector(AmountCell.valueDidChange), for: UIControl.Event.editingChanged)
+
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
         
@@ -236,6 +242,13 @@ public class AmountCell: UITableViewCell {
         return self.formatAmount(value)
     }
     
+    @objc public func valueDidChange() {
+        let text: String = textField.text ?? ""
+        let unformattedString: String = type(of: self).removeFormatFromString(text)
+        let internalValue: AmountValue = self.createInternalValue(unformattedString) ?? 0
+        model.valueDidChange(internalValue)
+    }
+    
     public func setValueWithoutSync(_ value: AmountValue) {
         SwiftyFormLog("set value \(value)")
         let formattedValue: String = self.parseAndFormatAmount(value)
@@ -288,6 +301,7 @@ extension AmountCell: UITextFieldDelegate {
         if internalValue == 0 {
             textField.text = nil
             SwiftyFormLog("Show placeholder, when the internalValue is zero")
+            valueDidChange()
             return false
         }
         
@@ -299,6 +313,7 @@ extension AmountCell: UITextFieldDelegate {
         
         let s: String = self.formatAmount(internalValue)
         textField.text = s
+        valueDidChange()
         
         //SwiftyFormLog("Leave.  s: '\(s)'")
         return false

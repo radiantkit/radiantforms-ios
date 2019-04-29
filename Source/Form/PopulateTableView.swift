@@ -97,6 +97,13 @@ class PopulateTableView: FormItemVisitor {
         model.returnKeyType = object.returnKeyType
         model.model = object
 
+        weak var weakObject = object
+        model.valueDidChange = { (value: AmountValue) in
+            SwiftyFormLog("value \(value)")
+            weakObject?.valueDidChange(value)
+            return
+        }
+
         let cell = AmountCell(model: model)
         cell.setValueWithoutSync(object.value)
         cells.append(cell)

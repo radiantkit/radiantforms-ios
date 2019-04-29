@@ -31,6 +31,16 @@ public class AmountFormItem: FormItem {
         }
     }
     
+    public typealias ValueDidChangeBlock = (_ value: AmountValue) -> Void
+    public var valueDidChangeBlock: ValueDidChangeBlock = { (value: AmountValue) in
+        SwiftyFormLog("not overridden")
+    }
+    
+    public func valueDidChange(_ value: AmountValue) {
+        innerValue = value
+        valueDidChangeBlock(value)
+    }
+    
     public func assignValueAndSync(_ value: AmountValue) {
         innerValue = value
         syncCellWithValue(value)
