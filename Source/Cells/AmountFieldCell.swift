@@ -58,7 +58,7 @@ public struct AmountTextFieldFormItemCellModel {
     }
 }
 
-public class AmountTextFieldCell: UITableViewCell {
+public class AmountFieldCell: UITableViewCell {
     private let amountFormatter: AmountFormatter
 
     public let model: AmountTextFieldFormItemCellModel
@@ -87,7 +87,7 @@ public class AmountTextFieldCell: UITableViewCell {
         textField.configure()
         textField.delegate = self
         
-        textField.addTarget(self, action: #selector(AmountTextFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
+        textField.addTarget(self, action: #selector(AmountFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
@@ -190,7 +190,7 @@ public class AmountTextFieldCell: UITableViewCell {
     }
     
     public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountTextFieldCell.handleTap(_:)))
+        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountFieldCell.handleTap(_:)))
         return gr
     }()
     
@@ -345,7 +345,7 @@ public class AmountTextFieldCell: UITableViewCell {
     
     public func installTimer() {
         invalidateTimer()
-        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(AmountTextFieldCell.timerUpdate), userInfo: nil, repeats: false)
+        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(AmountFieldCell.timerUpdate), userInfo: nil, repeats: false)
         hideErrorMessageAfterFewSecondsTimer = timer
     }
     
@@ -456,7 +456,7 @@ public class AmountTextFieldCell: UITableViewCell {
     
 }
 
-extension AmountTextFieldCell: UITextFieldDelegate {
+extension AmountFieldCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         updateToolbarButtons()
         textField.text = textField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -513,7 +513,7 @@ extension AmountTextFieldCell: UITextFieldDelegate {
     }
 }
 
-extension AmountTextFieldCell: CellHeightProvider {
+extension AmountFieldCell: CellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: AmountTextFieldFormItemCellSizes = compute()
         let value = sizes.cellHeight

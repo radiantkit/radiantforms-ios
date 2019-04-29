@@ -6,14 +6,14 @@ import UIKit
 class AmountTextFieldCellTests: XCTestCase {
     
     func testRemoveFormatFromString() {
-        XCTAssertEqual(AmountTextFieldCell.removeFormatFromString(" 1,234.56 "), "123456")
-        XCTAssertEqual(AmountTextFieldCell.removeFormatFromString("0001234"), "0001234")
+        XCTAssertEqual(AmountFieldCell.removeFormatFromString(" 1,234.56 "), "123456")
+        XCTAssertEqual(AmountFieldCell.removeFormatFromString("0001234"), "0001234")
     }
     
     func testParseAndFormatAmount() {
         let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
-        let cell: AmountTextFieldCell = createCell(formItem)
+        let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.parseAndFormatAmount(""), "")
         XCTAssertEqual(cell.parseAndFormatAmount("0"), "")
         XCTAssertEqual(cell.parseAndFormatAmount(" 00123456 "), "1,234.56", "discard leading zeroes")
@@ -25,7 +25,7 @@ class AmountTextFieldCellTests: XCTestCase {
         let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = "1234567890"
-        let cell: AmountTextFieldCell = createCell(formItem)
+        let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
         XCTAssertEqual(cell.formatAmount(123), "123")
@@ -36,7 +36,7 @@ class AmountTextFieldCellTests: XCTestCase {
         let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = "123456"
-        let cell: AmountTextFieldCell = createCell(formItem)
+        let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
         XCTAssertEqual(cell.formatAmount(1), "0.01")
         XCTAssertEqual(cell.formatAmount(123), "1.23")
@@ -48,7 +48,7 @@ class AmountTextFieldCellTests: XCTestCase {
     func testNoInitialValue0() {
         let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(0)
-        let cell: AmountTextFieldCell = createCell(formItem)
+        let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
         XCTAssertEqual(cell.formatAmount(123), "123")
@@ -58,7 +58,7 @@ class AmountTextFieldCellTests: XCTestCase {
     func testNoInitialValue1() {
         let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
-        let cell: AmountTextFieldCell = createCell(formItem)
+        let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
         XCTAssertEqual(cell.formatAmount(1), "0.01")
         XCTAssertEqual(cell.formatAmount(123), "1.23")
@@ -67,7 +67,7 @@ class AmountTextFieldCellTests: XCTestCase {
     
     // MARK: - Helper
     
-    func createCell(_ formItem: AmountFieldFormItem) -> AmountTextFieldCell {
+    func createCell(_ formItem: AmountFieldFormItem) -> AmountFieldCell {
         let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
         let populateTableView = PopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)
@@ -76,7 +76,7 @@ class AmountTextFieldCellTests: XCTestCase {
         guard let item: TableViewCellArrayItem = populateTableView.cells.allItems.first else {
             fatalError("Expected PopulateTableView to have created at least 1 item")
         }
-        guard let cell: AmountTextFieldCell = item.cell as? AmountTextFieldCell else {
+        guard let cell: AmountFieldCell = item.cell as? AmountFieldCell else {
             fatalError("Expected firstItem.cell to be of type AmountTextFieldCell")
         }
         return cell
