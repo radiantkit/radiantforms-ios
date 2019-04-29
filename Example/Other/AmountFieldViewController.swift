@@ -14,6 +14,7 @@ class AmountFieldViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title("Buttons")
         builder += randomizeGoodButton
         builder += randomizeBadButton
+        builder += showValuesButton
 
         builder += SectionHeaderTitleFormItem().title("Typical usecases")
         builder += soundLevel
@@ -65,6 +66,37 @@ class AmountFieldViewController: FormViewController {
     func randomizeBad() {
         soundLevel.value = randomString(["-1", "garbage", " % ", "--", "$1", "?"])
         numberOfTrees.value = randomString(["-1", "-9", "-99"])
+    }
+    
+    lazy var showValuesButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "Show Values"
+        instance.action = { [weak self] in
+            self?.showValuesAction()
+        }
+        return instance
+    }()
+    
+    func showValuesAction() {
+        var strings = [String]()
+        
+        let soundLevelValue: String = self.soundLevel.value
+        strings.append("soundLevel: \(soundLevelValue)")
+        
+        let numberOfTreesValue: String = self.numberOfTrees.value
+        strings.append("numberOfTrees: \(numberOfTreesValue)")
+        
+        let moneyDKKValue: String = self.moneyDKK.value
+        strings.append("moneyDKK: \(moneyDKKValue)")
+        
+        let moneyEURValue: String = self.moneyEUR.value
+        strings.append("moneyEUR: \(moneyEURValue)")
+        
+        let moneySymbolValue: String = self.moneySymbol.value
+        strings.append("moneySymbol: \(moneySymbolValue)")
+        
+        let body: String = strings.joined(separator: "\n")
+        form_simpleAlert("Show Values", body)
     }
     
     // MARK: - Typical usecases
