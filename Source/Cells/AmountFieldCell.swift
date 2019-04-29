@@ -35,7 +35,7 @@ public class AmountTextFieldFormItemCellSizes {
     }
 }
 
-public struct AmountTextFieldFormItemCellModel {
+public struct AmountFieldCellModel {
     var title: String = ""
     var toolbarMode: ToolbarMode = .simple
     var placeholder: String = ""
@@ -61,14 +61,14 @@ public struct AmountTextFieldFormItemCellModel {
 public class AmountFieldCell: UITableViewCell {
     private let amountFormatter: AmountFormatter
 
-    public let model: AmountTextFieldFormItemCellModel
+    public let model: AmountFieldCellModel
     public let titleLabel = UILabel()
     public let textField = CustomAmountTextField()
     public let errorLabel = UILabel()
     
     public var state: AmountTextCellState = .noMessage
     
-    public init(model: AmountTextFieldFormItemCellModel) {
+    public init(model: AmountFieldCellModel) {
         self.model = model
         self.amountFormatter = AmountFormatter(fractionDigits: model.fractionDigits)
         super.init(style: .default, reuseIdentifier: nil)
