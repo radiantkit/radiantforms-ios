@@ -45,13 +45,13 @@ public struct AmountFieldCellModel {
     var fractionDigits: UInt8 = 3
     var model: AmountFieldFormItem! = nil
     
-    var valueDidChange: (String) -> Void = { (value: String) in
-        SwiftyFormLog("value \(value)")
-    }
-    
-    var didEndEditing: (String) -> Void = { (value: String) in
-        SwiftyFormLog("value \(value)")
-    }
+//    var valueDidChange: (String) -> Void = { (value: String) in
+//        SwiftyFormLog("value \(value)")
+//    }
+//
+//    var didEndEditing: (String) -> Void = { (value: String) in
+//        SwiftyFormLog("value \(value)")
+//    }
     
     var maxIntegerAndFractionDigits: UInt {
         return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
@@ -87,7 +87,7 @@ public class AmountFieldCell: UITableViewCell {
         textField.configure()
         textField.delegate = self
         
-        textField.addTarget(self, action: #selector(AmountFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
+//        textField.addTarget(self, action: #selector(AmountFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
@@ -101,7 +101,7 @@ public class AmountFieldCell: UITableViewCell {
             textField.inputAccessoryView = toolbar
         }
         
-        updateErrorLabel(model.model.liveValidateValueText())
+//        updateErrorLabel(model.model.liveValidateValueText())
         
 //        titleLabel.backgroundColor = UIColor.blue
 //        textField.backgroundColor = UIColor.green
@@ -262,19 +262,19 @@ public class AmountFieldCell: UITableViewCell {
         errorLabel.frame = sizes.errorLabelFrame
     }
     
-    @objc public func valueDidChange() {
-        model.valueDidChange(textField.text ?? "")
-        
-        let result: ValidateResult = model.model.liveValidateValueText()
-        switch result {
-        case .valid:
-            SwiftyFormLog("valid")
-        case .hardInvalid:
-            SwiftyFormLog("hard invalid")
-        case .softInvalid:
-            SwiftyFormLog("soft invalid")
-        }
-    }
+//    @objc public func valueDidChange() {
+//        model.valueDidChange(textField.text ?? "")
+//
+//        let result: ValidateResult = model.model.liveValidateValueText()
+//        switch result {
+//        case .valid:
+//            SwiftyFormLog("valid")
+//        case .hardInvalid:
+//            SwiftyFormLog("hard invalid")
+//        case .softInvalid:
+//            SwiftyFormLog("soft invalid")
+//        }
+//    }
     
     public static func removeFormatFromString(_ formattedText: String) -> String {
         let string0: String = formattedText.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -352,77 +352,79 @@ public class AmountFieldCell: UITableViewCell {
     // Returns true  when valid
     // Returns false when invalid
     public func validateAndUpdateErrorIfNeeded(_ text: String, shouldInstallTimer: Bool, checkSubmitRule: Bool) -> Bool {
-        
-        let tableView: UITableView? = form_tableView()
-        
-        let result: ValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
-        if let lastResult = lastResult {
-            if lastResult == result {
-                switch result {
-                case .valid:
-                    //SwiftyFormLog("same valid")
-                    return true
-                case .hardInvalid:
-                    //SwiftyFormLog("same hard invalid")
-                    invalidateTimer()
-                    if shouldInstallTimer {
-                        installTimer()
-                    }
-                    return false
-                case .softInvalid:
-                    //SwiftyFormLog("same soft invalid")
-                    invalidateTimer()
-                    if shouldInstallTimer {
-                        installTimer()
-                    }
-                    return true
-                }
-            }
-        }
-        lastResult = result
-        
-        switch result {
-        case .valid:
-            //SwiftyFormLog("different valid")
-            if let tv = tableView {
-                tv.beginUpdates()
-                errorLabel.text = nil
-                setNeedsLayout()
-                tv.endUpdates()
-                
-                invalidateTimer()
-            }
-            return true
-        case let .hardInvalid(message):
-            //SwiftyFormLog("different hard invalid")
-            if let tv = tableView {
-                tv.beginUpdates()
-                errorLabel.text = message
-                setNeedsLayout()
-                tv.endUpdates()
-                
-                invalidateTimer()
-                if shouldInstallTimer {
-                    installTimer()
-                }
-            }
-            return false
-        case let .softInvalid(message):
-            //SwiftyFormLog("different soft invalid")
-            if let tv = tableView {
-                tv.beginUpdates()
-                errorLabel.text = message
-                setNeedsLayout()
-                tv.endUpdates()
-                
-                invalidateTimer()
-                if shouldInstallTimer {
-                    installTimer()
-                }
-            }
-            return true
-        }
+        return true
     }
+//
+//        let tableView: UITableView? = form_tableView()
+//
+//        let result: ValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
+//        if let lastResult = lastResult {
+//            if lastResult == result {
+//                switch result {
+//                case .valid:
+//                    //SwiftyFormLog("same valid")
+//                    return true
+//                case .hardInvalid:
+//                    //SwiftyFormLog("same hard invalid")
+//                    invalidateTimer()
+//                    if shouldInstallTimer {
+//                        installTimer()
+//                    }
+//                    return false
+//                case .softInvalid:
+//                    //SwiftyFormLog("same soft invalid")
+//                    invalidateTimer()
+//                    if shouldInstallTimer {
+//                        installTimer()
+//                    }
+//                    return true
+//                }
+//            }
+//        }
+//        lastResult = result
+//
+//        switch result {
+//        case .valid:
+//            //SwiftyFormLog("different valid")
+//            if let tv = tableView {
+//                tv.beginUpdates()
+//                errorLabel.text = nil
+//                setNeedsLayout()
+//                tv.endUpdates()
+//
+//                invalidateTimer()
+//            }
+//            return true
+//        case let .hardInvalid(message):
+//            //SwiftyFormLog("different hard invalid")
+//            if let tv = tableView {
+//                tv.beginUpdates()
+//                errorLabel.text = message
+//                setNeedsLayout()
+//                tv.endUpdates()
+//
+//                invalidateTimer()
+//                if shouldInstallTimer {
+//                    installTimer()
+//                }
+//            }
+//            return false
+//        case let .softInvalid(message):
+//            //SwiftyFormLog("different soft invalid")
+//            if let tv = tableView {
+//                tv.beginUpdates()
+//                errorLabel.text = message
+//                setNeedsLayout()
+//                tv.endUpdates()
+//
+//                invalidateTimer()
+//                if shouldInstallTimer {
+//                    installTimer()
+//                }
+//            }
+//            return true
+//        }
+//    }
     
     @objc public func timerUpdate() {
         invalidateTimer()
@@ -503,13 +505,14 @@ extension AmountFieldCell: UITextFieldDelegate {
     
     // Hide the keyboard when the user taps the return key in this UITextField
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let s = textField.text ?? ""
-        let isTextValid = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: true, checkSubmitRule: true)
-        if isTextValid {
-            textField.resignFirstResponder()
-            model.didEndEditing(s)
-        }
-        return false
+        return true
+//        let s = textField.text ?? ""
+//        let isTextValid = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: true, checkSubmitRule: true)
+//        if isTextValid {
+//            textField.resignFirstResponder()
+//            model.didEndEditing(s)
+//        }
+//        return false
     }
 }
 
