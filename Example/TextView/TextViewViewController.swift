@@ -58,28 +58,20 @@ class TextViewViewController: FormViewController {
 		return instance
 		}()
 
-	func pickRandom(_ strings: [String]) -> String {
-		if strings.count == 0 {
-			return ""
-		}
-		let i = randomInt(0, strings.count - 1)
-		return strings[i]
-	}
-
 	func appendRandom(_ textView: TextViewFormItem, strings: [String]) {
 		let notEmpty = textView.value.utf8.count != 0
 		var s = ""
 		if notEmpty {
 			s = " "
 		}
-		textView.value += s + pickRandom(strings)
+		textView.value += s + randomString(strings)
 	}
 
 	func randomize() {
 		appendRandom(longSummary, strings: ["Hello", "World", "Cat", "Water", "Fish", "Hund"])
 		appendRandom(notes, strings: ["Hat", "Ham", "Has"])
-		commentArea.value += pickRandom(["a", "b", "c"])
-		userDescription.value += pickRandom(["x", "y", "z", "w"])
+		commentArea.value += randomString(["a", "b", "c"])
+		userDescription.value += randomString(["x", "y", "z", "w"])
 	}
 
 	func clear() {
