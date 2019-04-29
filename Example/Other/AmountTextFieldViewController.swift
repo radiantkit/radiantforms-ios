@@ -7,6 +7,9 @@ class AmountTextFieldViewController: FormViewController {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple
 
+        builder += SectionHeaderTitleFormItem().title("Buttons")
+        builder += randomizeButton
+
         builder += SectionHeaderTitleFormItem().title("Typical usecases")
         builder += soundLevel
         builder += numberOfTrees
@@ -24,6 +27,23 @@ class AmountTextFieldViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title("Initial Value")
         builder += initialValueValidA
         builder += initialValueValidB
+    }
+    
+    lazy var randomizeButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "Randomize"
+        instance.action = { [weak self] in
+            self?.randomize()
+        }
+        return instance
+    }()
+    
+    func randomize() {
+        soundLevel.value = randomString(["", "0", "0.0", "0.1", "0.9"])
+        numberOfTrees.value = randomString(["", "0", "3", "8"])
+        moneyDKK.value = randomString(["", "1", "10", "99"])
+        moneyEUR.value = randomString(["", "0.01", "123.45", "999.99"])
+        moneySymbol.value = randomString(["", "0.0001", "1234.5678", "9999.9999"])
     }
     
     lazy var soundLevel: AmountTextFieldFormItem = {
