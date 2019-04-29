@@ -96,17 +96,7 @@ class PopulateTableView: FormItemVisitor {
         model.fractionDigits = object.fractionDigits
         model.returnKeyType = object.returnKeyType
         model.model = object
-//        weak var weakObject = object
-//        model.valueDidChange = { (value: String) in
-//            SwiftyFormLog("value \(value)")
-//            weakObject?.textDidChange(value)
-//            return
-//        }
-//        model.didEndEditing = { (value: String) in
-//            SwiftyFormLog("value \(value)")
-//            weakObject?.editingEnd(value)
-//            return
-//        }
+
         let cell = AmountFieldCell(model: model)
         cell.setValueWithoutSync(object.value)
         cells.append(cell)
@@ -118,11 +108,6 @@ class PopulateTableView: FormItemVisitor {
             weakCell?.setValueWithoutSync(value)
             return
         }
-        
-//        object.reloadPersistentValidationState = {
-//            weakCell?.reloadPersistentValidationState()
-//            return
-//        }
         
         object.obtainTitleWidth = {
             if let cell = weakCell {

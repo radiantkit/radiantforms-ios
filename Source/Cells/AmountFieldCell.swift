@@ -15,16 +15,9 @@ public class CustomAmountTextField: UITextField {
     }
 }
 
-//public enum AmountFieldCellState {
-//    case noMessage
-//    case temporaryMessage(message: String)
-//    case persistentMessage(message: String)
-//}
-
 public class AmountFieldCellSizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
-//    public let errorLabelFrame: CGRect
     public let cellHeight: CGFloat
     
     public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, cellHeight: CGFloat) {
@@ -44,14 +37,6 @@ public struct AmountFieldCellModel {
     var fractionDigits: UInt8 = 3
     var model: AmountFieldFormItem! = nil
     
-//    var valueDidChange: (String) -> Void = { (value: String) in
-//        SwiftyFormLog("value \(value)")
-//    }
-//
-//    var didEndEditing: (String) -> Void = { (value: String) in
-//        SwiftyFormLog("value \(value)")
-//    }
-    
     var maxIntegerAndFractionDigits: UInt {
         return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
     }
@@ -63,9 +48,6 @@ public class AmountFieldCell: UITableViewCell {
     public let model: AmountFieldCellModel
     public let titleLabel = UILabel()
     public let textField = CustomAmountTextField()
-//    public let errorLabel = UILabel()
-    
-//    public var state: AmountFieldCellState = .noMessage
     
     public init(model: AmountFieldCellModel) {
         self.model = model
@@ -78,19 +60,12 @@ public class AmountFieldCell: UITableViewCell {
         
         titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-//        errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
-        
-//        errorLabel.textColor = UIColor.red
-//        errorLabel.numberOfLines = 0
         
         textField.configure()
         textField.delegate = self
         
-//        textField.addTarget(self, action: #selector(AmountFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
-        
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
-//        contentView.addSubview(errorLabel)
         
         titleLabel.text = model.title
         textField.placeholder = model.placeholder
@@ -100,11 +75,8 @@ public class AmountFieldCell: UITableViewCell {
             textField.inputAccessoryView = toolbar
         }
         
-//        updateErrorLabel(model.model.liveValidateValueText())
-        
 //        titleLabel.backgroundColor = UIColor.blue
 //        textField.backgroundColor = UIColor.green
-//        errorLabel.backgroundColor = UIColor.yellow
 //        rightView.backgroundColor = UIColor.blue
         clipsToBounds = true
         
@@ -205,7 +177,6 @@ public class AmountFieldCell: UITableViewCell {
         
         var titleLabelFrame = CGRect.zero
         var textFieldFrame = CGRect.zero
-//        var errorLabelFrame = CGRect.zero
         var cellHeight: CGFloat = 0
         let veryTallCell = CGRect(x: 0, y: 0, width: cellWidth, height: CGFloat.greatestFiniteMagnitude)
         
@@ -237,17 +208,6 @@ public class AmountFieldCell: UITableViewCell {
             
             cellHeight = ceil(textFieldFrame.height)
         }
-//        do {
-//            let size = errorLabel.sizeThatFits(area.size)
-//            //            SwiftyFormLog("error label size \(size)")
-//            if size.height > 0.1 {
-//                var r = topRect
-//                r.origin.y = topRect.maxY - 6
-//                let (slice, _) = r.divided(atDistance: size.height, from: .minYEdge)
-//                errorLabelFrame = slice
-//                cellHeight = ceil(errorLabelFrame.maxY + 10)
-//            }
-//        }
         
         return AmountFieldCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, cellHeight: cellHeight)
     }
@@ -258,22 +218,7 @@ public class AmountFieldCell: UITableViewCell {
         let sizes: AmountFieldCellSizes = compute()
         titleLabel.frame = sizes.titleLabelFrame
         textField.frame = sizes.textFieldFrame
-//        errorLabel.frame = sizes.errorLabelFrame
     }
-    
-//    @objc public func valueDidChange() {
-//        model.valueDidChange(textField.text ?? "")
-//
-//        let result: ValidateResult = model.model.liveValidateValueText()
-//        switch result {
-//        case .valid:
-//            SwiftyFormLog("valid")
-//        case .hardInvalid:
-//            SwiftyFormLog("hard invalid")
-//        case .softInvalid:
-//            SwiftyFormLog("soft invalid")
-//        }
-//    }
     
     public static func removeFormatFromString(_ formattedText: String) -> String {
         let string0: String = formattedText.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -318,128 +263,8 @@ public class AmountFieldCell: UITableViewCell {
         SwiftyFormLog("set value \(value)")
         let formattedValue: String = self.parseAndFormatAmount(value)
         textField.text = formattedValue
-        _ = validateAndUpdateErrorIfNeeded(formattedValue, shouldInstallTimer: false, checkSubmitRule: false)
     }
-    
-//    public func updateErrorLabel(_ result: ValidateResult) {
-//        switch result {
-//        case .valid:
-//            errorLabel.text = nil
-//        case .hardInvalid(let message):
-//            errorLabel.text = message
-//        case .softInvalid(let message):
-//            errorLabel.text = message
-//        }
-//    }
-    
-//    public var lastResult: ValidateResult?
-//
-//    public var hideErrorMessageAfterFewSecondsTimer: Timer?
-//    public func invalidateTimer() {
-//        if let timer = hideErrorMessageAfterFewSecondsTimer {
-//            timer.invalidate()
-//            hideErrorMessageAfterFewSecondsTimer = nil
-//        }
-//    }
-//
-//    public func installTimer() {
-//        invalidateTimer()
-//        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(AmountFieldCell.timerUpdate), userInfo: nil, repeats: false)
-//        hideErrorMessageAfterFewSecondsTimer = timer
-//    }
-    
-    // Returns true  when valid
-    // Returns false when invalid
-    public func validateAndUpdateErrorIfNeeded(_ text: String, shouldInstallTimer: Bool, checkSubmitRule: Bool) -> Bool {
-        return true
-    }
-//
-//        let tableView: UITableView? = form_tableView()
-//
-//        let result: ValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
-//        if let lastResult = lastResult {
-//            if lastResult == result {
-//                switch result {
-//                case .valid:
-//                    //SwiftyFormLog("same valid")
-//                    return true
-//                case .hardInvalid:
-//                    //SwiftyFormLog("same hard invalid")
-//                    invalidateTimer()
-//                    if shouldInstallTimer {
-//                        installTimer()
-//                    }
-//                    return false
-//                case .softInvalid:
-//                    //SwiftyFormLog("same soft invalid")
-//                    invalidateTimer()
-//                    if shouldInstallTimer {
-//                        installTimer()
-//                    }
-//                    return true
-//                }
-//            }
-//        }
-//        lastResult = result
-//
-//        switch result {
-//        case .valid:
-//            //SwiftyFormLog("different valid")
-//            if let tv = tableView {
-//                tv.beginUpdates()
-//                errorLabel.text = nil
-//                setNeedsLayout()
-//                tv.endUpdates()
-//
-//                invalidateTimer()
-//            }
-//            return true
-//        case let .hardInvalid(message):
-//            //SwiftyFormLog("different hard invalid")
-//            if let tv = tableView {
-//                tv.beginUpdates()
-//                errorLabel.text = message
-//                setNeedsLayout()
-//                tv.endUpdates()
-//
-//                invalidateTimer()
-//                if shouldInstallTimer {
-//                    installTimer()
-//                }
-//            }
-//            return false
-//        case let .softInvalid(message):
-//            //SwiftyFormLog("different soft invalid")
-//            if let tv = tableView {
-//                tv.beginUpdates()
-//                errorLabel.text = message
-//                setNeedsLayout()
-//                tv.endUpdates()
-//
-//                invalidateTimer()
-//                if shouldInstallTimer {
-//                    installTimer()
-//                }
-//            }
-//            return true
-//        }
-//    }
-    
-//    @objc public func timerUpdate() {
-//        invalidateTimer()
-//        //SwiftyFormLog("timer update")
-//
-//        let s = textField.text ?? ""
-//        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: false)
-//    }
-//
-//    public func reloadPersistentValidationState() {
-//        invalidateTimer()
-//        //SwiftyFormLog("reload persistent message")
-//
-//        let s = textField.text ?? ""
-//        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: true)
-//    }
+
     
     // MARK: UIResponder
     
@@ -505,13 +330,6 @@ extension AmountFieldCell: UITextFieldDelegate {
     // Hide the keyboard when the user taps the return key in this UITextField
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
-//        let s = textField.text ?? ""
-//        let isTextValid = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: true, checkSubmitRule: true)
-//        if isTextValid {
-//            textField.resignFirstResponder()
-//            model.didEndEditing(s)
-//        }
-//        return false
     }
 }
 
