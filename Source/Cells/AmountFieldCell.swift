@@ -21,7 +21,7 @@ public enum AmountTextCellState {
     case persistentMessage(message: String)
 }
 
-public class AmountTextFieldFormItemCellSizes {
+public class AmountFieldCellSizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
     public let errorLabelFrame: CGRect
@@ -201,7 +201,7 @@ public class AmountFieldCell: UITableViewCell {
     
     public var titleWidthMode: TitleWidthMode = .auto
     
-    public func compute() -> AmountTextFieldFormItemCellSizes {
+    public func compute() -> AmountFieldCellSizes {
         let cellWidth: CGFloat = bounds.width
         
         var titleLabelFrame = CGRect.zero
@@ -250,13 +250,13 @@ public class AmountFieldCell: UITableViewCell {
             }
         }
         
-        return AmountTextFieldFormItemCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
+        return AmountFieldCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         //SwiftyFormLog("layoutSubviews")
-        let sizes: AmountTextFieldFormItemCellSizes = compute()
+        let sizes: AmountFieldCellSizes = compute()
         titleLabel.frame = sizes.titleLabelFrame
         textField.frame = sizes.textFieldFrame
         errorLabel.frame = sizes.errorLabelFrame
@@ -515,7 +515,7 @@ extension AmountFieldCell: UITextFieldDelegate {
 
 extension AmountFieldCell: CellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-        let sizes: AmountTextFieldFormItemCellSizes = compute()
+        let sizes: AmountFieldCellSizes = compute()
         let value = sizes.cellHeight
         //SwiftyFormLog("compute height of row: \(value)")
         return value
