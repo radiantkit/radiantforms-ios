@@ -228,24 +228,15 @@ public class AmountCell: UITableViewCell {
         return self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
     }
 
-    public func parseAndFormatAmount(_ textField_text: String) -> String {
-        let unformattedString: String = type(of: self).removeFormatFromString(textField_text)
-        if unformattedString.isEmpty {
-            SwiftyFormLog("Cannot create an internalValue from empty string")
-            return textField_text
-        }
-        guard let internalValue: UInt64 = self.createInternalValue(unformattedString) else {
-            SwiftyFormLog("Cannot create an internalValue")
-            return textField_text
-        }
-        if internalValue == 0 {
-            SwiftyFormLog("The internalValue is zero")
+    public func parseAndFormatAmount(_ value: AmountValue) -> String {
+        if value == 0 {
+            SwiftyFormLog("The value is zero")
             return ""
         }
-        return self.formatAmount(internalValue)
+        return self.formatAmount(value)
     }
-
-    public func setValueWithoutSync(_ value: String) {
+    
+    public func setValueWithoutSync(_ value: AmountValue) {
         SwiftyFormLog("set value \(value)")
         let formattedValue: String = self.parseAndFormatAmount(value)
         textField.text = formattedValue

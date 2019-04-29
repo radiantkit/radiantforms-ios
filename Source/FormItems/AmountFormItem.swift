@@ -1,6 +1,8 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import Foundation
 
+public typealias AmountValue = UInt64
+
 public class AmountFormItem: FormItem {
     override func accept(visitor: FormItemVisitor) {
         visitor.visit(object: self)
@@ -14,13 +16,13 @@ public class AmountFormItem: FormItem {
         return self
     }
     
-    public typealias SyncBlock = (_ value: String) -> Void
-    public var syncCellWithValue: SyncBlock = { (string: String) in
+    public typealias SyncBlock = (_ value: AmountValue) -> Void
+    public var syncCellWithValue: SyncBlock = { (_) in
         SwiftyFormLog("sync is not overridden")
     }
     
-    internal var innerValue: String = ""
-    public var value: String {
+    internal var innerValue: AmountValue = 0
+    public var value: AmountValue {
         get {
             return self.innerValue
         }
@@ -29,7 +31,7 @@ public class AmountFormItem: FormItem {
         }
     }
     
-    public func assignValueAndSync(_ value: String) {
+    public func assignValueAndSync(_ value: AmountValue) {
         innerValue = value
         syncCellWithValue(value)
     }

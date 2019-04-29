@@ -103,7 +103,7 @@ class PopulateTableView: FormItemVisitor {
         lastItemType = .item
         
         weak var weakCell = cell
-        object.syncCellWithValue = { (value: String) in
+        object.syncCellWithValue = { (value: AmountValue) in
             SwiftyFormLog("sync value \(value)")
             weakCell?.setValueWithoutSync(value)
             return

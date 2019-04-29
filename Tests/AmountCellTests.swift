@@ -14,9 +14,8 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         let cell: AmountCell = createCell(formItem)
-        XCTAssertEqual(cell.parseAndFormatAmount(""), "")
-        XCTAssertEqual(cell.parseAndFormatAmount("0"), "")
-        XCTAssertEqual(cell.parseAndFormatAmount(" 00123456 "), "1,234.56", "discard leading zeroes")
+        XCTAssertEqual(cell.parseAndFormatAmount(0), "")
+        XCTAssertEqual(cell.parseAndFormatAmount(123456), "1,234.56", "discard leading zeroes")
     }
 
     // MARK: - Set initial value
@@ -24,7 +23,7 @@ class AmountCellTests: XCTestCase {
     func testInitialValue0() {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
-        formItem.value = "1234567890"
+        formItem.value = 1234567890
         let cell: AmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
@@ -35,7 +34,7 @@ class AmountCellTests: XCTestCase {
     func testInitialValue1() {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
-        formItem.value = "123456"
+        formItem.value = 123456
         let cell: AmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
         XCTAssertEqual(cell.formatAmount(1), "0.01")

@@ -43,11 +43,11 @@ class AmountViewController: FormViewController {
     }()
     
     func randomizeGood() {
-        soundLevel.value = randomString(["", "0", "0.0", "0.1", "0.9", "3", "0,4"])
-        numberOfTrees.value = randomString(["", "0", "3", "8"])
-        moneyDKK.value = randomString(["", "1", "10", "99"])
-        moneyEUR.value = randomString(["", "0.01", "2", "123.45", "333,33", "44444", "999.99"])
-        moneySymbol.value = randomString(["", "0.0001", "1,222,3333", "1234.5678", "44440000", "9999.9999"])
+        soundLevel.value = [0, 1, 3, 4, 9].randomElement()!
+        numberOfTrees.value = [0, 3, 8].randomElement()!
+        moneyDKK.value = [0, 1, 10, 99].randomElement()!
+        moneyEUR.value = [0, 1, 2, 12345, 33333, 44444, 99999].randomElement()!
+        moneySymbol.value = [0, 1, 12223333, 12345678, 44440000, 99999999].randomElement()!
     }
     
     lazy var randomizeBadButton: ButtonFormItem = {
@@ -60,8 +60,8 @@ class AmountViewController: FormViewController {
     }()
     
     func randomizeBad() {
-        soundLevel.value = randomString(["-1", "garbage", " % ", "--", "$1", "?"])
-        numberOfTrees.value = randomString(["-1", "-9", "-99"])
+        soundLevel.value = [10, 1000].randomElement()!
+        numberOfTrees.value = [100, 10000].randomElement()!
     }
     
     lazy var showValuesButton: ButtonFormItem = {
@@ -75,21 +75,11 @@ class AmountViewController: FormViewController {
     
     func showValuesAction() {
         var strings = [String]()
-        
-        let soundLevelValue: String = self.soundLevel.value
-        strings.append("soundLevel: \(soundLevelValue)")
-        
-        let numberOfTreesValue: String = self.numberOfTrees.value
-        strings.append("numberOfTrees: \(numberOfTreesValue)")
-        
-        let moneyDKKValue: String = self.moneyDKK.value
-        strings.append("moneyDKK: \(moneyDKKValue)")
-        
-        let moneyEURValue: String = self.moneyEUR.value
-        strings.append("moneyEUR: \(moneyEURValue)")
-        
-        let moneySymbolValue: String = self.moneySymbol.value
-        strings.append("moneySymbol: \(moneySymbolValue)")
+        strings.append("soundLevel: \(self.soundLevel.value)")
+        strings.append("numberOfTrees: \(self.numberOfTrees.value)")
+        strings.append("moneyDKK: \(self.moneyDKK.value)")
+        strings.append("moneyEUR: \(self.moneyEUR.value)")
+        strings.append("moneySymbol: \(self.moneySymbol.value)")
         
         let body: String = strings.joined(separator: "\n")
         form_simpleAlert("Show Values", body)
@@ -197,7 +187,7 @@ class AmountViewController: FormViewController {
         instance.placeholder("value")
         instance.maxIntegerDigits(10)
         instance.fractionDigits(0)
-        instance.value = "12345"
+        instance.value = 12345
         return instance
     }()
 
@@ -207,7 +197,7 @@ class AmountViewController: FormViewController {
         instance.placeholder("value")
         instance.maxIntegerDigits(10)
         instance.fractionDigits(4)
-        instance.value = "12345"
+        instance.value = 12345
         return instance
     }()
 }
