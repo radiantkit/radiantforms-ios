@@ -24,13 +24,12 @@ public class CustomAmountTextField: UITextField {
 public class AmountFieldCellSizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
-    public let errorLabelFrame: CGRect
+//    public let errorLabelFrame: CGRect
     public let cellHeight: CGFloat
     
-    public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, errorLabelFrame: CGRect, cellHeight: CGFloat) {
+    public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, cellHeight: CGFloat) {
         self.titleLabelFrame = titleLabelFrame
         self.textFieldFrame = textFieldFrame
-        self.errorLabelFrame = errorLabelFrame
         self.cellHeight = cellHeight
     }
 }
@@ -64,7 +63,7 @@ public class AmountFieldCell: UITableViewCell {
     public let model: AmountFieldCellModel
     public let titleLabel = UILabel()
     public let textField = CustomAmountTextField()
-    public let errorLabel = UILabel()
+//    public let errorLabel = UILabel()
     
 //    public var state: AmountFieldCellState = .noMessage
     
@@ -79,10 +78,10 @@ public class AmountFieldCell: UITableViewCell {
         
         titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+//        errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
         
-        errorLabel.textColor = UIColor.red
-        errorLabel.numberOfLines = 0
+//        errorLabel.textColor = UIColor.red
+//        errorLabel.numberOfLines = 0
         
         textField.configure()
         textField.delegate = self
@@ -91,7 +90,7 @@ public class AmountFieldCell: UITableViewCell {
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
-        contentView.addSubview(errorLabel)
+//        contentView.addSubview(errorLabel)
         
         titleLabel.text = model.title
         textField.placeholder = model.placeholder
@@ -206,7 +205,7 @@ public class AmountFieldCell: UITableViewCell {
         
         var titleLabelFrame = CGRect.zero
         var textFieldFrame = CGRect.zero
-        var errorLabelFrame = CGRect.zero
+//        var errorLabelFrame = CGRect.zero
         var cellHeight: CGFloat = 0
         let veryTallCell = CGRect(x: 0, y: 0, width: cellWidth, height: CGFloat.greatestFiniteMagnitude)
         
@@ -238,19 +237,19 @@ public class AmountFieldCell: UITableViewCell {
             
             cellHeight = ceil(textFieldFrame.height)
         }
-        do {
-            let size = errorLabel.sizeThatFits(area.size)
-            //            SwiftyFormLog("error label size \(size)")
-            if size.height > 0.1 {
-                var r = topRect
-                r.origin.y = topRect.maxY - 6
-                let (slice, _) = r.divided(atDistance: size.height, from: .minYEdge)
-                errorLabelFrame = slice
-                cellHeight = ceil(errorLabelFrame.maxY + 10)
-            }
-        }
+//        do {
+//            let size = errorLabel.sizeThatFits(area.size)
+//            //            SwiftyFormLog("error label size \(size)")
+//            if size.height > 0.1 {
+//                var r = topRect
+//                r.origin.y = topRect.maxY - 6
+//                let (slice, _) = r.divided(atDistance: size.height, from: .minYEdge)
+//                errorLabelFrame = slice
+//                cellHeight = ceil(errorLabelFrame.maxY + 10)
+//            }
+//        }
         
-        return AmountFieldCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
+        return AmountFieldCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, cellHeight: cellHeight)
     }
     
     public override func layoutSubviews() {
@@ -259,7 +258,7 @@ public class AmountFieldCell: UITableViewCell {
         let sizes: AmountFieldCellSizes = compute()
         titleLabel.frame = sizes.titleLabelFrame
         textField.frame = sizes.textFieldFrame
-        errorLabel.frame = sizes.errorLabelFrame
+//        errorLabel.frame = sizes.errorLabelFrame
     }
     
 //    @objc public func valueDidChange() {
@@ -322,16 +321,16 @@ public class AmountFieldCell: UITableViewCell {
         _ = validateAndUpdateErrorIfNeeded(formattedValue, shouldInstallTimer: false, checkSubmitRule: false)
     }
     
-    public func updateErrorLabel(_ result: ValidateResult) {
-        switch result {
-        case .valid:
-            errorLabel.text = nil
-        case .hardInvalid(let message):
-            errorLabel.text = message
-        case .softInvalid(let message):
-            errorLabel.text = message
-        }
-    }
+//    public func updateErrorLabel(_ result: ValidateResult) {
+//        switch result {
+//        case .valid:
+//            errorLabel.text = nil
+//        case .hardInvalid(let message):
+//            errorLabel.text = message
+//        case .softInvalid(let message):
+//            errorLabel.text = message
+//        }
+//    }
     
 //    public var lastResult: ValidateResult?
 //
