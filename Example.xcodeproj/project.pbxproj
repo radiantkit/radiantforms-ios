@@ -43,7 +43,7 @@
 		42685D371D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D361D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift */; };
 		42685D401D2D6AB2008ABC3D /* WorkInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */; };
 		42685D421D2D6B01008ABC3D /* ScientificSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */; };
-		4280F71D2264AD180098EF22 /* AmountTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71C2264AD180098EF22 /* AmountTextFieldViewController.swift */; };
+		4280F71D2264AD180098EF22 /* AmountFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71C2264AD180098EF22 /* AmountFieldViewController.swift */; };
 		42B1BB471E82C1C10090156A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B1BB461E82C1C10090156A /* Settings.storyboard */; };
 		42B1BB491E82C1EF0090156A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BB481E82C1EF0090156A /* SettingsViewController.swift */; };
 		42B1BB581E8462D50090156A /* ReloadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BB571E8462D50090156A /* ReloadingViewController.swift */; };
@@ -143,7 +143,7 @@
 		42685D361D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextAndAttributedTextViewController.swift; sourceTree = "<group>"; };
 		42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkInProgressViewController.swift; sourceTree = "<group>"; };
 		42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificSliderViewController.swift; sourceTree = "<group>"; };
-		4280F71C2264AD180098EF22 /* AmountTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldViewController.swift; sourceTree = "<group>"; };
+		4280F71C2264AD180098EF22 /* AmountFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFieldViewController.swift; sourceTree = "<group>"; };
 		429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftyFORM.xcodeproj; sourceTree = "<group>"; };
 		42B1BB461E82C1C10090156A /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		42B1BB481E82C1EF0090156A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		42589DC21B3447EA007CA8C1 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				4280F71C2264AD180098EF22 /* AmountTextFieldViewController.swift */,
+				4280F71C2264AD180098EF22 /* AmountFieldViewController.swift */,
 				42108D331B357A440067FEAA /* ButtonsViewController.swift */,
 				42096E6D1B357ECA0068B084 /* OptionsViewController.swift */,
 				422437E31D719A4E00EC41E8 /* PickerViewViewController.swift */,
@@ -500,7 +500,7 @@
 				42108D261B356C5B0067FEAA /* FirstViewController.swift in Sources */,
 				42CEBF9B1A3BA2B50048E072 /* AppDelegate.swift in Sources */,
 				420F6CCF1D6A27B8009D5F57 /* SlidersAndTextFieldsViewController.swift in Sources */,
-				4280F71D2264AD180098EF22 /* AmountTextFieldViewController.swift in Sources */,
+				4280F71D2264AD180098EF22 /* AmountFieldViewController.swift in Sources */,
 				42589DDD1B3447EA007CA8C1 /* TextFieldValidInvalidViewController.swift in Sources */,
 				42ED169A1D294D0C001B4D61 /* SegmentedControlsViewController.swift in Sources */,
 				42685D421D2D6B01008ABC3D /* ScientificSliderViewController.swift in Sources */,
