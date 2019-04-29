@@ -15,7 +15,7 @@ public class CustomAmountTextField: UITextField {
     }
 }
 
-public enum AmountTextCellState {
+public enum AmountFieldCellState {
     case noMessage
     case temporaryMessage(message: String)
     case persistentMessage(message: String)
@@ -66,7 +66,7 @@ public class AmountFieldCell: UITableViewCell {
     public let textField = CustomAmountTextField()
     public let errorLabel = UILabel()
     
-    public var state: AmountTextCellState = .noMessage
+    public var state: AmountFieldCellState = .noMessage
     
     public init(model: AmountFieldCellModel) {
         self.model = model
