@@ -8,7 +8,8 @@ class AmountTextFieldViewController: FormViewController {
         builder.toolbarMode = .simple
 
         builder += SectionHeaderTitleFormItem().title("Buttons")
-        builder += randomizeButton
+        builder += randomizeGoodButton
+        builder += randomizeBadButton
 
         builder += SectionHeaderTitleFormItem().title("Typical usecases")
         builder += soundLevel
@@ -28,23 +29,41 @@ class AmountTextFieldViewController: FormViewController {
         builder += initialValueValidA
         builder += initialValueValidB
     }
+
+    // MARK: - Assign random values
     
-    lazy var randomizeButton: ButtonFormItem = {
+    lazy var randomizeGoodButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "Randomize"
+        instance.title = "Randomize Good"
         instance.action = { [weak self] in
-            self?.randomize()
+            self?.randomizeGood()
         }
         return instance
     }()
     
-    func randomize() {
-        soundLevel.value = randomString(["", "0", "0.0", "0.1", "0.9"])
+    func randomizeGood() {
+        soundLevel.value = randomString(["", "0", "0.0", "0.1", "0.9", "3", "0,4"])
         numberOfTrees.value = randomString(["", "0", "3", "8"])
         moneyDKK.value = randomString(["", "1", "10", "99"])
-        moneyEUR.value = randomString(["", "0.01", "123.45", "999.99"])
-        moneySymbol.value = randomString(["", "0.0001", "1234.5678", "9999.9999"])
+        moneyEUR.value = randomString(["", "0.01", "2", "123.45", "333,33", "44444", "999.99"])
+        moneySymbol.value = randomString(["", "0.0001", "1,222,3333", "1234.5678", "44440000", "9999.9999"])
     }
+    
+    lazy var randomizeBadButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "Randomize Bad"
+        instance.action = { [weak self] in
+            self?.randomizeBad()
+        }
+        return instance
+    }()
+    
+    func randomizeBad() {
+        soundLevel.value = randomString(["-1", "garbage", " % ", "--", "$1", "?"])
+        numberOfTrees.value = randomString(["-1", "-9", "-99"])
+    }
+    
+    // MARK: - Typical usecases
     
     lazy var soundLevel: AmountTextFieldFormItem = {
         let instance = AmountTextFieldFormItem()
