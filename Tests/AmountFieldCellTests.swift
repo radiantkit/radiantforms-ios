@@ -3,7 +3,7 @@ import XCTest
 import UIKit
 @testable import SwiftyFORM
 
-class AmountTextFieldCellTests: XCTestCase {
+class AmountFieldCellTests: XCTestCase {
     
     func testRemoveFormatFromString() {
         XCTAssertEqual(AmountFieldCell.removeFormatFromString(" 1,234.56 "), "123456")
