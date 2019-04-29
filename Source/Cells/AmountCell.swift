@@ -218,8 +218,8 @@ public class AmountCell: UITableViewCell {
         return formattedString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }
     
-    public func createInternalValue(_ unformattedString: String) -> UInt64? {
-        guard let internalValue: UInt64 = UInt64(unformattedString) else {
+    public func createInternalValue(_ digitsString: String) -> UInt64? {
+        guard let internalValue: UInt64 = UInt64(digitsString) else {
             SwiftyFormLog("Failed to create internalValue from string")
             return nil
         }
@@ -288,11 +288,11 @@ extension AmountCell: UITextFieldDelegate {
 
         let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
         
-        let unformattedString: String = type(of: self).extractDigitsFromString(updatedText)
-        if unformattedString.isEmpty {
+        let digitsString: String = type(of: self).extractDigitsFromString(updatedText)
+        if digitsString.isEmpty {
             return true
         }
-        guard let internalValue: UInt64 = self.createInternalValue(unformattedString) else {
+        guard let internalValue: UInt64 = self.createInternalValue(digitsString) else {
             SwiftyFormLog("Cannot create an internalValue")
             return false
         }
