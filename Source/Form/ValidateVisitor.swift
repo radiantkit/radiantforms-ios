@@ -8,7 +8,7 @@ class ValidateVisitor: FormItemVisitor {
 		result = object.submitValidateValueText()
 	}
 
-    func visit(object: AmountFieldFormItem) {}
+    func visit(object: AmountFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}

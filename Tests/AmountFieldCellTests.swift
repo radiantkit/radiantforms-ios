@@ -11,7 +11,7 @@ class AmountFieldCellTests: XCTestCase {
     }
     
     func testParseAndFormatAmount() {
-        let formItem = AmountFieldFormItem()
+        let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.parseAndFormatAmount(""), "")
@@ -22,7 +22,7 @@ class AmountFieldCellTests: XCTestCase {
     // MARK: - Set initial value
     
     func testInitialValue0() {
-        let formItem = AmountFieldFormItem()
+        let formItem = AmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = "1234567890"
         let cell: AmountFieldCell = createCell(formItem)
@@ -33,7 +33,7 @@ class AmountFieldCellTests: XCTestCase {
     }
     
     func testInitialValue1() {
-        let formItem = AmountFieldFormItem()
+        let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = "123456"
         let cell: AmountFieldCell = createCell(formItem)
@@ -46,7 +46,7 @@ class AmountFieldCellTests: XCTestCase {
     // MARK: - Don't set any initial value
     
     func testNoInitialValue0() {
-        let formItem = AmountFieldFormItem()
+        let formItem = AmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(0)
         let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
@@ -56,7 +56,7 @@ class AmountFieldCellTests: XCTestCase {
     }
     
     func testNoInitialValue1() {
-        let formItem = AmountFieldFormItem()
+        let formItem = AmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
         let cell: AmountFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
@@ -67,7 +67,7 @@ class AmountFieldCellTests: XCTestCase {
     
     // MARK: - Helper
     
-    func createCell(_ formItem: AmountFieldFormItem) -> AmountFieldCell {
+    func createCell(_ formItem: AmountFormItem) -> AmountFieldCell {
         let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
         let populateTableView = PopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)

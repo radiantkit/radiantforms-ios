@@ -35,7 +35,7 @@ public struct AmountFieldCellModel {
     var returnKeyType: UIReturnKeyType = .default
     var maxIntegerDigits: UInt8 = 10
     var fractionDigits: UInt8 = 3
-    var model: AmountFieldFormItem! = nil
+    var model: AmountFormItem! = nil
     
     var maxIntegerAndFractionDigits: UInt {
         return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
