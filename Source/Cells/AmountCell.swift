@@ -42,7 +42,7 @@ public struct AmountFieldCellModel {
     }
 }
 
-public class AmountFieldCell: UITableViewCell {
+public class AmountCell: UITableViewCell {
     private let amountFormatter: AmountFormatter
 
     public let model: AmountFieldCellModel
@@ -161,7 +161,7 @@ public class AmountFieldCell: UITableViewCell {
     }
     
     public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountFieldCell.handleTap(_:)))
+        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountCell.handleTap(_:)))
         return gr
     }()
     
@@ -282,7 +282,7 @@ public class AmountFieldCell: UITableViewCell {
     
 }
 
-extension AmountFieldCell: UITextFieldDelegate {
+extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         updateToolbarButtons()
         textField.text = textField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -334,7 +334,7 @@ extension AmountFieldCell: UITextFieldDelegate {
     }
 }
 
-extension AmountFieldCell: CellHeightProvider {
+extension AmountCell: CellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: AmountFieldCellSizes = compute()
         let value = sizes.cellHeight
