@@ -86,7 +86,7 @@ class PopulateTableView: FormItemVisitor {
 
     // MARK: AmountTextFieldFormItem
     
-    func visit(object: AmountTextFieldFormItem) {
+    func visit(object: AmountFieldFormItem) {
         var model = AmountTextFieldFormItemCellModel()
         model.toolbarMode = self.model.toolbarMode
         model.title = object.title

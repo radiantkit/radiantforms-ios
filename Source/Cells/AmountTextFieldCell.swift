@@ -43,7 +43,7 @@ public struct AmountTextFieldFormItemCellModel {
     var returnKeyType: UIReturnKeyType = .default
     var maxIntegerDigits: UInt8 = 10
     var fractionDigits: UInt8 = 3
-    var model: AmountTextFieldFormItem! = nil
+    var model: AmountFieldFormItem! = nil
     
     var valueDidChange: (String) -> Void = { (value: String) in
         SwiftyFormLog("value \(value)")

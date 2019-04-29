@@ -11,7 +11,7 @@ class AmountTextFieldCellTests: XCTestCase {
     }
     
     func testParseAndFormatAmount() {
-        let formItem = AmountTextFieldFormItem()
+        let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         let cell: AmountTextFieldCell = createCell(formItem)
         XCTAssertEqual(cell.parseAndFormatAmount(""), "")
@@ -22,7 +22,7 @@ class AmountTextFieldCellTests: XCTestCase {
     // MARK: - Set initial value
     
     func testInitialValue0() {
-        let formItem = AmountTextFieldFormItem()
+        let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = "1234567890"
         let cell: AmountTextFieldCell = createCell(formItem)
@@ -33,7 +33,7 @@ class AmountTextFieldCellTests: XCTestCase {
     }
     
     func testInitialValue1() {
-        let formItem = AmountTextFieldFormItem()
+        let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = "123456"
         let cell: AmountTextFieldCell = createCell(formItem)
@@ -46,7 +46,7 @@ class AmountTextFieldCellTests: XCTestCase {
     // MARK: - Don't set any initial value
     
     func testNoInitialValue0() {
-        let formItem = AmountTextFieldFormItem()
+        let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(0)
         let cell: AmountTextFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
@@ -56,7 +56,7 @@ class AmountTextFieldCellTests: XCTestCase {
     }
     
     func testNoInitialValue1() {
-        let formItem = AmountTextFieldFormItem()
+        let formItem = AmountFieldFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
         let cell: AmountTextFieldCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
@@ -67,7 +67,7 @@ class AmountTextFieldCellTests: XCTestCase {
     
     // MARK: - Helper
     
-    func createCell(_ formItem: AmountTextFieldFormItem) -> AmountTextFieldCell {
+    func createCell(_ formItem: AmountFieldFormItem) -> AmountTextFieldCell {
         let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
         let populateTableView = PopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)

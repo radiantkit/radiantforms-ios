@@ -69,8 +69,8 @@ class AmountTextFieldViewController: FormViewController {
     
     // MARK: - Typical usecases
     
-    lazy var soundLevel: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var soundLevel: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Sound Level")
         instance.placeholder("0.0")
         instance.unitSuffix("dB")
@@ -79,8 +79,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var numberOfTrees: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var numberOfTrees: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Number Of Trees")
         instance.placeholder("None")
         instance.unitSuffix("")
@@ -89,8 +89,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var moneyDKK: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var moneyDKK: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Money DKK")
         instance.placeholder("0")
         instance.unitSuffix("DKK")
@@ -99,8 +99,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var moneyEUR: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var moneyEUR: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Money EUR")
         instance.placeholder("0.00")
         instance.unitSuffix("EUR")
@@ -109,8 +109,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var moneySymbol: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var moneySymbol: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Money Symbol")
         instance.placeholder("0.0000")
         instance.unitSuffix("€")
@@ -119,16 +119,16 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var noPlaceholder: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var noPlaceholder: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("No placeholder")
         instance.maxIntegerDigits(10)
         instance.fractionDigits(3)
         return instance
     }()
 
-    lazy var zeroPlaceholder: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var zeroPlaceholder: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Zero")
         instance.placeholder("0")
         instance.maxIntegerDigits(10)
@@ -136,8 +136,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var multiZeroPlaceholder: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var multiZeroPlaceholder: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Multi Zero")
         instance.placeholder("0.00")
         instance.maxIntegerDigits(10)
@@ -145,8 +145,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var xPlaceholder: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var xPlaceholder: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("X")
         instance.placeholder("x.xx")
         instance.maxIntegerDigits(10)
@@ -154,8 +154,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var requiredPlaceholder: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var requiredPlaceholder: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Required")
         instance.placeholder("Required")
         instance.maxIntegerDigits(10)
@@ -163,8 +163,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
     
-    lazy var initialValueValidA: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var initialValueValidA: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("ValidA")
         instance.placeholder("value")
         instance.maxIntegerDigits(10)
@@ -173,8 +173,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
 
-    lazy var initialValueValidB: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var initialValueValidB: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("ValidB")
         instance.placeholder("value")
         instance.maxIntegerDigits(10)
@@ -183,8 +183,8 @@ class AmountTextFieldViewController: FormViewController {
         return instance
     }()
 
-    lazy var amountFieldWithCallback: AmountTextFieldFormItem = {
-        let instance = AmountTextFieldFormItem()
+    lazy var amountFieldWithCallback: AmountFieldFormItem = {
+        let instance = AmountFieldFormItem()
         instance.title("Callback")
         instance.placeholder("0")
         instance.maxIntegerDigits(3)

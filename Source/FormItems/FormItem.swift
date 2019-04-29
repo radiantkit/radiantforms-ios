@@ -2,7 +2,7 @@
 import UIKit
 
 public protocol FormItemVisitor {
-    func visit(object: AmountTextFieldFormItem)
+    func visit(object: AmountFieldFormItem)
 	func visit(object: AttributedTextFormItem)
 	func visit(object: ButtonFormItem)
 	func visit(object: CustomFormItem)
