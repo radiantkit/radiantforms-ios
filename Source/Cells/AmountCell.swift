@@ -274,7 +274,6 @@ public class AmountCell: UITableViewCell {
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         updateToolbarButtons()
-        textField.text = textField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
