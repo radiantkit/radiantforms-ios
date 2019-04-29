@@ -212,11 +212,10 @@ public class AmountCell: UITableViewCell {
         textField.frame = sizes.textFieldFrame
     }
     
-    public static func removeFormatFromString(_ formattedText: String) -> String {
-        let string0: String = formattedText.trimmingCharacters(in: CharacterSet.whitespaces)
-        let string1: String = string0.replacingOccurrences(of: ",", with: "")
-        let string2: String = string1.replacingOccurrences(of: ".", with: "")
-        return string2
+    /// Remove all non-digits, such as symbols, whitespace, formatting.
+    public static func extractDigitsFromString(_ formattedString: String) -> String {
+        // Split the string by non-digit characters to an array of digits and the join them back to a string
+        return formattedString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }
     
     public func createInternalValue(_ unformattedString: String) -> UInt64? {
@@ -244,7 +243,7 @@ public class AmountCell: UITableViewCell {
     
     @objc public func valueDidChange() {
         let text: String = textField.text ?? ""
-        let unformattedString: String = type(of: self).removeFormatFromString(text)
+        let unformattedString: String = type(of: self).extractDigitsFromString(text)
         let internalValue: AmountValue = self.createInternalValue(unformattedString) ?? 0
         model.valueDidChange(internalValue)
     }
@@ -290,7 +289,7 @@ extension AmountCell: UITextFieldDelegate {
 
         let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
         
-        let unformattedString: String = type(of: self).removeFormatFromString(updatedText)
+        let unformattedString: String = type(of: self).extractDigitsFromString(updatedText)
         if unformattedString.isEmpty {
             return true
         }

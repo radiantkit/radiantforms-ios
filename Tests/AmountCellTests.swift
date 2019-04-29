@@ -5,9 +5,12 @@ import UIKit
 
 class AmountCellTests: XCTestCase {
     
-    func testRemoveFormatFromString() {
-        XCTAssertEqual(AmountCell.removeFormatFromString(" 1,234.56 "), "123456")
-        XCTAssertEqual(AmountCell.removeFormatFromString("0001234"), "0001234")
+    func testExtractDigitsFromString() {
+        XCTAssertEqual(AmountCell.extractDigitsFromString(""), "")
+        XCTAssertEqual(AmountCell.extractDigitsFromString(" 1,234.56 "), "123456")
+        XCTAssertEqual(AmountCell.extractDigitsFromString("0001234"), "0001234")
+        XCTAssertEqual(AmountCell.extractDigitsFromString("1 234 567"), "1234567")
+        XCTAssertEqual(AmountCell.extractDigitsFromString("-1"), "1")
     }
     
     func testParseAndFormatAmount() {
