@@ -7,6 +7,10 @@ class AmountTextFieldViewController: FormViewController {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple
 
+        builder += SectionHeaderTitleFormItem().title("Callbacks")
+        builder += amountFieldWithCallback
+        builder += callbackInfoTextView
+
         builder += SectionHeaderTitleFormItem().title("Buttons")
         builder += randomizeGoodButton
         builder += randomizeBadButton
@@ -176,6 +180,31 @@ class AmountTextFieldViewController: FormViewController {
         instance.maxIntegerDigits(10)
         instance.fractionDigits(4)
         instance.value = "12345"
+        return instance
+    }()
+
+    lazy var amountFieldWithCallback: AmountTextFieldFormItem = {
+        let instance = AmountTextFieldFormItem()
+        instance.title("Callback")
+        instance.placeholder("0")
+        instance.maxIntegerDigits(3)
+        instance.fractionDigits(3)
+        instance.value = "12"
+        
+        instance.textDidChangeBlock = { [weak self] (value: String) in
+            print("amountFieldWithCallback: text did change: \(value)")
+            self?.callbackInfoTextView.value = "text did change: \(value)"
+        }
+        instance.textEditingEndBlock = { [weak self] (value: String) in
+            print("amountFieldWithCallback: text editing end: \(value)")
+            self?.callbackInfoTextView.value = "text editing end: \(value)"
+        }
+        return instance
+    }()
+    
+    lazy var callbackInfoTextView: TextViewFormItem = {
+        let instance = TextViewFormItem()
+        instance.placeholder("Callback Info")
         return instance
     }()
 }
