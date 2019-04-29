@@ -43,11 +43,11 @@ class AmountViewController: FormViewController {
     }()
     
     func randomizeGood() {
-        soundLevel.value = [0, 1, 3, 4, 9].randomElement()!
-        numberOfTrees.value = [0, 3, 8].randomElement()!
-        moneyDKK.value = [0, 1, 10, 99].randomElement()!
-        moneyEUR.value = [0, 1, 2, 12345, 33333, 44444, 99999].randomElement()!
-        moneySymbol.value = [0, 1, 12223333, 12345678, 44440000, 99999999].randomElement()!
+        soundLevel.value = pickRandomAmountValue([0, 1, 3, 4, 9])
+        numberOfTrees.value = pickRandomAmountValue([0, 3, 8])
+        moneyDKK.value = pickRandomAmountValue([0, 1, 10, 99])
+        moneyEUR.value = pickRandomAmountValue([0, 1, 2, 12345, 33333, 44444, 99999])
+        moneySymbol.value = pickRandomAmountValue([0, 1, 12223333, 12345678, 44440000, 99999999])
     }
     
     lazy var randomizeBadButton: ButtonFormItem = {
@@ -60,10 +60,16 @@ class AmountViewController: FormViewController {
     }()
     
     func randomizeBad() {
-        soundLevel.value = [10, 1000].randomElement()!
-        numberOfTrees.value = [100, 10000].randomElement()!
+        soundLevel.value = pickRandomAmountValue([10, 1000])
+        numberOfTrees.value = pickRandomAmountValue([100, 10000])
     }
     
+	func pickRandomAmountValue(_ values: [AmountValue]) -> AmountValue {
+		return values.randomElement()!
+	}
+
+	// MARK: - Show Values
+
     lazy var showValuesButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = "Show Values"
