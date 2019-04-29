@@ -77,7 +77,7 @@ class AmountCellTests: XCTestCase {
             fatalError("Expected PopulateTableView to have created at least 1 item")
         }
         guard let cell: AmountCell = item.cell as? AmountCell else {
-            fatalError("Expected firstItem.cell to be of type AmountTextFieldCell")
+            fatalError("Expected firstItem.cell to be of type AmountCell")
         }
         return cell
     }
