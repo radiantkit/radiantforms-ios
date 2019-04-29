@@ -1,20 +1,6 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class CustomAmountTextField: UITextField {
-    public func configure() {
-        backgroundColor = UIColor.white
-        autocapitalizationType = .none
-        autocorrectionType = .no
-        spellCheckingType = .no
-        returnKeyType = .done
-        clearButtonMode = .never
-        isSecureTextEntry = false
-        keyboardType = .numberPad
-        textAlignment = .right
-    }
-}
-
 public class AmountCellSizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
@@ -362,5 +348,19 @@ fileprivate class AmountFormatter: NumberFormatter {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+public class CustomAmountTextField: UITextField {
+    public func configure() {
+        backgroundColor = UIColor.white
+        autocapitalizationType = .none
+        autocorrectionType = .no
+        spellCheckingType = .no
+        returnKeyType = .done
+        clearButtonMode = .never
+        isSecureTextEntry = false
+        keyboardType = .numberPad
+        textAlignment = .right
     }
 }
