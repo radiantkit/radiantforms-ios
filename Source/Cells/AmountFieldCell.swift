@@ -333,21 +333,21 @@ public class AmountFieldCell: UITableViewCell {
         }
     }
     
-    public var lastResult: ValidateResult?
-    
-    public var hideErrorMessageAfterFewSecondsTimer: Timer?
-    public func invalidateTimer() {
-        if let timer = hideErrorMessageAfterFewSecondsTimer {
-            timer.invalidate()
-            hideErrorMessageAfterFewSecondsTimer = nil
-        }
-    }
-    
-    public func installTimer() {
-        invalidateTimer()
-        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(AmountFieldCell.timerUpdate), userInfo: nil, repeats: false)
-        hideErrorMessageAfterFewSecondsTimer = timer
-    }
+//    public var lastResult: ValidateResult?
+//
+//    public var hideErrorMessageAfterFewSecondsTimer: Timer?
+//    public func invalidateTimer() {
+//        if let timer = hideErrorMessageAfterFewSecondsTimer {
+//            timer.invalidate()
+//            hideErrorMessageAfterFewSecondsTimer = nil
+//        }
+//    }
+//
+//    public func installTimer() {
+//        invalidateTimer()
+//        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(AmountFieldCell.timerUpdate), userInfo: nil, repeats: false)
+//        hideErrorMessageAfterFewSecondsTimer = timer
+//    }
     
     // Returns true  when valid
     // Returns false when invalid
@@ -426,21 +426,21 @@ public class AmountFieldCell: UITableViewCell {
 //        }
 //    }
     
-    @objc public func timerUpdate() {
-        invalidateTimer()
-        //SwiftyFormLog("timer update")
-        
-        let s = textField.text ?? ""
-        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: false)
-    }
-    
-    public func reloadPersistentValidationState() {
-        invalidateTimer()
-        //SwiftyFormLog("reload persistent message")
-        
-        let s = textField.text ?? ""
-        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: true)
-    }
+//    @objc public func timerUpdate() {
+//        invalidateTimer()
+//        //SwiftyFormLog("timer update")
+//
+//        let s = textField.text ?? ""
+//        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: false)
+//    }
+//
+//    public func reloadPersistentValidationState() {
+//        invalidateTimer()
+//        //SwiftyFormLog("reload persistent message")
+//
+//        let s = textField.text ?? ""
+//        _ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: true)
+//    }
     
     // MARK: UIResponder
     

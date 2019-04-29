@@ -119,10 +119,10 @@ class PopulateTableView: FormItemVisitor {
             return
         }
         
-        object.reloadPersistentValidationState = {
-            weakCell?.reloadPersistentValidationState()
-            return
-        }
+//        object.reloadPersistentValidationState = {
+//            weakCell?.reloadPersistentValidationState()
+//            return
+//        }
         
         object.obtainTitleWidth = {
             if let cell = weakCell {

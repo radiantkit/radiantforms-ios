@@ -53,7 +53,7 @@ public class AmountFieldFormItem: FormItem {
         syncCellWithValue(value)
     }
     
-    public var reloadPersistentValidationState: () -> Void = {}
+//    public var reloadPersistentValidationState: () -> Void = {}
     
     public var obtainTitleWidth: () -> CGFloat = {
         return 0
