@@ -329,7 +329,8 @@ extension AmountFieldCell: UITextFieldDelegate {
     
     // Hide the keyboard when the user taps the return key in this UITextField
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+        textField.resignFirstResponder()
+        return false
     }
 }
 
