@@ -24,8 +24,20 @@ class StaticTextAndAttributedTextViewController: FormViewController {
 			.title("Orange 🍊", [
 				NSAttributedString.Key.foregroundColor.rawValue: UIColor.orange as AnyObject,
 				NSAttributedString.Key.font.rawValue: UIFont.boldSystemFont(ofSize: 24) as AnyObject,
-				NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.single.rawValue as AnyObject
+				NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.form_single.rawValue as AnyObject
 				])
 			.value("Heart ❤️", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.red as AnyObject])
 	}
+}
+
+fileprivate extension NSUnderlineStyle {
+    static var form_single: NSUnderlineStyle {
+        #if swift(>=4.2)
+            // 'single' was introduced in Swift 4.2
+            return NSUnderlineStyle.single
+        #else
+            // Swift 4.0 and earlier
+            return NSUnderlineStyle.styleSingle
+        #endif
+    }
 }
