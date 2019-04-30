@@ -21,4 +21,14 @@ public class KeyboardCompatibility {
             return NSNotification.Name.UIKeyboardWillHide
         #endif
     }
+
+    public class var keyboardFrameEndUserInfoKey: String {
+        #if swift(>=4.2)
+            // 'keyboardFrameEndUserInfoKey' was introduced in Swift 4.2
+            return UIResponder.keyboardFrameEndUserInfoKey
+        #else
+            // Swift 4.0 and earlier
+            return UIKeyboardFrameEndUserInfoKey
+        #endif
+    }
 }

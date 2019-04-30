@@ -71,7 +71,7 @@ public class KeyboardHandler {
 			return
 		}
 
-		let keyboardFrameEnd = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrameEnd = (userInfo[KeyboardCompatibility.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 //		SwiftyFormLog("keyboardFrameEnd \(NSStringFromCGRect(keyboardFrameEnd))")
 
 		let keyboardFrame = window.convert(keyboardFrameEnd, to: tableView.superview)
