@@ -61,6 +61,7 @@
 		4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountFormItem.swift */; };
 		4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */; };
 		4280F722226F4C340098EF22 /* AmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* AmountCellTests.swift */; };
+		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
 		4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 428682F71B346CFE0028DB2F /* SwiftyFORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4286832E1B346CFE0028DB2F /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FA1B346CFE0028DB2F /* ButtonCell.swift */; };
 		4286832F1B346CFE0028DB2F /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* DatePickerCell.swift */; };
@@ -180,6 +181,7 @@
 		4280F71A2264A99F0098EF22 /* AmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormItem.swift; sourceTree = "<group>"; };
 		4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
 		4280F721226F4C340098EF22 /* AmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountCellTests.swift; sourceTree = "<group>"; };
+		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
 		428682F71B346CFE0028DB2F /* SwiftyFORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFORM.h; sourceTree = "<group>"; };
 		428682FA1B346CFE0028DB2F /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		428682FB1B346CFE0028DB2F /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				428683251B346CFE0028DB2F /* Logging.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
+				4280F728227833290098EF22 /* UITableView+Compatibility.swift */,
 				428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */,
 				420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */,
 				428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */,
@@ -597,6 +600,7 @@
 				739649131D2B6B7400E12A96 /* AttributedTextCell.swift in Sources */,
 				42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */,
 				4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */,
+				4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */,
 				42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */,
 				428683361B346CFE0028DB2F /* SwitchCell.swift in Sources */,
 				4286833A1B346CFE0028DB2F /* Command.swift in Sources */,
