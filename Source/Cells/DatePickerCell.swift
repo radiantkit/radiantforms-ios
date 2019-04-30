@@ -76,6 +76,11 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 			return .short
 		case .countDownTimer:
 			return .none
+		#if swift(>=5.0)
+		@unknown default:
+			SwiftyFormLog("Encountered an unknown UIDatePicker.Mode")
+			return .none
+		#endif
 		}
 	}
 
@@ -89,6 +94,11 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 			return .short
 		case .countDownTimer:
 			return .short
+		#if swift(>=5.0)
+		@unknown default:
+			SwiftyFormLog("Encountered an unknown UIDatePicker.Mode")
+			return .none
+		#endif
 		}
 	}
 

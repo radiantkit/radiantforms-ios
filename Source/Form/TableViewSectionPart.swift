@@ -30,11 +30,11 @@ public enum TableViewSectionPart {
 		case .none:
 			return 0
 		case .systemDefault:
-			return UITableView.automaticDimension
+			return UITableView.form_automaticDimension
 		case let .titleView(view):
 			return view.frame.height
 		case .titleString(_):
-			return UITableView.automaticDimension
+			return UITableView.form_automaticDimension
 		}
 	}
 
@@ -49,7 +49,7 @@ public enum TableViewSectionPart {
 			*/
 			return 2
 		case .systemDefault:
-			return UITableView.automaticDimension
+			return UITableView.form_automaticDimension
 		case let .titleView(view):
 			/**
 			Returning too low values can causes expand/collapse to crash.

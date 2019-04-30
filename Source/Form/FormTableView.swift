@@ -9,7 +9,7 @@ public class FormTableView: UITableView {
 
 		// Enable "Self Sizing Cells"
 		estimatedRowHeight = 44.0
-		rowHeight = UITableView.automaticDimension
+		rowHeight = UITableView.form_automaticDimension
 	}
 
 	public required init(coder aDecoder: NSCoder) {

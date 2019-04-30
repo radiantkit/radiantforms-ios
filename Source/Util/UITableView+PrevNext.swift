@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public extension IndexPath {
+extension IndexPath {
 
 	/// Indexpath of the previous cell.
 	///

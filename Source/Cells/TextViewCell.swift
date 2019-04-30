@@ -144,7 +144,7 @@ public class TextViewCell: UITableViewCell {
 		var layoutMargins = self.layoutMargins
 		layoutMargins.top = 0
 		layoutMargins.bottom = 0
-		veryTallCell = veryTallCell.inset(by: layoutMargins)
+		veryTallCell = veryTallCell.form_inset(by: layoutMargins)
 
 		var (slice, remainder) = veryTallCell.divided(atDistance: 10, from: .minYEdge)
 

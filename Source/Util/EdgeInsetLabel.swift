@@ -10,16 +10,16 @@ public class EdgeInsetLabel: UILabel {
     }
     
     public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let insetRect = bounds.inset(by: edgeInsets)
+        let insetRect = bounds.form_inset(by: edgeInsets)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         let invertedInsets = UIEdgeInsets(top: -edgeInsets.top,
                                           left: -edgeInsets.left,
                                           bottom: -edgeInsets.bottom,
                                           right: -edgeInsets.right)
-        return textRect.inset(by: invertedInsets)
+        return textRect.form_inset(by: invertedInsets)
     }
     
     public override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: edgeInsets))
+        super.drawText(in: rect.form_inset(by: edgeInsets))
     }
 }
