@@ -8,6 +8,7 @@ class ObtainTitleWidth: FormItemVisitor {
 		width = object.obtainTitleWidth()
 	}
 
+    func visit(object: AmountFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}
@@ -42,6 +43,7 @@ class AssignTitleWidth: FormItemVisitor {
 		object.assignTitleWidth(width)
 	}
 
+    func visit(object: AmountFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}

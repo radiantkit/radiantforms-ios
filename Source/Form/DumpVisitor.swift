@@ -41,6 +41,13 @@ public class DumpVisitor: FormItemVisitor {
 
 	private var dict = StringToAny()
 
+    public func visit(object: AmountFormItem) {
+        dict["class"] = "AmountFormItem"
+        dict["elementIdentifier"] = object.elementIdentifier
+        dict["styleIdentifier"] = object.styleIdentifier
+        dict["styleClass"] = object.styleClass
+    }
+    
 	public func visit(object: MetaFormItem) {
 		dict["class"] = "MetaFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier

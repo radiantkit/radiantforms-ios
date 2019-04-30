@@ -84,7 +84,55 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: AttributedTextFormItem
+    // MARK: AmountFormItem
+    
+    func visit(object: AmountFormItem) {
+        var model = AmountCellModel()
+        model.toolbarMode = self.model.toolbarMode
+        model.title = object.title
+        model.placeholder = object.placeholder
+        model.unitSuffix = object.unitSuffix
+        model.maxIntegerDigits = object.maxIntegerDigits
+        model.fractionDigits = object.fractionDigits
+        model.returnKeyType = object.returnKeyType
+        model.model = object
+
+        weak var weakObject = object
+        model.valueDidChange = { (value: AmountValue) in
+            SwiftyFormLog("value \(value)")
+            weakObject?.valueDidChange(value)
+            return
+        }
+
+        let cell = AmountCell(model: model)
+        cell.setValueWithoutSync(object.value)
+        cells.append(cell)
+        lastItemType = .item
+        
+        weak var weakCell = cell
+        object.syncCellWithValue = { (value: AmountValue) in
+            SwiftyFormLog("sync value \(value)")
+            weakCell?.setValueWithoutSync(value)
+            return
+        }
+        
+        object.obtainTitleWidth = {
+            if let cell = weakCell {
+                let size = cell.titleLabel.intrinsicContentSize
+                return size.width
+            }
+            return 0
+        }
+        
+        object.assignTitleWidth = { (width: CGFloat) in
+            if let cell = weakCell {
+                cell.titleWidthMode = AmountCell.TitleWidthMode.assign(width: width)
+                cell.setNeedsUpdateConstraints()
+            }
+        }
+    }
+
+    // MARK: AttributedTextFormItem
 
 	func visit(object: AttributedTextFormItem) {
 		var model = AttributedTextCellModel()
