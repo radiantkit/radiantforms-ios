@@ -33,7 +33,7 @@ public struct AmountCellModel {
 }
 
 public class AmountCell: UITableViewCell {
-    private let amountFormatter: AmountFormatter
+    private let numberFormatter: AmountCell_NumberFormatter
 
     public let model: AmountCellModel
     public let titleLabel = UILabel()
@@ -41,7 +41,7 @@ public class AmountCell: UITableViewCell {
     
     public init(model: AmountCellModel) {
         self.model = model
-        self.amountFormatter = AmountFormatter(fractionDigits: model.fractionDigits)
+        self.numberFormatter = AmountCell_NumberFormatter(fractionDigits: model.fractionDigits)
         super.init(style: .default, reuseIdentifier: nil)
         
         self.addGestureRecognizer(tapGestureRecognizer)
@@ -230,7 +230,7 @@ public class AmountCell: UITableViewCell {
         let decimal0: Decimal = Decimal(internalValue)
         let negativeExponent: Int = -Int(self.model.fractionDigits)
         let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
-        return self.amountFormatter.string(from: decimal1 as NSNumber) ?? ""
+        return self.numberFormatter.string(from: decimal1 as NSNumber) ?? ""
     }
 
     public func parseAndFormatAmount(_ value: AmountValue) -> String {
@@ -333,7 +333,7 @@ extension AmountCell: CellHeightProvider {
     }
 }
 
-fileprivate class AmountFormatter: NumberFormatter {
+fileprivate class AmountCell_NumberFormatter: NumberFormatter {
     /// `fractionDigits` is typically between 0 and 5
     init(fractionDigits: UInt8) {
         super.init()
