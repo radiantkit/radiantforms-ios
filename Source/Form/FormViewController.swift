@@ -24,6 +24,12 @@ open class FormViewController: UIViewController {
 
 	open func populateAndSetup() {
 		populate(formBuilder)
+        
+        if formBuilder.needsPostPopulate {
+            formBuilder.needsPostPopulate = false
+            postPopulate(formBuilder)
+        }
+        
 		title = formBuilder.navigationTitle
 		dataSource = formBuilder.result(self)
 		tableView.dataSource = dataSource
@@ -36,10 +42,22 @@ open class FormViewController: UIViewController {
 		tableView.reloadData()
 	}
 
+    /// This function is required. A subclass must always implement this function.
 	open func populate(_ builder: FormBuilder) {
 		SwiftyFormLog("subclass must implement populate()")
 	}
 
+    /// This function is optional. A subclass may implement this function.
+    ///
+    /// - This function is invoked the very first time the `populate()` function is invoked.
+    /// - This function is not invoked the following times.
+    ///
+    /// This is the intended place for configuring the initial visible/hidden `FormItem`'s
+    /// by assigning their `FormItem.isHidden` booleans.
+    open func postPopulate(_ builder: FormBuilder) {
+        // This superclass does nothing.
+    }
+    
 	override open func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 

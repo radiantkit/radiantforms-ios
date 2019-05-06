@@ -19,6 +19,9 @@ public class FormBuilder {
 
 	public init() {
 	}
+    
+    /// Only invoke the `postPopulate()` function the very first time.
+    internal var needsPostPopulate: Bool = true
 
 	public var navigationTitle: String?
 
