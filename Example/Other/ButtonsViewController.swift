@@ -21,6 +21,7 @@ class ButtonsViewController: FormViewController {
 	}
     
     override func postPopulate(_ builder: FormBuilder) {
+        // Configure initially visible/hidden FormItems
         alertButton2.isHidden = true
     }
 
