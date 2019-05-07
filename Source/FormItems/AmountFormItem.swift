@@ -70,6 +70,7 @@ public class AmountFormItem: FormItem {
         return self
     }
 
+    /// `fractionDigits` is typically between 0 and 5
     public var fractionDigits: UInt8 = 3
     
     @discardableResult
@@ -93,4 +94,10 @@ public class AmountFormItem: FormItem {
         self.unitSuffix = unitSuffix
         return self
     }
+
+    /// The `numberFormatter` is optional.
+    ///
+    /// When providing a `numberFormatter`, then ensure that
+    /// both `minimumFractionDigits` and `maximumFractionDigits` gets assigned to `fractionDigits`.
+    public var numberFormatter: NumberFormatter? = nil
 }

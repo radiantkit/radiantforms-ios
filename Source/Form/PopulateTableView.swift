@@ -87,7 +87,12 @@ class PopulateTableView: FormItemVisitor {
     // MARK: AmountFormItem
     
     func visit(object: AmountFormItem) {
+        let numberFormatter: NumberFormatter = object.numberFormatter ?? AmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
+        assert(numberFormatter.minimumFractionDigits == object.fractionDigits)
+        assert(numberFormatter.maximumFractionDigits == object.fractionDigits)
+        
         var model = AmountCellModel()
+        model.numberFormatter = numberFormatter
         model.toolbarMode = self.model.toolbarMode
         model.title = object.title
         model.placeholder = object.placeholder

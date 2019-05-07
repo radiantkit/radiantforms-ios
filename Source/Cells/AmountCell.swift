@@ -14,6 +14,7 @@ public class AmountCellSizes {
 }
 
 public struct AmountCellModel {
+    var numberFormatter: NumberFormatter! = nil
     var title: String = ""
     var toolbarMode: ToolbarMode = .simple
     var placeholder: String = ""
@@ -30,18 +31,26 @@ public struct AmountCellModel {
     var maxIntegerAndFractionDigits: UInt {
         return UInt(self.maxIntegerDigits) + UInt(self.fractionDigits)
     }
+
+    func formatAmount(_ internalValue: UInt64) -> String {
+        let decimal0: Decimal = Decimal(internalValue)
+        let negativeExponent: Int = -Int(self.fractionDigits)
+        let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
+        return self.numberFormatter.string(from: decimal1 as NSNumber) ?? ""
+    }
 }
 
 public class AmountCell: UITableViewCell {
-    private let numberFormatter: AmountCell_NumberFormatter
-
     public let model: AmountCellModel
     public let titleLabel = UILabel()
     public let textField = CustomAmountTextField()
     
     public init(model: AmountCellModel) {
+        assert(model.numberFormatter != nil)
+        assert(model.model != nil)
+        
         self.model = model
-        self.numberFormatter = AmountCell_NumberFormatter(fractionDigits: model.fractionDigits)
+        
         super.init(style: .default, reuseIdentifier: nil)
         
         self.addGestureRecognizer(tapGestureRecognizer)
@@ -227,10 +236,7 @@ public class AmountCell: UITableViewCell {
     }
     
     public func formatAmount(_ internalValue: UInt64) -> String {
-        let decimal0: Decimal = Decimal(internalValue)
-        let negativeExponent: Int = -Int(self.model.fractionDigits)
-        let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
-        return self.numberFormatter.string(from: decimal1 as NSNumber) ?? ""
+        return self.model.formatAmount(internalValue)
     }
 
     public func parseAndFormatAmount(_ value: AmountValue) -> String {
@@ -333,7 +339,7 @@ extension AmountCell: CellHeightProvider {
     }
 }
 
-fileprivate class AmountCell_NumberFormatter: NumberFormatter {
+internal class AmountCell_NumberFormatter: NumberFormatter {
     /// `fractionDigits` is typically between 0 and 5
     init(fractionDigits: UInt8) {
         super.init()
