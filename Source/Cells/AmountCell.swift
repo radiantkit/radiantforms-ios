@@ -43,7 +43,7 @@ public struct AmountCellModel {
 public class AmountCell: UITableViewCell {
     public let model: AmountCellModel
     public let titleLabel = UILabel()
-    public let textField = CustomAmountTextField()
+    public let textField = AmountCell_TextField()
     
     public init(model: AmountCellModel) {
         assert(model.numberFormatter != nil)
@@ -361,8 +361,8 @@ internal class AmountCell_NumberFormatter: NumberFormatter {
     }
 }
 
-public class CustomAmountTextField: UITextField {
-    public func configure() {
+public class AmountCell_TextField: UITextField {
+    fileprivate func configure() {
         backgroundColor = UIColor.white
         autocapitalizationType = .none
         autocorrectionType = .no
