@@ -522,12 +522,12 @@
 				TargetAttributes = {
 					42D5DE641A38167400D5C368 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 					};
 					42D5DE6E1A38167400D5C368 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 22DR89XVRF;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -536,6 +536,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
