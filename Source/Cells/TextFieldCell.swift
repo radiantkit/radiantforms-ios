@@ -1,12 +1,6 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public enum TextCellState {
-	case noMessage
-	case temporaryMessage(message: String)
-	case persistentMessage(message: String)
-}
-
 public struct TextFieldCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
@@ -389,6 +383,12 @@ extension TextFieldCell: CellHeightProvider {
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
+}
+
+public enum TextCellState {
+    case noMessage
+    case temporaryMessage(message: String)
+    case persistentMessage(message: String)
 }
 
 public class TextFieldCell_Sizes {
