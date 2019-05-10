@@ -41,6 +41,24 @@ public struct AmountCellModel {
 }
 
 public class AmountCell: UITableViewCell {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type]) {
+//        let allContainerTypes: [UIAppearanceContainer.Type] = containerTypes + [AmountCell.self]
+        let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
+
+//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).tintColor = UIColor.purple
+//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).textColor = UIColor.green
+        
+        UITextField.appearance(whenContainedInInstancesOf: allContainerTypes).tintColor = UIColor.purple
+        UITextField.appearance(whenContainedInInstancesOf: allContainerTypes).textColor = UIColor.green
+        
+        UILabel.appearance(whenContainedInInstancesOf: allContainerTypes).textColor = UIColor.green
+        UILabel.appearance(whenContainedInInstancesOf: allContainerTypes).tintColor = UIColor.blue
+
+//        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Baskerville"))
+//        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+//        UILabel.appearance(whenContainedInInstancesOf: [AmountCell.self]).font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+    }
+    
     public let model: AmountCellModel
     public let titleLabel = UILabel()
     public let textField = AmountCell_TextField()
@@ -57,13 +75,14 @@ public class AmountCell: UITableViewCell {
         
         selectionStyle = .none
         
-        titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
         textField.configure()
         textField.delegate = self
 
         textField.addTarget(self, action: #selector(AmountCell.valueDidChange), for: UIControl.Event.editingChanged)
+
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
@@ -75,10 +94,11 @@ public class AmountCell: UITableViewCell {
         if self.model.toolbarMode == .simple {
             textField.inputAccessoryView = toolbar
         }
-        
-//        titleLabel.backgroundColor = UIColor.blue
-//        textField.backgroundColor = UIColor.green
-//        rightView.backgroundColor = UIColor.blue
+
+        applyTheme()
+//        textField.isSelected = true
+//        textField.isHighlighted = true
+
         clipsToBounds = true
         
         installRightView()
@@ -88,6 +108,40 @@ public class AmountCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    public override func tintColorDidChange() {
+//        super.tintColorDidChange()
+//    }
+//
+//    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//    }
+    
+    func applyTheme() {
+//        self.backgroundColor = UIColor.clear
+//        self.backgroundColor = UIColor.lightGray
+
+//        self.contentView.backgroundColor = UIColor.purple
+
+        // The UITextField is transparent and has the same color as the cell.
+//        self.textField.backgroundColor = nil
+
+//        self.titleLabel.backgroundColor = UIColor.blue
+//        self.textField.backgroundColor = UIColor.green
+//        self.rightView.backgroundColor = UIColor.blue
+        
+
+//        let placeholderColor = UIColor.black
+//        let textFieldAttributedPlaceholder = NSAttributedString(string: model.placeholder, attributes:[NSAttributedString.Key.foregroundColor: placeholderColor])
+//        self.textField.attributedPlaceholder = textFieldAttributedPlaceholder
+        
+//        self.tintColor = UIColor.yellow
+//        self.textField.tintColor = UIColor.red
+//        self.titleLabel.tintColor = UIColor.red
+//        self.rightView.tintColor = UIColor.red
+        
+//        self.textField.textColor = UIColor.yellow
+//        self.titleLabel.textColor = UIColor.yellow
+//        self.rightView.textColor = UIColor.yellow
+    }
     
     // MARK: - RightView, for unit indicators or currency codes
     
@@ -106,7 +160,7 @@ public class AmountCell: UITableViewCell {
     
     public lazy var rightView: UILabel = {
         let instance = EdgeInsetLabel(frame: .zero)
-        instance.textColor = UIColor.black
+//        instance.textColor = UIColor.black
         instance.textAlignment = .right
         instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return instance
@@ -279,7 +333,12 @@ public class AmountCell: UITableViewCell {
 
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
+//        applyTheme()
         updateToolbarButtons()
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -363,7 +422,7 @@ internal class AmountCell_NumberFormatter: NumberFormatter {
 
 public class AmountCell_TextField: UITextField {
     fileprivate func configure() {
-        backgroundColor = UIColor.white
+//        backgroundColor = UIColor.white
         autocapitalizationType = .none
         autocorrectionType = .no
         spellCheckingType = .no
