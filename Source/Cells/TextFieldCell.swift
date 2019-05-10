@@ -7,20 +7,6 @@ public enum TextCellState {
 	case persistentMessage(message: String)
 }
 
-public class TextFieldFormItemCellSizes {
-	public let titleLabelFrame: CGRect
-	public let textFieldFrame: CGRect
-	public let errorLabelFrame: CGRect
-	public let cellHeight: CGFloat
-
-	public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, errorLabelFrame: CGRect, cellHeight: CGFloat) {
-		self.titleLabelFrame = titleLabelFrame
-		self.textFieldFrame = textFieldFrame
-		self.errorLabelFrame = errorLabelFrame
-		self.cellHeight = cellHeight
-	}
-}
-
 public struct TextFieldCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
@@ -403,6 +389,20 @@ extension TextFieldCell: CellHeightProvider {
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
+}
+
+public class TextFieldFormItemCellSizes {
+    public let titleLabelFrame: CGRect
+    public let textFieldFrame: CGRect
+    public let errorLabelFrame: CGRect
+    public let cellHeight: CGFloat
+    
+    public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, errorLabelFrame: CGRect, cellHeight: CGFloat) {
+        self.titleLabelFrame = titleLabelFrame
+        self.textFieldFrame = textFieldFrame
+        self.errorLabelFrame = errorLabelFrame
+        self.cellHeight = cellHeight
+    }
 }
 
 public class TextFieldCell_TextField: UITextField {
