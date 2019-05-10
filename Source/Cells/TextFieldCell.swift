@@ -45,7 +45,7 @@ public struct TextFieldFormItemCellModel {
 public class TextFieldFormItemCell: UITableViewCell {
 	public let model: TextFieldFormItemCellModel
 	public let titleLabel = UILabel()
-	public let textField = CustomTextField()
+	public let textField = TextFieldCell_TextField()
 	public let errorLabel = UILabel()
 
 	public var state: TextCellState = .noMessage
@@ -405,7 +405,7 @@ extension TextFieldFormItemCell: CellHeightProvider {
 	}
 }
 
-public class CustomTextField: UITextField {
+public class TextFieldCell_TextField: UITextField {
     public func configure() {
         backgroundColor = UIColor.white
         autocapitalizationType = .sentences
@@ -415,3 +415,6 @@ public class CustomTextField: UITextField {
         clearButtonMode = .whileEditing
     }
 }
+
+@available(*, unavailable, renamed: "TextFieldCell_TextField")
+typealias CustomTextField = TextFieldCell_TextField
