@@ -610,7 +610,7 @@ class PopulateTableView: FormItemVisitor {
             weakObject?.editingEnd(value)
             return
         }
-		let cell = TextFieldFormItemCell(model: model)
+		let cell = TextFieldCell(model: model)
 		cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
@@ -637,7 +637,7 @@ class PopulateTableView: FormItemVisitor {
 
 		object.assignTitleWidth = { (width: CGFloat) in
 			if let cell = weakCell {
-				cell.titleWidthMode = TextFieldFormItemCell.TitleWidthMode.assign(width: width)
+				cell.titleWidthMode = TextFieldCell.TitleWidthMode.assign(width: width)
 				cell.setNeedsUpdateConstraints()
 			}
 		}

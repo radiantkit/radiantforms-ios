@@ -2,6 +2,7 @@
 
 ### Pending
 
+ * Renamed from `TextFieldFormItemCell` to `TextFieldCell`.
  * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
  * Added `AmountFormItem` and `AmountCell`.
  * Added `FormItem.isHidden` that determines whether the field is shown/hidden.

@@ -42,7 +42,7 @@ public struct TextFieldFormItemCellModel {
     }
 }
 
-public class TextFieldFormItemCell: UITableViewCell {
+public class TextFieldCell: UITableViewCell {
 	public let model: TextFieldFormItemCellModel
 	public let titleLabel = UILabel()
 	public let textField = TextFieldCell_TextField()
@@ -68,7 +68,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 		textField.configure()
 		textField.delegate = self
 
-		textField.addTarget(self, action: #selector(TextFieldFormItemCell.valueDidChange), for: UIControl.Event.editingChanged)
+		textField.addTarget(self, action: #selector(TextFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
 
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(textField)
@@ -146,7 +146,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 	}
 
 	public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldFormItemCell.handleTap(_:)))
+		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldCell.handleTap(_:)))
 		return gr
 		}()
 
@@ -261,7 +261,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 
 	public func installTimer() {
 		invalidateTimer()
-		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldFormItemCell.timerUpdate), userInfo: nil, repeats: false)
+		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldCell.timerUpdate), userInfo: nil, repeats: false)
 		hideErrorMessageAfterFewSecondsTimer = timer
 	}
 
@@ -372,7 +372,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 
 }
 
-extension TextFieldFormItemCell: UITextFieldDelegate {
+extension TextFieldCell: UITextFieldDelegate {
 	public func textFieldDidBeginEditing(_ textField: UITextField) {
 		updateToolbarButtons()
 	}
@@ -396,7 +396,7 @@ extension TextFieldFormItemCell: UITextFieldDelegate {
 	}
 }
 
-extension TextFieldFormItemCell: CellHeightProvider {
+extension TextFieldCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: TextFieldFormItemCellSizes = compute()
 		let value = sizes.cellHeight
@@ -415,6 +415,9 @@ public class TextFieldCell_TextField: UITextField {
         clearButtonMode = .whileEditing
     }
 }
+
+@available(*, unavailable, renamed: "TextFieldCell")
+typealias TextFieldFormItemCell = TextFieldCell
 
 @available(*, unavailable, renamed: "TextFieldCell_TextField")
 typealias CustomTextField = TextFieldCell_TextField
