@@ -28,7 +28,7 @@ public class TextFieldCell: UITableViewCell {
 	public let textField = TextFieldCell_TextField()
 	public let errorLabel = UILabel()
 
-	public var state: TextCellState = .noMessage
+	public var state: TextFieldCell_State = .noMessage
 
 	public init(model: TextFieldCellModel) {
 		self.model = model
@@ -385,7 +385,7 @@ extension TextFieldCell: CellHeightProvider {
 	}
 }
 
-public enum TextCellState {
+public enum TextFieldCell_State {
     case noMessage
     case temporaryMessage(message: String)
     case persistentMessage(message: String)

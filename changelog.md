@@ -4,6 +4,7 @@
 
  * Renamed from `TextFieldFormItemCell` to `TextFieldCell`.
  * Renamed from `TextFieldFormItemCellModel` to `TextFieldCellModel`.
+ * Renamed from `TextCellState` to `TextFieldCell_State`.
  * Renamed from `TextFieldFormItemCellSizes` to `TextFieldCell_Sizes`.
  * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
  * Added `AmountFormItem` and `AmountCell`.
