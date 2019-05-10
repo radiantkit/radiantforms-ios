@@ -21,7 +21,7 @@ public class TextFieldFormItemCellSizes {
 	}
 }
 
-public struct TextFieldFormItemCellModel {
+public struct TextFieldCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
 	var placeholder: String = ""
@@ -43,14 +43,14 @@ public struct TextFieldFormItemCellModel {
 }
 
 public class TextFieldCell: UITableViewCell {
-	public let model: TextFieldFormItemCellModel
+	public let model: TextFieldCellModel
 	public let titleLabel = UILabel()
 	public let textField = TextFieldCell_TextField()
 	public let errorLabel = UILabel()
 
 	public var state: TextCellState = .noMessage
 
-	public init(model: TextFieldFormItemCellModel) {
+	public init(model: TextFieldCellModel) {
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 
@@ -418,6 +418,9 @@ public class TextFieldCell_TextField: UITextField {
 
 @available(*, unavailable, renamed: "TextFieldCell")
 typealias TextFieldFormItemCell = TextFieldCell
+
+@available(*, unavailable, renamed: "TextFieldCellModel")
+typealias TextFieldFormItemCellModel = TextFieldCellModel
 
 @available(*, unavailable, renamed: "TextFieldCell_TextField")
 typealias CustomTextField = TextFieldCell_TextField
