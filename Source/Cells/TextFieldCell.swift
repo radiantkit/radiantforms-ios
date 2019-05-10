@@ -1,17 +1,6 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class CustomTextField: UITextField {
-	public func configure() {
-		backgroundColor = UIColor.white
-		autocapitalizationType = .sentences
-		autocorrectionType = .default
-		spellCheckingType = .no
-		returnKeyType = .done
-		clearButtonMode = .whileEditing
-	}
-}
-
 public enum TextCellState {
 	case noMessage
 	case temporaryMessage(message: String)
@@ -414,4 +403,15 @@ extension TextFieldFormItemCell: CellHeightProvider {
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
+}
+
+public class CustomTextField: UITextField {
+    public func configure() {
+        backgroundColor = UIColor.white
+        autocapitalizationType = .sentences
+        autocorrectionType = .default
+        spellCheckingType = .no
+        returnKeyType = .done
+        clearButtonMode = .whileEditing
+    }
 }
