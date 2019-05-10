@@ -1,38 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class CustomTextField: UITextField {
-	public func configure() {
-		backgroundColor = UIColor.white
-		autocapitalizationType = .sentences
-		autocorrectionType = .default
-		spellCheckingType = .no
-		returnKeyType = .done
-		clearButtonMode = .whileEditing
-	}
-}
-
-public enum TextCellState {
-	case noMessage
-	case temporaryMessage(message: String)
-	case persistentMessage(message: String)
-}
-
-public class TextFieldFormItemCellSizes {
-	public let titleLabelFrame: CGRect
-	public let textFieldFrame: CGRect
-	public let errorLabelFrame: CGRect
-	public let cellHeight: CGFloat
-
-	public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, errorLabelFrame: CGRect, cellHeight: CGFloat) {
-		self.titleLabelFrame = titleLabelFrame
-		self.textFieldFrame = textFieldFrame
-		self.errorLabelFrame = errorLabelFrame
-		self.cellHeight = cellHeight
-	}
-}
-
-public struct TextFieldFormItemCellModel {
+public struct TextFieldCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
 	var placeholder: String = ""
@@ -53,15 +22,15 @@ public struct TextFieldFormItemCellModel {
     }
 }
 
-public class TextFieldFormItemCell: UITableViewCell {
-	public let model: TextFieldFormItemCellModel
+public class TextFieldCell: UITableViewCell {
+	public let model: TextFieldCellModel
 	public let titleLabel = UILabel()
-	public let textField = CustomTextField()
+	public let textField = TextFieldCell_TextField()
 	public let errorLabel = UILabel()
 
-	public var state: TextCellState = .noMessage
+	public var state: TextFieldCell_State = .noMessage
 
-	public init(model: TextFieldFormItemCellModel) {
+	public init(model: TextFieldCellModel) {
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 
@@ -79,7 +48,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 		textField.configure()
 		textField.delegate = self
 
-		textField.addTarget(self, action: #selector(TextFieldFormItemCell.valueDidChange), for: UIControl.Event.editingChanged)
+		textField.addTarget(self, action: #selector(TextFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
 
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(textField)
@@ -157,7 +126,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 	}
 
 	public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldFormItemCell.handleTap(_:)))
+		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldCell.handleTap(_:)))
 		return gr
 		}()
 
@@ -168,7 +137,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 
 	public var titleWidthMode: TitleWidthMode = .auto
 
-	public func compute() -> TextFieldFormItemCellSizes {
+	public func compute() -> TextFieldCell_Sizes {
 		let cellWidth: CGFloat = bounds.width
 
 		var titleLabelFrame = CGRect.zero
@@ -217,13 +186,13 @@ public class TextFieldFormItemCell: UITableViewCell {
 			}
 		}
 
-		return TextFieldFormItemCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
+		return TextFieldCell_Sizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
 	}
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 		//SwiftyFormLog("layoutSubviews")
-		let sizes: TextFieldFormItemCellSizes = compute()
+		let sizes: TextFieldCell_Sizes = compute()
 		titleLabel.frame = sizes.titleLabelFrame
 		textField.frame = sizes.textFieldFrame
 		errorLabel.frame = sizes.errorLabelFrame
@@ -272,7 +241,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 
 	public func installTimer() {
 		invalidateTimer()
-		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldFormItemCell.timerUpdate), userInfo: nil, repeats: false)
+		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldCell.timerUpdate), userInfo: nil, repeats: false)
 		hideErrorMessageAfterFewSecondsTimer = timer
 	}
 
@@ -383,7 +352,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 
 }
 
-extension TextFieldFormItemCell: UITextFieldDelegate {
+extension TextFieldCell: UITextFieldDelegate {
 	public func textFieldDidBeginEditing(_ textField: UITextField) {
 		updateToolbarButtons()
 	}
@@ -407,11 +376,54 @@ extension TextFieldFormItemCell: UITextFieldDelegate {
 	}
 }
 
-extension TextFieldFormItemCell: CellHeightProvider {
+extension TextFieldCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		let sizes: TextFieldFormItemCellSizes = compute()
+		let sizes: TextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
 }
+
+public enum TextFieldCell_State {
+    case noMessage
+    case temporaryMessage(message: String)
+    case persistentMessage(message: String)
+}
+
+public class TextFieldCell_Sizes {
+    public let titleLabelFrame: CGRect
+    public let textFieldFrame: CGRect
+    public let errorLabelFrame: CGRect
+    public let cellHeight: CGFloat
+    
+    public init(titleLabelFrame: CGRect, textFieldFrame: CGRect, errorLabelFrame: CGRect, cellHeight: CGFloat) {
+        self.titleLabelFrame = titleLabelFrame
+        self.textFieldFrame = textFieldFrame
+        self.errorLabelFrame = errorLabelFrame
+        self.cellHeight = cellHeight
+    }
+}
+
+public class TextFieldCell_TextField: UITextField {
+    public func configure() {
+        backgroundColor = UIColor.white
+        autocapitalizationType = .sentences
+        autocorrectionType = .default
+        spellCheckingType = .no
+        returnKeyType = .done
+        clearButtonMode = .whileEditing
+    }
+}
+
+@available(*, unavailable, renamed: "TextFieldCell")
+typealias TextFieldFormItemCell = TextFieldCell
+
+@available(*, unavailable, renamed: "TextFieldCellModel")
+typealias TextFieldFormItemCellModel = TextFieldCellModel
+
+@available(*, unavailable, renamed: "TextFieldCell_Sizes")
+typealias TextFieldFormItemCellSizes = TextFieldCell_Sizes
+
+@available(*, unavailable, renamed: "TextFieldCell_TextField")
+typealias CustomTextField = TextFieldCell_TextField
