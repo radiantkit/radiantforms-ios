@@ -4,6 +4,7 @@
 
  * Renamed from `TextFieldFormItemCell` to `TextFieldCell`.
  * Renamed from `TextFieldFormItemCellModel` to `TextFieldCellModel`.
+ * Renamed from `TextFieldFormItemCellSizes` to `TextFieldCell_Sizes`.
  * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
  * Added `AmountFormItem` and `AmountCell`.
  * Added `FormItem.isHidden` that determines whether the field is shown/hidden.

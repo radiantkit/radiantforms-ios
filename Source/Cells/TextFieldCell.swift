@@ -143,7 +143,7 @@ public class TextFieldCell: UITableViewCell {
 
 	public var titleWidthMode: TitleWidthMode = .auto
 
-	public func compute() -> TextFieldFormItemCellSizes {
+	public func compute() -> TextFieldCell_Sizes {
 		let cellWidth: CGFloat = bounds.width
 
 		var titleLabelFrame = CGRect.zero
@@ -192,13 +192,13 @@ public class TextFieldCell: UITableViewCell {
 			}
 		}
 
-		return TextFieldFormItemCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
+		return TextFieldCell_Sizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
 	}
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 		//SwiftyFormLog("layoutSubviews")
-		let sizes: TextFieldFormItemCellSizes = compute()
+		let sizes: TextFieldCell_Sizes = compute()
 		titleLabel.frame = sizes.titleLabelFrame
 		textField.frame = sizes.textFieldFrame
 		errorLabel.frame = sizes.errorLabelFrame
@@ -384,14 +384,14 @@ extension TextFieldCell: UITextFieldDelegate {
 
 extension TextFieldCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		let sizes: TextFieldFormItemCellSizes = compute()
+		let sizes: TextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
 }
 
-public class TextFieldFormItemCellSizes {
+public class TextFieldCell_Sizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
     public let errorLabelFrame: CGRect
@@ -421,6 +421,9 @@ typealias TextFieldFormItemCell = TextFieldCell
 
 @available(*, unavailable, renamed: "TextFieldCellModel")
 typealias TextFieldFormItemCellModel = TextFieldCellModel
+
+@available(*, unavailable, renamed: "TextFieldCell_Sizes")
+typealias TextFieldFormItemCellSizes = TextFieldCell_Sizes
 
 @available(*, unavailable, renamed: "TextFieldCell_TextField")
 typealias CustomTextField = TextFieldCell_TextField
