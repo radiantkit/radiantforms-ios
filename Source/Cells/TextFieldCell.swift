@@ -407,7 +407,6 @@ public class TextFieldCell_Sizes {
 
 public class TextFieldCell_TextField: UITextField {
     public func configure() {
-//        backgroundColor = UIColor.white
         autocapitalizationType = .sentences
         autocorrectionType = .default
         spellCheckingType = .no

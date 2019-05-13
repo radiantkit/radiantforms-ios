@@ -422,7 +422,6 @@ internal class AmountCell_NumberFormatter: NumberFormatter {
 
 public class AmountCell_TextField: UITextField {
     fileprivate func configure() {
-//        backgroundColor = UIColor.white
         autocapitalizationType = .none
         autocorrectionType = .no
         spellCheckingType = .no
