@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().separatorColor = UIColor(white: 0.8, alpha: 1.0)
         UILabel.appearance().textColor = .red
 //        UITableViewHeaderFooterView.appearance().backgroundColor = UIColor.brown
-        UITableViewHeaderFooterView.appearance().tintColor = UIColor.green
-        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor.green
-        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).tintColor = UIColor.blue
+//        UITableViewHeaderFooterView.appearance().tintColor = UIColor.green
+//        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor.green
+//        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).tintColor = UIColor.blue
 
         
 //        AmountCell.configureAppearance(whenContainedInInstancesOf: [])

@@ -108,6 +108,12 @@ extension TableViewSectionArray: UITableViewDataSource {
 }
 
 extension TableViewSectionArray: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerFooterView: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            headerFooterView.textLabel?.textColor = UIColor.yellow
+        }
+    }
+    
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		sections[indexPath.section].tableView(tableView, didSelectRowAt: indexPath)
 		trace(indexPath)
