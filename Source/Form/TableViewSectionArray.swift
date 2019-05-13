@@ -114,6 +114,12 @@ extension TableViewSectionArray: UITableViewDelegate {
         }
     }
     
+    public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let headerFooterView: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            headerFooterView.textLabel?.textColor = UIColor.brown
+        }
+    }
+    
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		sections[indexPath.section].tableView(tableView, didSelectRowAt: indexPath)
 		trace(indexPath)
