@@ -7,20 +7,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        UITextField.appearance().tintColor = UIColor.purple
-//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).tintColor = UIColor.purple
-//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).textColor = UIColor.green
-        UITableViewCell.appearance().backgroundColor = UIColor(white: 0.95, alpha: 1.0)
-        UITableView.appearance().backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        UITableView.appearance().separatorColor = UIColor(white: 0.8, alpha: 1.0)
-//        UILabel.appearance().textColor = .red
         
-        FormTableView.configureAppearance(whenContainedInInstancesOf: [], themeMode: .light)
-        FormTableView.configureAppearance(whenContainedInInstancesOf: [AmountViewController.self], themeMode: .dark)
-        FormTableView.configureAppearance(whenContainedInInstancesOf: [SignUpViewController.self], themeMode: .none)
-
-//        AmountCell.configureAppearance(whenContainedInInstancesOf: [])
-        AmountCell.configureAppearance(whenContainedInInstancesOf: [AmountViewController.self])
+        FormTableView.configureAppearance(
+            whenContainedInInstancesOf: [],
+            theme: SwiftyFORM_Theme.lightTheme()
+        )
+        FormTableView.configureAppearance(
+            whenContainedInInstancesOf: [AmountViewController.self],
+            theme: SwiftyFORM_Theme.darkTheme()
+        )
+        FormTableView.configureAppearance(
+            whenContainedInInstancesOf: [SignUpViewController.self],
+            theme: SwiftyFORM_Theme.useSystemDefaultTheme()
+        )
 
         let vc = FirstViewController()
 //        let vc = AmountViewController()
