@@ -13,10 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableViewCell.appearance().backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         UITableView.appearance().backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         UITableView.appearance().separatorColor = UIColor(white: 0.8, alpha: 1.0)
-        UILabel.appearance().textColor = .red
+//        UILabel.appearance().textColor = .red
         
-        FormTableView.configureAppearance(whenContainedInInstancesOf: [])
-        
+        FormTableView.configureAppearance(whenContainedInInstancesOf: [], themeMode: .light)
+        FormTableView.configureAppearance(whenContainedInInstancesOf: [AmountViewController.self], themeMode: .dark)
+        FormTableView.configureAppearance(whenContainedInInstancesOf: [SignUpViewController.self], themeMode: .none)
+
 //        AmountCell.configureAppearance(whenContainedInInstancesOf: [])
         AmountCell.configureAppearance(whenContainedInInstancesOf: [AmountViewController.self])
 
