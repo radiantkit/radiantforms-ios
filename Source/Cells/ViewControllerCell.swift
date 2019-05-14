@@ -20,6 +20,7 @@ public class ViewControllerFormItemCell: UITableViewCell, SelectRowDelegate {
 		super.init(style: .value1, reuseIdentifier: nil)
 		accessoryType = .disclosureIndicator
 		textLabel?.text = model.title
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
 		detailTextLabel?.text = model.placeholder
 	}
 
