@@ -15,4 +15,13 @@ public class FormTableView: UITableView {
 	public required init(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
+
+    @objc public dynamic var sectionHeader_textLabel_textColor: UIColor?
+    @objc public dynamic var sectionFooter_textLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type]) {
+        let appearanceProxy: FormTableView = FormTableView.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.sectionHeader_textLabel_textColor = UIColor.darkGray
+        appearanceProxy.sectionFooter_textLabel_textColor = UIColor.lightGray
+    }
 }

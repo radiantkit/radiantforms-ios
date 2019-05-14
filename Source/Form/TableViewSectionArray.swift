@@ -109,15 +109,37 @@ extension TableViewSectionArray: UITableViewDataSource {
 
 extension TableViewSectionArray: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let headerFooterView: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
-            headerFooterView.textLabel?.textColor = UIColor.yellow
+        guard let formTableView: FormTableView = tableView as? FormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+            return
         }
+        guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
+            SwiftyFormLog("Section has a custom view. Will not apply appearance.")
+            return
+        }
+        guard let color: UIColor = formTableView.sectionHeader_textLabel_textColor else {
+            SwiftyFormLog("No color provided. Will not apply appearance")
+            return
+        }
+        SwiftyFormLog("Applying appearance to section header")
+        header.textLabel?.textColor = color
     }
     
     public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        if let headerFooterView: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
-            headerFooterView.textLabel?.textColor = UIColor.brown
+        guard let formTableView: FormTableView = tableView as? FormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+            return
         }
+        guard let footer: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
+            SwiftyFormLog("Section has a custom view. Will not apply appearance.")
+            return
+        }
+        guard let color: UIColor = formTableView.sectionFooter_textLabel_textColor else {
+            SwiftyFormLog("No color provided. Will not apply appearance")
+            return
+        }
+        SwiftyFormLog("Applying appearance to section footer")
+        footer.textLabel?.textColor = color
     }
     
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
