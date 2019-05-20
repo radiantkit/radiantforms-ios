@@ -41,18 +41,24 @@ public struct AmountCellModel {
 }
 
 public class AmountCell: UITableViewCell {
+    @objc public dynamic var titleLabel_textColor: UIColor?
+    @objc public dynamic var rightView_textColor: UIColor?
+    
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
-//        let allContainerTypes: [UIAppearanceContainer.Type] = containerTypes + [AmountCell.self]
-        let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
 
-//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).tintColor = UIColor.purple
-//        UITextField.appearance(whenContainedInInstancesOf: [AmountCell.self]).textColor = UIColor.green
+        do {
+            let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.titleLabel_textColor = UIColor.blue
+            appearanceProxy.rightView_textColor = UIColor.white
+        }
         
-        UITextField.appearance(whenContainedInInstancesOf: allContainerTypes).tintColor = UIColor.purple
-        UITextField.appearance(whenContainedInInstancesOf: allContainerTypes).textColor = UIColor.green
-        
-        UILabel.appearance(whenContainedInInstancesOf: allContainerTypes).textColor = UIColor.green
-        UILabel.appearance(whenContainedInInstancesOf: allContainerTypes).tintColor = UIColor.blue
+        do {
+            let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
+            let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
+            appearanceProxy.tintColor = UIColor.purple
+            appearanceProxy.textColor = UIColor.green
+        }
+
 
 //        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Baskerville"))
 //        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
@@ -395,6 +401,13 @@ extension AmountCell: CellHeightProvider {
         let value = sizes.cellHeight
         //SwiftyFormLog("compute height of row: \(value)")
         return value
+    }
+}
+
+extension AmountCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.titleLabel.textColor = self.titleLabel_textColor
+        self.rightView.textColor = self.rightView_textColor
     }
 }
 
