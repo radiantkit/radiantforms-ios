@@ -27,6 +27,19 @@ public class ButtonCell: UITableViewCell {
 		textLabel?.text = model.title
 		textLabel?.textAlignment = NSTextAlignment.center
 	}
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: ButtonCell = ButtonCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.buttonCell.textLabel_textColor
+    }
+}
+
+extension ButtonCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+    }
 }
 
 extension ButtonCell: SelectRowDelegate {

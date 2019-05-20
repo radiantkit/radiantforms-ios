@@ -6,6 +6,7 @@ public struct SwiftyFORM_Theme {
     internal let sectionHeader: SwiftyFORM_Theme_SectionHeader
     internal let sectionFooter: SwiftyFORM_Theme_SectionFooter
     internal let cellBackground: SwiftyFORM_Theme_CellBackground
+    internal let buttonCell: SwiftyFORM_Theme_ButtonCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
         return SwiftyFORM_Theme(
@@ -13,7 +14,8 @@ public struct SwiftyFORM_Theme {
             tableViewSeparator: .lightTheme,
             sectionHeader: .lightTheme,
             sectionFooter: .lightTheme,
-            cellBackground: .lightTheme
+            cellBackground: .lightTheme,
+            buttonCell: .lightTheme
         )
     }
     
@@ -23,7 +25,8 @@ public struct SwiftyFORM_Theme {
             tableViewSeparator: .darkTheme,
             sectionHeader: .darkTheme,
             sectionFooter: .darkTheme,
-            cellBackground: .darkTheme
+            cellBackground: .darkTheme,
+            buttonCell: .darkTheme
         )
     }
 }
@@ -45,6 +48,10 @@ internal enum SwiftyFORM_Theme_SectionFooter {
 }
 
 internal enum SwiftyFORM_Theme_CellBackground {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_ButtonCell {
     case lightTheme, darkTheme
 }
 
@@ -104,4 +111,14 @@ internal extension SwiftyFORM_Theme_CellBackground {
     }
 }
 
+internal extension SwiftyFORM_Theme_ButtonCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+}
 
