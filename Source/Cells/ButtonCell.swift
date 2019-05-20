@@ -10,7 +10,7 @@ public struct ButtonCellModel {
 
 }
 
-public class ButtonCell: UITableViewCell, SelectRowDelegate {
+public class ButtonCell: UITableViewCell {
 	public let model: ButtonCellModel
 
 	public init(model: ButtonCellModel) {
@@ -27,7 +27,9 @@ public class ButtonCell: UITableViewCell, SelectRowDelegate {
 		textLabel?.text = model.title
 		textLabel?.textAlignment = NSTextAlignment.center
 	}
+}
 
+extension ButtonCell: SelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()
