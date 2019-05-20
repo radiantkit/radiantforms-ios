@@ -6,6 +6,7 @@ public struct SwiftyFORM_Theme {
     internal let sectionHeader: SwiftyFORM_Theme_SectionHeader
     internal let sectionFooter: SwiftyFORM_Theme_SectionFooter
     internal let cellBackground: SwiftyFORM_Theme_CellBackground
+    internal let amountCell: SwiftyFORM_Theme_AmountCell
     internal let buttonCell: SwiftyFORM_Theme_ButtonCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
@@ -15,6 +16,7 @@ public struct SwiftyFORM_Theme {
             sectionHeader: .lightTheme,
             sectionFooter: .lightTheme,
             cellBackground: .lightTheme,
+            amountCell: .lightTheme,
             buttonCell: .lightTheme
         )
     }
@@ -26,6 +28,7 @@ public struct SwiftyFORM_Theme {
             sectionHeader: .darkTheme,
             sectionFooter: .darkTheme,
             cellBackground: .darkTheme,
+            amountCell: .darkTheme,
             buttonCell: .darkTheme
         )
     }
@@ -48,6 +51,10 @@ internal enum SwiftyFORM_Theme_SectionFooter {
 }
 
 internal enum SwiftyFORM_Theme_CellBackground {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_AmountCell {
     case lightTheme, darkTheme
 }
 
@@ -107,6 +114,35 @@ internal extension SwiftyFORM_Theme_CellBackground {
             return UIColor(white: 0.95, alpha: 1.0)
         case .darkTheme:
             return UIColor(white: 0.2, alpha: 1.0)
+        }
+    }
+}
+
+internal extension SwiftyFORM_Theme_AmountCell {
+    var titleLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+
+    var rightView_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+
+    var textField_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
         }
     }
 }

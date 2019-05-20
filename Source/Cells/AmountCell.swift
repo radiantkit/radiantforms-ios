@@ -48,15 +48,14 @@ public class AmountCell: UITableViewCell {
 
         do {
             let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
-            appearanceProxy.titleLabel_textColor = UIColor.blue
-            appearanceProxy.rightView_textColor = UIColor.white
+            appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
+            appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
         }
         
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
-            appearanceProxy.tintColor = UIColor.purple
-            appearanceProxy.textColor = UIColor.green
+            appearanceProxy.textColor = theme.amountCell.textField_textColor
         }
 
 
