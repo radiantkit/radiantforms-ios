@@ -56,6 +56,7 @@ public class AmountCell: UITableViewCell {
             let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
             appearanceProxy.textColor = theme.amountCell.textField_textColor
+            appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
         }
 
 

@@ -145,6 +145,15 @@ internal extension SwiftyFORM_Theme_AmountCell {
             return UIColor.white
         }
     }
+    
+    var textField_keyboardAppearance: UIKeyboardAppearance {
+        switch self {
+        case .lightTheme:
+            return .light
+        case .darkTheme:
+            return .dark
+        }
+    }
 }
 
 internal extension SwiftyFORM_Theme_ButtonCell {
