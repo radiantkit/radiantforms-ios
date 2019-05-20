@@ -7,7 +7,13 @@ class FirstViewController: FormViewController {
 		builder.navigationTitle = "SwiftyFORM"
 		builder.demo_showInfo("Welcome to the\nSwiftyFORM example app\nthat shows everything")
 
-		builder += SectionHeaderTitleFormItem().title("Tutorial")
+        builder += SectionHeaderTitleFormItem().title("Theme")
+        builder += ViewControllerFormItem().title("Amount (Dark)").viewController(AmountViewController_Dark.self)
+        builder += ViewControllerFormItem().title("Amount (Light)").viewController(AmountViewController_Light.self)
+        builder += ViewControllerFormItem().title("Sign Up (Dark)").viewController(SignUpViewController_Dark.self)
+        builder += ViewControllerFormItem().title("Sign Up (Light)").viewController(SignUpViewController_Light.self)
+
+        builder += SectionHeaderTitleFormItem().title("Tutorial")
 		builder += ViewControllerFormItem().title("StaticText").viewController(Tutorial0_StaticText_ViewController.self)
 		builder += ViewControllerFormItem().title("TextField").viewController(Tutorial1_TextField_ViewController.self)
 		builder += ViewControllerFormItem().title("Child ViewController").viewController(Tutorial2_ChildViewController_ViewController.self)
