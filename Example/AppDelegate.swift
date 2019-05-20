@@ -21,10 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             theme: SwiftyFORM_Theme.lightTheme()
         )
         FormTableView.configureAppearance(
-            whenContainedInInstancesOf: [SignUpViewController_SystemDefault.self],
-            theme: SwiftyFORM_Theme.useSystemDefaultTheme()
-        )
-        FormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Dark.self],
             theme: SwiftyFORM_Theme.darkTheme()
         )

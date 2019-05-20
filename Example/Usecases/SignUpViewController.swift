@@ -152,4 +152,3 @@ class SignUpViewController: FormViewController {
 
 class SignUpViewController_Dark: SignUpViewController {}
 class SignUpViewController_Light: SignUpViewController {}
-class SignUpViewController_SystemDefault: SignUpViewController {}

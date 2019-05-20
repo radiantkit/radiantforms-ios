@@ -15,7 +15,6 @@ class FirstViewController: FormViewController {
 		builder += SectionHeaderTitleFormItem().title("Usecases")
 		builder += ViewControllerFormItem().title("Sign Up (Dark)").viewController(SignUpViewController_Dark.self)
         builder += ViewControllerFormItem().title("Sign Up (Light)").viewController(SignUpViewController_Light.self)
-        builder += ViewControllerFormItem().title("Sign Up (System Default)").viewController(SignUpViewController_SystemDefault.self)
 		builder += ViewControllerFormItem().title("Color Picker").viewController(ColorPickerViewController.self)
 		builder += ViewControllerFormItem().title("Settings").storyboard("Settings", bundle: nil)
 		builder += ViewControllerFormItem().title("Change Password").viewController(ChangePasswordViewController.self)

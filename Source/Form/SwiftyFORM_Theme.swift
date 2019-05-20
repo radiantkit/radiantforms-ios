@@ -26,44 +26,32 @@ public struct SwiftyFORM_Theme {
             cellBackground: .darkTheme
         )
     }
-    
-    public static func useSystemDefaultTheme() -> SwiftyFORM_Theme {
-        return SwiftyFORM_Theme(
-            tableViewBackground: .useSystemDefault,
-            tableViewSeparator: .useSystemDefault,
-            sectionHeader: .useSystemDefault,
-            sectionFooter: .useSystemDefault,
-            cellBackground: .useSystemDefault
-        )
-    }
 }
 
 internal enum SwiftyFORM_Theme_TableViewBackground {
-    case useSystemDefault, lightTheme, darkTheme
+    case lightTheme, darkTheme
 }
 
 internal enum SwiftyFORM_Theme_TableViewSeparator {
-    case useSystemDefault, lightTheme, darkTheme
+    case lightTheme, darkTheme
 }
 
 internal enum SwiftyFORM_Theme_SectionHeader {
-    case useSystemDefault, lightTheme, darkTheme
+    case lightTheme, darkTheme
 }
 
 internal enum SwiftyFORM_Theme_SectionFooter {
-    case useSystemDefault, lightTheme, darkTheme
+    case lightTheme, darkTheme
 }
 
 internal enum SwiftyFORM_Theme_CellBackground {
-    case useSystemDefault, lightTheme, darkTheme
+    case lightTheme, darkTheme
 }
 
 
 internal extension SwiftyFORM_Theme_SectionHeader {
-    var textLabel_textColor: UIColor? {
+    var textLabel_textColor: UIColor {
         switch self {
-        case .useSystemDefault:
-            return nil
         case .lightTheme:
             return UIColor.darkGray
         case .darkTheme:
@@ -73,10 +61,8 @@ internal extension SwiftyFORM_Theme_SectionHeader {
 }
 
 internal extension SwiftyFORM_Theme_SectionFooter {
-    var textLabel_textColor: UIColor? {
+    var textLabel_textColor: UIColor {
         switch self {
-        case .useSystemDefault:
-            return nil
         case .lightTheme:
             return UIColor.lightGray
         case .darkTheme:
@@ -86,23 +72,19 @@ internal extension SwiftyFORM_Theme_SectionFooter {
 }
 
 internal extension SwiftyFORM_Theme_TableViewBackground {
-    var color: UIColor? {
+    var color: UIColor {
         switch self {
-        case .useSystemDefault:
-            return nil
         case .lightTheme:
             return UIColor(white: 0.9, alpha: 1.0)
         case .darkTheme:
-            return UIColor(white: 0.2, alpha: 1.0)
+            return UIColor(white: 0.25, alpha: 1.0)
         }
     }
 }
 
 internal extension SwiftyFORM_Theme_TableViewSeparator {
-    var color: UIColor? {
+    var color: UIColor {
         switch self {
-        case .useSystemDefault:
-            return nil
         case .lightTheme:
             return UIColor(white: 0.8, alpha: 1.0)
         case .darkTheme:
@@ -112,14 +94,12 @@ internal extension SwiftyFORM_Theme_TableViewSeparator {
 }
 
 internal extension SwiftyFORM_Theme_CellBackground {
-    var color: UIColor? {
+    var color: UIColor {
         switch self {
-        case .useSystemDefault:
-            return nil
         case .lightTheme:
             return UIColor(white: 0.95, alpha: 1.0)
         case .darkTheme:
-            return UIColor(white: 0.3, alpha: 1.0)
+            return UIColor(white: 0.2, alpha: 1.0)
         }
     }
 }

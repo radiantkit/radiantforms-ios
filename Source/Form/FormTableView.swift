@@ -25,20 +25,14 @@ public class FormTableView: UITableView {
             let appearanceProxy: FormTableView = FormTableView.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.sectionHeader_textLabel_textColor = theme.sectionHeader.textLabel_textColor
             appearanceProxy.sectionFooter_textLabel_textColor = theme.sectionFooter.textLabel_textColor
-            if let color: UIColor = theme.tableViewBackground.color {
-                appearanceProxy.backgroundColor = color
-            }
-            if let color: UIColor = theme.tableViewSeparator.color {
-                appearanceProxy.separatorColor = color
-            }
+            appearanceProxy.backgroundColor = theme.tableViewBackground.color
+            appearanceProxy.separatorColor = theme.tableViewSeparator.color
         }
 
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
             let appearanceProxy: UITableViewCell = UITableViewCell.appearance(whenContainedInInstancesOf: allContainerTypes)
-            if let color: UIColor = theme.cellBackground.color {
-                appearanceProxy.backgroundColor = color
-            }
+            appearanceProxy.backgroundColor = theme.cellBackground.color
         }
 
         do {
