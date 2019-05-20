@@ -13,7 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             theme: SwiftyFORM_Theme.lightTheme()
         )
         FormTableView.configureAppearance(
-            whenContainedInInstancesOf: [AmountViewController.self],
+            whenContainedInInstancesOf: [AmountViewController_Light.self],
+            theme: SwiftyFORM_Theme.lightTheme()
+        )
+        FormTableView.configureAppearance(
+            whenContainedInInstancesOf: [AmountViewController_Dark.self],
             theme: SwiftyFORM_Theme.darkTheme()
         )
         FormTableView.configureAppearance(

@@ -207,3 +207,6 @@ class AmountViewController: FormViewController {
         return instance
     }()
 }
+
+class AmountViewController_Dark: AmountViewController {}
+class AmountViewController_Light: AmountViewController {}
