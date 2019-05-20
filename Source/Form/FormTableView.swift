@@ -37,7 +37,7 @@ public class FormTableView: UITableView {
 
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
-            AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes)
+            AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
 }

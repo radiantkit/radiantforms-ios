@@ -41,7 +41,7 @@ public struct AmountCellModel {
 }
 
 public class AmountCell: UITableViewCell {
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type]) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
 //        let allContainerTypes: [UIAppearanceContainer.Type] = containerTypes + [AmountCell.self]
         let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
 
