@@ -102,7 +102,7 @@ internal extension SwiftyFORM_Theme_TableViewSeparator {
         case .lightTheme:
             return UIColor(white: 0.8, alpha: 1.0)
         case .darkTheme:
-            return UIColor(white: 0.4, alpha: 1.0)
+            return UIColor(white: 0.0, alpha: 1.0)
         }
     }
 }
