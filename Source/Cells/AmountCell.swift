@@ -41,30 +41,6 @@ public struct AmountCellModel {
 }
 
 public class AmountCell: UITableViewCell {
-    @objc public dynamic var titleLabel_textColor: UIColor?
-    @objc public dynamic var rightView_textColor: UIColor?
-    @objc public dynamic var textField_placeholderColor: UIColor?
-    @objc public dynamic var textField_tintColor: UIColor?
-    @objc public dynamic var textField_textColor: UIColor?
-
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
-
-        do {
-            let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
-            appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
-            appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
-            appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
-            appearanceProxy.textField_textColor = theme.amountCell.textField_textColor
-            appearanceProxy.textField_tintColor = theme.amountCell.textField_tintColor
-        }
-        
-        do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
-            let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
-            appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
-        }
-    }
-    
     public let model: AmountCellModel
     public let titleLabel = UILabel()
     public let textField = AmountCell_TextField()
@@ -107,7 +83,33 @@ public class AmountCell: UITableViewCell {
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - UIAppearance
     
+    @objc public dynamic var titleLabel_textColor: UIColor?
+    @objc public dynamic var rightView_textColor: UIColor?
+    @objc public dynamic var textField_placeholderColor: UIColor?
+    @objc public dynamic var textField_tintColor: UIColor?
+    @objc public dynamic var textField_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        
+        do {
+            let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
+            appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
+            appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
+            appearanceProxy.textField_textColor = theme.amountCell.textField_textColor
+            appearanceProxy.textField_tintColor = theme.amountCell.textField_tintColor
+        }
+        
+        do {
+            let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
+            let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
+            appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
+        }
+    }
+
     // MARK: - RightView, for unit indicators or currency codes
     
     private func installRightView() {
