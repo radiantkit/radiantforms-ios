@@ -24,8 +24,8 @@ public class TextFieldAppearanceStrategy_Default: TextFieldAppearanceStrategy {
     }
     
     public func willDisplay(_ textField: UITextField) {
-        textField.textColor = self.textColor
         textField.tintColor = self.tintColor
+        textField.textColor = self.textColor
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -49,8 +49,8 @@ public class TextFieldAppearanceStrategy_TintFirstResponder: TextFieldAppearance
     }
     
     public func willDisplay(_ textField: UITextField) {
-        textField.textColor = self.textColor
         textField.tintColor = self.tintColor
+        textField.textColor = self.textColor
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
