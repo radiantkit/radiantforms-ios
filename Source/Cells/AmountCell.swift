@@ -104,10 +104,6 @@ public class AmountCell: UITableViewCell {
             textField.inputAccessoryView = toolbar
         }
 
-        applyTheme()
-//        textField.isSelected = true
-//        textField.isHighlighted = true
-
         clipsToBounds = true
         
         installRightView()
@@ -115,41 +111,6 @@ public class AmountCell: UITableViewCell {
     
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-//    public override func tintColorDidChange() {
-//        super.tintColorDidChange()
-//    }
-//
-//    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//    }
-    
-    func applyTheme() {
-//        self.backgroundColor = UIColor.clear
-//        self.backgroundColor = UIColor.lightGray
-
-//        self.contentView.backgroundColor = UIColor.purple
-
-        // The UITextField is transparent and has the same color as the cell.
-//        self.textField.backgroundColor = nil
-
-//        self.titleLabel.backgroundColor = UIColor.blue
-//        self.textField.backgroundColor = UIColor.green
-//        self.rightView.backgroundColor = UIColor.blue
-        
-
-//        let placeholderColor = UIColor.black
-//        let textFieldAttributedPlaceholder = NSAttributedString(string: model.placeholder, attributes:[NSAttributedString.Key.foregroundColor: placeholderColor])
-//        self.textField.attributedPlaceholder = textFieldAttributedPlaceholder
-        
-//        self.tintColor = UIColor.yellow
-//        self.textField.tintColor = UIColor.red
-//        self.titleLabel.tintColor = UIColor.red
-//        self.rightView.tintColor = UIColor.red
-        
-//        self.textField.textColor = UIColor.yellow
-//        self.titleLabel.textColor = UIColor.yellow
-//        self.rightView.textColor = UIColor.yellow
     }
     
     // MARK: - RightView, for unit indicators or currency codes
@@ -169,7 +130,6 @@ public class AmountCell: UITableViewCell {
     
     public lazy var rightView: UILabel = {
         let instance = EdgeInsetLabel(frame: .zero)
-//        instance.textColor = UIColor.black
         instance.textAlignment = .right
         instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return instance
@@ -342,7 +302,6 @@ public class AmountCell: UITableViewCell {
 
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-//        applyTheme()
         textField.textColor = self.textField_tintColor
         updateToolbarButtons()
     }
