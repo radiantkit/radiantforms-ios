@@ -63,11 +63,6 @@ public class AmountCell: UITableViewCell {
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
             appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
         }
-
-
-//        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Baskerville"))
-//        UILabel.appearance().font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-//        UILabel.appearance(whenContainedInInstancesOf: [AmountCell.self]).font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
     }
     
     public let model: AmountCellModel
