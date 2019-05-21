@@ -154,6 +154,15 @@ internal extension SwiftyFORM_Theme_AmountCell {
             return .dark
         }
     }
+
+    var textField_placeholderColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(white: 0.7, alpha: 1)
+        case .darkTheme:
+            return UIColor(white: 0.4, alpha: 1)
+        }
+    }
 }
 
 internal extension SwiftyFORM_Theme_ButtonCell {

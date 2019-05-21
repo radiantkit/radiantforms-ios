@@ -43,13 +43,15 @@ public struct AmountCellModel {
 public class AmountCell: UITableViewCell {
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var rightView_textColor: UIColor?
-    
+    @objc public dynamic var textField_placeholderColor: UIColor?
+
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
 
         do {
             let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
             appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
+            appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
         }
         
         do {
@@ -93,7 +95,6 @@ public class AmountCell: UITableViewCell {
         contentView.addSubview(textField)
         
         titleLabel.text = model.title
-        textField.placeholder = model.placeholder
         textField.returnKeyType = model.returnKeyType
         
         if self.model.toolbarMode == .simple {
@@ -407,6 +408,12 @@ extension AmountCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         self.rightView.textColor = self.rightView_textColor
+
+        let placeholderColor: UIColor = self.textField_placeholderColor ?? UIColor(white: 0.7, alpha: 1)
+        self.textField.attributedPlaceholder = NSAttributedString(
+            string: self.model.placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
+        )
     }
 }
 
