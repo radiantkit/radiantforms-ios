@@ -172,6 +172,13 @@ internal extension SwiftyFORM_Theme_AmountCell {
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
         }
     }
+    
+    var textField_appearanceStrategy: TextFieldAppearanceStrategy {
+        return TextFieldAppearanceStrategy_Default(
+            tintColor: self.textField_tintColor,
+            textColor: self.textField_textColor
+        )
+    }
 }
 
 internal extension SwiftyFORM_Theme_ButtonCell {

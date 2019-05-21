@@ -89,18 +89,15 @@ public class AmountCell: UITableViewCell {
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var rightView_textColor: UIColor?
     @objc public dynamic var textField_placeholderColor: UIColor?
-    @objc public dynamic var textField_tintColor: UIColor?
-    @objc public dynamic var textField_textColor: UIColor?
+    @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
-        
         do {
             let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
             appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
             appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
-            appearanceProxy.textField_textColor = theme.amountCell.textField_textColor
-            appearanceProxy.textField_tintColor = theme.amountCell.textField_tintColor
+            appearanceProxy.textField_appearanceStrategy = theme.amountCell.textField_appearanceStrategy
         }
         
         do {
@@ -299,12 +296,12 @@ public class AmountCell: UITableViewCell {
 
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.textColor = self.textField_tintColor
+        self.textField_appearanceStrategy?.textFieldDidBeginEditing(textField)
         updateToolbarButtons()
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.textColor = self.textField_textColor
+        self.textField_appearanceStrategy?.textFieldDidEndEditing(textField)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -374,6 +371,8 @@ extension AmountCell: WillDisplayCellDelegate {
             string: self.model.placeholder,
             attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
         )
+        
+        self.textField_appearanceStrategy?.willDisplay(self.textField)
     }
 }
 
