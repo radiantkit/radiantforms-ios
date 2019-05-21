@@ -87,8 +87,7 @@ public class AmountCell: UITableViewCell {
         textField.configure()
         textField.delegate = self
 
-        textField.addTarget(self, action: #selector(AmountCell.valueDidChange), for: UIControl.Event.editingChanged)
-
+        textField.addTarget(self, action: #selector(valueDidChange), for: UIControl.Event.editingChanged)
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
