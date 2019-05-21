@@ -216,12 +216,12 @@ public class AmountCell: UITableViewCell {
         _ = resignFirstResponder()
     }
     
-    @objc public func handleTap(_ sender: UITapGestureRecognizer) {
+    @objc public func handleTap() {
         textField.becomeFirstResponder()
     }
     
     public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountCell.handleTap(_:)))
+        let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         return gr
     }()
     
