@@ -140,9 +140,9 @@ internal extension SwiftyFORM_Theme_AmountCell {
     var textField_textColor: UIColor {
         switch self {
         case .lightTheme:
-            return UIColor.black
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         case .darkTheme:
-            return UIColor.white
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         }
     }
     
@@ -161,6 +161,15 @@ internal extension SwiftyFORM_Theme_AmountCell {
             return UIColor(white: 0.7, alpha: 1)
         case .darkTheme:
             return UIColor(white: 0.4, alpha: 1)
+        }
+    }
+
+    var textField_tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
         }
     }
 }

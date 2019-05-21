@@ -44,6 +44,8 @@ public class AmountCell: UITableViewCell {
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var rightView_textColor: UIColor?
     @objc public dynamic var textField_placeholderColor: UIColor?
+    @objc public dynamic var textField_tintColor: UIColor?
+    @objc public dynamic var textField_textColor: UIColor?
 
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
 
@@ -52,12 +54,13 @@ public class AmountCell: UITableViewCell {
             appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
             appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
             appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
+            appearanceProxy.textField_textColor = theme.amountCell.textField_textColor
+            appearanceProxy.textField_tintColor = theme.amountCell.textField_tintColor
         }
         
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
-            appearanceProxy.textColor = theme.amountCell.textField_textColor
             appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
         }
 
@@ -340,11 +343,12 @@ public class AmountCell: UITableViewCell {
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
 //        applyTheme()
+        textField.textColor = self.textField_tintColor
         updateToolbarButtons()
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        textField.textColor = self.textField_textColor
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
