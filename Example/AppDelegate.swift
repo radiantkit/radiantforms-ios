@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
 
         let vc = FirstViewController()
-//        let vc = AmountViewController()
+//        let vc = AmountViewController_Light()
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.rootViewController = UINavigationController(rootViewController: vc)
 		window.tintColor = nil
