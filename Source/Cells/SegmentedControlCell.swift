@@ -21,17 +21,29 @@ public class SegmentedControlCell: UITableViewCell {
 		self.segmentedControl = UISegmentedControl(items: model.items)
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
-		textLabel?.text = model.title
-		segmentedControl.selectedSegmentIndex = model.value
-		segmentedControl.addTarget(self, action: #selector(SegmentedControlCell.valueChanged), for: .valueChanged)
-		accessoryView = segmentedControl
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        textLabel?.text = model.title
+        segmentedControl.selectedSegmentIndex = model.value
+		segmentedControl.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        accessoryView = segmentedControl
 	}
 
 	public required init(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	@objc public func valueChanged() {
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var segmentedControl_tintColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: SegmentedControlCell = SegmentedControlCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.segmentedControlCell.textLabel_textColor
+        appearanceProxy.segmentedControl_tintColor = theme.segmentedControlCell.segmentedControl_tintColor
+    }
+
+    @objc public func valueChanged() {
 		SwiftyFormLog("value did change")
 		model.valueDidChange(segmentedControl.selectedSegmentIndex)
 	}
@@ -40,4 +52,11 @@ public class SegmentedControlCell: UITableViewCell {
 		SwiftyFormLog("set value \(value)")
 		segmentedControl.selectedSegmentIndex = value
 	}
+}
+
+extension SegmentedControlCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+        self.segmentedControl.tintColor = self.segmentedControl_tintColor
+    }
 }
