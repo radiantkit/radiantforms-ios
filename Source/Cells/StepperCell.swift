@@ -20,6 +20,7 @@ public class StepperCell: UITableViewCell {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
 		textLabel?.text = model.title
 
 		valueLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
@@ -35,6 +36,17 @@ public class StepperCell: UITableViewCell {
 
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var stepper_tintColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: StepperCell = StepperCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.stepperCell.textLabel_textColor
+        appearanceProxy.stepper_tintColor = theme.stepperCell.stepper_tintColor
     }
     
 	public override func layoutSubviews() {
@@ -84,4 +96,11 @@ public class StepperCell: UITableViewCell {
 		stepperView.value = Double(value)
 		updateValue(value)
 	}
+}
+
+extension StepperCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+        self.stepperView.tintColor = self.stepper_tintColor
+    }
 }

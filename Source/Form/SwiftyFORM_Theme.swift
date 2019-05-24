@@ -9,6 +9,7 @@ public struct SwiftyFORM_Theme {
     internal let amountCell: SwiftyFORM_Theme_AmountCell
     internal let buttonCell: SwiftyFORM_Theme_ButtonCell
     internal let segmentedControlCell: SwiftyFORM_Theme_SegmentedControlCell
+    internal let stepperCell: SwiftyFORM_Theme_StepperCell
     internal let switchCell: SwiftyFORM_Theme_SwitchCell
     internal let textFieldCell: SwiftyFORM_Theme_TextFieldCell
     
@@ -22,6 +23,7 @@ public struct SwiftyFORM_Theme {
             amountCell: .lightTheme,
             buttonCell: .lightTheme,
             segmentedControlCell: .lightTheme,
+            stepperCell: .lightTheme,
             switchCell: .lightTheme,
             textFieldCell: .lightTheme
         )
@@ -37,6 +39,7 @@ public struct SwiftyFORM_Theme {
             amountCell: .darkTheme,
             buttonCell: .darkTheme,
             segmentedControlCell: .darkTheme,
+            stepperCell: .darkTheme,
             switchCell: .darkTheme,
             textFieldCell: .darkTheme
         )
@@ -72,6 +75,10 @@ internal enum SwiftyFORM_Theme_ButtonCell {
 }
 
 internal enum SwiftyFORM_Theme_SegmentedControlCell {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_StepperCell {
     case lightTheme, darkTheme
 }
 
@@ -195,7 +202,8 @@ internal extension SwiftyFORM_Theme_AmountCell {
     }
     
     var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_Default(
+        return TextFieldAppearanceStrategy_TintFirstResponder(
+//        return TextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )
@@ -248,6 +256,26 @@ internal extension SwiftyFORM_Theme_SwitchCell {
     }
 }
 
+internal extension SwiftyFORM_Theme_StepperCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+    
+    var stepper_tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+}
+
 internal extension SwiftyFORM_Theme_TextFieldCell {
     var titleLabel_textColor: UIColor {
         switch self {
@@ -295,7 +323,8 @@ internal extension SwiftyFORM_Theme_TextFieldCell {
     }
     
     var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_Default(
+        return TextFieldAppearanceStrategy_TintFirstResponder(
+//        return TextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )
