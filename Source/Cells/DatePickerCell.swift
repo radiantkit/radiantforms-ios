@@ -256,7 +256,7 @@ public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDi
 
 	lazy var datePicker: UIDatePicker = {
 		let instance = UIDatePicker()
-		instance.addTarget(self, action: #selector(DatePickerExpandedCell.valueChanged), for: .valueChanged)
+		instance.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
 		return instance
 	}()
 
