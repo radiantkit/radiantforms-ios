@@ -38,11 +38,8 @@ public class FormTableView: UITableView {
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
             AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-        }
-        
-        do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
             ButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
 }

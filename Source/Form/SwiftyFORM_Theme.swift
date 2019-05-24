@@ -8,6 +8,7 @@ public struct SwiftyFORM_Theme {
     internal let cellBackground: SwiftyFORM_Theme_CellBackground
     internal let amountCell: SwiftyFORM_Theme_AmountCell
     internal let buttonCell: SwiftyFORM_Theme_ButtonCell
+    internal let textFieldCell: SwiftyFORM_Theme_TextFieldCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
         return SwiftyFORM_Theme(
@@ -17,7 +18,8 @@ public struct SwiftyFORM_Theme {
             sectionFooter: .lightTheme,
             cellBackground: .lightTheme,
             amountCell: .lightTheme,
-            buttonCell: .lightTheme
+            buttonCell: .lightTheme,
+            textFieldCell: .lightTheme
         )
     }
     
@@ -29,7 +31,8 @@ public struct SwiftyFORM_Theme {
             sectionFooter: .darkTheme,
             cellBackground: .darkTheme,
             amountCell: .darkTheme,
-            buttonCell: .darkTheme
+            buttonCell: .darkTheme,
+            textFieldCell: .darkTheme
         )
     }
 }
@@ -59,6 +62,10 @@ internal enum SwiftyFORM_Theme_AmountCell {
 }
 
 internal enum SwiftyFORM_Theme_ButtonCell {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_TextFieldCell {
     case lightTheme, darkTheme
 }
 
@@ -192,3 +199,56 @@ internal extension SwiftyFORM_Theme_ButtonCell {
     }
 }
 
+internal extension SwiftyFORM_Theme_TextFieldCell {
+    var titleLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+    
+    var textField_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        }
+    }
+    
+    var textField_keyboardAppearance: UIKeyboardAppearance {
+        switch self {
+        case .lightTheme:
+            return .light
+        case .darkTheme:
+            return .dark
+        }
+    }
+    
+    var textField_placeholderColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(white: 0.7, alpha: 1)
+        case .darkTheme:
+            return UIColor(white: 0.4, alpha: 1)
+        }
+    }
+    
+    var textField_tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        }
+    }
+    
+    var textField_appearanceStrategy: TextFieldAppearanceStrategy {
+        return TextFieldAppearanceStrategy_Default(
+            tintColor: self.textField_tintColor,
+            textColor: self.textField_textColor
+        )
+    }
+}

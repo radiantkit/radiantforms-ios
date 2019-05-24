@@ -79,6 +79,27 @@ public class TextFieldCell: UITableViewCell {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var titleLabel_textColor: UIColor?
+    @objc public dynamic var textField_placeholderColor: UIColor?
+    @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        do {
+            let appearanceProxy: TextFieldCell = TextFieldCell.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.titleLabel_textColor = theme.textFieldCell.titleLabel_textColor
+            appearanceProxy.textField_placeholderColor = theme.textFieldCell.textField_placeholderColor
+            appearanceProxy.textField_appearanceStrategy = theme.textFieldCell.textField_appearanceStrategy
+        }
+        
+        do {
+            let allContainerTypes: [UIAppearanceContainer.Type] = [TextFieldCell.self] + containerTypes
+            let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
+            appearanceProxy.keyboardAppearance = theme.textFieldCell.textField_keyboardAppearance
+        }
+    }
+
 	public lazy var toolbar: SimpleToolbar = {
 		let instance = SimpleToolbar()
 		weak var weakSelf = self
@@ -353,9 +374,14 @@ public class TextFieldCell: UITableViewCell {
 }
 
 extension TextFieldCell: UITextFieldDelegate {
-	public func textFieldDidBeginEditing(_ textField: UITextField) {
-		updateToolbarButtons()
-	}
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.textField_appearanceStrategy?.textFieldDidBeginEditing(textField)
+        updateToolbarButtons()
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        self.textField_appearanceStrategy?.textFieldDidEndEditing(textField)
+    }
 
 	public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		let textFieldString: NSString = textField.text as NSString? ?? ""
@@ -383,6 +409,20 @@ extension TextFieldCell: CellHeightProvider {
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
+}
+
+extension TextFieldCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.titleLabel.textColor = self.titleLabel_textColor
+        
+        let placeholderColor: UIColor = self.textField_placeholderColor ?? UIColor(white: 0.7, alpha: 1)
+        self.textField.attributedPlaceholder = NSAttributedString(
+            string: self.model.placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
+        )
+        
+        self.textField_appearanceStrategy?.willDisplay(self.textField)
+    }
 }
 
 public enum TextFieldCell_State {
