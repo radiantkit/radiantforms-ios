@@ -41,11 +41,13 @@ public class StepperCell: UITableViewCell {
     // MARK: - UIAppearance
     
     @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var valueLabel_textColor: UIColor?
     @objc public dynamic var stepper_tintColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
         let appearanceProxy: StepperCell = StepperCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.stepperCell.textLabel_textColor
+        appearanceProxy.valueLabel_textColor = theme.stepperCell.valueLabel_textColor
         appearanceProxy.stepper_tintColor = theme.stepperCell.stepper_tintColor
     }
     
@@ -101,6 +103,7 @@ public class StepperCell: UITableViewCell {
 extension StepperCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
+        self.valueLabel.textColor = self.valueLabel_textColor
         self.stepperView.tintColor = self.stepper_tintColor
     }
 }

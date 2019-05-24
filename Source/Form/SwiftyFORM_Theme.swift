@@ -266,6 +266,15 @@ internal extension SwiftyFORM_Theme_StepperCell {
         }
     }
     
+    var valueLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        }
+    }
+    
     var stepper_tintColor: UIColor {
         switch self {
         case .lightTheme:
