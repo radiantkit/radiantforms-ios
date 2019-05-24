@@ -8,6 +8,7 @@
  * Renamed from `TextFieldFormItemCellSizes` to `TextFieldCell_Sizes`.
  * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
  * Renamed from `ViewControllerFormItemCell` to `ViewControllerCell`.
+ * Renamed from `ViewControllerFormItemCellModel` to `ViewControllerCellModel`.
  * Added `AmountFormItem` and `AmountCell`.
  * Added `FormItem.isHidden` that determines whether the field is shown/hidden.
  

@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class ViewControllerFormItemCellModel {
+public class ViewControllerCellModel {
 	public let title: String
 	public let placeholder: String
 	public init(title: String, placeholder: String) {
@@ -11,10 +11,10 @@ public class ViewControllerFormItemCellModel {
 }
 
 public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
-	public let model: ViewControllerFormItemCellModel
-	let innerDidSelectRow: (ViewControllerCell, ViewControllerFormItemCellModel) -> Void
+	public let model: ViewControllerCellModel
+	let innerDidSelectRow: (ViewControllerCell, ViewControllerCellModel) -> Void
 
-	public init(model: ViewControllerFormItemCellModel, didSelectRow: @escaping (ViewControllerCell, ViewControllerFormItemCellModel) -> Void) {
+	public init(model: ViewControllerCellModel, didSelectRow: @escaping (ViewControllerCell, ViewControllerCellModel) -> Void) {
 		self.model = model
 		self.innerDidSelectRow = didSelectRow
 		super.init(style: .value1, reuseIdentifier: nil)
@@ -39,3 +39,6 @@ public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
 
 @available(*, unavailable, renamed: "ViewControllerCell")
 typealias ViewControllerFormItemCell = ViewControllerCell
+
+@available(*, unavailable, renamed: "ViewControllerCellModel")
+typealias ViewControllerFormItemCellModel = ViewControllerCellModel

@@ -672,11 +672,11 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: ViewControllerFormItem
 
 	func visit(object: ViewControllerFormItem) {
-		let model = ViewControllerFormItemCellModel(title: object.title, placeholder: object.placeholder)
+		let model = ViewControllerCellModel(title: object.title, placeholder: object.placeholder)
 		let willPopViewController = WillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController
-		let cell = ViewControllerCell(model: model) { (cell: ViewControllerCell, _: ViewControllerFormItemCellModel) in
+		let cell = ViewControllerCell(model: model) { (cell: ViewControllerCell, _: ViewControllerCellModel) in
 			SwiftyFormLog("push")
 			if let vc = weakViewController {
 				let dismissCommand = PopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
