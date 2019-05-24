@@ -43,6 +43,7 @@ public class FormTableView: UITableView {
             StepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             SwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            ViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
 }

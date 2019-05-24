@@ -12,6 +12,7 @@ public struct SwiftyFORM_Theme {
     internal let stepperCell: SwiftyFORM_Theme_StepperCell
     internal let switchCell: SwiftyFORM_Theme_SwitchCell
     internal let textFieldCell: SwiftyFORM_Theme_TextFieldCell
+    internal let viewControllerCell: SwiftyFORM_Theme_ViewControllerCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
         return SwiftyFORM_Theme(
@@ -25,7 +26,8 @@ public struct SwiftyFORM_Theme {
             segmentedControlCell: .lightTheme,
             stepperCell: .lightTheme,
             switchCell: .lightTheme,
-            textFieldCell: .lightTheme
+            textFieldCell: .lightTheme,
+            viewControllerCell: .lightTheme
         )
     }
     
@@ -41,7 +43,8 @@ public struct SwiftyFORM_Theme {
             segmentedControlCell: .darkTheme,
             stepperCell: .darkTheme,
             switchCell: .darkTheme,
-            textFieldCell: .darkTheme
+            textFieldCell: .darkTheme,
+            viewControllerCell: .darkTheme
         )
     }
 }
@@ -87,6 +90,10 @@ internal enum SwiftyFORM_Theme_SwitchCell {
 }
 
 internal enum SwiftyFORM_Theme_TextFieldCell {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_ViewControllerCell {
     case lightTheme, darkTheme
 }
 
@@ -341,5 +348,16 @@ internal extension SwiftyFORM_Theme_TextFieldCell {
     
     var errorLabel_textColor: UIColor {
         return UIColor.red
+    }
+}
+
+internal extension SwiftyFORM_Theme_ViewControllerCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
     }
 }

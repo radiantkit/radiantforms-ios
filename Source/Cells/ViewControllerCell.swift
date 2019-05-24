@@ -27,6 +27,15 @@ public class ViewControllerCell: UITableViewCell {
 	public required init(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: ViewControllerCell = ViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.viewControllerCell.textLabel_textColor
+    }
 }
 
 extension ViewControllerCell: SelectRowDelegate {
@@ -38,6 +47,12 @@ extension ViewControllerCell: SelectRowDelegate {
 		innerDidSelectRow(self, model)
 		SwiftyFormLog("did invoke")
 	}
+}
+
+extension ViewControllerCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+    }
 }
 
 @available(*, unavailable, renamed: "ViewControllerCell")
