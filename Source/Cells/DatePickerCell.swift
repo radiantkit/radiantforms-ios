@@ -34,7 +34,7 @@ public class DatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling {
 	weak var expandedCell: DatePickerExpandedCell?
 	public let model: DatePickerCellModel
 
@@ -214,9 +214,9 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 			toggleExpandCollapse()
 		}
 	}
+}
 
-	// MARK: AssignAppearance
-
+extension DatePickerToggleCell: AssignAppearance {
 	public func assignDefaultColors() {
 		textLabel?.textColor = UIColor.black
 		detailTextLabel?.textColor = UIColor.gray
