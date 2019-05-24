@@ -42,7 +42,7 @@ public class TextFieldCell: UITableViewCell {
 		textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
 
-		errorLabel.textColor = UIColor.red
+		errorLabel.textColor = UIColor.black
 		errorLabel.numberOfLines = 0
 
 		textField.configure()
@@ -84,13 +84,15 @@ public class TextFieldCell: UITableViewCell {
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var textField_placeholderColor: UIColor?
     @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
-    
+    @objc public dynamic var errorLabel_textColor: UIColor?
+
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
         do {
             let appearanceProxy: TextFieldCell = TextFieldCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.textFieldCell.titleLabel_textColor
             appearanceProxy.textField_placeholderColor = theme.textFieldCell.textField_placeholderColor
             appearanceProxy.textField_appearanceStrategy = theme.textFieldCell.textField_appearanceStrategy
+            appearanceProxy.errorLabel_textColor = theme.textFieldCell.errorLabel_textColor
         }
         
         do {
@@ -414,6 +416,8 @@ extension TextFieldCell: CellHeightProvider {
 extension TextFieldCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
+        
+        self.errorLabel.textColor = self.errorLabel_textColor ?? UIColor.red
         
         let placeholderColor: UIColor = self.textField_placeholderColor ?? UIColor(white: 0.7, alpha: 1)
         self.textField.attributedPlaceholder = NSAttributedString(

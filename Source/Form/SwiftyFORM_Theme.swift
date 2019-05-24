@@ -251,4 +251,8 @@ internal extension SwiftyFORM_Theme_TextFieldCell {
             textColor: self.textField_textColor
         )
     }
+    
+    var errorLabel_textColor: UIColor {
+        return UIColor.red
+    }
 }
