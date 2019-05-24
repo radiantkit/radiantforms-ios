@@ -10,11 +10,11 @@ public class ViewControllerFormItemCellModel {
 	}
 }
 
-public class ViewControllerFormItemCell: UITableViewCell, SelectRowDelegate {
+public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
 	public let model: ViewControllerFormItemCellModel
-	let innerDidSelectRow: (ViewControllerFormItemCell, ViewControllerFormItemCellModel) -> Void
+	let innerDidSelectRow: (ViewControllerCell, ViewControllerFormItemCellModel) -> Void
 
-	public init(model: ViewControllerFormItemCellModel, didSelectRow: @escaping (ViewControllerFormItemCell, ViewControllerFormItemCellModel) -> Void) {
+	public init(model: ViewControllerFormItemCellModel, didSelectRow: @escaping (ViewControllerCell, ViewControllerFormItemCellModel) -> Void) {
 		self.model = model
 		self.innerDidSelectRow = didSelectRow
 		super.init(style: .value1, reuseIdentifier: nil)
@@ -36,3 +36,6 @@ public class ViewControllerFormItemCell: UITableViewCell, SelectRowDelegate {
 		SwiftyFormLog("did invoke")
 	}
 }
+
+@available(*, unavailable, renamed: "ViewControllerCell")
+typealias ViewControllerFormItemCell = ViewControllerCell

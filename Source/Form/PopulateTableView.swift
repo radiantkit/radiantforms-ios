@@ -676,7 +676,7 @@ class PopulateTableView: FormItemVisitor {
 		let willPopViewController = WillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController
-		let cell = ViewControllerFormItemCell(model: model) { (cell: ViewControllerFormItemCell, _: ViewControllerFormItemCellModel) in
+		let cell = ViewControllerCell(model: model) { (cell: ViewControllerCell, _: ViewControllerFormItemCellModel) in
 			SwiftyFormLog("push")
 			if let vc = weakViewController {
 				let dismissCommand = PopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
@@ -689,7 +689,7 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: ViewControllerFormItemCell) -> CommandProtocol {
+	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: ViewControllerCell) -> CommandProtocol {
 		weak var weakViewController = parentViewController
 		let command = CommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
