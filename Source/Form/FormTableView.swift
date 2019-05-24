@@ -40,6 +40,7 @@ public class FormTableView: UITableView {
             AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             ButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             SegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            SwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }

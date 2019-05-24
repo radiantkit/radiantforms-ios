@@ -21,7 +21,7 @@ public class SwitchCell: UITableViewCell {
         textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
 		textLabel?.text = model.title
 
-		switchView.addTarget(self, action: #selector(SwitchCell.valueChanged), for: .valueChanged)
+		switchView.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
 		accessoryView = switchView
 	}
 
@@ -29,6 +29,17 @@ public class SwitchCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var switch_onTintColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: SwitchCell = SwitchCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.switchCell.textLabel_textColor
+        appearanceProxy.switch_onTintColor = theme.switchCell.switch_onTintColor
+    }
+    
 	@objc public func valueChanged() {
 		SwiftyFormLog("value did change")
 		model.valueDidChange(switchView.isOn)
@@ -38,5 +49,11 @@ public class SwitchCell: UITableViewCell {
 		SwiftyFormLog("set value \(value), animated \(animated)")
 		switchView.setOn(value, animated: animated)
 	}
+}
 
+extension SwitchCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+        self.switchView.onTintColor = self.switch_onTintColor
+    }
 }

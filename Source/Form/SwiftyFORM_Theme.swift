@@ -9,6 +9,7 @@ public struct SwiftyFORM_Theme {
     internal let amountCell: SwiftyFORM_Theme_AmountCell
     internal let buttonCell: SwiftyFORM_Theme_ButtonCell
     internal let segmentedControlCell: SwiftyFORM_Theme_SegmentedControlCell
+    internal let switchCell: SwiftyFORM_Theme_SwitchCell
     internal let textFieldCell: SwiftyFORM_Theme_TextFieldCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
@@ -21,6 +22,7 @@ public struct SwiftyFORM_Theme {
             amountCell: .lightTheme,
             buttonCell: .lightTheme,
             segmentedControlCell: .lightTheme,
+            switchCell: .lightTheme,
             textFieldCell: .lightTheme
         )
     }
@@ -35,6 +37,7 @@ public struct SwiftyFORM_Theme {
             amountCell: .darkTheme,
             buttonCell: .darkTheme,
             segmentedControlCell: .darkTheme,
+            switchCell: .darkTheme,
             textFieldCell: .darkTheme
         )
     }
@@ -69,6 +72,10 @@ internal enum SwiftyFORM_Theme_ButtonCell {
 }
 
 internal enum SwiftyFORM_Theme_SegmentedControlCell {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_SwitchCell {
     case lightTheme, darkTheme
 }
 
@@ -223,6 +230,21 @@ internal extension SwiftyFORM_Theme_SegmentedControlCell {
         case .darkTheme:
             return UIColor.white
         }
+    }
+}
+
+internal extension SwiftyFORM_Theme_SwitchCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+    
+    var switch_onTintColor: UIColor {
+        return UIColor(red: 0.298, green: 0.85, blue: 0.39, alpha: 1)
     }
 }
 
