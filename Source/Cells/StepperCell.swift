@@ -33,6 +33,10 @@ public class StepperCell: UITableViewCell {
 		valueLabel.text = "0"
 	}
 
+    public required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 
@@ -53,10 +57,6 @@ public class StepperCell: UITableViewCell {
 
 		let stepperY: CGFloat = bounds.midY - stepperSize.height / 2
 		stepperView.frame = CGRect(x: containerWidth - stepperSize.width, y: stepperY, width: stepperSize.width, height: stepperSize.height)
-	}
-
-	public required init(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 
 	@objc public func valueChanged() {
