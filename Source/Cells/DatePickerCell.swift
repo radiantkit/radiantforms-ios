@@ -34,7 +34,7 @@ public class DatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling {
+public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
 	weak var expandedCell: DatePickerExpandedCell?
 	public let model: DatePickerCellModel
 
@@ -132,20 +132,6 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 		return 60
 	}
 
-	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
-		if model.expandCollapseWhenSelectingRow == false {
-			//print("cell is always expanded")
-			return
-		}
-
-		if isExpandedCellVisible {
-			_ = resignFirstResponder()
-		} else {
-			_ = becomeFirstResponder()
-		}
-		form_deselectRow()
-	}
-
 	// MARK: UIResponder
 
 	public override var canBecomeFirstResponder: Bool {
@@ -226,6 +212,22 @@ extension DatePickerToggleCell: AssignAppearance {
 		textLabel?.textColor = tintColor
 		detailTextLabel?.textColor = tintColor
 	}
+}
+
+extension DatePickerToggleCell: SelectRowDelegate {
+    public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
+        if model.expandCollapseWhenSelectingRow == false {
+            //print("cell is always expanded")
+            return
+        }
+        
+        if isExpandedCellVisible {
+            _ = resignFirstResponder()
+        } else {
+            _ = becomeFirstResponder()
+        }
+        form_deselectRow()
+    }
 }
 
 /**
