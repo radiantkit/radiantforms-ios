@@ -8,6 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        let builder = SwiftyFORM_ThemeBuilder()
+        builder.tintColor = UIColor.red
+        builder.apply()
+
+        
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [],
             theme: SwiftyFORM_Theme.lightTheme()
