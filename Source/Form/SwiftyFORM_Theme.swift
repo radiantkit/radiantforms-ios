@@ -216,8 +216,7 @@ internal extension SwiftyFORM_Theme_AmountCell {
     }
     
     var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_TintFirstResponder(
-//        return TextFieldAppearanceStrategy_Default(
+        return TextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )
@@ -375,8 +374,7 @@ internal extension SwiftyFORM_Theme_TextFieldCell {
     }
     
     var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_TintFirstResponder(
-//        return TextFieldAppearanceStrategy_Default(
+        return TextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )
