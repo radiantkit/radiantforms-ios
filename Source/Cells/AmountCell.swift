@@ -63,22 +63,18 @@ public class AmountCell: UITableViewCell {
         textField.configure()
         textField.delegate = self
 
-        textField.addTarget(self, action: #selector(AmountCell.valueDidChange), for: UIControl.Event.editingChanged)
+        textField.addTarget(self, action: #selector(valueDidChange), for: UIControl.Event.editingChanged)
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
         
         titleLabel.text = model.title
-        textField.placeholder = model.placeholder
         textField.returnKeyType = model.returnKeyType
         
         if self.model.toolbarMode == .simple {
             textField.inputAccessoryView = toolbar
         }
-        
-//        titleLabel.backgroundColor = UIColor.blue
-//        textField.backgroundColor = UIColor.green
-//        rightView.backgroundColor = UIColor.blue
+
         clipsToBounds = true
         
         installRightView()
@@ -87,8 +83,30 @@ public class AmountCell: UITableViewCell {
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - UIAppearance
     
+    @objc public dynamic var titleLabel_textColor: UIColor?
+    @objc public dynamic var rightView_textColor: UIColor?
+    @objc public dynamic var textField_placeholderColor: UIColor?
+    @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
     
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        do {
+            let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
+            appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
+            appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
+            appearanceProxy.textField_appearanceStrategy = theme.amountCell.textField_appearanceStrategy
+        }
+        
+        do {
+            let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
+            let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
+            appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
+        }
+    }
+
     // MARK: - RightView, for unit indicators or currency codes
     
     private func installRightView() {
@@ -106,7 +124,6 @@ public class AmountCell: UITableViewCell {
     
     public lazy var rightView: UILabel = {
         let instance = EdgeInsetLabel(frame: .zero)
-        instance.textColor = UIColor.black
         instance.textAlignment = .right
         instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return instance
@@ -157,12 +174,12 @@ public class AmountCell: UITableViewCell {
         _ = resignFirstResponder()
     }
     
-    @objc public func handleTap(_ sender: UITapGestureRecognizer) {
+    @objc public func handleTap() {
         textField.becomeFirstResponder()
     }
     
     public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-        let gr = UITapGestureRecognizer(target: self, action: #selector(AmountCell.handleTap(_:)))
+        let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         return gr
     }()
     
@@ -279,7 +296,12 @@ public class AmountCell: UITableViewCell {
 
 extension AmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.textField_appearanceStrategy?.textFieldDidBeginEditing(textField)
         updateToolbarButtons()
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        self.textField_appearanceStrategy?.textFieldDidEndEditing(textField)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -339,6 +361,21 @@ extension AmountCell: CellHeightProvider {
     }
 }
 
+extension AmountCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.titleLabel.textColor = self.titleLabel_textColor
+        self.rightView.textColor = self.rightView_textColor
+
+        let placeholderColor: UIColor = self.textField_placeholderColor ?? UIColor(white: 0.7, alpha: 1)
+        self.textField.attributedPlaceholder = NSAttributedString(
+            string: self.model.placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
+        )
+        
+        self.textField_appearanceStrategy?.willDisplay(self.textField)
+    }
+}
+
 internal class AmountCell_NumberFormatter: NumberFormatter {
     /// `fractionDigits` is typically between 0 and 5
     init(fractionDigits: UInt8) {
@@ -363,7 +400,6 @@ internal class AmountCell_NumberFormatter: NumberFormatter {
 
 public class AmountCell_TextField: UITextField {
     fileprivate func configure() {
-        backgroundColor = UIColor.white
         autocapitalizationType = .none
         autocorrectionType = .no
         spellCheckingType = .no

@@ -105,6 +105,8 @@
 		428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683601B346D0C0028DB2F /* PrevNextTests.swift */; };
 		428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683611B346D0C0028DB2F /* ValidateResultTests.swift */; };
 		428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* ValidatorTests.swift */; };
+		42B060F92292913900FD4585 /* SwiftyFORM_Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* SwiftyFORM_Theme.swift */; };
+		42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */; };
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
 		42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */; };
 		42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* Bundle+LoadView.swift */; };
@@ -229,6 +231,8 @@
 		428683601B346D0C0028DB2F /* PrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrevNextTests.swift; sourceTree = "<group>"; };
 		428683611B346D0C0028DB2F /* ValidateResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResultTests.swift; sourceTree = "<group>"; };
 		428683621B346D0C0028DB2F /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
+		42B060F82292913900FD4585 /* SwiftyFORM_Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyFORM_Theme.swift; sourceTree = "<group>"; };
+		42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
 		42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillDisplayCellDelegate.swift; sourceTree = "<group>"; };
 		42D005171B96348200986B3B /* Bundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadView.swift"; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
 				4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */,
+				42B060F82292913900FD4585 /* SwiftyFORM_Theme.swift */,
 				42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */,
 				428683101B346CFE0028DB2F /* TableViewSection.swift */,
 				423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */,
@@ -423,6 +428,7 @@
 				428683251B346CFE0028DB2F /* Logging.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
+				42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */,
 				4280F728227833290098EF22 /* UITableView+Compatibility.swift */,
 				428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */,
 				420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */,
@@ -591,6 +597,7 @@
 				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* TextViewCell.swift in Sources */,
 				4219E1C71DB827CF00B3204A /* EmailSpecification.swift in Sources */,
+				42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */,
 				4286833E1B346CFE0028DB2F /* OptionListViewController.swift in Sources */,
 				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
 				42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */,
@@ -626,6 +633,7 @@
 				42108D1B1B34E9F60067FEAA /* OptionPickerFormItem.swift in Sources */,
 				428683431B346CFE0028DB2F /* TableViewSection.swift in Sources */,
 				4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */,
+				42B060F92292913900FD4585 /* SwiftyFORM_Theme.swift in Sources */,
 				428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */,
 				42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */,
 				4286832E1B346CFE0028DB2F /* ButtonCell.swift in Sources */,

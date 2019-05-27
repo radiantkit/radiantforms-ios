@@ -20,6 +20,7 @@ public class StepperCell: UITableViewCell {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		textLabel?.text = model.title
 
 		valueLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
@@ -28,11 +29,28 @@ public class StepperCell: UITableViewCell {
 		containerView.addSubview(valueLabel)
 		accessoryView = containerView
 
-		stepperView.addTarget(self, action: #selector(StepperCell.valueChanged), for: .valueChanged)
+		stepperView.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
 
 		valueLabel.text = "0"
 	}
 
+    public required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var valueLabel_textColor: UIColor?
+    @objc public dynamic var stepper_tintColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: StepperCell = StepperCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.stepperCell.textLabel_textColor
+        appearanceProxy.valueLabel_textColor = theme.stepperCell.valueLabel_textColor
+        appearanceProxy.stepper_tintColor = theme.stepperCell.stepper_tintColor
+    }
+    
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 
@@ -53,10 +71,6 @@ public class StepperCell: UITableViewCell {
 
 		let stepperY: CGFloat = bounds.midY - stepperSize.height / 2
 		stepperView.frame = CGRect(x: containerWidth - stepperSize.width, y: stepperY, width: stepperSize.width, height: stepperSize.height)
-	}
-
-	public required init(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 
 	@objc public func valueChanged() {
@@ -84,4 +98,12 @@ public class StepperCell: UITableViewCell {
 		stepperView.value = Double(value)
 		updateValue(value)
 	}
+}
+
+extension StepperCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+        self.valueLabel.textColor = self.valueLabel_textColor
+        self.stepperView.tintColor = self.stepper_tintColor
+    }
 }

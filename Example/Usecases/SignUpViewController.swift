@@ -19,6 +19,7 @@ class SignUpViewController: FormViewController {
 		builder += maleOrFemale
 		builder += birthday
 		builder.alignLeft([userName, password, email])
+        builder += shoeSize
 		builder += SectionFormItem()
 		builder += subscribeToNewsletter
 		builder += SectionFooterTitleFormItem().title("There is no way to unsubscribe our service")
@@ -97,6 +98,13 @@ class SignUpViewController: FormViewController {
 		return instance
 		}()
 
+    lazy var shoeSize: SegmentedControlFormItem = {
+        let instance = SegmentedControlFormItem()
+        instance.title = "Shoe Size"
+        instance.items = ["S", "M", "L", "XL"]
+        return instance
+    }()
+    
 	lazy var subscribeToNewsletter: SwitchFormItem = {
 		let instance = SwitchFormItem()
 		instance.title = "Subscribe to newsletter"
@@ -129,11 +137,19 @@ class SignUpViewController: FormViewController {
 		return offsetDate(today, years: -i)
 	}
 
+    func assignRandomValue(_ formItem: SegmentedControlFormItem) {
+        let count = formItem.items.count
+        if count > 0 {
+            formItem.selected = randomInt(0, count - 1)
+        }
+    }
+    
 	func randomize() {
 		userName.value = randomString(["john", "jane", "steve", "bill", "einstein", "newton"])
 		password.value = randomString(["1234", "0000", "111111", "abc", "111122223333"])
 		email.value = randomString(["hello@example.com", "hi@example.com", "feedback@example.com", "unsubscribe@example.com", "not-a-valid-email"])
 		birthday.value = randomDate()
+        assignRandomValue(shoeSize)
 		subscribeToNewsletter.value = randomBool()
 	}
 
@@ -149,3 +165,6 @@ class SignUpViewController: FormViewController {
 		}()
 
 }
+
+class SignUpViewController_Dark: SignUpViewController {}
+class SignUpViewController_Light: SignUpViewController {}

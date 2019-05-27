@@ -10,7 +10,7 @@ public class ViewControllerCellModel {
 	}
 }
 
-public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
+public class ViewControllerCell: UITableViewCell {
 	public let model: ViewControllerCellModel
 	let innerDidSelectRow: (ViewControllerCell, ViewControllerCellModel) -> Void
 
@@ -20,6 +20,7 @@ public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
 		super.init(style: .value1, reuseIdentifier: nil)
 		accessoryType = .disclosureIndicator
 		textLabel?.text = model.title
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		detailTextLabel?.text = model.placeholder
 	}
 
@@ -27,6 +28,17 @@ public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: ViewControllerCell = ViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.viewControllerCell.textLabel_textColor
+    }
+}
+
+extension ViewControllerCell: SelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		SwiftyFormLog("will invoke")
 		// hide keyboard when the user taps this kind of row
@@ -35,6 +47,12 @@ public class ViewControllerCell: UITableViewCell, SelectRowDelegate {
 		innerDidSelectRow(self, model)
 		SwiftyFormLog("did invoke")
 	}
+}
+
+extension ViewControllerCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+    }
 }
 
 @available(*, unavailable, renamed: "ViewControllerCell")

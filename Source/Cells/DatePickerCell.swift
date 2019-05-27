@@ -34,7 +34,7 @@ public class DatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
 	weak var expandedCell: DatePickerExpandedCell?
 	public let model: DatePickerCellModel
 
@@ -56,6 +56,7 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = model.selectionStyle
 		textLabel?.text = model.title
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 
 		updateValue()
 
@@ -131,20 +132,6 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 		return 60
 	}
 
-	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
-		if model.expandCollapseWhenSelectingRow == false {
-			//print("cell is always expanded")
-			return
-		}
-
-		if isExpandedCellVisible {
-			_ = resignFirstResponder()
-		} else {
-			_ = becomeFirstResponder()
-		}
-		form_deselectRow()
-	}
-
 	// MARK: UIResponder
 
 	public override var canBecomeFirstResponder: Bool {
@@ -214,17 +201,52 @@ public class DatePickerToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 		}
 	}
 
-	// MARK: AssignAppearance
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var row_tintColor: UIColor?
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var detailTextLabel_textColor: UIColor?
 
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: DatePickerToggleCell = DatePickerToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.row_tintColor = theme.datePickerCell.row_tintColor
+        appearanceProxy.textLabel_textColor = theme.datePickerCell.textLabel_textColor
+        appearanceProxy.detailTextLabel_textColor = theme.datePickerCell.detailTextLabel_textColor
+    }
+}
+
+extension DatePickerToggleCell: AssignAppearance {
 	public func assignDefaultColors() {
-		textLabel?.textColor = UIColor.black
-		detailTextLabel?.textColor = UIColor.gray
+		textLabel?.textColor = self.textLabel_textColor ?? UIColor.black
+		detailTextLabel?.textColor = self.detailTextLabel_textColor ?? UIColor.gray
 	}
 
 	public func assignTintColors() {
-		textLabel?.textColor = tintColor
-		detailTextLabel?.textColor = tintColor
+		textLabel?.textColor = row_tintColor
+		detailTextLabel?.textColor = row_tintColor
 	}
+}
+
+extension DatePickerToggleCell: SelectRowDelegate {
+    public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
+        if model.expandCollapseWhenSelectingRow == false {
+            //print("cell is always expanded")
+            return
+        }
+        
+        if isExpandedCellVisible {
+            _ = resignFirstResponder()
+        } else {
+            _ = becomeFirstResponder()
+        }
+        form_deselectRow()
+    }
+}
+
+extension DatePickerToggleCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        assignDefaultColors()
+    }
 }
 
 /**
@@ -255,7 +277,7 @@ public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDi
 
 	lazy var datePicker: UIDatePicker = {
 		let instance = UIDatePicker()
-		instance.addTarget(self, action: #selector(DatePickerExpandedCell.valueChanged), for: .valueChanged)
+		instance.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
 		return instance
 	}()
 
