@@ -20,7 +20,7 @@ public class StepperCell: UITableViewCell {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		textLabel?.text = model.title
 
 		valueLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)

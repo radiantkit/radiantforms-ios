@@ -18,7 +18,7 @@ public class SwitchCell: UITableViewCell {
 		self.switchView = UISwitch()
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		textLabel?.text = model.title
 
 		switchView.addTarget(self, action: #selector(valueChanged), for: .valueChanged)

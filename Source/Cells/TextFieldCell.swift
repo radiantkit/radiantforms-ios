@@ -38,7 +38,7 @@ public class TextFieldCell: UITableViewCell {
 
 		selectionStyle = .none
 
-		titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+		titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 		errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
 

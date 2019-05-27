@@ -57,7 +57,7 @@ public class AmountCell: UITableViewCell {
         
         selectionStyle = .none
         
-        titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
         textField.configure()

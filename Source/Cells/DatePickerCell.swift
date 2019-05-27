@@ -56,7 +56,7 @@ public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = model.selectionStyle
 		textLabel?.text = model.title
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
 
 		updateValue()
 

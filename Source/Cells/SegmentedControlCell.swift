@@ -21,7 +21,7 @@ public class SegmentedControlCell: UITableViewCell {
 		self.segmentedControl = UISegmentedControl(items: model.items)
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         textLabel?.text = model.title
         segmentedControl.selectedSegmentIndex = model.value
 		segmentedControl.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
