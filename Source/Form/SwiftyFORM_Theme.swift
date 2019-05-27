@@ -8,6 +8,7 @@ public struct SwiftyFORM_Theme {
     internal let cellBackground: SwiftyFORM_Theme_CellBackground
     internal let amountCell: SwiftyFORM_Theme_AmountCell
     internal let buttonCell: SwiftyFORM_Theme_ButtonCell
+    internal let datePickerCell: SwiftyFORM_Theme_DatePickerCell
     internal let segmentedControlCell: SwiftyFORM_Theme_SegmentedControlCell
     internal let stepperCell: SwiftyFORM_Theme_StepperCell
     internal let switchCell: SwiftyFORM_Theme_SwitchCell
@@ -23,6 +24,7 @@ public struct SwiftyFORM_Theme {
             cellBackground: .lightTheme,
             amountCell: .lightTheme,
             buttonCell: .lightTheme,
+            datePickerCell: .lightTheme,
             segmentedControlCell: .lightTheme,
             stepperCell: .lightTheme,
             switchCell: .lightTheme,
@@ -40,6 +42,7 @@ public struct SwiftyFORM_Theme {
             cellBackground: .darkTheme,
             amountCell: .darkTheme,
             buttonCell: .darkTheme,
+            datePickerCell: .darkTheme,
             segmentedControlCell: .darkTheme,
             stepperCell: .darkTheme,
             switchCell: .darkTheme,
@@ -74,6 +77,10 @@ internal enum SwiftyFORM_Theme_AmountCell {
 }
 
 internal enum SwiftyFORM_Theme_ButtonCell {
+    case lightTheme, darkTheme
+}
+
+internal enum SwiftyFORM_Theme_DatePickerCell {
     case lightTheme, darkTheme
 }
 
@@ -224,6 +231,35 @@ internal extension SwiftyFORM_Theme_ButtonCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        }
+    }
+}
+
+internal extension SwiftyFORM_Theme_DatePickerCell {
+    var row_tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        }
+    }
+    
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+    
+    var detailTextLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.gray
+        case .darkTheme:
+            return UIColor.gray
         }
     }
 }

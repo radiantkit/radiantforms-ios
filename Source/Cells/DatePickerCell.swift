@@ -200,17 +200,30 @@ public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
 			toggleExpandCollapse()
 		}
 	}
+
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var row_tintColor: UIColor?
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var detailTextLabel_textColor: UIColor?
+
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+        let appearanceProxy: DatePickerToggleCell = DatePickerToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.row_tintColor = theme.datePickerCell.row_tintColor
+        appearanceProxy.textLabel_textColor = theme.datePickerCell.textLabel_textColor
+        appearanceProxy.detailTextLabel_textColor = theme.datePickerCell.detailTextLabel_textColor
+    }
 }
 
 extension DatePickerToggleCell: AssignAppearance {
 	public func assignDefaultColors() {
-		textLabel?.textColor = UIColor.black
-		detailTextLabel?.textColor = UIColor.gray
+		textLabel?.textColor = self.textLabel_textColor ?? UIColor.black
+		detailTextLabel?.textColor = self.detailTextLabel_textColor ?? UIColor.gray
 	}
 
 	public func assignTintColors() {
-		textLabel?.textColor = tintColor
-		detailTextLabel?.textColor = tintColor
+		textLabel?.textColor = row_tintColor
+		detailTextLabel?.textColor = row_tintColor
 	}
 }
 
@@ -227,6 +240,12 @@ extension DatePickerToggleCell: SelectRowDelegate {
             _ = becomeFirstResponder()
         }
         form_deselectRow()
+    }
+}
+
+extension DatePickerToggleCell: WillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        assignDefaultColors()
     }
 }
 
