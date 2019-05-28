@@ -108,7 +108,7 @@
 		42B060F92292913900FD4585 /* SwiftyFORM_Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* SwiftyFORM_Theme.swift */; };
 		42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */; };
 		42CDA6BD229C26640050FE51 /* SwiftyFORM_ThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6BC229C26640050FE51 /* SwiftyFORM_ThemeBuilder.swift */; };
-		42CDA6C1229D457F0050FE51 /* SwiftyFORM_Accessibility_ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6C0229D457F0050FE51 /* SwiftyFORM_Accessibility_ColorTests.swift */; };
+		42CDA6C3229D552F0050FE51 /* AccessibilityColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6C2229D552F0050FE51 /* AccessibilityColorTests.swift */; };
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
 		42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */; };
 		42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* Bundle+LoadView.swift */; };
@@ -236,7 +236,7 @@
 		42B060F82292913900FD4585 /* SwiftyFORM_Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyFORM_Theme.swift; sourceTree = "<group>"; };
 		42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42CDA6BC229C26640050FE51 /* SwiftyFORM_ThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyFORM_ThemeBuilder.swift; sourceTree = "<group>"; };
-		42CDA6C0229D457F0050FE51 /* SwiftyFORM_Accessibility_ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyFORM_Accessibility_ColorTests.swift; sourceTree = "<group>"; };
+		42CDA6C2229D552F0050FE51 /* AccessibilityColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityColorTests.swift; sourceTree = "<group>"; };
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
 		42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillDisplayCellDelegate.swift; sourceTree = "<group>"; };
 		42D005171B96348200986B3B /* Bundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadView.swift"; sourceTree = "<group>"; };
@@ -448,13 +448,13 @@
 		4286835D1B346D0C0028DB2F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				42CDA6C2229D552F0050FE51 /* AccessibilityColorTests.swift */,
 				4280F721226F4C340098EF22 /* AmountCellTests.swift */,
 				4286835F1B346D0C0028DB2F /* Info.plist */,
 				4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */,
 				4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */,
 				428683601B346D0C0028DB2F /* PrevNextTests.swift */,
 				4245B3EA1DA429B500BCB4C7 /* Specification */,
-				42CDA6C0229D457F0050FE51 /* SwiftyFORM_Accessibility_ColorTests.swift */,
 				428683611B346D0C0028DB2F /* ValidateResultTests.swift */,
 				428683621B346D0C0028DB2F /* ValidatorTests.swift */,
 			);
@@ -689,11 +689,11 @@
 			files = (
 				428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */,
 				4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */,
+				42CDA6C3229D552F0050FE51 /* AccessibilityColorTests.swift in Sources */,
 				4245B3F71DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift in Sources */,
 				4245B3FD1DA429B500BCB4C7 /* SpecificationTests.swift in Sources */,
 				428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */,
 				4245B3F91DA429B500BCB4C7 /* EmailSpecificationTests.swift in Sources */,
-				42CDA6C1229D457F0050FE51 /* SwiftyFORM_Accessibility_ColorTests.swift in Sources */,
 				4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */,
 				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
 				4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */,
