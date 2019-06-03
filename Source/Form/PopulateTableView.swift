@@ -646,7 +646,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: TextViewFormItem
 
 	func visit(object: TextViewFormItem) {
-		var model = TextViewCellModel()
+		var model = RFTextViewCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
 		model.placeholder = object.placeholder
@@ -656,7 +656,7 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.innerValue = value
 			return
 		}
-		let cell = TextViewCell(model: model)
+		let cell = RFTextViewCell(model: model)
 		cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
