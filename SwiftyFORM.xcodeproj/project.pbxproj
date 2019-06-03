@@ -73,7 +73,7 @@
 		428683331B346CFE0028DB2F /* RFSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FF1B346CFE0028DB2F /* RFSliderCell.swift */; };
 		428683341B346CFE0028DB2F /* RFStaticTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683001B346CFE0028DB2F /* RFStaticTextCell.swift */; };
 		428683351B346CFE0028DB2F /* RFStepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683011B346CFE0028DB2F /* RFStepperCell.swift */; };
-		428683361B346CFE0028DB2F /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683021B346CFE0028DB2F /* SwitchCell.swift */; };
+		428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683021B346CFE0028DB2F /* RFSwitchCell.swift */; };
 		428683371B346CFE0028DB2F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683031B346CFE0028DB2F /* TextFieldCell.swift */; };
 		428683381B346CFE0028DB2F /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683041B346CFE0028DB2F /* TextViewCell.swift */; };
 		428683391B346CFE0028DB2F /* ViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683051B346CFE0028DB2F /* ViewControllerCell.swift */; };
@@ -199,7 +199,7 @@
 		428682FF1B346CFE0028DB2F /* RFSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSliderCell.swift; sourceTree = "<group>"; };
 		428683001B346CFE0028DB2F /* RFStaticTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFStaticTextCell.swift; sourceTree = "<group>"; };
 		428683011B346CFE0028DB2F /* RFStepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFStepperCell.swift; sourceTree = "<group>"; };
-		428683021B346CFE0028DB2F /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		428683021B346CFE0028DB2F /* RFSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSwitchCell.swift; sourceTree = "<group>"; };
 		428683031B346CFE0028DB2F /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		428683041B346CFE0028DB2F /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewCell.swift; sourceTree = "<group>"; };
 		428683051B346CFE0028DB2F /* ViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCell.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 				428682FF1B346CFE0028DB2F /* RFSliderCell.swift */,
 				428683001B346CFE0028DB2F /* RFStaticTextCell.swift */,
 				428683011B346CFE0028DB2F /* RFStepperCell.swift */,
-				428683021B346CFE0028DB2F /* SwitchCell.swift */,
+				428683021B346CFE0028DB2F /* RFSwitchCell.swift */,
 				428683031B346CFE0028DB2F /* TextFieldCell.swift */,
 				428683041B346CFE0028DB2F /* TextViewCell.swift */,
 				428683051B346CFE0028DB2F /* ViewControllerCell.swift */,
@@ -624,7 +624,7 @@
 				4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */,
 				4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */,
 				42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */,
-				428683361B346CFE0028DB2F /* SwitchCell.swift in Sources */,
+				428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */,
 				4286833A1B346CFE0028DB2F /* Command.swift in Sources */,
 				428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */,
 				420F6CC71D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift in Sources */,

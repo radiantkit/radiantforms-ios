@@ -559,7 +559,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SwitchFormItem
 
 	func visit(object: SwitchFormItem) {
-		var model = SwitchCellModel()
+		var model = RFSwitchCellModel()
 		model.title = object.title
 
 		weak var weakObject = object
@@ -569,7 +569,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SwitchCell(model: model)
+		let cell = RFSwitchCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 

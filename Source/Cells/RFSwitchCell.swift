@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct SwitchCellModel {
+public struct RFSwitchCellModel {
 	var title: String = ""
 
 	var valueDidChange: (Bool) -> Void = { (value: Bool) in
@@ -9,11 +9,11 @@ public struct SwitchCellModel {
 	}
 }
 
-public class SwitchCell: UITableViewCell {
-	public let model: SwitchCellModel
+public class RFSwitchCell: UITableViewCell {
+	public let model: RFSwitchCellModel
 	public let switchView: UISwitch
 
-	public init(model: SwitchCellModel) {
+	public init(model: RFSwitchCellModel) {
 		self.model = model
 		self.switchView = UISwitch()
 		super.init(style: .default, reuseIdentifier: nil)
@@ -35,7 +35,7 @@ public class SwitchCell: UITableViewCell {
     @objc public dynamic var switch_onTintColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: SwitchCell = SwitchCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFSwitchCell = RFSwitchCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.switchCell.textLabel_textColor
         appearanceProxy.switch_onTintColor = theme.switchCell.switch_onTintColor
     }
@@ -51,9 +51,16 @@ public class SwitchCell: UITableViewCell {
 	}
 }
 
-extension SwitchCell: WillDisplayCellDelegate {
+extension RFSwitchCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.switchView.onTintColor = self.switch_onTintColor
     }
 }
+
+
+@available(*, unavailable, renamed: "RFSwitchCell")
+typealias SwitchCell = RFSwitchCell
+
+@available(*, unavailable, renamed: "RFSwitchCellModel")
+typealias SwitchCellModel = RFSwitchCellModel
