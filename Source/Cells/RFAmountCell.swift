@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class AmountCellSizes {
+public class RFAmountCellSizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
     public let cellHeight: CGFloat
@@ -13,7 +13,7 @@ public class AmountCellSizes {
     }
 }
 
-public struct AmountCellModel {
+public struct RFAmountCellModel {
     var numberFormatter: NumberFormatter! = nil
     var title: String = ""
     var toolbarMode: ToolbarMode = .simple
@@ -41,11 +41,11 @@ public struct AmountCellModel {
 }
 
 public class RFAmountCell: UITableViewCell {
-    public let model: AmountCellModel
+    public let model: RFAmountCellModel
     public let titleLabel = UILabel()
-    public let textField = AmountCell_TextField()
+    public let textField = RFAmountCell_TextField()
     
-    public init(model: AmountCellModel) {
+    public init(model: RFAmountCellModel) {
         assert(model.numberFormatter != nil)
         assert(model.model != nil)
         
@@ -190,7 +190,7 @@ public class RFAmountCell: UITableViewCell {
     
     public var titleWidthMode: TitleWidthMode = .auto
     
-    public func compute() -> AmountCellSizes {
+    public func compute() -> RFAmountCellSizes {
         let cellWidth: CGFloat = bounds.width
         
         var titleLabelFrame = CGRect.zero
@@ -227,13 +227,13 @@ public class RFAmountCell: UITableViewCell {
             cellHeight = ceil(textFieldFrame.height)
         }
         
-        return AmountCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, cellHeight: cellHeight)
+        return RFAmountCellSizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, cellHeight: cellHeight)
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         //SwiftyFormLog("layoutSubviews")
-        let sizes: AmountCellSizes = compute()
+        let sizes: RFAmountCellSizes = compute()
         titleLabel.frame = sizes.titleLabelFrame
         textField.frame = sizes.textFieldFrame
     }
@@ -354,7 +354,7 @@ extension RFAmountCell: UITextFieldDelegate {
 
 extension RFAmountCell: CellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-        let sizes: AmountCellSizes = compute()
+        let sizes: RFAmountCellSizes = compute()
         let value = sizes.cellHeight
         //SwiftyFormLog("compute height of row: \(value)")
         return value
@@ -376,7 +376,7 @@ extension RFAmountCell: WillDisplayCellDelegate {
     }
 }
 
-internal class AmountCell_NumberFormatter: NumberFormatter {
+internal class RFAmountCell_NumberFormatter: NumberFormatter {
     /// `fractionDigits` is typically between 0 and 5
     init(fractionDigits: UInt8) {
         super.init()
@@ -398,7 +398,7 @@ internal class AmountCell_NumberFormatter: NumberFormatter {
     }
 }
 
-public class AmountCell_TextField: UITextField {
+public class RFAmountCell_TextField: UITextField {
     fileprivate func configure() {
         autocapitalizationType = .none
         autocorrectionType = .no
