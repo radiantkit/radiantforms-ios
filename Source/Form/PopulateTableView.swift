@@ -529,7 +529,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: StepperFormItem
 
 	func visit(object: StepperFormItem) {
-		var model = StepperCellModel()
+		var model = RFStepperCellModel()
 		model.title = object.title
 		model.value = object.value
 
@@ -540,7 +540,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = StepperCell(model: model)
+		let cell = RFStepperCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
