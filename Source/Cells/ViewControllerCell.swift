@@ -32,7 +32,7 @@ public class ViewControllerCell: UITableViewCell {
     
     @objc public dynamic var textLabel_textColor: UIColor?
     
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         let appearanceProxy: ViewControllerCell = ViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.viewControllerCell.textLabel_textColor
     }

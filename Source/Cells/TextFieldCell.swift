@@ -86,7 +86,7 @@ public class TextFieldCell: UITableViewCell {
     @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
     @objc public dynamic var errorLabel_textColor: UIColor?
 
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         do {
             let appearanceProxy: TextFieldCell = TextFieldCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.textFieldCell.titleLabel_textColor

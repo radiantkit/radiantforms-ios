@@ -44,7 +44,7 @@ public class StepperCell: UITableViewCell {
     @objc public dynamic var valueLabel_textColor: UIColor?
     @objc public dynamic var stepper_tintColor: UIColor?
     
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         let appearanceProxy: StepperCell = StepperCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.stepperCell.textLabel_textColor
         appearanceProxy.valueLabel_textColor = theme.stepperCell.valueLabel_textColor

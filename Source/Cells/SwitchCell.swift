@@ -34,7 +34,7 @@ public class SwitchCell: UITableViewCell {
     @objc public dynamic var textLabel_textColor: UIColor?
     @objc public dynamic var switch_onTintColor: UIColor?
     
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         let appearanceProxy: SwitchCell = SwitchCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.switchCell.textLabel_textColor
         appearanceProxy.switch_onTintColor = theme.switchCell.switch_onTintColor

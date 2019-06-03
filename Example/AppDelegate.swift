@@ -16,23 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Light.self],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Dark.self],
-            theme: SwiftyFORM_Theme.darkTheme()
+            theme: RFTheme.darkTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Light.self],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Dark.self],
-            theme: SwiftyFORM_Theme.darkTheme()
+            theme: RFTheme.darkTheme()
         )
 
         let vc = FirstViewController()

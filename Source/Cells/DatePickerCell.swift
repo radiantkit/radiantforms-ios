@@ -207,7 +207,7 @@ public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
     @objc public dynamic var textLabel_textColor: UIColor?
     @objc public dynamic var detailTextLabel_textColor: UIColor?
 
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         let appearanceProxy: DatePickerToggleCell = DatePickerToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.row_tintColor = theme.datePickerCell.row_tintColor
         appearanceProxy.textLabel_textColor = theme.datePickerCell.textLabel_textColor

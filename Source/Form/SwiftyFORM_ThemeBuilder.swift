@@ -2,10 +2,10 @@
 import UIKit
 
 public class SwiftyFORM_ThemeBuilder: NSObject {
-    private var theme: SwiftyFORM_Theme
+    private var theme: RFTheme
     
     @objc public override init() {
-        self.theme = SwiftyFORM_Theme.lightTheme()
+        self.theme = RFTheme.lightTheme()
         super.init()
     }
     

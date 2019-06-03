@@ -1,6 +1,6 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 
-public struct SwiftyFORM_Theme {
+public struct RFTheme {
     internal let tableViewBackground: RFTheme_TableViewBackground
     internal let tableViewSeparator: RFTheme_TableViewSeparator
     internal let sectionHeader: RFTheme_SectionHeader
@@ -15,8 +15,8 @@ public struct SwiftyFORM_Theme {
     internal let textFieldCell: RFTheme_TextFieldCell
     internal let viewControllerCell: RFTheme_ViewControllerCell
     
-    public static func lightTheme() -> SwiftyFORM_Theme {
-        return SwiftyFORM_Theme(
+    public static func lightTheme() -> RFTheme {
+        return RFTheme(
             tableViewBackground: .lightTheme,
             tableViewSeparator: .lightTheme,
             sectionHeader: .lightTheme,
@@ -33,8 +33,8 @@ public struct SwiftyFORM_Theme {
         )
     }
     
-    public static func darkTheme() -> SwiftyFORM_Theme {
-        return SwiftyFORM_Theme(
+    public static func darkTheme() -> RFTheme {
+        return RFTheme(
             tableViewBackground: .darkTheme,
             tableViewSeparator: .darkTheme,
             sectionHeader: .darkTheme,
