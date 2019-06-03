@@ -43,7 +43,7 @@ public class FormTableView: UITableView {
             RFSegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFStepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFSwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFTextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             ViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
