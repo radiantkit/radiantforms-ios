@@ -3,20 +3,20 @@ import XCTest
 import UIKit
 @testable import SwiftyFORM
 
-class AmountCellTests: XCTestCase {
+class RFAmountCellTests: XCTestCase {
     
     func testExtractDigitsFromString() {
-        XCTAssertEqual(AmountCell.extractDigitsFromString(""), "")
-        XCTAssertEqual(AmountCell.extractDigitsFromString(" 1,234.56 "), "123456")
-        XCTAssertEqual(AmountCell.extractDigitsFromString("0001234"), "0001234")
-        XCTAssertEqual(AmountCell.extractDigitsFromString("1 234 567"), "1234567")
-        XCTAssertEqual(AmountCell.extractDigitsFromString("-1"), "1")
+        XCTAssertEqual(RFAmountCell.extractDigitsFromString(""), "")
+        XCTAssertEqual(RFAmountCell.extractDigitsFromString(" 1,234.56 "), "123456")
+        XCTAssertEqual(RFAmountCell.extractDigitsFromString("0001234"), "0001234")
+        XCTAssertEqual(RFAmountCell.extractDigitsFromString("1 234 567"), "1234567")
+        XCTAssertEqual(RFAmountCell.extractDigitsFromString("-1"), "1")
     }
     
     func testParseAndFormatAmount() {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.parseAndFormatAmount(0), "")
         XCTAssertEqual(cell.parseAndFormatAmount(123456), "1,234.56", "discard leading zeroes")
     }
@@ -27,7 +27,7 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = 1234567890
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
         XCTAssertEqual(cell.formatAmount(123), "123")
@@ -38,7 +38,7 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = 123456
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
         XCTAssertEqual(cell.formatAmount(1), "0.01")
         XCTAssertEqual(cell.formatAmount(123), "1.23")
@@ -50,7 +50,7 @@ class AmountCellTests: XCTestCase {
     func testNoInitialValue0() {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(0)
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
         XCTAssertEqual(cell.formatAmount(123), "123")
@@ -60,7 +60,7 @@ class AmountCellTests: XCTestCase {
     func testNoInitialValue1() {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
         XCTAssertEqual(cell.formatAmount(1), "0.01")
         XCTAssertEqual(cell.formatAmount(123), "1.23")
@@ -73,7 +73,7 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 0, decimalSeparator: ",", groupingSeparator: ".")
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
         XCTAssertEqual(cell.formatAmount(1), "1")
         XCTAssertEqual(cell.formatAmount(123), "123")
@@ -84,7 +84,7 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 2, decimalSeparator: ",", groupingSeparator: ".")
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0,00")
         XCTAssertEqual(cell.formatAmount(1), "0,01")
         XCTAssertEqual(cell.formatAmount(123), "1,23")
@@ -95,7 +95,7 @@ class AmountCellTests: XCTestCase {
         let formItem = AmountFormItem()
         formItem.maxIntegerDigits(6).fractionDigits(4)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 4, decimalSeparator: ".", groupingSeparator: " ")
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.0000")
         XCTAssertEqual(cell.formatAmount(1), "0.0001")
         XCTAssertEqual(cell.formatAmount(123), "0.0123")
@@ -111,7 +111,7 @@ class AmountCellTests: XCTestCase {
             decimalSeparator: "_d_",
             groupingSeparator: "_g_"
         )
-        let cell: AmountCell = createCell(formItem)
+        let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0_d_000")
         XCTAssertEqual(cell.formatAmount(1), "0_d_001")
         XCTAssertEqual(cell.formatAmount(123), "0_d_123")
@@ -121,7 +121,7 @@ class AmountCellTests: XCTestCase {
     
     // MARK: - Helper
     
-    func createCell(_ formItem: AmountFormItem) -> AmountCell {
+    func createCell(_ formItem: AmountFormItem) -> RFAmountCell {
         let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
         let populateTableView = PopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)
@@ -130,7 +130,7 @@ class AmountCellTests: XCTestCase {
         guard let item: TableViewCellArrayItem = populateTableView.cells.allItems.first else {
             fatalError("Expected PopulateTableView to have created at least 1 item")
         }
-        guard let cell: AmountCell = item.cell as? AmountCell else {
+        guard let cell: RFAmountCell = item.cell as? RFAmountCell else {
             fatalError("Expected firstItem.cell to be of type AmountCell")
         }
         return cell

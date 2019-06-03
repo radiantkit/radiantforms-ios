@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct TextViewFormItemCellSizes {
+public struct RFTextViewFormItemCellSizes {
 	var titleLabelFrame: CGRect = CGRect.zero
 	var placeholderLabelFrame: CGRect = CGRect.zero
 	var textViewFrame: CGRect = CGRect.zero
@@ -9,7 +9,7 @@ public struct TextViewFormItemCellSizes {
 	var cellHeight: CGFloat = 0
 }
 
-public struct TextViewCellModel {
+public struct RFTextViewCellModel {
 	var title: String = ""
 	var placeholder: String = ""
 	var toolbarMode: ToolbarMode = .simple
@@ -19,13 +19,13 @@ public struct TextViewCellModel {
 	}
 }
 
-public class TextViewCell: UITableViewCell {
+public class RFTextViewCell: UITableViewCell {
 	public let titleLabel = UILabel()
 	public let placeholderLabel = UILabel()
 	public let textView = UITextView()
-	public let model: TextViewCellModel
+	public let model: RFTextViewCellModel
 
-	public init(model: TextViewCellModel) {
+	public init(model: RFTextViewCellModel) {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
@@ -66,12 +66,12 @@ public class TextViewCell: UITableViewCell {
 	}
 
 	public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-		let gr = UITapGestureRecognizer(target: self, action: #selector(TextViewCell.handleTap(_:)))
+		let gr = UITapGestureRecognizer(target: self, action: #selector(RFTextViewCell.handleTap(_:)))
 		return gr
 		}()
 
-	public lazy var toolbar: SimpleToolbar = {
-		let instance = SimpleToolbar()
+	public lazy var toolbar: RFSimpleToolbar = {
+		let instance = RFSimpleToolbar()
 		weak var weakSelf = self
 		instance.jumpToPrevious = {
 			if let cell = weakSelf {
@@ -131,7 +131,7 @@ public class TextViewCell: UITableViewCell {
 		updateValue()
 	}
 
-	public func compute() -> TextViewFormItemCellSizes {
+	public func compute() -> RFTextViewFormItemCellSizes {
 		let cellWidth: CGFloat = bounds.width
 
 		var titleLabelFrame = CGRect.zero
@@ -173,7 +173,7 @@ public class TextViewCell: UITableViewCell {
 		}
 		maxY = max(textViewFrame.maxY, maxY)
 
-		var result = TextViewFormItemCellSizes()
+		var result = RFTextViewFormItemCellSizes()
 		result.titleLabelFrame = titleLabelFrame
 		result.placeholderLabelFrame = placeholderLabelFrame
 		result.textViewFrame = textViewFrame
@@ -185,7 +185,7 @@ public class TextViewCell: UITableViewCell {
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 
-		let sizes: TextViewFormItemCellSizes = compute()
+		let sizes: RFTextViewFormItemCellSizes = compute()
 		titleLabel.frame = sizes.titleLabelFrame
 		placeholderLabel.frame = sizes.placeholderLabelFrame
 		textView.frame = sizes.textViewFrame
@@ -211,7 +211,7 @@ public class TextViewCell: UITableViewCell {
 	}
 }
 
-extension TextViewCell: UITextViewDelegate {
+extension RFTextViewCell: UITextViewDelegate {
 	public func textViewDidBeginEditing(_ textView: UITextView) {
 		updateToolbarButtons()
 	}
@@ -222,11 +222,21 @@ extension TextViewCell: UITextViewDelegate {
 	}
 }
 
-extension TextViewCell: CellHeightProvider {
+extension RFTextViewCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		let sizes: TextViewFormItemCellSizes = compute()
+		let sizes: RFTextViewFormItemCellSizes = compute()
 		let value = sizes.cellHeight
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFTextViewCell")
+typealias TextViewCell = RFTextViewCell
+
+@available(*, unavailable, renamed: "RFTextViewFormItemCellSizes")
+typealias TextViewFormItemCellSizes = RFTextViewFormItemCellSizes
+
+@available(*, unavailable, renamed: "RFTextViewCellModel")
+typealias TextViewCellModel = RFTextViewCellModel

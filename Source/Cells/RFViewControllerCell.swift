@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class ViewControllerCellModel {
+public class RFViewControllerCellModel {
 	public let title: String
 	public let placeholder: String
 	public init(title: String, placeholder: String) {
@@ -10,11 +10,11 @@ public class ViewControllerCellModel {
 	}
 }
 
-public class ViewControllerCell: UITableViewCell {
-	public let model: ViewControllerCellModel
-	let innerDidSelectRow: (ViewControllerCell, ViewControllerCellModel) -> Void
+public class RFViewControllerCell: UITableViewCell {
+	public let model: RFViewControllerCellModel
+	let innerDidSelectRow: (RFViewControllerCell, RFViewControllerCellModel) -> Void
 
-	public init(model: ViewControllerCellModel, didSelectRow: @escaping (ViewControllerCell, ViewControllerCellModel) -> Void) {
+	public init(model: RFViewControllerCellModel, didSelectRow: @escaping (RFViewControllerCell, RFViewControllerCellModel) -> Void) {
 		self.model = model
 		self.innerDidSelectRow = didSelectRow
 		super.init(style: .value1, reuseIdentifier: nil)
@@ -33,12 +33,12 @@ public class ViewControllerCell: UITableViewCell {
     @objc public dynamic var textLabel_textColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: ViewControllerCell = ViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFViewControllerCell = RFViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.viewControllerCell.textLabel_textColor
     }
 }
 
-extension ViewControllerCell: SelectRowDelegate {
+extension RFViewControllerCell: SelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		SwiftyFormLog("will invoke")
 		// hide keyboard when the user taps this kind of row
@@ -49,14 +49,14 @@ extension ViewControllerCell: SelectRowDelegate {
 	}
 }
 
-extension ViewControllerCell: WillDisplayCellDelegate {
+extension RFViewControllerCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
     }
 }
 
-@available(*, unavailable, renamed: "ViewControllerCell")
-typealias ViewControllerFormItemCell = ViewControllerCell
+@available(*, unavailable, renamed: "RFViewControllerCell")
+typealias ViewControllerFormItemCell = RFViewControllerCell
 
-@available(*, unavailable, renamed: "ViewControllerCellModel")
-typealias ViewControllerFormItemCellModel = ViewControllerCellModel
+@available(*, unavailable, renamed: "RFViewControllerCellModel")
+typealias ViewControllerFormItemCellModel = RFViewControllerCellModel

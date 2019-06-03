@@ -5,15 +5,15 @@ import XCTest
 
 class PrecisionSliderTests: XCTestCase {
 	func format0(_ value: Int) -> String {
-		return PrecisionSliderCellFormatter.format(value: value, decimalPlaces: 0)
+		return RFPrecisionSliderCellFormatter.format(value: value, decimalPlaces: 0)
 	}
 	
 	func format1(_ value: Int) -> String {
-		return PrecisionSliderCellFormatter.format(value: value, decimalPlaces: 1)
+		return RFPrecisionSliderCellFormatter.format(value: value, decimalPlaces: 1)
 	}
 
 	func format3(_ value: Int) -> String {
-		return PrecisionSliderCellFormatter.format(value: value, decimalPlaces: 3)
+		return RFPrecisionSliderCellFormatter.format(value: value, decimalPlaces: 3)
 	}
 	
 	func testFormat0() {

@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct SliderCellModel {
+public struct RFSliderCellModel {
 	var title: String = ""
 	var value: Float = 0.0
 	var minimumValue: Float = 0.0
@@ -12,12 +12,12 @@ public struct SliderCellModel {
 	}
 }
 
-public class SliderCell: UITableViewCell, CellHeightProvider {
-	public let model: SliderCellModel
+public class RFSliderCell: UITableViewCell, CellHeightProvider {
+	public let model: RFSliderCellModel
 
 	public let slider = UISlider()
 
-	public init(model: SliderCellModel) {
+	public init(model: RFSliderCellModel) {
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
@@ -27,7 +27,7 @@ public class SliderCell: UITableViewCell, CellHeightProvider {
 		slider.minimumValue = model.minimumValue
 		slider.maximumValue = model.maximumValue
 		slider.value = model.value
-		slider.addTarget(self, action: #selector(SliderCell.valueChanged), for: .valueChanged)
+		slider.addTarget(self, action: #selector(RFSliderCell.valueChanged), for: .valueChanged)
 
 		clipsToBounds = true
 	}
@@ -61,3 +61,10 @@ public class SliderCell: UITableViewCell, CellHeightProvider {
 		slider.setValue(value, animated: animated)
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFSliderCell")
+typealias SliderCell = RFSliderCell
+
+@available(*, unavailable, renamed: "RFSliderCellModel")
+typealias SliderCellModel = RFSliderCellModel

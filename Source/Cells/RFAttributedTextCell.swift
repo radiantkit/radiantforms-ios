@@ -1,15 +1,15 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct AttributedTextCellModel {
+public struct RFAttributedTextCellModel {
 	var titleAttributedText: NSAttributedString?
 	var valueAttributedText: NSAttributedString?
 }
 
-public class AttributedTextCell: UITableViewCell {
-    public var model: AttributedTextCellModel
+public class RFAttributedTextCell: UITableViewCell {
+    public var model: RFAttributedTextCellModel
 
-    public init(model: AttributedTextCellModel) {
+    public init(model: RFAttributedTextCellModel) {
         self.model = model
         super.init(style: .value1, reuseIdentifier: nil)
         loadWithModel(model)
@@ -19,9 +19,16 @@ public class AttributedTextCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func loadWithModel(_ model: AttributedTextCellModel) {
+    public func loadWithModel(_ model: RFAttributedTextCellModel) {
         selectionStyle = .none
         textLabel?.attributedText = model.titleAttributedText
         detailTextLabel?.attributedText = model.valueAttributedText
     }
 }
+
+
+@available(*, unavailable, renamed: "RFAttributedTextCell")
+typealias AttributedTextCell = RFAttributedTextCell
+
+@available(*, unavailable, renamed: "RFAttributedTextCellModel")
+typealias AttributedTextCellModel = RFAttributedTextCellModel

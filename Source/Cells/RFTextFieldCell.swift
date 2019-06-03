@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct TextFieldCellModel {
+public struct RFTextFieldCellModel {
 	var title: String = ""
 	var toolbarMode: ToolbarMode = .simple
 	var placeholder: String = ""
@@ -22,15 +22,15 @@ public struct TextFieldCellModel {
     }
 }
 
-public class TextFieldCell: UITableViewCell {
-	public let model: TextFieldCellModel
+public class RFTextFieldCell: UITableViewCell {
+	public let model: RFTextFieldCellModel
 	public let titleLabel = UILabel()
-	public let textField = TextFieldCell_TextField()
+	public let textField = RFTextFieldCell_TextField()
 	public let errorLabel = UILabel()
 
-	public var state: TextFieldCell_State = .noMessage
+	public var state: RFTextFieldCell_State = .noMessage
 
-	public init(model: TextFieldCellModel) {
+	public init(model: RFTextFieldCellModel) {
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 
@@ -48,7 +48,7 @@ public class TextFieldCell: UITableViewCell {
 		textField.configure()
 		textField.delegate = self
 
-		textField.addTarget(self, action: #selector(TextFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
+		textField.addTarget(self, action: #selector(RFTextFieldCell.valueDidChange), for: UIControl.Event.editingChanged)
 
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(textField)
@@ -88,7 +88,7 @@ public class TextFieldCell: UITableViewCell {
 
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         do {
-            let appearanceProxy: TextFieldCell = TextFieldCell.appearance(whenContainedInInstancesOf: containerTypes)
+            let appearanceProxy: RFTextFieldCell = RFTextFieldCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.textFieldCell.titleLabel_textColor
             appearanceProxy.textField_placeholderColor = theme.textFieldCell.textField_placeholderColor
             appearanceProxy.textField_appearanceStrategy = theme.textFieldCell.textField_appearanceStrategy
@@ -96,14 +96,14 @@ public class TextFieldCell: UITableViewCell {
         }
         
         do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [TextFieldCell.self] + containerTypes
+            let allContainerTypes: [UIAppearanceContainer.Type] = [RFTextFieldCell.self] + containerTypes
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
             appearanceProxy.keyboardAppearance = theme.textFieldCell.textField_keyboardAppearance
         }
     }
 
-	public lazy var toolbar: SimpleToolbar = {
-		let instance = SimpleToolbar()
+	public lazy var toolbar: RFSimpleToolbar = {
+		let instance = RFSimpleToolbar()
 		weak var weakSelf = self
 		instance.jumpToPrevious = {
 			if let cell = weakSelf {
@@ -149,7 +149,7 @@ public class TextFieldCell: UITableViewCell {
 	}
 
 	public lazy var tapGestureRecognizer: UITapGestureRecognizer = {
-		let gr = UITapGestureRecognizer(target: self, action: #selector(TextFieldCell.handleTap(_:)))
+		let gr = UITapGestureRecognizer(target: self, action: #selector(RFTextFieldCell.handleTap(_:)))
 		return gr
 		}()
 
@@ -160,7 +160,7 @@ public class TextFieldCell: UITableViewCell {
 
 	public var titleWidthMode: TitleWidthMode = .auto
 
-	public func compute() -> TextFieldCell_Sizes {
+	public func compute() -> RFTextFieldCell_Sizes {
 		let cellWidth: CGFloat = bounds.width
 
 		var titleLabelFrame = CGRect.zero
@@ -209,13 +209,13 @@ public class TextFieldCell: UITableViewCell {
 			}
 		}
 
-		return TextFieldCell_Sizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
+		return RFTextFieldCell_Sizes(titleLabelFrame: titleLabelFrame, textFieldFrame: textFieldFrame, errorLabelFrame: errorLabelFrame, cellHeight: cellHeight)
 	}
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
 		//SwiftyFormLog("layoutSubviews")
-		let sizes: TextFieldCell_Sizes = compute()
+		let sizes: RFTextFieldCell_Sizes = compute()
 		titleLabel.frame = sizes.titleLabelFrame
 		textField.frame = sizes.textFieldFrame
 		errorLabel.frame = sizes.errorLabelFrame
@@ -264,7 +264,7 @@ public class TextFieldCell: UITableViewCell {
 
 	public func installTimer() {
 		invalidateTimer()
-		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TextFieldCell.timerUpdate), userInfo: nil, repeats: false)
+		let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(RFTextFieldCell.timerUpdate), userInfo: nil, repeats: false)
 		hideErrorMessageAfterFewSecondsTimer = timer
 	}
 
@@ -375,7 +375,7 @@ public class TextFieldCell: UITableViewCell {
 
 }
 
-extension TextFieldCell: UITextFieldDelegate {
+extension RFTextFieldCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         self.textField_appearanceStrategy?.textFieldDidBeginEditing(textField)
         updateToolbarButtons()
@@ -404,16 +404,16 @@ extension TextFieldCell: UITextFieldDelegate {
 	}
 }
 
-extension TextFieldCell: CellHeightProvider {
+extension RFTextFieldCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		let sizes: TextFieldCell_Sizes = compute()
+		let sizes: RFTextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight
 		//SwiftyFormLog("compute height of row: \(value)")
 		return value
 	}
 }
 
-extension TextFieldCell: WillDisplayCellDelegate {
+extension RFTextFieldCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         
@@ -429,13 +429,13 @@ extension TextFieldCell: WillDisplayCellDelegate {
     }
 }
 
-public enum TextFieldCell_State {
+public enum RFTextFieldCell_State {
     case noMessage
     case temporaryMessage(message: String)
     case persistentMessage(message: String)
 }
 
-public class TextFieldCell_Sizes {
+public class RFTextFieldCell_Sizes {
     public let titleLabelFrame: CGRect
     public let textFieldFrame: CGRect
     public let errorLabelFrame: CGRect
@@ -449,7 +449,7 @@ public class TextFieldCell_Sizes {
     }
 }
 
-public class TextFieldCell_TextField: UITextField {
+public class RFTextFieldCell_TextField: UITextField {
     public func configure() {
         autocapitalizationType = .sentences
         autocorrectionType = .default
@@ -459,14 +459,17 @@ public class TextFieldCell_TextField: UITextField {
     }
 }
 
-@available(*, unavailable, renamed: "TextFieldCell")
-typealias TextFieldFormItemCell = TextFieldCell
+@available(*, unavailable, renamed: "RFTextFieldCell")
+typealias TextFieldFormItemCell = RFTextFieldCell
 
-@available(*, unavailable, renamed: "TextFieldCellModel")
-typealias TextFieldFormItemCellModel = TextFieldCellModel
+@available(*, unavailable, renamed: "RFTextFieldCellModel")
+typealias TextFieldFormItemCellModel = RFTextFieldCellModel
 
-@available(*, unavailable, renamed: "TextFieldCell_Sizes")
-typealias TextFieldFormItemCellSizes = TextFieldCell_Sizes
+@available(*, unavailable, renamed: "RFTextFieldCell_State")
+typealias TextFieldCell_State = RFTextFieldCell_State
 
-@available(*, unavailable, renamed: "TextFieldCell_TextField")
-typealias CustomTextField = TextFieldCell_TextField
+@available(*, unavailable, renamed: "RFTextFieldCell_Sizes")
+typealias TextFieldFormItemCellSizes = RFTextFieldCell_Sizes
+
+@available(*, unavailable, renamed: "RFTextFieldCell_TextField")
+typealias CustomTextField = RFTextFieldCell_TextField

@@ -37,14 +37,14 @@ public class FormTableView: UITableView {
 
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
-            AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            ButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            DatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            SegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            StepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            SwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            ViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFAmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFDatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFSegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFStepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFSwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFTextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
 }

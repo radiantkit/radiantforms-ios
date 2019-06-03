@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct StepperCellModel {
+public struct RFStepperCellModel {
 	var title: String = ""
 	var value: Int = 0
 
@@ -10,13 +10,13 @@ public struct StepperCellModel {
 	}
 }
 
-public class StepperCell: UITableViewCell {
-	public let model: StepperCellModel
+public class RFStepperCell: UITableViewCell {
+	public let model: RFStepperCellModel
 	public let valueLabel = UILabel()
 	public let stepperView = UIStepper()
 	public var containerView = UIView()
 
-	public init(model: StepperCellModel) {
+	public init(model: RFStepperCellModel) {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
@@ -45,7 +45,7 @@ public class StepperCell: UITableViewCell {
     @objc public dynamic var stepper_tintColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: StepperCell = StepperCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFStepperCell = RFStepperCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.stepperCell.textLabel_textColor
         appearanceProxy.valueLabel_textColor = theme.stepperCell.valueLabel_textColor
         appearanceProxy.stepper_tintColor = theme.stepperCell.stepper_tintColor
@@ -100,10 +100,17 @@ public class StepperCell: UITableViewCell {
 	}
 }
 
-extension StepperCell: WillDisplayCellDelegate {
+extension RFStepperCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.valueLabel.textColor = self.valueLabel_textColor
         self.stepperView.tintColor = self.stepper_tintColor
     }
 }
+
+
+@available(*, unavailable, renamed: "RFStepperCell")
+typealias StepperCell = RFStepperCell
+
+@available(*, unavailable, renamed: "RFStepperCellModel")
+typealias StepperCellModel = RFStepperCellModel

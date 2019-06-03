@@ -87,11 +87,11 @@ class PopulateTableView: FormItemVisitor {
     // MARK: AmountFormItem
     
     func visit(object: AmountFormItem) {
-        let numberFormatter: NumberFormatter = object.numberFormatter ?? AmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
+        let numberFormatter: NumberFormatter = object.numberFormatter ?? RFAmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
         assert(numberFormatter.minimumFractionDigits == object.fractionDigits)
         assert(numberFormatter.maximumFractionDigits == object.fractionDigits)
         
-        var model = AmountCellModel()
+        var model = RFAmountCellModel()
         model.numberFormatter = numberFormatter
         model.toolbarMode = self.model.toolbarMode
         model.title = object.title
@@ -109,7 +109,7 @@ class PopulateTableView: FormItemVisitor {
             return
         }
 
-        let cell = AmountCell(model: model)
+        let cell = RFAmountCell(model: model)
         cell.setValueWithoutSync(object.value)
         cells.append(cell)
         lastItemType = .item
@@ -131,7 +131,7 @@ class PopulateTableView: FormItemVisitor {
         
         object.assignTitleWidth = { (width: CGFloat) in
             if let cell = weakCell {
-                cell.titleWidthMode = AmountCell.TitleWidthMode.assign(width: width)
+                cell.titleWidthMode = RFAmountCell.TitleWidthMode.assign(width: width)
                 cell.setNeedsUpdateConstraints()
             }
         }
@@ -140,10 +140,10 @@ class PopulateTableView: FormItemVisitor {
     // MARK: AttributedTextFormItem
 
 	func visit(object: AttributedTextFormItem) {
-		var model = AttributedTextCellModel()
+		var model = RFAttributedTextCellModel()
 		model.titleAttributedText = object.title
 		model.valueAttributedText = object.value
-		let cell = AttributedTextCell(model: model)
+		let cell = RFAttributedTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -151,7 +151,7 @@ class PopulateTableView: FormItemVisitor {
 		object.syncCellWithValue = { (value: NSAttributedString?) in
 			SwiftyFormLog("sync value \(String(describing: value))")
 			if let c = weakCell {
-				var m = AttributedTextCellModel()
+				var m = RFAttributedTextCellModel()
 				m.titleAttributedText = c.model.titleAttributedText
 				m.valueAttributedText = value
 				c.model = m
@@ -163,10 +163,10 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: ButtonFormItem
 
 	func visit(object: ButtonFormItem) {
-		var model = ButtonCellModel()
+        var model = RFButtonCellModel()
 		model.title = object.title
 		model.action = object.action
-		let cell = ButtonCell(model: model)
+        let cell = RFButtonCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 	}
@@ -184,10 +184,10 @@ class PopulateTableView: FormItemVisitor {
 		} catch {
 			print("ERROR: Could not create cell for custom form item: \(error)")
 
-			var model = StaticTextCellModel()
+			var model = RFStaticTextCellModel()
 			model.title = "CustomFormItem"
 			model.value = "Exception"
-			let cell = StaticTextCell(model: model)
+			let cell = RFStaticTextCell(model: model)
 			cells.append(cell)
 			lastItemType = .item
 		}
@@ -196,7 +196,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: DatePickerFormItem
 
 	func visit(object: DatePickerFormItem) {
-		let model = DatePickerCellModel()
+		let model = RFDatePickerCellModel()
 		model.title = object.title
 		model.datePickerMode = mapDatePickerMode(object.datePickerMode)
 		model.locale = object.locale
@@ -214,8 +214,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = DatePickerToggleCell(model: model)
-		let cellExpanded = DatePickerExpandedCell()
+		let cell = RFDatePickerToggleCell(model: model)
+		let cellExpanded = RFDatePickerExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
@@ -261,7 +261,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: OptionPickerFormItem
 
 	func visit(object: OptionPickerFormItem) {
-		var model = OptionViewControllerCellModel()
+		var model = RFOptionViewControllerCellModel()
 		model.title = object.title
 		model.placeholder = object.placeholder
 		model.optionField = object
@@ -274,7 +274,7 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.valueDidChange(value)
 		}
 
-		let cell = OptionViewControllerCell(
+		let cell = RFOptionViewControllerCell(
 			parentViewController: self.model.viewController,
 			model: model
 		)
@@ -292,7 +292,7 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: OptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
-		let cell = OptionCell(model: object) {
+		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")
 			if let vc = weakViewController {
 				if let x = vc as? SelectOptionDelegate {
@@ -307,7 +307,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: PrecisionSliderFormItem
 
 	func visit(object: PrecisionSliderFormItem) {
-		let model = PrecisionSliderCellModel()
+		let model = RFPrecisionSliderCellModel()
 		model.decimalPlaces = object.decimalPlaces
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
@@ -326,8 +326,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = PrecisionSliderToggleCell(model: model)
-		let cellExpanded = PrecisionSliderExpandedCell()
+		let cell = RFPrecisionSliderToggleCell(model: model)
+		let cellExpanded = RFPrecisionSliderExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
@@ -342,7 +342,7 @@ class PopulateTableView: FormItemVisitor {
 		cell.expandedCell = cellExpanded
 
 		weak var weakObject = object
-		model.valueDidChange = { (changeModel: PrecisionSliderCellModel.SliderDidChangeModel) in
+		model.valueDidChange = { (changeModel: RFPrecisionSliderCellModel.SliderDidChangeModel) in
 			SwiftyFormLog("value did change \(changeModel.value)")
 			let model = PrecisionSliderFormItem.SliderDidChangeModel(
 				value: changeModel.value,
@@ -452,7 +452,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SegmentedControlFormItem
 
 	func visit(object: SegmentedControlFormItem) {
-		var model = SegmentedControlCellModel()
+		var model = RFSegmentedControlCellModel()
 		model.title = object.title
 		model.items = object.items
 		model.value = object.selected
@@ -464,7 +464,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SegmentedControlCell(model: model)
+		let cell = RFSegmentedControlCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -479,7 +479,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SliderFormItem
 
 	func visit(object: SliderFormItem) {
-		var model = SliderCellModel()
+		var model = RFSliderCellModel()
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
 		model.value = object.value
@@ -491,7 +491,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SliderCell(model: model)
+		let cell = RFSliderCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -506,10 +506,10 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: StaticTextFormItem
 
 	func visit(object: StaticTextFormItem) {
-		var model = StaticTextCellModel()
+		var model = RFStaticTextCellModel()
 		model.title = object.title
 		model.value = object.value
-		let cell = StaticTextCell(model: model)
+		let cell = RFStaticTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -517,7 +517,7 @@ class PopulateTableView: FormItemVisitor {
 		object.syncCellWithValue = { (value: String) in
 			SwiftyFormLog("sync value \(value)")
 			if let c = weakCell {
-				var m = StaticTextCellModel()
+				var m = RFStaticTextCellModel()
 				m.title = c.model.title
 				m.value = value
 				c.model = m
@@ -529,7 +529,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: StepperFormItem
 
 	func visit(object: StepperFormItem) {
-		var model = StepperCellModel()
+		var model = RFStepperCellModel()
 		model.title = object.title
 		model.value = object.value
 
@@ -540,7 +540,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = StepperCell(model: model)
+		let cell = RFStepperCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -559,7 +559,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SwitchFormItem
 
 	func visit(object: SwitchFormItem) {
-		var model = SwitchCellModel()
+		var model = RFSwitchCellModel()
 		model.title = object.title
 
 		weak var weakObject = object
@@ -569,7 +569,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SwitchCell(model: model)
+		let cell = RFSwitchCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -588,7 +588,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: TextFieldFormItem
 
 	func visit(object: TextFieldFormItem) {
-		var model = TextFieldCellModel()
+		var model = RFTextFieldCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
 		model.placeholder = object.placeholder
@@ -610,7 +610,7 @@ class PopulateTableView: FormItemVisitor {
             weakObject?.editingEnd(value)
             return
         }
-		let cell = TextFieldCell(model: model)
+		let cell = RFTextFieldCell(model: model)
 		cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
@@ -637,7 +637,7 @@ class PopulateTableView: FormItemVisitor {
 
 		object.assignTitleWidth = { (width: CGFloat) in
 			if let cell = weakCell {
-				cell.titleWidthMode = TextFieldCell.TitleWidthMode.assign(width: width)
+				cell.titleWidthMode = RFTextFieldCell.TitleWidthMode.assign(width: width)
 				cell.setNeedsUpdateConstraints()
 			}
 		}
@@ -646,7 +646,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: TextViewFormItem
 
 	func visit(object: TextViewFormItem) {
-		var model = TextViewCellModel()
+		var model = RFTextViewCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
 		model.placeholder = object.placeholder
@@ -656,7 +656,7 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.innerValue = value
 			return
 		}
-		let cell = TextViewCell(model: model)
+		let cell = RFTextViewCell(model: model)
 		cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
@@ -672,11 +672,11 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: ViewControllerFormItem
 
 	func visit(object: ViewControllerFormItem) {
-		let model = ViewControllerCellModel(title: object.title, placeholder: object.placeholder)
+		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
 		let willPopViewController = WillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController
-		let cell = ViewControllerCell(model: model) { (cell: ViewControllerCell, _: ViewControllerCellModel) in
+		let cell = RFViewControllerCell(model: model) { (cell: RFViewControllerCell, _: RFViewControllerCellModel) in
 			SwiftyFormLog("push")
 			if let vc = weakViewController {
 				let dismissCommand = PopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
@@ -689,7 +689,7 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: ViewControllerCell) -> CommandProtocol {
+	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> CommandProtocol {
 		weak var weakViewController = parentViewController
 		let command = CommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
@@ -705,7 +705,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: PickerViewFormItem
 
 	func visit(object: PickerViewFormItem) {
-		let model = PickerViewCellModel()
+		let model = RFPickerViewCellModel()
 		model.title = object.title
 		model.value = object.value
 		model.titles = object.pickerTitles
@@ -720,8 +720,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = PickerViewToggleCell(model: model)
-		let cellExpanded = PickerViewExpandedCell()
+		let cell = RFPickerViewToggleCell(model: model)
+		let cellExpanded = RFPickerViewExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
