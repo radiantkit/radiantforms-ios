@@ -479,7 +479,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SliderFormItem
 
 	func visit(object: SliderFormItem) {
-		var model = SliderCellModel()
+		var model = RFSliderCellModel()
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
 		model.value = object.value
@@ -491,7 +491,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SliderCell(model: model)
+		let cell = RFSliderCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
