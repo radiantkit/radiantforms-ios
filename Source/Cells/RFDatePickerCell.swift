@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-struct DatePickerCellConstants {
+struct RFDatePickerCellConstants {
 	struct CellExpanded {
 		static let height: CGFloat = 216
 	}
 }
 
-public class DatePickerCellModel {
+public class RFDatePickerCellModel {
 	var title: String = ""
 	var datePickerMode: UIDatePicker.Mode = .dateAndTime
 	var locale: Locale? // default is Locale.current, setting nil returns to default
@@ -34,11 +34,11 @@ public class DatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
-	weak var expandedCell: DatePickerExpandedCell?
-	public let model: DatePickerCellModel
+public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
+	weak var expandedCell: RFDatePickerExpandedCell?
+	public let model: RFDatePickerCellModel
 
-	public init(model: DatePickerCellModel) {
+	public init(model: RFDatePickerCellModel) {
 		/*
 		Known problem: UIDatePickerModeCountDownTimer is buggy and therefore not supported
 		
@@ -208,14 +208,14 @@ public class DatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
     @objc public dynamic var detailTextLabel_textColor: UIColor?
 
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: DatePickerToggleCell = DatePickerToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFDatePickerToggleCell = RFDatePickerToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.row_tintColor = theme.datePickerCell.row_tintColor
         appearanceProxy.textLabel_textColor = theme.datePickerCell.textLabel_textColor
         appearanceProxy.detailTextLabel_textColor = theme.datePickerCell.detailTextLabel_textColor
     }
 }
 
-extension DatePickerToggleCell: AssignAppearance {
+extension RFDatePickerToggleCell: AssignAppearance {
 	public func assignDefaultColors() {
 		textLabel?.textColor = self.textLabel_textColor ?? UIColor.black
 		detailTextLabel?.textColor = self.detailTextLabel_textColor ?? UIColor.gray
@@ -227,7 +227,7 @@ extension DatePickerToggleCell: AssignAppearance {
 	}
 }
 
-extension DatePickerToggleCell: SelectRowDelegate {
+extension RFDatePickerToggleCell: SelectRowDelegate {
     public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
         if model.expandCollapseWhenSelectingRow == false {
             //print("cell is always expanded")
@@ -243,7 +243,7 @@ extension DatePickerToggleCell: SelectRowDelegate {
     }
 }
 
-extension DatePickerToggleCell: WillDisplayCellDelegate {
+extension RFDatePickerToggleCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         assignDefaultColors()
     }
@@ -254,8 +254,8 @@ extension DatePickerToggleCell: WillDisplayCellDelegate {
 
 Row containing only a `UIDatePicker`
 */
-public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
-	weak var collapsedCell: DatePickerToggleCell?
+public class RFDatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
+	weak var collapsedCell: RFDatePickerToggleCell?
 
 	public var toggleCell: UITableViewCell? {
 		return collapsedCell
@@ -266,7 +266,7 @@ public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDi
 	}
 
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		return DatePickerCellConstants.CellExpanded.height
+		return RFDatePickerCellConstants.CellExpanded.height
 	}
 
 	public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
@@ -281,7 +281,7 @@ public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDi
 		return instance
 	}()
 
-	func configure(_ model: DatePickerCellModel) {
+	func configure(_ model: RFDatePickerCellModel) {
 		datePicker.datePickerMode = model.datePickerMode
 		datePicker.minimumDate = model.minimumDate
 		datePicker.maximumDate = model.maximumDate
@@ -317,3 +317,16 @@ public class DatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDi
 		datePicker.frame = bounds
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFDatePickerCellConstants")
+typealias DatePickerCellConstants = RFDatePickerCellConstants
+
+@available(*, unavailable, renamed: "RFDatePickerCellModel")
+typealias DatePickerCellModel = RFDatePickerCellModel
+
+@available(*, unavailable, renamed: "RFDatePickerToggleCell")
+typealias DatePickerToggleCell = RFDatePickerToggleCell
+
+@available(*, unavailable, renamed: "RFDatePickerExpandedCell")
+typealias DatePickerExpandedCell = RFDatePickerExpandedCell

@@ -196,7 +196,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: DatePickerFormItem
 
 	func visit(object: DatePickerFormItem) {
-		let model = DatePickerCellModel()
+		let model = RFDatePickerCellModel()
 		model.title = object.title
 		model.datePickerMode = mapDatePickerMode(object.datePickerMode)
 		model.locale = object.locale
@@ -214,8 +214,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = DatePickerToggleCell(model: model)
-		let cellExpanded = DatePickerExpandedCell()
+		let cell = RFDatePickerToggleCell(model: model)
+		let cellExpanded = RFDatePickerExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
