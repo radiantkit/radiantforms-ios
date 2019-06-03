@@ -8,25 +8,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        let builder = RFThemeBuilder()
+        builder.tintColor = UIColor.red
+        builder.apply()
+
+        
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Light.self],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Dark.self],
-            theme: SwiftyFORM_Theme.darkTheme()
+            theme: RFTheme.darkTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Light.self],
-            theme: SwiftyFORM_Theme.lightTheme()
+            theme: RFTheme.lightTheme()
         )
         FormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Dark.self],
-            theme: SwiftyFORM_Theme.darkTheme()
+            theme: RFTheme.darkTheme()
         )
 
         let vc = FirstViewController()

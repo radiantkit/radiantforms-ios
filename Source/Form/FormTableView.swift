@@ -19,7 +19,7 @@ public class FormTableView: UITableView {
     @objc public dynamic var sectionHeader_textLabel_textColor: UIColor?
     @objc public dynamic var sectionFooter_textLabel_textColor: UIColor?
     
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
 
         do {
             let appearanceProxy: FormTableView = FormTableView.appearance(whenContainedInInstancesOf: containerTypes)

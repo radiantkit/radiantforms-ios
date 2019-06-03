@@ -91,7 +91,7 @@ public class AmountCell: UITableViewCell {
     @objc public dynamic var textField_placeholderColor: UIColor?
     @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
     
-    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: SwiftyFORM_Theme) {
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         do {
             let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
