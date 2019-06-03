@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class SwiftyFORM_ThemeBuilder: NSObject {
+public class RFThemeBuilder: NSObject {
     private var theme: RFTheme
     
     @objc public override init() {

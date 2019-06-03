@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        let builder = SwiftyFORM_ThemeBuilder()
+        let builder = RFThemeBuilder()
         builder.tintColor = UIColor.red
         builder.apply()
 
