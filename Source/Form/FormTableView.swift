@@ -37,7 +37,7 @@ public class FormTableView: UITableView {
 
         do {
             let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
-            AmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFAmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             ButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             DatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             SegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)

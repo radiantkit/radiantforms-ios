@@ -40,7 +40,7 @@ public struct AmountCellModel {
     }
 }
 
-public class AmountCell: UITableViewCell {
+public class RFAmountCell: UITableViewCell {
     public let model: AmountCellModel
     public let titleLabel = UILabel()
     public let textField = AmountCell_TextField()
@@ -93,7 +93,7 @@ public class AmountCell: UITableViewCell {
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         do {
-            let appearanceProxy: AmountCell = AmountCell.appearance(whenContainedInInstancesOf: containerTypes)
+            let appearanceProxy: RFAmountCell = RFAmountCell.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.titleLabel_textColor = theme.amountCell.titleLabel_textColor
             appearanceProxy.rightView_textColor = theme.amountCell.rightView_textColor
             appearanceProxy.textField_placeholderColor = theme.amountCell.textField_placeholderColor
@@ -101,7 +101,7 @@ public class AmountCell: UITableViewCell {
         }
         
         do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [AmountCell.self] + containerTypes
+            let allContainerTypes: [UIAppearanceContainer.Type] = [RFAmountCell.self] + containerTypes
             let appearanceProxy: UITextField = UITextField.appearance(whenContainedInInstancesOf: allContainerTypes)
             appearanceProxy.keyboardAppearance = theme.amountCell.textField_keyboardAppearance
         }
@@ -294,7 +294,7 @@ public class AmountCell: UITableViewCell {
     
 }
 
-extension AmountCell: UITextFieldDelegate {
+extension RFAmountCell: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         self.textField_appearanceStrategy?.textFieldDidBeginEditing(textField)
         updateToolbarButtons()
@@ -352,7 +352,7 @@ extension AmountCell: UITextFieldDelegate {
     }
 }
 
-extension AmountCell: CellHeightProvider {
+extension RFAmountCell: CellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: AmountCellSizes = compute()
         let value = sizes.cellHeight
@@ -361,7 +361,7 @@ extension AmountCell: CellHeightProvider {
     }
 }
 
-extension AmountCell: WillDisplayCellDelegate {
+extension RFAmountCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         self.rightView.textColor = self.rightView_textColor
