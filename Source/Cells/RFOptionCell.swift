@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class OptionCell: UITableViewCell, SelectRowDelegate {
+public class RFOptionCell: UITableViewCell, SelectRowDelegate {
 	let innerDidSelectOption: () -> Void
 
 	public init(model: OptionRowFormItem, didSelectOption: @escaping () -> Void) {
@@ -33,3 +33,6 @@ public class OptionCell: UITableViewCell, SelectRowDelegate {
 		SwiftyFormLog("did invoke")
 	}
 }
+
+@available(*, unavailable, renamed: "RFOptionCell")
+typealias OptionCell = RFOptionCell

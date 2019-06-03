@@ -292,7 +292,7 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: OptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
-		let cell = OptionCell(model: object) {
+		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")
 			if let vc = weakViewController {
 				if let x = vc as? SelectOptionDelegate {
