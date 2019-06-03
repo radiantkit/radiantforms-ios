@@ -36,7 +36,7 @@
 		4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* Specification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
-		422437E21D71924400EC41E8 /* PickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* PickerViewCell.swift */; };
+		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
 		4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */; };
 		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
@@ -162,7 +162,7 @@
 		4219E1C41DB827CF00B3204A /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
-		422437E11D71924400EC41E8 /* PickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewCell.swift; sourceTree = "<group>"; };
+		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
 		4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionArray.swift; sourceTree = "<group>"; };
 		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
@@ -364,7 +364,6 @@
 		428682F91B346CFE0028DB2F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				422437E11D71924400EC41E8 /* PickerViewCell.swift */,
 				42685D4C1D340733008ABC3D /* PrecisionSliderCell.swift */,
 				4280F7182264A7BA0098EF22 /* RFAmountCell.swift */,
 				739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */,
@@ -372,6 +371,7 @@
 				428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */,
 				428682FD1B346CFE0028DB2F /* RFOptionCell.swift */,
 				428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */,
+				422437E11D71924400EC41E8 /* RFPickerViewCell.swift */,
 				425DED621D2823A600EDF891 /* SegmentedControlCell.swift */,
 				428682FC1B346CFE0028DB2F /* SimpleToolbar.swift */,
 				428682FF1B346CFE0028DB2F /* SliderCell.swift */,
@@ -666,7 +666,7 @@
 				428683331B346CFE0028DB2F /* SliderCell.swift in Sources */,
 				422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */,
 				4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */,
-				422437E21D71924400EC41E8 /* PickerViewCell.swift in Sources */,
+				422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */,
 				428683301B346CFE0028DB2F /* SimpleToolbar.swift in Sources */,
 				42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */,
 				42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */,

@@ -705,7 +705,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: PickerViewFormItem
 
 	func visit(object: PickerViewFormItem) {
-		let model = PickerViewCellModel()
+		let model = RFPickerViewCellModel()
 		model.title = object.title
 		model.value = object.value
 		model.titles = object.pickerTitles
@@ -720,8 +720,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = PickerViewToggleCell(model: model)
-		let cellExpanded = PickerViewExpandedCell()
+		let cell = RFPickerViewToggleCell(model: model)
+		let cellExpanded = RFPickerViewExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {

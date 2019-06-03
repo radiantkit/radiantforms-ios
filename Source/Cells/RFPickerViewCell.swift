@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-struct PickerViewCellConstants {
+struct RFPickerViewCellConstants {
 	struct CellExpanded {
 		static let height: CGFloat = 216
 	}
 }
 
-public class PickerViewCellModel {
+public class RFPickerViewCellModel {
 	var title: String = ""
 	var expandCollapseWhenSelectingRow = true
 	var selectionStyle = UITableViewCell.SelectionStyle.default
@@ -37,11 +37,11 @@ public class PickerViewCellModel {
 
 This causes the inline picker view to expand/collapse
 */
-public class PickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
-	weak var expandedCell: PickerViewExpandedCell?
-	public let model: PickerViewCellModel
+public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+	weak var expandedCell: RFPickerViewExpandedCell?
+	public let model: RFPickerViewCellModel
 
-	public init(model: PickerViewCellModel) {
+	public init(model: RFPickerViewCellModel) {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = model.selectionStyle
@@ -177,8 +177,8 @@ public class PickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontColla
 
 Row containing only a `UIPickerView`
 */
-public class PickerViewExpandedCell: UITableViewCell {
-	weak var collapsedCell: PickerViewToggleCell?
+public class RFPickerViewExpandedCell: UITableViewCell {
+	weak var collapsedCell: RFPickerViewToggleCell?
 
 	lazy var pickerView: UIPickerView = {
 		let instance = UIPickerView()
@@ -189,7 +189,7 @@ public class PickerViewExpandedCell: UITableViewCell {
 
 	var titles = [[String]]()
 
-	func configure(_ model: PickerViewCellModel) {
+	func configure(_ model: RFPickerViewCellModel) {
 		titles = model.titles
 		pickerView.reloadAllComponents()
 		pickerView.setNeedsLayout()
@@ -253,7 +253,7 @@ public class PickerViewExpandedCell: UITableViewCell {
 	}
 }
 
-extension PickerViewExpandedCell: UIPickerViewDataSource {
+extension RFPickerViewExpandedCell: UIPickerViewDataSource {
 	public func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return titles.count
 	}
@@ -263,7 +263,7 @@ extension PickerViewExpandedCell: UIPickerViewDataSource {
 	}
 }
 
-extension PickerViewExpandedCell: UIPickerViewDelegate {
+extension RFPickerViewExpandedCell: UIPickerViewDelegate {
 	public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 		return titles[component][row]
 	}
@@ -281,13 +281,13 @@ extension PickerViewExpandedCell: UIPickerViewDelegate {
 	}
 }
 
-extension PickerViewExpandedCell: CellHeightProvider {
+extension RFPickerViewExpandedCell: CellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		return PickerViewCellConstants.CellExpanded.height
+		return RFPickerViewCellConstants.CellExpanded.height
 	}
 }
 
-extension PickerViewExpandedCell: WillDisplayCellDelegate {
+extension RFPickerViewExpandedCell: WillDisplayCellDelegate {
 	public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
 		if let model = collapsedCell?.model {
 			configure(model)
@@ -295,7 +295,7 @@ extension PickerViewExpandedCell: WillDisplayCellDelegate {
 	}
 }
 
-extension PickerViewExpandedCell: ExpandedCell {
+extension RFPickerViewExpandedCell: ExpandedCell {
 	public var toggleCell: UITableViewCell? {
 		return collapsedCell
 	}
@@ -312,3 +312,16 @@ extension UIPickerView {
 		}
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFPickerViewCellConstants")
+typealias PickerViewCellConstants = RFPickerViewCellConstants
+
+@available(*, unavailable, renamed: "RFPickerViewCellModel")
+typealias PickerViewCellModel = RFPickerViewCellModel
+
+@available(*, unavailable, renamed: "RFPickerViewToggleCell")
+typealias PickerViewToggleCell = RFPickerViewToggleCell
+
+@available(*, unavailable, renamed: "RFPickerViewExpandedCell")
+typealias PickerViewExpandedCell = RFPickerViewExpandedCell
