@@ -140,10 +140,10 @@ class PopulateTableView: FormItemVisitor {
     // MARK: AttributedTextFormItem
 
 	func visit(object: AttributedTextFormItem) {
-		var model = AttributedTextCellModel()
+		var model = RFAttributedTextCellModel()
 		model.titleAttributedText = object.title
 		model.valueAttributedText = object.value
-		let cell = AttributedTextCell(model: model)
+		let cell = RFAttributedTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -151,7 +151,7 @@ class PopulateTableView: FormItemVisitor {
 		object.syncCellWithValue = { (value: NSAttributedString?) in
 			SwiftyFormLog("sync value \(String(describing: value))")
 			if let c = weakCell {
-				var m = AttributedTextCellModel()
+				var m = RFAttributedTextCellModel()
 				m.titleAttributedText = c.model.titleAttributedText
 				m.valueAttributedText = value
 				c.model = m
