@@ -3,7 +3,7 @@ import XCTest
 import UIKit
 @testable import SwiftyFORM
 
-class AmountCellTests: XCTestCase {
+class RFAmountCellTests: XCTestCase {
     
     func testExtractDigitsFromString() {
         XCTAssertEqual(RFAmountCell.extractDigitsFromString(""), "")

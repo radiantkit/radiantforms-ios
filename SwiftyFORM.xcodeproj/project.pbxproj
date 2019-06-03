@@ -60,7 +60,7 @@
 		4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* RFAmountCell.swift */; };
 		4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountFormItem.swift */; };
 		4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */; };
-		4280F722226F4C340098EF22 /* AmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* AmountCellTests.swift */; };
+		4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* RFAmountCellTests.swift */; };
 		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
 		4280F72B2278363B0098EF22 /* CGRect+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */; };
 		4280F72E2278438A0098EF22 /* KeyboardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */; };
@@ -186,7 +186,7 @@
 		4280F7182264A7BA0098EF22 /* RFAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCell.swift; sourceTree = "<group>"; };
 		4280F71A2264A99F0098EF22 /* AmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormItem.swift; sourceTree = "<group>"; };
 		4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
-		4280F721226F4C340098EF22 /* AmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountCellTests.swift; sourceTree = "<group>"; };
+		4280F721226F4C340098EF22 /* RFAmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCellTests.swift; sourceTree = "<group>"; };
 		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCompatibility.swift; sourceTree = "<group>"; };
@@ -448,12 +448,12 @@
 		4286835D1B346D0C0028DB2F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4280F721226F4C340098EF22 /* AmountCellTests.swift */,
 				4286835F1B346D0C0028DB2F /* Info.plist */,
 				4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */,
 				4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */,
 				428683601B346D0C0028DB2F /* PrevNextTests.swift */,
 				42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */,
+				4280F721226F4C340098EF22 /* RFAmountCellTests.swift */,
 				4245B3EA1DA429B500BCB4C7 /* Specification */,
 				428683611B346D0C0028DB2F /* ValidateResultTests.swift */,
 				428683621B346D0C0028DB2F /* ValidatorTests.swift */,
@@ -697,7 +697,7 @@
 				4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */,
 				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
 				4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */,
-				4280F722226F4C340098EF22 /* AmountCellTests.swift in Sources */,
+				4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */,
 				4245B3FC1DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift in Sources */,
 				4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */,
 				4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */,
