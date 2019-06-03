@@ -452,7 +452,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: SegmentedControlFormItem
 
 	func visit(object: SegmentedControlFormItem) {
-		var model = SegmentedControlCellModel()
+		var model = RFSegmentedControlCellModel()
 		model.title = object.title
 		model.items = object.items
 		model.value = object.selected
@@ -464,7 +464,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 
-		let cell = SegmentedControlCell(model: model)
+		let cell = RFSegmentedControlCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 

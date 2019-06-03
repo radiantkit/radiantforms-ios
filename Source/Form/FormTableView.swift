@@ -40,7 +40,7 @@ public class FormTableView: UITableView {
             RFAmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFDatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            SegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFSegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             StepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             SwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             TextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)

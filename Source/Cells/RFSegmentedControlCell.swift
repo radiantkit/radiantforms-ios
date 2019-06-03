@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct SegmentedControlCellModel {
+public struct RFSegmentedControlCellModel {
 	var title: String = ""
 
 	var items: [String] = ["a", "b", "c"]
@@ -12,11 +12,11 @@ public struct SegmentedControlCellModel {
 	}
 }
 
-public class SegmentedControlCell: UITableViewCell {
-	public let model: SegmentedControlCellModel
+public class RFSegmentedControlCell: UITableViewCell {
+	public let model: RFSegmentedControlCellModel
 	public let segmentedControl: UISegmentedControl
 
-	public init(model: SegmentedControlCellModel) {
+	public init(model: RFSegmentedControlCellModel) {
 		self.model = model
 		self.segmentedControl = UISegmentedControl(items: model.items)
 		super.init(style: .default, reuseIdentifier: nil)
@@ -38,7 +38,7 @@ public class SegmentedControlCell: UITableViewCell {
     @objc public dynamic var segmentedControl_tintColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: SegmentedControlCell = SegmentedControlCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFSegmentedControlCell = RFSegmentedControlCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.segmentedControlCell.textLabel_textColor
         appearanceProxy.segmentedControl_tintColor = theme.segmentedControlCell.segmentedControl_tintColor
     }
@@ -54,9 +54,16 @@ public class SegmentedControlCell: UITableViewCell {
 	}
 }
 
-extension SegmentedControlCell: WillDisplayCellDelegate {
+extension RFSegmentedControlCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.segmentedControl.tintColor = self.segmentedControl_tintColor
     }
 }
+
+
+@available(*, unavailable, renamed: "RFSegmentedControlCell")
+typealias SegmentedControlCell = RFSegmentedControlCell
+
+@available(*, unavailable, renamed: "RFSegmentedControlCellModel")
+typealias SegmentedControlCellModel = RFSegmentedControlCellModel
