@@ -307,7 +307,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: PrecisionSliderFormItem
 
 	func visit(object: PrecisionSliderFormItem) {
-		let model = PrecisionSliderCellModel()
+		let model = RFPrecisionSliderCellModel()
 		model.decimalPlaces = object.decimalPlaces
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
@@ -326,8 +326,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 
-		let cell = PrecisionSliderToggleCell(model: model)
-		let cellExpanded = PrecisionSliderExpandedCell()
+		let cell = RFPrecisionSliderToggleCell(model: model)
+		let cellExpanded = RFPrecisionSliderExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
@@ -342,7 +342,7 @@ class PopulateTableView: FormItemVisitor {
 		cell.expandedCell = cellExpanded
 
 		weak var weakObject = object
-		model.valueDidChange = { (changeModel: PrecisionSliderCellModel.SliderDidChangeModel) in
+		model.valueDidChange = { (changeModel: RFPrecisionSliderCellModel.SliderDidChangeModel) in
 			SwiftyFormLog("value did change \(changeModel.value)")
 			let model = PrecisionSliderFormItem.SliderDidChangeModel(
 				value: changeModel.value,

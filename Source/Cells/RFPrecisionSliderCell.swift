@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class PrecisionSliderCellModel {
+public class RFPrecisionSliderCellModel {
 	var title: String?
 	var decimalPlaces: UInt = 3
 	var value: Int = 0
@@ -31,7 +31,7 @@ public class PrecisionSliderCellModel {
 	}
 }
 
-public struct PrecisionSliderCellFormatter {
+public struct RFPrecisionSliderCellFormatter {
 	public static func format(value: Int, decimalPlaces: UInt) -> String {
 		let decimalScale: Int = Int(pow(Double(10), Double(decimalPlaces)))
 		let integerValue = abs(value / decimalScale)
@@ -57,11 +57,11 @@ public struct PrecisionSliderCellFormatter {
 
 This causes the inline precision slider to expand/collapse
 */
-public class PrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
-	weak var expandedCell: PrecisionSliderExpandedCell?
-	public let model: PrecisionSliderCellModel
+public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+	weak var expandedCell: RFPrecisionSliderExpandedCell?
+	public let model: RFPrecisionSliderCellModel
 
-	public init(model: PrecisionSliderCellModel) {
+	public init(model: RFPrecisionSliderCellModel) {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = model.selectionStyle
@@ -76,7 +76,7 @@ public class PrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, Sel
 	}
 
 	func reloadValueLabel() {
-		detailTextLabel?.text = PrecisionSliderCellFormatter.format(value: model.value, decimalPlaces: model.decimalPlaces)
+		detailTextLabel?.text = RFPrecisionSliderCellFormatter.format(value: model.value, decimalPlaces: model.decimalPlaces)
 	}
 
 	func sliderDidChange(_ changeModel: PrecisionSlider.SliderDidChangeModel) {
@@ -95,7 +95,7 @@ public class PrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, Sel
 			return
 		}
 
-		let changeModel = PrecisionSliderCellModel.SliderDidChangeModel(
+		let changeModel = RFPrecisionSliderCellModel.SliderDidChangeModel(
 			value: model.value,
 			valueUpdated: valueUpdated,
 			zoom: changeModel.zoom,
@@ -209,7 +209,7 @@ public class PrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, Sel
 	}
 }
 
-extension PrecisionSliderCellModel {
+extension RFPrecisionSliderCellModel {
 	struct Constants {
 		static let markerSpacing: Double = 30.0
 		static let initialInset: CGFloat = 30.0
@@ -279,8 +279,8 @@ extension PrecisionSliderCellModel {
 Row containing only a `PrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
-public class PrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, ExpandedCell {
-	weak var collapsedCell: PrecisionSliderToggleCell?
+public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, ExpandedCell {
+	weak var collapsedCell: RFPrecisionSliderToggleCell?
 
 	public var toggleCell: UITableViewCell? {
 		return collapsedCell
@@ -369,3 +369,16 @@ public class PrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, E
 		slider.value = scaledValue
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFPrecisionSliderCellModel")
+typealias PrecisionSliderCellModel = RFPrecisionSliderCellModel
+
+@available(*, unavailable, renamed: "RFPrecisionSliderCellFormatter")
+typealias PrecisionSliderCellFormatter = RFPrecisionSliderCellFormatter
+
+@available(*, unavailable, renamed: "RFPrecisionSliderToggleCell")
+typealias PrecisionSliderToggleCell = RFPrecisionSliderToggleCell
+
+@available(*, unavailable, renamed: "RFPrecisionSliderExpandedCell")
+typealias PrecisionSliderExpandedCell = RFPrecisionSliderExpandedCell
