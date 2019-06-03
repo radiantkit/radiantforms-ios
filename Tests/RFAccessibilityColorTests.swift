@@ -101,7 +101,7 @@ class InDarkContext: Component {
 
 
 
-class AccessibilityColorTests: XCTestCase {
+class RFAccessibilityColorTests: XCTestCase {
     func testInBrightContext() {
         func difference(_ input: UIColor, _ expected: UIColor) -> CGFloat {
             let color0: Component = Leaf(color: input)
