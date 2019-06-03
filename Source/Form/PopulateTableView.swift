@@ -184,10 +184,10 @@ class PopulateTableView: FormItemVisitor {
 		} catch {
 			print("ERROR: Could not create cell for custom form item: \(error)")
 
-			var model = StaticTextCellModel()
+			var model = RFStaticTextCellModel()
 			model.title = "CustomFormItem"
 			model.value = "Exception"
-			let cell = StaticTextCell(model: model)
+			let cell = RFStaticTextCell(model: model)
 			cells.append(cell)
 			lastItemType = .item
 		}
@@ -506,10 +506,10 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: StaticTextFormItem
 
 	func visit(object: StaticTextFormItem) {
-		var model = StaticTextCellModel()
+		var model = RFStaticTextCellModel()
 		model.title = object.title
 		model.value = object.value
-		let cell = StaticTextCell(model: model)
+		let cell = RFStaticTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -517,7 +517,7 @@ class PopulateTableView: FormItemVisitor {
 		object.syncCellWithValue = { (value: String) in
 			SwiftyFormLog("sync value \(value)")
 			if let c = weakCell {
-				var m = StaticTextCellModel()
+				var m = RFStaticTextCellModel()
 				m.title = c.model.title
 				m.value = value
 				c.model = m

@@ -71,7 +71,7 @@
 		428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FD1B346CFE0028DB2F /* RFOptionCell.swift */; };
 		428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */; };
 		428683331B346CFE0028DB2F /* RFSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FF1B346CFE0028DB2F /* RFSliderCell.swift */; };
-		428683341B346CFE0028DB2F /* StaticTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683001B346CFE0028DB2F /* StaticTextCell.swift */; };
+		428683341B346CFE0028DB2F /* RFStaticTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683001B346CFE0028DB2F /* RFStaticTextCell.swift */; };
 		428683351B346CFE0028DB2F /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683011B346CFE0028DB2F /* StepperCell.swift */; };
 		428683361B346CFE0028DB2F /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683021B346CFE0028DB2F /* SwitchCell.swift */; };
 		428683371B346CFE0028DB2F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683031B346CFE0028DB2F /* TextFieldCell.swift */; };
@@ -197,7 +197,7 @@
 		428682FD1B346CFE0028DB2F /* RFOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionCell.swift; sourceTree = "<group>"; };
 		428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionViewControllerCell.swift; sourceTree = "<group>"; };
 		428682FF1B346CFE0028DB2F /* RFSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSliderCell.swift; sourceTree = "<group>"; };
-		428683001B346CFE0028DB2F /* StaticTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextCell.swift; sourceTree = "<group>"; };
+		428683001B346CFE0028DB2F /* RFStaticTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFStaticTextCell.swift; sourceTree = "<group>"; };
 		428683011B346CFE0028DB2F /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
 		428683021B346CFE0028DB2F /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		428683031B346CFE0028DB2F /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 				425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */,
 				428682FC1B346CFE0028DB2F /* RFSimpleToolbar.swift */,
 				428682FF1B346CFE0028DB2F /* RFSliderCell.swift */,
-				428683001B346CFE0028DB2F /* StaticTextCell.swift */,
+				428683001B346CFE0028DB2F /* RFStaticTextCell.swift */,
 				428683011B346CFE0028DB2F /* StepperCell.swift */,
 				428683021B346CFE0028DB2F /* SwitchCell.swift */,
 				428683031B346CFE0028DB2F /* TextFieldCell.swift */,
@@ -608,7 +608,7 @@
 				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
 				42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */,
 				42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */,
-				428683341B346CFE0028DB2F /* StaticTextCell.swift in Sources */,
+				428683341B346CFE0028DB2F /* RFStaticTextCell.swift in Sources */,
 				423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */,
 				428683531B346CFE0028DB2F /* DebugViewController.swift in Sources */,
 				428683461B346CFE0028DB2F /* PopulateTableView.swift in Sources */,
