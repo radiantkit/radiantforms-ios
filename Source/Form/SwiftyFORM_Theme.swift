@@ -1,19 +1,19 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 
 public struct SwiftyFORM_Theme {
-    internal let tableViewBackground: SwiftyFORM_Theme_TableViewBackground
-    internal let tableViewSeparator: SwiftyFORM_Theme_TableViewSeparator
-    internal let sectionHeader: SwiftyFORM_Theme_SectionHeader
-    internal let sectionFooter: SwiftyFORM_Theme_SectionFooter
-    internal let cellBackground: SwiftyFORM_Theme_CellBackground
-    internal let amountCell: SwiftyFORM_Theme_AmountCell
-    internal let buttonCell: SwiftyFORM_Theme_ButtonCell
-    internal let datePickerCell: SwiftyFORM_Theme_DatePickerCell
-    internal let segmentedControlCell: SwiftyFORM_Theme_SegmentedControlCell
-    internal let stepperCell: SwiftyFORM_Theme_StepperCell
-    internal let switchCell: SwiftyFORM_Theme_SwitchCell
-    internal let textFieldCell: SwiftyFORM_Theme_TextFieldCell
-    internal let viewControllerCell: SwiftyFORM_Theme_ViewControllerCell
+    internal let tableViewBackground: RFTheme_TableViewBackground
+    internal let tableViewSeparator: RFTheme_TableViewSeparator
+    internal let sectionHeader: RFTheme_SectionHeader
+    internal let sectionFooter: RFTheme_SectionFooter
+    internal let cellBackground: RFTheme_CellBackground
+    internal let amountCell: RFTheme_AmountCell
+    internal let buttonCell: RFTheme_ButtonCell
+    internal let datePickerCell: RFTheme_DatePickerCell
+    internal let segmentedControlCell: RFTheme_SegmentedControlCell
+    internal let stepperCell: RFTheme_StepperCell
+    internal let switchCell: RFTheme_SwitchCell
+    internal let textFieldCell: RFTheme_TextFieldCell
+    internal let viewControllerCell: RFTheme_ViewControllerCell
     
     public static func lightTheme() -> SwiftyFORM_Theme {
         return SwiftyFORM_Theme(
@@ -52,60 +52,60 @@ public struct SwiftyFORM_Theme {
     }
 }
 
-internal enum SwiftyFORM_Theme_TableViewBackground {
+internal enum RFTheme_TableViewBackground {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_TableViewSeparator {
+internal enum RFTheme_TableViewSeparator {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_SectionHeader {
+internal enum RFTheme_SectionHeader {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_SectionFooter {
+internal enum RFTheme_SectionFooter {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_CellBackground {
+internal enum RFTheme_CellBackground {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_AmountCell {
+internal enum RFTheme_AmountCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_ButtonCell {
+internal enum RFTheme_ButtonCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_DatePickerCell {
+internal enum RFTheme_DatePickerCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_SegmentedControlCell {
+internal enum RFTheme_SegmentedControlCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_StepperCell {
+internal enum RFTheme_StepperCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_SwitchCell {
+internal enum RFTheme_SwitchCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_TextFieldCell {
+internal enum RFTheme_TextFieldCell {
     case lightTheme, darkTheme
 }
 
-internal enum SwiftyFORM_Theme_ViewControllerCell {
+internal enum RFTheme_ViewControllerCell {
     case lightTheme, darkTheme
 }
 
 
-internal extension SwiftyFORM_Theme_SectionHeader {
+internal extension RFTheme_SectionHeader {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -116,7 +116,7 @@ internal extension SwiftyFORM_Theme_SectionHeader {
     }
 }
 
-internal extension SwiftyFORM_Theme_SectionFooter {
+internal extension RFTheme_SectionFooter {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -127,7 +127,7 @@ internal extension SwiftyFORM_Theme_SectionFooter {
     }
 }
 
-internal extension SwiftyFORM_Theme_TableViewBackground {
+internal extension RFTheme_TableViewBackground {
     var color: UIColor {
         switch self {
         case .lightTheme:
@@ -138,7 +138,7 @@ internal extension SwiftyFORM_Theme_TableViewBackground {
     }
 }
 
-internal extension SwiftyFORM_Theme_TableViewSeparator {
+internal extension RFTheme_TableViewSeparator {
     var color: UIColor {
         switch self {
         case .lightTheme:
@@ -149,7 +149,7 @@ internal extension SwiftyFORM_Theme_TableViewSeparator {
     }
 }
 
-internal extension SwiftyFORM_Theme_CellBackground {
+internal extension RFTheme_CellBackground {
     var color: UIColor {
         switch self {
         case .lightTheme:
@@ -160,7 +160,7 @@ internal extension SwiftyFORM_Theme_CellBackground {
     }
 }
 
-internal extension SwiftyFORM_Theme_AmountCell {
+internal extension RFTheme_AmountCell {
     var titleLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -223,7 +223,7 @@ internal extension SwiftyFORM_Theme_AmountCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_ButtonCell {
+internal extension RFTheme_ButtonCell {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -234,7 +234,7 @@ internal extension SwiftyFORM_Theme_ButtonCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_DatePickerCell {
+internal extension RFTheme_DatePickerCell {
     var row_tintColor: UIColor {
         switch self {
         case .lightTheme:
@@ -263,7 +263,7 @@ internal extension SwiftyFORM_Theme_DatePickerCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_SegmentedControlCell {
+internal extension RFTheme_SegmentedControlCell {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -283,7 +283,7 @@ internal extension SwiftyFORM_Theme_SegmentedControlCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_SwitchCell {
+internal extension RFTheme_SwitchCell {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -298,7 +298,7 @@ internal extension SwiftyFORM_Theme_SwitchCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_StepperCell {
+internal extension RFTheme_StepperCell {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -327,7 +327,7 @@ internal extension SwiftyFORM_Theme_StepperCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_TextFieldCell {
+internal extension RFTheme_TextFieldCell {
     var titleLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
@@ -385,7 +385,7 @@ internal extension SwiftyFORM_Theme_TextFieldCell {
     }
 }
 
-internal extension SwiftyFORM_Theme_ViewControllerCell {
+internal extension RFTheme_ViewControllerCell {
     var textLabel_textColor: UIColor {
         switch self {
         case .lightTheme:
