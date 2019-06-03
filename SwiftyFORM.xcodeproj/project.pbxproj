@@ -69,7 +69,7 @@
 		4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */; };
 		428683301B346CFE0028DB2F /* SimpleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FC1B346CFE0028DB2F /* SimpleToolbar.swift */; };
 		428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FD1B346CFE0028DB2F /* RFOptionCell.swift */; };
-		428683321B346CFE0028DB2F /* OptionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FE1B346CFE0028DB2F /* OptionViewControllerCell.swift */; };
+		428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */; };
 		428683331B346CFE0028DB2F /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FF1B346CFE0028DB2F /* SliderCell.swift */; };
 		428683341B346CFE0028DB2F /* StaticTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683001B346CFE0028DB2F /* StaticTextCell.swift */; };
 		428683351B346CFE0028DB2F /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683011B346CFE0028DB2F /* StepperCell.swift */; };
@@ -195,7 +195,7 @@
 		428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerCell.swift; sourceTree = "<group>"; };
 		428682FC1B346CFE0028DB2F /* SimpleToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleToolbar.swift; sourceTree = "<group>"; };
 		428682FD1B346CFE0028DB2F /* RFOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionCell.swift; sourceTree = "<group>"; };
-		428682FE1B346CFE0028DB2F /* OptionViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionViewControllerCell.swift; sourceTree = "<group>"; };
+		428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionViewControllerCell.swift; sourceTree = "<group>"; };
 		428682FF1B346CFE0028DB2F /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		428683001B346CFE0028DB2F /* StaticTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextCell.swift; sourceTree = "<group>"; };
 		428683011B346CFE0028DB2F /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
@@ -364,7 +364,6 @@
 		428682F91B346CFE0028DB2F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				428682FE1B346CFE0028DB2F /* OptionViewControllerCell.swift */,
 				422437E11D71924400EC41E8 /* PickerViewCell.swift */,
 				42685D4C1D340733008ABC3D /* PrecisionSliderCell.swift */,
 				4280F7182264A7BA0098EF22 /* RFAmountCell.swift */,
@@ -372,6 +371,7 @@
 				428682FA1B346CFE0028DB2F /* RFButtonCell.swift */,
 				428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */,
 				428682FD1B346CFE0028DB2F /* RFOptionCell.swift */,
+				428682FE1B346CFE0028DB2F /* RFOptionViewControllerCell.swift */,
 				425DED621D2823A600EDF891 /* SegmentedControlCell.swift */,
 				428682FC1B346CFE0028DB2F /* SimpleToolbar.swift */,
 				428682FF1B346CFE0028DB2F /* SliderCell.swift */,
@@ -612,7 +612,7 @@
 				423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */,
 				428683531B346CFE0028DB2F /* DebugViewController.swift in Sources */,
 				428683461B346CFE0028DB2F /* PopulateTableView.swift in Sources */,
-				428683321B346CFE0028DB2F /* OptionViewControllerCell.swift in Sources */,
+				428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */,
 				42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */,
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
 				739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */,

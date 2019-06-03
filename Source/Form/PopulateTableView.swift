@@ -261,7 +261,7 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: OptionPickerFormItem
 
 	func visit(object: OptionPickerFormItem) {
-		var model = OptionViewControllerCellModel()
+		var model = RFOptionViewControllerCellModel()
 		model.title = object.title
 		model.placeholder = object.placeholder
 		model.optionField = object
@@ -274,7 +274,7 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.valueDidChange(value)
 		}
 
-		let cell = OptionViewControllerCell(
+		let cell = RFOptionViewControllerCell(
 			parentViewController: self.model.viewController,
 			model: model
 		)

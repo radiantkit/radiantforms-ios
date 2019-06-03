@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct OptionViewControllerCellModel {
+public struct RFOptionViewControllerCellModel {
 	var title: String = ""
 	var placeholder: String = ""
 	var optionField: OptionPickerFormItem?
@@ -12,12 +12,12 @@ public struct OptionViewControllerCellModel {
 	}
 }
 
-public class OptionViewControllerCell: UITableViewCell, SelectRowDelegate {
-	fileprivate let model: OptionViewControllerCellModel
+public class RFOptionViewControllerCell: UITableViewCell, SelectRowDelegate {
+	fileprivate let model: RFOptionViewControllerCellModel
 	fileprivate var selectedOptionRow: OptionRowModel?
 	fileprivate weak var parentViewController: UIViewController?
 
-	public init(parentViewController: UIViewController, model: OptionViewControllerCellModel) {
+	public init(parentViewController: UIViewController, model: RFOptionViewControllerCellModel) {
 		self.parentViewController = parentViewController
 		self.model = model
 		self.selectedOptionRow = model.selectedOptionRow
@@ -93,3 +93,10 @@ public class OptionViewControllerCell: UITableViewCell, SelectRowDelegate {
 		SwiftyFormLog("did invoke")
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFOptionViewControllerCell")
+typealias OptionViewControllerCell = RFOptionViewControllerCell
+
+@available(*, unavailable, renamed: "RFOptionViewControllerCellModel")
+typealias OptionViewControllerCellModel = RFOptionViewControllerCellModel
