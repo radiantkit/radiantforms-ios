@@ -70,8 +70,8 @@ public class TextViewCell: UITableViewCell {
 		return gr
 		}()
 
-	public lazy var toolbar: SimpleToolbar = {
-		let instance = SimpleToolbar()
+	public lazy var toolbar: RFSimpleToolbar = {
+		let instance = RFSimpleToolbar()
 		weak var weakSelf = self
 		instance.jumpToPrevious = {
 			if let cell = weakSelf {

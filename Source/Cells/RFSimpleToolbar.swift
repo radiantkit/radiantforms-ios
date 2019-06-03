@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class SimpleToolbar: UIToolbar {
+public class RFSimpleToolbar: UIToolbar {
 	public var jumpToPrevious: () -> Void = {}
 	public var jumpToNext: () -> Void = {}
 	public var dismissKeyboard: () -> Void = {}
@@ -21,22 +21,22 @@ public class SimpleToolbar: UIToolbar {
 		let image = UIImage(named: "SwiftFORMArrowLeft", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
-			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(SimpleToolbar.previousButtonAction(_:)))
+			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(RFSimpleToolbar.previousButtonAction(_:)))
 		}
-		return UIBarButtonItem(title: "◀︎", style: .plain, target: self, action: #selector(SimpleToolbar.previousButtonAction(_:)))
+		return UIBarButtonItem(title: "◀︎", style: .plain, target: self, action: #selector(RFSimpleToolbar.previousButtonAction(_:)))
 		}()
 
 	public lazy var nextButton: UIBarButtonItem = {
 		let image = UIImage(named: "SwiftFORMArrowRight", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
-			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(SimpleToolbar.nextButtonAction(_:)))
+			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(RFSimpleToolbar.nextButtonAction(_:)))
 		}
-		return UIBarButtonItem(title: "▶", style: .plain, target: self, action: #selector(SimpleToolbar.nextButtonAction(_:)))
+		return UIBarButtonItem(title: "▶", style: .plain, target: self, action: #selector(RFSimpleToolbar.nextButtonAction(_:)))
 		}()
 
 	public lazy var closeButton: UIBarButtonItem = {
-		let item = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(SimpleToolbar.closeButtonAction(_:)))
+		let item = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(RFSimpleToolbar.closeButtonAction(_:)))
 		return item
 		}()
 
@@ -72,3 +72,7 @@ public class SimpleToolbar: UIToolbar {
 		nextButton.isEnabled = cell.form_canMakeNextCellFirstResponder()
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFSimpleToolbar")
+typealias SimpleToolbar = RFSimpleToolbar
