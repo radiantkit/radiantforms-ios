@@ -163,10 +163,10 @@ class PopulateTableView: FormItemVisitor {
 	// MARK: ButtonFormItem
 
 	func visit(object: ButtonFormItem) {
-		var model = ButtonCellModel()
+        var model = RFButtonCellModel()
 		model.title = object.title
 		model.action = object.action
-		let cell = ButtonCell(model: model)
+        let cell = RFButtonCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 	}

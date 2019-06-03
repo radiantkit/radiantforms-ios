@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public struct ButtonCellModel {
+public struct RFButtonCellModel {
 	var title: String = ""
 
 	var action: () -> Void = {
@@ -10,10 +10,10 @@ public struct ButtonCellModel {
 
 }
 
-public class ButtonCell: UITableViewCell {
-	public let model: ButtonCellModel
+public class RFButtonCell: UITableViewCell {
+	public let model: RFButtonCellModel
 
-	public init(model: ButtonCellModel) {
+	public init(model: RFButtonCellModel) {
 		self.model = model
 		super.init(style: .default, reuseIdentifier: nil)
 		loadWithModel(model)
@@ -23,7 +23,7 @@ public class ButtonCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	public func loadWithModel(_ model: ButtonCellModel) {
+	public func loadWithModel(_ model: RFButtonCellModel) {
 		textLabel?.text = model.title
 		textLabel?.textAlignment = NSTextAlignment.center
 	}
@@ -31,18 +31,18 @@ public class ButtonCell: UITableViewCell {
     @objc public dynamic var textLabel_textColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: ButtonCell = ButtonCell.appearance(whenContainedInInstancesOf: containerTypes)
+        let appearanceProxy: RFButtonCell = RFButtonCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.buttonCell.textLabel_textColor
     }
 }
 
-extension ButtonCell: WillDisplayCellDelegate {
+extension RFButtonCell: WillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
     }
 }
 
-extension ButtonCell: SelectRowDelegate {
+extension RFButtonCell: SelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()
@@ -52,3 +52,10 @@ extension ButtonCell: SelectRowDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFButtonCell")
+typealias ButtonCell = RFButtonCell
+
+@available(*, unavailable, renamed: "RFButtonCellModel")
+typealias ButtonCellModel = RFButtonCellModel
