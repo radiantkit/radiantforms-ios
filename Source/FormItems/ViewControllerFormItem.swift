@@ -4,10 +4,10 @@ import Foundation
 public class ViewControllerFormItemPopContext {
 	public let parentViewController: UIViewController
 	public let childViewController: UIViewController
-	public let cell: ViewControllerCell
+	public let cell: RFViewControllerCell
 	public let returnedObject: AnyObject?
 
-	public init(parentViewController: UIViewController, childViewController: UIViewController, cell: ViewControllerCell, returnedObject: AnyObject?) {
+	public init(parentViewController: UIViewController, childViewController: UIViewController, cell: RFViewControllerCell, returnedObject: AnyObject?) {
 		self.parentViewController = parentViewController
 		self.childViewController = childViewController
 		self.cell = cell

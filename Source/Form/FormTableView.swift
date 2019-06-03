@@ -44,7 +44,7 @@ public class FormTableView: UITableView {
             RFStepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFSwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFTextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            ViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }
     }
 }

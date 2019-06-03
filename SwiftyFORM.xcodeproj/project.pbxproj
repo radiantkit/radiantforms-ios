@@ -76,7 +76,7 @@
 		428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683021B346CFE0028DB2F /* RFSwitchCell.swift */; };
 		428683371B346CFE0028DB2F /* RFTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683031B346CFE0028DB2F /* RFTextFieldCell.swift */; };
 		428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683041B346CFE0028DB2F /* RFTextViewCell.swift */; };
-		428683391B346CFE0028DB2F /* ViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683051B346CFE0028DB2F /* ViewControllerCell.swift */; };
+		428683391B346CFE0028DB2F /* RFViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683051B346CFE0028DB2F /* RFViewControllerCell.swift */; };
 		4286833A1B346CFE0028DB2F /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683071B346CFE0028DB2F /* Command.swift */; };
 		4286833B1B346CFE0028DB2F /* DumpVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683081B346CFE0028DB2F /* DumpVisitor.swift */; };
 		4286833C1B346CFE0028DB2F /* CellHeightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683091B346CFE0028DB2F /* CellHeightProvider.swift */; };
@@ -202,7 +202,7 @@
 		428683021B346CFE0028DB2F /* RFSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSwitchCell.swift; sourceTree = "<group>"; };
 		428683031B346CFE0028DB2F /* RFTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTextFieldCell.swift; sourceTree = "<group>"; };
 		428683041B346CFE0028DB2F /* RFTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTextViewCell.swift; sourceTree = "<group>"; };
-		428683051B346CFE0028DB2F /* ViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCell.swift; sourceTree = "<group>"; };
+		428683051B346CFE0028DB2F /* RFViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFViewControllerCell.swift; sourceTree = "<group>"; };
 		428683071B346CFE0028DB2F /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		428683081B346CFE0028DB2F /* DumpVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpVisitor.swift; sourceTree = "<group>"; };
 		428683091B346CFE0028DB2F /* CellHeightProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeightProvider.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 				428683021B346CFE0028DB2F /* RFSwitchCell.swift */,
 				428683031B346CFE0028DB2F /* RFTextFieldCell.swift */,
 				428683041B346CFE0028DB2F /* RFTextViewCell.swift */,
-				428683051B346CFE0028DB2F /* ViewControllerCell.swift */,
+				428683051B346CFE0028DB2F /* RFViewControllerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -647,7 +647,7 @@
 				428683411B346CFE0028DB2F /* SelectOptionDelegate.swift in Sources */,
 				428683421B346CFE0028DB2F /* FormTableView.swift in Sources */,
 				4286835B1B346CFE0028DB2F /* UIView+LookupTableView.swift in Sources */,
-				428683391B346CFE0028DB2F /* ViewControllerCell.swift in Sources */,
+				428683391B346CFE0028DB2F /* RFViewControllerCell.swift in Sources */,
 				4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */,
 				428683481B346CFE0028DB2F /* TitleWidth.swift in Sources */,
 				428683441B346CFE0028DB2F /* Validator.swift in Sources */,
