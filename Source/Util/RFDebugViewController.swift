@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public enum WhatToShow {
+public enum RFDebugViewController_WhatToShow {
 	case json(json: Data)
 	case text(text: String)
 	case url(url: URL)
@@ -16,15 +16,15 @@ public enum WhatToShow {
 ///
 /// Usage:
 ///
-/// 	DebugViewController.showURL(self, url: URL(string: "http://www.google.com")!)
-/// 	DebugViewController.showText(self, text: "hello world")
+/// 	RFDebugViewController.showURL(self, url: URL(string: "http://www.google.com")!)
+/// 	RFDebugViewController.showText(self, text: "hello world")
 ///
-public class DebugViewController: UIViewController {
+public class RFDebugViewController: UIViewController {
 
 	public let dismissBlock: () -> Void
-	public let whatToShow: WhatToShow
+	public let whatToShow: RFDebugViewController_WhatToShow
 
-	public init(dismissBlock: @escaping () -> Void, whatToShow: WhatToShow) {
+	public init(dismissBlock: @escaping () -> Void, whatToShow: RFDebugViewController_WhatToShow) {
 		self.dismissBlock = dismissBlock
 		self.whatToShow = whatToShow
 		super.init(nibName: nil, bundle: nil)
@@ -35,18 +35,18 @@ public class DebugViewController: UIViewController {
 	}
 
 	public class func showJSON(_ parentViewController: UIViewController, jsonData: Data) {
-		showModally(parentViewController, whatToShow: WhatToShow.json(json: jsonData))
+		showModally(parentViewController, whatToShow: RFDebugViewController_WhatToShow.json(json: jsonData))
 	}
 
 	public class func showText(_ parentViewController: UIViewController, text: String) {
-		showModally(parentViewController, whatToShow: WhatToShow.text(text: text))
+		showModally(parentViewController, whatToShow: RFDebugViewController_WhatToShow.text(text: text))
 	}
 
 	public class func showURL(_ parentViewController: UIViewController, url: URL) {
-		showModally(parentViewController, whatToShow: WhatToShow.url(url: url))
+		showModally(parentViewController, whatToShow: RFDebugViewController_WhatToShow.url(url: url))
 	}
 
-	public class func showModally(_ parentViewController: UIViewController, whatToShow: WhatToShow) {
+	public class func showModally(_ parentViewController: UIViewController, whatToShow: RFDebugViewController_WhatToShow) {
 		weak var weakSelf = parentViewController
 		let dismissBlock: () -> Void = {
 			if let vc = weakSelf {
@@ -54,7 +54,7 @@ public class DebugViewController: UIViewController {
 			}
 		}
 
-		let vc = DebugViewController(dismissBlock: dismissBlock, whatToShow: whatToShow)
+		let vc = RFDebugViewController(dismissBlock: dismissBlock, whatToShow: whatToShow)
 		let nc = UINavigationController(rootViewController: vc)
 		parentViewController.present(nc, animated: true, completion: nil)
 	}
@@ -63,7 +63,7 @@ public class DebugViewController: UIViewController {
 		let webview = UIWebView()
 		self.view = webview
 
-		let item = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(DebugViewController.dismissAction(_:)))
+		let item = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(RFDebugViewController.dismissAction(_:)))
 		self.navigationItem.leftBarButtonItem = item
 
 		switch whatToShow {
@@ -86,5 +86,10 @@ public class DebugViewController: UIViewController {
 	@objc func dismissAction(_ sender: AnyObject?) {
 		dismissBlock()
 	}
-
 }
+
+@available(*, unavailable, renamed: "RFDebugViewController")
+typealias DebugViewController = RFDebugViewController
+
+@available(*, unavailable, renamed: "RFDebugViewController_WhatToShow")
+typealias WhatToShow = RFDebugViewController_WhatToShow

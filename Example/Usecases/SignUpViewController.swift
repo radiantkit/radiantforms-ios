@@ -158,7 +158,7 @@ class SignUpViewController: FormViewController {
 		instance.title = "View JSON"
 		instance.action = { [weak self] in
 			if let vc = self {
-				DebugViewController.showJSON(vc, jsonData: vc.formBuilder.dump())
+				RFDebugViewController.showJSON(vc, jsonData: vc.formBuilder.dump())
 			}
 		}
 		return instance
