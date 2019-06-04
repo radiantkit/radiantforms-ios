@@ -26,7 +26,7 @@
 		42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D141B34E9F60067FEAA /* TextFieldFormItem.swift */; };
 		42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D151B34E9F60067FEAA /* TextViewFormItem.swift */; };
 		42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */; };
-		4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */; };
+		4212E0131D3A3ABE002287D0 /* RFCellForRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */; };
 		4219E1C51DB827CF00B3204A /* RFCharacterSetSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */; };
 		4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */; };
 		4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */; };
@@ -152,7 +152,7 @@
 		42108D141B34E9F60067FEAA /* TextFieldFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldFormItem.swift; sourceTree = "<group>"; };
 		42108D151B34E9F60067FEAA /* TextViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewFormItem.swift; sourceTree = "<group>"; };
 		42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFormItem.swift; sourceTree = "<group>"; };
-		4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellForRowDelegate.swift; sourceTree = "<group>"; };
+		4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCellForRowDelegate.swift; sourceTree = "<group>"; };
 		4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecification.swift; sourceTree = "<group>"; };
 		4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecification.swift; sourceTree = "<group>"; };
 		4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecification.swift; sourceTree = "<group>"; };
@@ -390,7 +390,6 @@
 			children = (
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
-				4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */,
 				428683091B346CFE0028DB2F /* CellHeightProvider.swift */,
 				428683071B346CFE0028DB2F /* Command.swift */,
 				420F6CC61D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift */,
@@ -403,6 +402,7 @@
 				428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */,
 				4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
+				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
@@ -616,7 +616,7 @@
 				42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */,
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
 				739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */,
-				4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */,
+				4212E0131D3A3ABE002287D0 /* RFCellForRowDelegate.swift in Sources */,
 				4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */,
 				428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */,
 				739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */,

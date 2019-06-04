@@ -25,7 +25,7 @@ extension TableViewSection: UITableViewDataSource {
 
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = cells[indexPath.row]
-		if let theCell = cell as? CellForRowDelegate {
+		if let theCell = cell as? RFCellForRowDelegate {
 			return theCell.form_cellForRow(indexPath: indexPath, tableView: tableView)
 		}
 		return cell
