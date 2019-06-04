@@ -39,7 +39,7 @@ class RFPopulateTableView: FormItemVisitor {
 	let model: RFPopulateTableViewModel
 
 	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()
-	var sections = [TableViewSection]()
+	var sections = [RFTableViewSection]()
 	var header = TableViewSectionPart.systemDefault
 	var footer = TableViewSectionPart.systemDefault
 
@@ -62,7 +62,7 @@ class RFPopulateTableView: FormItemVisitor {
 
 	func closeSection() {
 		cells.reloadVisibleItems()
-		let section = TableViewSection(cells: cells, header: header, footer: footer)
+		let section = RFTableViewSection(cells: cells, header: header, footer: footer)
 		sections.append(section)
 
 		cells = RFTableViewCellArray.createEmpty()

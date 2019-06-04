@@ -2,9 +2,9 @@
 import UIKit
 
 public class TableViewSectionArray: NSObject {
-	public let sections: [TableViewSection]
+	public let sections: [RFTableViewSection]
 
-	public init(sections: [TableViewSection]) {
+	public init(sections: [RFTableViewSection]) {
 		self.sections = sections
 		super.init()
 	}

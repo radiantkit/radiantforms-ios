@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class TableViewSection: NSObject {
+public class RFTableViewSection: NSObject {
 	public let cells: RFTableViewCellArray
 	public let header: TableViewSectionPart
 	public let footer: TableViewSectionPart
@@ -14,7 +14,7 @@ public class TableViewSection: NSObject {
 	}
 }
 
-extension TableViewSection: UITableViewDataSource {
+extension RFTableViewSection: UITableViewDataSource {
 	public func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -40,7 +40,7 @@ extension TableViewSection: UITableViewDataSource {
 	}
 }
 
-extension TableViewSection: UITableViewDelegate {
+extension RFTableViewSection: UITableViewDelegate {
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		return header.view
 	}
@@ -86,3 +86,6 @@ extension TableViewSection: UITableViewDelegate {
 		}
 	}
 }
+
+@available(*, unavailable, renamed: "RFTableViewSection")
+typealias TableViewSection = RFTableViewSection
