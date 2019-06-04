@@ -28,7 +28,7 @@
 		42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */; };
 		4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */; };
 		4219E1C51DB827CF00B3204A /* RFCharacterSetSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */; };
-		4219E1C61DB827CF00B3204A /* CountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* CountSpecification.swift */; };
+		4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */; };
 		4219E1C71DB827CF00B3204A /* EmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* EmailSpecification.swift */; };
 		4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */; };
 		4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */; };
@@ -154,7 +154,7 @@
 		42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFormItem.swift; sourceTree = "<group>"; };
 		4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellForRowDelegate.swift; sourceTree = "<group>"; };
 		4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecification.swift; sourceTree = "<group>"; };
-		4219E1BF1DB827CF00B3204A /* CountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountSpecification.swift; sourceTree = "<group>"; };
+		4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecification.swift; sourceTree = "<group>"; };
 		4219E1C01DB827CF00B3204A /* EmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSpecification.swift; sourceTree = "<group>"; };
 		4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFSpecification+Operator.swift"; sourceTree = "<group>"; };
 		4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecification.swift; sourceTree = "<group>"; };
@@ -317,11 +317,11 @@
 		4219E1BD1DB827CF00B3204A /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4219E1BF1DB827CF00B3204A /* CountSpecification.swift */,
 				4219E1C01DB827CF00B3204A /* EmailSpecification.swift */,
 				4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */,
 				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
 				4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */,
+				4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */,
 				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
 				4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */,
 			);
@@ -617,7 +617,7 @@
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
 				739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */,
 				4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */,
-				4219E1C61DB827CF00B3204A /* CountSpecification.swift in Sources */,
+				4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */,
 				428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */,
 				739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */,
 				42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */,

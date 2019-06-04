@@ -25,8 +25,8 @@ class ChangePasswordViewController: FormViewController {
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
 		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 
@@ -36,8 +36,8 @@ class ChangePasswordViewController: FormViewController {
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
 		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 
@@ -47,8 +47,8 @@ class ChangePasswordViewController: FormViewController {
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
 		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 }

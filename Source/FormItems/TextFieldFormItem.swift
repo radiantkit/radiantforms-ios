@@ -120,7 +120,7 @@ public class TextFieldFormItem: FormItem {
 
 	@discardableResult
 	public func required(_ message: String) -> Self {
-		submitValidate(CountSpecification.min(1), message: message)
+		submitValidate(RFCountSpecification.min(1), message: message)
 		return self
 	}
 

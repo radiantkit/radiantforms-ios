@@ -12,7 +12,7 @@ class AdvancedTests: XCTestCase {
 		3. the string must not contain two zeroes
 		*/
 		let onlyDigits = RFCharacterSetSpecification.decimalDigits
-		let between2And4Letters = CountSpecification.between(2, 4)
+		let between2And4Letters = RFCountSpecification.between(2, 4)
 		let twoZeroes = RegularExpressionSpecification(pattern: "0.*0")
 		
 		let spec = onlyDigits.and(between2And4Letters).and(twoZeroes.not())

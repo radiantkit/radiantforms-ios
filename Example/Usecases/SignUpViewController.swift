@@ -35,8 +35,8 @@ class SignUpViewController: FormViewController {
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
 		instance.validate(RFCharacterSetSpecification.lowercaseLetters, message: "Must be lowercase letters")
-		instance.submitValidate(CountSpecification.min(6), message: "Length must be minimum 6 letters")
-		instance.validate(CountSpecification.max(8), message: "Length must be maximum 8 letters")
+		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")
+		instance.validate(RFCountSpecification.max(8), message: "Length must be maximum 8 letters")
 		return instance
 		}()
 
@@ -63,8 +63,8 @@ class SignUpViewController: FormViewController {
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
 		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 
@@ -72,8 +72,8 @@ class SignUpViewController: FormViewController {
 		let instance = TextFieldFormItem()
 		instance.title("Email").placeholder("johndoe@example.com")
 		instance.keyboardType = .emailAddress
-		instance.submitValidate(CountSpecification.min(6), message: "Length must be minimum 6 letters")
-		instance.validate(CountSpecification.max(60), message: "Length must be maximum 60 letters")
+		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")
+		instance.validate(RFCountSpecification.max(60), message: "Length must be maximum 60 letters")
 		instance.softValidate(EmailSpecification(), message: "Must be a valid email address")
 		return instance
 		}()
