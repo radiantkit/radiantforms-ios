@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E711B358A7E0068B084 /* ShowInfo.swift */; };
 		42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E721B358A7E0068B084 /* SubmitButton.swift */; };
+		420F32BC22A6B2C400A4B067 /* RFPrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */; };
 		420F6CC71D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */; };
 		420F6CC91D69C17F009D5F57 /* RFAssignAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */; };
 		420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */; };
@@ -102,7 +103,6 @@
 		4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683291B346CFE0028DB2F /* UIView+LookupCell.swift */; };
 		4286835B1B346CFE0028DB2F /* UIView+LookupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286832A1B346CFE0028DB2F /* UIView+LookupTableView.swift */; };
 		4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286832B1B346CFE0028DB2F /* UIViewController+Alert.swift */; };
-		428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683601B346D0C0028DB2F /* PrevNextTests.swift */; };
 		428683661B346D0C0028DB2F /* RFValidateResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683611B346D0C0028DB2F /* RFValidateResultTests.swift */; };
 		428683671B346D0C0028DB2F /* RFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* RFValidatorTests.swift */; };
 		42B060F92292913900FD4585 /* RFTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* RFTheme.swift */; };
@@ -135,6 +135,7 @@
 /* Begin PBXFileReference section */
 		42096E711B358A7E0068B084 /* ShowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfo.swift; sourceTree = "<group>"; };
 		42096E721B358A7E0068B084 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrevNextTests.swift; sourceTree = "<group>"; };
 		420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDontCollapseWhenScrolling.swift; sourceTree = "<group>"; };
 		420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAssignAppearance.swift; sourceTree = "<group>"; };
 		420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToVisibleAfterExpand.swift"; sourceTree = "<group>"; };
@@ -230,7 +231,6 @@
 		4286832A1B346CFE0028DB2F /* UIView+LookupTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LookupTableView.swift"; sourceTree = "<group>"; };
 		4286832B1B346CFE0028DB2F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		4286835F1B346D0C0028DB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		428683601B346D0C0028DB2F /* PrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrevNextTests.swift; sourceTree = "<group>"; };
 		428683611B346D0C0028DB2F /* RFValidateResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFValidateResultTests.swift; sourceTree = "<group>"; };
 		428683621B346D0C0028DB2F /* RFValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFValidatorTests.swift; sourceTree = "<group>"; };
 		42B060F82292913900FD4585 /* RFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTheme.swift; sourceTree = "<group>"; };
@@ -449,11 +449,11 @@
 			isa = PBXGroup;
 			children = (
 				4286835F1B346D0C0028DB2F /* Info.plist */,
-				428683601B346D0C0028DB2F /* PrevNextTests.swift */,
 				42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */,
 				4280F721226F4C340098EF22 /* RFAmountCellTests.swift */,
 				4219E1D41DBE9EFB00B3204A /* RFJSONHelperTests.swift */,
 				4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */,
+				420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */,
 				428683611B346D0C0028DB2F /* RFValidateResultTests.swift */,
 				428683621B346D0C0028DB2F /* RFValidatorTests.swift */,
 				4245B3EA1DA429B500BCB4C7 /* Specification */,
@@ -694,8 +694,8 @@
 				4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */,
 				428683661B346D0C0028DB2F /* RFValidateResultTests.swift in Sources */,
 				4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */,
+				420F32BC22A6B2C400A4B067 /* RFPrevNextTests.swift in Sources */,
 				4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */,
-				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
 				4229CE0A1D43C450002C28A7 /* RFPrecisionSliderTests.swift in Sources */,
 				4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */,
 				4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */,

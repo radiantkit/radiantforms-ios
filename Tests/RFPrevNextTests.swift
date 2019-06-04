@@ -3,7 +3,7 @@ import UIKit
 import XCTest
 @testable import SwiftyFORM
 
-class PrevNextTests: XCTestCase {
+class RFPrevNextTests: XCTestCase {
 	
 	func prev(_ row: Int, _ section: Int, _ tableView: UITableView) -> IndexPath? {
 		return IndexPath(row: row, section: section).form_indexPathForPreviousCell(tableView)
