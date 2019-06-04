@@ -6,7 +6,7 @@ import XCTest
 class ValidatorTests: XCTestCase {
 
     func testExample() {
-		let builder = ValidatorBuilder()
+		let builder = RFValidatorBuilder()
 		builder.hardValidate(RFFalseSpecification(), message: "rule0")
 		let validator = builder.build()
 		let actual: RFValidateResult = validator.validate("hello", checkHardRule: true, checkSoftRule: true, checkSubmitRule: true)

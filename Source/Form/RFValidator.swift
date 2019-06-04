@@ -1,38 +1,38 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public enum ValidateRule {
+public enum RFValidateRule {
 	case hardRule(specification: RFSpecification, message: String)
 	case softRule(specification: RFSpecification, message: String)
 	case submitRule(specification: RFSpecification, message: String)
 }
 
-public class ValidatorBuilder {
-	fileprivate var rules = [ValidateRule]()
+public class RFValidatorBuilder {
+	fileprivate var rules = [RFValidateRule]()
 
 	public init() {}
 
 	public func hardValidate(_ specification: RFSpecification, message: String) {
-		rules.append(ValidateRule.hardRule(specification: specification, message: message))
+		rules.append(RFValidateRule.hardRule(specification: specification, message: message))
 	}
 
 	public func softValidate(_ specification: RFSpecification, message: String) {
-		rules.append(ValidateRule.softRule(specification: specification, message: message))
+		rules.append(RFValidateRule.softRule(specification: specification, message: message))
 	}
 
 	public func submitValidate(_ specification: RFSpecification, message: String) {
-		rules.append(ValidateRule.submitRule(specification: specification, message: message))
+		rules.append(RFValidateRule.submitRule(specification: specification, message: message))
 	}
 
-	public func build() -> Validator {
-		return Validator(rules: self.rules)
+	public func build() -> RFValidator {
+		return RFValidator(rules: self.rules)
 	}
 }
 
-public class Validator {
-	fileprivate let rules: [ValidateRule]
+public class RFValidator {
+	fileprivate let rules: [RFValidateRule]
 
-	public init(rules: [ValidateRule]) {
+	public init(rules: [RFValidateRule]) {
 		self.rules = rules
 	}
 
@@ -68,3 +68,13 @@ public class Validator {
 		return results[0]
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFValidateRule")
+typealias ValidateRule = RFValidateRule
+
+@available(*, unavailable, renamed: "RFValidatorBuilder")
+typealias ValidatorBuilder = RFValidatorBuilder
+
+@available(*, unavailable, renamed: "RFValidator")
+typealias Validator = RFValidator

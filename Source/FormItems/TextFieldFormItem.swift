@@ -98,7 +98,7 @@ public class TextFieldFormItem: FormItem {
 		return self
 	}
 
-	public let validatorBuilder = ValidatorBuilder()
+	public let validatorBuilder = RFValidatorBuilder()
 
 	@discardableResult
 	public func validate(_ specification: RFSpecification, message: String) -> Self {
