@@ -2,10 +2,10 @@
 import XCTest
 @testable import SwiftyFORM
 
-class EmailSpecificationTests: XCTestCase {
+class RFEmailSpecificationTests: XCTestCase {
 	
 	func testBasic() {
-		let spec = EmailSpecification()
+		let spec = RFEmailSpecification()
 		XCTAssertFalse(spec.isSatisfiedBy(nil))
 		XCTAssertFalse(spec.isSatisfiedBy(""))
 		XCTAssertFalse(spec.isSatisfiedBy("not a valid email"))

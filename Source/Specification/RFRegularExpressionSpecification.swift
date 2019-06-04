@@ -8,8 +8,8 @@ import Foundation
 /// Regex are really powerful for validating textfields. Here a business rule could be
 /// that the text must be like this: `aabbcc8`. A regex for this:
 ///
-/// `let spec = RegularExpressionSpecification(pattern: "^a+b+c+\\d$")`
-public class RegularExpressionSpecification: Specification {
+/// `let spec = RFRegularExpressionSpecification(pattern: "^a+b+c+\\d$")`
+public class RFRegularExpressionSpecification: RFSpecification {
 	private let regularExpression: NSRegularExpression
 
 	public init(regularExpression: NSRegularExpression) {
@@ -31,3 +31,6 @@ public class RegularExpressionSpecification: Specification {
 		return regularExpression.numberOfMatches(in: s, options: [], range: NSMakeRange(0, s.utf8.count)) > 0
 	}
 }
+
+@available(*, unavailable, renamed: "RFRegularExpressionSpecification")
+typealias RegularExpressionSpecification = RFRegularExpressionSpecification

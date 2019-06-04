@@ -2,9 +2,9 @@
 import Foundation
 
 public enum ValidateRule {
-	case hardRule(specification: Specification, message: String)
-	case softRule(specification: Specification, message: String)
-	case submitRule(specification: Specification, message: String)
+	case hardRule(specification: RFSpecification, message: String)
+	case softRule(specification: RFSpecification, message: String)
+	case submitRule(specification: RFSpecification, message: String)
 }
 
 public class ValidatorBuilder {
@@ -12,15 +12,15 @@ public class ValidatorBuilder {
 
 	public init() {}
 
-	public func hardValidate(_ specification: Specification, message: String) {
+	public func hardValidate(_ specification: RFSpecification, message: String) {
 		rules.append(ValidateRule.hardRule(specification: specification, message: message))
 	}
 
-	public func softValidate(_ specification: Specification, message: String) {
+	public func softValidate(_ specification: RFSpecification, message: String) {
 		rules.append(ValidateRule.softRule(specification: specification, message: message))
 	}
 
-	public func submitValidate(_ specification: Specification, message: String) {
+	public func submitValidate(_ specification: RFSpecification, message: String) {
 		rules.append(ValidateRule.submitRule(specification: specification, message: message))
 	}
 

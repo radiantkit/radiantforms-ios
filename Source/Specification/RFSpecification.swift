@@ -6,7 +6,7 @@
 /// represent very complex business rules.
 ///
 /// More about specification pattern on [Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern).
-public protocol Specification {
+public protocol RFSpecification {
 
 	/// The central part of a specification is the `isSatisfiedBy()` function, 
 	/// which is used to check if an object satisfies the specification.
@@ -18,7 +18,7 @@ public protocol Specification {
 
 }
 
-extension Specification {
+extension RFSpecification {
 
 	/// Combine two specifications into one.
 	///
@@ -28,8 +28,8 @@ extension Specification {
 	/// - parameter other: The other specification that is to be to combine with this specification.
 	///
 	/// - returns: A combined specification
-	public func and(_ other: Specification) -> Specification {
-		return AndSpecification(self, other)
+	public func and(_ other: RFSpecification) -> RFSpecification {
+		return RFAndSpecification(self, other)
 	}
 
 	/// Combine two specifications into one.
@@ -40,8 +40,8 @@ extension Specification {
 	/// - parameter other: The other specification that is to be to combine with this specification.
 	///
 	/// - returns: A combined specification
-	public func or(_ other: Specification) -> Specification {
-		return OrSpecification(self, other)
+	public func or(_ other: RFSpecification) -> RFSpecification {
+		return RFOrSpecification(self, other)
 	}
 
 	/// Invert a specification.
@@ -50,8 +50,8 @@ extension Specification {
 	/// when the specification is not satisfied.
 	///
 	/// - returns: An inverted specification
-	public func not() -> Specification {
-		return NotSpecification(self)
+	public func not() -> RFSpecification {
+		return RFNotSpecification(self)
 	}
 }
 
@@ -59,11 +59,11 @@ extension Specification {
 ///
 /// This is a composite specification that combines two specifications 
 /// into a single specification.
-public class AndSpecification: Specification {
-	private let one: Specification
-	private let other: Specification
+public class RFAndSpecification: RFSpecification {
+	private let one: RFSpecification
+	private let other: RFSpecification
 
-	public init(_ x: Specification, _ y: Specification) {
+	public init(_ x: RFSpecification, _ y: RFSpecification) {
 		self.one = x
 		self.other = y
 	}
@@ -82,11 +82,11 @@ public class AndSpecification: Specification {
 ///
 /// This is a composite specification that combines two specifications
 /// into a single specification.
-public class OrSpecification: Specification {
-	private let one: Specification
-	private let other: Specification
+public class RFOrSpecification: RFSpecification {
+	private let one: RFSpecification
+	private let other: RFSpecification
 
-	public init(_ x: Specification, _ y: Specification) {
+	public init(_ x: RFSpecification, _ y: RFSpecification) {
 		self.one = x
 		self.other = y
 	}
@@ -104,10 +104,10 @@ public class OrSpecification: Specification {
 /// Check if a specification is not satisfied.
 ///
 /// This is a composite specification that wraps another specification.
-public class NotSpecification: Specification {
-	private let wrapped: Specification
+public class RFNotSpecification: RFSpecification {
+	private let wrapped: RFSpecification
 
-	public init(_ x: Specification) {
+	public init(_ x: RFSpecification) {
 		self.wrapped = x
 	}
 
@@ -122,7 +122,7 @@ public class NotSpecification: Specification {
 }
 
 /// This specification is never satisfied.
-public class FalseSpecification: Specification {
+public class RFFalseSpecification: RFSpecification {
 	public init() {
 	}
 
@@ -137,7 +137,7 @@ public class FalseSpecification: Specification {
 }
 
 /// This specification is always satisfied.
-public class TrueSpecification: Specification {
+public class RFTrueSpecification: RFSpecification {
 	public init() {
 	}
 
@@ -151,11 +151,21 @@ public class TrueSpecification: Specification {
 	}
 }
 
-/// - warning:
-/// This class will be removed in the future, starting with SwiftyFORM 2.0.0
-open class CompositeSpecification: Specification {
-	open func isSatisfiedBy(_ candidate: Any?) -> Bool {
-		// subclass must implement this function
-		return false
-	}
-}
+
+@available(*, unavailable, renamed: "RFSpecification")
+typealias Specification = RFSpecification
+
+@available(*, unavailable, renamed: "RFAndSpecification")
+typealias AndSpecification = RFAndSpecification
+
+@available(*, unavailable, renamed: "RFOrSpecification")
+typealias OrSpecification = RFOrSpecification
+
+@available(*, unavailable, renamed: "RFNotSpecification")
+typealias NotSpecification = RFNotSpecification
+
+@available(*, unavailable, renamed: "RFFalseSpecification")
+typealias FalseSpecification = RFFalseSpecification
+
+@available(*, unavailable, renamed: "RFTrueSpecification")
+typealias TrueSpecification = RFTrueSpecification

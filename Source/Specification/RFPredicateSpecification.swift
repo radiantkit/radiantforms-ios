@@ -3,8 +3,8 @@ import Foundation
 
 /// Check if an object is satisfied by a closure.
 ///
-/// Closure is sometimes preferred instead of subclassing the `Specification` protocol.
-public class PredicateSpecification<T>: Specification {
+/// Closure is sometimes preferred instead of subclassing the `RFSpecification` protocol.
+public class RFPredicateSpecification<T>: RFSpecification {
 	private let predicate: (T) -> Bool
 
 	public init(predicate: @escaping (T) -> Bool) {
@@ -21,3 +21,6 @@ public class PredicateSpecification<T>: Specification {
 		return predicate(obj)
 	}
 }
+
+@available(*, unavailable, renamed: "RFPredicateSpecification")
+typealias PredicateSpecification = RFPredicateSpecification

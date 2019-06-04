@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class OperatorTests: XCTestCase {
+class RFSpecificationOperatorTests: XCTestCase {
 	
 	func testOperator0() {
 		/*
@@ -11,9 +11,9 @@ class OperatorTests: XCTestCase {
 		2. the string.length must be between 2..4
 		3. the string must not contain two zeroes
 		*/
-		let onlyDigits = CharacterSetSpecification.decimalDigits
-		let between2And4Letters = RegularExpressionSpecification(pattern: "^.{2,4}$")
-		let twoZeroes = RegularExpressionSpecification(pattern: "0.*0")
+		let onlyDigits = RFCharacterSetSpecification.decimalDigits
+		let between2And4Letters = RFRegularExpressionSpecification(pattern: "^.{2,4}$")
+		let twoZeroes = RFRegularExpressionSpecification(pattern: "0.*0")
 		
 		let spec = onlyDigits & between2And4Letters & !twoZeroes
 		

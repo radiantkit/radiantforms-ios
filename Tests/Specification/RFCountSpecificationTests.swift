@@ -2,10 +2,10 @@
 import XCTest
 @testable import SwiftyFORM
 
-class CountSpecificationTests: XCTestCase {
+class RFCountSpecificationTests: XCTestCase {
 	
 	func testStringMin() {
-		let spec = CountSpecification.min(3)
+		let spec = RFCountSpecification.min(3)
 		XCTAssertFalse(spec.isSatisfiedBy(nil))
 		XCTAssertFalse(spec.isSatisfiedBy(""))
 		XCTAssertFalse(spec.isSatisfiedBy("0"))
@@ -15,7 +15,7 @@ class CountSpecificationTests: XCTestCase {
 	}
 	
 	func testStringMax() {
-		let spec = CountSpecification.max(2)
+		let spec = RFCountSpecification.max(2)
 		XCTAssertTrue(spec.isSatisfiedBy(""))
 		XCTAssertTrue(spec.isSatisfiedBy("0"))
 		XCTAssertTrue(spec.isSatisfiedBy("01"))
@@ -24,7 +24,7 @@ class CountSpecificationTests: XCTestCase {
 	}
 	
 	func testStringBetween() {
-		let spec = CountSpecification.between(2, 4)
+		let spec = RFCountSpecification.between(2, 4)
 		XCTAssertFalse(spec.isSatisfiedBy(""))
 		XCTAssertFalse(spec.isSatisfiedBy("0"))
 		XCTAssertTrue(spec.isSatisfiedBy("01"))
@@ -35,7 +35,7 @@ class CountSpecificationTests: XCTestCase {
 	}
 
 	func testStringExcactly() {
-		let spec = CountSpecification.exactly(2)
+		let spec = RFCountSpecification.exactly(2)
 		XCTAssertFalse(spec.isSatisfiedBy(""))
 		XCTAssertFalse(spec.isSatisfiedBy("0"))
 		XCTAssertTrue(spec.isSatisfiedBy("01"))
@@ -45,7 +45,7 @@ class CountSpecificationTests: XCTestCase {
 	
 	func testArrayMin() {
 		let array0: [Bool] = []
-		let spec = CountSpecification.min(3)
+		let spec = RFCountSpecification.min(3)
 		XCTAssertFalse(spec.isSatisfiedBy( array0 ))
 		XCTAssertFalse(spec.isSatisfiedBy( [0] ))
 		XCTAssertFalse(spec.isSatisfiedBy( [0, 1] ))
@@ -55,7 +55,7 @@ class CountSpecificationTests: XCTestCase {
 	
 	func testArrayMax() {
 		let array0: [Bool] = []
-		let spec = CountSpecification.max(2)
+		let spec = RFCountSpecification.max(2)
 		XCTAssertTrue(spec.isSatisfiedBy( array0 ))
 		XCTAssertTrue(spec.isSatisfiedBy( [0] ))
 		XCTAssertTrue(spec.isSatisfiedBy( [0, 1] ))
@@ -65,7 +65,7 @@ class CountSpecificationTests: XCTestCase {
 
 	func testArrayBetween() {
 		let array0: [Bool] = []
-		let spec = CountSpecification.between(2, 4)
+		let spec = RFCountSpecification.between(2, 4)
 		XCTAssertFalse(spec.isSatisfiedBy(array0))
 		XCTAssertFalse(spec.isSatisfiedBy( [0] ))
 		XCTAssertTrue(spec.isSatisfiedBy( [0, 1] ))
@@ -77,7 +77,7 @@ class CountSpecificationTests: XCTestCase {
 	
 	func testArrayExactly() {
 		let array0: [Bool] = []
-		let spec = CountSpecification.exactly(2)
+		let spec = RFCountSpecification.exactly(2)
 		XCTAssertFalse(spec.isSatisfiedBy(array0))
 		XCTAssertFalse(spec.isSatisfiedBy( [0] ))
 		XCTAssertTrue(spec.isSatisfiedBy( [0, 1] ))

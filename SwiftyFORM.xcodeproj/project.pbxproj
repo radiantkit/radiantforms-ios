@@ -27,29 +27,29 @@
 		42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D151B34E9F60067FEAA /* TextViewFormItem.swift */; };
 		42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */; };
 		4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */; };
-		4219E1C51DB827CF00B3204A /* CharacterSetSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */; };
-		4219E1C61DB827CF00B3204A /* CountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* CountSpecification.swift */; };
-		4219E1C71DB827CF00B3204A /* EmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* EmailSpecification.swift */; };
-		4219E1C81DB827CF00B3204A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* Operator.swift */; };
-		4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */; };
-		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
-		4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* Specification.swift */; };
+		4219E1C51DB827CF00B3204A /* RFCharacterSetSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */; };
+		4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */; };
+		4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */; };
+		4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */; };
+		4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */; };
+		4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */; };
+		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
 		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
 		4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */; };
 		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
-		4245B3F51DA429B500BCB4C7 /* AdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */; };
-		4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */; };
-		4245B3F71DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */; };
-		4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */; };
-		4245B3F91DA429B500BCB4C7 /* EmailSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EF1DA429B500BCB4C7 /* EmailSpecificationTests.swift */; };
-		4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */; };
-		4245B3FB1DA429B500BCB4C7 /* PredicateSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */; };
-		4245B3FC1DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F21DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift */; };
-		4245B3FD1DA429B500BCB4C7 /* SpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F31DA429B500BCB4C7 /* SpecificationTests.swift */; };
-		4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */; };
+		4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */; };
+		4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */; };
+		4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */; };
+		4245B3F81DA429B500BCB4C7 /* RFCountSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */; };
+		4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */; };
+		4245B3FA1DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F01DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift */; };
+		4245B3FB1DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */; };
+		4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */; };
+		4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */; };
+		4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */; };
 		4259A2C41C23759B00DB4CEB /* AccessoryButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */; };
 		425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */; };
 		425DED651D28257000EDF891 /* SegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */; };
@@ -153,29 +153,29 @@
 		42108D151B34E9F60067FEAA /* TextViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewFormItem.swift; sourceTree = "<group>"; };
 		42108D161B34E9F60067FEAA /* ViewControllerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFormItem.swift; sourceTree = "<group>"; };
 		4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellForRowDelegate.swift; sourceTree = "<group>"; };
-		4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetSpecification.swift; sourceTree = "<group>"; };
-		4219E1BF1DB827CF00B3204A /* CountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountSpecification.swift; sourceTree = "<group>"; };
-		4219E1C01DB827CF00B3204A /* EmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSpecification.swift; sourceTree = "<group>"; };
-		4219E1C11DB827CF00B3204A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecification.swift; sourceTree = "<group>"; };
-		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
-		4219E1C41DB827CF00B3204A /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
+		4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecification.swift; sourceTree = "<group>"; };
+		4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecification.swift; sourceTree = "<group>"; };
+		4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecification.swift; sourceTree = "<group>"; };
+		4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFSpecification+Operator.swift"; sourceTree = "<group>"; };
+		4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPredicateSpecification.swift; sourceTree = "<group>"; };
+		4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecification.swift; sourceTree = "<group>"; };
+		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
 		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
 		4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionArray.swift; sourceTree = "<group>"; };
 		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
-		4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdvancedTests.csv; sourceTree = "<group>"; };
-		4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedTests.swift; sourceTree = "<group>"; };
-		4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountSpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3EF1DA429B500BCB4C7 /* EmailSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
-		4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3F21DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3F31DA429B500BCB4C7 /* SpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificationTests.swift; sourceTree = "<group>"; };
-		4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrueFalseTests.swift; sourceTree = "<group>"; };
+		4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RFSpecificationAdvancedTests.csv; sourceTree = "<group>"; };
+		4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationAdvancedTests.swift; sourceTree = "<group>"; };
+		4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3F01DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationOperatorTests.swift; sourceTree = "<group>"; };
+		4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPredicateSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTrueFalseTests.swift; sourceTree = "<group>"; };
 		4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryButtonDelegate.swift; sourceTree = "<group>"; };
 		425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlCell.swift; sourceTree = "<group>"; };
 		425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlFormItem.swift; sourceTree = "<group>"; };
@@ -317,13 +317,13 @@
 		4219E1BD1DB827CF00B3204A /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */,
-				4219E1BF1DB827CF00B3204A /* CountSpecification.swift */,
-				4219E1C01DB827CF00B3204A /* EmailSpecification.swift */,
-				4219E1C11DB827CF00B3204A /* Operator.swift */,
-				4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */,
-				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
-				4219E1C41DB827CF00B3204A /* Specification.swift */,
+				4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */,
+				4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */,
+				4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */,
+				4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */,
+				4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */,
+				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
+				4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */,
 			);
 			path = Specification;
 			sourceTree = "<group>";
@@ -331,16 +331,16 @@
 		4245B3EA1DA429B500BCB4C7 /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */,
-				4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */,
-				4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */,
-				4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */,
-				4245B3EF1DA429B500BCB4C7 /* EmailSpecificationTests.swift */,
-				4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */,
-				4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */,
-				4245B3F21DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift */,
-				4245B3F31DA429B500BCB4C7 /* SpecificationTests.swift */,
-				4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */,
+				4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */,
+				4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */,
+				4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */,
+				4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */,
+				4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */,
+				4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */,
+				4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */,
+				4245B3F01DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift */,
+				4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */,
+				4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */,
 			);
 			path = Specification;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4245B3F51DA429B500BCB4C7 /* AdvancedTests.csv in Resources */,
+				4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +590,7 @@
 				42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */,
 				428683491B346CFE0028DB2F /* ValidateResult.swift in Sources */,
 				42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */,
-				4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */,
+				4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */,
 				42D297571D49611300561780 /* PrecisionSlider_InnerModel.swift in Sources */,
 				42FABBC41D4143650066E45A /* PrecisionSlider.swift in Sources */,
 				42108D181B34E9F60067FEAA /* DatePickerFormItem.swift in Sources */,
@@ -602,7 +602,7 @@
 				42108D201B34E9F60067FEAA /* SwitchFormItem.swift in Sources */,
 				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */,
-				4219E1C71DB827CF00B3204A /* EmailSpecification.swift in Sources */,
+				4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */,
 				42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */,
 				4286833E1B346CFE0028DB2F /* OptionListViewController.swift in Sources */,
 				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
@@ -617,7 +617,7 @@
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
 				739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */,
 				4212E0131D3A3ABE002287D0 /* CellForRowDelegate.swift in Sources */,
-				4219E1C61DB827CF00B3204A /* CountSpecification.swift in Sources */,
+				4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */,
 				428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */,
 				739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */,
 				42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */,
@@ -631,15 +631,15 @@
 				425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */,
 				4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */,
 				42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */,
-				4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */,
-				4219E1C51DB827CF00B3204A /* CharacterSetSpecification.swift in Sources */,
+				4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */,
+				4219E1C51DB827CF00B3204A /* RFCharacterSetSpecification.swift in Sources */,
 				42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */,
 				420F6CC91D69C17F009D5F57 /* AssignAppearance.swift in Sources */,
 				42108D1F1B34E9F60067FEAA /* StepperFormItem.swift in Sources */,
 				428683401B346CFE0028DB2F /* FormViewController.swift in Sources */,
 				42108D1B1B34E9F60067FEAA /* OptionPickerFormItem.swift in Sources */,
 				428683431B346CFE0028DB2F /* TableViewSection.swift in Sources */,
-				4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */,
+				4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */,
 				42B060F92292913900FD4585 /* RFTheme.swift in Sources */,
 				428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */,
 				42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */,
@@ -657,7 +657,7 @@
 				4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
-				4219E1C81DB827CF00B3204A /* Operator.swift in Sources */,
+				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
 				4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */,
 				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
@@ -688,20 +688,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */,
-				4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */,
+				4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */,
 				42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */,
-				4245B3F71DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift in Sources */,
-				4245B3FD1DA429B500BCB4C7 /* SpecificationTests.swift in Sources */,
+				4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */,
+				4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */,
 				428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */,
-				4245B3F91DA429B500BCB4C7 /* EmailSpecificationTests.swift in Sources */,
-				4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */,
+				4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */,
+				4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */,
 				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
 				4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */,
 				4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */,
-				4245B3FC1DA429B500BCB4C7 /* RegularExpressionSpecificationTests.swift in Sources */,
-				4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */,
-				4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */,
-				4245B3FB1DA429B500BCB4C7 /* PredicateSpecificationTests.swift in Sources */,
+				4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */,
+				4245B3FA1DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift in Sources */,
+				4245B3F81DA429B500BCB4C7 /* RFCountSpecificationTests.swift in Sources */,
+				4245B3FB1DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift in Sources */,
 				4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

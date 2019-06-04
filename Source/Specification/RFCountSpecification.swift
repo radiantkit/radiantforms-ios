@@ -2,24 +2,24 @@
 import Foundation
 
 /// Check if a collection (String/Array) has the right number of elements.
-public class CountSpecification: Specification {
+public class RFCountSpecification: RFSpecification {
 
 	/// Create a specification that checks for a minimum count
 	///
 	/// - parameter count: The minimum number of elements required
 	///
-	/// - returns: A CountSpecification that checks for a minimum count
-	public static func min(_ count: Int) -> CountSpecification {
-		return CountSpecification().min(count)
+	/// - returns: A RFCountSpecification that checks for a minimum count
+	public static func min(_ count: Int) -> RFCountSpecification {
+		return RFCountSpecification().min(count)
 	}
 
 	/// Create a specification that checks for a maximum count
 	///
 	/// - parameter count: The maximum number of elements required
 	///
-	/// - returns: A CountSpecification that checks for a maximum count
-	public static func max(_ count: Int) -> CountSpecification {
-		return CountSpecification().max(count)
+	/// - returns: A RFCountSpecification that checks for a maximum count
+	public static func max(_ count: Int) -> RFCountSpecification {
+		return RFCountSpecification().max(count)
 	}
 
 	/// Create a specification that checks if count is inside a range
@@ -27,29 +27,29 @@ public class CountSpecification: Specification {
 	/// - parameter minCount: The minimum number of elements required
 	/// - parameter maxCount: The maximum number of elements required
 	///
-	/// - returns: A CountSpecification that checks if count is inside range
-	public static func between(_ minCount: Int, _ maxCount: Int) -> CountSpecification {
-		return CountSpecification().min(minCount).max(maxCount)
+	/// - returns: A RFCountSpecification that checks if count is inside range
+	public static func between(_ minCount: Int, _ maxCount: Int) -> RFCountSpecification {
+		return RFCountSpecification().min(minCount).max(maxCount)
 	}
 
 	/// Create a specification that checks if count is exactly X elements
 	///
 	/// - parameter count: The exact number of elements required
 	///
-	/// - returns: A CountSpecification that checks if count is exactly the required count
-	public static func exactly(_ count: Int) -> CountSpecification {
-		return CountSpecification().min(count).max(count)
+	/// - returns: A RFCountSpecification that checks if count is exactly the required count
+	public static func exactly(_ count: Int) -> RFCountSpecification {
+		return RFCountSpecification().min(count).max(count)
 	}
 
 	private var minCount: Int?
 	private var maxCount: Int?
 
-	private func min(_ count: Int) -> CountSpecification {
+	private func min(_ count: Int) -> RFCountSpecification {
 		minCount = count
 		return self
 	}
 
-	private func max(_ count: Int) -> CountSpecification {
+	private func max(_ count: Int) -> RFCountSpecification {
 		maxCount = count
 		return self
 	}
@@ -95,3 +95,6 @@ public class CountSpecification: Specification {
 		return false
 	}
 }
+
+@available(*, unavailable, renamed: "RFCountSpecification")
+typealias CountSpecification = RFCountSpecification
