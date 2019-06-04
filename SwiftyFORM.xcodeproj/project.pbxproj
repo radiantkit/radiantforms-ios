@@ -59,7 +59,7 @@
 		42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */; };
 		4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* RFAmountCell.swift */; };
 		4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountFormItem.swift */; };
-		4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */; };
+		4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */; };
 		4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* RFAmountCellTests.swift */; };
 		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
 		4280F72B2278363B0098EF22 /* CGRect+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */; };
@@ -185,7 +185,7 @@
 		42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellArray.swift; sourceTree = "<group>"; };
 		4280F7182264A7BA0098EF22 /* RFAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCell.swift; sourceTree = "<group>"; };
 		4280F71A2264A99F0098EF22 /* AmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormItem.swift; sourceTree = "<group>"; };
-		4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
+		4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFEdgeInsetLabel.swift; sourceTree = "<group>"; };
 		4280F721226F4C340098EF22 /* RFAmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCellTests.swift; sourceTree = "<group>"; };
 		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Compatibility.swift"; sourceTree = "<group>"; };
@@ -426,9 +426,9 @@
 			children = (
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
-				4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
 				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
+				4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */,
 				4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */,
 				428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */,
 				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
@@ -658,7 +658,7 @@
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
 				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
-				4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */,
+				4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */,
 				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
 				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,

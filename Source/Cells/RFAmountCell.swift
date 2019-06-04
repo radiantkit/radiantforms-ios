@@ -123,7 +123,7 @@ public class RFAmountCell: UITableViewCell {
     }
     
     public lazy var rightView: UILabel = {
-        let instance = EdgeInsetLabel(frame: .zero)
+        let instance = RFEdgeInsetLabel(frame: .zero)
         instance.textAlignment = .right
         instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return instance
