@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-class PrecisionSlider_InnerModel: CustomDebugStringConvertible {
+class RFPrecisionSlider_InnerModel: CustomDebugStringConvertible {
 	var originalMaximumValue: Double = 0.0
 	var originalMinimumValue: Double = 100.0
 
@@ -235,3 +235,6 @@ class PrecisionSlider_InnerModel: CustomDebugStringConvertible {
 		return strings.joined(separator: " , ")
 	}
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerModel")
+typealias PrecisionSlider_InnerModel = RFPrecisionSlider_InnerModel

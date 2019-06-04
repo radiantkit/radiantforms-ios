@@ -16,7 +16,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 	var originalZoom: Float = 0
 	var originalValue: Double = 0
 
-	var model = PrecisionSlider_InnerModel()
+	var model = RFPrecisionSlider_InnerModel()
 
 	struct SliderDidChangeModel {
 		let value: Double
@@ -435,7 +435,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 	}
 
 	func computeItemSize() -> CGSize {
-		return CGSize(width: CGFloat(model.lengthOfFullItem), height: PrecisionSlider_InnerModel.height)
+		return CGSize(width: CGFloat(model.lengthOfFullItem), height: RFPrecisionSlider_InnerModel.height)
 	}
 
 	lazy var layout: RFPrecisionSlider_InnerCollectionViewFlowLayout = {
@@ -547,7 +547,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 		if model.hasOnePartialItem {
 			let size = CGSize(
 				width: CGFloat(model.lengthOfOnePartialItem),
-				height: PrecisionSlider_InnerModel.height
+				height: RFPrecisionSlider_InnerModel.height
 			)
 			//print("size for one-partial \(indexPath.row) \(size.width)")
 			return size
@@ -557,7 +557,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 			if row == 0 {
 				let size = CGSize(
 					width: CGFloat(model.lengthOfFullItem * 2),
-					height: PrecisionSlider_InnerModel.height
+					height: RFPrecisionSlider_InnerModel.height
 				)
 				//print("size for partial-before \(indexPath.row) \(size.width)")
 				return size
@@ -568,7 +568,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 			if model.hasPartialItemAfter {
 				let size = CGSize(
 					width: CGFloat(model.lengthOfFullItem * 2),
-					height: PrecisionSlider_InnerModel.height
+					height: RFPrecisionSlider_InnerModel.height
 				)
 				//print("size for partial-after \(indexPath.row) \(size.width)")
 				return size
@@ -576,7 +576,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 		}
 		let size = CGSize(
 			width: CGFloat(model.lengthOfFullItem),
-			height: PrecisionSlider_InnerModel.height
+			height: RFPrecisionSlider_InnerModel.height
 		)
 		//print("size for full \(indexPath.row) \(size.width)")
 		return size
@@ -584,14 +584,14 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 }
 
 class RFPrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout {
-	weak var model: PrecisionSlider_InnerModel?
+	weak var model: RFPrecisionSlider_InnerModel?
 
 	override var collectionViewContentSize: CGSize {
 		guard let model = self.model else {
 			print("no model")
 			return CGSize.zero
 		}
-		return CGSize(width: CGFloat(model.lengthOfContent), height: PrecisionSlider_InnerModel.height)
+		return CGSize(width: CGFloat(model.lengthOfContent), height: RFPrecisionSlider_InnerModel.height)
 	}
 }
 
