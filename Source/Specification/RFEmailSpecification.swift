@@ -12,10 +12,10 @@ import Foundation
 ///
 /// More info about these problems on [Wikipedia](http://en.wikipedia.org/wiki/Email_address).
 public class RFEmailSpecification: RFSpecification {
-	private let specification: RegularExpressionSpecification
+	private let specification: RFRegularExpressionSpecification
 
 	public init() {
-		self.specification = RegularExpressionSpecification(pattern: emailRegularExpression)
+		self.specification = RFRegularExpressionSpecification(pattern: emailRegularExpression)
 	}
 
 	/// Check if a string could be an email address.

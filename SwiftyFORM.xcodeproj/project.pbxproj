@@ -32,7 +32,7 @@
 		4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */; };
 		4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */; };
 		4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */; };
-		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
+		4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */; };
 		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
@@ -158,7 +158,7 @@
 		4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecification.swift; sourceTree = "<group>"; };
 		4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFSpecification+Operator.swift"; sourceTree = "<group>"; };
 		4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPredicateSpecification.swift; sourceTree = "<group>"; };
-		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
+		4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecification.swift; sourceTree = "<group>"; };
 		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
@@ -317,11 +317,11 @@
 		4219E1BD1DB827CF00B3204A /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
 				4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */,
 				4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */,
 				4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */,
 				4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */,
+				4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */,
 				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
 				4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */,
 			);
@@ -590,7 +590,7 @@
 				42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */,
 				428683491B346CFE0028DB2F /* ValidateResult.swift in Sources */,
 				42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */,
-				4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */,
+				4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */,
 				42D297571D49611300561780 /* PrecisionSlider_InnerModel.swift in Sources */,
 				42FABBC41D4143650066E45A /* PrecisionSlider.swift in Sources */,
 				42108D181B34E9F60067FEAA /* DatePickerFormItem.swift in Sources */,

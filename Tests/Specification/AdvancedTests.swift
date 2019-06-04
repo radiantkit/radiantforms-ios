@@ -13,7 +13,7 @@ class AdvancedTests: XCTestCase {
 		*/
 		let onlyDigits = RFCharacterSetSpecification.decimalDigits
 		let between2And4Letters = RFCountSpecification.between(2, 4)
-		let twoZeroes = RegularExpressionSpecification(pattern: "0.*0")
+		let twoZeroes = RFRegularExpressionSpecification(pattern: "0.*0")
 		
 		let spec = onlyDigits.and(between2And4Letters).and(twoZeroes.not())
 		
@@ -32,7 +32,7 @@ class AdvancedTests: XCTestCase {
 		This specification is used for filtering an array of records (movies in the alien franchise).
 		Here we finds all the movies directed by Ridley Scott.
 		*/
-		let spec = RegularExpressionSpecification(pattern: "Ridley Scott")
+		let spec = RFRegularExpressionSpecification(pattern: "Ridley Scott")
 		let filterSpec = RFPredicateSpecification { (candidate: MovieRecord) -> Bool in
 			return spec.isSatisfiedBy(candidate.directorsWriters)
 		}
