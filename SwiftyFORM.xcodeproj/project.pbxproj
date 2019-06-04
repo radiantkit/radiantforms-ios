@@ -117,7 +117,7 @@
 		42D297591D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift */; };
 		42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */; };
 		42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* CellDeselector.swift */; };
-		42FABBC41D4143650066E45A /* PrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* PrecisionSlider.swift */; };
+		42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */; };
 		739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */; };
 		739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */; };
 /* End PBXBuildFile section */
@@ -246,7 +246,7 @@
 		42D5DE651A38167400D5C368 /* SwiftyFORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyFORMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F7521D1D6917CD0014C6ED /* CellDeselector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeselector.swift; sourceTree = "<group>"; };
-		42FABBC31D4143650066E45A /* PrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlider.swift; sourceTree = "<group>"; };
+		42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider.swift; sourceTree = "<group>"; };
 		739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextCell.swift; sourceTree = "<group>"; };
 		739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextFormItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -467,7 +467,7 @@
 				42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */,
 				42D297561D49611300561780 /* PrecisionSlider_InnerModel.swift */,
 				42D297581D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift */,
-				42FABBC31D4143650066E45A /* PrecisionSlider.swift */,
+				42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */,
 			);
 			path = PrecisionSlider;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */,
 				4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */,
 				42D297571D49611300561780 /* PrecisionSlider_InnerModel.swift in Sources */,
-				42FABBC41D4143650066E45A /* PrecisionSlider.swift in Sources */,
+				42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */,
 				42108D181B34E9F60067FEAA /* DatePickerFormItem.swift in Sources */,
 				42685D4D1D340733008ABC3D /* RFPrecisionSliderCell.swift in Sources */,
 				420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */,

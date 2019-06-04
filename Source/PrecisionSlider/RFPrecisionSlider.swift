@@ -12,7 +12,7 @@ These gestures are available:
  4. Double-2finger-tap to x10 unzoom
 
 */
-class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 	var originalZoom: Float = 0
 	var originalValue: Double = 0
 
@@ -168,7 +168,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Pinch gesture for zoom in/out
 
 	lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
-		let instance = UIPinchGestureRecognizer(target: self, action: #selector(PrecisionSlider.handlePinch))
+		let instance = UIPinchGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handlePinch))
 		instance.delegate = self
 		return instance
 	}()
@@ -204,7 +204,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Gesture 'one-finger double-tap' for zoom in
 
 	lazy var oneTouchDoubleTapGestureRecognizer: UITapGestureRecognizer = {
-		let instance = UITapGestureRecognizer(target: self, action: #selector(PrecisionSlider.handleOneTouchDoubleTap))
+		let instance = UITapGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handleOneTouchDoubleTap))
 		instance.numberOfTapsRequired = 2
 		instance.numberOfTouchesRequired = 1
 		return instance
@@ -260,7 +260,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Gesture 'two-finger double-tap' for zoom out
 
 	lazy var twoTouchDoubleTapGestureRecognizer: UITapGestureRecognizer = {
-		let instance = UITapGestureRecognizer(target: self, action: #selector(PrecisionSlider.handleTwoTouchDoubleTap))
+		let instance = UITapGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handleTwoTouchDoubleTap))
 		instance.numberOfTapsRequired = 2
 		instance.numberOfTouchesRequired = 2
 		return instance
@@ -351,7 +351,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		instance.titleLabel?.font = UIFont.systemFont(ofSize: 32)
 		instance.showsTouchWhenHighlighted = true
 		instance.setTitle("+", for: UIControl.State())
-		instance.addTarget(self, action: #selector(PrecisionSlider.zoomInButtonAction), for: .touchUpInside)
+		instance.addTarget(self, action: #selector(RFPrecisionSlider.zoomInButtonAction), for: .touchUpInside)
 		return instance
 	}()
 
@@ -387,7 +387,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		instance.titleLabel?.font = UIFont.systemFont(ofSize: 32)
 		instance.showsTouchWhenHighlighted = true
 		instance.setTitle("-", for: UIControl.State())
-		instance.addTarget(self, action: #selector(PrecisionSlider.zoomOutButtonAction), for: .touchUpInside)
+		instance.addTarget(self, action: #selector(RFPrecisionSlider.zoomOutButtonAction), for: .touchUpInside)
 		return instance
 	}()
 
@@ -438,8 +438,8 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		return CGSize(width: CGFloat(model.lengthOfFullItem), height: PrecisionSlider_InnerModel.height)
 	}
 
-	lazy var layout: PrecisionSlider_InnerCollectionViewFlowLayout = {
-		let instance = PrecisionSlider_InnerCollectionViewFlowLayout()
+	lazy var layout: RFPrecisionSlider_InnerCollectionViewFlowLayout = {
+		let instance = RFPrecisionSlider_InnerCollectionViewFlowLayout()
 		instance.scrollDirection = .horizontal
 		instance.minimumInteritemSpacing = 0
 		instance.minimumLineSpacing = 0
@@ -583,7 +583,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	}
 }
 
-class PrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout {
+class RFPrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout {
 	weak var model: PrecisionSlider_InnerModel?
 
 	override var collectionViewContentSize: CGSize {
@@ -594,3 +594,9 @@ class PrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout 
 		return CGSize(width: CGFloat(model.lengthOfContent), height: PrecisionSlider_InnerModel.height)
 	}
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider")
+typealias PrecisionSlider = RFPrecisionSlider
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewFlowLayout")
+typealias PrecisionSlider_InnerCollectionViewFlowLayout = RFPrecisionSlider_InnerCollectionViewFlowLayout

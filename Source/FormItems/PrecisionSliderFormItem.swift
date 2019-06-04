@@ -12,7 +12,7 @@ import Foundation
 
 ### two-finger double-tap for unzoom
 
-Behind the scenes this creates a `PrecisionSlider`. This is not a standard Apple control.
+Behind the scenes this creates a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
 public class PrecisionSliderFormItem: FormItem {
@@ -111,7 +111,7 @@ public class PrecisionSliderFormItem: FormItem {
 	*/
 	public var decimalPlaces: UInt = 3 {
 		willSet {
-			assert(newValue <= 10, "PrecisionSlider cannot handle so many decimalPlaces. Too big a number.")
+			assert(newValue <= 10, "RFPrecisionSlider cannot handle so many decimalPlaces. Too big a number.")
 		}
 	}
 
