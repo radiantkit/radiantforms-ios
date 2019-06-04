@@ -42,7 +42,7 @@
 		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
 		4245B3F51DA429B500BCB4C7 /* AdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */; };
 		4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */; };
-		4245B3F71DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */; };
+		4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */; };
 		4245B3F81DA429B500BCB4C7 /* RFCountSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */; };
 		4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */; };
 		4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */; };
@@ -168,7 +168,7 @@
 		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
 		4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdvancedTests.csv; sourceTree = "<group>"; };
 		4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedTests.swift; sourceTree = "<group>"; };
-		4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
@@ -333,8 +333,8 @@
 			children = (
 				4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */,
 				4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */,
-				4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */,
 				4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */,
+				4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */,
 				4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */,
 				4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */,
 				4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */,
@@ -690,7 +690,7 @@
 				428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */,
 				4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */,
 				42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */,
-				4245B3F71DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift in Sources */,
+				4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */,
 				4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */,
 				428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */,
 				4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */,

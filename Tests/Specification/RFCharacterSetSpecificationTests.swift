@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class CharacterSetSpecificationTests: XCTestCase {
+class RFCharacterSetSpecificationTests: XCTestCase {
 	
 	func testCharactersInString() {
 		let spec = RFCharacterSetSpecification.charactersInString("abc")
