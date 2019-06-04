@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class TrueFalseTests: XCTestCase {
+class RFSpecificationTrueFalseTests: XCTestCase {
 	
 	func testTrue() {
 		let spec = RFTrueSpecification()
