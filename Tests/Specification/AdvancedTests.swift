@@ -33,7 +33,7 @@ class AdvancedTests: XCTestCase {
 		Here we finds all the movies directed by Ridley Scott.
 		*/
 		let spec = RegularExpressionSpecification(pattern: "Ridley Scott")
-		let filterSpec = PredicateSpecification { (candidate: MovieRecord) -> Bool in
+		let filterSpec = RFPredicateSpecification { (candidate: MovieRecord) -> Bool in
 			return spec.isSatisfiedBy(candidate.directorsWriters)
 		}
 		let result = movieRecords().filter { filterSpec.isSatisfiedBy($0) }
@@ -46,14 +46,14 @@ class AdvancedTests: XCTestCase {
 		This specification is used for filtering an array of records (movies in the alien franchise).
 		Here we finds the cheapest movies and also the most expensive movies.
 		*/
-		let nonZeroBudget = PredicateSpecification { (candidate: MovieRecord) -> Bool in
+		let nonZeroBudget = RFPredicateSpecification { (candidate: MovieRecord) -> Bool in
 			return candidate.budget > 0
 		}
-		let smallBudget = PredicateSpecification { (candidate: MovieRecord) -> Bool in
+		let smallBudget = RFPredicateSpecification { (candidate: MovieRecord) -> Bool in
 			// cheaper than 20 millions USD
 			return candidate.budget < 20
 		}
-		let bigBudget = PredicateSpecification { (candidate: MovieRecord) -> Bool in
+		let bigBudget = RFPredicateSpecification { (candidate: MovieRecord) -> Bool in
 			// more expensive than 70 millions USD
 			return candidate.budget > 70
 		}

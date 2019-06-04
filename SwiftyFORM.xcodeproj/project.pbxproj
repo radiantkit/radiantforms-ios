@@ -31,7 +31,7 @@
 		4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */; };
 		4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */; };
 		4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */; };
-		4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */; };
+		4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */; };
 		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
 		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
@@ -157,7 +157,7 @@
 		4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecification.swift; sourceTree = "<group>"; };
 		4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecification.swift; sourceTree = "<group>"; };
 		4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFSpecification+Operator.swift"; sourceTree = "<group>"; };
-		4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecification.swift; sourceTree = "<group>"; };
+		4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPredicateSpecification.swift; sourceTree = "<group>"; };
 		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
 		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
@@ -317,11 +317,11 @@
 		4219E1BD1DB827CF00B3204A /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */,
 				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
 				4219E1BE1DB827CF00B3204A /* RFCharacterSetSpecification.swift */,
 				4219E1BF1DB827CF00B3204A /* RFCountSpecification.swift */,
 				4219E1C01DB827CF00B3204A /* RFEmailSpecification.swift */,
+				4219E1C21DB827CF00B3204A /* RFPredicateSpecification.swift */,
 				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
 				4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */,
 			);
@@ -639,7 +639,7 @@
 				428683401B346CFE0028DB2F /* FormViewController.swift in Sources */,
 				42108D1B1B34E9F60067FEAA /* OptionPickerFormItem.swift in Sources */,
 				428683431B346CFE0028DB2F /* TableViewSection.swift in Sources */,
-				4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */,
+				4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */,
 				42B060F92292913900FD4585 /* RFTheme.swift in Sources */,
 				428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */,
 				42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */,

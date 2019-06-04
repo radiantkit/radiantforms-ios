@@ -5,7 +5,7 @@ import XCTest
 class PredicateSpecificationTests: XCTestCase {
 	
 	func testString0() {
-		let spec = PredicateSpecification { (candidate: String) -> Bool in
+		let spec = RFPredicateSpecification { (candidate: String) -> Bool in
 			return candidate.hasPrefix("hello")
 		}
 		XCTAssertTrue(spec.isSatisfiedBy("hello world"))
@@ -18,7 +18,7 @@ class PredicateSpecificationTests: XCTestCase {
 	}
 	
 	func testInteger0() {
-		let spec = PredicateSpecification { (candidate: Int) -> Bool in
+		let spec = RFPredicateSpecification { (candidate: Int) -> Bool in
 			return candidate > 5
 		}
 		XCTAssertTrue(spec.isSatisfiedBy(10))
@@ -36,7 +36,7 @@ class PredicateSpecificationTests: XCTestCase {
 			}
 		}
 		
-		let spec = PredicateSpecification { (candidate: Customer) -> Bool in
+		let spec = RFPredicateSpecification { (candidate: Customer) -> Bool in
 			return candidate.name.hasPrefix("john")
 		}
 		XCTAssertTrue(spec.isSatisfiedBy(Customer(name: "john doe")))
