@@ -30,7 +30,7 @@
 		4219E1C51DB827CF00B3204A /* CharacterSetSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */; };
 		4219E1C61DB827CF00B3204A /* CountSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1BF1DB827CF00B3204A /* CountSpecification.swift */; };
 		4219E1C71DB827CF00B3204A /* EmailSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C01DB827CF00B3204A /* EmailSpecification.swift */; };
-		4219E1C81DB827CF00B3204A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* Operator.swift */; };
+		4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */; };
 		4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */; };
 		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
 		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
@@ -156,7 +156,7 @@
 		4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetSpecification.swift; sourceTree = "<group>"; };
 		4219E1BF1DB827CF00B3204A /* CountSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountSpecification.swift; sourceTree = "<group>"; };
 		4219E1C01DB827CF00B3204A /* EmailSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSpecification.swift; sourceTree = "<group>"; };
-		4219E1C11DB827CF00B3204A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RFSpecification+Operator.swift"; sourceTree = "<group>"; };
 		4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecification.swift; sourceTree = "<group>"; };
 		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
 		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
@@ -320,10 +320,10 @@
 				4219E1BE1DB827CF00B3204A /* CharacterSetSpecification.swift */,
 				4219E1BF1DB827CF00B3204A /* CountSpecification.swift */,
 				4219E1C01DB827CF00B3204A /* EmailSpecification.swift */,
-				4219E1C11DB827CF00B3204A /* Operator.swift */,
 				4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */,
 				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
 				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
+				4219E1C11DB827CF00B3204A /* RFSpecification+Operator.swift */,
 			);
 			path = Specification;
 			sourceTree = "<group>";
@@ -657,7 +657,7 @@
 				4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
-				4219E1C81DB827CF00B3204A /* Operator.swift in Sources */,
+				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
 				4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */,
 				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
