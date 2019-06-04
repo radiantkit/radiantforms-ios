@@ -38,7 +38,7 @@ public class ViewControllerFormItem: FormItem {
 
 	@discardableResult
 	public func viewController(_ aClass: UIViewController.Type) -> Self {
-		createViewController = { (dismissCommand: CommandProtocol) in
+		createViewController = { (dismissCommand: RFCommandProtocol) in
 			return aClass.init()
 		}
 		return self
@@ -46,7 +46,7 @@ public class ViewControllerFormItem: FormItem {
 
 	@discardableResult
 	public func storyboard(_ name: String, bundle storyboardBundleOrNil: Bundle?) -> Self {
-		createViewController = { (dismissCommand: CommandProtocol) in
+		createViewController = { (dismissCommand: RFCommandProtocol) in
 			let storyboard: UIStoryboard = UIStoryboard(name: name, bundle: storyboardBundleOrNil)
 			return storyboard.instantiateInitialViewController()
 		}
@@ -54,7 +54,7 @@ public class ViewControllerFormItem: FormItem {
 	}
 
 	// the view controller must invoke the dismiss block when it's being dismissed
-	public typealias CreateViewController = (CommandProtocol) -> UIViewController?
+	public typealias CreateViewController = (RFCommandProtocol) -> UIViewController?
 	public var createViewController: CreateViewController?
 
 	// dismissing the view controller

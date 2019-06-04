@@ -77,7 +77,7 @@
 		428683371B346CFE0028DB2F /* RFTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683031B346CFE0028DB2F /* RFTextFieldCell.swift */; };
 		428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683041B346CFE0028DB2F /* RFTextViewCell.swift */; };
 		428683391B346CFE0028DB2F /* RFViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683051B346CFE0028DB2F /* RFViewControllerCell.swift */; };
-		4286833A1B346CFE0028DB2F /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683071B346CFE0028DB2F /* Command.swift */; };
+		4286833A1B346CFE0028DB2F /* RFCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683071B346CFE0028DB2F /* RFCommand.swift */; };
 		4286833B1B346CFE0028DB2F /* RFDumpVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683081B346CFE0028DB2F /* RFDumpVisitor.swift */; };
 		4286833C1B346CFE0028DB2F /* RFCellHeightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */; };
 		4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */; };
@@ -203,7 +203,7 @@
 		428683031B346CFE0028DB2F /* RFTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTextFieldCell.swift; sourceTree = "<group>"; };
 		428683041B346CFE0028DB2F /* RFTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTextViewCell.swift; sourceTree = "<group>"; };
 		428683051B346CFE0028DB2F /* RFViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFViewControllerCell.swift; sourceTree = "<group>"; };
-		428683071B346CFE0028DB2F /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		428683071B346CFE0028DB2F /* RFCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCommand.swift; sourceTree = "<group>"; };
 		428683081B346CFE0028DB2F /* RFDumpVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDumpVisitor.swift; sourceTree = "<group>"; };
 		428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCellHeightProvider.swift; sourceTree = "<group>"; };
 		4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRowDelegate.swift; sourceTree = "<group>"; };
@@ -390,7 +390,6 @@
 			children = (
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
-				428683071B346CFE0028DB2F /* Command.swift */,
 				4286830C1B346CFE0028DB2F /* FormBuilder.swift */,
 				4286830F1B346CFE0028DB2F /* FormTableView.swift */,
 				4286830D1B346CFE0028DB2F /* FormViewController.swift */,
@@ -401,6 +400,7 @@
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
 				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
 				428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */,
+				428683071B346CFE0028DB2F /* RFCommand.swift */,
 				420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */,
 				428683081B346CFE0028DB2F /* RFDumpVisitor.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
@@ -625,7 +625,7 @@
 				4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */,
 				42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */,
 				428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */,
-				4286833A1B346CFE0028DB2F /* Command.swift in Sources */,
+				4286833A1B346CFE0028DB2F /* RFCommand.swift in Sources */,
 				428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */,
 				420F6CC71D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift in Sources */,
 				425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */,

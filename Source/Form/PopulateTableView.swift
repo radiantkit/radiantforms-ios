@@ -689,9 +689,9 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> CommandProtocol {
+	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> RFCommandProtocol {
 		weak var weakViewController = parentViewController
-		let command = CommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
+		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
 			if let vc = weakViewController {
 				let context = ViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)

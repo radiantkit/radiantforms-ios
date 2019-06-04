@@ -43,7 +43,7 @@ class SignUpViewController: FormViewController {
 	lazy var maleOrFemale: ViewControllerFormItem = {
 		let instance = ViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
-		instance.createViewController = { (dismissCommand: CommandProtocol) in
+		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = MaleFemaleViewController(dismissCommand: dismissCommand)
 			return vc
 		}

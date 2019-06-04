@@ -37,7 +37,7 @@ class MyOptionForm {
 
 	func configureVC0() {
 		vc0.title = "What is XYZ?"
-		vc0.createViewController = { (dismissCommand: CommandProtocol) in
+		vc0.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = EmptyViewController()
 			return vc
 		}
@@ -48,9 +48,9 @@ class MyOptionForm {
 class MaleFemaleViewController: FormViewController, SelectOptionDelegate {
 	var xmyform: MyOptionForm?
 
-	let dismissCommand: CommandProtocol
+	let dismissCommand: RFCommandProtocol
 
-	init(dismissCommand: CommandProtocol) {
+	init(dismissCommand: RFCommandProtocol) {
 		self.dismissCommand = dismissCommand
 		super.init()
 	}
