@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class JSONHelperTests: XCTestCase {
+class RFJSONHelperTests: XCTestCase {
     func testNil() {
 		let value = RFJSONHelper.process(nil)
 		XCTAssertTrue(value is NSNull)
