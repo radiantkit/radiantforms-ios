@@ -43,7 +43,7 @@ open class FormViewController: UIViewController {
 	}
 
     /// This function is required. A subclass must always implement this function.
-	open func populate(_ builder: FormBuilder) {
+	open func populate(_ builder: RFFormBuilder) {
 		SwiftyFormLog("subclass must implement populate()")
 	}
 
@@ -54,7 +54,7 @@ open class FormViewController: UIViewController {
     ///
     /// This is the intended place for configuring the initial visible/hidden `FormItem`'s
     /// by assigning their `FormItem.isHidden` booleans.
-    open func postPopulate(_ builder: FormBuilder) {
+    open func postPopulate(_ builder: RFFormBuilder) {
         // This superclass does nothing.
     }
     
@@ -74,8 +74,8 @@ open class FormViewController: UIViewController {
 		super.viewDidDisappear(animated)
 	}
 
-	public lazy var formBuilder: FormBuilder = {
-		return FormBuilder()
+	public lazy var formBuilder: RFFormBuilder = {
+		return RFFormBuilder()
 		}()
 
 	public lazy var tableView: FormTableView = {

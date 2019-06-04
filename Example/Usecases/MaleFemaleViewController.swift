@@ -20,7 +20,7 @@ class MyOptionForm {
 		self.optionRows = optionRows
 	}
 
-	func populate(_ builder: FormBuilder) {
+	func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Picker"
 
 		configureVC0()
@@ -59,7 +59,7 @@ class MaleFemaleViewController: FormViewController, SelectOptionDelegate {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		let optionRows: [OptionRow] = [
 			OptionRow("Male", "male"),
 			OptionRow("Female", "female"),

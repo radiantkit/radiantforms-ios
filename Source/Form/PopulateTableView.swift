@@ -32,7 +32,7 @@ class WillPopOptionViewController: WillPopCommandProtocol {
 
 struct PopulateTableViewModel {
 	var viewController: UIViewController
-	var toolbarMode: ToolbarMode
+	var toolbarMode: RFToolbarMode
 }
 
 class PopulateTableView: FormItemVisitor {

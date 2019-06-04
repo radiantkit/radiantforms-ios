@@ -12,7 +12,7 @@ public struct RFTextViewFormItemCellSizes {
 public struct RFTextViewCellModel {
 	var title: String = ""
 	var placeholder: String = ""
-	var toolbarMode: ToolbarMode = .simple
+	var toolbarMode: RFToolbarMode = .simple
 
 	var valueDidChange: (String) -> Void = { (value: String) in
 		SwiftyFormLog("value \(value)")

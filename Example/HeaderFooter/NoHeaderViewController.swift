@@ -2,7 +2,7 @@
 import SwiftyFORM
 
 class NoHeaderViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "No Header"
 		builder.suppressHeaderForFirstSection = true
 

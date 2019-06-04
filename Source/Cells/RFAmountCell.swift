@@ -16,7 +16,7 @@ public class RFAmountCellSizes {
 public struct RFAmountCellModel {
     var numberFormatter: NumberFormatter! = nil
     var title: String = ""
-    var toolbarMode: ToolbarMode = .simple
+    var toolbarMode: RFToolbarMode = .simple
     var placeholder: String = ""
     var unitSuffix: String = ""
     var returnKeyType: UIReturnKeyType = .default

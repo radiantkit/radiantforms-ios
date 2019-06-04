@@ -19,7 +19,7 @@ extension FormViewController {
 	}
 
 	/// Used internally by the `form_installSubmitButton()` function
-	public func form_showSubmitResult(_ result: FormBuilder.FormValidateResult) {
+	public func form_showSubmitResult(_ result: RFFormBuilder.FormValidateResult) {
 		switch result {
 		case .valid:
 			form_simpleAlert("Valid", "All the fields are valid")

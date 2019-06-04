@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class PrecisionSlidersViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Precision Sliders"
 		builder.toolbarMode = .none
 		builder.demo_showInfo("Zoom can be adjusted\nusing a pinch gesture")

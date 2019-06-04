@@ -52,7 +52,7 @@ class DatePickerInitialValueViewController: FormViewController {
 		return instance
 		}()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Value"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with initial value")

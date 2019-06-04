@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class SettingsViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Settings"
 		builder.toolbarMode = .none
 		builder += SectionHeaderTitleFormItem().title("Options")

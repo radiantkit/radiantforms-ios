@@ -6,7 +6,7 @@ import SwiftyFORM
 class ReportViewController: FormViewController, MFMailComposeViewControllerDelegate {
 	let sendButton = ButtonFormItem()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		configureButton()
 
 		builder.navigationTitle = "Report"

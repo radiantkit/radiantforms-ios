@@ -4,7 +4,7 @@ import SwiftyFORM
 
 class DatePickerBindingViewController: FormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Bindings"
 		builder.toolbarMode = .simple
 		builder += SectionHeaderTitleFormItem(title: "Always expanded")

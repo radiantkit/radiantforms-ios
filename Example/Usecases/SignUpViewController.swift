@@ -8,7 +8,7 @@ class SignUpViewController: FormViewController {
 		form_installSubmitButton()
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Sign Up"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("SocialNetwork 123\nSign up form")

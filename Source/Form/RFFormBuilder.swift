@@ -1,21 +1,21 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-class AlignLeft {
+class RFAlignLeft {
 	fileprivate let items: [FormItem]
 	init(items: [FormItem]) {
 		self.items = items
 	}
 }
 
-public enum ToolbarMode {
+public enum RFToolbarMode {
 	case none
 	case simple
 }
 
-public class FormBuilder {
+public class RFFormBuilder {
 	private var innerItems = [FormItem]()
-	private var alignLeftItems = [AlignLeft]()
+	private var alignLeftItems = [RFAlignLeft]()
 
 	public init() {
 	}
@@ -25,7 +25,7 @@ public class FormBuilder {
 
 	public var navigationTitle: String?
 
-	public var toolbarMode: ToolbarMode = .none
+	public var toolbarMode: RFToolbarMode = .none
 
 	public var suppressHeaderForFirstSection = false
 
@@ -44,7 +44,7 @@ public class FormBuilder {
 	}
 
 	public func alignLeft(_ items: [FormItem]) {
-		let alignLeftItem = AlignLeft(items: items)
+		let alignLeftItem = RFAlignLeft(items: items)
 		alignLeftItems.append(alignLeftItem)
 	}
 
@@ -125,6 +125,15 @@ public class FormBuilder {
 
 }
 
-public func += (left: FormBuilder, right: FormItem) {
+public func += (left: RFFormBuilder, right: FormItem) {
 	left.append(right)
 }
+
+@available(*, unavailable, renamed: "RFAlignLeft")
+typealias AlignLeft = RFAlignLeft
+
+@available(*, unavailable, renamed: "RFToolbarMode")
+typealias ToolbarMode = RFToolbarMode
+
+@available(*, unavailable, renamed: "RFFormBuilder")
+typealias FormBuilder = RFFormBuilder

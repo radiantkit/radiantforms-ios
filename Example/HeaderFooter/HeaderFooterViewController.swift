@@ -6,7 +6,7 @@ class HeaderFooterViewController: FormViewController {
 	let headerView0 = SectionHeaderViewFormItem()
 	let footerView0 = SectionFooterViewFormItem()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		configureHeaderView0()
 		configureFooterView0()
 

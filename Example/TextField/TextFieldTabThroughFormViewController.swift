@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class TextFieldTabThroughFormViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Tab Through Form"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Tab through all the fields\nusing a physical keyboard\nDoesn't wrap around")

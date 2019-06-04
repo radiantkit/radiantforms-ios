@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class SlidersViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Sliders"
 		builder.toolbarMode = .none
 

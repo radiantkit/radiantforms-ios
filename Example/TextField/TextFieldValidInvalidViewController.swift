@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class TextFieldValidInvalidViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Valid & Invalid"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Shows layouts variants\nof the text field cell\nwhen valid and when invalid")

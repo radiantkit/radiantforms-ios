@@ -4,7 +4,7 @@ import SwiftyFORM
 
 class SteppersViewController: FormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Steppers"
 		builder += SectionHeaderTitleFormItem().title("Animals seen")
 		builder += catStepper

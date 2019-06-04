@@ -4,7 +4,7 @@ import SwiftyFORM
 
 class TextViewViewController: FormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "TextViews"
 		builder += longSummary
 		builder += notes

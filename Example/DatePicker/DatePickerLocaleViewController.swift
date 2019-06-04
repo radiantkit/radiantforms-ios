@@ -73,7 +73,7 @@ class DatePickerLocaleViewController: FormViewController {
 		return instance
 		}()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Locale"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with locale")

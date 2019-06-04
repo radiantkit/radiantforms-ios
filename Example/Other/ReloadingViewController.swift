@@ -5,7 +5,7 @@ import SwiftyFORM
 class ReloadingViewController: FormViewController {
 	var populateCount = 0
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		populateCount += 1
 
 		builder.navigationTitle = "Reload Form"

@@ -4,7 +4,7 @@ import SwiftyFORM
 
 class AliensViewController: FormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Aliens"
 		builder.toolbarMode = .none
 		builder += stepperForm0

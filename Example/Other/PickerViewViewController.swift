@@ -2,7 +2,7 @@
 import SwiftyFORM
 
 class PickerViewViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "PickerViews"
 		builder += SectionHeaderTitleFormItem().title("PickerView")
 		builder += picker0

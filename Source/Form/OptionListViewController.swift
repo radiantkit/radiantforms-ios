@@ -16,7 +16,7 @@ class OptionListViewController: FormViewController, SelectOptionDelegate {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		SwiftyFormLog("preselect option \(String(describing: optionField.selected?.title))")
 		builder.navigationTitle = optionField.title
 		for optionRow: OptionRowModel in optionField.options {

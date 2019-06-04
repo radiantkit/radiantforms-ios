@@ -3,7 +3,7 @@ import UIKit
 
 public struct RFTextFieldCellModel {
 	var title: String = ""
-	var toolbarMode: ToolbarMode = .simple
+	var toolbarMode: RFToolbarMode = .simple
 	var placeholder: String = ""
 	var keyboardType: UIKeyboardType = .default
 	var returnKeyType: UIReturnKeyType = .default

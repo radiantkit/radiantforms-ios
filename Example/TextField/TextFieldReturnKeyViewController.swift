@@ -3,7 +3,7 @@ import UIKit
 import SwiftyFORM
 
 class TextFieldReturnKeyViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Return Key"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Shows all the UIReturnKeyType variants")
