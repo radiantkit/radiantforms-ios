@@ -224,7 +224,7 @@ public class RFTextFieldCell: UITableViewCell {
 	@objc public func valueDidChange() {
 		model.valueDidChange(textField.text ?? "")
 
-		let result: ValidateResult = model.model.liveValidateValueText()
+		let result: RFValidateResult = model.model.liveValidateValueText()
 		switch result {
 		case .valid:
 			SwiftyFormLog("valid")
@@ -241,7 +241,7 @@ public class RFTextFieldCell: UITableViewCell {
 		_ = validateAndUpdateErrorIfNeeded(value, shouldInstallTimer: false, checkSubmitRule: false)
 	}
 
-	public func updateErrorLabel(_ result: ValidateResult) {
+	public func updateErrorLabel(_ result: RFValidateResult) {
 		switch result {
 		case .valid:
 			errorLabel.text = nil
@@ -252,7 +252,7 @@ public class RFTextFieldCell: UITableViewCell {
 		}
 	}
 
-	public var lastResult: ValidateResult?
+	public var lastResult: RFValidateResult?
 
 	public var hideErrorMessageAfterFewSecondsTimer: Timer?
 	public func invalidateTimer() {
@@ -274,7 +274,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 		let tableView: UITableView? = form_tableView()
 
-		let result: ValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
+		let result: RFValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
 		if let lastResult = lastResult {
 			if lastResult == result {
 				switch result {

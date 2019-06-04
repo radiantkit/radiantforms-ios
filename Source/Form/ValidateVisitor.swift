@@ -2,7 +2,7 @@
 import Foundation
 
 class ValidateVisitor: FormItemVisitor {
-	var result = ValidateResult.valid
+	var result = RFValidateResult.valid
 
 	func visit(object: TextFieldFormItem) {
 		result = object.submitValidateValueText()

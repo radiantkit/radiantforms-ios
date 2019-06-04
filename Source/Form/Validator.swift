@@ -36,16 +36,16 @@ public class Validator {
 		self.rules = rules
 	}
 
-	public func liveValidate(_ candidate: Any?) -> ValidateResult {
+	public func liveValidate(_ candidate: Any?) -> RFValidateResult {
 		return validate(candidate, checkHardRule: true, checkSoftRule: true, checkSubmitRule: false)
 	}
 
-	public func submitValidate(_ candidate: Any?) -> ValidateResult {
+	public func submitValidate(_ candidate: Any?) -> RFValidateResult {
 		return validate(candidate, checkHardRule: true, checkSoftRule: true, checkSubmitRule: true)
 	}
 
-	public func validate(_ candidate: Any?, checkHardRule: Bool, checkSoftRule: Bool, checkSubmitRule: Bool) -> ValidateResult {
-		var results = [ValidateResult]()
+	public func validate(_ candidate: Any?, checkHardRule: Bool, checkSoftRule: Bool, checkSubmitRule: Bool) -> RFValidateResult {
+		var results = [RFValidateResult]()
 		for rule in rules {
 			switch rule {
 			case let .hardRule(specification, message):
