@@ -295,7 +295,7 @@ class RFPopulateTableView: FormItemVisitor {
 		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")
 			if let vc = weakViewController {
-				if let x = vc as? SelectOptionDelegate {
+				if let x = vc as? RFSelectOptionDelegate {
 					x.form_willSelectOption(option: object)
 				}
 			}

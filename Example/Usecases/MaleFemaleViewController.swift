@@ -45,7 +45,7 @@ class MyOptionForm {
 
 }
 
-class MaleFemaleViewController: RFFormViewController, SelectOptionDelegate {
+class MaleFemaleViewController: RFFormViewController, RFSelectOptionDelegate {
 	var xmyform: MyOptionForm?
 
 	let dismissCommand: RFCommandProtocol
