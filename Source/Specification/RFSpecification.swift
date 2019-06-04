@@ -169,13 +169,3 @@ typealias FalseSpecification = RFFalseSpecification
 
 @available(*, unavailable, renamed: "RFTrueSpecification")
 typealias TrueSpecification = RFTrueSpecification
-
-
-/// - warning:
-/// This class will be removed in the future, starting with SwiftyFORM 2.0.0
-open class CompositeSpecification: RFSpecification {
-	open func isSatisfiedBy(_ candidate: Any?) -> Bool {
-		// subclass must implement this function
-		return false
-	}
-}
