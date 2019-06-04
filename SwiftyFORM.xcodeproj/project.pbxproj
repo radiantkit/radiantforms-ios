@@ -95,7 +95,7 @@
 		4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683171B346CFE0028DB2F /* ValidateVisitor.swift */; };
 		428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* RFDebugViewController.swift */; };
 		428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683231B346CFE0028DB2F /* Dictionary+Update.swift */; };
-		428683551B346CFE0028DB2F /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* KeyboardHandler.swift */; };
+		428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */; };
 		428683561B346CFE0028DB2F /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* Logging.swift */; };
 		428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */; };
 		428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */; };
@@ -222,7 +222,7 @@
 		428683181B346CFE0028DB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428683221B346CFE0028DB2F /* RFDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDebugViewController.swift; sourceTree = "<group>"; };
 		428683231B346CFE0028DB2F /* Dictionary+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Update.swift"; sourceTree = "<group>"; };
-		428683241B346CFE0028DB2F /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFKeyboardHandler.swift; sourceTree = "<group>"; };
 		428683251B346CFE0028DB2F /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+PrevNext.swift"; sourceTree = "<group>"; };
 		428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
@@ -428,9 +428,9 @@
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
 				4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */,
 				4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */,
-				428683241B346CFE0028DB2F /* KeyboardHandler.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
 				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
+				428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */,
 				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
@@ -653,7 +653,7 @@
 				428683441B346CFE0028DB2F /* Validator.swift in Sources */,
 				42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */,
 				42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */,
-				428683551B346CFE0028DB2F /* KeyboardHandler.swift in Sources */,
+				428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */,
 				4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,

@@ -4,7 +4,7 @@ import UIKit
 /// Adjusts bottom insets when keyboard is shown and makes sure the keyboard doesn't obscure the cell.
 ///
 /// Resets insets when the keyboard is hidden.
-public class KeyboardHandler {
+public class RFKeyboardHandler {
 	private let tableView: UITableView
 	private var innerKeyboardVisible: Bool = false
 
@@ -39,8 +39,8 @@ public class KeyboardHandler {
 		*/
 
 		let notificationCenter = NotificationCenter.default
-		notificationCenter.addObserver(self, selector: #selector(KeyboardHandler.keyboardWillShow(_:)), name: KeyboardCompatibility.keyboardWillShowNotification, object: nil)
-		notificationCenter.addObserver(self, selector: #selector(KeyboardHandler.keyboardWillHide(_:)), name: KeyboardCompatibility.keyboardWillHideNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(RFKeyboardHandler.keyboardWillShow(_:)), name: KeyboardCompatibility.keyboardWillShowNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(RFKeyboardHandler.keyboardWillHide(_:)), name: KeyboardCompatibility.keyboardWillHideNotification, object: nil)
 	}
 
 	/// Stop listening to keyboard visibility changes
