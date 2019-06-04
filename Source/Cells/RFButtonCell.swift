@@ -36,7 +36,7 @@ public class RFButtonCell: UITableViewCell {
     }
 }
 
-extension RFButtonCell: WillDisplayCellDelegate {
+extension RFButtonCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
     }

@@ -54,7 +54,7 @@ public class RFSegmentedControlCell: UITableViewCell {
 	}
 }
 
-extension RFSegmentedControlCell: WillDisplayCellDelegate {
+extension RFSegmentedControlCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.segmentedControl.tintColor = self.segmentedControl_tintColor

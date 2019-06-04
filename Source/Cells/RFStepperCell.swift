@@ -100,7 +100,7 @@ public class RFStepperCell: UITableViewCell {
 	}
 }
 
-extension RFStepperCell: WillDisplayCellDelegate {
+extension RFStepperCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.valueLabel.textColor = self.valueLabel_textColor

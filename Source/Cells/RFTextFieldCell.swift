@@ -413,7 +413,7 @@ extension RFTextFieldCell: RFCellHeightProvider {
 	}
 }
 
-extension RFTextFieldCell: WillDisplayCellDelegate {
+extension RFTextFieldCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         

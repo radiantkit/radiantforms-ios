@@ -243,7 +243,7 @@ extension RFDatePickerToggleCell: RFSelectRowDelegate {
     }
 }
 
-extension RFDatePickerToggleCell: WillDisplayCellDelegate {
+extension RFDatePickerToggleCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         assignDefaultColors()
     }
@@ -254,7 +254,7 @@ extension RFDatePickerToggleCell: WillDisplayCellDelegate {
 
 Row containing only a `UIDatePicker`
 */
-public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, WillDisplayCellDelegate, RFExpandedCell {
+public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, RFWillDisplayCellDelegate, RFExpandedCell {
 	weak var collapsedCell: RFDatePickerToggleCell?
 
 	public var toggleCell: UITableViewCell? {

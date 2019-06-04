@@ -75,7 +75,7 @@ extension RFTableViewSection: UITableViewDelegate {
 	}
 
 	public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? WillDisplayCellDelegate {
+		if let cell = cells[indexPath.row] as? RFWillDisplayCellDelegate {
 			cell.form_willDisplay(tableView: tableView, forRowAtIndexPath: indexPath)
 		}
 	}

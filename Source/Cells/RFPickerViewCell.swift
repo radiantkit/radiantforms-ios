@@ -287,7 +287,7 @@ extension RFPickerViewExpandedCell: RFCellHeightProvider {
 	}
 }
 
-extension RFPickerViewExpandedCell: WillDisplayCellDelegate {
+extension RFPickerViewExpandedCell: RFWillDisplayCellDelegate {
 	public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
 		if let model = collapsedCell?.model {
 			configure(model)

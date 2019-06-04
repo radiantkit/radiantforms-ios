@@ -361,7 +361,7 @@ extension RFAmountCell: RFCellHeightProvider {
     }
 }
 
-extension RFAmountCell: WillDisplayCellDelegate {
+extension RFAmountCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         self.rightView.textColor = self.rightView_textColor
