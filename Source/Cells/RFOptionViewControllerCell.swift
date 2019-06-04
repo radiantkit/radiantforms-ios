@@ -84,7 +84,7 @@ public class RFOptionViewControllerCell: UITableViewCell, SelectRowDelegate {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()
 
-		let childViewController = OptionListViewController(optionField: optionField) { [weak self] (selected: OptionRowModel) in
+		let childViewController = RFOptionListViewController(optionField: optionField) { [weak self] (selected: OptionRowModel) in
 			self?.viaOptionList_userPickedOption(selected)
 			nc.popViewController(animated: true)
 		}

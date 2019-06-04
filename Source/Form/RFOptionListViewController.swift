@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-class OptionListViewController: RFFormViewController, SelectOptionDelegate {
+class RFOptionListViewController: RFFormViewController, SelectOptionDelegate {
 	typealias SelectOptionHandler = (OptionRowModel) -> Void
 	let optionField: OptionPickerFormItem
 	let selectOptionHandler: SelectOptionHandler
@@ -36,5 +36,8 @@ class OptionListViewController: RFFormViewController, SelectOptionDelegate {
 		SwiftyFormLog("select option \(option.title)")
 		selectOptionHandler(selected)
 	}
-
 }
+
+
+@available(*, unavailable, renamed: "RFOptionListViewController")
+typealias OptionListViewController = RFOptionListViewController
