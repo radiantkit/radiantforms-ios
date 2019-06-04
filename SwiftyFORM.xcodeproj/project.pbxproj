@@ -59,11 +59,11 @@
 		42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */; };
 		4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* RFAmountCell.swift */; };
 		4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountFormItem.swift */; };
-		4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */; };
+		4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */; };
 		4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* RFAmountCellTests.swift */; };
 		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
 		4280F72B2278363B0098EF22 /* CGRect+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */; };
-		4280F72E2278438A0098EF22 /* KeyboardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */; };
+		4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */; };
 		4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 428682F71B346CFE0028DB2F /* SwiftyFORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4286832E1B346CFE0028DB2F /* RFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FA1B346CFE0028DB2F /* RFButtonCell.swift */; };
 		4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */; };
@@ -93,9 +93,9 @@
 		428683481B346CFE0028DB2F /* TitleWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683151B346CFE0028DB2F /* TitleWidth.swift */; };
 		428683491B346CFE0028DB2F /* ValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683161B346CFE0028DB2F /* ValidateResult.swift */; };
 		4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683171B346CFE0028DB2F /* ValidateVisitor.swift */; };
-		428683531B346CFE0028DB2F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* DebugViewController.swift */; };
+		428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* RFDebugViewController.swift */; };
 		428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683231B346CFE0028DB2F /* Dictionary+Update.swift */; };
-		428683551B346CFE0028DB2F /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* KeyboardHandler.swift */; };
+		428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */; };
 		428683561B346CFE0028DB2F /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* Logging.swift */; };
 		428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */; };
 		428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */; };
@@ -106,7 +106,7 @@
 		428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683611B346D0C0028DB2F /* ValidateResultTests.swift */; };
 		428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* ValidatorTests.swift */; };
 		42B060F92292913900FD4585 /* RFTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* RFTheme.swift */; };
-		42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */; };
+		42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */; };
 		42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */; };
 		42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */; };
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
@@ -185,11 +185,11 @@
 		42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellArray.swift; sourceTree = "<group>"; };
 		4280F7182264A7BA0098EF22 /* RFAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCell.swift; sourceTree = "<group>"; };
 		4280F71A2264A99F0098EF22 /* AmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormItem.swift; sourceTree = "<group>"; };
-		4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
+		4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFEdgeInsetLabel.swift; sourceTree = "<group>"; };
 		4280F721226F4C340098EF22 /* RFAmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCellTests.swift; sourceTree = "<group>"; };
 		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Compatibility.swift"; sourceTree = "<group>"; };
-		4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCompatibility.swift; sourceTree = "<group>"; };
+		4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFKeyboardCompatibility.swift; sourceTree = "<group>"; };
 		428682F71B346CFE0028DB2F /* SwiftyFORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFORM.h; sourceTree = "<group>"; };
 		428682FA1B346CFE0028DB2F /* RFButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFButtonCell.swift; sourceTree = "<group>"; };
 		428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerCell.swift; sourceTree = "<group>"; };
@@ -220,9 +220,9 @@
 		428683161B346CFE0028DB2F /* ValidateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResult.swift; sourceTree = "<group>"; };
 		428683171B346CFE0028DB2F /* ValidateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateVisitor.swift; sourceTree = "<group>"; };
 		428683181B346CFE0028DB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		428683221B346CFE0028DB2F /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		428683221B346CFE0028DB2F /* RFDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDebugViewController.swift; sourceTree = "<group>"; };
 		428683231B346CFE0028DB2F /* Dictionary+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Update.swift"; sourceTree = "<group>"; };
-		428683241B346CFE0028DB2F /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFKeyboardHandler.swift; sourceTree = "<group>"; };
 		428683251B346CFE0028DB2F /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+PrevNext.swift"; sourceTree = "<group>"; };
 		428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		428683611B346D0C0028DB2F /* ValidateResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResultTests.swift; sourceTree = "<group>"; };
 		428683621B346D0C0028DB2F /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		42B060F82292913900FD4585 /* RFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTheme.swift; sourceTree = "<group>"; };
-		42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
+		42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFThemeBuilder.swift; sourceTree = "<group>"; };
 		42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessibilityColorTests.swift; sourceTree = "<group>"; };
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
@@ -425,15 +425,15 @@
 			isa = PBXGroup;
 			children = (
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
-				428683221B346CFE0028DB2F /* DebugViewController.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
-				4280F71F2265E3D10098EF22 /* EdgeInsetLabel.swift */,
-				4280F72D2278438A0098EF22 /* KeyboardCompatibility.swift */,
-				428683241B346CFE0028DB2F /* KeyboardHandler.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
+				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
+				4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */,
+				4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */,
+				428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */,
+				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
-				42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */,
 				4280F728227833290098EF22 /* UITableView+Compatibility.swift */,
 				428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */,
 				420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */,
@@ -603,14 +603,14 @@
 				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */,
 				4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */,
-				42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */,
+				42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */,
 				4286833E1B346CFE0028DB2F /* OptionListViewController.swift in Sources */,
 				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
 				42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */,
 				42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */,
 				428683341B346CFE0028DB2F /* RFStaticTextCell.swift in Sources */,
 				423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */,
-				428683531B346CFE0028DB2F /* DebugViewController.swift in Sources */,
+				428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */,
 				428683461B346CFE0028DB2F /* PopulateTableView.swift in Sources */,
 				428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */,
 				42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */,
@@ -653,15 +653,15 @@
 				428683441B346CFE0028DB2F /* Validator.swift in Sources */,
 				42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */,
 				42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */,
-				428683551B346CFE0028DB2F /* KeyboardHandler.swift in Sources */,
+				428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */,
 				4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
 				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
-				4280F7202265E3D10098EF22 /* EdgeInsetLabel.swift in Sources */,
+				4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */,
 				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
-				4280F72E2278438A0098EF22 /* KeyboardCompatibility.swift in Sources */,
+				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,
 				42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */,
 				428683331B346CFE0028DB2F /* RFSliderCell.swift in Sources */,
 				422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */,

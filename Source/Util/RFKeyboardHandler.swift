@@ -4,7 +4,7 @@ import UIKit
 /// Adjusts bottom insets when keyboard is shown and makes sure the keyboard doesn't obscure the cell.
 ///
 /// Resets insets when the keyboard is hidden.
-public class KeyboardHandler {
+public class RFKeyboardHandler {
 	private let tableView: UITableView
 	private var innerKeyboardVisible: Bool = false
 
@@ -39,15 +39,15 @@ public class KeyboardHandler {
 		*/
 
 		let notificationCenter = NotificationCenter.default
-		notificationCenter.addObserver(self, selector: #selector(KeyboardHandler.keyboardWillShow(_:)), name: KeyboardCompatibility.keyboardWillShowNotification, object: nil)
-		notificationCenter.addObserver(self, selector: #selector(KeyboardHandler.keyboardWillHide(_:)), name: KeyboardCompatibility.keyboardWillHideNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(RFKeyboardHandler.keyboardWillShow(_:)), name: RFKeyboardCompatibility.keyboardWillShowNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(RFKeyboardHandler.keyboardWillHide(_:)), name: RFKeyboardCompatibility.keyboardWillHideNotification, object: nil)
 	}
 
 	/// Stop listening to keyboard visibility changes
 	func removeObservers() {
 		let notificationCenter = NotificationCenter.default
-		notificationCenter.removeObserver(self, name: KeyboardCompatibility.keyboardWillShowNotification, object: nil)
-		notificationCenter.removeObserver(self, name: KeyboardCompatibility.keyboardWillHideNotification, object: nil)
+		notificationCenter.removeObserver(self, name: RFKeyboardCompatibility.keyboardWillShowNotification, object: nil)
+		notificationCenter.removeObserver(self, name: RFKeyboardCompatibility.keyboardWillHideNotification, object: nil)
 	}
 
 	/// The keyboard will appear, scroll content so it's not covered by the keyboard.
@@ -71,7 +71,7 @@ public class KeyboardHandler {
 			return
 		}
 
-        let keyboardFrameEnd = (userInfo[KeyboardCompatibility.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrameEnd = (userInfo[RFKeyboardCompatibility.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 //		SwiftyFormLog("keyboardFrameEnd \(NSStringFromCGRect(keyboardFrameEnd))")
 
 		let keyboardFrame = window.convert(keyboardFrameEnd, to: tableView.superview)
@@ -135,3 +135,6 @@ public class KeyboardHandler {
 	}
 
 }
+
+@available(*, unavailable, renamed: "RFKeyboardHandler")
+typealias KeyboardHandler = RFKeyboardHandler

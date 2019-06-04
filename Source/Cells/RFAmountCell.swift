@@ -89,7 +89,7 @@ public class RFAmountCell: UITableViewCell {
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var rightView_textColor: UIColor?
     @objc public dynamic var textField_placeholderColor: UIColor?
-    @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
+    @objc public dynamic var textField_appearanceStrategy: RFTextFieldAppearanceStrategy?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         do {
@@ -123,7 +123,7 @@ public class RFAmountCell: UITableViewCell {
     }
     
     public lazy var rightView: UILabel = {
-        let instance = EdgeInsetLabel(frame: .zero)
+        let instance = RFEdgeInsetLabel(frame: .zero)
         instance.textAlignment = .right
         instance.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         return instance

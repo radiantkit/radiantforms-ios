@@ -3,7 +3,7 @@ import UIKit
 
 open class FormViewController: UIViewController {
 	public var dataSource: TableViewSectionArray?
-	public var keyboardHandler: KeyboardHandler?
+	public var keyboardHandler: RFKeyboardHandler?
 
 	public init() {
 		SwiftyFormLog("super init")
@@ -18,7 +18,7 @@ open class FormViewController: UIViewController {
 	override open func loadView() {
 		SwiftyFormLog("super loadview")
 		view = tableView
-		keyboardHandler = KeyboardHandler(tableView: tableView)
+		keyboardHandler = RFKeyboardHandler(tableView: tableView)
 		populateAndSetup()
 	}
 

@@ -4,7 +4,7 @@ import UIKit
 /// `UILabel` with padding around it, inspired by:
 /// https://stackoverflow.com/questions/21167226/resizing-a-uilabel-to-accommodate-insets/21267507#21267507
 /// https://stackoverflow.com/a/55437367/78336
-public class EdgeInsetLabel: UILabel {
+public class RFEdgeInsetLabel: UILabel {
     public var edgeInsets = UIEdgeInsets.zero {
         didSet { invalidateIntrinsicContentSize() }
     }

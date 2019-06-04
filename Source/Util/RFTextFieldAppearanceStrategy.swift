@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-@objc public protocol TextFieldAppearanceStrategy {
+@objc public protocol RFTextFieldAppearanceStrategy {
     /// Configure the initial `tintColor` and initial `textColor`.
     func willDisplay(_ textField: UITextField)
     
@@ -14,7 +14,7 @@ import UIKit
     func textFieldDidEndEditing(_ textField: UITextField)
 }
 
-public class TextFieldAppearanceStrategy_Default: TextFieldAppearanceStrategy {
+public class RFTextFieldAppearanceStrategy_Default: RFTextFieldAppearanceStrategy {
     let tintColor: UIColor
     let textColor: UIColor
     
@@ -39,7 +39,7 @@ public class TextFieldAppearanceStrategy_Default: TextFieldAppearanceStrategy {
 
 /// When the textfield becomes first responder, then use the tintColor as the textColor.
 /// When the textfield resigns first responder, then restore the original textColor.
-public class TextFieldAppearanceStrategy_TintFirstResponder: TextFieldAppearanceStrategy {
+public class RFTextFieldAppearanceStrategy_TintFirstResponder: RFTextFieldAppearanceStrategy {
     let tintColor: UIColor
     let textColor: UIColor
     
