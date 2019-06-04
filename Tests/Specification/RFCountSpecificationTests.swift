@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class CountSpecificationTests: XCTestCase {
+class RFCountSpecificationTests: XCTestCase {
 	
 	func testStringMin() {
 		let spec = RFCountSpecification.min(3)
