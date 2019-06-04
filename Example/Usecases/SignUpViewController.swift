@@ -74,7 +74,7 @@ class SignUpViewController: FormViewController {
 		instance.keyboardType = .emailAddress
 		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")
 		instance.validate(RFCountSpecification.max(60), message: "Length must be maximum 60 letters")
-		instance.softValidate(EmailSpecification(), message: "Must be a valid email address")
+		instance.softValidate(RFEmailSpecification(), message: "Must be a valid email address")
 		return instance
 		}()
 

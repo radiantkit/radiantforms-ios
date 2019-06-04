@@ -11,7 +11,7 @@ import Foundation
 /// technique. Using regular expressions results in long patterns giving incomplete results.
 ///
 /// More info about these problems on [Wikipedia](http://en.wikipedia.org/wiki/Email_address).
-public class EmailSpecification: RFSpecification {
+public class RFEmailSpecification: RFSpecification {
 	private let specification: RegularExpressionSpecification
 
 	public init() {
@@ -39,3 +39,7 @@ public class EmailSpecification: RFSpecification {
 		"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" +
 		"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
 }
+
+
+@available(*, unavailable, renamed: "RFEmailSpecification")
+typealias EmailSpecification = RFEmailSpecification
