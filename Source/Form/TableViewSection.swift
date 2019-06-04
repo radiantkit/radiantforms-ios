@@ -62,7 +62,7 @@ extension TableViewSection: UITableViewDelegate {
 	}
 
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? SelectRowDelegate {
+		if let cell = cells[indexPath.row] as? RFSelectRowDelegate {
 			cell.form_didSelectRow(indexPath: indexPath, tableView: tableView)
 		}
 	}

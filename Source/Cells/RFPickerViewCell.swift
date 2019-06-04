@@ -37,7 +37,7 @@ public class RFPickerViewCellModel {
 
 This causes the inline picker view to expand/collapse
 */
-public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, RFDontCollapseWhenScrolling, RFAssignAppearance {
+public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPickerViewExpandedCell?
 	public let model: RFPickerViewCellModel
 

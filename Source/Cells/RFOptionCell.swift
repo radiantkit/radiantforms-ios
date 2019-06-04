@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class RFOptionCell: UITableViewCell, SelectRowDelegate {
+public class RFOptionCell: UITableViewCell, RFSelectRowDelegate {
 	let innerDidSelectOption: () -> Void
 
 	public init(model: OptionRowFormItem, didSelectOption: @escaping () -> Void) {

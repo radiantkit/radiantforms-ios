@@ -42,7 +42,7 @@ extension RFButtonCell: WillDisplayCellDelegate {
     }
 }
 
-extension RFButtonCell: SelectRowDelegate {
+extension RFButtonCell: RFSelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()

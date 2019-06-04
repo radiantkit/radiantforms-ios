@@ -80,7 +80,7 @@
 		4286833A1B346CFE0028DB2F /* RFCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683071B346CFE0028DB2F /* RFCommand.swift */; };
 		4286833B1B346CFE0028DB2F /* RFDumpVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683081B346CFE0028DB2F /* RFDumpVisitor.swift */; };
 		4286833C1B346CFE0028DB2F /* RFCellHeightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */; };
-		4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */; };
+		4286833D1B346CFE0028DB2F /* RFSelectRowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830A1B346CFE0028DB2F /* RFSelectRowDelegate.swift */; };
 		4286833E1B346CFE0028DB2F /* RFOptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830B1B346CFE0028DB2F /* RFOptionListViewController.swift */; };
 		4286833F1B346CFE0028DB2F /* RFFormBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */; };
 		428683401B346CFE0028DB2F /* RFFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830D1B346CFE0028DB2F /* RFFormViewController.swift */; };
@@ -206,7 +206,7 @@
 		428683071B346CFE0028DB2F /* RFCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCommand.swift; sourceTree = "<group>"; };
 		428683081B346CFE0028DB2F /* RFDumpVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDumpVisitor.swift; sourceTree = "<group>"; };
 		428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCellHeightProvider.swift; sourceTree = "<group>"; };
-		4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRowDelegate.swift; sourceTree = "<group>"; };
+		4286830A1B346CFE0028DB2F /* RFSelectRowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSelectRowDelegate.swift; sourceTree = "<group>"; };
 		4286830B1B346CFE0028DB2F /* RFOptionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionListViewController.swift; sourceTree = "<group>"; };
 		4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormBuilder.swift; sourceTree = "<group>"; };
 		4286830D1B346CFE0028DB2F /* RFFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormViewController.swift; sourceTree = "<group>"; };
@@ -404,9 +404,9 @@
 				428683131B346CFE0028DB2F /* RFPopulateTableView.swift */,
 				428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */,
 				4286830E1B346CFE0028DB2F /* RFSelectOptionDelegate.swift */,
+				4286830A1B346CFE0028DB2F /* RFSelectRowDelegate.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
-				4286830A1B346CFE0028DB2F /* SelectRowDelegate.swift */,
 				42685D4E1D340D99008ABC3D /* TableViewCellArray.swift */,
 				428683101B346CFE0028DB2F /* TableViewSection.swift */,
 				423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */,
@@ -654,7 +654,7 @@
 				42685D4F1D340D99008ABC3D /* TableViewCellArray.swift in Sources */,
 				42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */,
 				428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */,
-				4286833D1B346CFE0028DB2F /* SelectRowDelegate.swift in Sources */,
+				4286833D1B346CFE0028DB2F /* RFSelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
 				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,

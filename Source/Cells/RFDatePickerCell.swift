@@ -227,7 +227,7 @@ extension RFDatePickerToggleCell: RFAssignAppearance {
 	}
 }
 
-extension RFDatePickerToggleCell: SelectRowDelegate {
+extension RFDatePickerToggleCell: RFSelectRowDelegate {
     public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
         if model.expandCollapseWhenSelectingRow == false {
             //print("cell is always expanded")

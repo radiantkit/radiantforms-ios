@@ -12,7 +12,7 @@ public struct RFOptionViewControllerCellModel {
 	}
 }
 
-public class RFOptionViewControllerCell: UITableViewCell, SelectRowDelegate {
+public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 	fileprivate let model: RFOptionViewControllerCellModel
 	fileprivate var selectedOptionRow: OptionRowModel?
 	fileprivate weak var parentViewController: UIViewController?
