@@ -62,9 +62,9 @@ public class RFFormBuilder {
 	}
 
 	public func result(_ viewController: UIViewController) -> TableViewSectionArray {
-		let model = PopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
+		let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
 
-		let v = PopulateTableView(model: model)
+		let v = RFPopulateTableView(model: model)
 		if suppressHeaderForFirstSection {
 			v.installZeroHeightHeader()
 		}

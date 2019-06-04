@@ -1,11 +1,11 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-protocol WillPopCommandProtocol {
+protocol RFWillPopCommandProtocol {
 	func execute(_ context: ViewControllerFormItemPopContext)
 }
 
-class WillPopCustomViewController: WillPopCommandProtocol {
+class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 	let object: AnyObject
 	init(object: AnyObject) {
 		self.object = object
@@ -19,7 +19,7 @@ class WillPopCustomViewController: WillPopCommandProtocol {
 	}
 }
 
-class WillPopOptionViewController: WillPopCommandProtocol {
+class RFWillPopOptionViewController: RFWillPopCommandProtocol {
 	let object: ViewControllerFormItem
 	init(object: ViewControllerFormItem) {
 		self.object = object
@@ -30,13 +30,13 @@ class WillPopOptionViewController: WillPopCommandProtocol {
 	}
 }
 
-struct PopulateTableViewModel {
+struct RFPopulateTableViewModel {
 	var viewController: UIViewController
 	var toolbarMode: RFToolbarMode
 }
 
-class PopulateTableView: FormItemVisitor {
-	let model: PopulateTableViewModel
+class RFPopulateTableView: FormItemVisitor {
+	let model: RFPopulateTableViewModel
 
 	var cells: TableViewCellArray = TableViewCellArray.createEmpty()
 	var sections = [TableViewSection]()
@@ -51,7 +51,7 @@ class PopulateTableView: FormItemVisitor {
 	}
 	var lastItemType = LastItemType.beginning
 
-	init(model: PopulateTableViewModel) {
+	init(model: RFPopulateTableViewModel) {
 		self.model = model
 	}
 
@@ -673,13 +673,13 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: ViewControllerFormItem) {
 		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
-		let willPopViewController = WillPopCustomViewController(object: object)
+		let willPopViewController = RFWillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController
 		let cell = RFViewControllerCell(model: model) { (cell: RFViewControllerCell, _: RFViewControllerCellModel) in
 			SwiftyFormLog("push")
 			if let vc = weakViewController {
-				let dismissCommand = PopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
+				let dismissCommand = RFPopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
 				if let childViewController = object.createViewController?(dismissCommand) {
 					vc.navigationController?.pushViewController(childViewController, animated: true)
 				}
@@ -689,7 +689,7 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> RFCommandProtocol {
+	class func prepareDismissCommand(_ willPopCommand: RFWillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> RFCommandProtocol {
 		weak var weakViewController = parentViewController
 		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
@@ -750,3 +750,19 @@ class PopulateTableView: FormItemVisitor {
 		}
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFWillPopCommandProtocol")
+typealias WillPopCommandProtocol = RFWillPopCommandProtocol
+
+@available(*, unavailable, renamed: "RFWillPopCustomViewController")
+typealias WillPopCustomViewController = RFWillPopCustomViewController
+
+@available(*, unavailable, renamed: "RFWillPopOptionViewController")
+typealias WillPopOptionViewController = RFWillPopOptionViewController
+
+@available(*, unavailable, renamed: "RFPopulateTableViewModel")
+typealias PopulateTableViewModel = RFPopulateTableViewModel
+
+@available(*, unavailable, renamed: "RFPopulateTableView")
+typealias PopulateTableView = RFPopulateTableView
