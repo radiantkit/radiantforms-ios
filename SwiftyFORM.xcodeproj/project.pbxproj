@@ -40,8 +40,8 @@
 		4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */; };
 		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
-		4245B3F51DA429B500BCB4C7 /* AdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */; };
-		4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */; };
+		4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */; };
+		4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */; };
 		4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */; };
 		4245B3F81DA429B500BCB4C7 /* RFCountSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */; };
 		4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */; };
@@ -166,8 +166,8 @@
 		4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionArray.swift; sourceTree = "<group>"; };
 		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
-		4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdvancedTests.csv; sourceTree = "<group>"; };
-		4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedTests.swift; sourceTree = "<group>"; };
+		4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RFSpecificationAdvancedTests.csv; sourceTree = "<group>"; };
+		4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationAdvancedTests.swift; sourceTree = "<group>"; };
 		4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCountSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecificationTests.swift; sourceTree = "<group>"; };
@@ -331,13 +331,13 @@
 		4245B3EA1DA429B500BCB4C7 /* Specification */ = {
 			isa = PBXGroup;
 			children = (
-				4245B3EB1DA429B500BCB4C7 /* AdvancedTests.csv */,
-				4245B3EC1DA429B500BCB4C7 /* AdvancedTests.swift */,
 				4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */,
 				4245B3EE1DA429B500BCB4C7 /* RFCountSpecificationTests.swift */,
 				4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */,
 				4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */,
 				4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */,
+				4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */,
+				4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */,
 				4245B3F01DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift */,
 				4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */,
 				4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */,
@@ -576,7 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4245B3F51DA429B500BCB4C7 /* AdvancedTests.csv in Resources */,
+				4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */,
-				4245B3F61DA429B500BCB4C7 /* AdvancedTests.swift in Sources */,
+				4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */,
 				42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */,
 				4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */,
 				4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */,

@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class AdvancedTests: XCTestCase {
+class RFSpecificationAdvancedTests: XCTestCase {
 	
 	func testAdvanced0() {
 		/*
@@ -74,7 +74,7 @@ class AdvancedTests: XCTestCase {
 	
 	func movieRecords() -> [MovieRecord] {
 		// Read a CSV file
-		let path: String! = Bundle(for: type(of: self)).path(forResource: "AdvancedTests", ofType: "csv")
+		let path: String! = Bundle(for: type(of: self)).path(forResource: "RFSpecificationAdvancedTests", ofType: "csv")
 		assert(path != nil)
 		let dataString = try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
 
