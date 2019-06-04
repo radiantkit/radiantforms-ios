@@ -3,7 +3,7 @@ import UIKit
 import XCTest
 @testable import SwiftyFORM
 
-class ValidateResultTests: XCTestCase {
+class RFValidateResultTests: XCTestCase {
 
 	func testCompare_same0() {
 		let a = RFValidateResult.valid
