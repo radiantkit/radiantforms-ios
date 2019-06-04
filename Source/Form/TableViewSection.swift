@@ -81,7 +81,7 @@ extension TableViewSection: UITableViewDelegate {
 	}
 
 	public func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? AccessoryButtonDelegate {
+		if let cell = cells[indexPath.row] as? RFAccessoryButtonDelegate {
 			cell.form_accessoryButtonTapped(indexPath: indexPath, tableView: tableView)
 		}
 	}

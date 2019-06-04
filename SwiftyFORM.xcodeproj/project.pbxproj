@@ -50,7 +50,7 @@
 		4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */; };
 		4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */; };
 		4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */; };
-		4259A2C41C23759B00DB4CEB /* AccessoryButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */; };
+		4259A2C41C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */; };
 		425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */; };
 		425DED651D28257000EDF891 /* SegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */; };
 		4262DF971B34824E00DC2083 /* SwiftFORMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */; };
@@ -176,7 +176,7 @@
 		4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTrueFalseTests.swift; sourceTree = "<group>"; };
-		4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryButtonDelegate.swift; sourceTree = "<group>"; };
+		4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessoryButtonDelegate.swift; sourceTree = "<group>"; };
 		425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlCell.swift; sourceTree = "<group>"; };
 		425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlFormItem.swift; sourceTree = "<group>"; };
 		4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SwiftFORMImages.xcassets; sourceTree = "<group>"; };
@@ -388,7 +388,6 @@
 		428683061B346CFE0028DB2F /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* AssignAppearance.swift */,
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
@@ -403,6 +402,7 @@
 				4286830B1B346CFE0028DB2F /* OptionListViewController.swift */,
 				428683131B346CFE0028DB2F /* PopulateTableView.swift */,
 				428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */,
+				4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
@@ -672,7 +672,7 @@
 				42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */,
 				4286833C1B346CFE0028DB2F /* CellHeightProvider.swift in Sources */,
 				42108D1D1B34E9F60067FEAA /* SliderFormItem.swift in Sources */,
-				4259A2C41C23759B00DB4CEB /* AccessoryButtonDelegate.swift in Sources */,
+				4259A2C41C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift in Sources */,
 				428683351B346CFE0028DB2F /* RFStepperCell.swift in Sources */,
 				4286833F1B346CFE0028DB2F /* FormBuilder.swift in Sources */,
 				428683371B346CFE0028DB2F /* RFTextFieldCell.swift in Sources */,
