@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-class PrecisionSlider_InnerModel: CustomDebugStringConvertible {
+class RFPrecisionSlider_InnerModel: CustomDebugStringConvertible {
 	var originalMaximumValue: Double = 0.0
 	var originalMinimumValue: Double = 100.0
 
@@ -22,10 +22,10 @@ class PrecisionSlider_InnerModel: CustomDebugStringConvertible {
 		return value
 	}
 
-	var zoomMode = PrecisionSlider_InnerZoomMode.none
+	var zoomMode = RFPrecisionSlider_InnerZoomMode.none
 
 	func updateRange() {
-		zoomMode = PrecisionSlider_InnerZoomMode.create(zoom)
+		zoomMode = RFPrecisionSlider_InnerZoomMode.create(zoom)
 		//print("zoomMode: \(zoomMode)  zoom: \(zoom)")
 
 		maximumValue = originalMaximumValue * zoomMode.scalar
@@ -235,3 +235,6 @@ class PrecisionSlider_InnerModel: CustomDebugStringConvertible {
 		return strings.joined(separator: " , ")
 	}
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerModel")
+typealias PrecisionSlider_InnerModel = RFPrecisionSlider_InnerModel

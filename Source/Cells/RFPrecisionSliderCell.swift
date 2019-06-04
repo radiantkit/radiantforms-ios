@@ -79,7 +79,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, S
 		detailTextLabel?.text = RFPrecisionSliderCellFormatter.format(value: model.value, decimalPlaces: model.decimalPlaces)
 	}
 
-	func sliderDidChange(_ changeModel: PrecisionSlider.SliderDidChangeModel) {
+	func sliderDidChange(_ changeModel: RFPrecisionSlider.SliderDidChangeModel) {
 		var valueUpdated = false
 		if changeModel.valueUpdated {
 			let decimalScale: Double = pow(Double(10), Double(model.decimalPlaces))
@@ -217,12 +217,12 @@ extension RFPrecisionSliderCellModel {
 		static let maxZoomedIn_DistanceBetweenMarks: Double = 60
 	}
 
-	func sliderViewModel(sliderWidth: CGFloat) -> PrecisionSlider_InnerModel {
+	func sliderViewModel(sliderWidth: CGFloat) -> RFPrecisionSlider_InnerModel {
 		let decimalScale: Double = pow(Double(10), Double(decimalPlaces))
 		let minimumValue = Double(self.minimumValue) / decimalScale
 		let maximumValue = Double(self.maximumValue) / decimalScale
 
-		let instance = PrecisionSlider_InnerModel()
+		let instance = RFPrecisionSlider_InnerModel()
 		instance.originalMinimumValue = minimumValue
 		instance.originalMaximumValue = maximumValue
 
@@ -276,7 +276,7 @@ extension RFPrecisionSliderCellModel {
 /**
 # Precision slider expanded-cell
 
-Row containing only a `PrecisionSlider`. This is not a standard Apple control.
+Row containing only a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
 public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, ExpandedCell {
@@ -296,15 +296,15 @@ public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider,
 	}
 
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-		return PrecisionSlider_InnerModel.height
+		return RFPrecisionSlider_InnerModel.height
 	}
 
-	func sliderDidChange(_ changeModel: PrecisionSlider.SliderDidChangeModel) {
+	func sliderDidChange(_ changeModel: RFPrecisionSlider.SliderDidChangeModel) {
 		collapsedCell?.sliderDidChange(changeModel)
 	}
 
-	lazy var slider: PrecisionSlider = {
-		let instance = PrecisionSlider()
+	lazy var slider: RFPrecisionSlider = {
+		let instance = RFPrecisionSlider()
 		instance.valueDidChange = nil
 		return instance
 	}()
@@ -353,7 +353,7 @@ public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider,
 		*/
 		slider.value = scaledValue
 
-		slider.valueDidChange = { [weak self] (changeModel: PrecisionSlider.SliderDidChangeModel) in
+		slider.valueDidChange = { [weak self] (changeModel: RFPrecisionSlider.SliderDidChangeModel) in
 			self?.sliderDidChange(changeModel)
 		}
 	}

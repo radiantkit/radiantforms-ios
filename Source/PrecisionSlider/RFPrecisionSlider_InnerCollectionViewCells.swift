@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-struct PrecisionSlider_InnerCollectionViewCellConstants {
+struct RFPrecisionSlider_InnerCollectionViewCellConstants {
 	struct Label {
 		static let topInset: CGFloat = 5
 		static let height: CGFloat = 25
@@ -17,7 +17,7 @@ The `label` is shown above the `mark`.
 
 The `mark` is centered.
 */
-class PrecisionSlider_InnerCollectionViewFullCell: UICollectionViewCell {
+class RFPrecisionSlider_InnerCollectionViewFullCell: UICollectionViewCell {
 	static let identifier = "full_cell"
 
 	override init(frame: CGRect) {
@@ -54,8 +54,8 @@ class PrecisionSlider_InnerCollectionViewFullCell: UICollectionViewCell {
 		let markX = floor(bounds.midX)
 		mark.frame = CGRect(x: markX, y: 0, width: 1, height: bounds.height).insetBy(dx: 0, dy: 30)
 
-		let (_, remain) = bounds.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
-		let (slice, _) = remain.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
+		let (_, remain) = bounds.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
+		let (slice, _) = remain.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
 		label.frame = slice
 	}
 }
@@ -73,7 +73,7 @@ In this case there is a little bit of air between the `partialMark` and the firs
 This cell is not used when the minimumValue aligns perfectly to a marker.
 In that case a full_cell is used.
 */
-class PrecisionSlider_InnerCollectionViewFirstCell: UICollectionViewCell {
+class RFPrecisionSlider_InnerCollectionViewFirstCell: UICollectionViewCell {
 	static let identifier = "first_cell"
 
 	override init(frame: CGRect) {
@@ -87,7 +87,7 @@ class PrecisionSlider_InnerCollectionViewFirstCell: UICollectionViewCell {
 	}
 
 	func commonInit() {
-		if PrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
+		if RFPrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
 			backgroundColor = UIColor.green
 		}
 		addSubview(mark)
@@ -133,8 +133,8 @@ class PrecisionSlider_InnerCollectionViewFirstCell: UICollectionViewCell {
 		partialMark.frame = CGRect(x: partialMarkX, y: 0, width: 1, height: bounds.height).insetBy(dx: 0, dy: 45)
 
 		let (_, rightHalf) = bounds.divided(atDistance: CGFloat(fullLength), from: .minXEdge)
-		let (_, remain) = rightHalf.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
-		let (slice, _) = remain.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
+		let (_, remain) = rightHalf.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
+		let (slice, _) = remain.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
 		label.frame = slice
 	}
 }
@@ -152,7 +152,7 @@ In this case there is a little bit of air between the last `mark` and the `parti
 This cell is not used when the maxmimumValue aligns perfectly to a marker.
 In that case a full_cell is used.
 */
-class PrecisionSlider_InnerCollectionViewLastCell: UICollectionViewCell {
+class RFPrecisionSlider_InnerCollectionViewLastCell: UICollectionViewCell {
 	static let identifier = "last_cell"
 
 	override init(frame: CGRect) {
@@ -166,7 +166,7 @@ class PrecisionSlider_InnerCollectionViewLastCell: UICollectionViewCell {
 	}
 
 	func commonInit() {
-		if PrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
+		if RFPrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
 			backgroundColor = UIColor.red
 		}
 		addSubview(mark)
@@ -212,8 +212,8 @@ class PrecisionSlider_InnerCollectionViewLastCell: UICollectionViewCell {
 		partialMark.frame = CGRect(x: partialMarkX, y: 0, width: 1, height: bounds.height).insetBy(dx: 0, dy: 45)
 
 		let (leftHalf, _) = bounds.divided(atDistance: CGFloat(fullLength), from: .minXEdge)
-		let (_, remain) = leftHalf.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
-		let (slice, _) = remain.divided(atDistance: PrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
+		let (_, remain) = leftHalf.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.topInset, from: .minYEdge)
+		let (slice, _) = remain.divided(atDistance: RFPrecisionSlider_InnerCollectionViewCellConstants.Label.height, from: .minYEdge)
 		label.frame = slice
 	}
 }
@@ -227,7 +227,7 @@ The `rightMark` indicates where the maximumValue is.
 This cell is used when the content length is too narrow so there isn't any room for: full_cell, first_cell, last_cell
 This cell is a last resort to show something meaningful.
 */
-class PrecisionSlider_InnerCollectionViewSingleCell: UICollectionViewCell {
+class RFPrecisionSlider_InnerCollectionViewSingleCell: UICollectionViewCell {
 	static let identifier = "single_cell"
 
 	override init(frame: CGRect) {
@@ -241,7 +241,7 @@ class PrecisionSlider_InnerCollectionViewSingleCell: UICollectionViewCell {
 	}
 
 	func commonInit() {
-		if PrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
+		if RFPrecisionSlider_InnerCollectionViewCellConstants.colorizeCells {
 			backgroundColor = UIColor.blue
 		}
 		addSubview(leftMark)
@@ -267,3 +267,18 @@ class PrecisionSlider_InnerCollectionViewSingleCell: UICollectionViewCell {
 		rightMark.frame = insetBounds.divided(atDistance: 1, from: .maxXEdge).slice
 	}
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewCellConstants")
+typealias PrecisionSlider_InnerCollectionViewCellConstants = RFPrecisionSlider_InnerCollectionViewCellConstants
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewFullCell")
+typealias PrecisionSlider_InnerCollectionViewFullCell = RFPrecisionSlider_InnerCollectionViewFullCell
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewFirstCell")
+typealias PrecisionSlider_InnerCollectionViewFirstCell = RFPrecisionSlider_InnerCollectionViewFirstCell
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewLastCell")
+typealias PrecisionSlider_InnerCollectionViewLastCell = RFPrecisionSlider_InnerCollectionViewLastCell
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewSingleCell")
+typealias PrecisionSlider_InnerCollectionViewSingleCell = RFPrecisionSlider_InnerCollectionViewSingleCell

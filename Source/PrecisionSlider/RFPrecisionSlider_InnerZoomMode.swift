@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-enum PrecisionSlider_InnerZoomMode {
+enum RFPrecisionSlider_InnerZoomMode {
 	case none
 	case zoomIn(count: UInt)
 	case zoomOut(count: UInt)
@@ -17,7 +17,7 @@ enum PrecisionSlider_InnerZoomMode {
 		}
 	}
 
-	static func create(_ zoom: Float) -> PrecisionSlider_InnerZoomMode {
+	static func create(_ zoom: Float) -> RFPrecisionSlider_InnerZoomMode {
 		if zoom >  4.92 { return .zoomIn(count: 100000) }
 		if zoom >  4.42 { return .zoomIn(count: 20000) }
 		if zoom >  3.92 { return .zoomIn(count: 10000) }
@@ -127,3 +127,6 @@ enum PrecisionSlider_InnerZoomMode {
 	}
 
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerZoomMode")
+typealias PrecisionSlider_InnerZoomMode = RFPrecisionSlider_InnerZoomMode

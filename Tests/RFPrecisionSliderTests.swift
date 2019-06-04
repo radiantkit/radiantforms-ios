@@ -3,7 +3,7 @@ import Foundation
 import XCTest
 @testable import SwiftyFORM
 
-class PrecisionSliderTests: XCTestCase {
+class RFPrecisionSliderTests: XCTestCase {
 	func format0(_ value: Int) -> String {
 		return RFPrecisionSliderCellFormatter.format(value: value, decimalPlaces: 0)
 	}

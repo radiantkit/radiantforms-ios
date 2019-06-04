@@ -12,11 +12,11 @@ These gestures are available:
  4. Double-2finger-tap to x10 unzoom
 
 */
-class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 	var originalZoom: Float = 0
 	var originalValue: Double = 0
 
-	var model = PrecisionSlider_InnerModel()
+	var model = RFPrecisionSlider_InnerModel()
 
 	struct SliderDidChangeModel {
 		let value: Double
@@ -168,7 +168,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Pinch gesture for zoom in/out
 
 	lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
-		let instance = UIPinchGestureRecognizer(target: self, action: #selector(PrecisionSlider.handlePinch))
+		let instance = UIPinchGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handlePinch))
 		instance.delegate = self
 		return instance
 	}()
@@ -204,7 +204,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Gesture 'one-finger double-tap' for zoom in
 
 	lazy var oneTouchDoubleTapGestureRecognizer: UITapGestureRecognizer = {
-		let instance = UITapGestureRecognizer(target: self, action: #selector(PrecisionSlider.handleOneTouchDoubleTap))
+		let instance = UITapGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handleOneTouchDoubleTap))
 		instance.numberOfTapsRequired = 2
 		instance.numberOfTouchesRequired = 1
 		return instance
@@ -260,7 +260,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	// MARK: Gesture 'two-finger double-tap' for zoom out
 
 	lazy var twoTouchDoubleTapGestureRecognizer: UITapGestureRecognizer = {
-		let instance = UITapGestureRecognizer(target: self, action: #selector(PrecisionSlider.handleTwoTouchDoubleTap))
+		let instance = UITapGestureRecognizer(target: self, action: #selector(RFPrecisionSlider.handleTwoTouchDoubleTap))
 		instance.numberOfTapsRequired = 2
 		instance.numberOfTouchesRequired = 2
 		return instance
@@ -351,7 +351,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		instance.titleLabel?.font = UIFont.systemFont(ofSize: 32)
 		instance.showsTouchWhenHighlighted = true
 		instance.setTitle("+", for: UIControl.State())
-		instance.addTarget(self, action: #selector(PrecisionSlider.zoomInButtonAction), for: .touchUpInside)
+		instance.addTarget(self, action: #selector(RFPrecisionSlider.zoomInButtonAction), for: .touchUpInside)
 		return instance
 	}()
 
@@ -387,7 +387,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		instance.titleLabel?.font = UIFont.systemFont(ofSize: 32)
 		instance.showsTouchWhenHighlighted = true
 		instance.setTitle("-", for: UIControl.State())
-		instance.addTarget(self, action: #selector(PrecisionSlider.zoomOutButtonAction), for: .touchUpInside)
+		instance.addTarget(self, action: #selector(RFPrecisionSlider.zoomOutButtonAction), for: .touchUpInside)
 		return instance
 	}()
 
@@ -435,11 +435,11 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 	}
 
 	func computeItemSize() -> CGSize {
-		return CGSize(width: CGFloat(model.lengthOfFullItem), height: PrecisionSlider_InnerModel.height)
+		return CGSize(width: CGFloat(model.lengthOfFullItem), height: RFPrecisionSlider_InnerModel.height)
 	}
 
-	lazy var layout: PrecisionSlider_InnerCollectionViewFlowLayout = {
-		let instance = PrecisionSlider_InnerCollectionViewFlowLayout()
+	lazy var layout: RFPrecisionSlider_InnerCollectionViewFlowLayout = {
+		let instance = RFPrecisionSlider_InnerCollectionViewFlowLayout()
 		instance.scrollDirection = .horizontal
 		instance.minimumInteritemSpacing = 0
 		instance.minimumLineSpacing = 0
@@ -467,10 +467,10 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		instance.bounces = false
 		instance.alwaysBounceHorizontal = true
 		instance.alwaysBounceVertical = false
-		instance.register(PrecisionSlider_InnerCollectionViewSingleCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewSingleCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewFirstCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewFirstCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewLastCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewLastCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewFullCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewFullCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewSingleCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewSingleCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewFirstCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFirstCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewLastCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewLastCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewFullCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFullCell.identifier)
 		instance.contentInset = UIEdgeInsets.zero
 		instance.delegate = self
 		instance.dataSource = self
@@ -512,7 +512,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if model.hasOnePartialItem {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewSingleCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewSingleCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewSingleCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewSingleCell
 			return cell
 		}
 
@@ -524,20 +524,20 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		let isLast = indexPath.row == count - 1
 
 		if isFirst && model.hasPartialItemBefore {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewFirstCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewFirstCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFirstCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewFirstCell
 			cell.label.text = labelText
 			cell.mark.backgroundColor = markColor
 			cell.configure(partialLength: model.lengthOfPartialItemBefore, fullLength: model.lengthOfFullItem)
 			return cell
 		}
 		if isLast && model.hasPartialItemAfter {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewLastCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewLastCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewLastCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewLastCell
 			cell.label.text = labelText
 			cell.mark.backgroundColor = markColor
 			cell.configure(partialLength: model.lengthOfPartialItemAfter, fullLength: model.lengthOfFullItem)
 			return cell
 		}
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewFullCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewFullCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFullCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewFullCell
 		cell.label.text = labelText
 		cell.mark.backgroundColor = markColor
 		return cell
@@ -547,7 +547,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		if model.hasOnePartialItem {
 			let size = CGSize(
 				width: CGFloat(model.lengthOfOnePartialItem),
-				height: PrecisionSlider_InnerModel.height
+				height: RFPrecisionSlider_InnerModel.height
 			)
 			//print("size for one-partial \(indexPath.row) \(size.width)")
 			return size
@@ -557,7 +557,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 			if row == 0 {
 				let size = CGSize(
 					width: CGFloat(model.lengthOfFullItem * 2),
-					height: PrecisionSlider_InnerModel.height
+					height: RFPrecisionSlider_InnerModel.height
 				)
 				//print("size for partial-before \(indexPath.row) \(size.width)")
 				return size
@@ -568,7 +568,7 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 			if model.hasPartialItemAfter {
 				let size = CGSize(
 					width: CGFloat(model.lengthOfFullItem * 2),
-					height: PrecisionSlider_InnerModel.height
+					height: RFPrecisionSlider_InnerModel.height
 				)
 				//print("size for partial-after \(indexPath.row) \(size.width)")
 				return size
@@ -576,21 +576,27 @@ class PrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
 		}
 		let size = CGSize(
 			width: CGFloat(model.lengthOfFullItem),
-			height: PrecisionSlider_InnerModel.height
+			height: RFPrecisionSlider_InnerModel.height
 		)
 		//print("size for full \(indexPath.row) \(size.width)")
 		return size
 	}
 }
 
-class PrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout {
-	weak var model: PrecisionSlider_InnerModel?
+class RFPrecisionSlider_InnerCollectionViewFlowLayout: UICollectionViewFlowLayout {
+	weak var model: RFPrecisionSlider_InnerModel?
 
 	override var collectionViewContentSize: CGSize {
 		guard let model = self.model else {
 			print("no model")
 			return CGSize.zero
 		}
-		return CGSize(width: CGFloat(model.lengthOfContent), height: PrecisionSlider_InnerModel.height)
+		return CGSize(width: CGFloat(model.lengthOfContent), height: RFPrecisionSlider_InnerModel.height)
 	}
 }
+
+@available(*, unavailable, renamed: "RFPrecisionSlider")
+typealias PrecisionSlider = RFPrecisionSlider
+
+@available(*, unavailable, renamed: "RFPrecisionSlider_InnerCollectionViewFlowLayout")
+typealias PrecisionSlider_InnerCollectionViewFlowLayout = RFPrecisionSlider_InnerCollectionViewFlowLayout
