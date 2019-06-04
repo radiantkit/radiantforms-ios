@@ -5,7 +5,7 @@ import XCTest
 class CharacterSetSpecificationTests: XCTestCase {
 	
 	func testCharactersInString() {
-		let spec = CharacterSetSpecification.charactersInString("abc")
+		let spec = RFCharacterSetSpecification.charactersInString("abc")
 		XCTAssertTrue(spec.isSatisfiedBy(""))
 		XCTAssertTrue(spec.isSatisfiedBy("abc"))
 		XCTAssertFalse(spec.isSatisfiedBy("0123hello"))
@@ -13,7 +13,7 @@ class CharacterSetSpecificationTests: XCTestCase {
 	}
 
 	func testDecimalDigits() {
-		let spec = CharacterSetSpecification.decimalDigits
+		let spec = RFCharacterSetSpecification.decimalDigits
 		XCTAssertTrue(spec.isSatisfiedBy(""))
 		XCTAssertTrue(spec.isSatisfiedBy("0123456789"))
 		XCTAssertFalse(spec.isSatisfiedBy("0123hello"))
@@ -21,7 +21,7 @@ class CharacterSetSpecificationTests: XCTestCase {
 	}
 	
 	func testWhitespacesAndNewlines() {
-		let spec = CharacterSetSpecification.whitespacesAndNewlines
+		let spec = RFCharacterSetSpecification.whitespacesAndNewlines
 		XCTAssertTrue(spec.isSatisfiedBy(""))
 		XCTAssertTrue(spec.isSatisfiedBy(" \t \n "))
 		XCTAssertFalse(spec.isSatisfiedBy("---"))

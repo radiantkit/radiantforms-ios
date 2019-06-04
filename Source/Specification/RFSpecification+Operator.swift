@@ -68,7 +68,7 @@ public prefix func ! (specification: RFSpecification) -> RFSpecification {
 ///
 /// ## Example:
 ///
-/// `let spec = CharacterSetSpecification.decimalDigits`
+/// `let spec = RFCharacterSetSpecification.decimalDigits`
 /// `spec == "123"`
 ///
 ///
@@ -86,7 +86,7 @@ public func == (left: RFSpecification, right: Any?) -> Bool {
 ///
 /// ## Example:
 ///
-/// `let spec = CharacterSetSpecification.decimalDigits`
+/// `let spec = RFCharacterSetSpecification.decimalDigits`
 /// `spec != "123"`
 ///
 ///
