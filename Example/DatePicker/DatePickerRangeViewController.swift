@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class DatePickerRangeViewController: FormViewController {
+class DatePickerRangeViewController: RFFormViewController {
 	lazy var datePicker_time_min: DatePickerFormItem = {
 		let instance = DatePickerFormItem()
 		instance.title = "Time"

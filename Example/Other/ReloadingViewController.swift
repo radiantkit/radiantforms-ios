@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class ReloadingViewController: FormViewController {
+class ReloadingViewController: RFFormViewController {
 	var populateCount = 0
 
 	override func populate(_ builder: RFFormBuilder) {

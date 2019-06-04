@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class ButtonsViewController: FormViewController {
+class ButtonsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Buttons"
 		builder.toolbarMode = .none

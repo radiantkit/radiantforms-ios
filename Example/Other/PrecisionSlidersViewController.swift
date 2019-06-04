@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class PrecisionSlidersViewController: FormViewController {
+class PrecisionSlidersViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Precision Sliders"
 		builder.toolbarMode = .none

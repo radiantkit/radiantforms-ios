@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-open class FormViewController: UIViewController {
+open class RFFormViewController: UIViewController {
 	public var dataSource: TableViewSectionArray?
 	public var keyboardHandler: RFKeyboardHandler?
 
@@ -82,3 +82,6 @@ open class FormViewController: UIViewController {
 		return RFFormTableView()
 		}()
 }
+
+@available(*, unavailable, renamed: "RFFormViewController")
+typealias FormViewController = RFFormViewController

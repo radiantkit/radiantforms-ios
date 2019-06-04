@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class ChangePasswordViewController: FormViewController {
+class ChangePasswordViewController: RFFormViewController {
 	override func loadView() {
 		super.loadView()
 		form_installSubmitButton()

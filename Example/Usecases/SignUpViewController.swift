@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class SignUpViewController: FormViewController {
+class SignUpViewController: RFFormViewController {
 	override func loadView() {
 		super.loadView()
 		form_installSubmitButton()

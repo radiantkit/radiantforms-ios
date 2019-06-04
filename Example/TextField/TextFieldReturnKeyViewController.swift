@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class TextFieldReturnKeyViewController: FormViewController {
+class TextFieldReturnKeyViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Return Key"
 		builder.toolbarMode = .simple

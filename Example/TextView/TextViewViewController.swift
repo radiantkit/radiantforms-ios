@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class TextViewViewController: FormViewController {
+class TextViewViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "TextViews"

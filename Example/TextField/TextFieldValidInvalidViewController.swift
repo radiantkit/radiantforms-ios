@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class TextFieldValidInvalidViewController: FormViewController {
+class TextFieldValidInvalidViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Valid & Invalid"
 		builder.toolbarMode = .simple

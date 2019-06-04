@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class SteppersViewController: FormViewController {
+class SteppersViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Steppers"

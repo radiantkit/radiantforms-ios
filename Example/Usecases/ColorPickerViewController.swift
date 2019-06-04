@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class ColorPickerViewController: FormViewController {
+class ColorPickerViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Color picker"
 		builder.toolbarMode = .none

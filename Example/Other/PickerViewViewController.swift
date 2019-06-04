@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import SwiftyFORM
 
-class PickerViewViewController: FormViewController {
+class PickerViewViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "PickerViews"
 		builder += SectionHeaderTitleFormItem().title("PickerView")

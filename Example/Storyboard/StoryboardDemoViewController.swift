@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class StoryboardDemoViewController: FormViewController {
+class StoryboardDemoViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Storyboard Demo"
 		builder += voteCountSlider

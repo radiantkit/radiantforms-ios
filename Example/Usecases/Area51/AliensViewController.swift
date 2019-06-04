@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class AliensViewController: FormViewController {
+class AliensViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Aliens"

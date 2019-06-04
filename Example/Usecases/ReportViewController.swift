@@ -3,7 +3,7 @@ import UIKit
 import MessageUI
 import SwiftyFORM
 
-class ReportViewController: FormViewController, MFMailComposeViewControllerDelegate {
+class ReportViewController: RFFormViewController, MFMailComposeViewControllerDelegate {
 	let sendButton = ButtonFormItem()
 
 	override func populate(_ builder: RFFormBuilder) {

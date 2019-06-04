@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class GhostsViewController: FormViewController {
+class GhostsViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Ghosts"

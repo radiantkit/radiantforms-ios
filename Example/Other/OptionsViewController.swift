@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class OptionsViewController: FormViewController {
+class OptionsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Options"
 		builder.toolbarMode = .none

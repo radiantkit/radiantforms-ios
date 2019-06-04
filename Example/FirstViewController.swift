@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class FirstViewController: FormViewController {
+class FirstViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "SwiftyFORM"
 		builder.demo_showInfo("Welcome to the\nSwiftyFORM example app\nthat shows everything")

@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class AmountViewController: FormViewController {
+class AmountViewController: RFFormViewController {
     override func populate(_ builder: RFFormBuilder) {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple

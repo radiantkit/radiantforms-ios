@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class DatePickerBindingViewController: FormViewController {
+class DatePickerBindingViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Bindings"

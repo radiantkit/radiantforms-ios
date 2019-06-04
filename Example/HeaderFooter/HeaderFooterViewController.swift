@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import SwiftyFORM
 
-class HeaderFooterViewController: FormViewController {
+class HeaderFooterViewController: RFFormViewController {
 
 	let headerView0 = SectionHeaderViewFormItem()
 	let footerView0 = SectionFooterViewFormItem()

@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class TextFieldTabThroughFormViewController: FormViewController {
+class TextFieldTabThroughFormViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Tab Through Form"
 		builder.toolbarMode = .simple

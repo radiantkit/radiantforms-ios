@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-extension FormViewController {
+extension RFFormViewController {
 	/// Installs a "Submit" button in the navigation bar.
 	/// When tapped it validates if the form satisfies its specifications.
 	/// This is only supposed to be used during development,
 	/// as a quick way to verify if the form is valid or not.
 	public func form_installSubmitButton() {
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(FormViewController.form_submitAction(_:)))
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(RFFormViewController.form_submitAction(_:)))
 	}
 
 	/// Used internally by the `form_installSubmitButton()` function

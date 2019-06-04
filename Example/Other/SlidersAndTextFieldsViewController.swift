@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class SlidersAndTextFieldsViewController: FormViewController {
+class SlidersAndTextFieldsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Sliders and TextFields"
 		builder.toolbarMode = .simple

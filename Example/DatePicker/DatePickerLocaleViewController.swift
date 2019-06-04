@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class DatePickerLocaleViewController: FormViewController {
+class DatePickerLocaleViewController: RFFormViewController {
 
 	lazy var datePicker_time_currentLocale: DatePickerFormItem = {
 		let instance = DatePickerFormItem()
