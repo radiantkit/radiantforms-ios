@@ -57,7 +57,7 @@ public struct RFPrecisionSliderCellFormatter {
 
 This causes the inline precision slider to expand/collapse
 */
-public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, RFAssignAppearance {
+public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider, SelectRowDelegate, RFDontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPrecisionSliderExpandedCell?
 	public let model: RFPrecisionSliderCellModel
 

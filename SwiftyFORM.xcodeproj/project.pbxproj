@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E711B358A7E0068B084 /* ShowInfo.swift */; };
 		42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E721B358A7E0068B084 /* SubmitButton.swift */; };
-		420F6CC71D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC61D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift */; };
+		420F6CC71D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */; };
 		420F6CC91D69C17F009D5F57 /* RFAssignAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */; };
 		420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */; };
 		420F6CCD1D6A1044009D5F57 /* ToggleExpandCollapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCC1D6A1044009D5F57 /* ToggleExpandCollapse.swift */; };
@@ -135,7 +135,7 @@
 /* Begin PBXFileReference section */
 		42096E711B358A7E0068B084 /* ShowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfo.swift; sourceTree = "<group>"; };
 		42096E721B358A7E0068B084 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
-		420F6CC61D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DontCollapseWhenScrolling.swift; sourceTree = "<group>"; };
+		420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDontCollapseWhenScrolling.swift; sourceTree = "<group>"; };
 		420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAssignAppearance.swift; sourceTree = "<group>"; };
 		420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToVisibleAfterExpand.swift"; sourceTree = "<group>"; };
 		420F6CCC1D6A1044009D5F57 /* ToggleExpandCollapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleExpandCollapse.swift; sourceTree = "<group>"; };
@@ -391,7 +391,6 @@
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
 				428683071B346CFE0028DB2F /* Command.swift */,
-				420F6CC61D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift */,
 				428683081B346CFE0028DB2F /* DumpVisitor.swift */,
 				4286830C1B346CFE0028DB2F /* FormBuilder.swift */,
 				4286830F1B346CFE0028DB2F /* FormTableView.swift */,
@@ -403,6 +402,7 @@
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
 				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
 				428683091B346CFE0028DB2F /* RFCellHeightProvider.swift */,
+				420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
@@ -627,7 +627,7 @@
 				428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */,
 				4286833A1B346CFE0028DB2F /* Command.swift in Sources */,
 				428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */,
-				420F6CC71D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift in Sources */,
+				420F6CC71D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift in Sources */,
 				425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */,
 				4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */,
 				42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */,

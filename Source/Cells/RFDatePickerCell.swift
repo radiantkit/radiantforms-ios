@@ -34,7 +34,7 @@ public class RFDatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
+public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrolling {
 	weak var expandedCell: RFDatePickerExpandedCell?
 	public let model: RFDatePickerCellModel
 

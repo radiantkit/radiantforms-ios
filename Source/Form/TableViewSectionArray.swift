@@ -201,7 +201,7 @@ extension TableViewSectionArray: UIScrollViewDelegate {
 			return
 		}
 
-		if responder is DontCollapseWhenScrolling {
+		if responder is RFDontCollapseWhenScrolling {
 			// Don't collapse inline controls, such as inline date pickers, 
 			// since there are more screen estate for the user to move around.
 			return
