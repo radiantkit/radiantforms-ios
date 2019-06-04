@@ -2,7 +2,7 @@
 import Foundation
 
 /// Check if a collection (String/Array) has the right number of elements.
-public class CountSpecification: Specification {
+public class CountSpecification: RFSpecification {
 
 	/// Create a specification that checks for a minimum count
 	///

@@ -33,7 +33,7 @@
 		4219E1C81DB827CF00B3204A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C11DB827CF00B3204A /* Operator.swift */; };
 		4219E1C91DB827CF00B3204A /* PredicateSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */; };
 		4219E1CA1DB827CF00B3204A /* RegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */; };
-		4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* Specification.swift */; };
+		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
 		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
@@ -159,7 +159,7 @@
 		4219E1C11DB827CF00B3204A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecification.swift; sourceTree = "<group>"; };
 		4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionSpecification.swift; sourceTree = "<group>"; };
-		4219E1C41DB827CF00B3204A /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
+		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
 		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 				4219E1C11DB827CF00B3204A /* Operator.swift */,
 				4219E1C21DB827CF00B3204A /* PredicateSpecification.swift */,
 				4219E1C31DB827CF00B3204A /* RegularExpressionSpecification.swift */,
-				4219E1C41DB827CF00B3204A /* Specification.swift */,
+				4219E1C41DB827CF00B3204A /* RFSpecification.swift */,
 			);
 			path = Specification;
 			sourceTree = "<group>";
@@ -631,7 +631,7 @@
 				425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */,
 				4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */,
 				42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */,
-				4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */,
+				4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */,
 				4219E1C51DB827CF00B3204A /* CharacterSetSpecification.swift in Sources */,
 				42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */,
 				420F6CC91D69C17F009D5F57 /* AssignAppearance.swift in Sources */,

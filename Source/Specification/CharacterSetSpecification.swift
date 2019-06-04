@@ -2,7 +2,7 @@
 import Foundation
 
 /// Check if a string has no illegal characters.
-public class CharacterSetSpecification: Specification {
+public class CharacterSetSpecification: RFSpecification {
 	private let characterSet: CharacterSet
 
 	public init(characterSet: CharacterSet) {

@@ -101,19 +101,19 @@ public class TextFieldFormItem: FormItem {
 	public let validatorBuilder = ValidatorBuilder()
 
 	@discardableResult
-	public func validate(_ specification: Specification, message: String) -> Self {
+	public func validate(_ specification: RFSpecification, message: String) -> Self {
 		validatorBuilder.hardValidate(specification, message: message)
 		return self
 	}
 
 	@discardableResult
-	public func softValidate(_ specification: Specification, message: String) -> Self {
+	public func softValidate(_ specification: RFSpecification, message: String) -> Self {
 		validatorBuilder.softValidate(specification, message: message)
 		return self
 	}
 
 	@discardableResult
-	public func submitValidate(_ specification: Specification, message: String) -> Self {
+	public func submitValidate(_ specification: RFSpecification, message: String) -> Self {
 		validatorBuilder.submitValidate(specification, message: message)
 		return self
 	}

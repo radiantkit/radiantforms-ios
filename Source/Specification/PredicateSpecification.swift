@@ -4,7 +4,7 @@ import Foundation
 /// Check if an object is satisfied by a closure.
 ///
 /// Closure is sometimes preferred instead of subclassing the `Specification` protocol.
-public class PredicateSpecification<T>: Specification {
+public class PredicateSpecification<T>: RFSpecification {
 	private let predicate: (T) -> Bool
 
 	public init(predicate: @escaping (T) -> Bool) {

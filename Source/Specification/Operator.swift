@@ -4,7 +4,7 @@
 ///
 /// Combine two specifications into a single specification.
 ///
-/// This is a shorthand for the `Specification.and()` function.
+/// This is a shorthand for the `RFSpecification.and()` function.
 ///
 /// Both the `left` specifiction and the `right` specifiction must be satisfied.
 ///
@@ -17,7 +17,7 @@
 /// - parameter right: The specification to be checked last.
 ///
 /// - returns: A combined specification
-public func & (left: Specification, right: Specification) -> Specification {
+public func & (left: RFSpecification, right: RFSpecification) -> RFSpecification {
 	return left.and(right)
 }
 
@@ -25,7 +25,7 @@ public func & (left: Specification, right: Specification) -> Specification {
 ///
 /// Combine two specifications into a single specification.
 ///
-/// This is a shorthand for the `Specification.or()` function.
+/// This is a shorthand for the `RFSpecification.or()` function.
 ///
 /// Either the `left` specifiction or the `right` specifiction must be satisfied.
 ///
@@ -38,13 +38,13 @@ public func & (left: Specification, right: Specification) -> Specification {
 /// - parameter right: The specification to be checked last.
 ///
 /// - returns: A combined specification
-public func | (left: Specification, right: Specification) -> Specification {
+public func | (left: RFSpecification, right: RFSpecification) -> RFSpecification {
 	return left.or(right)
 }
 
 /// Negate operator
 ///
-/// This is a shorthand for the `Specification.not()` function.
+/// This is a shorthand for the `RFSpecification.not()` function.
 ///
 /// This specifiction is satisfied, when the given specification is not satisfied.
 ///
@@ -58,13 +58,13 @@ public func | (left: Specification, right: Specification) -> Specification {
 /// - parameter specification: The specification to be inverted.
 ///
 /// - returns: A specification
-public prefix func ! (specification: Specification) -> Specification {
+public prefix func ! (specification: RFSpecification) -> RFSpecification {
 	return specification.not()
 }
 
 /// Equivalence operator 
 ///
-/// This is a shorthand for the `Specification.isSatisfiedBy()` function
+/// This is a shorthand for the `RFSpecification.isSatisfiedBy()` function
 ///
 /// ## Example:
 ///
@@ -76,13 +76,13 @@ public prefix func ! (specification: Specification) -> Specification {
 /// - parameter right: The candidate object that is to be checked.
 ///
 /// - returns: `true` if the candidate object satisfies the specification, `false` otherwise.
-public func == (left: Specification, right: Any?) -> Bool {
+public func == (left: RFSpecification, right: Any?) -> Bool {
 	return left.isSatisfiedBy(right)
 }
 
 /// Not equivalent operator
 ///
-/// This is a shorthand for the `Specification.isSatisfiedBy()` function
+/// This is a shorthand for the `RFSpecification.isSatisfiedBy()` function
 ///
 /// ## Example:
 ///
@@ -94,6 +94,6 @@ public func == (left: Specification, right: Any?) -> Bool {
 /// - parameter right: The candidate object that is to be checked.
 ///
 /// - returns: `true` if the candidate object doesn't satisfy the specification, `false` otherwise.
-public func != (left: Specification, right: Any?) -> Bool {
+public func != (left: RFSpecification, right: Any?) -> Bool {
 	return !left.isSatisfiedBy(right)
 }

@@ -9,7 +9,7 @@ import Foundation
 /// that the text must be like this: `aabbcc8`. A regex for this:
 ///
 /// `let spec = RegularExpressionSpecification(pattern: "^a+b+c+\\d$")`
-public class RegularExpressionSpecification: Specification {
+public class RegularExpressionSpecification: RFSpecification {
 	private let regularExpression: NSRegularExpression
 
 	public init(regularExpression: NSRegularExpression) {

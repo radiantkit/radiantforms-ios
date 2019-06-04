@@ -11,7 +11,7 @@ import Foundation
 /// technique. Using regular expressions results in long patterns giving incomplete results.
 ///
 /// More info about these problems on [Wikipedia](http://en.wikipedia.org/wiki/Email_address).
-public class EmailSpecification: Specification {
+public class EmailSpecification: RFSpecification {
 	private let specification: RegularExpressionSpecification
 
 	public init() {
