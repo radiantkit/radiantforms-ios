@@ -3,27 +3,6 @@ import UIKit
 import XCTest
 @testable import SwiftyFORM
 
-class PrevNextMockTableView: UITableView {
-	let numberOfRowsInSectionData: [Int]
-	
-	init(numberOfRowsInSectionData: [Int]) {
-		self.numberOfRowsInSectionData = numberOfRowsInSectionData
-		super.init(frame: CGRect.zero, style: .plain)
-	}
-
-	required init(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
-	}
-	
-	override func numberOfRows(inSection section: Int) -> Int {
-		return numberOfRowsInSectionData[section]
-	}
-	
-	override var numberOfSections: Int {
-		return numberOfRowsInSectionData.count
-	}
-}
-
 class PrevNextTests: XCTestCase {
 	
 	func prev(_ row: Int, _ section: Int, _ tableView: UITableView) -> IndexPath? {
@@ -123,4 +102,25 @@ class PrevNextTests: XCTestCase {
 		XCTAssertNil(next(6, 0, tv))
 	}
 	
+}
+
+fileprivate class PrevNextMockTableView: UITableView {
+	let numberOfRowsInSectionData: [Int]
+
+	init(numberOfRowsInSectionData: [Int]) {
+		self.numberOfRowsInSectionData = numberOfRowsInSectionData
+		super.init(frame: CGRect.zero, style: .plain)
+	}
+
+	required init(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	override func numberOfRows(inSection section: Int) -> Int {
+		return numberOfRowsInSectionData[section]
+	}
+
+	override var numberOfSections: Int {
+		return numberOfRowsInSectionData.count
+	}
 }
