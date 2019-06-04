@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class SpecificationTests: XCTestCase {
+class RFSpecificationTests: XCTestCase {
     
 	func testAnd() {
 		let spec0 = RFRegularExpressionSpecification(pattern: "^hello")
