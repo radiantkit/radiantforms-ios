@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class EmailSpecificationTests: XCTestCase {
+class RFEmailSpecificationTests: XCTestCase {
 	
 	func testBasic() {
 		let spec = RFEmailSpecification()
