@@ -90,7 +90,7 @@
 		428683441B346CFE0028DB2F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683111B346CFE0028DB2F /* Validator.swift */; };
 		428683461B346CFE0028DB2F /* RFPopulateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683131B346CFE0028DB2F /* RFPopulateTableView.swift */; };
 		428683471B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */; };
-		428683481B346CFE0028DB2F /* TitleWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683151B346CFE0028DB2F /* TitleWidth.swift */; };
+		428683481B346CFE0028DB2F /* RFTitleWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683151B346CFE0028DB2F /* RFTitleWidth.swift */; };
 		428683491B346CFE0028DB2F /* ValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683161B346CFE0028DB2F /* ValidateResult.swift */; };
 		4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683171B346CFE0028DB2F /* ValidateVisitor.swift */; };
 		428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* RFDebugViewController.swift */; };
@@ -216,7 +216,7 @@
 		428683111B346CFE0028DB2F /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		428683131B346CFE0028DB2F /* RFPopulateTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPopulateTableView.swift; sourceTree = "<group>"; };
 		428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFReloadPersistentValidationStateVisitor.swift; sourceTree = "<group>"; };
-		428683151B346CFE0028DB2F /* TitleWidth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleWidth.swift; sourceTree = "<group>"; };
+		428683151B346CFE0028DB2F /* RFTitleWidth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTitleWidth.swift; sourceTree = "<group>"; };
 		428683161B346CFE0028DB2F /* ValidateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResult.swift; sourceTree = "<group>"; };
 		428683171B346CFE0028DB2F /* ValidateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateVisitor.swift; sourceTree = "<group>"; };
 		428683181B346CFE0028DB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 				423E31421D6384700048D8C3 /* RFTableViewSectionPart.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
-				428683151B346CFE0028DB2F /* TitleWidth.swift */,
+				428683151B346CFE0028DB2F /* RFTitleWidth.swift */,
 				420F6CCC1D6A1044009D5F57 /* ToggleExpandCollapse.swift */,
 				428683161B346CFE0028DB2F /* ValidateResult.swift */,
 				428683171B346CFE0028DB2F /* ValidateVisitor.swift */,
@@ -649,7 +649,7 @@
 				4286835B1B346CFE0028DB2F /* UIView+LookupTableView.swift in Sources */,
 				428683391B346CFE0028DB2F /* RFViewControllerCell.swift in Sources */,
 				4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */,
-				428683481B346CFE0028DB2F /* TitleWidth.swift in Sources */,
+				428683481B346CFE0028DB2F /* RFTitleWidth.swift in Sources */,
 				428683441B346CFE0028DB2F /* Validator.swift in Sources */,
 				42685D4F1D340D99008ABC3D /* RFTableViewCellArray.swift in Sources */,
 				42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */,

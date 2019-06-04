@@ -78,7 +78,7 @@ public class RFFormBuilder {
 
 		for alignLeftItem in alignLeftItems {
 			let widthArray: [CGFloat] = alignLeftItem.items.map {
-				let v = ObtainTitleWidth()
+				let v = RFObtainTitleWidth()
 				$0.accept(visitor: v)
 				return v.width
 			}
@@ -87,7 +87,7 @@ public class RFFormBuilder {
 			//SwiftyFormLog("max width: \(width)")
 
 			for item in alignLeftItem.items {
-				let v = AssignTitleWidth(width: width)
+				let v = RFAssignTitleWidth(width: width)
 				item.accept(visitor: v)
 			}
 		}
