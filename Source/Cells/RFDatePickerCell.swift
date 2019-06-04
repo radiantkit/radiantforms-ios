@@ -157,7 +157,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 	// MARK: Expand collapse
 
 	var isExpandedCellVisible: Bool {
-		guard let sectionArray = form_tableView()?.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = form_tableView()?.dataSource as? RFTableViewSectionArray else {
 			return false
 		}
 		guard let expandedItem = sectionArray.findItem(expandedCell) else {
@@ -173,7 +173,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 		guard let tableView = form_tableView() else {
 			return
 		}
-		guard let sectionArray = tableView.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
 			return
 		}
 		guard let expandedCell = expandedCell else {

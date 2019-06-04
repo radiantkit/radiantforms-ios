@@ -38,7 +38,7 @@ extension UITableViewCell {
 		guard let tableView = form_tableView() as? RFFormTableView else {
 			return
 		}
-		guard let sectionArray = tableView.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
 			return
 		}
 		guard let item = sectionArray.findItem(self) else {

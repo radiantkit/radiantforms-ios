@@ -9,7 +9,7 @@ public protocol ExpandedCell {
 }
 
 public struct ToggleExpandCollapse {
-	public static func execute(toggleCell: UITableViewCell, expandedCell: UITableViewCell, tableView: UITableView, sectionArray: TableViewSectionArray) {
+	public static func execute(toggleCell: UITableViewCell, expandedCell: UITableViewCell, tableView: UITableView, sectionArray: RFTableViewSectionArray) {
 		//SwiftyFormLog("will expand collapse")
 
 		// If the expanded cell already is visible then collapse it
@@ -78,7 +78,7 @@ struct WhatToCollapse {
 	let isCollapse: Bool
 
 	/// If the expanded cell already is visible then collapse it
-	static func process(toggleCell: UITableViewCell, expandedCell: UITableViewCell, sectionArray: TableViewSectionArray) -> WhatToCollapse {
+	static func process(toggleCell: UITableViewCell, expandedCell: UITableViewCell, sectionArray: RFTableViewSectionArray) -> WhatToCollapse {
 		//debugPrint(sectionArray)
 
 		var indexPaths = [IndexPath]()
@@ -123,7 +123,7 @@ struct WhatToExpand {
 	let indexPaths: [IndexPath]
 
 	/// If the expanded cell is hidden then expand it
-	static func process(expandedCell: UITableViewCell, sectionArray: TableViewSectionArray, isCollapse: Bool) -> WhatToExpand {
+	static func process(expandedCell: UITableViewCell, sectionArray: RFTableViewSectionArray, isCollapse: Bool) -> WhatToExpand {
 
 		if isCollapse {
 			return WhatToExpand(indexPaths: [])

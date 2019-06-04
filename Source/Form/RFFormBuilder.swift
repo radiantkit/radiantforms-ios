@@ -61,7 +61,7 @@ public class RFFormBuilder {
 		return RFDumpVisitor.dump(prettyPrinted, items: innerItems)
 	}
 
-	public func result(_ viewController: UIViewController) -> TableViewSectionArray {
+	public func result(_ viewController: UIViewController) -> RFTableViewSectionArray {
 		let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
 
 		let v = RFPopulateTableView(model: model)
@@ -92,7 +92,7 @@ public class RFFormBuilder {
 			}
 		}
 
-		return TableViewSectionArray(sections: v.sections)
+		return RFTableViewSectionArray(sections: v.sections)
 	}
 
 	public func validateAndUpdateUI() {

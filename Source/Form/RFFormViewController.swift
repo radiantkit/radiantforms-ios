@@ -2,7 +2,7 @@
 import UIKit
 
 open class RFFormViewController: UIViewController {
-	public var dataSource: TableViewSectionArray?
+	public var dataSource: RFTableViewSectionArray?
 	public var keyboardHandler: RFKeyboardHandler?
 
 	public init() {

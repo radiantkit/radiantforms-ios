@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class TableViewSectionArray: NSObject {
+public class RFTableViewSectionArray: NSObject {
 	public let sections: [RFTableViewSection]
 
 	public init(sections: [RFTableViewSection]) {
@@ -75,7 +75,7 @@ public class TableViewSectionArray: NSObject {
 	}
 }
 
-extension TableViewSectionArray: UITableViewDataSource {
+extension RFTableViewSectionArray: UITableViewDataSource {
 	public func numberOfSections(in tableView: UITableView) -> Int {
 		let returnValue = sections.count
 		trace(returnValue)
@@ -107,7 +107,7 @@ extension TableViewSectionArray: UITableViewDataSource {
 	}
 }
 
-extension TableViewSectionArray: UITableViewDelegate {
+extension RFTableViewSectionArray: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
             SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
@@ -194,7 +194,7 @@ extension TableViewSectionArray: UITableViewDelegate {
 	}
 }
 
-extension TableViewSectionArray: UIScrollViewDelegate {
+extension RFTableViewSectionArray: UIScrollViewDelegate {
 	/// hide keyboard when the user starts scrolling
 	public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		guard let responder = scrollView.form_firstResponder() else {
@@ -219,3 +219,6 @@ extension TableViewSectionArray: UIScrollViewDelegate {
 		return true
 	}
 }
+
+@available(*, unavailable, renamed: "RFTableViewSectionArray")
+typealias TableViewSectionArray = RFTableViewSectionArray
