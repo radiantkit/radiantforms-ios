@@ -104,7 +104,7 @@
 		4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286832B1B346CFE0028DB2F /* UIViewController+Alert.swift */; };
 		428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683601B346D0C0028DB2F /* PrevNextTests.swift */; };
 		428683661B346D0C0028DB2F /* RFValidateResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683611B346D0C0028DB2F /* RFValidateResultTests.swift */; };
-		428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* ValidatorTests.swift */; };
+		428683671B346D0C0028DB2F /* RFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* RFValidatorTests.swift */; };
 		42B060F92292913900FD4585 /* RFTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* RFTheme.swift */; };
 		42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */; };
 		42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */; };
@@ -232,7 +232,7 @@
 		4286835F1B346D0C0028DB2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428683601B346D0C0028DB2F /* PrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrevNextTests.swift; sourceTree = "<group>"; };
 		428683611B346D0C0028DB2F /* RFValidateResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFValidateResultTests.swift; sourceTree = "<group>"; };
-		428683621B346D0C0028DB2F /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
+		428683621B346D0C0028DB2F /* RFValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFValidatorTests.swift; sourceTree = "<group>"; };
 		42B060F82292913900FD4585 /* RFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTheme.swift; sourceTree = "<group>"; };
 		42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFThemeBuilder.swift; sourceTree = "<group>"; };
@@ -455,8 +455,8 @@
 				4280F721226F4C340098EF22 /* RFAmountCellTests.swift */,
 				4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */,
 				428683611B346D0C0028DB2F /* RFValidateResultTests.swift */,
+				428683621B346D0C0028DB2F /* RFValidatorTests.swift */,
 				4245B3EA1DA429B500BCB4C7 /* Specification */,
-				428683621B346D0C0028DB2F /* ValidatorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -687,7 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */,
+				428683671B346D0C0028DB2F /* RFValidatorTests.swift in Sources */,
 				4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */,
 				42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */,
 				4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */,

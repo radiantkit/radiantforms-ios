@@ -3,7 +3,7 @@ import UIKit
 import XCTest
 @testable import SwiftyFORM
 
-class ValidatorTests: XCTestCase {
+class RFValidatorTests: XCTestCase {
 
     func testExample() {
 		let builder = RFValidatorBuilder()
