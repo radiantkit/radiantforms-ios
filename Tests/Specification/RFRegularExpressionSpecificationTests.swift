@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class RegularExpressionSpecificationTests: XCTestCase {
+class RFRegularExpressionSpecificationTests: XCTestCase {
 	
 	func testSimple() {
 		let spec = RFRegularExpressionSpecification(pattern: "^\\d+$")
