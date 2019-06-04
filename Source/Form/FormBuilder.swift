@@ -58,7 +58,7 @@ public class FormBuilder {
 	}
 
 	public func dump(_ prettyPrinted: Bool = true) -> Data {
-		return DumpVisitor.dump(prettyPrinted, items: innerItems)
+		return RFDumpVisitor.dump(prettyPrinted, items: innerItems)
 	}
 
 	public func result(_ viewController: UIViewController) -> TableViewSectionArray {

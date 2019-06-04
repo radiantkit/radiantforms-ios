@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class DumpVisitor: FormItemVisitor {
+public class RFDumpVisitor: FormItemVisitor {
 	private typealias StringToAny = [String: Any?]
 
 	public init() {
@@ -11,7 +11,7 @@ public class DumpVisitor: FormItemVisitor {
 		var result = [StringToAny]()
 		var rowNumber: Int = 0
 		for item in items {
-			let dumpVisitor = DumpVisitor()
+			let dumpVisitor = RFDumpVisitor()
 			item.accept(visitor: dumpVisitor)
 
 			var dict = StringToAny()
@@ -36,7 +36,7 @@ public class DumpVisitor: FormItemVisitor {
 			rowNumber += 1
 		}
 
-		return JSONHelper.convert(result, prettyPrinted: prettyPrinted)
+		return RFJSONHelper.convert(result, prettyPrinted: prettyPrinted)
 	}
 
 	private var dict = StringToAny()
@@ -239,7 +239,7 @@ public class DumpVisitor: FormItemVisitor {
 	}
 }
 
-internal struct JSONHelper {
+internal struct RFJSONHelper {
 
 	/// Convert from a complex object to a simpler json object.
 	///
@@ -327,3 +327,6 @@ internal struct JSONHelper {
 		return Data()
 	}
 }
+
+@available(*, unavailable, renamed: "RFDumpVisitor")
+typealias DumpVisitor = RFDumpVisitor
