@@ -174,7 +174,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider,
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -279,7 +279,7 @@ extension RFPrecisionSliderCellModel {
 Row containing only a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
-public class RFPrecisionSliderExpandedCell: UITableViewCell, RFCellHeightProvider, ExpandedCell {
+public class RFPrecisionSliderExpandedCell: UITableViewCell, RFCellHeightProvider, RFExpandedCell {
 	weak var collapsedCell: RFPrecisionSliderToggleCell?
 
 	public var toggleCell: UITableViewCell? {

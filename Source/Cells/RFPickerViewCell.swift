@@ -137,7 +137,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -295,7 +295,7 @@ extension RFPickerViewExpandedCell: WillDisplayCellDelegate {
 	}
 }
 
-extension RFPickerViewExpandedCell: ExpandedCell {
+extension RFPickerViewExpandedCell: RFExpandedCell {
 	public var toggleCell: UITableViewCell? {
 		return collapsedCell
 	}

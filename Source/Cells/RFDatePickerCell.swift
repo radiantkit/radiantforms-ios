@@ -179,7 +179,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -254,7 +254,7 @@ extension RFDatePickerToggleCell: WillDisplayCellDelegate {
 
 Row containing only a `UIDatePicker`
 */
-public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
+public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, WillDisplayCellDelegate, RFExpandedCell {
 	weak var collapsedCell: RFDatePickerToggleCell?
 
 	public var toggleCell: UITableViewCell? {
