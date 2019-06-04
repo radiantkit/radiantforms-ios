@@ -2,9 +2,9 @@
 import UIKit
 import SwiftyFORM
 
-class GhostsViewController: FormViewController {
+class GhostsViewController: RFFormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Ghosts"
 		builder.toolbarMode = .none
 		builder += SectionHeaderTitleFormItem().title("Scary")

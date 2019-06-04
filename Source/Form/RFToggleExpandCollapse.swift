@@ -1,19 +1,19 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public protocol ExpandedCell {
+public protocol RFExpandedCell {
 	var toggleCell: UITableViewCell? { get }
 
 	// `false` when its behavior is AlwaysExpanded, in this case we don't want it collapsed
 	var isCollapsable: Bool { get }
 }
 
-public struct ToggleExpandCollapse {
-	public static func execute(toggleCell: UITableViewCell, expandedCell: UITableViewCell, tableView: UITableView, sectionArray: TableViewSectionArray) {
+public struct RFToggleExpandCollapse {
+	public static func execute(toggleCell: UITableViewCell, expandedCell: UITableViewCell, tableView: UITableView, sectionArray: RFTableViewSectionArray) {
 		//SwiftyFormLog("will expand collapse")
 
 		// If the expanded cell already is visible then collapse it
-		let whatToCollapse = WhatToCollapse.process(
+		let whatToCollapse = RFWhatToCollapse.process(
 			toggleCell: toggleCell,
 			expandedCell: expandedCell,
 			sectionArray: sectionArray
@@ -23,7 +23,7 @@ public struct ToggleExpandCollapse {
 		if !whatToCollapse.indexPaths.isEmpty {
 
 			for cell in whatToCollapse.toggleCells {
-				if let cell2 = cell as? AssignAppearance {
+				if let cell2 = cell as? RFAssignAppearance {
 					cell2.assignDefaultColors()
 				}
 			}
@@ -34,7 +34,7 @@ public struct ToggleExpandCollapse {
 		}
 
 		// If the expanded cell is hidden then expand it
-		let whatToExpand = WhatToExpand.process(
+		let whatToExpand = RFWhatToExpand.process(
 			expandedCell: expandedCell,
 			sectionArray: sectionArray,
 			isCollapse: whatToCollapse.isCollapse
@@ -48,7 +48,7 @@ public struct ToggleExpandCollapse {
 				toggleIndexPath = sectionArray.indexPathForItem(item)
 			}
 
-			if let cell = toggleCell as? AssignAppearance {
+			if let cell = toggleCell as? RFAssignAppearance {
 				cell.assignTintColors()
 			}
 
@@ -72,13 +72,13 @@ public struct ToggleExpandCollapse {
 	}
 }
 
-struct WhatToCollapse {
+struct RFWhatToCollapse {
 	let indexPaths: [IndexPath]
 	let toggleCells: [UITableViewCell]
 	let isCollapse: Bool
 
 	/// If the expanded cell already is visible then collapse it
-	static func process(toggleCell: UITableViewCell, expandedCell: UITableViewCell, sectionArray: TableViewSectionArray) -> WhatToCollapse {
+	static func process(toggleCell: UITableViewCell, expandedCell: UITableViewCell, sectionArray: RFTableViewSectionArray) -> RFWhatToCollapse {
 		//debugPrint(sectionArray)
 
 		var indexPaths = [IndexPath]()
@@ -97,7 +97,7 @@ struct WhatToCollapse {
 					isCollapse = true
 					continue
 				}
-				if let expandedCell2 = item.cell as? ExpandedCell, expandedCell2.isCollapsable {
+				if let expandedCell2 = item.cell as? RFExpandedCell, expandedCell2.isCollapsable {
 					if let toggleCell2 = expandedCell2.toggleCell {
 						//print("\(sectionIndex) \(row)  this is a toggle cell to be collapsed")
 						item.hidden = true
@@ -115,26 +115,26 @@ struct WhatToCollapse {
 			//print("reloaded visible items  \(count0) -> \(count1)")
 			//debugPrint(sectionArray)
 		}
-		return WhatToCollapse(indexPaths: indexPaths, toggleCells: toggleCells, isCollapse: isCollapse)
+		return RFWhatToCollapse(indexPaths: indexPaths, toggleCells: toggleCells, isCollapse: isCollapse)
 	}
 }
 
-struct WhatToExpand {
+struct RFWhatToExpand {
 	let indexPaths: [IndexPath]
 
 	/// If the expanded cell is hidden then expand it
-	static func process(expandedCell: UITableViewCell, sectionArray: TableViewSectionArray, isCollapse: Bool) -> WhatToExpand {
+	static func process(expandedCell: UITableViewCell, sectionArray: RFTableViewSectionArray, isCollapse: Bool) -> RFWhatToExpand {
 
 		if isCollapse {
-			return WhatToExpand(indexPaths: [])
+			return RFWhatToExpand(indexPaths: [])
 		}
 
 		guard let item = sectionArray.findItem(expandedCell) else {
-			return WhatToExpand(indexPaths: [])
+			return RFWhatToExpand(indexPaths: [])
 		}
 
 		if !item.hidden {
-			return WhatToExpand(indexPaths: [])
+			return RFWhatToExpand(indexPaths: [])
 		}
 
 		// The expanded cell is hidden. Make it visible
@@ -144,9 +144,22 @@ struct WhatToExpand {
 
 		guard let indexPath = sectionArray.indexPathForItem(item) else {
 			print("ERROR: Expected indexPath, but got nil. At this point the item is supposed to be visible")
-			return WhatToExpand(indexPaths: [])
+			return RFWhatToExpand(indexPaths: [])
 		}
 
-		return WhatToExpand(indexPaths: [indexPath])
+		return RFWhatToExpand(indexPaths: [indexPath])
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFExpandedCell")
+typealias ExpandedCell = RFExpandedCell
+
+@available(*, unavailable, renamed: "RFToggleExpandCollapse")
+typealias ToggleExpandCollapse = RFToggleExpandCollapse
+
+@available(*, unavailable, renamed: "RFWhatToCollapse")
+typealias WhatToCollapse = RFWhatToCollapse
+
+@available(*, unavailable, renamed: "RFWhatToExpand")
+typealias WhatToExpand = RFWhatToExpand

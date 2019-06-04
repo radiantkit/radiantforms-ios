@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class FormTableView: UITableView {
+public class RFFormTableView: UITableView {
 	public init() {
 		super.init(frame: CGRect.zero, style: .grouped)
 		contentInset = UIEdgeInsets.zero
@@ -22,7 +22,7 @@ public class FormTableView: UITableView {
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
 
         do {
-            let appearanceProxy: FormTableView = FormTableView.appearance(whenContainedInInstancesOf: containerTypes)
+            let appearanceProxy: RFFormTableView = RFFormTableView.appearance(whenContainedInInstancesOf: containerTypes)
             appearanceProxy.sectionHeader_textLabel_textColor = theme.sectionHeader.textLabel_textColor
             appearanceProxy.sectionFooter_textLabel_textColor = theme.sectionFooter.textLabel_textColor
             appearanceProxy.backgroundColor = theme.tableViewBackground.color
@@ -30,13 +30,13 @@ public class FormTableView: UITableView {
         }
 
         do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
+            let allContainerTypes: [UIAppearanceContainer.Type] = [RFFormTableView.self] + containerTypes
             let appearanceProxy: UITableViewCell = UITableViewCell.appearance(whenContainedInInstancesOf: allContainerTypes)
             appearanceProxy.backgroundColor = theme.cellBackground.color
         }
 
         do {
-            let allContainerTypes: [UIAppearanceContainer.Type] = [FormTableView.self] + containerTypes
+            let allContainerTypes: [UIAppearanceContainer.Type] = [RFFormTableView.self] + containerTypes
             RFAmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFDatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
@@ -48,3 +48,6 @@ public class FormTableView: UITableView {
         }
     }
 }
+
+@available(*, unavailable, renamed: "RFFormTableView")
+typealias FormTableView = RFFormTableView

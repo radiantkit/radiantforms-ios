@@ -122,12 +122,12 @@ class RFAmountCellTests: XCTestCase {
     // MARK: - Helper
     
     func createCell(_ formItem: AmountFormItem) -> RFAmountCell {
-        let populateTableViewModel = PopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
-        let populateTableView = PopulateTableView(model: populateTableViewModel)
+        let populateTableViewModel = RFPopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
+        let populateTableView = RFPopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)
         formItem.accept(visitor: populateTableView)
         assert(populateTableView.cells.allItems.count == 1)
-        guard let item: TableViewCellArrayItem = populateTableView.cells.allItems.first else {
+        guard let item: RFTableViewCellArrayItem = populateTableView.cells.allItems.first else {
             fatalError("Expected PopulateTableView to have created at least 1 item")
         }
         guard let cell: RFAmountCell = item.cell as? RFAmountCell else {

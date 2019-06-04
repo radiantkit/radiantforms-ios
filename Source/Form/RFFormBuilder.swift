@@ -1,21 +1,21 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-class AlignLeft {
+class RFAlignLeft {
 	fileprivate let items: [FormItem]
 	init(items: [FormItem]) {
 		self.items = items
 	}
 }
 
-public enum ToolbarMode {
+public enum RFToolbarMode {
 	case none
 	case simple
 }
 
-public class FormBuilder {
+public class RFFormBuilder {
 	private var innerItems = [FormItem]()
-	private var alignLeftItems = [AlignLeft]()
+	private var alignLeftItems = [RFAlignLeft]()
 
 	public init() {
 	}
@@ -25,7 +25,7 @@ public class FormBuilder {
 
 	public var navigationTitle: String?
 
-	public var toolbarMode: ToolbarMode = .none
+	public var toolbarMode: RFToolbarMode = .none
 
 	public var suppressHeaderForFirstSection = false
 
@@ -44,7 +44,7 @@ public class FormBuilder {
 	}
 
 	public func alignLeft(_ items: [FormItem]) {
-		let alignLeftItem = AlignLeft(items: items)
+		let alignLeftItem = RFAlignLeft(items: items)
 		alignLeftItems.append(alignLeftItem)
 	}
 
@@ -58,13 +58,13 @@ public class FormBuilder {
 	}
 
 	public func dump(_ prettyPrinted: Bool = true) -> Data {
-		return DumpVisitor.dump(prettyPrinted, items: innerItems)
+		return RFDumpVisitor.dump(prettyPrinted, items: innerItems)
 	}
 
-	public func result(_ viewController: UIViewController) -> TableViewSectionArray {
-		let model = PopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
+	public func result(_ viewController: UIViewController) -> RFTableViewSectionArray {
+		let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
 
-		let v = PopulateTableView(model: model)
+		let v = RFPopulateTableView(model: model)
 		if suppressHeaderForFirstSection {
 			v.installZeroHeightHeader()
 		}
@@ -78,7 +78,7 @@ public class FormBuilder {
 
 		for alignLeftItem in alignLeftItems {
 			let widthArray: [CGFloat] = alignLeftItem.items.map {
-				let v = ObtainTitleWidth()
+				let v = RFObtainTitleWidth()
 				$0.accept(visitor: v)
 				return v.width
 			}
@@ -87,16 +87,16 @@ public class FormBuilder {
 			//SwiftyFormLog("max width: \(width)")
 
 			for item in alignLeftItem.items {
-				let v = AssignTitleWidth(width: width)
+				let v = RFAssignTitleWidth(width: width)
 				item.accept(visitor: v)
 			}
 		}
 
-		return TableViewSectionArray(sections: v.sections)
+		return RFTableViewSectionArray(sections: v.sections)
 	}
 
 	public func validateAndUpdateUI() {
-		ReloadPersistentValidationStateVisitor.validateAndUpdateUI(innerItems)
+		RFReloadPersistentValidationStateVisitor.validateAndUpdateUI(innerItems)
 	}
 
 	public enum FormValidateResult {
@@ -106,7 +106,7 @@ public class FormBuilder {
 
 	public func validate() -> FormValidateResult {
 		for item in innerItems {
-			let v = ValidateVisitor()
+			let v = RFValidateVisitor()
 			item.accept(visitor: v)
 			switch v.result {
 			case .valid:
@@ -125,6 +125,15 @@ public class FormBuilder {
 
 }
 
-public func += (left: FormBuilder, right: FormItem) {
+public func += (left: RFFormBuilder, right: FormItem) {
 	left.append(right)
 }
+
+@available(*, unavailable, renamed: "RFAlignLeft")
+typealias AlignLeft = RFAlignLeft
+
+@available(*, unavailable, renamed: "RFToolbarMode")
+typealias ToolbarMode = RFToolbarMode
+
+@available(*, unavailable, renamed: "RFFormBuilder")
+typealias FormBuilder = RFFormBuilder

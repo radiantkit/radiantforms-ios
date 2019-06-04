@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class DatePickerRangeViewController: FormViewController {
+class DatePickerRangeViewController: RFFormViewController {
 	lazy var datePicker_time_min: DatePickerFormItem = {
 		let instance = DatePickerFormItem()
 		instance.title = "Time"
@@ -87,7 +87,7 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Range"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with range")

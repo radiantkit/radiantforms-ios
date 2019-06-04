@@ -2,13 +2,13 @@
 import UIKit
 import SwiftyFORM
 
-class SignUpViewController: FormViewController {
+class SignUpViewController: RFFormViewController {
 	override func loadView() {
 		super.loadView()
 		form_installSubmitButton()
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Sign Up"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("SocialNetwork 123\nSign up form")
@@ -43,7 +43,7 @@ class SignUpViewController: FormViewController {
 	lazy var maleOrFemale: ViewControllerFormItem = {
 		let instance = ViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
-		instance.createViewController = { (dismissCommand: CommandProtocol) in
+		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = MaleFemaleViewController(dismissCommand: dismissCommand)
 			return vc
 		}

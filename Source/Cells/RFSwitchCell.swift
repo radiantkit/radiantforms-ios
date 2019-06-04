@@ -51,7 +51,7 @@ public class RFSwitchCell: UITableViewCell {
 	}
 }
 
-extension RFSwitchCell: WillDisplayCellDelegate {
+extension RFSwitchCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
         self.switchView.onTintColor = self.switch_onTintColor

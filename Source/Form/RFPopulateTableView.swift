@@ -1,11 +1,11 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-protocol WillPopCommandProtocol {
+protocol RFWillPopCommandProtocol {
 	func execute(_ context: ViewControllerFormItemPopContext)
 }
 
-class WillPopCustomViewController: WillPopCommandProtocol {
+class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 	let object: AnyObject
 	init(object: AnyObject) {
 		self.object = object
@@ -19,7 +19,7 @@ class WillPopCustomViewController: WillPopCommandProtocol {
 	}
 }
 
-class WillPopOptionViewController: WillPopCommandProtocol {
+class RFWillPopOptionViewController: RFWillPopCommandProtocol {
 	let object: ViewControllerFormItem
 	init(object: ViewControllerFormItem) {
 		self.object = object
@@ -30,18 +30,18 @@ class WillPopOptionViewController: WillPopCommandProtocol {
 	}
 }
 
-struct PopulateTableViewModel {
+struct RFPopulateTableViewModel {
 	var viewController: UIViewController
-	var toolbarMode: ToolbarMode
+	var toolbarMode: RFToolbarMode
 }
 
-class PopulateTableView: FormItemVisitor {
-	let model: PopulateTableViewModel
+class RFPopulateTableView: FormItemVisitor {
+	let model: RFPopulateTableViewModel
 
-	var cells: TableViewCellArray = TableViewCellArray.createEmpty()
-	var sections = [TableViewSection]()
-	var header = TableViewSectionPart.systemDefault
-	var footer = TableViewSectionPart.systemDefault
+	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()
+	var sections = [RFTableViewSection]()
+	var header = RFTableViewSectionPart.systemDefault
+	var footer = RFTableViewSectionPart.systemDefault
 
 	enum LastItemType {
 		case beginning
@@ -51,7 +51,7 @@ class PopulateTableView: FormItemVisitor {
 	}
 	var lastItemType = LastItemType.beginning
 
-	init(model: PopulateTableViewModel) {
+	init(model: RFPopulateTableViewModel) {
 		self.model = model
 	}
 
@@ -62,12 +62,12 @@ class PopulateTableView: FormItemVisitor {
 
 	func closeSection() {
 		cells.reloadVisibleItems()
-		let section = TableViewSection(cells: cells, header: header, footer: footer)
+		let section = RFTableViewSection(cells: cells, header: header, footer: footer)
 		sections.append(section)
 
-		cells = TableViewCellArray.createEmpty()
-		header = TableViewSectionPart.systemDefault
-		footer = TableViewSectionPart.systemDefault
+		cells = RFTableViewCellArray.createEmpty()
+		header = RFTableViewSectionPart.systemDefault
+		footer = RFTableViewSectionPart.systemDefault
 	}
 
 	func closeLastSection() {
@@ -295,7 +295,7 @@ class PopulateTableView: FormItemVisitor {
 		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")
 			if let vc = weakViewController {
-				if let x = vc as? SelectOptionDelegate {
+				if let x = vc as? RFSelectOptionDelegate {
 					x.form_willSelectOption(option: object)
 				}
 			}
@@ -369,9 +369,9 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: SectionFooterTitleFormItem) {
 		if let title = object.title {
-			footer = TableViewSectionPart.titleString(string: title)
+			footer = RFTableViewSectionPart.titleString(string: title)
 		} else {
-			footer = TableViewSectionPart.systemDefault
+			footer = RFTableViewSectionPart.systemDefault
 		}
 		closeSection()
 		lastItemType = .sectionEnd
@@ -381,9 +381,9 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: SectionFooterViewFormItem) {
 		if let view: UIView = object.viewBlock?() {
-			footer = TableViewSectionPart.titleView(view: view)
+			footer = RFTableViewSectionPart.titleView(view: view)
 		} else {
-			footer = TableViewSectionPart.systemDefault
+			footer = RFTableViewSectionPart.systemDefault
 		}
 		closeSection()
 		lastItemType = .sectionEnd
@@ -420,9 +420,9 @@ class PopulateTableView: FormItemVisitor {
 		}
 
 		if let title = object.title {
-			header = TableViewSectionPart.titleString(string: title)
+			header = RFTableViewSectionPart.titleString(string: title)
 		} else {
-			header = TableViewSectionPart.systemDefault
+			header = RFTableViewSectionPart.systemDefault
 		}
 		lastItemType = .header
 	}
@@ -442,9 +442,9 @@ class PopulateTableView: FormItemVisitor {
 		}
 
 		if let view: UIView = object.viewBlock?() {
-			header = TableViewSectionPart.titleView(view: view)
+			header = RFTableViewSectionPart.titleView(view: view)
 		} else {
-			header = TableViewSectionPart.systemDefault
+			header = RFTableViewSectionPart.systemDefault
 		}
 		lastItemType = .header
 	}
@@ -673,13 +673,13 @@ class PopulateTableView: FormItemVisitor {
 
 	func visit(object: ViewControllerFormItem) {
 		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
-		let willPopViewController = WillPopCustomViewController(object: object)
+		let willPopViewController = RFWillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController
 		let cell = RFViewControllerCell(model: model) { (cell: RFViewControllerCell, _: RFViewControllerCellModel) in
 			SwiftyFormLog("push")
 			if let vc = weakViewController {
-				let dismissCommand = PopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
+				let dismissCommand = RFPopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
 				if let childViewController = object.createViewController?(dismissCommand) {
 					vc.navigationController?.pushViewController(childViewController, animated: true)
 				}
@@ -689,9 +689,9 @@ class PopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	class func prepareDismissCommand(_ willPopCommand: WillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> CommandProtocol {
+	class func prepareDismissCommand(_ willPopCommand: RFWillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> RFCommandProtocol {
 		weak var weakViewController = parentViewController
-		let command = CommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
+		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
 			if let vc = weakViewController {
 				let context = ViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
@@ -750,3 +750,19 @@ class PopulateTableView: FormItemVisitor {
 		}
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFWillPopCommandProtocol")
+typealias WillPopCommandProtocol = RFWillPopCommandProtocol
+
+@available(*, unavailable, renamed: "RFWillPopCustomViewController")
+typealias WillPopCustomViewController = RFWillPopCustomViewController
+
+@available(*, unavailable, renamed: "RFWillPopOptionViewController")
+typealias WillPopOptionViewController = RFWillPopOptionViewController
+
+@available(*, unavailable, renamed: "RFPopulateTableViewModel")
+typealias PopulateTableViewModel = RFPopulateTableViewModel
+
+@available(*, unavailable, renamed: "RFPopulateTableView")
+typealias PopulateTableView = RFPopulateTableView

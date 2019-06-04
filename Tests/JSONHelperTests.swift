@@ -4,12 +4,12 @@ import XCTest
 
 class JSONHelperTests: XCTestCase {
     func testNil() {
-		let value = JSONHelper.process(nil)
+		let value = RFJSONHelper.process(nil)
 		XCTAssertTrue(value is NSNull)
     }
     
 	func testNSNull() {
-		let value = JSONHelper.process(NSNull())
+		let value = RFJSONHelper.process(NSNull())
 		XCTAssertTrue(value is NSNull)
 	}
 	
@@ -24,19 +24,19 @@ class JSONHelperTests: XCTestCase {
 			return
 		}
 		let value: Any?? = dict2["id"]
-		let processedValue = JSONHelper.process(value!)
+		let processedValue = RFJSONHelper.process(value!)
 		XCTAssertTrue(processedValue is NSNull)
 	}
 	
 	func testInteger() {
 		let i: Int = 123
-		let value = JSONHelper.process(i)
+		let value = RFJSONHelper.process(i)
 		XCTAssertTrue(value is Int)
 	}
 	
 	func testString() {
 		let s: String = "hello"
-		let value = JSONHelper.process(s)
+		let value = RFJSONHelper.process(s)
 		XCTAssertTrue(value is String)
 	}
 }

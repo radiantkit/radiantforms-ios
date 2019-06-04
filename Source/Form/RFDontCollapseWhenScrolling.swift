@@ -7,4 +7,8 @@ import UIKit
 Use this protocol for cells that shouldn't be collapsed when the user scrolls.
 This is usually inline controls, such as inline date pickers.
 */
-public protocol DontCollapseWhenScrolling {}
+public protocol RFDontCollapseWhenScrolling {}
+
+
+@available(*, unavailable, renamed: "RFDontCollapseWhenScrolling")
+typealias DontCollapseWhenScrolling = RFDontCollapseWhenScrolling

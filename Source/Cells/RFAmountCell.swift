@@ -16,7 +16,7 @@ public class RFAmountCellSizes {
 public struct RFAmountCellModel {
     var numberFormatter: NumberFormatter! = nil
     var title: String = ""
-    var toolbarMode: ToolbarMode = .simple
+    var toolbarMode: RFToolbarMode = .simple
     var placeholder: String = ""
     var unitSuffix: String = ""
     var returnKeyType: UIReturnKeyType = .default
@@ -352,7 +352,7 @@ extension RFAmountCell: UITextFieldDelegate {
     }
 }
 
-extension RFAmountCell: CellHeightProvider {
+extension RFAmountCell: RFCellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: RFAmountCellSizes = compute()
         let value = sizes.cellHeight
@@ -361,7 +361,7 @@ extension RFAmountCell: CellHeightProvider {
     }
 }
 
-extension RFAmountCell: WillDisplayCellDelegate {
+extension RFAmountCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         self.rightView.textColor = self.rightView_textColor

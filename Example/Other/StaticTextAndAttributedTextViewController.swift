@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class StaticTextAndAttributedTextViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class StaticTextAndAttributedTextViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Text"
 		builder.toolbarMode = .none
 

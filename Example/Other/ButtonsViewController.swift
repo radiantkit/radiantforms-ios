@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class ButtonsViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class ButtonsViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Buttons"
 		builder.toolbarMode = .none
 		builder += SectionHeaderTitleFormItem().title("Toggle Buttons")
@@ -20,7 +20,7 @@ class ButtonsViewController: FormViewController {
         builder += style
 	}
     
-    override func postPopulate(_ builder: FormBuilder) {
+    override func postPopulate(_ builder: RFFormBuilder) {
         // Configure initially visible/hidden FormItems
         alertButton2.isHidden = true
     }

@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class TextFieldKeyboardTypesViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class TextFieldKeyboardTypesViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Keyboard Types"
 		builder.toolbarMode = .none
 		builder.demo_showInfo("Shows all the UIKeyboardType variants")

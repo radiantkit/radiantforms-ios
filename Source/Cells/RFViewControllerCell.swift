@@ -38,7 +38,7 @@ public class RFViewControllerCell: UITableViewCell {
     }
 }
 
-extension RFViewControllerCell: SelectRowDelegate {
+extension RFViewControllerCell: RFSelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		SwiftyFormLog("will invoke")
 		// hide keyboard when the user taps this kind of row
@@ -49,7 +49,7 @@ extension RFViewControllerCell: SelectRowDelegate {
 	}
 }
 
-extension RFViewControllerCell: WillDisplayCellDelegate {
+extension RFViewControllerCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
     }

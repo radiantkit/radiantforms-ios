@@ -1,8 +1,8 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-class ValidateVisitor: FormItemVisitor {
-	var result = ValidateResult.valid
+class RFValidateVisitor: FormItemVisitor {
+	var result = RFValidateResult.valid
 
 	func visit(object: TextFieldFormItem) {
 		result = object.submitValidateValueText()
@@ -31,3 +31,6 @@ class ValidateVisitor: FormItemVisitor {
 	func visit(object: TextViewFormItem) {}
 	func visit(object: ViewControllerFormItem) {}
 }
+
+@available(*, unavailable, renamed: "RFValidateVisitor")
+typealias ValidateVisitor = RFValidateVisitor

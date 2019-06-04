@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-class OptionListViewController: FormViewController, SelectOptionDelegate {
+class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
 	typealias SelectOptionHandler = (OptionRowModel) -> Void
 	let optionField: OptionPickerFormItem
 	let selectOptionHandler: SelectOptionHandler
@@ -16,7 +16,7 @@ class OptionListViewController: FormViewController, SelectOptionDelegate {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		SwiftyFormLog("preselect option \(String(describing: optionField.selected?.title))")
 		builder.navigationTitle = optionField.title
 		for optionRow: OptionRowModel in optionField.options {
@@ -36,5 +36,8 @@ class OptionListViewController: FormViewController, SelectOptionDelegate {
 		SwiftyFormLog("select option \(option.title)")
 		selectOptionHandler(selected)
 	}
-
 }
+
+
+@available(*, unavailable, renamed: "RFOptionListViewController")
+typealias OptionListViewController = RFOptionListViewController

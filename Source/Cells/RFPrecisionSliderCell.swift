@@ -57,7 +57,7 @@ public struct RFPrecisionSliderCellFormatter {
 
 This causes the inline precision slider to expand/collapse
 */
-public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider, RFSelectRowDelegate, RFDontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPrecisionSliderExpandedCell?
 	public let model: RFPrecisionSliderCellModel
 
@@ -152,7 +152,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, S
 	// MARK: Expand collapse
 
 	var isExpandedCellVisible: Bool {
-		guard let sectionArray = form_tableView()?.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = form_tableView()?.dataSource as? RFTableViewSectionArray else {
 			return false
 		}
 		guard let expandedItem = sectionArray.findItem(expandedCell) else {
@@ -168,13 +168,13 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, S
 		guard let tableView = form_tableView() else {
 			return
 		}
-		guard let sectionArray = tableView.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
 			return
 		}
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -196,7 +196,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, S
 		}
 	}
 
-	// MARK: AssignAppearance
+	// MARK: RFAssignAppearance
 
 	public func assignDefaultColors() {
 		textLabel?.textColor = UIColor.black
@@ -279,7 +279,7 @@ extension RFPrecisionSliderCellModel {
 Row containing only a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
-public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, ExpandedCell {
+public class RFPrecisionSliderExpandedCell: UITableViewCell, RFCellHeightProvider, RFExpandedCell {
 	weak var collapsedCell: RFPrecisionSliderToggleCell?
 
 	public var toggleCell: UITableViewCell? {

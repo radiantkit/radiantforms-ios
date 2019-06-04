@@ -1,15 +1,15 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class TableViewSectionArray: NSObject {
-	public let sections: [TableViewSection]
+public class RFTableViewSectionArray: NSObject {
+	public let sections: [RFTableViewSection]
 
-	public init(sections: [TableViewSection]) {
+	public init(sections: [RFTableViewSection]) {
 		self.sections = sections
 		super.init()
 	}
 
-	func findItem(_ cell: UITableViewCell?) -> TableViewCellArrayItem? {
+	func findItem(_ cell: UITableViewCell?) -> RFTableViewCellArrayItem? {
 		for section in sections {
 			for item in section.cells.allItems {
 				if item.cell === cell {
@@ -20,7 +20,7 @@ public class TableViewSectionArray: NSObject {
 		return nil
 	}
 
-	func findVisibleItem(indexPath: IndexPath) -> TableViewCellArrayItem? {
+	func findVisibleItem(indexPath: IndexPath) -> RFTableViewCellArrayItem? {
 		guard indexPath.section >= 0 else { return nil }
 		guard indexPath.row >= 0 else { return nil }
 		guard indexPath.section < sections.count else { return nil }
@@ -30,7 +30,7 @@ public class TableViewSectionArray: NSObject {
 		return items[indexPath.row]
 	}
 
-	func indexPathForItem(_ findItem: TableViewCellArrayItem) -> IndexPath? {
+	func indexPathForItem(_ findItem: RFTableViewCellArrayItem) -> IndexPath? {
 		for (sectionIndex, section) in sections.enumerated() {
 			for (rowIndex, item) in section.cells.visibleItems.enumerated() {
 				if item === findItem {
@@ -75,7 +75,7 @@ public class TableViewSectionArray: NSObject {
 	}
 }
 
-extension TableViewSectionArray: UITableViewDataSource {
+extension RFTableViewSectionArray: UITableViewDataSource {
 	public func numberOfSections(in tableView: UITableView) -> Int {
 		let returnValue = sections.count
 		trace(returnValue)
@@ -107,10 +107,10 @@ extension TableViewSectionArray: UITableViewDataSource {
 	}
 }
 
-extension TableViewSectionArray: UITableViewDelegate {
+extension RFTableViewSectionArray: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let formTableView: FormTableView = tableView as? FormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+        guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
@@ -126,8 +126,8 @@ extension TableViewSectionArray: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        guard let formTableView: FormTableView = tableView as? FormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+        guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let footer: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
@@ -194,14 +194,14 @@ extension TableViewSectionArray: UITableViewDelegate {
 	}
 }
 
-extension TableViewSectionArray: UIScrollViewDelegate {
+extension RFTableViewSectionArray: UIScrollViewDelegate {
 	/// hide keyboard when the user starts scrolling
 	public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		guard let responder = scrollView.form_firstResponder() else {
 			return
 		}
 
-		if responder is DontCollapseWhenScrolling {
+		if responder is RFDontCollapseWhenScrolling {
 			// Don't collapse inline controls, such as inline date pickers, 
 			// since there are more screen estate for the user to move around.
 			return
@@ -219,3 +219,6 @@ extension TableViewSectionArray: UIScrollViewDelegate {
 		return true
 	}
 }
+
+@available(*, unavailable, renamed: "RFTableViewSectionArray")
+typealias TableViewSectionArray = RFTableViewSectionArray

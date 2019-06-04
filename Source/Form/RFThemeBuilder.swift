@@ -10,7 +10,7 @@ public class RFThemeBuilder: NSObject {
     }
     
     @objc public func apply() {
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [],
             theme: self.theme
         )

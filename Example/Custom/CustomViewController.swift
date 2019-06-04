@@ -2,9 +2,9 @@
 import UIKit
 import SwiftyFORM
 
-class CustomViewController: FormViewController {
+class CustomViewController: RFFormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Custom cells"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\ncustom cells using\nCustomFormItem")

@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class RateAppViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class RateAppViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Rate"
 		builder.toolbarMode = .none
 		builder.demo_showInfo("Rate this app")

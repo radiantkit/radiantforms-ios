@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public enum ValidateResult: Equatable {
+public enum RFValidateResult: Equatable {
 	case valid
 	case hardInvalid(message: String)
 	case softInvalid(message: String)
 }
 
-public func ==(lhs: ValidateResult, rhs: ValidateResult) -> Bool {
+public func ==(lhs: RFValidateResult, rhs: RFValidateResult) -> Bool {
 	switch (lhs, rhs) {
 	case (.valid, .valid):
 		return true
@@ -19,3 +19,6 @@ public func ==(lhs: ValidateResult, rhs: ValidateResult) -> Bool {
 		return false
 	}
 }
+
+@available(*, unavailable, renamed: "RFValidateResult")
+typealias ValidateResult = RFValidateResult

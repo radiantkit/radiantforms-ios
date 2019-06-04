@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class WorkInProgressViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class WorkInProgressViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Work In Progress"
 		builder += ViewControllerFormItem().title("Scientific slider experimental").viewController(ScientificSliderViewController.self)
 	}

@@ -3,7 +3,7 @@ import UIKit
 
 public struct RFTextFieldCellModel {
 	var title: String = ""
-	var toolbarMode: ToolbarMode = .simple
+	var toolbarMode: RFToolbarMode = .simple
 	var placeholder: String = ""
 	var keyboardType: UIKeyboardType = .default
 	var returnKeyType: UIReturnKeyType = .default
@@ -224,7 +224,7 @@ public class RFTextFieldCell: UITableViewCell {
 	@objc public func valueDidChange() {
 		model.valueDidChange(textField.text ?? "")
 
-		let result: ValidateResult = model.model.liveValidateValueText()
+		let result: RFValidateResult = model.model.liveValidateValueText()
 		switch result {
 		case .valid:
 			SwiftyFormLog("valid")
@@ -241,7 +241,7 @@ public class RFTextFieldCell: UITableViewCell {
 		_ = validateAndUpdateErrorIfNeeded(value, shouldInstallTimer: false, checkSubmitRule: false)
 	}
 
-	public func updateErrorLabel(_ result: ValidateResult) {
+	public func updateErrorLabel(_ result: RFValidateResult) {
 		switch result {
 		case .valid:
 			errorLabel.text = nil
@@ -252,7 +252,7 @@ public class RFTextFieldCell: UITableViewCell {
 		}
 	}
 
-	public var lastResult: ValidateResult?
+	public var lastResult: RFValidateResult?
 
 	public var hideErrorMessageAfterFewSecondsTimer: Timer?
 	public func invalidateTimer() {
@@ -274,7 +274,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 		let tableView: UITableView? = form_tableView()
 
-		let result: ValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
+		let result: RFValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
 		if let lastResult = lastResult {
 			if lastResult == result {
 				switch result {
@@ -404,7 +404,7 @@ extension RFTextFieldCell: UITextFieldDelegate {
 	}
 }
 
-extension RFTextFieldCell: CellHeightProvider {
+extension RFTextFieldCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight
@@ -413,7 +413,7 @@ extension RFTextFieldCell: CellHeightProvider {
 	}
 }
 
-extension RFTextFieldCell: WillDisplayCellDelegate {
+extension RFTextFieldCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.titleLabel.textColor = self.titleLabel_textColor
         

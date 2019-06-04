@@ -20,7 +20,7 @@ class MyOptionForm {
 		self.optionRows = optionRows
 	}
 
-	func populate(_ builder: FormBuilder) {
+	func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Picker"
 
 		configureVC0()
@@ -37,7 +37,7 @@ class MyOptionForm {
 
 	func configureVC0() {
 		vc0.title = "What is XYZ?"
-		vc0.createViewController = { (dismissCommand: CommandProtocol) in
+		vc0.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = EmptyViewController()
 			return vc
 		}
@@ -45,12 +45,12 @@ class MyOptionForm {
 
 }
 
-class MaleFemaleViewController: FormViewController, SelectOptionDelegate {
+class MaleFemaleViewController: RFFormViewController, RFSelectOptionDelegate {
 	var xmyform: MyOptionForm?
 
-	let dismissCommand: CommandProtocol
+	let dismissCommand: RFCommandProtocol
 
-	init(dismissCommand: CommandProtocol) {
+	init(dismissCommand: RFCommandProtocol) {
 		self.dismissCommand = dismissCommand
 		super.init()
 	}
@@ -59,7 +59,7 @@ class MaleFemaleViewController: FormViewController, SelectOptionDelegate {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		let optionRows: [OptionRow] = [
 			OptionRow("Male", "male"),
 			OptionRow("Female", "female"),

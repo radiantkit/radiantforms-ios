@@ -2,13 +2,13 @@
 import UIKit
 import SwiftyFORM
 
-class ChangePasswordViewController: FormViewController {
+class ChangePasswordViewController: RFFormViewController {
 	override func loadView() {
 		super.loadView()
 		form_installSubmitButton()
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Password"
 		builder.toolbarMode = .simple
 		builder += SectionHeaderTitleFormItem().title("Your Old Password")

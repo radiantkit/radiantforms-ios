@@ -37,7 +37,7 @@ public class RFPickerViewCellModel {
 
 This causes the inline picker view to expand/collapse
 */
-public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPickerViewExpandedCell?
 	public let model: RFPickerViewCellModel
 
@@ -115,7 +115,7 @@ public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCol
 	// MARK: Expand collapse
 
 	var isExpandedCellVisible: Bool {
-		guard let sectionArray = form_tableView()?.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = form_tableView()?.dataSource as? RFTableViewSectionArray else {
 			return false
 		}
 		guard let expandedItem = sectionArray.findItem(expandedCell) else {
@@ -131,13 +131,13 @@ public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCol
 		guard let tableView = form_tableView() else {
 			return
 		}
-		guard let sectionArray = tableView.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
 			return
 		}
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -159,7 +159,7 @@ public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCol
 		}
 	}
 
-	// MARK: AssignAppearance
+	// MARK: RFAssignAppearance
 
 	public func assignDefaultColors() {
 		textLabel?.textColor = UIColor.black
@@ -281,13 +281,13 @@ extension RFPickerViewExpandedCell: UIPickerViewDelegate {
 	}
 }
 
-extension RFPickerViewExpandedCell: CellHeightProvider {
+extension RFPickerViewExpandedCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		return RFPickerViewCellConstants.CellExpanded.height
 	}
 }
 
-extension RFPickerViewExpandedCell: WillDisplayCellDelegate {
+extension RFPickerViewExpandedCell: RFWillDisplayCellDelegate {
 	public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
 		if let model = collapsedCell?.model {
 			configure(model)
@@ -295,7 +295,7 @@ extension RFPickerViewExpandedCell: WillDisplayCellDelegate {
 	}
 }
 
-extension RFPickerViewExpandedCell: ExpandedCell {
+extension RFPickerViewExpandedCell: RFExpandedCell {
 	public var toggleCell: UITableViewCell? {
 		return collapsedCell
 	}

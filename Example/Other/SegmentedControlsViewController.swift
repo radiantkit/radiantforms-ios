@@ -2,9 +2,9 @@
 import UIKit
 import SwiftyFORM
 
-class SegmentedControlsViewController: FormViewController {
+class SegmentedControlsViewController: RFFormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Segmented Controls"
 		builder += SectionHeaderTitleFormItem(title: "Please select")
 		builder += animal

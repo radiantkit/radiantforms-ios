@@ -1,12 +1,12 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class TableViewSection: NSObject {
-	public let cells: TableViewCellArray
-	public let header: TableViewSectionPart
-	public let footer: TableViewSectionPart
+public class RFTableViewSection: NSObject {
+	public let cells: RFTableViewCellArray
+	public let header: RFTableViewSectionPart
+	public let footer: RFTableViewSectionPart
 
-	init(cells: TableViewCellArray, header: TableViewSectionPart, footer: TableViewSectionPart) {
+	init(cells: RFTableViewCellArray, header: RFTableViewSectionPart, footer: RFTableViewSectionPart) {
 		self.cells = cells
 		self.header = header
 		self.footer = footer
@@ -14,7 +14,7 @@ public class TableViewSection: NSObject {
 	}
 }
 
-extension TableViewSection: UITableViewDataSource {
+extension RFTableViewSection: UITableViewDataSource {
 	public func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -25,7 +25,7 @@ extension TableViewSection: UITableViewDataSource {
 
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = cells[indexPath.row]
-		if let theCell = cell as? CellForRowDelegate {
+		if let theCell = cell as? RFCellForRowDelegate {
 			return theCell.form_cellForRow(indexPath: indexPath, tableView: tableView)
 		}
 		return cell
@@ -40,7 +40,7 @@ extension TableViewSection: UITableViewDataSource {
 	}
 }
 
-extension TableViewSection: UITableViewDelegate {
+extension RFTableViewSection: UITableViewDelegate {
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		return header.view
 	}
@@ -62,27 +62,30 @@ extension TableViewSection: UITableViewDelegate {
 	}
 
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? SelectRowDelegate {
+		if let cell = cells[indexPath.row] as? RFSelectRowDelegate {
 			cell.form_didSelectRow(indexPath: indexPath, tableView: tableView)
 		}
 	}
 
 	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if let cell = cells[indexPath.row] as? CellHeightProvider {
+		if let cell = cells[indexPath.row] as? RFCellHeightProvider {
 			return cell.form_cellHeight(indexPath: indexPath, tableView: tableView)
 		}
 		return UITableView.form_automaticDimension
 	}
 
 	public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? WillDisplayCellDelegate {
+		if let cell = cells[indexPath.row] as? RFWillDisplayCellDelegate {
 			cell.form_willDisplay(tableView: tableView, forRowAtIndexPath: indexPath)
 		}
 	}
 
 	public func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-		if let cell = cells[indexPath.row] as? AccessoryButtonDelegate {
+		if let cell = cells[indexPath.row] as? RFAccessoryButtonDelegate {
 			cell.form_accessoryButtonTapped(indexPath: indexPath, tableView: tableView)
 		}
 	}
 }
+
+@available(*, unavailable, renamed: "RFTableViewSection")
+typealias TableViewSection = RFTableViewSection

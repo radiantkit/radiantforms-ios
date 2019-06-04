@@ -36,13 +36,13 @@ public class RFButtonCell: UITableViewCell {
     }
 }
 
-extension RFButtonCell: WillDisplayCellDelegate {
+extension RFButtonCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
     }
 }
 
-extension RFButtonCell: SelectRowDelegate {
+extension RFButtonCell: RFSelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()

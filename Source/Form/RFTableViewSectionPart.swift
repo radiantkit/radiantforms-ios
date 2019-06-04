@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public enum TableViewSectionPart {
+public enum RFTableViewSectionPart {
 	case none
 	case systemDefault
 	case titleString(string: String)
@@ -93,3 +93,6 @@ public enum TableViewSectionPart {
 		static let estimatedHeightForTitleSection: CGFloat = 44
 	}
 }
+
+@available(*, unavailable, renamed: "RFTableViewSectionPart")
+typealias TableViewSectionPart = RFTableViewSectionPart

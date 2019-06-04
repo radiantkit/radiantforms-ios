@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class DatePickerInitialValueViewController: FormViewController {
+class DatePickerInitialValueViewController: RFFormViewController {
 	lazy var datePicker_time_noValue: DatePickerFormItem = {
 		let instance = DatePickerFormItem()
 		instance.title = "Time"
@@ -52,7 +52,7 @@ class DatePickerInitialValueViewController: FormViewController {
 		return instance
 		}()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Value"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with initial value")

@@ -12,7 +12,7 @@ public struct RFTextViewFormItemCellSizes {
 public struct RFTextViewCellModel {
 	var title: String = ""
 	var placeholder: String = ""
-	var toolbarMode: ToolbarMode = .simple
+	var toolbarMode: RFToolbarMode = .simple
 
 	var valueDidChange: (String) -> Void = { (value: String) in
 		SwiftyFormLog("value \(value)")
@@ -222,7 +222,7 @@ extension RFTextViewCell: UITextViewDelegate {
 	}
 }
 
-extension RFTextViewCell: CellHeightProvider {
+extension RFTextViewCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextViewFormItemCellSizes = compute()
 		let value = sizes.cellHeight

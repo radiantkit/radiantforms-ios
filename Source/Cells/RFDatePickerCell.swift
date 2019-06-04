@@ -34,7 +34,7 @@ public class RFDatePickerCellModel {
 
 This causes the inline date picker to expand/collapse
 */
-public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling {
+public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrolling {
 	weak var expandedCell: RFDatePickerExpandedCell?
 	public let model: RFDatePickerCellModel
 
@@ -157,7 +157,7 @@ public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling 
 	// MARK: Expand collapse
 
 	var isExpandedCellVisible: Bool {
-		guard let sectionArray = form_tableView()?.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = form_tableView()?.dataSource as? RFTableViewSectionArray else {
 			return false
 		}
 		guard let expandedItem = sectionArray.findItem(expandedCell) else {
@@ -173,13 +173,13 @@ public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling 
 		guard let tableView = form_tableView() else {
 			return
 		}
-		guard let sectionArray = tableView.dataSource as? TableViewSectionArray else {
+		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
 			return
 		}
 		guard let expandedCell = expandedCell else {
 			return
 		}
-		ToggleExpandCollapse.execute(
+		RFToggleExpandCollapse.execute(
 			toggleCell: self,
 			expandedCell: expandedCell,
 			tableView: tableView,
@@ -215,7 +215,7 @@ public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling 
     }
 }
 
-extension RFDatePickerToggleCell: AssignAppearance {
+extension RFDatePickerToggleCell: RFAssignAppearance {
 	public func assignDefaultColors() {
 		textLabel?.textColor = self.textLabel_textColor ?? UIColor.black
 		detailTextLabel?.textColor = self.detailTextLabel_textColor ?? UIColor.gray
@@ -227,7 +227,7 @@ extension RFDatePickerToggleCell: AssignAppearance {
 	}
 }
 
-extension RFDatePickerToggleCell: SelectRowDelegate {
+extension RFDatePickerToggleCell: RFSelectRowDelegate {
     public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
         if model.expandCollapseWhenSelectingRow == false {
             //print("cell is always expanded")
@@ -243,7 +243,7 @@ extension RFDatePickerToggleCell: SelectRowDelegate {
     }
 }
 
-extension RFDatePickerToggleCell: WillDisplayCellDelegate {
+extension RFDatePickerToggleCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         assignDefaultColors()
     }
@@ -254,7 +254,7 @@ extension RFDatePickerToggleCell: WillDisplayCellDelegate {
 
 Row containing only a `UIDatePicker`
 */
-public class RFDatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
+public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, RFWillDisplayCellDelegate, RFExpandedCell {
 	weak var collapsedCell: RFDatePickerToggleCell?
 
 	public var toggleCell: UITableViewCell? {

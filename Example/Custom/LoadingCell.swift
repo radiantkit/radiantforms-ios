@@ -2,7 +2,7 @@
 import UIKit
 import SwiftyFORM
 
-class LoadingCell: UITableViewCell, CellHeightProvider {
+class LoadingCell: UITableViewCell, RFCellHeightProvider {
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	var xibHeight: CGFloat = 160
 

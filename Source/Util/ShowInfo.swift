@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-extension FormBuilder {
+extension RFFormBuilder {
 	/// Install a text header.
 	///
  	/// The text can span multiple lines.

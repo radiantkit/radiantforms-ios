@@ -1,8 +1,8 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import SwiftyFORM
 
-class NoHeaderViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class NoHeaderViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "No Header"
 		builder.suppressHeaderForFirstSection = true
 

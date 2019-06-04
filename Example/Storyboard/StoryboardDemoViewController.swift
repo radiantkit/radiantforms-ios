@@ -2,8 +2,8 @@
 import UIKit
 import SwiftyFORM
 
-class StoryboardDemoViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class StoryboardDemoViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Storyboard Demo"
 		builder += voteCountSlider
 		builder += SectionHeaderTitleFormItem()
