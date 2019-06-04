@@ -127,7 +127,7 @@ class RFAmountCellTests: XCTestCase {
         assert(populateTableView.cells.allItems.count == 0)
         formItem.accept(visitor: populateTableView)
         assert(populateTableView.cells.allItems.count == 1)
-        guard let item: TableViewCellArrayItem = populateTableView.cells.allItems.first else {
+        guard let item: RFTableViewCellArrayItem = populateTableView.cells.allItems.first else {
             fatalError("Expected PopulateTableView to have created at least 1 item")
         }
         guard let cell: RFAmountCell = item.cell as? RFAmountCell else {

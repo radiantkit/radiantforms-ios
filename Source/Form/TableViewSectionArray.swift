@@ -9,7 +9,7 @@ public class TableViewSectionArray: NSObject {
 		super.init()
 	}
 
-	func findItem(_ cell: UITableViewCell?) -> TableViewCellArrayItem? {
+	func findItem(_ cell: UITableViewCell?) -> RFTableViewCellArrayItem? {
 		for section in sections {
 			for item in section.cells.allItems {
 				if item.cell === cell {
@@ -20,7 +20,7 @@ public class TableViewSectionArray: NSObject {
 		return nil
 	}
 
-	func findVisibleItem(indexPath: IndexPath) -> TableViewCellArrayItem? {
+	func findVisibleItem(indexPath: IndexPath) -> RFTableViewCellArrayItem? {
 		guard indexPath.section >= 0 else { return nil }
 		guard indexPath.row >= 0 else { return nil }
 		guard indexPath.section < sections.count else { return nil }
@@ -30,7 +30,7 @@ public class TableViewSectionArray: NSObject {
 		return items[indexPath.row]
 	}
 
-	func indexPathForItem(_ findItem: TableViewCellArrayItem) -> IndexPath? {
+	func indexPathForItem(_ findItem: RFTableViewCellArrayItem) -> IndexPath? {
 		for (sectionIndex, section) in sections.enumerated() {
 			for (rowIndex, item) in section.cells.visibleItems.enumerated() {
 				if item === findItem {

@@ -2,11 +2,11 @@
 import UIKit
 
 public class TableViewSection: NSObject {
-	public let cells: TableViewCellArray
+	public let cells: RFTableViewCellArray
 	public let header: TableViewSectionPart
 	public let footer: TableViewSectionPart
 
-	init(cells: TableViewCellArray, header: TableViewSectionPart, footer: TableViewSectionPart) {
+	init(cells: RFTableViewCellArray, header: TableViewSectionPart, footer: TableViewSectionPart) {
 		self.cells = cells
 		self.header = header
 		self.footer = footer

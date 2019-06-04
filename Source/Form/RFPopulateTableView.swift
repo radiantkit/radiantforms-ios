@@ -38,7 +38,7 @@ struct RFPopulateTableViewModel {
 class RFPopulateTableView: FormItemVisitor {
 	let model: RFPopulateTableViewModel
 
-	var cells: TableViewCellArray = TableViewCellArray.createEmpty()
+	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()
 	var sections = [TableViewSection]()
 	var header = TableViewSectionPart.systemDefault
 	var footer = TableViewSectionPart.systemDefault
@@ -65,7 +65,7 @@ class RFPopulateTableView: FormItemVisitor {
 		let section = TableViewSection(cells: cells, header: header, footer: footer)
 		sections.append(section)
 
-		cells = TableViewCellArray.createEmpty()
+		cells = RFTableViewCellArray.createEmpty()
 		header = TableViewSectionPart.systemDefault
 		footer = TableViewSectionPart.systemDefault
 	}
