@@ -78,7 +78,7 @@ open class FormViewController: UIViewController {
 		return RFFormBuilder()
 		}()
 
-	public lazy var tableView: FormTableView = {
-		return FormTableView()
+	public lazy var tableView: RFFormTableView = {
+		return RFFormTableView()
 		}()
 }

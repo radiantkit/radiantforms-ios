@@ -85,7 +85,7 @@
 		4286833F1B346CFE0028DB2F /* RFFormBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */; };
 		428683401B346CFE0028DB2F /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830D1B346CFE0028DB2F /* FormViewController.swift */; };
 		428683411B346CFE0028DB2F /* SelectOptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */; };
-		428683421B346CFE0028DB2F /* FormTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830F1B346CFE0028DB2F /* FormTableView.swift */; };
+		428683421B346CFE0028DB2F /* RFFormTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286830F1B346CFE0028DB2F /* RFFormTableView.swift */; };
 		428683431B346CFE0028DB2F /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683101B346CFE0028DB2F /* TableViewSection.swift */; };
 		428683441B346CFE0028DB2F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683111B346CFE0028DB2F /* Validator.swift */; };
 		428683461B346CFE0028DB2F /* PopulateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683131B346CFE0028DB2F /* PopulateTableView.swift */; };
@@ -211,7 +211,7 @@
 		4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormBuilder.swift; sourceTree = "<group>"; };
 		4286830D1B346CFE0028DB2F /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectOptionDelegate.swift; sourceTree = "<group>"; };
-		4286830F1B346CFE0028DB2F /* FormTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableView.swift; sourceTree = "<group>"; };
+		4286830F1B346CFE0028DB2F /* RFFormTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormTableView.swift; sourceTree = "<group>"; };
 		428683101B346CFE0028DB2F /* TableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		428683111B346CFE0028DB2F /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		428683131B346CFE0028DB2F /* PopulateTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulateTableView.swift; sourceTree = "<group>"; };
@@ -390,7 +390,6 @@
 			children = (
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
-				4286830F1B346CFE0028DB2F /* FormTableView.swift */,
 				4286830D1B346CFE0028DB2F /* FormViewController.swift */,
 				4286830B1B346CFE0028DB2F /* OptionListViewController.swift */,
 				428683131B346CFE0028DB2F /* PopulateTableView.swift */,
@@ -403,6 +402,7 @@
 				420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */,
 				428683081B346CFE0028DB2F /* RFDumpVisitor.swift */,
 				4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */,
+				4286830F1B346CFE0028DB2F /* RFFormTableView.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
@@ -645,7 +645,7 @@
 				42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */,
 				4286832E1B346CFE0028DB2F /* RFButtonCell.swift in Sources */,
 				428683411B346CFE0028DB2F /* SelectOptionDelegate.swift in Sources */,
-				428683421B346CFE0028DB2F /* FormTableView.swift in Sources */,
+				428683421B346CFE0028DB2F /* RFFormTableView.swift in Sources */,
 				4286835B1B346CFE0028DB2F /* UIView+LookupTableView.swift in Sources */,
 				428683391B346CFE0028DB2F /* RFViewControllerCell.swift in Sources */,
 				4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */,

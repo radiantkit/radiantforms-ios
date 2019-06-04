@@ -14,23 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         builder.apply()
 
         
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [],
             theme: RFTheme.lightTheme()
         )
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Light.self],
             theme: RFTheme.lightTheme()
         )
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [AmountViewController_Dark.self],
             theme: RFTheme.darkTheme()
         )
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Light.self],
             theme: RFTheme.lightTheme()
         )
-        FormTableView.configureAppearance(
+        RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: [SignUpViewController_Dark.self],
             theme: RFTheme.darkTheme()
         )

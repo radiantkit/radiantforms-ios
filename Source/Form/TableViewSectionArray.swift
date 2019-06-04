@@ -109,8 +109,8 @@ extension TableViewSectionArray: UITableViewDataSource {
 
 extension TableViewSectionArray: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let formTableView: FormTableView = tableView as? FormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+        guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
@@ -126,8 +126,8 @@ extension TableViewSectionArray: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        guard let formTableView: FormTableView = tableView as? FormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type FormTableView.")
+        guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
+            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let footer: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
