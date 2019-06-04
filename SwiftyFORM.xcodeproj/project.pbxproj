@@ -37,7 +37,7 @@
 		4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */; };
 		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
 		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
-		4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */; };
+		4229CE0A1D43C450002C28A7 /* RFPrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* TableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */; };
 		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
 		4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */; };
@@ -163,7 +163,7 @@
 		4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelperTests.swift; sourceTree = "<group>"; };
 		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
 		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
-		4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderTests.swift; sourceTree = "<group>"; };
+		4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* TableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionArray.swift; sourceTree = "<group>"; };
 		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
 		4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RFSpecificationAdvancedTests.csv; sourceTree = "<group>"; };
@@ -450,10 +450,10 @@
 			children = (
 				4286835F1B346D0C0028DB2F /* Info.plist */,
 				4219E1D41DBE9EFB00B3204A /* JSONHelperTests.swift */,
-				4229CE081D43C386002C28A7 /* PrecisionSliderTests.swift */,
 				428683601B346D0C0028DB2F /* PrevNextTests.swift */,
 				42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */,
 				4280F721226F4C340098EF22 /* RFAmountCellTests.swift */,
+				4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */,
 				4245B3EA1DA429B500BCB4C7 /* Specification */,
 				428683611B346D0C0028DB2F /* ValidateResultTests.swift */,
 				428683621B346D0C0028DB2F /* ValidatorTests.swift */,
@@ -696,7 +696,7 @@
 				4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */,
 				4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */,
 				428683651B346D0C0028DB2F /* PrevNextTests.swift in Sources */,
-				4229CE0A1D43C450002C28A7 /* PrecisionSliderTests.swift in Sources */,
+				4229CE0A1D43C450002C28A7 /* RFPrecisionSliderTests.swift in Sources */,
 				4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */,
 				4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */,
 				4245B3FA1DA429B500BCB4C7 /* RFSpecificationOperatorTests.swift in Sources */,
