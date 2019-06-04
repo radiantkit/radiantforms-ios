@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-public class KeyboardCompatibility {
+public class RFKeyboardCompatibility {
     public class var keyboardWillShowNotification: NSNotification.Name {
         #if swift(>=4.2)
             // 'keyboardWillShowNotification' was introduced in Swift 4.2
@@ -32,3 +32,6 @@ public class KeyboardCompatibility {
         #endif
     }
 }
+
+@available(*, unavailable, renamed: "RFKeyboardCompatibility")
+typealias KeyboardCompatibility = RFKeyboardCompatibility
