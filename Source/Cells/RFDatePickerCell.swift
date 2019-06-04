@@ -254,7 +254,7 @@ extension RFDatePickerToggleCell: WillDisplayCellDelegate {
 
 Row containing only a `UIDatePicker`
 */
-public class RFDatePickerExpandedCell: UITableViewCell, CellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
+public class RFDatePickerExpandedCell: UITableViewCell, RFCellHeightProvider, WillDisplayCellDelegate, ExpandedCell {
 	weak var collapsedCell: RFDatePickerToggleCell?
 
 	public var toggleCell: UITableViewCell? {

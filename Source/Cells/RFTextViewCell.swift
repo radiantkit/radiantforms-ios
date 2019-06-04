@@ -222,7 +222,7 @@ extension RFTextViewCell: UITextViewDelegate {
 	}
 }
 
-extension RFTextViewCell: CellHeightProvider {
+extension RFTextViewCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextViewFormItemCellSizes = compute()
 		let value = sizes.cellHeight

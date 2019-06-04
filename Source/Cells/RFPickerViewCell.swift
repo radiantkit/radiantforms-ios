@@ -281,7 +281,7 @@ extension RFPickerViewExpandedCell: UIPickerViewDelegate {
 	}
 }
 
-extension RFPickerViewExpandedCell: CellHeightProvider {
+extension RFPickerViewExpandedCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		return RFPickerViewCellConstants.CellExpanded.height
 	}

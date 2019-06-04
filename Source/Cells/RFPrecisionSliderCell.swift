@@ -57,7 +57,7 @@ public struct RFPrecisionSliderCellFormatter {
 
 This causes the inline precision slider to expand/collapse
 */
-public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, RFAssignAppearance {
+public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPrecisionSliderExpandedCell?
 	public let model: RFPrecisionSliderCellModel
 
@@ -279,7 +279,7 @@ extension RFPrecisionSliderCellModel {
 Row containing only a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
-public class RFPrecisionSliderExpandedCell: UITableViewCell, CellHeightProvider, ExpandedCell {
+public class RFPrecisionSliderExpandedCell: UITableViewCell, RFCellHeightProvider, ExpandedCell {
 	weak var collapsedCell: RFPrecisionSliderToggleCell?
 
 	public var toggleCell: UITableViewCell? {

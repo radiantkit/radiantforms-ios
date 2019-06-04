@@ -68,7 +68,7 @@ extension TableViewSection: UITableViewDelegate {
 	}
 
 	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if let cell = cells[indexPath.row] as? CellHeightProvider {
+		if let cell = cells[indexPath.row] as? RFCellHeightProvider {
 			return cell.form_cellHeight(indexPath: indexPath, tableView: tableView)
 		}
 		return UITableView.form_automaticDimension

@@ -404,7 +404,7 @@ extension RFTextFieldCell: UITextFieldDelegate {
 	}
 }
 
-extension RFTextFieldCell: CellHeightProvider {
+extension RFTextFieldCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight

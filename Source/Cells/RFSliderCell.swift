@@ -12,7 +12,7 @@ public struct RFSliderCellModel {
 	}
 }
 
-public class RFSliderCell: UITableViewCell, CellHeightProvider {
+public class RFSliderCell: UITableViewCell, RFCellHeightProvider {
 	public let model: RFSliderCellModel
 
 	public let slider = UISlider()

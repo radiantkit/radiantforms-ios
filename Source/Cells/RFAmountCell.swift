@@ -352,7 +352,7 @@ extension RFAmountCell: UITextFieldDelegate {
     }
 }
 
-extension RFAmountCell: CellHeightProvider {
+extension RFAmountCell: RFCellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: RFAmountCellSizes = compute()
         let value = sizes.cellHeight
