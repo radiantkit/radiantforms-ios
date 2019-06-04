@@ -215,8 +215,8 @@ internal extension RFTheme_AmountCell {
         }
     }
     
-    var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_Default(
+    var textField_appearanceStrategy: RFTextFieldAppearanceStrategy {
+        return RFTextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )
@@ -373,8 +373,8 @@ internal extension RFTheme_TextFieldCell {
         }
     }
     
-    var textField_appearanceStrategy: TextFieldAppearanceStrategy {
-        return TextFieldAppearanceStrategy_Default(
+    var textField_appearanceStrategy: RFTextFieldAppearanceStrategy {
+        return RFTextFieldAppearanceStrategy_Default(
             tintColor: self.textField_tintColor,
             textColor: self.textField_textColor
         )

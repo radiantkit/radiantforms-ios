@@ -83,7 +83,7 @@ public class RFTextFieldCell: UITableViewCell {
     
     @objc public dynamic var titleLabel_textColor: UIColor?
     @objc public dynamic var textField_placeholderColor: UIColor?
-    @objc public dynamic var textField_appearanceStrategy: TextFieldAppearanceStrategy?
+    @objc public dynamic var textField_appearanceStrategy: RFTextFieldAppearanceStrategy?
     @objc public dynamic var errorLabel_textColor: UIColor?
 
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {

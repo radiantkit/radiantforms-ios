@@ -106,7 +106,7 @@
 		428683661B346D0C0028DB2F /* ValidateResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683611B346D0C0028DB2F /* ValidateResultTests.swift */; };
 		428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* ValidatorTests.swift */; };
 		42B060F92292913900FD4585 /* RFTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060F82292913900FD4585 /* RFTheme.swift */; };
-		42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */; };
+		42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */; };
 		42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */; };
 		42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */; };
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
@@ -234,7 +234,7 @@
 		428683611B346D0C0028DB2F /* ValidateResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResultTests.swift; sourceTree = "<group>"; };
 		428683621B346D0C0028DB2F /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		42B060F82292913900FD4585 /* RFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTheme.swift; sourceTree = "<group>"; };
-		42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
+		42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFThemeBuilder.swift; sourceTree = "<group>"; };
 		42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessibilityColorTests.swift; sourceTree = "<group>"; };
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
@@ -431,9 +431,9 @@
 				428683241B346CFE0028DB2F /* KeyboardHandler.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
 				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
+				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
-				42B060FA229434C800FD4585 /* TextFieldAppearanceStrategy.swift */,
 				4280F728227833290098EF22 /* UITableView+Compatibility.swift */,
 				428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */,
 				420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */,
@@ -603,7 +603,7 @@
 				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */,
 				4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */,
-				42B060FB229434C800FD4585 /* TextFieldAppearanceStrategy.swift in Sources */,
+				42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */,
 				4286833E1B346CFE0028DB2F /* OptionListViewController.swift in Sources */,
 				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
 				42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */,
