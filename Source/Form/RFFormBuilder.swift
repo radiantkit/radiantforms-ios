@@ -106,7 +106,7 @@ public class RFFormBuilder {
 
 	public func validate() -> FormValidateResult {
 		for item in innerItems {
-			let v = ValidateVisitor()
+			let v = RFValidateVisitor()
 			item.accept(visitor: v)
 			switch v.result {
 			case .valid:

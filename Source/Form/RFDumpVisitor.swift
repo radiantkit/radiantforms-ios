@@ -17,7 +17,7 @@ public class RFDumpVisitor: FormItemVisitor {
 			var dict = StringToAny()
 			dict["row"] = rowNumber
 
-			let validateVisitor = ValidateVisitor()
+			let validateVisitor = RFValidateVisitor()
 			item.accept(visitor: validateVisitor)
 			switch validateVisitor.result {
 			case .valid:
