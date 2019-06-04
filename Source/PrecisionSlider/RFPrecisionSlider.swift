@@ -467,10 +467,10 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 		instance.bounces = false
 		instance.alwaysBounceHorizontal = true
 		instance.alwaysBounceVertical = false
-		instance.register(PrecisionSlider_InnerCollectionViewSingleCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewSingleCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewFirstCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewFirstCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewLastCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewLastCell.identifier)
-		instance.register(PrecisionSlider_InnerCollectionViewFullCell.self, forCellWithReuseIdentifier: PrecisionSlider_InnerCollectionViewFullCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewSingleCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewSingleCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewFirstCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFirstCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewLastCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewLastCell.identifier)
+		instance.register(RFPrecisionSlider_InnerCollectionViewFullCell.self, forCellWithReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFullCell.identifier)
 		instance.contentInset = UIEdgeInsets.zero
 		instance.delegate = self
 		instance.dataSource = self
@@ -512,7 +512,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if model.hasOnePartialItem {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewSingleCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewSingleCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewSingleCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewSingleCell
 			return cell
 		}
 
@@ -524,20 +524,20 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 		let isLast = indexPath.row == count - 1
 
 		if isFirst && model.hasPartialItemBefore {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewFirstCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewFirstCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFirstCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewFirstCell
 			cell.label.text = labelText
 			cell.mark.backgroundColor = markColor
 			cell.configure(partialLength: model.lengthOfPartialItemBefore, fullLength: model.lengthOfFullItem)
 			return cell
 		}
 		if isLast && model.hasPartialItemAfter {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewLastCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewLastCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewLastCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewLastCell
 			cell.label.text = labelText
 			cell.mark.backgroundColor = markColor
 			cell.configure(partialLength: model.lengthOfPartialItemAfter, fullLength: model.lengthOfFullItem)
 			return cell
 		}
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrecisionSlider_InnerCollectionViewFullCell.identifier, for: indexPath) as! PrecisionSlider_InnerCollectionViewFullCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RFPrecisionSlider_InnerCollectionViewFullCell.identifier, for: indexPath) as! RFPrecisionSlider_InnerCollectionViewFullCell
 		cell.label.text = labelText
 		cell.mark.backgroundColor = markColor
 		return cell

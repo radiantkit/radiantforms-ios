@@ -112,7 +112,7 @@
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
 		42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */; };
 		42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* Bundle+LoadView.swift */; };
-		42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */; };
+		42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */; };
 		42D297571D49611300561780 /* RFPrecisionSlider_InnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */; };
 		42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */; };
 		42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */; };
@@ -240,7 +240,7 @@
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
 		42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillDisplayCellDelegate.swift; sourceTree = "<group>"; };
 		42D005171B96348200986B3B /* Bundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadView.swift"; sourceTree = "<group>"; };
-		42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
+		42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
 		42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerModel.swift; sourceTree = "<group>"; };
 		42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerZoomMode.swift; sourceTree = "<group>"; };
 		42D5DE651A38167400D5C368 /* SwiftyFORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -464,7 +464,7 @@
 		42FABBC21D4143510066E45A /* PrecisionSlider */ = {
 			isa = PBXGroup;
 			children = (
-				42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */,
+				42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */,
 				42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */,
 				42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */,
 				42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */,
@@ -630,7 +630,7 @@
 				420F6CC71D69BBA5009D5F57 /* DontCollapseWhenScrolling.swift in Sources */,
 				425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */,
 				4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */,
-				42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */,
+				42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */,
 				4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */,
 				4219E1C51DB827CF00B3204A /* RFCharacterSetSpecification.swift in Sources */,
 				42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */,
