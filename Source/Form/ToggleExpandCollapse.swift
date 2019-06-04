@@ -23,7 +23,7 @@ public struct ToggleExpandCollapse {
 		if !whatToCollapse.indexPaths.isEmpty {
 
 			for cell in whatToCollapse.toggleCells {
-				if let cell2 = cell as? AssignAppearance {
+				if let cell2 = cell as? RFAssignAppearance {
 					cell2.assignDefaultColors()
 				}
 			}
@@ -48,7 +48,7 @@ public struct ToggleExpandCollapse {
 				toggleIndexPath = sectionArray.indexPathForItem(item)
 			}
 
-			if let cell = toggleCell as? AssignAppearance {
+			if let cell = toggleCell as? RFAssignAppearance {
 				cell.assignTintColors()
 			}
 

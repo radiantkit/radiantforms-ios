@@ -215,7 +215,7 @@ public class RFDatePickerToggleCell: UITableViewCell, DontCollapseWhenScrolling 
     }
 }
 
-extension RFDatePickerToggleCell: AssignAppearance {
+extension RFDatePickerToggleCell: RFAssignAppearance {
 	public func assignDefaultColors() {
 		textLabel?.textColor = self.textLabel_textColor ?? UIColor.black
 		detailTextLabel?.textColor = self.detailTextLabel_textColor ?? UIColor.gray

@@ -57,7 +57,7 @@ public struct RFPrecisionSliderCellFormatter {
 
 This causes the inline precision slider to expand/collapse
 */
-public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, SelectRowDelegate, DontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPrecisionSliderExpandedCell?
 	public let model: RFPrecisionSliderCellModel
 
@@ -196,7 +196,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, CellHeightProvider, S
 		}
 	}
 
-	// MARK: AssignAppearance
+	// MARK: RFAssignAppearance
 
 	public func assignDefaultColors() {
 		textLabel?.textColor = UIColor.black

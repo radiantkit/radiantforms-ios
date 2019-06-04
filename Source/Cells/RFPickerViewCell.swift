@@ -37,7 +37,7 @@ public class RFPickerViewCellModel {
 
 This causes the inline picker view to expand/collapse
 */
-public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, AssignAppearance {
+public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCollapseWhenScrolling, RFAssignAppearance {
 	weak var expandedCell: RFPickerViewExpandedCell?
 	public let model: RFPickerViewCellModel
 
@@ -159,7 +159,7 @@ public class RFPickerViewToggleCell: UITableViewCell, SelectRowDelegate, DontCol
 		}
 	}
 
-	// MARK: AssignAppearance
+	// MARK: RFAssignAppearance
 
 	public func assignDefaultColors() {
 		textLabel?.textColor = UIColor.black
