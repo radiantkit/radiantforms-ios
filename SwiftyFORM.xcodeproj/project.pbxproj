@@ -89,7 +89,7 @@
 		428683431B346CFE0028DB2F /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683101B346CFE0028DB2F /* TableViewSection.swift */; };
 		428683441B346CFE0028DB2F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683111B346CFE0028DB2F /* Validator.swift */; };
 		428683461B346CFE0028DB2F /* RFPopulateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683131B346CFE0028DB2F /* RFPopulateTableView.swift */; };
-		428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */; };
+		428683471B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */; };
 		428683481B346CFE0028DB2F /* TitleWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683151B346CFE0028DB2F /* TitleWidth.swift */; };
 		428683491B346CFE0028DB2F /* ValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683161B346CFE0028DB2F /* ValidateResult.swift */; };
 		4286834A1B346CFE0028DB2F /* ValidateVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683171B346CFE0028DB2F /* ValidateVisitor.swift */; };
@@ -215,7 +215,7 @@
 		428683101B346CFE0028DB2F /* TableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		428683111B346CFE0028DB2F /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		428683131B346CFE0028DB2F /* RFPopulateTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPopulateTableView.swift; sourceTree = "<group>"; };
-		428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadPersistentValidationStateVisitor.swift; sourceTree = "<group>"; };
+		428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFReloadPersistentValidationStateVisitor.swift; sourceTree = "<group>"; };
 		428683151B346CFE0028DB2F /* TitleWidth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleWidth.swift; sourceTree = "<group>"; };
 		428683161B346CFE0028DB2F /* ValidateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateResult.swift; sourceTree = "<group>"; };
 		428683171B346CFE0028DB2F /* ValidateVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateVisitor.swift; sourceTree = "<group>"; };
@@ -390,7 +390,6 @@
 			children = (
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
-				428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */,
 				4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
 				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
@@ -403,6 +402,7 @@
 				4286830D1B346CFE0028DB2F /* RFFormViewController.swift */,
 				4286830B1B346CFE0028DB2F /* RFOptionListViewController.swift */,
 				428683131B346CFE0028DB2F /* RFPopulateTableView.swift */,
+				428683141B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
 				4286830E1B346CFE0028DB2F /* SelectOptionDelegate.swift */,
@@ -600,7 +600,7 @@
 				4286833B1B346CFE0028DB2F /* RFDumpVisitor.swift in Sources */,
 				4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */,
 				42108D201B34E9F60067FEAA /* SwitchFormItem.swift in Sources */,
-				428683471B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift in Sources */,
+				428683471B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */,
 				4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */,
 				42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */,

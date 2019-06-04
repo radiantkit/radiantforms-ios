@@ -96,7 +96,7 @@ public class RFFormBuilder {
 	}
 
 	public func validateAndUpdateUI() {
-		ReloadPersistentValidationStateVisitor.validateAndUpdateUI(innerItems)
+		RFReloadPersistentValidationStateVisitor.validateAndUpdateUI(innerItems)
 	}
 
 	public enum FormValidateResult {

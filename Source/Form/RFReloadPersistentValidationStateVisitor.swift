@@ -1,10 +1,10 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-class ReloadPersistentValidationStateVisitor: FormItemVisitor {
+class RFReloadPersistentValidationStateVisitor: FormItemVisitor {
 
 	class func validateAndUpdateUI(_ items: [FormItem]) {
-		let visitor = ReloadPersistentValidationStateVisitor()
+		let visitor = RFReloadPersistentValidationStateVisitor()
 		for item in items {
 			item.accept(visitor: visitor)
 		}
@@ -37,3 +37,7 @@ class ReloadPersistentValidationStateVisitor: FormItemVisitor {
 	func visit(object: TextViewFormItem) {}
 	func visit(object: ViewControllerFormItem) {}
 }
+
+
+@available(*, unavailable, renamed: "RFReloadPersistentValidationStateVisitor")
+typealias ReloadPersistentValidationStateVisitor = RFReloadPersistentValidationStateVisitor
