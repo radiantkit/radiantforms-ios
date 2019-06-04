@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class PredicateSpecificationTests: XCTestCase {
+class RFPredicateSpecificationTests: XCTestCase {
 	
 	func testString0() {
 		let spec = RFPredicateSpecification { (candidate: String) -> Bool in

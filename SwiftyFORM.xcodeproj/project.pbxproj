@@ -46,7 +46,7 @@
 		4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */; };
 		4245B3F91DA429B500BCB4C7 /* RFEmailSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */; };
 		4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */; };
-		4245B3FB1DA429B500BCB4C7 /* PredicateSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */; };
+		4245B3FB1DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */; };
 		4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */; };
 		4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */; };
 		4245B3FE1DA429B500BCB4C7 /* TrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */; };
@@ -172,7 +172,7 @@
 		4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFEmailSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
-		4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateSpecificationTests.swift; sourceTree = "<group>"; };
+		4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPredicateSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrueFalseTests.swift; sourceTree = "<group>"; };
@@ -336,8 +336,8 @@
 				4245B3ED1DA429B500BCB4C7 /* CharacterSetSpecificationTests.swift */,
 				4245B3EE1DA429B500BCB4C7 /* CountSpecificationTests.swift */,
 				4245B3F01DA429B500BCB4C7 /* OperatorTests.swift */,
-				4245B3F11DA429B500BCB4C7 /* PredicateSpecificationTests.swift */,
 				4245B3EF1DA429B500BCB4C7 /* RFEmailSpecificationTests.swift */,
+				4245B3F11DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift */,
 				4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */,
 				4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */,
 				4245B3F41DA429B500BCB4C7 /* TrueFalseTests.swift */,
@@ -701,7 +701,7 @@
 				4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */,
 				4245B3FA1DA429B500BCB4C7 /* OperatorTests.swift in Sources */,
 				4245B3F81DA429B500BCB4C7 /* CountSpecificationTests.swift in Sources */,
-				4245B3FB1DA429B500BCB4C7 /* PredicateSpecificationTests.swift in Sources */,
+				4245B3FB1DA429B500BCB4C7 /* RFPredicateSpecificationTests.swift in Sources */,
 				4219E1D51DBE9EFB00B3204A /* JSONHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
