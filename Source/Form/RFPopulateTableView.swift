@@ -40,8 +40,8 @@ class RFPopulateTableView: FormItemVisitor {
 
 	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()
 	var sections = [RFTableViewSection]()
-	var header = TableViewSectionPart.systemDefault
-	var footer = TableViewSectionPart.systemDefault
+	var header = RFTableViewSectionPart.systemDefault
+	var footer = RFTableViewSectionPart.systemDefault
 
 	enum LastItemType {
 		case beginning
@@ -66,8 +66,8 @@ class RFPopulateTableView: FormItemVisitor {
 		sections.append(section)
 
 		cells = RFTableViewCellArray.createEmpty()
-		header = TableViewSectionPart.systemDefault
-		footer = TableViewSectionPart.systemDefault
+		header = RFTableViewSectionPart.systemDefault
+		footer = RFTableViewSectionPart.systemDefault
 	}
 
 	func closeLastSection() {
@@ -369,9 +369,9 @@ class RFPopulateTableView: FormItemVisitor {
 
 	func visit(object: SectionFooterTitleFormItem) {
 		if let title = object.title {
-			footer = TableViewSectionPart.titleString(string: title)
+			footer = RFTableViewSectionPart.titleString(string: title)
 		} else {
-			footer = TableViewSectionPart.systemDefault
+			footer = RFTableViewSectionPart.systemDefault
 		}
 		closeSection()
 		lastItemType = .sectionEnd
@@ -381,9 +381,9 @@ class RFPopulateTableView: FormItemVisitor {
 
 	func visit(object: SectionFooterViewFormItem) {
 		if let view: UIView = object.viewBlock?() {
-			footer = TableViewSectionPart.titleView(view: view)
+			footer = RFTableViewSectionPart.titleView(view: view)
 		} else {
-			footer = TableViewSectionPart.systemDefault
+			footer = RFTableViewSectionPart.systemDefault
 		}
 		closeSection()
 		lastItemType = .sectionEnd
@@ -420,9 +420,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 
 		if let title = object.title {
-			header = TableViewSectionPart.titleString(string: title)
+			header = RFTableViewSectionPart.titleString(string: title)
 		} else {
-			header = TableViewSectionPart.systemDefault
+			header = RFTableViewSectionPart.systemDefault
 		}
 		lastItemType = .header
 	}
@@ -442,9 +442,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 
 		if let view: UIView = object.viewBlock?() {
-			header = TableViewSectionPart.titleView(view: view)
+			header = RFTableViewSectionPart.titleView(view: view)
 		} else {
-			header = TableViewSectionPart.systemDefault
+			header = RFTableViewSectionPart.systemDefault
 		}
 		lastItemType = .header
 	}

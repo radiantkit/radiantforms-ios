@@ -3,10 +3,10 @@ import UIKit
 
 public class RFTableViewSection: NSObject {
 	public let cells: RFTableViewCellArray
-	public let header: TableViewSectionPart
-	public let footer: TableViewSectionPart
+	public let header: RFTableViewSectionPart
+	public let footer: RFTableViewSectionPart
 
-	init(cells: RFTableViewCellArray, header: TableViewSectionPart, footer: TableViewSectionPart) {
+	init(cells: RFTableViewCellArray, header: RFTableViewSectionPart, footer: RFTableViewSectionPart) {
 		self.cells = cells
 		self.header = header
 		self.footer = footer

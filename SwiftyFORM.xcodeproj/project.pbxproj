@@ -39,7 +39,7 @@
 		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
 		4229CE0A1D43C450002C28A7 /* RFPrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* RFTableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* RFTableViewSectionArray.swift */; };
-		423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* TableViewSectionPart.swift */; };
+		423E31431D6384700048D8C3 /* RFTableViewSectionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31421D6384700048D8C3 /* RFTableViewSectionPart.swift */; };
 		4245B3F51DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */; };
 		4245B3F61DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */; };
 		4245B3F71DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */; };
@@ -165,7 +165,7 @@
 		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
 		4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* RFTableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewSectionArray.swift; sourceTree = "<group>"; };
-		423E31421D6384700048D8C3 /* TableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionPart.swift; sourceTree = "<group>"; };
+		423E31421D6384700048D8C3 /* RFTableViewSectionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewSectionPart.swift; sourceTree = "<group>"; };
 		4245B3EB1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RFSpecificationAdvancedTests.csv; sourceTree = "<group>"; };
 		4245B3EC1DA429B500BCB4C7 /* RFSpecificationAdvancedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationAdvancedTests.swift; sourceTree = "<group>"; };
 		4245B3ED1DA429B500BCB4C7 /* RFCharacterSetSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCharacterSetSpecificationTests.swift; sourceTree = "<group>"; };
@@ -408,9 +408,9 @@
 				42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */,
 				428683101B346CFE0028DB2F /* RFTableViewSection.swift */,
 				423E31401D6383FE0048D8C3 /* RFTableViewSectionArray.swift */,
+				423E31421D6384700048D8C3 /* RFTableViewSectionPart.swift */,
 				42B060F82292913900FD4585 /* RFTheme.swift */,
 				42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */,
-				423E31421D6384700048D8C3 /* TableViewSectionPart.swift */,
 				428683151B346CFE0028DB2F /* TitleWidth.swift */,
 				420F6CCC1D6A1044009D5F57 /* ToggleExpandCollapse.swift */,
 				428683161B346CFE0028DB2F /* ValidateResult.swift */,
@@ -677,7 +677,7 @@
 				4286833F1B346CFE0028DB2F /* RFFormBuilder.swift in Sources */,
 				428683371B346CFE0028DB2F /* RFTextFieldCell.swift in Sources */,
 				420F6CCD1D6A1044009D5F57 /* ToggleExpandCollapse.swift in Sources */,
-				423E31431D6384700048D8C3 /* TableViewSectionPart.swift in Sources */,
+				423E31431D6384700048D8C3 /* RFTableViewSectionPart.swift in Sources */,
 				42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */,
 				425DED651D28257000EDF891 /* SegmentedControlFormItem.swift in Sources */,
 			);
