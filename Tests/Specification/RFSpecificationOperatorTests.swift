@@ -2,7 +2,7 @@
 import XCTest
 @testable import SwiftyFORM
 
-class OperatorTests: XCTestCase {
+class RFSpecificationOperatorTests: XCTestCase {
 	
 	func testOperator0() {
 		/*
