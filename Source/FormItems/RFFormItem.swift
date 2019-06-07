@@ -20,7 +20,7 @@ public protocol RFFormItemVisitor {
 	func visit(object: RFSegmentedControlFormItem)
 	func visit(object: RFSliderFormItem)
 	func visit(object: RFStaticTextFormItem)
-	func visit(object: StepperFormItem)
+	func visit(object: RFStepperFormItem)
 	func visit(object: SwitchFormItem)
 	func visit(object: TextFieldFormItem)
 	func visit(object: TextViewFormItem)

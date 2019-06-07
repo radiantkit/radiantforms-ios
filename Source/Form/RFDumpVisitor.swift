@@ -158,8 +158,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["value"] = object.value
 	}
 
-	public func visit(object: StepperFormItem) {
-		dict["class"] = "StepperFormItem"
+	public func visit(object: RFStepperFormItem) {
+		dict["class"] = "RFStepperFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

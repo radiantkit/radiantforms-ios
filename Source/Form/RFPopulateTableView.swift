@@ -526,9 +526,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: StepperFormItem
+	// MARK: RFStepperFormItem
 
-	func visit(object: StepperFormItem) {
+	func visit(object: RFStepperFormItem) {
 		var model = RFStepperCellModel()
 		model.title = object.title
 		model.value = object.value

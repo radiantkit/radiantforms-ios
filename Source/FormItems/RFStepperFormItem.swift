@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class StepperFormItem: RFFormItem {
+public class RFStepperFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -34,3 +34,6 @@ public class StepperFormItem: RFFormItem {
 		syncCellWithValue(value, animated)
 	}
 }
+
+@available(*, unavailable, renamed: "RFStepperFormItem")
+typealias StepperFormItem = RFStepperFormItem

@@ -12,14 +12,14 @@ class SteppersViewController: RFFormViewController {
 		builder += submitButton
 	}
 
-	lazy var catStepper: StepperFormItem = {
-		let instance = StepperFormItem()
+	lazy var catStepper: RFStepperFormItem = {
+		let instance = RFStepperFormItem()
 		instance.title = "Number of Cats"
 		return instance
 		}()
 
-	lazy var dogStepper: StepperFormItem = {
-		let instance = StepperFormItem()
+	lazy var dogStepper: RFStepperFormItem = {
+		let instance = RFStepperFormItem()
 		instance.title = "Number of Dogs"
 		return instance
 		}()

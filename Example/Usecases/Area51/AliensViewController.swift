@@ -11,8 +11,8 @@ class AliensViewController: RFFormViewController {
 		builder += button0
 	}
 
-	lazy var stepperForm0: StepperFormItem = {
-		let instance = StepperFormItem()
+	lazy var stepperForm0: RFStepperFormItem = {
+		let instance = RFStepperFormItem()
 		instance.title = "Alien encounters"
 		return instance
 		}()
