@@ -89,7 +89,7 @@ public class RFOptionPickerFormItem: RFFormItem {
 	}
 }
 
-public class OptionRowFormItem: RFFormItem {
+public class RFOptionRowFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -112,3 +112,6 @@ typealias OptionRowModel = RFOptionRowModel
 
 @available(*, unavailable, renamed: "RFOptionPickerFormItem")
 typealias OptionPickerFormItem = RFOptionPickerFormItem
+
+@available(*, unavailable, renamed: "RFOptionRowFormItem")
+typealias OptionRowFormItem = RFOptionRowFormItem

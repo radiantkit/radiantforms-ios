@@ -290,7 +290,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 	// MARK: OptionRowFormItem
 
-	func visit(object: OptionRowFormItem) {
+	func visit(object: RFOptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
 		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")

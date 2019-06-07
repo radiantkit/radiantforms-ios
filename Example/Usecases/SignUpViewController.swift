@@ -48,7 +48,7 @@ class SignUpViewController: RFFormViewController {
 			return vc
 		}
 		instance.willPopViewController = { (context: RFViewControllerFormItemPopContext) in
-			if let x = context.returnedObject as? SwiftyFORM.OptionRowFormItem {
+			if let x = context.returnedObject as? SwiftyFORM.RFOptionRowFormItem {
 				context.cell.detailTextLabel?.text = x.title
 			} else {
 				context.cell.detailTextLabel?.text = nil

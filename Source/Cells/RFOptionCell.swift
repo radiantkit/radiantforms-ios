@@ -4,7 +4,7 @@ import UIKit
 public class RFOptionCell: UITableViewCell, RFSelectRowDelegate {
 	let innerDidSelectOption: () -> Void
 
-	public init(model: OptionRowFormItem, didSelectOption: @escaping () -> Void) {
+	public init(model: RFOptionRowFormItem, didSelectOption: @escaping () -> Void) {
 		self.innerDidSelectOption = didSelectOption
 		super.init(style: .default, reuseIdentifier: nil)
 		loadWithModel(model)
@@ -14,7 +14,7 @@ public class RFOptionCell: UITableViewCell, RFSelectRowDelegate {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	public func loadWithModel(_ model: OptionRowFormItem) {
+	public func loadWithModel(_ model: RFOptionRowFormItem) {
 		textLabel?.text = model.title
 		if model.selected {
 			accessoryType = .checkmark

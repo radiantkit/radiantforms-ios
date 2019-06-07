@@ -21,7 +21,7 @@ class RFReloadPersistentValidationStateVisitor: RFFormItemVisitor {
 	func visit(object: RFDatePickerFormItem) {}
 	func visit(object: RFMetaFormItem) {}
 	func visit(object: RFOptionPickerFormItem) {}
-	func visit(object: OptionRowFormItem) {}
+	func visit(object: RFOptionRowFormItem) {}
 	func visit(object: RFPickerViewFormItem) {}
 	func visit(object: RFPrecisionSliderFormItem) {}
 	func visit(object: RFSectionFooterTitleFormItem) {}

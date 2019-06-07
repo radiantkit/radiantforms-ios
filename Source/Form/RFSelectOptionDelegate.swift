@@ -2,7 +2,7 @@
 import Foundation
 
 public protocol RFSelectOptionDelegate {
-	func form_willSelectOption(option: OptionRowFormItem)
+	func form_willSelectOption(option: RFOptionRowFormItem)
 }
 
 
