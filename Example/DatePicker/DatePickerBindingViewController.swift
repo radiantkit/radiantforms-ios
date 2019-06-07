@@ -25,8 +25,8 @@ class DatePickerBindingViewController: RFFormViewController {
 		updateSummary()
 	}
 
-	lazy var datePicker: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		instance.behavior = .expandedAlways
@@ -92,24 +92,24 @@ class DatePickerBindingViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var toggleDatePicker0: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker0: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 0"
 		instance.datePickerMode = .time
 		instance.behavior = .expanded
 		return instance
 	}()
 
-	lazy var toggleDatePicker1: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker1: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 1"
 		instance.datePickerMode = .time
 		instance.behavior = .collapsed
 		return instance
 	}()
 
-	lazy var toggleDatePicker2: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker2: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 2"
 		instance.datePickerMode = .time
 		instance.behavior = .collapsed

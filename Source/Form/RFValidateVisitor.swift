@@ -12,7 +12,7 @@ class RFValidateVisitor: FormItemVisitor {
 	func visit(object: RFAttributedTextFormItem) {}
 	func visit(object: RFButtonFormItem) {}
 	func visit(object: RFCustomFormItem) {}
-	func visit(object: DatePickerFormItem) {}
+	func visit(object: RFDatePickerFormItem) {}
 	func visit(object: MetaFormItem) {}
 	func visit(object: OptionPickerFormItem) {}
 	func visit(object: OptionRowFormItem) {}

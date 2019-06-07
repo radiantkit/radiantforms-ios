@@ -3,8 +3,8 @@ import UIKit
 import SwiftyFORM
 
 class DatePickerRangeViewController: RFFormViewController {
-	lazy var datePicker_time_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// -(5 * 60 * 60 + 5 * 60 + 5) == -18305
@@ -12,8 +12,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// -5 * 24 * 60 * 60 == -432000
@@ -21,8 +21,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// -5 * 24 * 60 * 60 == -432000
@@ -30,8 +30,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_time_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// 5 * 60 * 60 + 5 * 60 + 5 == 18305
@@ -39,8 +39,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// 5 * 24 * 60 * 60 == 432000
@@ -48,8 +48,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// 5 * 24 * 60 * 60 == 432000
@@ -57,8 +57,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_time_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// 5 * 60 * 60 + 5 * 60 + 5 == 18305
@@ -67,8 +67,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// 5 * 24 * 60 * 60 == 432000
@@ -77,8 +77,8 @@ class DatePickerRangeViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// 5 * 24 * 60 * 60 == 432000

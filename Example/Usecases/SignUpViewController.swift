@@ -88,9 +88,9 @@ class SignUpViewController: RFFormViewController {
 		return resultDate
 	}
 
-	lazy var birthday: DatePickerFormItem = {
+	lazy var birthday: RFDatePickerFormItem = {
 		let today = Date()
-		let instance = DatePickerFormItem()
+		let instance = RFDatePickerFormItem()
 		instance.title = "Birthday"
 		instance.datePickerMode = .date
 		instance.minimumDate = self.offsetDate(today, years: -150)

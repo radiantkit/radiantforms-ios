@@ -3,30 +3,30 @@ import UIKit
 import SwiftyFORM
 
 class DatePickerInitialValueViewController: RFFormViewController {
-	lazy var datePicker_time_noValue: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_noValue: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		instance.minuteInterval = 15
 		return instance
 		}()
 
-	lazy var datePicker_date_noValue: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_noValue: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_noValue: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_noValue: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		return instance
 		}()
 
-	lazy var datePicker_time_value: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_value: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// 5 * 60 * 60 + 5 * 60 + 5 == 18305
@@ -34,8 +34,8 @@ class DatePickerInitialValueViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_value: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_value: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// 51 * 24 * 60 * 60 == 4406400
@@ -43,8 +43,8 @@ class DatePickerInitialValueViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_value: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_value: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// 51 * 24 * 60 * 60 == 4406400

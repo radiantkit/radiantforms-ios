@@ -193,9 +193,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: DatePickerFormItem
+	// MARK: RFDatePickerFormItem
 
-	func visit(object: DatePickerFormItem) {
+	func visit(object: RFDatePickerFormItem) {
 		let model = RFDatePickerCellModel()
 		model.title = object.title
 		model.datePickerMode = mapDatePickerMode(object.datePickerMode)
@@ -244,7 +244,7 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	func mapDatePickerMode(_ mode: DatePickerFormItemMode) -> UIDatePicker.Mode {
+	func mapDatePickerMode(_ mode: RFDatePickerFormItemMode) -> UIDatePicker.Mode {
 		switch mode {
 		case .date: return UIDatePicker.Mode.date
 		case .time: return UIDatePicker.Mode.time
