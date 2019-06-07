@@ -16,7 +16,7 @@ class DatePickerBindingViewController: RFFormViewController {
 		builder += summary
 
 		builder += RFSectionFormItem()
-		builder += StaticTextFormItem().title("Collapse & expand")
+		builder += RFStaticTextFormItem().title("Collapse & expand")
 		builder += userName
 		builder += toggleDatePicker0
 		builder += toggleDatePicker1
@@ -54,8 +54,8 @@ class DatePickerBindingViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var summary: StaticTextFormItem = {
-		return StaticTextFormItem().title("Date").value("-")
+	lazy var summary: RFStaticTextFormItem = {
+		return RFStaticTextFormItem().title("Date").value("-")
 	}()
 
 	func updateSummary() {

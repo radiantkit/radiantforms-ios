@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class StaticTextFormItem: RFFormItem {
+public class RFStaticTextFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -36,3 +36,6 @@ public class StaticTextFormItem: RFFormItem {
 		return self
 	}
 }
+
+@available(*, unavailable, renamed: "RFStaticTextFormItem")
+typealias StaticTextFormItem = RFStaticTextFormItem

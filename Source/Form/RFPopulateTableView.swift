@@ -503,9 +503,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: StaticTextFormItem
+	// MARK: RFStaticTextFormItem
 
-	func visit(object: StaticTextFormItem) {
+	func visit(object: RFStaticTextFormItem) {
 		var model = RFStaticTextCellModel()
 		model.title = object.title
 		model.value = object.value

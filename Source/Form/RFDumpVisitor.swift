@@ -63,8 +63,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: StaticTextFormItem) {
-		dict["class"] = "StaticTextFormItem"
+	public func visit(object: RFStaticTextFormItem) {
+		dict["class"] = "RFStaticTextFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

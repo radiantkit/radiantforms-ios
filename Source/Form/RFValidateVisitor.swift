@@ -25,7 +25,7 @@ class RFValidateVisitor: RFFormItemVisitor {
 	func visit(object: RFSectionHeaderViewFormItem) {}
 	func visit(object: RFSegmentedControlFormItem) {}
 	func visit(object: RFSliderFormItem) {}
-	func visit(object: StaticTextFormItem) {}
+	func visit(object: RFStaticTextFormItem) {}
 	func visit(object: StepperFormItem) {}
 	func visit(object: SwitchFormItem) {}
 	func visit(object: TextViewFormItem) {}

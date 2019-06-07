@@ -8,9 +8,9 @@ class StaticTextAndAttributedTextViewController: RFFormViewController {
 		builder.toolbarMode = .none
 
 		builder += RFSectionHeaderTitleFormItem(title: "Static Text")
-		builder += StaticTextFormItem().title("Title 0").value("Value 0")
-		builder += StaticTextFormItem().title("Title 1").value("Value 1")
-		builder += StaticTextFormItem().title("Title 2").value("Value 2")
+		builder += RFStaticTextFormItem().title("Title 0").value("Value 0")
+		builder += RFStaticTextFormItem().title("Title 1").value("Value 1")
+		builder += RFStaticTextFormItem().title("Title 2").value("Value 2")
 
 		builder += RFSectionHeaderTitleFormItem(title: "Attributed Text")
 		builder += RFAttributedTextFormItem().title("Title 0").value("Value 0")

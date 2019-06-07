@@ -15,14 +15,14 @@ class ReportViewController: RFFormViewController, MFMailComposeViewControllerDel
 		builder += sendButton
 		
 		builder += RFSectionHeaderTitleFormItem().title("App info")
-		builder += StaticTextFormItem().title("Name").value(AppInfo.appName)
-		builder += StaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
-		builder += StaticTextFormItem().title("UTC").value(AppInfo.packageDate)
-		builder += StaticTextFormItem().title("Defines").value(AppInfo.defines)
+		builder += RFStaticTextFormItem().title("Name").value(AppInfo.appName)
+		builder += RFStaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
+		builder += RFStaticTextFormItem().title("UTC").value(AppInfo.packageDate)
+		builder += RFStaticTextFormItem().title("Defines").value(AppInfo.defines)
 
 		builder += RFSectionHeaderTitleFormItem().title("Device info")
-		builder += StaticTextFormItem().title("Device").value(AppInfo.deviceName)
-		builder += StaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
+		builder += RFStaticTextFormItem().title("Device").value(AppInfo.deviceName)
+		builder += RFStaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
 	}
 
 	func configureButton() {

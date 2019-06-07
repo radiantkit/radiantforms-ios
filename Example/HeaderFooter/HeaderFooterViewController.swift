@@ -13,19 +13,19 @@ class HeaderFooterViewController: RFFormViewController {
 		builder.navigationTitle = "Header & Footer"
 		builder.demo_showInfo("Demonstration of\nsection headers\nand section footers")
 		builder += RFSectionHeaderTitleFormItem().title("Standard Header Title")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 		builder += RFSectionFooterTitleFormItem().title("Standard Footer Title")
 		builder += headerView0
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 		builder += footerView0
 		builder += RFSectionHeaderTitleFormItem().title("Line 1: Standard Header Title\nLine 2: Standard Header Title\nLine 3: Standard Header Title")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 		builder += RFSectionFooterTitleFormItem(title: "Line 1: Standard Footer Title\nLine 2: Standard Footer Title\nLine 3: Standard Footer Title")
 	}
 

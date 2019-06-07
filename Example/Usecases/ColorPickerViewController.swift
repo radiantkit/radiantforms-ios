@@ -53,8 +53,8 @@ class ColorPickerViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var summary: StaticTextFormItem = {
-		return StaticTextFormItem().title("Values").value("-")
+	lazy var summary: RFStaticTextFormItem = {
+		return RFStaticTextFormItem().title("Values").value("-")
 	}()
 
 	func updateSummary() {

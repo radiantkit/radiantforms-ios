@@ -21,7 +21,7 @@
 		42108D1B1B34E9F60067FEAA /* RFOptionPickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */; };
 		42108D1C1B34E9F60067FEAA /* RFSectionFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */; };
 		42108D1D1B34E9F60067FEAA /* RFSliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D101B34E9F60067FEAA /* RFSliderFormItem.swift */; };
-		42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */; };
+		42108D1E1B34E9F60067FEAA /* RFStaticTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D111B34E9F60067FEAA /* RFStaticTextFormItem.swift */; };
 		42108D1F1B34E9F60067FEAA /* StepperFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D121B34E9F60067FEAA /* StepperFormItem.swift */; };
 		42108D201B34E9F60067FEAA /* SwitchFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D131B34E9F60067FEAA /* SwitchFormItem.swift */; };
 		42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D141B34E9F60067FEAA /* TextFieldFormItem.swift */; };
@@ -147,7 +147,7 @@
 		42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionPickerFormItem.swift; sourceTree = "<group>"; };
 		42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSectionFormItem.swift; sourceTree = "<group>"; };
 		42108D101B34E9F60067FEAA /* RFSliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSliderFormItem.swift; sourceTree = "<group>"; };
-		42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextFormItem.swift; sourceTree = "<group>"; };
+		42108D111B34E9F60067FEAA /* RFStaticTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFStaticTextFormItem.swift; sourceTree = "<group>"; };
 		42108D121B34E9F60067FEAA /* StepperFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperFormItem.swift; sourceTree = "<group>"; };
 		42108D131B34E9F60067FEAA /* SwitchFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchFormItem.swift; sourceTree = "<group>"; };
 		42108D141B34E9F60067FEAA /* TextFieldFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldFormItem.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 				42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */,
 				425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* RFSliderFormItem.swift */,
-				42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */,
+				42108D111B34E9F60067FEAA /* RFStaticTextFormItem.swift */,
 				42108D121B34E9F60067FEAA /* StepperFormItem.swift */,
 				42108D131B34E9F60067FEAA /* SwitchFormItem.swift */,
 				42108D141B34E9F60067FEAA /* TextFieldFormItem.swift */,
@@ -619,7 +619,7 @@
 				4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */,
 				428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */,
 				739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */,
-				42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */,
+				42108D1E1B34E9F60067FEAA /* RFStaticTextFormItem.swift in Sources */,
 				4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */,
 				4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */,
 				42108D231B34E9F60067FEAA /* ViewControllerFormItem.swift in Sources */,

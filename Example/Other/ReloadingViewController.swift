@@ -15,18 +15,18 @@ class ReloadingViewController: RFFormViewController {
 		builder += reloadButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Populate")
-		builder += StaticTextFormItem().title("Number of reloads").value(String(populateCount))
+		builder += RFStaticTextFormItem().title("Number of reloads").value(String(populateCount))
 
 		if populateCount & 1 == 1 {
 			builder += RFSectionHeaderTitleFormItem().title("Good")
-			builder += StaticTextFormItem().title("Cure cancer")
-			builder += StaticTextFormItem().title("World peace")
-			builder += StaticTextFormItem().title("Science")
+			builder += RFStaticTextFormItem().title("Cure cancer")
+			builder += RFStaticTextFormItem().title("World peace")
+			builder += RFStaticTextFormItem().title("Science")
 		} else {
 			builder += RFSectionHeaderTitleFormItem().title("Bad")
-			builder += StaticTextFormItem().title("Ignorance")
-			builder += StaticTextFormItem().title("Dictatorship")
-			builder += StaticTextFormItem().title("Polution")
+			builder += RFStaticTextFormItem().title("Ignorance")
+			builder += RFStaticTextFormItem().title("Dictatorship")
+			builder += RFStaticTextFormItem().title("Polution")
 		}
 	}
 

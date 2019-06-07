@@ -6,16 +6,16 @@ class NoHeaderViewController: RFFormViewController {
 		builder.navigationTitle = "No Header"
 		builder.suppressHeaderForFirstSection = true
 
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 		builder += RFSectionFormItem()
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 		builder += RFSectionFormItem()
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 	}
 }
