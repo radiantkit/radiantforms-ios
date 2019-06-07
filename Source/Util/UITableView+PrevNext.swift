@@ -180,13 +180,18 @@ extension UITableView {
     }
 
 	/// Determines if it's possible to jump to a cell above.
-	func form_canMakePreviousCellFirstResponder(_ cell: UITableViewCell) -> Bool {
+	func rf_canMakePreviousCellFirstResponder(_ cell: UITableViewCell) -> Bool {
 		guard let indexPath0 = rf_indexPathForCell(cell) else { return false }
 		if rf_indexPathForPreviousResponder(indexPath0) == nil { return false }
 		if self.dataSource == nil { return false }
 		return true
 	}
 
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_canMakePreviousCellFirstResponder instead")
+    func form_canMakePreviousCellFirstResponder(_ cell: UITableViewCell) -> Bool {
+        return rf_canMakePreviousCellFirstResponder(cell)
+    }
+    
 	/// Determines if it's possible to jump to a cell below.
 	func form_canMakeNextCellFirstResponder(_ cell: UITableViewCell) -> Bool {
 		guard let indexPath0 = rf_indexPathForCell(cell) else { return false }
@@ -214,7 +219,7 @@ extension UITableViewCell {
 
 	/// Determines if it's possible to jump to the cell above.
 	func form_canMakePreviousCellFirstResponder() -> Bool {
-		return form_tableView()?.form_canMakePreviousCellFirstResponder(self) ?? false
+		return form_tableView()?.rf_canMakePreviousCellFirstResponder(self) ?? false
 	}
 
 	/// Determines if it's possible to jump to the cell below.
