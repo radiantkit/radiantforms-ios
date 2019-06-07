@@ -1,9 +1,9 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import Foundation
 
-public typealias AmountValue = UInt64
+public typealias RFAmountValue = UInt64
 
-public class AmountFormItem: FormItem {
+public class RFAmountFormItem: FormItem {
     override func accept(visitor: FormItemVisitor) {
         visitor.visit(object: self)
     }
@@ -16,13 +16,13 @@ public class AmountFormItem: FormItem {
         return self
     }
     
-    public typealias SyncBlock = (_ value: AmountValue) -> Void
+    public typealias SyncBlock = (_ value: RFAmountValue) -> Void
     public var syncCellWithValue: SyncBlock = { (_) in
         SwiftyFormLog("sync is not overridden")
     }
     
-    internal var innerValue: AmountValue = 0
-    public var value: AmountValue {
+    internal var innerValue: RFAmountValue = 0
+    public var value: RFAmountValue {
         get {
             return self.innerValue
         }
@@ -31,17 +31,17 @@ public class AmountFormItem: FormItem {
         }
     }
     
-    public typealias ValueDidChangeBlock = (_ value: AmountValue) -> Void
-    public var valueDidChangeBlock: ValueDidChangeBlock = { (value: AmountValue) in
+    public typealias ValueDidChangeBlock = (_ value: RFAmountValue) -> Void
+    public var valueDidChangeBlock: ValueDidChangeBlock = { (value: RFAmountValue) in
         SwiftyFormLog("not overridden")
     }
     
-    public func valueDidChange(_ value: AmountValue) {
+    public func valueDidChange(_ value: RFAmountValue) {
         innerValue = value
         valueDidChangeBlock(value)
     }
     
-    public func assignValueAndSync(_ value: AmountValue) {
+    public func assignValueAndSync(_ value: RFAmountValue) {
         innerValue = value
         syncCellWithValue(value)
     }
@@ -101,3 +101,10 @@ public class AmountFormItem: FormItem {
     /// both `minimumFractionDigits` and `maximumFractionDigits` gets assigned to `fractionDigits`.
     public var numberFormatter: NumberFormatter? = nil
 }
+
+
+@available(*, unavailable, renamed: "RFAmountValue")
+typealias AmountValue = RFAmountValue
+
+@available(*, unavailable, renamed: "RFAmountFormItem")
+typealias AmountFormItem = RFAmountFormItem

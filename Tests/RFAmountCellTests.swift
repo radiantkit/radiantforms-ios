@@ -14,7 +14,7 @@ class RFAmountCellTests: XCTestCase {
     }
     
     func testParseAndFormatAmount() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.parseAndFormatAmount(0), "")
@@ -24,7 +24,7 @@ class RFAmountCellTests: XCTestCase {
     // MARK: - Set initial value
     
     func testInitialValue0() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.value = 1234567890
         let cell: RFAmountCell = createCell(formItem)
@@ -35,7 +35,7 @@ class RFAmountCellTests: XCTestCase {
     }
     
     func testInitialValue1() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(4).fractionDigits(2)
         formItem.value = 123456
         let cell: RFAmountCell = createCell(formItem)
@@ -48,7 +48,7 @@ class RFAmountCellTests: XCTestCase {
     // MARK: - Don't set any initial value
     
     func testNoInitialValue0() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(0)
         let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0")
@@ -58,7 +58,7 @@ class RFAmountCellTests: XCTestCase {
     }
     
     func testNoInitialValue1() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
         let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0.00")
@@ -70,7 +70,7 @@ class RFAmountCellTests: XCTestCase {
     // MARK: - NumberFormatter
 
     func testNumberFormatter0() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(10).fractionDigits(0)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 0, decimalSeparator: ",", groupingSeparator: ".")
         let cell: RFAmountCell = createCell(formItem)
@@ -81,7 +81,7 @@ class RFAmountCellTests: XCTestCase {
     }
     
     func testNumberFormatter1() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(5).fractionDigits(2)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 2, decimalSeparator: ",", groupingSeparator: ".")
         let cell: RFAmountCell = createCell(formItem)
@@ -92,7 +92,7 @@ class RFAmountCellTests: XCTestCase {
     }
     
     func testNumberFormatter2() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.maxIntegerDigits(6).fractionDigits(4)
         formItem.numberFormatter = self.createNumberFormattter(fractionDigits: 4, decimalSeparator: ".", groupingSeparator: " ")
         let cell: RFAmountCell = createCell(formItem)
@@ -105,7 +105,7 @@ class RFAmountCellTests: XCTestCase {
     }
 
     func testNumberFormatter3() {
-        let formItem = AmountFormItem()
+        let formItem = RFAmountFormItem()
         formItem.numberFormatter = self.createNumberFormattter(
             fractionDigits: formItem.fractionDigits,
             decimalSeparator: "_d_",
@@ -121,7 +121,7 @@ class RFAmountCellTests: XCTestCase {
     
     // MARK: - Helper
     
-    func createCell(_ formItem: AmountFormItem) -> RFAmountCell {
+    func createCell(_ formItem: RFAmountFormItem) -> RFAmountCell {
         let populateTableViewModel = RFPopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
         let populateTableView = RFPopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)

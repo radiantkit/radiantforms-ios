@@ -64,7 +64,7 @@ class AmountViewController: RFFormViewController {
         numberOfTrees.value = pickRandomAmountValue([100, 10000])
     }
     
-	func pickRandomAmountValue(_ values: [AmountValue]) -> AmountValue {
+	func pickRandomAmountValue(_ values: [RFAmountValue]) -> RFAmountValue {
 		return values.randomElement()!
 	}
 
@@ -93,8 +93,8 @@ class AmountViewController: RFFormViewController {
     
     // MARK: - Typical usecases
     
-    lazy var soundLevel: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var soundLevel: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Sound Level")
         instance.placeholder("0.0")
         instance.unitSuffix("dB")
@@ -103,8 +103,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var numberOfTrees: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var numberOfTrees: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Number Of Trees")
         instance.placeholder("None")
         instance.unitSuffix("")
@@ -113,8 +113,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var moneyDKK: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var moneyDKK: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Money DKK")
         instance.placeholder("0")
         instance.unitSuffix("DKK")
@@ -123,8 +123,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var moneyEUR: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var moneyEUR: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Money EUR")
         instance.placeholder("0.00")
         instance.unitSuffix("EUR")
@@ -133,8 +133,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var moneySymbol: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var moneySymbol: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Money Symbol")
         instance.placeholder("0.0000")
         instance.unitSuffix("€")
@@ -143,16 +143,16 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var noPlaceholder: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var noPlaceholder: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("No placeholder")
         instance.maxIntegerDigits(10)
         instance.fractionDigits(3)
         return instance
     }()
 
-    lazy var zeroPlaceholder: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var zeroPlaceholder: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Zero")
         instance.placeholder("0")
         instance.maxIntegerDigits(10)
@@ -160,8 +160,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var multiZeroPlaceholder: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var multiZeroPlaceholder: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Multi Zero")
         instance.placeholder("0.00")
         instance.maxIntegerDigits(10)
@@ -169,8 +169,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var xPlaceholder: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var xPlaceholder: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("X")
         instance.placeholder("x.xx")
         instance.maxIntegerDigits(10)
@@ -178,8 +178,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var requiredPlaceholder: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var requiredPlaceholder: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("Required")
         instance.placeholder("Required")
         instance.maxIntegerDigits(10)
@@ -187,8 +187,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var initialValueValidA: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var initialValueValidA: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("ValidA")
         instance.placeholder("value")
         instance.maxIntegerDigits(10)
@@ -197,8 +197,8 @@ class AmountViewController: RFFormViewController {
         return instance
     }()
 
-    lazy var initialValueValidB: AmountFormItem = {
-        let instance = AmountFormItem()
+    lazy var initialValueValidB: RFAmountFormItem = {
+        let instance = RFAmountFormItem()
         instance.title("ValidB")
         instance.placeholder("value")
         instance.maxIntegerDigits(10)

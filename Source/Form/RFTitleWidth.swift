@@ -8,7 +8,7 @@ class RFObtainTitleWidth: FormItemVisitor {
 		width = object.obtainTitleWidth()
 	}
 
-    func visit(object: AmountFormItem) {}
+    func visit(object: RFAmountFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}
@@ -43,7 +43,7 @@ class RFAssignTitleWidth: FormItemVisitor {
 		object.assignTitleWidth(width)
 	}
 
-    func visit(object: AmountFormItem) {}
+    func visit(object: RFAmountFormItem) {}
 	func visit(object: AttributedTextFormItem) {}
 	func visit(object: ButtonFormItem) {}
 	func visit(object: CustomFormItem) {}

@@ -59,7 +59,7 @@
 		42685D4D1D340733008ABC3D /* RFPrecisionSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */; };
 		42685D4F1D340D99008ABC3D /* RFTableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */; };
 		4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* RFAmountCell.swift */; };
-		4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* AmountFormItem.swift */; };
+		4280F71B2264A99F0098EF22 /* RFAmountFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */; };
 		4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */; };
 		4280F722226F4C340098EF22 /* RFAmountCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F721226F4C340098EF22 /* RFAmountCellTests.swift */; };
 		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
@@ -185,7 +185,7 @@
 		42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderCell.swift; sourceTree = "<group>"; };
 		42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewCellArray.swift; sourceTree = "<group>"; };
 		4280F7182264A7BA0098EF22 /* RFAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCell.swift; sourceTree = "<group>"; };
-		4280F71A2264A99F0098EF22 /* AmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormItem.swift; sourceTree = "<group>"; };
+		4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountFormItem.swift; sourceTree = "<group>"; };
 		4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFEdgeInsetLabel.swift; sourceTree = "<group>"; };
 		4280F721226F4C340098EF22 /* RFAmountCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCellTests.swift; sourceTree = "<group>"; };
 		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				4280F71A2264A99F0098EF22 /* AmountFormItem.swift */,
 				739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */,
 				42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */,
 				42D0050D1B96241100986B3B /* CustomFormItem.swift */,
@@ -301,6 +300,7 @@
 				42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */,
 				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
+				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -598,7 +598,7 @@
 				420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */,
 				4280F72B2278363B0098EF22 /* CGRect+Compatibility.swift in Sources */,
 				4286833B1B346CFE0028DB2F /* RFDumpVisitor.swift in Sources */,
-				4280F71B2264A99F0098EF22 /* AmountFormItem.swift in Sources */,
+				4280F71B2264A99F0098EF22 /* RFAmountFormItem.swift in Sources */,
 				42108D201B34E9F60067FEAA /* SwitchFormItem.swift in Sources */,
 				428683471B346CFE0028DB2F /* RFReloadPersistentValidationStateVisitor.swift in Sources */,
 				428683381B346CFE0028DB2F /* RFTextViewCell.swift in Sources */,

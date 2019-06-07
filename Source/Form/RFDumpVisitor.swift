@@ -41,7 +41,7 @@ public class RFDumpVisitor: FormItemVisitor {
 
 	private var dict = StringToAny()
 
-    public func visit(object: AmountFormItem) {
+    public func visit(object: RFAmountFormItem) {
         dict["class"] = "AmountFormItem"
         dict["elementIdentifier"] = object.elementIdentifier
         dict["styleIdentifier"] = object.styleIdentifier

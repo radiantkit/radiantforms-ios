@@ -86,7 +86,7 @@ class RFPopulateTableView: FormItemVisitor {
 
     // MARK: AmountFormItem
     
-    func visit(object: AmountFormItem) {
+    func visit(object: RFAmountFormItem) {
         let numberFormatter: NumberFormatter = object.numberFormatter ?? RFAmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
         assert(numberFormatter.minimumFractionDigits == object.fractionDigits)
         assert(numberFormatter.maximumFractionDigits == object.fractionDigits)
@@ -103,7 +103,7 @@ class RFPopulateTableView: FormItemVisitor {
         model.model = object
 
         weak var weakObject = object
-        model.valueDidChange = { (value: AmountValue) in
+        model.valueDidChange = { (value: RFAmountValue) in
             SwiftyFormLog("value \(value)")
             weakObject?.valueDidChange(value)
             return
@@ -115,7 +115,7 @@ class RFPopulateTableView: FormItemVisitor {
         lastItemType = .item
         
         weak var weakCell = cell
-        object.syncCellWithValue = { (value: AmountValue) in
+        object.syncCellWithValue = { (value: RFAmountValue) in
             SwiftyFormLog("sync value \(value)")
             weakCell?.setValueWithoutSync(value)
             return
