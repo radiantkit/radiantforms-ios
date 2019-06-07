@@ -109,7 +109,7 @@
 		42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */; };
 		42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */; };
 		42CDA6C3229D552F0050FE51 /* RFAccessibilityColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */; };
-		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
+		42D0050E1B96241100986B3B /* RFCustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* RFCustomFormItem.swift */; };
 		42D005101B96243000986B3B /* RFWillDisplayCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050F1B96243000986B3B /* RFWillDisplayCellDelegate.swift */; };
 		42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* Bundle+LoadView.swift */; };
 		42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */; };
@@ -237,7 +237,7 @@
 		42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTextFieldAppearanceStrategy.swift; sourceTree = "<group>"; };
 		42CDA6BC229C26640050FE51 /* RFThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFThemeBuilder.swift; sourceTree = "<group>"; };
 		42CDA6C2229D552F0050FE51 /* RFAccessibilityColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessibilityColorTests.swift; sourceTree = "<group>"; };
-		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
+		42D0050D1B96241100986B3B /* RFCustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCustomFormItem.swift; sourceTree = "<group>"; };
 		42D0050F1B96243000986B3B /* RFWillDisplayCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFWillDisplayCellDelegate.swift; sourceTree = "<group>"; };
 		42D005171B96348200986B3B /* Bundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadView.swift"; sourceTree = "<group>"; };
 		42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				42D0050D1B96241100986B3B /* CustomFormItem.swift */,
 				42108D0B1B34E9F60067FEAA /* DatePickerFormItem.swift */,
 				42108D0C1B34E9F60067FEAA /* FormItem.swift */,
 				42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */,
@@ -301,6 +300,7 @@
 				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
 				739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */,
 				42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */,
+				42D0050D1B96241100986B3B /* RFCustomFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -587,7 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */,
+				42D0050E1B96241100986B3B /* RFCustomFormItem.swift in Sources */,
 				428683491B346CFE0028DB2F /* RFValidateResult.swift in Sources */,
 				42108D221B34E9F60067FEAA /* TextViewFormItem.swift in Sources */,
 				4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */,

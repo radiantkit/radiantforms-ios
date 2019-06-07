@@ -173,8 +173,8 @@ class RFPopulateTableView: FormItemVisitor {
 
 	// MARK: CustomFormItem
 
-	func visit(object: CustomFormItem) {
-		let context = CustomFormItem.Context(
+	func visit(object: RFCustomFormItem) {
+		let context = RFCustomFormItem.Context(
 			viewController: model.viewController
 		)
 		do {

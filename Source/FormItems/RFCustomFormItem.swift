@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class CustomFormItem: FormItem {
+public class RFCustomFormItem: FormItem {
 	public struct Context {
 		public let viewController: UIViewController
 	}
@@ -17,3 +17,6 @@ public class CustomFormItem: FormItem {
 		visitor.visit(object: self)
 	}
 }
+
+@available(*, unavailable, renamed: "RFCustomFormItem")
+typealias CustomFormItem = RFCustomFormItem

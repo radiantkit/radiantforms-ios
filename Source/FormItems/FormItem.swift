@@ -5,7 +5,7 @@ public protocol FormItemVisitor {
     func visit(object: RFAmountFormItem)
 	func visit(object: RFAttributedTextFormItem)
 	func visit(object: RFButtonFormItem)
-	func visit(object: CustomFormItem)
+	func visit(object: RFCustomFormItem)
 	func visit(object: DatePickerFormItem)
 	func visit(object: MetaFormItem)
 	func visit(object: OptionPickerFormItem)

@@ -10,35 +10,35 @@ class CustomViewController: RFFormViewController {
 		builder.demo_showInfo("Demonstration of\ncustom cells using\nCustomFormItem")
 
 		builder += SectionHeaderTitleFormItem(title: "World news")
-		let loaderItem0 = CustomFormItem()
+		let loaderItem0 = RFCustomFormItem()
 		loaderItem0.createCell = { _ in
 			return try LoadingCell.createCell()
 		}
 		builder += loaderItem0
 
 		builder += SectionHeaderTitleFormItem().title("Technology news")
-		let loaderItem1 = CustomFormItem()
+		let loaderItem1 = RFCustomFormItem()
 		loaderItem1.createCell = { _ in
 			return try LoadingCell.createCell()
 		}
 		builder += loaderItem1
 
 		builder += SectionHeaderTitleFormItem().title("Game news")
-		let loaderItem2 = CustomFormItem()
+		let loaderItem2 = RFCustomFormItem()
 		loaderItem2.createCell = { _ in
 			return try LoadingCell.createCell()
 		}
 		builder += loaderItem2
 
 		builder += SectionHeaderTitleFormItem().title("Fashion news")
-		let loaderItem3 = CustomFormItem()
+		let loaderItem3 = RFCustomFormItem()
 		loaderItem3.createCell = { _ in
 			return try LoadingCell.createCell()
 		}
 		builder += loaderItem3
 
 		builder += SectionHeaderTitleFormItem().title("Biz news")
-		let loaderItem4 = CustomFormItem()
+		let loaderItem4 = RFCustomFormItem()
 		loaderItem4.createCell = { _ in
 			return try LoadingCell.createCell()
 		}
