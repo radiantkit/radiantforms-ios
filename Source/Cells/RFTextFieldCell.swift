@@ -11,7 +11,7 @@ public struct RFTextFieldCellModel {
 	var autocapitalizationType: UITextAutocapitalizationType = .none
 	var spellCheckingType: UITextSpellCheckingType = .no
 	var secureTextEntry = false
-	var model: TextFieldFormItem! = nil
+	var model: RFTextFieldFormItem! = nil
 
 	var valueDidChange: (String) -> Void = { (value: String) in
 		SwiftyFormLog("value \(value)")

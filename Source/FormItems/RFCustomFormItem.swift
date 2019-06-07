@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class CustomFormItem: FormItem {
+public class RFCustomFormItem: RFFormItem {
 	public struct Context {
 		public let viewController: UIViewController
 	}
@@ -13,7 +13,10 @@ public class CustomFormItem: FormItem {
 	public typealias CreateCell = (Context) throws -> UITableViewCell
 	public var createCell: CreateCell = { _ in throw CustomFormItemError.couldNotCreate }
 
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 }
+
+@available(*, unavailable, renamed: "RFCustomFormItem")
+typealias CustomFormItem = RFCustomFormItem

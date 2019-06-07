@@ -6,7 +6,7 @@ class ButtonsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Buttons"
 		builder.toolbarMode = .none
-		builder += SectionHeaderTitleFormItem().title("Toggle Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Toggle Buttons")
         builder += toggleButton0
         builder += toggleButton1
         builder += toggleButton2
@@ -16,7 +16,7 @@ class ButtonsViewController: RFFormViewController {
 		builder += alertButton1
         builder += alertButton2
         
-        builder += SectionHeaderTitleFormItem().title("Style")
+        builder += RFSectionHeaderTitleFormItem().title("Style")
         builder += style
 	}
     
@@ -27,11 +27,11 @@ class ButtonsViewController: RFFormViewController {
 
     // MARK: - Toggle Buttons
     
-    lazy var toggleButton0: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton0: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 0"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton0 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton0 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -41,11 +41,11 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var toggleButton1: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton1: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 1"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton1 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton1 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -55,11 +55,11 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var toggleButton2: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton2: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 2"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton2 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton2 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -71,8 +71,8 @@ class ButtonsViewController: RFFormViewController {
     
     // MARK: - Alert Buttons
     
-    lazy var alertButtonSectionHeader: SectionHeaderTitleFormItem = {
-        return SectionHeaderTitleFormItem().title("Alert Buttons")
+    lazy var alertButtonSectionHeader: RFSectionHeaderTitleFormItem = {
+        return RFSectionHeaderTitleFormItem().title("Alert Buttons")
     }()
     
     func alertButtonSectionHeader_isHidden_refresh() {
@@ -82,8 +82,8 @@ class ButtonsViewController: RFFormViewController {
         alertButtonSectionHeader.isHidden = isHidden0 && isHidden1 && isHidden2
     }
     
-    lazy var alertButton0: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton0: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 0"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 0", "Button clicked")
@@ -91,8 +91,8 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var alertButton1: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton1: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 1"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 1", "Button clicked")
@@ -100,8 +100,8 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var alertButton2: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton2: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 2"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 2", "Button clicked")
@@ -111,20 +111,20 @@ class ButtonsViewController: RFFormViewController {
     
     // MARK: - Style Picker
 
-    lazy var style: OptionPickerFormItem = {
-        let instance = OptionPickerFormItem()
+    lazy var style: RFOptionPickerFormItem = {
+        let instance = RFOptionPickerFormItem()
         instance.title("Style").placeholder("required")
         instance.append("None", identifier: "none")
         instance.append("All", identifier: "all")
         instance.selectOptionWithIdentifier("all")
-        instance.valueDidChange = { [weak self] (selected: OptionRowModel?) in
+        instance.valueDidChange = { [weak self] (selected: RFOptionRowModel?) in
             self?.style_valueDidChange(selected)
         }
         return instance
     }()
     
-    func style_valueDidChange(_ optionRowModel: OptionRowModel?) {
-        guard let optionRowModel: OptionRowModel = optionRowModel else {
+    func style_valueDidChange(_ optionRowModel: RFOptionRowModel?) {
+        guard let optionRowModel: RFOptionRowModel = optionRowModel else {
             print("ERROR: Expected optionRowModel to be non-nil, but got nil")
             return
         }

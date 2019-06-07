@@ -80,7 +80,7 @@ public enum RFTableViewSectionPart {
 			This may be overfitting the problem.
 			*/
 			if string.utf8.count > 50 {
-				print("WARNING: Multiline section texts may cause crashes, consider instead using SectionHeaderViewFormItem")
+				print("WARNING: Multiline section texts may cause crashes, consider instead using RFSectionHeaderViewFormItem")
 				return Constant.estimatedHeightForTitleSection * 2
 			}
 			return Constant.estimatedHeightForTitleSection

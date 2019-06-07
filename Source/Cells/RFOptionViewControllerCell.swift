@@ -4,17 +4,17 @@ import UIKit
 public struct RFOptionViewControllerCellModel {
 	var title: String = ""
 	var placeholder: String = ""
-	var optionField: OptionPickerFormItem?
-	var selectedOptionRow: OptionRowModel?
+	var optionField: RFOptionPickerFormItem?
+	var selectedOptionRow: RFOptionRowModel?
 
-	var valueDidChange: (OptionRowModel?) -> Void = { (value: OptionRowModel?) in
+	var valueDidChange: (RFOptionRowModel?) -> Void = { (value: RFOptionRowModel?) in
 		SwiftyFormLog("value \(String(describing: value))")
 	}
 }
 
 public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 	fileprivate let model: RFOptionViewControllerCellModel
-	fileprivate var selectedOptionRow: OptionRowModel?
+	fileprivate var selectedOptionRow: RFOptionRowModel?
 	fileprivate weak var parentViewController: UIViewController?
 
 	public init(parentViewController: UIViewController, model: RFOptionViewControllerCellModel) {
@@ -45,14 +45,14 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 		detailTextLabel?.text = s
 	}
 
-	public func setSelectedOptionRowWithoutPropagation(_ option: OptionRowModel?) {
+	public func setSelectedOptionRowWithoutPropagation(_ option: RFOptionRowModel?) {
 		SwiftyFormLog("set selected option: \(String(describing: option?.title)) \(String(describing: option?.identifier))")
 
 		selectedOptionRow = option
 		updateValue()
 	}
 
-	fileprivate func viaOptionList_userPickedOption(_ option: OptionRowModel) {
+	fileprivate func viaOptionList_userPickedOption(_ option: RFOptionRowModel) {
 		SwiftyFormLog("user picked option: \(option.title) \(option.identifier)")
 
 		if selectedOptionRow === option {
@@ -84,7 +84,7 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 		// hide keyboard when the user taps this kind of row
 		tableView.form_firstResponder()?.resignFirstResponder()
 
-		let childViewController = RFOptionListViewController(optionField: optionField) { [weak self] (selected: OptionRowModel) in
+		let childViewController = RFOptionListViewController(optionField: optionField) { [weak self] (selected: RFOptionRowModel) in
 			self?.viaOptionList_userPickedOption(selected)
 			nc.popViewController(animated: true)
 		}

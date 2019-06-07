@@ -1,8 +1,8 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class SegmentedControlFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFSegmentedControlFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -73,3 +73,6 @@ public class SegmentedControlFormItem: FormItem {
 		valueDidChangeBlock(value)
 	}
 }
+
+@available(*, unavailable, renamed: "RFSegmentedControlFormItem")
+typealias SegmentedControlFormItem = RFSegmentedControlFormItem

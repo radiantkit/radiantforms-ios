@@ -1,35 +1,35 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-class RFValidateVisitor: FormItemVisitor {
+class RFValidateVisitor: RFFormItemVisitor {
 	var result = RFValidateResult.valid
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		result = object.submitValidateValueText()
 	}
 
-    func visit(object: AmountFormItem) {}
-	func visit(object: AttributedTextFormItem) {}
-	func visit(object: ButtonFormItem) {}
-	func visit(object: CustomFormItem) {}
-	func visit(object: DatePickerFormItem) {}
-	func visit(object: MetaFormItem) {}
-	func visit(object: OptionPickerFormItem) {}
-	func visit(object: OptionRowFormItem) {}
-	func visit(object: PickerViewFormItem) {}
-	func visit(object: PrecisionSliderFormItem) {}
-	func visit(object: SectionFooterTitleFormItem) {}
-	func visit(object: SectionFooterViewFormItem) {}
-	func visit(object: SectionFormItem) {}
-	func visit(object: SectionHeaderTitleFormItem) {}
-	func visit(object: SectionHeaderViewFormItem) {}
-	func visit(object: SegmentedControlFormItem) {}
-	func visit(object: SliderFormItem) {}
-	func visit(object: StaticTextFormItem) {}
-	func visit(object: StepperFormItem) {}
-	func visit(object: SwitchFormItem) {}
-	func visit(object: TextViewFormItem) {}
-	func visit(object: ViewControllerFormItem) {}
+    func visit(object: RFAmountFormItem) {}
+	func visit(object: RFAttributedTextFormItem) {}
+	func visit(object: RFButtonFormItem) {}
+	func visit(object: RFCustomFormItem) {}
+	func visit(object: RFDatePickerFormItem) {}
+	func visit(object: RFMetaFormItem) {}
+	func visit(object: RFOptionPickerFormItem) {}
+	func visit(object: RFOptionRowFormItem) {}
+	func visit(object: RFPickerViewFormItem) {}
+	func visit(object: RFPrecisionSliderFormItem) {}
+	func visit(object: RFSectionFooterTitleFormItem) {}
+	func visit(object: RFSectionFooterViewFormItem) {}
+	func visit(object: RFSectionFormItem) {}
+	func visit(object: RFSectionHeaderTitleFormItem) {}
+	func visit(object: RFSectionHeaderViewFormItem) {}
+	func visit(object: RFSegmentedControlFormItem) {}
+	func visit(object: RFSliderFormItem) {}
+	func visit(object: RFStaticTextFormItem) {}
+	func visit(object: RFStepperFormItem) {}
+	func visit(object: RFSwitchFormItem) {}
+	func visit(object: RFTextViewFormItem) {}
+	func visit(object: RFViewControllerFormItem) {}
 }
 
 @available(*, unavailable, renamed: "RFValidateVisitor")

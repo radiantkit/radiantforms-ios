@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public enum DatePickerFormItemMode {
+public enum RFDatePickerFormItemMode {
 	case time
 	case date
 	case dateAndTime
@@ -22,8 +22,8 @@ public enum DatePickerFormItemMode {
 
 Behind the scenes this creates a `UIDatePicker`.
 */
-public class DatePickerFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFDatePickerFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -94,7 +94,7 @@ public class DatePickerFormItem: FormItem {
 		syncCellWithValue(date, animated)
 	}
 
-	public var datePickerMode: DatePickerFormItemMode = .dateAndTime
+	public var datePickerMode: RFDatePickerFormItemMode = .dateAndTime
 	public var locale: Locale? // default is Locale.current, setting nil returns to default
 	public var minimumDate: Date? // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 	public var maximumDate: Date? // default is nil
@@ -110,3 +110,9 @@ public class DatePickerFormItem: FormItem {
 		valueDidChangeBlock(value)
 	}
 }
+
+@available(*, unavailable, renamed: "RFDatePickerFormItemMode")
+typealias DatePickerFormItemMode = RFDatePickerFormItemMode
+
+@available(*, unavailable, renamed: "RFDatePickerFormItem")
+typealias DatePickerFormItem = RFDatePickerFormItem

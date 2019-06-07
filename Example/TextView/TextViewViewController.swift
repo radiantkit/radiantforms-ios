@@ -10,38 +10,38 @@ class TextViewViewController: RFFormViewController {
 		builder += notes
 		builder += commentArea
 		builder += userDescription
-		builder += SectionHeaderTitleFormItem().title("Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Buttons")
 		builder += randomizeButton
 		builder += clearButton
 	}
 
-	lazy var longSummary: TextViewFormItem = {
-		let instance = TextViewFormItem()
+	lazy var longSummary: RFTextViewFormItem = {
+		let instance = RFTextViewFormItem()
 		instance.title("Long summary").placeholder("placeholder")
 		instance.value = "Lorem ipsum"
 		return instance
 		}()
 
-	lazy var notes: TextViewFormItem = {
-		let instance = TextViewFormItem()
+	lazy var notes: RFTextViewFormItem = {
+		let instance = RFTextViewFormItem()
 		instance.title("Notes").placeholder("I'm a placeholder")
 		return instance
 		}()
 
-	lazy var commentArea: TextViewFormItem = {
-		let instance = TextViewFormItem()
+	lazy var commentArea: RFTextViewFormItem = {
+		let instance = RFTextViewFormItem()
 		instance.title("Comments").placeholder("I'm also a placeholder")
 		return instance
 		}()
 
-	lazy var userDescription: TextViewFormItem = {
-		let instance = TextViewFormItem()
+	lazy var userDescription: RFTextViewFormItem = {
+		let instance = RFTextViewFormItem()
 		instance.title("Description").placeholder("Yet another placeholder")
 		return instance
 		}()
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()
@@ -49,8 +49,8 @@ class TextViewViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var clearButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var clearButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Clear"
 		instance.action = { [weak self] in
 			self?.clear()
@@ -58,7 +58,7 @@ class TextViewViewController: RFFormViewController {
 		return instance
 		}()
 
-	func appendRandom(_ textView: TextViewFormItem, strings: [String]) {
+	func appendRandom(_ textView: RFTextViewFormItem, strings: [String]) {
 		let notEmpty = textView.value.utf8.count != 0
 		var s = ""
 		if notEmpty {

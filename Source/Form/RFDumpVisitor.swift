@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class RFDumpVisitor: FormItemVisitor {
+public class RFDumpVisitor: RFFormItemVisitor {
 	private typealias StringToAny = [String: Any?]
 
 	public init() {
 	}
 
-	class func dump(_ prettyPrinted: Bool = true, items: [FormItem]) -> Data {
+	class func dump(_ prettyPrinted: Bool = true, items: [RFFormItem]) -> Data {
 		var result = [StringToAny]()
 		var rowNumber: Int = 0
 		for item in items {
@@ -41,30 +41,30 @@ public class RFDumpVisitor: FormItemVisitor {
 
 	private var dict = StringToAny()
 
-    public func visit(object: AmountFormItem) {
-        dict["class"] = "AmountFormItem"
+    public func visit(object: RFAmountFormItem) {
+        dict["class"] = "RFAmountFormItem"
         dict["elementIdentifier"] = object.elementIdentifier
         dict["styleIdentifier"] = object.styleIdentifier
         dict["styleClass"] = object.styleClass
     }
     
-	public func visit(object: MetaFormItem) {
-		dict["class"] = "MetaFormItem"
+	public func visit(object: RFMetaFormItem) {
+		dict["class"] = "RFMetaFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 		dict["value"] = object.value
 	}
 
-	public func visit(object: CustomFormItem) {
-		dict["class"] = "CustomFormItem"
+	public func visit(object: RFCustomFormItem) {
+		dict["class"] = "RFCustomFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: StaticTextFormItem) {
-		dict["class"] = "StaticTextFormItem"
+	public func visit(object: RFStaticTextFormItem) {
+		dict["class"] = "RFStaticTextFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -72,8 +72,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["value"] = object.value
 	}
 
-	public func visit(object: AttributedTextFormItem) {
-		dict["class"] = "AttributedTextFormItem"
+	public func visit(object: RFAttributedTextFormItem) {
+		dict["class"] = "RFAttributedTextFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -81,8 +81,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["value"] = object.value?.string
 	}
 
-	public func visit(object: TextFieldFormItem) {
-		dict["class"] = "TextFieldFormItem"
+	public func visit(object: RFTextFieldFormItem) {
+		dict["class"] = "RFTextFieldFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -91,8 +91,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["placeholder"] = object.placeholder
 	}
 
-	public func visit(object: TextViewFormItem) {
-		dict["class"] = "TextViewFormItem"
+	public func visit(object: RFTextViewFormItem) {
+		dict["class"] = "RFTextViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -100,16 +100,16 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["value"] = object.value
 	}
 
-	public func visit(object: ViewControllerFormItem) {
-		dict["class"] = "ViewControllerFormItem"
+	public func visit(object: RFViewControllerFormItem) {
+		dict["class"] = "RFViewControllerFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 		dict["title"] = object.title
 	}
 
-	public func visit(object: OptionPickerFormItem) {
-		dict["class"] = "OptionPickerFormItem"
+	public func visit(object: RFOptionPickerFormItem) {
+		dict["class"] = "RFOptionPickerFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -118,8 +118,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["value"] = object.selected?.title
 	}
 
-	public func visit(object: DatePickerFormItem) {
-		dict["class"] = "DatePickerFormItem"
+	public func visit(object: RFDatePickerFormItem) {
+		dict["class"] = "RFDatePickerFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -132,16 +132,16 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["minuteInterval"] = object.minuteInterval
 	}
 
-	public func visit(object: ButtonFormItem) {
-		dict["class"] = "ButtonFormItem"
+	public func visit(object: RFButtonFormItem) {
+		dict["class"] = "RFButtonFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 		dict["title"] = object.title
 	}
 
-	public func visit(object: OptionRowFormItem) {
-		dict["class"] = "OptionRowFormItem"
+	public func visit(object: RFOptionRowFormItem) {
+		dict["class"] = "RFOptionRowFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -149,8 +149,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["state"] = object.selected
 	}
 
-	public func visit(object: SwitchFormItem) {
-		dict["class"] = "SwitchFormItem"
+	public func visit(object: RFSwitchFormItem) {
+		dict["class"] = "RFSwitchFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -158,16 +158,16 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["value"] = object.value
 	}
 
-	public func visit(object: StepperFormItem) {
-		dict["class"] = "StepperFormItem"
+	public func visit(object: RFStepperFormItem) {
+		dict["class"] = "RFStepperFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 		dict["title"] = object.title
 	}
 
-	public func visit(object: SliderFormItem) {
-		dict["class"] = "SliderFormItem"
+	public func visit(object: RFSliderFormItem) {
+		dict["class"] = "RFSliderFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -176,8 +176,8 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["maximumValue"] = object.maximumValue
 	}
 
-	public func visit(object: PrecisionSliderFormItem) {
-		dict["class"] = "PrecisionSliderFormItem"
+	public func visit(object: RFPrecisionSliderFormItem) {
+		dict["class"] = "RFPrecisionSliderFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -187,52 +187,52 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["decimalPlaces"] = object.decimalPlaces
 	}
 
-	public func visit(object: SectionFormItem) {
-		dict["class"] = "SectionFormItem"
+	public func visit(object: RFSectionFormItem) {
+		dict["class"] = "RFSectionFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: SectionHeaderTitleFormItem) {
-		dict["class"] = "SectionHeaderTitleFormItem"
-		dict["elementIdentifier"] = object.elementIdentifier
-		dict["styleIdentifier"] = object.styleIdentifier
-		dict["styleClass"] = object.styleClass
-		dict["title"] = object.title
-	}
-
-	public func visit(object: SectionHeaderViewFormItem) {
-		dict["class"] = "SectionHeaderViewFormItem"
-		dict["elementIdentifier"] = object.elementIdentifier
-		dict["styleIdentifier"] = object.styleIdentifier
-		dict["styleClass"] = object.styleClass
-	}
-
-	public func visit(object: SectionFooterTitleFormItem) {
-		dict["class"] = "SectionFooterTitleFormItem"
+	public func visit(object: RFSectionHeaderTitleFormItem) {
+		dict["class"] = "RFSectionHeaderTitleFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 		dict["title"] = object.title
 	}
 
-	public func visit(object: SectionFooterViewFormItem) {
-		dict["class"] = "SectionFooterViewFormItem"
+	public func visit(object: RFSectionHeaderViewFormItem) {
+		dict["class"] = "RFSectionHeaderViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: SegmentedControlFormItem) {
-		dict["class"] = "SegmentedControlFormItem"
+	public func visit(object: RFSectionFooterTitleFormItem) {
+		dict["class"] = "RFSectionFooterTitleFormItem"
+		dict["elementIdentifier"] = object.elementIdentifier
+		dict["styleIdentifier"] = object.styleIdentifier
+		dict["styleClass"] = object.styleClass
+		dict["title"] = object.title
+	}
+
+	public func visit(object: RFSectionFooterViewFormItem) {
+		dict["class"] = "RFSectionFooterViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: PickerViewFormItem) {
-		dict["class"] = "PickerViewFormItem"
+	public func visit(object: RFSegmentedControlFormItem) {
+		dict["class"] = "RFSegmentedControlFormItem"
+		dict["elementIdentifier"] = object.elementIdentifier
+		dict["styleIdentifier"] = object.styleIdentifier
+		dict["styleClass"] = object.styleClass
+	}
+
+	public func visit(object: RFPickerViewFormItem) {
+		dict["class"] = "RFPickerViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

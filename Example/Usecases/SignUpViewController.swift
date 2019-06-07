@@ -12,7 +12,7 @@ class SignUpViewController: RFFormViewController {
 		builder.navigationTitle = "Sign Up"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("SocialNetwork 123\nSign up form")
-		builder += SectionHeaderTitleFormItem().title("Details")
+		builder += RFSectionHeaderTitleFormItem().title("Details")
 		builder += userName
 		builder += password
 		builder += email
@@ -20,17 +20,17 @@ class SignUpViewController: RFFormViewController {
 		builder += birthday
 		builder.alignLeft([userName, password, email])
         builder += shoeSize
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += subscribeToNewsletter
-		builder += SectionFooterTitleFormItem().title("There is no way to unsubscribe our service")
+		builder += RFSectionFooterTitleFormItem().title("There is no way to unsubscribe our service")
 		builder += metaData
-		builder += SectionHeaderTitleFormItem().title("Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Buttons")
 		builder += randomizeButton
 		builder += jsonButton
 	}
 
-	lazy var userName: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var userName: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("User Name").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
@@ -40,15 +40,15 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var maleOrFemale: ViewControllerFormItem = {
-		let instance = ViewControllerFormItem()
+	lazy var maleOrFemale: RFViewControllerFormItem = {
+		let instance = RFViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
 		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = MaleFemaleViewController(dismissCommand: dismissCommand)
 			return vc
 		}
-		instance.willPopViewController = { (context: ViewControllerFormItemPopContext) in
-			if let x = context.returnedObject as? SwiftyFORM.OptionRowFormItem {
+		instance.willPopViewController = { (context: RFViewControllerFormItemPopContext) in
+			if let x = context.returnedObject as? SwiftyFORM.RFOptionRowFormItem {
 				context.cell.detailTextLabel?.text = x.title
 			} else {
 				context.cell.detailTextLabel?.text = nil
@@ -57,8 +57,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var password: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var password: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("PIN Code").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
@@ -68,8 +68,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var email: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var email: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Email").placeholder("johndoe@example.com")
 		instance.keyboardType = .emailAddress
 		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")
@@ -88,9 +88,9 @@ class SignUpViewController: RFFormViewController {
 		return resultDate
 	}
 
-	lazy var birthday: DatePickerFormItem = {
+	lazy var birthday: RFDatePickerFormItem = {
 		let today = Date()
-		let instance = DatePickerFormItem()
+		let instance = RFDatePickerFormItem()
 		instance.title = "Birthday"
 		instance.datePickerMode = .date
 		instance.minimumDate = self.offsetDate(today, years: -150)
@@ -98,22 +98,22 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-    lazy var shoeSize: SegmentedControlFormItem = {
-        let instance = SegmentedControlFormItem()
+    lazy var shoeSize: RFSegmentedControlFormItem = {
+        let instance = RFSegmentedControlFormItem()
         instance.title = "Shoe Size"
         instance.items = ["S", "M", "L", "XL"]
         return instance
     }()
     
-	lazy var subscribeToNewsletter: SwitchFormItem = {
-		let instance = SwitchFormItem()
+	lazy var subscribeToNewsletter: RFSwitchFormItem = {
+		let instance = RFSwitchFormItem()
 		instance.title = "Subscribe to newsletter"
 		instance.value = true
 		return instance
 		}()
 
-	lazy var metaData: MetaFormItem = {
-		let instance = MetaFormItem()
+	lazy var metaData: RFMetaFormItem = {
+		let instance = RFMetaFormItem()
 		var dict = [String: AnyObject?]()
 		dict["key0"] = "I'm hidden text" as AnyObject?
 		dict["key1"] = "I'm included when exporting to JSON" as AnyObject?
@@ -122,8 +122,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()
@@ -137,7 +137,7 @@ class SignUpViewController: RFFormViewController {
 		return offsetDate(today, years: -i)
 	}
 
-    func assignRandomValue(_ formItem: SegmentedControlFormItem) {
+    func assignRandomValue(_ formItem: RFSegmentedControlFormItem) {
         let count = formItem.items.count
         if count > 0 {
             formItem.selected = randomInt(0, count - 1)
@@ -153,8 +153,8 @@ class SignUpViewController: RFFormViewController {
 		subscribeToNewsletter.value = randomBool()
 	}
 
-	lazy var jsonButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var jsonButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "View JSON"
 		instance.action = { [weak self] in
 			if let vc = self {

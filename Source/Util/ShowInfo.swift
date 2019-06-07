@@ -9,7 +9,7 @@ extension RFFormBuilder {
 	///
 	/// - parameter text: The text to be shown.
 	public func demo_showInfo(_ text: String) {
-		let headerView = SectionHeaderViewFormItem()
+		let headerView = RFSectionHeaderViewFormItem()
 		headerView.viewBlock = {
 			return RFInfoView(frame: CGRect(x: 0, y: 0, width: 0, height: 100), text: text)
 		}

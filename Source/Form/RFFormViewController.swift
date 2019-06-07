@@ -52,8 +52,8 @@ open class RFFormViewController: UIViewController {
     /// - This function is invoked the very first time the `populate()` function is invoked.
     /// - This function is not invoked the following times.
     ///
-    /// This is the intended place for configuring the initial visible/hidden `FormItem`'s
-    /// by assigning their `FormItem.isHidden` booleans.
+    /// This is the intended place for configuring the initial visible/hidden `RFFormItem`'s
+    /// by assigning their `RFFormItem.isHidden` booleans.
     open func postPopulate(_ builder: RFFormBuilder) {
         // This superclass does nothing.
     }

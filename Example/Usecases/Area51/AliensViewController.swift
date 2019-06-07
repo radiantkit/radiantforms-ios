@@ -11,14 +11,14 @@ class AliensViewController: RFFormViewController {
 		builder += button0
 	}
 
-	lazy var stepperForm0: StepperFormItem = {
-		let instance = StepperFormItem()
+	lazy var stepperForm0: RFStepperFormItem = {
+		let instance = RFStepperFormItem()
 		instance.title = "Alien encounters"
 		return instance
 		}()
 
-	lazy var button0: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var button0: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit"
 		instance.action = { [weak self] in
 			if let stepperValue = self?.stepperForm0.value {

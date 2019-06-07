@@ -2,7 +2,7 @@
 import UIKit
 
 protocol RFWillPopCommandProtocol {
-	func execute(_ context: ViewControllerFormItemPopContext)
+	func execute(_ context: RFViewControllerFormItemPopContext)
 }
 
 class RFWillPopCustomViewController: RFWillPopCommandProtocol {
@@ -11,8 +11,8 @@ class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 		self.object = object
 	}
 
-	func execute(_ context: ViewControllerFormItemPopContext) {
-		if let vc = object as? ViewControllerFormItem {
+	func execute(_ context: RFViewControllerFormItemPopContext) {
+		if let vc = object as? RFViewControllerFormItem {
 			vc.willPopViewController?(context)
 			return
 		}
@@ -20,12 +20,12 @@ class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 }
 
 class RFWillPopOptionViewController: RFWillPopCommandProtocol {
-	let object: ViewControllerFormItem
-	init(object: ViewControllerFormItem) {
+	let object: RFViewControllerFormItem
+	init(object: RFViewControllerFormItem) {
 		self.object = object
 	}
 
-	func execute(_ context: ViewControllerFormItemPopContext) {
+	func execute(_ context: RFViewControllerFormItemPopContext) {
 		object.willPopViewController?(context)
 	}
 }
@@ -35,7 +35,7 @@ struct RFPopulateTableViewModel {
 	var toolbarMode: RFToolbarMode
 }
 
-class RFPopulateTableView: FormItemVisitor {
+class RFPopulateTableView: RFFormItemVisitor {
 	let model: RFPopulateTableViewModel
 
 	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()
@@ -84,9 +84,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-    // MARK: AmountFormItem
+    // MARK: RFAmountFormItem
     
-    func visit(object: AmountFormItem) {
+    func visit(object: RFAmountFormItem) {
         let numberFormatter: NumberFormatter = object.numberFormatter ?? RFAmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
         assert(numberFormatter.minimumFractionDigits == object.fractionDigits)
         assert(numberFormatter.maximumFractionDigits == object.fractionDigits)
@@ -103,7 +103,7 @@ class RFPopulateTableView: FormItemVisitor {
         model.model = object
 
         weak var weakObject = object
-        model.valueDidChange = { (value: AmountValue) in
+        model.valueDidChange = { (value: RFAmountValue) in
             SwiftyFormLog("value \(value)")
             weakObject?.valueDidChange(value)
             return
@@ -115,7 +115,7 @@ class RFPopulateTableView: FormItemVisitor {
         lastItemType = .item
         
         weak var weakCell = cell
-        object.syncCellWithValue = { (value: AmountValue) in
+        object.syncCellWithValue = { (value: RFAmountValue) in
             SwiftyFormLog("sync value \(value)")
             weakCell?.setValueWithoutSync(value)
             return
@@ -137,9 +137,9 @@ class RFPopulateTableView: FormItemVisitor {
         }
     }
 
-    // MARK: AttributedTextFormItem
+    // MARK: RFAttributedTextFormItem
 
-	func visit(object: AttributedTextFormItem) {
+	func visit(object: RFAttributedTextFormItem) {
 		var model = RFAttributedTextCellModel()
 		model.titleAttributedText = object.title
 		model.valueAttributedText = object.value
@@ -160,9 +160,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: ButtonFormItem
+	// MARK: RFButtonFormItem
 
-	func visit(object: ButtonFormItem) {
+	func visit(object: RFButtonFormItem) {
         var model = RFButtonCellModel()
 		model.title = object.title
 		model.action = object.action
@@ -171,10 +171,10 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	// MARK: CustomFormItem
+	// MARK: RFCustomFormItem
 
-	func visit(object: CustomFormItem) {
-		let context = CustomFormItem.Context(
+	func visit(object: RFCustomFormItem) {
+		let context = RFCustomFormItem.Context(
 			viewController: model.viewController
 		)
 		do {
@@ -185,7 +185,7 @@ class RFPopulateTableView: FormItemVisitor {
 			print("ERROR: Could not create cell for custom form item: \(error)")
 
 			var model = RFStaticTextCellModel()
-			model.title = "CustomFormItem"
+			model.title = "RFCustomFormItem"
 			model.value = "Exception"
 			let cell = RFStaticTextCell(model: model)
 			cells.append(cell)
@@ -193,9 +193,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: DatePickerFormItem
+	// MARK: RFDatePickerFormItem
 
-	func visit(object: DatePickerFormItem) {
+	func visit(object: RFDatePickerFormItem) {
 		let model = RFDatePickerCellModel()
 		model.title = object.title
 		model.datePickerMode = mapDatePickerMode(object.datePickerMode)
@@ -244,7 +244,7 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	func mapDatePickerMode(_ mode: DatePickerFormItemMode) -> UIDatePicker.Mode {
+	func mapDatePickerMode(_ mode: RFDatePickerFormItemMode) -> UIDatePicker.Mode {
 		switch mode {
 		case .date: return UIDatePicker.Mode.date
 		case .time: return UIDatePicker.Mode.time
@@ -252,15 +252,15 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: MetaFormItem
+	// MARK: RFMetaFormItem
 
-	func visit(object: MetaFormItem) {
+	func visit(object: RFMetaFormItem) {
 		// this item is not visual
 	}
 
-	// MARK: OptionPickerFormItem
+	// MARK: RFOptionPickerFormItem
 
-	func visit(object: OptionPickerFormItem) {
+	func visit(object: RFOptionPickerFormItem) {
 		var model = RFOptionViewControllerCellModel()
 		model.title = object.title
 		model.placeholder = object.placeholder
@@ -268,7 +268,7 @@ class RFPopulateTableView: FormItemVisitor {
 		model.selectedOptionRow = object.selected
 
 		weak var weakObject = object
-		model.valueDidChange = { (value: OptionRowModel?) in
+		model.valueDidChange = { (value: RFOptionRowModel?) in
 			SwiftyFormLog("propagate from cell to model. value \(String(describing: value))")
 			weakObject?.innerSelected = value
 			weakObject?.valueDidChange(value)
@@ -282,15 +282,15 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .item
 
 		weak var weakCell = cell
-		object.syncCellWithValue = { (selected: OptionRowModel?) in
+		object.syncCellWithValue = { (selected: RFOptionRowModel?) in
 			SwiftyFormLog("propagate from model to cell. option: \(String(describing: selected?.title))")
 			weakCell?.setSelectedOptionRowWithoutPropagation(selected)
 		}
 	}
 
-	// MARK: OptionRowFormItem
+	// MARK: RFOptionRowFormItem
 
-	func visit(object: OptionRowFormItem) {
+	func visit(object: RFOptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
 		let cell = RFOptionCell(model: object) {
 			SwiftyFormLog("did select option")
@@ -304,9 +304,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .item
 	}
 
-	// MARK: PrecisionSliderFormItem
+	// MARK: RFPrecisionSliderFormItem
 
-	func visit(object: PrecisionSliderFormItem) {
+	func visit(object: RFPrecisionSliderFormItem) {
 		let model = RFPrecisionSliderCellModel()
 		model.decimalPlaces = object.decimalPlaces
 		model.minimumValue = object.minimumValue
@@ -344,7 +344,7 @@ class RFPopulateTableView: FormItemVisitor {
 		weak var weakObject = object
 		model.valueDidChange = { (changeModel: RFPrecisionSliderCellModel.SliderDidChangeModel) in
 			SwiftyFormLog("value did change \(changeModel.value)")
-			let model = PrecisionSliderFormItem.SliderDidChangeModel(
+			let model = RFPrecisionSliderFormItem.SliderDidChangeModel(
 				value: changeModel.value,
 				valueUpdated: changeModel.valueUpdated,
 				zoom: changeModel.zoom,
@@ -365,9 +365,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: SectionFooterTitleFormItem
+	// MARK: RFSectionFooterTitleFormItem
 
-	func visit(object: SectionFooterTitleFormItem) {
+	func visit(object: RFSectionFooterTitleFormItem) {
 		if let title = object.title {
 			footer = RFTableViewSectionPart.titleString(string: title)
 		} else {
@@ -377,9 +377,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionFooterViewFormItem
+	// MARK: RFSectionFooterViewFormItem
 
-	func visit(object: SectionFooterViewFormItem) {
+	func visit(object: RFSectionFooterViewFormItem) {
 		if let view: UIView = object.viewBlock?() {
 			footer = RFTableViewSectionPart.titleView(view: view)
 		} else {
@@ -389,9 +389,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionFormItem
+	// MARK: RFSectionFormItem
 
-	func visit(object: SectionFormItem) {
+	func visit(object: RFSectionFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break
@@ -405,9 +405,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionHeaderTitleFormItem
+	// MARK: RFSectionHeaderTitleFormItem
 
-	func visit(object: SectionHeaderTitleFormItem) {
+	func visit(object: RFSectionHeaderTitleFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break
@@ -427,9 +427,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .header
 	}
 
-	// MARK: SectionHeaderViewFormItem
+	// MARK: RFSectionHeaderViewFormItem
 
-	func visit(object: SectionHeaderViewFormItem) {
+	func visit(object: RFSectionHeaderViewFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break
@@ -449,9 +449,9 @@ class RFPopulateTableView: FormItemVisitor {
 		lastItemType = .header
 	}
 
-	// MARK: SegmentedControlFormItem
+	// MARK: RFSegmentedControlFormItem
 
-	func visit(object: SegmentedControlFormItem) {
+	func visit(object: RFSegmentedControlFormItem) {
 		var model = RFSegmentedControlCellModel()
 		model.title = object.title
 		model.items = object.items
@@ -476,9 +476,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: SliderFormItem
+	// MARK: RFSliderFormItem
 
-	func visit(object: SliderFormItem) {
+	func visit(object: RFSliderFormItem) {
 		var model = RFSliderCellModel()
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
@@ -503,9 +503,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: StaticTextFormItem
+	// MARK: RFStaticTextFormItem
 
-	func visit(object: StaticTextFormItem) {
+	func visit(object: RFStaticTextFormItem) {
 		var model = RFStaticTextCellModel()
 		model.title = object.title
 		model.value = object.value
@@ -526,9 +526,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: StepperFormItem
+	// MARK: RFStepperFormItem
 
-	func visit(object: StepperFormItem) {
+	func visit(object: RFStepperFormItem) {
 		var model = RFStepperCellModel()
 		model.title = object.title
 		model.value = object.value
@@ -556,9 +556,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: SwitchFormItem
+	// MARK: RFSwitchFormItem
 
-	func visit(object: SwitchFormItem) {
+	func visit(object: RFSwitchFormItem) {
 		var model = RFSwitchCellModel()
 		model.title = object.title
 
@@ -585,9 +585,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: TextFieldFormItem
+	// MARK: RFTextFieldFormItem
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		var model = RFTextFieldCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
@@ -643,9 +643,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: TextViewFormItem
+	// MARK: RFTextViewFormItem
 
-	func visit(object: TextViewFormItem) {
+	func visit(object: RFTextViewFormItem) {
 		var model = RFTextViewCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
@@ -669,9 +669,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: ViewControllerFormItem
+	// MARK: RFViewControllerFormItem
 
-	func visit(object: ViewControllerFormItem) {
+	func visit(object: RFViewControllerFormItem) {
 		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
 		let willPopViewController = RFWillPopCustomViewController(object: object)
 
@@ -694,7 +694,7 @@ class RFPopulateTableView: FormItemVisitor {
 		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
 			if let vc = weakViewController {
-				let context = ViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
+				let context = RFViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
 				willPopCommand.execute(context)
 				_ = vc.navigationController?.popViewController(animated: true)
 			}
@@ -702,9 +702,9 @@ class RFPopulateTableView: FormItemVisitor {
 		return command
 	}
 
-	// MARK: PickerViewFormItem
+	// MARK: RFPickerViewFormItem
 
-	func visit(object: PickerViewFormItem) {
+	func visit(object: RFPickerViewFormItem) {
 		let model = RFPickerViewCellModel()
 		model.title = object.title
 		model.value = object.value

@@ -3,6 +3,6 @@ import SwiftyFORM
 
 class Tutorial2_ChildViewController_ViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
-		builder += ViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
+		builder += RFViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
 	}
 }

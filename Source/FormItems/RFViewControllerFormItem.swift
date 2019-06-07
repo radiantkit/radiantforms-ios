@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class ViewControllerFormItemPopContext {
+public class RFViewControllerFormItemPopContext {
 	public let parentViewController: UIViewController
 	public let childViewController: UIViewController
 	public let cell: RFViewControllerCell
@@ -15,8 +15,8 @@ public class ViewControllerFormItemPopContext {
 	}
 }
 
-public class ViewControllerFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFViewControllerFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -58,6 +58,12 @@ public class ViewControllerFormItem: FormItem {
 	public var createViewController: CreateViewController?
 
 	// dismissing the view controller
-	public typealias PopViewController = (ViewControllerFormItemPopContext) -> Void
+	public typealias PopViewController = (RFViewControllerFormItemPopContext) -> Void
 	public var willPopViewController: PopViewController?
 }
+
+@available(*, unavailable, renamed: "RFViewControllerFormItemPopContext")
+typealias ViewControllerFormItemPopContext = RFViewControllerFormItemPopContext
+
+@available(*, unavailable, renamed: "RFViewControllerFormItem")
+typealias ViewControllerFormItem = RFViewControllerFormItem

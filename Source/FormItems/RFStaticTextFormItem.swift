@@ -1,17 +1,9 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class TextViewFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFStaticTextFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
-	}
-
-	public var placeholder: String = ""
-
-	@discardableResult
-	public func placeholder(_ placeholder: String) -> Self {
-		self.placeholder = placeholder
-		return self
 	}
 
 	public var title: String = ""
@@ -33,12 +25,17 @@ public class TextViewFormItem: FormItem {
 			return self.innerValue
 		}
 		set {
-			self.assignValueAndSync(newValue)
+			innerValue = newValue
+			syncCellWithValue(innerValue)
 		}
 	}
 
-	func assignValueAndSync(_ value: String) {
-		innerValue = value
-		syncCellWithValue(value)
+	@discardableResult
+	public func value(_ value: String) -> Self {
+		self.value = value
+		return self
 	}
 }
+
+@available(*, unavailable, renamed: "RFStaticTextFormItem")
+typealias StaticTextFormItem = RFStaticTextFormItem

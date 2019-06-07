@@ -22,9 +22,9 @@ public struct RFAmountCellModel {
     var returnKeyType: UIReturnKeyType = .default
     var maxIntegerDigits: UInt8 = 10
     var fractionDigits: UInt8 = 3
-    var model: AmountFormItem! = nil
+    var model: RFAmountFormItem! = nil
     
-    var valueDidChange: (AmountValue) -> Void = { (value: AmountValue) in
+    var valueDidChange: (RFAmountValue) -> Void = { (value: RFAmountValue) in
         SwiftyFormLog("value \(value)")
     }
     
@@ -256,7 +256,7 @@ public class RFAmountCell: UITableViewCell {
         return self.model.formatAmount(internalValue)
     }
 
-    public func parseAndFormatAmount(_ value: AmountValue) -> String {
+    public func parseAndFormatAmount(_ value: RFAmountValue) -> String {
         if value == 0 {
             SwiftyFormLog("The value is zero")
             return ""
@@ -267,11 +267,11 @@ public class RFAmountCell: UITableViewCell {
     @objc public func valueDidChange() {
         let text: String = textField.text ?? ""
         let unformattedString: String = type(of: self).extractDigitsFromString(text)
-        let internalValue: AmountValue = self.createInternalValue(unformattedString) ?? 0
+        let internalValue: RFAmountValue = self.createInternalValue(unformattedString) ?? 0
         model.valueDidChange(internalValue)
     }
     
-    public func setValueWithoutSync(_ value: AmountValue) {
+    public func setValueWithoutSync(_ value: RFAmountValue) {
         SwiftyFormLog("set value \(value)")
         let formattedValue: String = self.parseAndFormatAmount(value)
         textField.text = formattedValue

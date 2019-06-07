@@ -14,7 +14,7 @@ struct OptionRow {
 
 class MyOptionForm {
 	let optionRows: [OptionRow]
-	let vc0 = ViewControllerFormItem()
+	let vc0 = RFViewControllerFormItem()
 
 	init(optionRows: [OptionRow]) {
 		self.optionRows = optionRows
@@ -26,12 +26,12 @@ class MyOptionForm {
 		configureVC0()
 
 		for optionRow: OptionRow in optionRows {
-			let option = OptionRowFormItem()
+			let option = RFOptionRowFormItem()
 			option.title = optionRow.title
 			builder.append(option)
 		}
 
-		builder.append(SectionHeaderTitleFormItem().title("Help"))
+		builder.append(RFSectionHeaderTitleFormItem().title("Help"))
 		builder.append(vc0)
 	}
 
@@ -72,7 +72,7 @@ class MaleFemaleViewController: RFFormViewController, RFSelectOptionDelegate {
 		xmyform = myform
 	}
 
-	func form_willSelectOption(option: OptionRowFormItem) {
+	func form_willSelectOption(option: RFOptionRowFormItem) {
 		print("select option \(option)")
 		dismissCommand.execute(viewController: self, returnObject: option)
 	}

@@ -1,8 +1,8 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class ButtonFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFButtonFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -16,3 +16,6 @@ public class ButtonFormItem: FormItem {
 
 	public var action: () -> Void = {}
 }
+
+@available(*, unavailable, renamed: "RFButtonFormItem")
+typealias ButtonFormItem = RFButtonFormItem

@@ -6,18 +6,18 @@ class StoryboardDemoViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Storyboard Demo"
 		builder += voteCountSlider
-		builder += SectionHeaderTitleFormItem()
+		builder += RFSectionHeaderTitleFormItem()
 		builder += voteButton
 	}
 	
-	lazy var voteCountSlider: PrecisionSliderFormItem = {
-		let instance = PrecisionSliderFormItem().decimalPlaces(0).minimumValue(0).maximumValue(1000).value(500).behavior(.expandedAlways)
+	lazy var voteCountSlider: RFPrecisionSliderFormItem = {
+		let instance = RFPrecisionSliderFormItem().decimalPlaces(0).minimumValue(0).maximumValue(1000).value(500).behavior(.expandedAlways)
 		instance.title = "Vote Count"
 		return instance
 	}()
 	
-	lazy var voteButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var voteButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit Vote"
 		instance.action = { [weak self] in
 			self?.voteButtonAction()

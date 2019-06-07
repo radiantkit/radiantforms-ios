@@ -1,8 +1,8 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class TextFieldFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+public class RFTextFieldFormItem: RFFormItem {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -144,3 +144,6 @@ public class TextFieldFormItem: FormItem {
 		return validatorBuilder.build().validate(text, checkHardRule: checkHardRule, checkSoftRule: checkSoftRule, checkSubmitRule: checkSubmitRule)
 	}
 }
+
+@available(*, unavailable, renamed: "RFTextFieldFormItem")
+typealias TextFieldFormItem = RFTextFieldFormItem

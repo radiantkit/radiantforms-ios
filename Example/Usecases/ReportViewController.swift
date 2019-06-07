@@ -4,25 +4,25 @@ import MessageUI
 import SwiftyFORM
 
 class ReportViewController: RFFormViewController, MFMailComposeViewControllerDelegate {
-	let sendButton = ButtonFormItem()
+	let sendButton = RFButtonFormItem()
 
 	override func populate(_ builder: RFFormBuilder) {
 		configureButton()
 
 		builder.navigationTitle = "Report"
 		builder.demo_showInfo("Report a problem\nTroubleshooting\nNeed help")
-		builder += SectionHeaderTitleFormItem().title("Send report to the developer")
+		builder += RFSectionHeaderTitleFormItem().title("Send report to the developer")
 		builder += sendButton
 		
-		builder += SectionHeaderTitleFormItem().title("App info")
-		builder += StaticTextFormItem().title("Name").value(AppInfo.appName)
-		builder += StaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
-		builder += StaticTextFormItem().title("UTC").value(AppInfo.packageDate)
-		builder += StaticTextFormItem().title("Defines").value(AppInfo.defines)
+		builder += RFSectionHeaderTitleFormItem().title("App info")
+		builder += RFStaticTextFormItem().title("Name").value(AppInfo.appName)
+		builder += RFStaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
+		builder += RFStaticTextFormItem().title("UTC").value(AppInfo.packageDate)
+		builder += RFStaticTextFormItem().title("Defines").value(AppInfo.defines)
 
-		builder += SectionHeaderTitleFormItem().title("Device info")
-		builder += StaticTextFormItem().title("Device").value(AppInfo.deviceName)
-		builder += StaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
+		builder += RFSectionHeaderTitleFormItem().title("Device info")
+		builder += RFStaticTextFormItem().title("Device").value(AppInfo.deviceName)
+		builder += RFStaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
 	}
 
 	func configureButton() {
