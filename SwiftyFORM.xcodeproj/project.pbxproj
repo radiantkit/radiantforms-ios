@@ -388,7 +388,6 @@
 		428683061B346CFE0028DB2F /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
 				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
@@ -423,6 +422,7 @@
 		428683211B346CFE0028DB2F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
