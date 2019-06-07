@@ -91,15 +91,15 @@ class DatePickerRangeViewController: RFFormViewController {
 		builder.navigationTitle = "DatePicker & Range"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with range")
-		builder += SectionHeaderTitleFormItem().title("Minimum limit")
+		builder += RFSectionHeaderTitleFormItem().title("Minimum limit")
 		builder += datePicker_time_min
 		builder += datePicker_date_min
 		builder += datePicker_dateAndTime_min
-		builder += SectionHeaderTitleFormItem().title("Maximum limit")
+		builder += RFSectionHeaderTitleFormItem().title("Maximum limit")
 		builder += datePicker_time_max
 		builder += datePicker_date_max
 		builder += datePicker_dateAndTime_max
-		builder += SectionHeaderTitleFormItem().title("Minimum and maximum limits")
+		builder += RFSectionHeaderTitleFormItem().title("Minimum and maximum limits")
 		builder += datePicker_time_minmax
 		builder += datePicker_date_minmax
 		builder += datePicker_dateAndTime_minmax

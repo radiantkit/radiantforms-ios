@@ -7,12 +7,12 @@ class SlidersViewController: RFFormViewController {
 		builder.navigationTitle = "Sliders"
 		builder.toolbarMode = .none
 
-		builder += SectionHeaderTitleFormItem().title("Sliders")
+		builder += RFSectionHeaderTitleFormItem().title("Sliders")
 		builder += slider0
 		builder += slider1
 		builder += slider2
 
-		builder += SectionHeaderTitleFormItem().title("Summary")
+		builder += RFSectionHeaderTitleFormItem().title("Summary")
 		builder += summary
 
 		updateSummary()

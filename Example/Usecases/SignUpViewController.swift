@@ -12,7 +12,7 @@ class SignUpViewController: RFFormViewController {
 		builder.navigationTitle = "Sign Up"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("SocialNetwork 123\nSign up form")
-		builder += SectionHeaderTitleFormItem().title("Details")
+		builder += RFSectionHeaderTitleFormItem().title("Details")
 		builder += userName
 		builder += password
 		builder += email
@@ -20,11 +20,11 @@ class SignUpViewController: RFFormViewController {
 		builder += birthday
 		builder.alignLeft([userName, password, email])
         builder += shoeSize
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += subscribeToNewsletter
-		builder += SectionFooterTitleFormItem().title("There is no way to unsubscribe our service")
+		builder += RFSectionFooterTitleFormItem().title("There is no way to unsubscribe our service")
 		builder += metaData
-		builder += SectionHeaderTitleFormItem().title("Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Buttons")
 		builder += randomizeButton
 		builder += jsonButton
 	}

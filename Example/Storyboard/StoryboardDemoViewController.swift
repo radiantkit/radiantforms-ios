@@ -6,7 +6,7 @@ class StoryboardDemoViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Storyboard Demo"
 		builder += voteCountSlider
-		builder += SectionHeaderTitleFormItem()
+		builder += RFSectionHeaderTitleFormItem()
 		builder += voteButton
 	}
 	

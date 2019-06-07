@@ -4,11 +4,11 @@ import SwiftyFORM
 class PickerViewViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "PickerViews"
-		builder += SectionHeaderTitleFormItem().title("PickerView")
+		builder += RFSectionHeaderTitleFormItem().title("PickerView")
 		builder += picker0
 		builder += picker1
 		builder += picker2
-		builder += SectionHeaderTitleFormItem().title("Misc")
+		builder += RFSectionHeaderTitleFormItem().title("Misc")
 		builder += summary
 		builder += randomizeButton
 

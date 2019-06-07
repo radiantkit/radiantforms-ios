@@ -6,7 +6,7 @@ class SteppersViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Steppers"
-		builder += SectionHeaderTitleFormItem().title("Animals seen")
+		builder += RFSectionHeaderTitleFormItem().title("Animals seen")
 		builder += catStepper
 		builder += dogStepper
 		builder += submitButton

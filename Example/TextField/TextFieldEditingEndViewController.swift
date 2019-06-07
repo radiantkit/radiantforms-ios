@@ -6,7 +6,7 @@ class TextFieldEditingEndViewController: RFFormViewController {
     override func populate(_ builder: RFFormBuilder) {
         builder.navigationTitle = "Editing End"
         builder.demo_showInfo("Shows an alert after editing has finished")
-        builder += SectionHeaderTitleFormItem().title("Write a new nickname")
+        builder += RFSectionHeaderTitleFormItem().title("Write a new nickname")
         builder += textField
     }
 

@@ -19,7 +19,7 @@
 		42108D181B34E9F60067FEAA /* RFDatePickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */; };
 		42108D1A1B34E9F60067FEAA /* RFMetaFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */; };
 		42108D1B1B34E9F60067FEAA /* RFOptionPickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */; };
-		42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */; };
+		42108D1C1B34E9F60067FEAA /* RFSectionFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */; };
 		42108D1D1B34E9F60067FEAA /* SliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D101B34E9F60067FEAA /* SliderFormItem.swift */; };
 		42108D1E1B34E9F60067FEAA /* StaticTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */; };
 		42108D1F1B34E9F60067FEAA /* StepperFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D121B34E9F60067FEAA /* StepperFormItem.swift */; };
@@ -145,7 +145,7 @@
 		42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerFormItem.swift; sourceTree = "<group>"; };
 		42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFMetaFormItem.swift; sourceTree = "<group>"; };
 		42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFOptionPickerFormItem.swift; sourceTree = "<group>"; };
-		42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionFormItem.swift; sourceTree = "<group>"; };
+		42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSectionFormItem.swift; sourceTree = "<group>"; };
 		42108D101B34E9F60067FEAA /* SliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderFormItem.swift; sourceTree = "<group>"; };
 		42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextFormItem.swift; sourceTree = "<group>"; };
 		42108D121B34E9F60067FEAA /* StepperFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperFormItem.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */,
 				42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */,
-				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
+				42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
 				42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */,
@@ -651,7 +651,7 @@
 				428683481B346CFE0028DB2F /* RFTitleWidth.swift in Sources */,
 				428683441B346CFE0028DB2F /* RFValidator.swift in Sources */,
 				42685D4F1D340D99008ABC3D /* RFTableViewCellArray.swift in Sources */,
-				42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */,
+				42108D1C1B34E9F60067FEAA /* RFSectionFormItem.swift in Sources */,
 				428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */,
 				4286833D1B346CFE0028DB2F /* RFSelectRowDelegate.swift in Sources */,
 				428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */,

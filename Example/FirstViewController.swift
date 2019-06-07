@@ -7,18 +7,18 @@ class FirstViewController: RFFormViewController {
 		builder.navigationTitle = "SwiftyFORM"
 		builder.demo_showInfo("Welcome to the\nSwiftyFORM example app\nthat shows everything")
 
-        builder += SectionHeaderTitleFormItem().title("Theme")
+        builder += RFSectionHeaderTitleFormItem().title("Theme")
         builder += ViewControllerFormItem().title("Amount (Dark)").viewController(AmountViewController_Dark.self)
         builder += ViewControllerFormItem().title("Amount (Light)").viewController(AmountViewController_Light.self)
         builder += ViewControllerFormItem().title("Sign Up (Dark)").viewController(SignUpViewController_Dark.self)
         builder += ViewControllerFormItem().title("Sign Up (Light)").viewController(SignUpViewController_Light.self)
 
-        builder += SectionHeaderTitleFormItem().title("Tutorial")
+        builder += RFSectionHeaderTitleFormItem().title("Tutorial")
 		builder += ViewControllerFormItem().title("StaticText").viewController(Tutorial0_StaticText_ViewController.self)
 		builder += ViewControllerFormItem().title("TextField").viewController(Tutorial1_TextField_ViewController.self)
 		builder += ViewControllerFormItem().title("Child ViewController").viewController(Tutorial2_ChildViewController_ViewController.self)
 
-		builder += SectionHeaderTitleFormItem().title("Usecases")
+		builder += RFSectionHeaderTitleFormItem().title("Usecases")
 		builder += ViewControllerFormItem().title("Sign Up (Dark)").viewController(SignUpViewController_Dark.self)
         builder += ViewControllerFormItem().title("Sign Up (Light)").viewController(SignUpViewController_Light.self)
 		builder += ViewControllerFormItem().title("Color Picker").viewController(ColorPickerViewController.self)
@@ -29,11 +29,11 @@ class FirstViewController: RFFormViewController {
 		builder += ViewControllerFormItem().title("Storyboard Demo").viewController(StoryboardDemoViewController.self)
 		builder += ViewControllerFormItem().title("Area 51").storyboard("Area51", bundle: nil)
 
-		builder += SectionHeaderTitleFormItem().title("Non-SwiftyFORM")
+		builder += RFSectionHeaderTitleFormItem().title("Non-SwiftyFORM")
 		builder += ViewControllerFormItem().title("UICollectionViewController").viewController(MyCollectionViewController.self)
 		builder += ViewControllerFormItem().title("UITableViewController").viewController(MyTableViewController.self)
 
-		builder += SectionHeaderTitleFormItem().title("TextField")
+		builder += RFSectionHeaderTitleFormItem().title("TextField")
 		builder += ViewControllerFormItem().title("Valid & Invalid").viewController(TextFieldValidInvalidViewController.self)
 		builder += ViewControllerFormItem().title("Keyboard Types").viewController(TextFieldKeyboardTypesViewController.self)
 		builder += ViewControllerFormItem().title("Tab Through Form").viewController(TextFieldTabThroughFormViewController.self)
@@ -42,20 +42,20 @@ class FirstViewController: RFFormViewController {
         builder += ViewControllerFormItem().title("Amount (Dark)").viewController(AmountViewController_Dark.self)
         builder += ViewControllerFormItem().title("Amount (Light)").viewController(AmountViewController_Light.self)
 
-		builder += SectionHeaderTitleFormItem().title("TextView")
+		builder += RFSectionHeaderTitleFormItem().title("TextView")
 		builder += ViewControllerFormItem().title("TextViews").viewController(TextViewViewController.self)
 
-		builder += SectionHeaderTitleFormItem().title("DatePicker")
+		builder += RFSectionHeaderTitleFormItem().title("DatePicker")
 		builder += ViewControllerFormItem().title("DatePicker With Locale").viewController(DatePickerLocaleViewController.self)
 		builder += ViewControllerFormItem().title("DatePicker With Range").viewController(DatePickerRangeViewController.self)
 		builder += ViewControllerFormItem().title("DatePicker With Initial Value").viewController(DatePickerInitialValueViewController.self)
 		builder += ViewControllerFormItem().title("DatePicker With Bindings").viewController(DatePickerBindingViewController.self)
 
-		builder += SectionHeaderTitleFormItem().title("Header & Footer")
+		builder += RFSectionHeaderTitleFormItem().title("Header & Footer")
 		builder += ViewControllerFormItem().title("Header & Footer").viewController(HeaderFooterViewController.self)
 		builder += ViewControllerFormItem().title("No Header").viewController(NoHeaderViewController.self)
 
-		builder += SectionHeaderTitleFormItem().title("Other")
+		builder += RFSectionHeaderTitleFormItem().title("Other")
 		builder += ViewControllerFormItem().title("Static & Attributed Text").viewController(StaticTextAndAttributedTextViewController.self)
 		builder += ViewControllerFormItem().title("Buttons").viewController(ButtonsViewController.self)
 		builder += ViewControllerFormItem().title("Sliders").viewController(SlidersViewController.self)

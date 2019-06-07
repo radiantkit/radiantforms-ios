@@ -7,15 +7,15 @@ class DatePickerBindingViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Bindings"
 		builder.toolbarMode = .simple
-		builder += SectionHeaderTitleFormItem(title: "Always expanded")
+		builder += RFSectionHeaderTitleFormItem(title: "Always expanded")
 		builder += datePicker
 		builder += incrementButton
 		builder += decrementButton
 
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += summary
 
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += StaticTextFormItem().title("Collapse & expand")
 		builder += userName
 		builder += toggleDatePicker0

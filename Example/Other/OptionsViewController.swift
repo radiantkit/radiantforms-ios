@@ -6,12 +6,12 @@ class OptionsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Options"
 		builder.toolbarMode = .none
-		builder += SectionHeaderTitleFormItem().title("Options")
+		builder += RFSectionHeaderTitleFormItem().title("Options")
 		builder += adoptBitcoin
 		builder += exploreSpace
 		builder += worldPeace
 		builder += stopGlobalWarming
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += randomizeButton
 	}
 

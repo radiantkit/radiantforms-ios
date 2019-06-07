@@ -34,6 +34,6 @@ class TextFieldTabThroughFormViewController: RFFormViewController {
 		builder += TextFieldFormItem().styleClass("align1").title("Field Y").placeholder("Lorem Ipsum").keyboardType(.asciiCapable)
 		builder += TextFieldFormItem().styleClass("align1").title("Field Z").placeholder("Lorem Ipsum").keyboardType(.asciiCapable)
 		builder.alignLeftElementsWithClass("align1")
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 	}
 }

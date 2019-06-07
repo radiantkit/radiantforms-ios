@@ -17,6 +17,6 @@ class TextFieldKeyboardTypesViewController: RFFormViewController {
 		builder += TextFieldFormItem().styleClass("align").title("Twitter").placeholder("@user or #hashtag").keyboardType(.twitter)
 		builder += TextFieldFormItem().styleClass("align").title("WebSearch").placeholder("how to do this.").keyboardType(.webSearch)
 		builder.alignLeftElementsWithClass("align")
-		builder += SectionFooterTitleFormItem().title("Footer text")
+		builder += RFSectionFooterTitleFormItem().title("Footer text")
 	}
 }

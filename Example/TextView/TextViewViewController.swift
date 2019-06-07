@@ -10,7 +10,7 @@ class TextViewViewController: RFFormViewController {
 		builder += notes
 		builder += commentArea
 		builder += userDescription
-		builder += SectionHeaderTitleFormItem().title("Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Buttons")
 		builder += randomizeButton
 		builder += clearButton
 	}

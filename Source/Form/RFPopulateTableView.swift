@@ -365,9 +365,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: SectionFooterTitleFormItem
+	// MARK: RFSectionFooterTitleFormItem
 
-	func visit(object: SectionFooterTitleFormItem) {
+	func visit(object: RFSectionFooterTitleFormItem) {
 		if let title = object.title {
 			footer = RFTableViewSectionPart.titleString(string: title)
 		} else {
@@ -377,9 +377,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionFooterViewFormItem
+	// MARK: RFSectionFooterViewFormItem
 
-	func visit(object: SectionFooterViewFormItem) {
+	func visit(object: RFSectionFooterViewFormItem) {
 		if let view: UIView = object.viewBlock?() {
 			footer = RFTableViewSectionPart.titleView(view: view)
 		} else {
@@ -391,7 +391,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 	// MARK: SectionFormItem
 
-	func visit(object: SectionFormItem) {
+	func visit(object: RFSectionFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break
@@ -405,9 +405,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionHeaderTitleFormItem
+	// MARK: RFSectionHeaderTitleFormItem
 
-	func visit(object: SectionHeaderTitleFormItem) {
+	func visit(object: RFSectionHeaderTitleFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break
@@ -427,9 +427,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .header
 	}
 
-	// MARK: SectionHeaderViewFormItem
+	// MARK: RFSectionHeaderViewFormItem
 
-	func visit(object: SectionHeaderViewFormItem) {
+	func visit(object: RFSectionHeaderViewFormItem) {
 		switch lastItemType {
 		case .beginning:
 			break

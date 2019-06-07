@@ -9,14 +9,14 @@ class ColorPickerViewController: RFFormViewController {
 
 		builder.demo_showInfo("Tap row to expand/collapse.\nPinch to change precision.\nPan to change value.")
 
-		builder += SectionHeaderTitleFormItem().title("Components")
+		builder += RFSectionHeaderTitleFormItem().title("Components")
 		builder += slider0
 		builder += slider1
 		builder += slider2
 
-		builder += SectionHeaderTitleFormItem().title("Summary")
+		builder += RFSectionHeaderTitleFormItem().title("Summary")
 		builder += summary
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += randomizeButton
 
 		updateSummary()

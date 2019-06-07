@@ -7,15 +7,15 @@ class GhostsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Ghosts"
 		builder.toolbarMode = .none
-		builder += SectionHeaderTitleFormItem().title("Scary")
+		builder += RFSectionHeaderTitleFormItem().title("Scary")
 		builder += scarySlider
-		builder += SectionHeaderTitleFormItem().title("See through")
+		builder += RFSectionHeaderTitleFormItem().title("See through")
 		builder += transparantSlider
-		builder += SectionHeaderTitleFormItem().title("Human looking")
+		builder += RFSectionHeaderTitleFormItem().title("Human looking")
 		builder += humanLookingSlider
-		builder += SectionHeaderTitleFormItem().title("Making noises")
+		builder += RFSectionHeaderTitleFormItem().title("Making noises")
 		builder += makingNoisesSlider
-		builder += SectionHeaderTitleFormItem()
+		builder += RFSectionHeaderTitleFormItem()
 		builder += submitButton
 	}
 

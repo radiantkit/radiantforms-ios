@@ -6,11 +6,11 @@ class SettingsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Settings"
 		builder.toolbarMode = .none
-		builder += SectionHeaderTitleFormItem().title("Options")
+		builder += RFSectionHeaderTitleFormItem().title("Options")
 		builder += server
 		builder += theme
 		builder += logging
-		builder += SectionHeaderTitleFormItem().title("Actions")
+		builder += RFSectionHeaderTitleFormItem().title("Actions")
 		builder += resetUserDefaultsButton
 		builder += deleteCacheButton
 	}

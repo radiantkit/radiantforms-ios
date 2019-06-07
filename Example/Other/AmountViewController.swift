@@ -7,26 +7,26 @@ class AmountViewController: RFFormViewController {
         builder.navigationTitle = "Amounts"
         builder.toolbarMode = .simple
 
-        builder += SectionHeaderTitleFormItem().title("Buttons")
+        builder += RFSectionHeaderTitleFormItem().title("Buttons")
         builder += randomizeGoodButton
         builder += randomizeBadButton
         builder += showValuesButton
 
-        builder += SectionHeaderTitleFormItem().title("Typical usecases")
+        builder += RFSectionHeaderTitleFormItem().title("Typical usecases")
         builder += soundLevel
         builder += numberOfTrees
         builder += moneyDKK
         builder += moneyEUR
         builder += moneySymbol
 
-        builder += SectionHeaderTitleFormItem().title("Placeholder")
+        builder += RFSectionHeaderTitleFormItem().title("Placeholder")
         builder += noPlaceholder
         builder += zeroPlaceholder
         builder += multiZeroPlaceholder
         builder += xPlaceholder
         builder += requiredPlaceholder
 
-        builder += SectionHeaderTitleFormItem().title("Initial Value")
+        builder += RFSectionHeaderTitleFormItem().title("Initial Value")
         builder += initialValueValidA
         builder += initialValueValidB
     }

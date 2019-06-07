@@ -6,7 +6,7 @@ class ButtonsViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Buttons"
 		builder.toolbarMode = .none
-		builder += SectionHeaderTitleFormItem().title("Toggle Buttons")
+		builder += RFSectionHeaderTitleFormItem().title("Toggle Buttons")
         builder += toggleButton0
         builder += toggleButton1
         builder += toggleButton2
@@ -16,7 +16,7 @@ class ButtonsViewController: RFFormViewController {
 		builder += alertButton1
         builder += alertButton2
         
-        builder += SectionHeaderTitleFormItem().title("Style")
+        builder += RFSectionHeaderTitleFormItem().title("Style")
         builder += style
 	}
     
@@ -71,8 +71,8 @@ class ButtonsViewController: RFFormViewController {
     
     // MARK: - Alert Buttons
     
-    lazy var alertButtonSectionHeader: SectionHeaderTitleFormItem = {
-        return SectionHeaderTitleFormItem().title("Alert Buttons")
+    lazy var alertButtonSectionHeader: RFSectionHeaderTitleFormItem = {
+        return RFSectionHeaderTitleFormItem().title("Alert Buttons")
     }()
     
     func alertButtonSectionHeader_isHidden_refresh() {

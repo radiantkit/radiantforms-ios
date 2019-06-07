@@ -6,15 +6,15 @@ class SegmentedControlsViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Segmented Controls"
-		builder += SectionHeaderTitleFormItem(title: "Please select")
+		builder += RFSectionHeaderTitleFormItem(title: "Please select")
 		builder += animal
 		builder += spicy
 		builder += drink
 		builder += popcorn
-		builder += SectionHeaderTitleFormItem(title: "World-wide delivery")
+		builder += RFSectionHeaderTitleFormItem(title: "World-wide delivery")
 		builder += submitButton
-		builder += SectionFooterTitleFormItem(title: "The animal may die during transport!")
-		builder += SectionFormItem()
+		builder += RFSectionFooterTitleFormItem(title: "The animal may die during transport!")
+		builder += RFSectionFormItem()
 		builder += randomizeButton
 	}
 

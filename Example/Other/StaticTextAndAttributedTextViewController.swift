@@ -7,12 +7,12 @@ class StaticTextAndAttributedTextViewController: RFFormViewController {
 		builder.navigationTitle = "Text"
 		builder.toolbarMode = .none
 
-		builder += SectionHeaderTitleFormItem(title: "Static Text")
+		builder += RFSectionHeaderTitleFormItem(title: "Static Text")
 		builder += StaticTextFormItem().title("Title 0").value("Value 0")
 		builder += StaticTextFormItem().title("Title 1").value("Value 1")
 		builder += StaticTextFormItem().title("Title 2").value("Value 2")
 
-		builder += SectionHeaderTitleFormItem(title: "Attributed Text")
+		builder += RFSectionHeaderTitleFormItem(title: "Attributed Text")
 		builder += RFAttributedTextFormItem().title("Title 0").value("Value 0")
 		builder += RFAttributedTextFormItem()
 			.title("Title 1", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.gray as AnyObject])

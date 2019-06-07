@@ -11,9 +11,9 @@ class ChangePasswordViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Password"
 		builder.toolbarMode = .simple
-		builder += SectionHeaderTitleFormItem().title("Your Old Password")
+		builder += RFSectionHeaderTitleFormItem().title("Your Old Password")
 		builder += passwordOld
-		builder += SectionHeaderTitleFormItem().title("Your New Password")
+		builder += RFSectionHeaderTitleFormItem().title("Your New Password")
 		builder += passwordNew
 		builder += passwordNewRepeated
 		builder.alignLeft([passwordOld, passwordNew, passwordNewRepeated])

@@ -11,19 +11,19 @@ class ReloadingViewController: RFFormViewController {
 		builder.navigationTitle = "Reload Form"
 		builder.toolbarMode = .none
 
-		builder += SectionHeaderTitleFormItem().title("Action")
+		builder += RFSectionHeaderTitleFormItem().title("Action")
 		builder += reloadButton
 
-		builder += SectionHeaderTitleFormItem().title("Populate")
+		builder += RFSectionHeaderTitleFormItem().title("Populate")
 		builder += StaticTextFormItem().title("Number of reloads").value(String(populateCount))
 
 		if populateCount & 1 == 1 {
-			builder += SectionHeaderTitleFormItem().title("Good")
+			builder += RFSectionHeaderTitleFormItem().title("Good")
 			builder += StaticTextFormItem().title("Cure cancer")
 			builder += StaticTextFormItem().title("World peace")
 			builder += StaticTextFormItem().title("Science")
 		} else {
-			builder += SectionHeaderTitleFormItem().title("Bad")
+			builder += RFSectionHeaderTitleFormItem().title("Bad")
 			builder += StaticTextFormItem().title("Ignorance")
 			builder += StaticTextFormItem().title("Dictatorship")
 			builder += StaticTextFormItem().title("Polution")

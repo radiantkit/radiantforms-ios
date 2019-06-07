@@ -31,7 +31,7 @@ class MyOptionForm {
 			builder.append(option)
 		}
 
-		builder.append(SectionHeaderTitleFormItem().title("Help"))
+		builder.append(RFSectionHeaderTitleFormItem().title("Help"))
 		builder.append(vc0)
 	}
 

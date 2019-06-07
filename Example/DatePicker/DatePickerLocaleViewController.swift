@@ -77,15 +77,15 @@ class DatePickerLocaleViewController: RFFormViewController {
 		builder.navigationTitle = "DatePicker & Locale"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with locale")
-		builder += SectionHeaderTitleFormItem(title: "Current locale")
+		builder += RFSectionHeaderTitleFormItem(title: "Current locale")
 		builder += datePicker_time_currentLocale
 		builder += datePicker_date_currentLocale
 		builder += datePicker_dateAndTime_currentLocale
-		builder += SectionHeaderTitleFormItem(title: "da_DK")
+		builder += RFSectionHeaderTitleFormItem(title: "da_DK")
 		builder += datePicker_time_da_DK
 		builder += datePicker_date_da_DK
 		builder += datePicker_dateAndTime_da_DK
-		builder += SectionHeaderTitleFormItem(title: "zh_CN")
+		builder += RFSectionHeaderTitleFormItem(title: "zh_CN")
 		builder += datePicker_time_zh_CN
 		builder += datePicker_date_zh_CN
 		builder += datePicker_dateAndTime_zh_CN

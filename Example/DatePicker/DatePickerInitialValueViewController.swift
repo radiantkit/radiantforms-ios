@@ -56,11 +56,11 @@ class DatePickerInitialValueViewController: RFFormViewController {
 		builder.navigationTitle = "DatePicker & Value"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with initial value")
-		builder += SectionHeaderTitleFormItem().title("Without initial date")
+		builder += RFSectionHeaderTitleFormItem().title("Without initial date")
 		builder += datePicker_time_noValue
 		builder += datePicker_date_noValue
 		builder += datePicker_dateAndTime_noValue
-		builder += SectionHeaderTitleFormItem().title("With initial date")
+		builder += RFSectionHeaderTitleFormItem().title("With initial date")
 		builder += datePicker_time_value
 		builder += datePicker_date_value
 		builder += datePicker_dateAndTime_value

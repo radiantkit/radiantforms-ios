@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class SectionFormItem: RFFormItem {
+public class RFSectionFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 }
 
-public class SectionHeaderTitleFormItem: RFFormItem {
+public class RFSectionHeaderTitleFormItem: RFFormItem {
 	public init(title: String? = nil) {
 		self.title = title
 		super.init()
@@ -32,7 +32,7 @@ public class SectionHeaderTitleFormItem: RFFormItem {
 	}
 }
 
-public class SectionHeaderViewFormItem: RFFormItem {
+public class RFSectionHeaderViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -41,7 +41,7 @@ public class SectionHeaderViewFormItem: RFFormItem {
 	public var viewBlock: CreateUIView?
 }
 
-public class SectionFooterTitleFormItem: RFFormItem {
+public class RFSectionFooterTitleFormItem: RFFormItem {
 	public init(title: String? = nil) {
 		self.title = title
 		super.init()
@@ -60,7 +60,7 @@ public class SectionFooterTitleFormItem: RFFormItem {
 	}
 }
 
-public class SectionFooterViewFormItem: RFFormItem {
+public class RFSectionFooterViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -68,3 +68,18 @@ public class SectionFooterViewFormItem: RFFormItem {
 	public typealias CreateUIView = () -> UIView?
 	public var viewBlock: CreateUIView?
 }
+
+@available(*, unavailable, renamed: "RFSectionFormItem")
+typealias SectionFormItem = RFSectionFormItem
+
+@available(*, unavailable, renamed: "RFSectionHeaderTitleFormItem")
+typealias SectionHeaderTitleFormItem = RFSectionHeaderTitleFormItem
+
+@available(*, unavailable, renamed: "RFSectionHeaderViewFormItem")
+typealias SectionHeaderViewFormItem = RFSectionHeaderViewFormItem
+
+@available(*, unavailable, renamed: "RFSectionFooterTitleFormItem")
+typealias SectionFooterTitleFormItem = RFSectionFooterTitleFormItem
+
+@available(*, unavailable, renamed: "RFSectionFooterViewFormItem")
+typealias SectionFooterViewFormItem = RFSectionFooterViewFormItem

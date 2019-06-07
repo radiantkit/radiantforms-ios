@@ -7,11 +7,11 @@ class RateAppViewController: RFFormViewController {
 		builder.navigationTitle = "Rate"
 		builder.toolbarMode = .none
 		builder.demo_showInfo("Rate this app")
-		builder += SectionHeaderTitleFormItem().title("Is it good?")
+		builder += RFSectionHeaderTitleFormItem().title("Is it good?")
 		builder += goodSlider
-		builder += SectionHeaderTitleFormItem().title("Is the look ok?")
+		builder += RFSectionHeaderTitleFormItem().title("Is the look ok?")
 		builder += lookSlider
-		builder += SectionHeaderTitleFormItem().title("Thank you")
+		builder += RFSectionHeaderTitleFormItem().title("Thank you")
 		builder += submitButton
 	}
 
