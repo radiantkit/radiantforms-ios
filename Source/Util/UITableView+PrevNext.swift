@@ -6,7 +6,7 @@ extension IndexPath {
 	/// Indexpath of the previous cell.
 	///
 	/// This function is complex because it deals with empty sections and invalid indexpaths.
-	public func form_indexPathForPreviousCell(_ tableView: UITableView) -> IndexPath? {
+	public func rf_indexPathForPreviousCell(_ tableView: UITableView) -> IndexPath? {
 		if section < 0 || row < 0 {
 			return nil
 		}
@@ -30,6 +30,11 @@ extension IndexPath {
 			}
 		}
 	}
+    
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_indexPathForPreviousCell instead")
+    public func form_indexPathForPreviousCell(_ tableView: UITableView) -> IndexPath? {
+        return rf_indexPathForPreviousCell(tableView)
+    }
 
 	/// Indexpath of the next cell.
 	///
@@ -89,7 +94,7 @@ extension UITableView {
 		guard let dataSource = self.dataSource else { return nil }
 		var indexPath: IndexPath! = initialIndexPath
 		while true {
-			indexPath = indexPath.form_indexPathForPreviousCell(self)
+			indexPath = indexPath.rf_indexPathForPreviousCell(self)
 			if indexPath == nil {
 				return nil
 			}

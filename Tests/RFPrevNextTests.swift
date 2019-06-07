@@ -6,7 +6,7 @@ import XCTest
 class RFPrevNextTests: XCTestCase {
 	
 	func prev(_ row: Int, _ section: Int, _ tableView: UITableView) -> IndexPath? {
-		return IndexPath(row: row, section: section).form_indexPathForPreviousCell(tableView)
+		return IndexPath(row: row, section: section).rf_indexPathForPreviousCell(tableView)
 	}
 	
 	func next(_ row: Int, _ section: Int, _ tableView: UITableView) -> IndexPath? {
