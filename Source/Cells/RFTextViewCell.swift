@@ -117,7 +117,7 @@ public class RFTextViewCell: UITableViewCell {
 		let hasText = !s.isEmpty
 		placeholderLabel.isHidden = hasText
 
-		let tableView: UITableView? = form_tableView()
+		let tableView: UITableView? = rf_tableView()
 		if let tv = tableView {
 			setNeedsLayout()
 			tv.beginUpdates()

@@ -272,7 +272,7 @@ public class RFTextFieldCell: UITableViewCell {
 	// Returns false when invalid
 	public func validateAndUpdateErrorIfNeeded(_ text: String, shouldInstallTimer: Bool, checkSubmitRule: Bool) -> Bool {
 
-		let tableView: UITableView? = form_tableView()
+		let tableView: UITableView? = rf_tableView()
 
 		let result: RFValidateResult = model.model.validateText(text, checkHardRule: true, checkSoftRule: true, checkSubmitRule: checkSubmitRule)
 		if let lastResult = lastResult {

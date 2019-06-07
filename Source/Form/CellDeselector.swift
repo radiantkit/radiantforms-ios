@@ -35,7 +35,7 @@ extension UITableViewCell {
 			//print("already deselected, no need to deselect")
 			return
 		}
-		guard let tableView = form_tableView() as? RFFormTableView else {
+		guard let tableView = rf_tableView() as? RFFormTableView else {
 			return
 		}
 		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
