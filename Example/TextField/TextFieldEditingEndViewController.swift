@@ -10,8 +10,8 @@ class TextFieldEditingEndViewController: RFFormViewController {
         builder += textField
     }
 
-	lazy var textField: TextFieldFormItem = {
-		var instance = TextFieldFormItem()
+	lazy var textField: RFTextFieldFormItem = {
+		var instance = RFTextFieldFormItem()
 		instance.title = "Nickname"
 		instance.placeholder = "Example EvilBot1337"
 		instance.autocorrectionType = .no

@@ -19,8 +19,8 @@ class ChangePasswordViewController: RFFormViewController {
 		builder.alignLeft([passwordOld, passwordNew, passwordNewRepeated])
 	}
 
-	lazy var passwordOld: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordOld: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Old password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
@@ -30,8 +30,8 @@ class ChangePasswordViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var passwordNew: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordNew: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("New password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
@@ -41,8 +41,8 @@ class ChangePasswordViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var passwordNewRepeated: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordNewRepeated: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Repeat password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no

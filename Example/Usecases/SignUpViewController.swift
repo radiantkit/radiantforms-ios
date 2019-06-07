@@ -29,8 +29,8 @@ class SignUpViewController: RFFormViewController {
 		builder += jsonButton
 	}
 
-	lazy var userName: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var userName: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("User Name").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
@@ -57,8 +57,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var password: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var password: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("PIN Code").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
@@ -68,8 +68,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var email: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var email: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Email").placeholder("johndoe@example.com")
 		instance.keyboardType = .emailAddress
 		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")

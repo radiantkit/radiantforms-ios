@@ -585,9 +585,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: TextFieldFormItem
+	// MARK: RFTextFieldFormItem
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		var model = RFTextFieldCellModel()
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title

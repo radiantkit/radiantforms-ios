@@ -84,8 +84,8 @@ class DatePickerBindingViewController: RFFormViewController {
 
 	// MARK: Collapse / expand
 
-	lazy var userName: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var userName: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("User Name").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no

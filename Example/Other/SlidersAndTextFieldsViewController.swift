@@ -13,24 +13,24 @@ class SlidersAndTextFieldsViewController: RFFormViewController {
 		builder += textField2
 	}
 
-	lazy var textField0: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var textField0: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("TextField 0").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
 		return instance
 	}()
 
-	lazy var textField1: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var textField1: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("TextField 1").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
 		return instance
 	}()
 
-	lazy var textField2: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var textField2: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("TextField 2").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no

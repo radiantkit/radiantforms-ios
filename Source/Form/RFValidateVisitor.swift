@@ -4,7 +4,7 @@ import Foundation
 class RFValidateVisitor: RFFormItemVisitor {
 	var result = RFValidateResult.valid
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		result = object.submitValidateValueText()
 	}
 

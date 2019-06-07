@@ -10,7 +10,7 @@ class RFReloadPersistentValidationStateVisitor: RFFormItemVisitor {
 		}
 	}
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		object.reloadPersistentValidationState()
 	}
 

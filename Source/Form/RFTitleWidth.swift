@@ -4,7 +4,7 @@ import UIKit
 class RFObtainTitleWidth: RFFormItemVisitor {
 	var width: CGFloat = 0
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		width = object.obtainTitleWidth()
 	}
 
@@ -39,7 +39,7 @@ class RFAssignTitleWidth: RFFormItemVisitor {
 		self.width = width
 	}
 
-	func visit(object: TextFieldFormItem) {
+	func visit(object: RFTextFieldFormItem) {
 		object.assignTitleWidth(width)
 	}
 
