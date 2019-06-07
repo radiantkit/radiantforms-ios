@@ -258,9 +258,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		// this item is not visual
 	}
 
-	// MARK: OptionPickerFormItem
+	// MARK: RFOptionPickerFormItem
 
-	func visit(object: OptionPickerFormItem) {
+	func visit(object: RFOptionPickerFormItem) {
 		var model = RFOptionViewControllerCellModel()
 		model.title = object.title
 		model.placeholder = object.placeholder
@@ -268,7 +268,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.selectedOptionRow = object.selected
 
 		weak var weakObject = object
-		model.valueDidChange = { (value: OptionRowModel?) in
+		model.valueDidChange = { (value: RFOptionRowModel?) in
 			SwiftyFormLog("propagate from cell to model. value \(String(describing: value))")
 			weakObject?.innerSelected = value
 			weakObject?.valueDidChange(value)
@@ -282,7 +282,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .item
 
 		weak var weakCell = cell
-		object.syncCellWithValue = { (selected: OptionRowModel?) in
+		object.syncCellWithValue = { (selected: RFOptionRowModel?) in
 			SwiftyFormLog("propagate from model to cell. option: \(String(describing: selected?.title))")
 			weakCell?.setSelectedOptionRowWithoutPropagation(selected)
 		}

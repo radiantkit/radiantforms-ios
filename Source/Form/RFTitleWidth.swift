@@ -14,7 +14,7 @@ class RFObtainTitleWidth: RFFormItemVisitor {
 	func visit(object: RFCustomFormItem) {}
 	func visit(object: RFDatePickerFormItem) {}
 	func visit(object: RFMetaFormItem) {}
-	func visit(object: OptionPickerFormItem) {}
+	func visit(object: RFOptionPickerFormItem) {}
 	func visit(object: OptionRowFormItem) {}
 	func visit(object: PickerViewFormItem) {}
 	func visit(object: PrecisionSliderFormItem) {}
@@ -49,7 +49,7 @@ class RFAssignTitleWidth: RFFormItemVisitor {
 	func visit(object: RFCustomFormItem) {}
 	func visit(object: RFDatePickerFormItem) {}
 	func visit(object: RFMetaFormItem) {}
-	func visit(object: OptionPickerFormItem) {}
+	func visit(object: RFOptionPickerFormItem) {}
 	func visit(object: OptionRowFormItem) {}
 	func visit(object: PickerViewFormItem) {}
 	func visit(object: PrecisionSliderFormItem) {}

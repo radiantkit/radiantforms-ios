@@ -2,11 +2,11 @@
 import UIKit
 
 class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
-	typealias SelectOptionHandler = (OptionRowModel) -> Void
-	let optionField: OptionPickerFormItem
+	typealias SelectOptionHandler = (RFOptionRowModel) -> Void
+	let optionField: RFOptionPickerFormItem
 	let selectOptionHandler: SelectOptionHandler
 
-	init(optionField: OptionPickerFormItem, selectOptionHandler: @escaping SelectOptionHandler) {
+	init(optionField: RFOptionPickerFormItem, selectOptionHandler: @escaping SelectOptionHandler) {
 		self.optionField = optionField
 		self.selectOptionHandler = selectOptionHandler
 		super.init()
@@ -19,7 +19,7 @@ class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
 	override func populate(_ builder: RFFormBuilder) {
 		SwiftyFormLog("preselect option \(String(describing: optionField.selected?.title))")
 		builder.navigationTitle = optionField.title
-		for optionRow: OptionRowModel in optionField.options {
+		for optionRow: RFOptionRowModel in optionField.options {
 			let option = OptionRowFormItem()
 			option.title = optionRow.title
 			option.context = optionRow
@@ -29,8 +29,8 @@ class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
 	}
 
 	func form_willSelectOption(option: OptionRowFormItem) {
-		guard let selected = option.context as? OptionRowModel else {
-			fatalError("Expected OptionRowModel when selecting option \(option.title)")
+		guard let selected = option.context as? RFOptionRowModel else {
+			fatalError("Expected RFOptionRowModel when selecting option \(option.title)")
 		}
 
 		SwiftyFormLog("select option \(option.title)")

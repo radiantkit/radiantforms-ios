@@ -15,24 +15,24 @@ class SettingsViewController: RFFormViewController {
 		builder += deleteCacheButton
 	}
 
-	lazy var server: OptionPickerFormItem = {
-		let instance = OptionPickerFormItem()
+	lazy var server: RFOptionPickerFormItem = {
+		let instance = RFOptionPickerFormItem()
 		instance.title("Server").placeholder("required")
 		instance.append("Production").append("Staging1").append("Staging2")
 		instance.selectOptionWithTitle("Production")
 		return instance
 	}()
 
-	lazy var theme: OptionPickerFormItem = {
-		let instance = OptionPickerFormItem()
+	lazy var theme: RFOptionPickerFormItem = {
+		let instance = RFOptionPickerFormItem()
 		instance.title("Theme").placeholder("required")
 		instance.append("Bright").append("Hipster").append("Dark")
 		instance.selectOptionWithTitle("Bright")
 		return instance
 	}()
 
-	lazy var logging: OptionPickerFormItem = {
-		let instance = OptionPickerFormItem()
+	lazy var logging: RFOptionPickerFormItem = {
+		let instance = RFOptionPickerFormItem()
 		instance.title("Logging").placeholder("required")
 		instance.append("Disabled").append("Compact").append("Verbose")
 		instance.selectOptionWithTitle("Verbose")

@@ -111,20 +111,20 @@ class ButtonsViewController: RFFormViewController {
     
     // MARK: - Style Picker
 
-    lazy var style: OptionPickerFormItem = {
-        let instance = OptionPickerFormItem()
+    lazy var style: RFOptionPickerFormItem = {
+        let instance = RFOptionPickerFormItem()
         instance.title("Style").placeholder("required")
         instance.append("None", identifier: "none")
         instance.append("All", identifier: "all")
         instance.selectOptionWithIdentifier("all")
-        instance.valueDidChange = { [weak self] (selected: OptionRowModel?) in
+        instance.valueDidChange = { [weak self] (selected: RFOptionRowModel?) in
             self?.style_valueDidChange(selected)
         }
         return instance
     }()
     
-    func style_valueDidChange(_ optionRowModel: OptionRowModel?) {
-        guard let optionRowModel: OptionRowModel = optionRowModel else {
+    func style_valueDidChange(_ optionRowModel: RFOptionRowModel?) {
+        guard let optionRowModel: RFOptionRowModel = optionRowModel else {
             print("ERROR: Expected optionRowModel to be non-nil, but got nil")
             return
         }

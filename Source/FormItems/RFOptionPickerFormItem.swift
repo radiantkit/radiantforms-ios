@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class OptionRowModel: CustomStringConvertible {
+public class RFOptionRowModel: CustomStringConvertible {
 	public let title: String
 	public let identifier: String
 
@@ -15,7 +15,7 @@ public class OptionRowModel: CustomStringConvertible {
 	}
 }
 
-public class OptionPickerFormItem: RFFormItem {
+public class RFOptionPickerFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -36,11 +36,11 @@ public class OptionPickerFormItem: RFFormItem {
 		return self
 	}
 
-	public var options = [OptionRowModel]()
+	public var options = [RFOptionRowModel]()
 
 	@discardableResult
 	public func append(_ name: String, identifier: String? = nil) -> Self {
-		options.append(OptionRowModel(name, identifier ?? name))
+		options.append(RFOptionRowModel(name, identifier ?? name))
 		return self
 	}
 
@@ -62,13 +62,13 @@ public class OptionPickerFormItem: RFFormItem {
 		}
 	}
 
-	public typealias SyncBlock = (_ selected: OptionRowModel?) -> Void
-	public var syncCellWithValue: SyncBlock = { (selected: OptionRowModel?) in
+	public typealias SyncBlock = (_ selected: RFOptionRowModel?) -> Void
+	public var syncCellWithValue: SyncBlock = { (selected: RFOptionRowModel?) in
 		SwiftyFormLog("sync is not overridden")
 	}
 
-	internal var innerSelected: OptionRowModel?
-	public var selected: OptionRowModel? {
+	internal var innerSelected: RFOptionRowModel?
+	public var selected: RFOptionRowModel? {
 		get {
 			return self.innerSelected
 		}
@@ -77,14 +77,14 @@ public class OptionPickerFormItem: RFFormItem {
 		}
 	}
 
-	public func setSelectedOptionRow(_ selected: OptionRowModel?) {
+	public func setSelectedOptionRow(_ selected: RFOptionRowModel?) {
 		SwiftyFormLog("option: \(String(describing: selected?.title))")
 		innerSelected = selected
 		syncCellWithValue(selected)
 	}
 
-	public typealias ValueDidChange = (_ selected: OptionRowModel?) -> Void
-	public var valueDidChange: ValueDidChange = { (selected: OptionRowModel?) in
+	public typealias ValueDidChange = (_ selected: RFOptionRowModel?) -> Void
+	public var valueDidChange: ValueDidChange = { (selected: RFOptionRowModel?) in
 		SwiftyFormLog("value did change not overridden")
 	}
 }
@@ -106,3 +106,9 @@ public class OptionRowFormItem: RFFormItem {
 
 	public var context: AnyObject?
 }
+
+@available(*, unavailable, renamed: "RFOptionRowModel")
+typealias OptionRowModel = RFOptionRowModel
+
+@available(*, unavailable, renamed: "RFOptionPickerFormItem")
+typealias OptionPickerFormItem = RFOptionPickerFormItem
