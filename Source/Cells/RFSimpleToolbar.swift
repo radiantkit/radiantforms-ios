@@ -69,7 +69,7 @@ public class RFSimpleToolbar: UIToolbar {
 
 	public func updateButtonConfiguration(_ cell: UITableViewCell) {
 		previousButton.isEnabled = cell.rf_canMakePreviousCellFirstResponder()
-		nextButton.isEnabled = cell.form_canMakeNextCellFirstResponder()
+		nextButton.isEnabled = cell.rf_canMakeNextCellFirstResponder()
 	}
 }
 
