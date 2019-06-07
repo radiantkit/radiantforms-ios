@@ -233,10 +233,15 @@ extension UITableViewCell {
     }
     
 	/// Determines if it's possible to jump to the cell above.
-	func form_canMakePreviousCellFirstResponder() -> Bool {
+	func rf_canMakePreviousCellFirstResponder() -> Bool {
 		return form_tableView()?.rf_canMakePreviousCellFirstResponder(self) ?? false
 	}
 
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_canMakePreviousCellFirstResponder instead")
+    func form_canMakePreviousCellFirstResponder() -> Bool {
+        return rf_canMakePreviousCellFirstResponder()
+    }
+    
 	/// Determines if it's possible to jump to the cell below.
 	func form_canMakeNextCellFirstResponder() -> Bool {
 		return form_tableView()?.rf_canMakeNextCellFirstResponder(self) ?? false
