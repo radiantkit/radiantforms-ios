@@ -99,7 +99,7 @@ public class RFTextViewCell: UITableViewCell {
 
 	public func gotoPrevious() {
 		SwiftyFormLog("make previous cell first responder")
-		form_makePreviousCellFirstResponder()
+		rf_makePreviousCellFirstResponder()
 	}
 
 	public func gotoNext() {

@@ -211,9 +211,14 @@ extension UITableViewCell {
 	/// Jump to the previous cell, located above the current cell.
 	///
 	/// Usage: when the user types SHIFT TAB on the keyboard, then we want to jump to a cell above.
-	func form_makePreviousCellFirstResponder() {
+	func rf_makePreviousCellFirstResponder() {
 		form_tableView()?.rf_makePreviousCellFirstResponder(self)
 	}
+
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_makePreviousCellFirstResponder instead")
+    func form_makePreviousCellFirstResponder() {
+        rf_makePreviousCellFirstResponder()
+    }
 
 	/// Jump to the next cell, located below the current cell.
 	///
