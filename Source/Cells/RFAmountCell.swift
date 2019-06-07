@@ -201,7 +201,7 @@ public class RFAmountCell: UITableViewCell {
         var layoutMargins = self.layoutMargins
         layoutMargins.top = 0
         layoutMargins.bottom = 0
-        let area = veryTallCell.form_inset(by: layoutMargins)
+        let area = veryTallCell.rf_inset(by: layoutMargins)
         
         let (topRect, _) = area.divided(atDistance: 44, from: .minYEdge)
         do {

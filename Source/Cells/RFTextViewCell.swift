@@ -144,7 +144,7 @@ public class RFTextViewCell: UITableViewCell {
 		var layoutMargins = self.layoutMargins
 		layoutMargins.top = 0
 		layoutMargins.bottom = 0
-		veryTallCell = veryTallCell.form_inset(by: layoutMargins)
+		veryTallCell = veryTallCell.rf_inset(by: layoutMargins)
 
 		var (slice, remainder) = veryTallCell.divided(atDistance: 10, from: .minYEdge)
 

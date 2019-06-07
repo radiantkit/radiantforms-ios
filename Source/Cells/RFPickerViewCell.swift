@@ -230,7 +230,7 @@ public class RFPickerViewExpandedCell: UITableViewCell {
 		pickerView.frame = contentView.bounds
 
 		// Ensures that all UIPickerView components stay within the left/right layoutMargins
-		let rect = pickerView.frame.form_inset(by: layoutMargins)
+		let rect = pickerView.frame.rf_inset(by: layoutMargins)
 		let numberOfComponents = titles.count
 		if numberOfComponents >= 1 {
 			componentWidth = rect.width / CGFloat(numberOfComponents)
