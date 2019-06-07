@@ -556,9 +556,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: SwitchFormItem
+	// MARK: RFSwitchFormItem
 
-	func visit(object: SwitchFormItem) {
+	func visit(object: RFSwitchFormItem) {
 		var model = RFSwitchCellModel()
 		model.title = object.title
 

@@ -105,8 +105,8 @@ class SignUpViewController: RFFormViewController {
         return instance
     }()
     
-	lazy var subscribeToNewsletter: SwitchFormItem = {
-		let instance = SwitchFormItem()
+	lazy var subscribeToNewsletter: RFSwitchFormItem = {
+		let instance = RFSwitchFormItem()
 		instance.title = "Subscribe to newsletter"
 		instance.value = true
 		return instance

@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class SwitchFormItem: RFFormItem {
+public class RFSwitchFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -44,3 +44,6 @@ public class SwitchFormItem: RFFormItem {
 		syncCellWithValue(value, animated)
 	}
 }
+
+@available(*, unavailable, renamed: "RFSwitchFormItem")
+typealias SwitchFormItem = RFSwitchFormItem

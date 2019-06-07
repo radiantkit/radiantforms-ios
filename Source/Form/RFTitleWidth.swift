@@ -27,7 +27,7 @@ class RFObtainTitleWidth: RFFormItemVisitor {
 	func visit(object: RFSliderFormItem) {}
 	func visit(object: RFStaticTextFormItem) {}
 	func visit(object: RFStepperFormItem) {}
-	func visit(object: SwitchFormItem) {}
+	func visit(object: RFSwitchFormItem) {}
 	func visit(object: TextViewFormItem) {}
 	func visit(object: ViewControllerFormItem) {}
 }
@@ -62,7 +62,7 @@ class RFAssignTitleWidth: RFFormItemVisitor {
 	func visit(object: RFSliderFormItem) {}
 	func visit(object: RFStaticTextFormItem) {}
 	func visit(object: RFStepperFormItem) {}
-	func visit(object: SwitchFormItem) {}
+	func visit(object: RFSwitchFormItem) {}
 	func visit(object: TextViewFormItem) {}
 	func visit(object: ViewControllerFormItem) {}
 }
