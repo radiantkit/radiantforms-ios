@@ -197,7 +197,7 @@ extension RFTableViewSectionArray: UITableViewDelegate {
 extension RFTableViewSectionArray: UIScrollViewDelegate {
 	/// hide keyboard when the user starts scrolling
 	public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-		guard let responder = scrollView.form_firstResponder() else {
+		guard let responder = scrollView.rf_firstResponder() else {
 			return
 		}
 
@@ -215,7 +215,7 @@ extension RFTableViewSectionArray: UIScrollViewDelegate {
 
 	/// hide keyboard when the user taps the status bar
 	public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-		scrollView.form_firstResponder()?.resignFirstResponder()
+		scrollView.rf_firstResponder()?.resignFirstResponder()
 		return true
 	}
 }

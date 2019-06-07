@@ -52,7 +52,7 @@ class SegmentedControlsViewController: RFFormViewController {
 		instance.title = "Place order"
 		instance.action = { [weak self] in
 			if let actualSelf = self {
-				actualSelf.form_simpleAlert("My Receipt", actualSelf.receipt)
+				actualSelf.rf_simpleAlert("My Receipt", actualSelf.receipt)
 			}
 		}
 		return instance

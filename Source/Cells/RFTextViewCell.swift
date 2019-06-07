@@ -99,12 +99,12 @@ public class RFTextViewCell: UITableViewCell {
 
 	public func gotoPrevious() {
 		SwiftyFormLog("make previous cell first responder")
-		form_makePreviousCellFirstResponder()
+		rf_makePreviousCellFirstResponder()
 	}
 
 	public func gotoNext() {
 		SwiftyFormLog("make next cell first responder")
-		form_makeNextCellFirstResponder()
+		rf_makeNextCellFirstResponder()
 	}
 
 	public func dismissKeyboard() {
@@ -117,7 +117,7 @@ public class RFTextViewCell: UITableViewCell {
 		let hasText = !s.isEmpty
 		placeholderLabel.isHidden = hasText
 
-		let tableView: UITableView? = form_tableView()
+		let tableView: UITableView? = rf_tableView()
 		if let tv = tableView {
 			setNeedsLayout()
 			tv.beginUpdates()
@@ -144,7 +144,7 @@ public class RFTextViewCell: UITableViewCell {
 		var layoutMargins = self.layoutMargins
 		layoutMargins.top = 0
 		layoutMargins.bottom = 0
-		veryTallCell = veryTallCell.form_inset(by: layoutMargins)
+		veryTallCell = veryTallCell.rf_inset(by: layoutMargins)
 
 		var (slice, remainder) = veryTallCell.divided(atDistance: 10, from: .minYEdge)
 

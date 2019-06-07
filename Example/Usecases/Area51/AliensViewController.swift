@@ -22,7 +22,7 @@ class AliensViewController: RFFormViewController {
 		instance.title = "Submit"
 		instance.action = { [weak self] in
 			if let stepperValue = self?.stepperForm0.value {
-				self?.form_simpleAlert("Aliens encounters", "I have encountered \(stepperValue) aliens!")
+				self?.rf_simpleAlert("Aliens encounters", "I have encountered \(stepperValue) aliens!")
 			}
 		}
 		return instance

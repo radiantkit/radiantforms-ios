@@ -86,7 +86,7 @@ class ButtonsViewController: RFFormViewController {
         let instance = RFButtonFormItem()
         instance.title = "Button 0"
         instance.action = { [weak self] in
-            self?.form_simpleAlert("Button 0", "Button clicked")
+            self?.rf_simpleAlert("Button 0", "Button clicked")
         }
         return instance
     }()
@@ -95,7 +95,7 @@ class ButtonsViewController: RFFormViewController {
         let instance = RFButtonFormItem()
         instance.title = "Button 1"
         instance.action = { [weak self] in
-            self?.form_simpleAlert("Button 1", "Button clicked")
+            self?.rf_simpleAlert("Button 1", "Button clicked")
         }
         return instance
     }()
@@ -104,7 +104,7 @@ class ButtonsViewController: RFFormViewController {
         let instance = RFButtonFormItem()
         instance.title = "Button 2"
         instance.action = { [weak self] in
-            self?.form_simpleAlert("Button 2", "Button clicked")
+            self?.rf_simpleAlert("Button 2", "Button clicked")
         }
         return instance
     }()

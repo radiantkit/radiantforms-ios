@@ -7,7 +7,7 @@ class LoadingCell: UITableViewCell, RFCellHeightProvider {
 	var xibHeight: CGFloat = 160
 
 	static func createCell() throws -> LoadingCell {
-		let cell: LoadingCell = try Bundle.main.form_loadView("LoadingCell")
+		let cell: LoadingCell = try Bundle.main.rf_loadView("LoadingCell")
 		return cell
 	}
 

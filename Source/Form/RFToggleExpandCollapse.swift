@@ -57,7 +57,7 @@ public struct RFToggleExpandCollapse {
 				// Ensure that the toggleCell and expandedCell are visible
 				if let indexPath = toggleIndexPath {
 					//print("scroll to visible: \(indexPath)")
-					tableView.form_scrollToVisibleAfterExpand(indexPath)
+					tableView.rf_scrollToVisibleAfterExpand(indexPath)
 				}
 			})
 

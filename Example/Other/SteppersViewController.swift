@@ -30,7 +30,7 @@ class SteppersViewController: RFFormViewController {
 		instance.action = { [weak self] in
 			let catCount = self?.catStepper.value ?? 0
 			let dogCount = self?.dogStepper.value ?? 0
-			self?.form_simpleAlert("Submit", "There are \(catCount) cats and \(dogCount) dogs!")
+			self?.rf_simpleAlert("Submit", "There are \(catCount) cats and \(dogCount) dogs!")
 		}
 		return instance
 		}()

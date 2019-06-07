@@ -88,7 +88,7 @@ class AmountViewController: RFFormViewController {
         strings.append("moneySymbol: \(self.moneySymbol.value)")
         
         let body: String = strings.joined(separator: "\n")
-        form_simpleAlert("Show Values", body)
+        rf_simpleAlert("Show Values", body)
     }
     
     // MARK: - Typical usecases

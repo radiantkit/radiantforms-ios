@@ -57,6 +57,6 @@ class GhostsViewController: RFFormViewController {
 		s += "transparant: \(transparantSlider.value)\n"
 		s += "human looking: \(humanLookingSlider.value)\n"
 		s += "noisy: \(makingNoisesSlider.value)"
-		form_simpleAlert("Ghost encounters", s)
+		rf_simpleAlert("Ghost encounters", s)
 	}
 }

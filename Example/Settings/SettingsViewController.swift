@@ -43,7 +43,7 @@ class SettingsViewController: RFFormViewController {
 		let instance = RFButtonFormItem()
 		instance.title = "Reset UserDefaults"
 		instance.action = { [weak self] in
-			self?.form_simpleAlert("Reset UserDefaults", "Button clicked")
+			self?.rf_simpleAlert("Reset UserDefaults", "Button clicked")
 		}
 		return instance
 	}()
@@ -52,7 +52,7 @@ class SettingsViewController: RFFormViewController {
 		let instance = RFButtonFormItem()
 		instance.title = "Delete Cache"
 		instance.action = { [weak self] in
-			self?.form_simpleAlert("Delete Cache", "Button clicked")
+			self?.rf_simpleAlert("Delete Cache", "Button clicked")
 		}
 		return instance
 	}()

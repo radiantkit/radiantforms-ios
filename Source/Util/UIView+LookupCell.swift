@@ -5,7 +5,7 @@ extension UIView {
 	/// Find the first UITableViewCell among all the superviews.
 	///
 	/// - returns: the found cell otherwise nil.
-	func form_cell() -> UITableViewCell? {
+	func rf_cell() -> UITableViewCell? {
 		var viewOrNil: UIView? = self
 		while let view = viewOrNil {
 			if let cell = view as? UITableViewCell {
@@ -15,4 +15,9 @@ extension UIView {
 		}
 		return nil
 	}
+
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_cell instead")
+    func form_cell() -> UITableViewCell? {
+        return rf_cell()
+    }
 }

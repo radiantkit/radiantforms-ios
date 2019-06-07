@@ -37,6 +37,6 @@ class RateAppViewController: RFFormViewController {
 		}()
 
 	func submitMyRating() {
-		self.form_simpleAlert("Submit Rating", "Button clicked")
+		self.rf_simpleAlert("Submit Rating", "Button clicked")
 	}
 }

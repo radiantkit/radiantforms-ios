@@ -87,7 +87,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 		} else {
 			_ = becomeFirstResponder()
 		}
-		form_deselectRow()
+		rf_deselectRow()
 	}
 
 	// MARK: UIResponder
@@ -115,7 +115,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 	// MARK: Expand collapse
 
 	var isExpandedCellVisible: Bool {
-		guard let sectionArray = form_tableView()?.dataSource as? RFTableViewSectionArray else {
+		guard let sectionArray = rf_tableView()?.dataSource as? RFTableViewSectionArray else {
 			return false
 		}
 		guard let expandedItem = sectionArray.findItem(expandedCell) else {
@@ -128,7 +128,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 	}
 
 	func toggleExpandCollapse() {
-		guard let tableView = form_tableView() else {
+		guard let tableView = rf_tableView() else {
 			return
 		}
 		guard let sectionArray = tableView.dataSource as? RFTableViewSectionArray else {
@@ -230,7 +230,7 @@ public class RFPickerViewExpandedCell: UITableViewCell {
 		pickerView.frame = contentView.bounds
 
 		// Ensures that all UIPickerView components stay within the left/right layoutMargins
-		let rect = pickerView.frame.form_inset(by: layoutMargins)
+		let rect = pickerView.frame.rf_inset(by: layoutMargins)
 		let numberOfComponents = titles.count
 		if numberOfComponents >= 1 {
 			componentWidth = rect.width / CGFloat(numberOfComponents)

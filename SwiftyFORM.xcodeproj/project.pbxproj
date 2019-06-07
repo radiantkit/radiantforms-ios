@@ -116,7 +116,7 @@
 		42D297571D49611300561780 /* RFPrecisionSlider_InnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */; };
 		42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */; };
 		42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */; };
-		42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* CellDeselector.swift */; };
+		42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */; };
 		42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */; };
 		739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */; };
 		739649151D2B6CC100E12A96 /* RFAttributedTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */; };
@@ -245,7 +245,7 @@
 		42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerZoomMode.swift; sourceTree = "<group>"; };
 		42D5DE651A38167400D5C368 /* SwiftyFORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyFORMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42F7521D1D6917CD0014C6ED /* CellDeselector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeselector.swift; sourceTree = "<group>"; };
+		42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+DeselectRow.swift"; sourceTree = "<group>"; };
 		42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider.swift; sourceTree = "<group>"; };
 		739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextCell.swift; sourceTree = "<group>"; };
 		739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextFormItem.swift; sourceTree = "<group>"; };
@@ -388,8 +388,6 @@
 		428683061B346CFE0028DB2F /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
-				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
 				4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */,
 				4212E0121D3A3ABE002287D0 /* RFCellForRowDelegate.swift */,
@@ -424,6 +422,7 @@
 		428683211B346CFE0028DB2F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
 				428683251B346CFE0028DB2F /* Logging.swift */,
@@ -437,6 +436,7 @@
 				4280F728227833290098EF22 /* UITableView+Compatibility.swift */,
 				428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */,
 				420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */,
+				42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */,
 				428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */,
 				428683291B346CFE0028DB2F /* UIView+LookupCell.swift */,
 				4286832A1B346CFE0028DB2F /* UIView+LookupTableView.swift */,
@@ -661,7 +661,7 @@
 				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
 				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,
-				42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */,
+				42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */,
 				428683331B346CFE0028DB2F /* RFSliderCell.swift in Sources */,
 				422437E01D71890500EC41E8 /* RFPickerViewFormItem.swift in Sources */,
 				4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */,
