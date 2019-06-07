@@ -13,14 +13,14 @@ class StaticTextAndAttributedTextViewController: RFFormViewController {
 		builder += StaticTextFormItem().title("Title 2").value("Value 2")
 
 		builder += SectionHeaderTitleFormItem(title: "Attributed Text")
-		builder += AttributedTextFormItem().title("Title 0").value("Value 0")
-		builder += AttributedTextFormItem()
+		builder += RFAttributedTextFormItem().title("Title 0").value("Value 0")
+		builder += RFAttributedTextFormItem()
 			.title("Title 1", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.gray as AnyObject])
 			.value("Value 1", [
 				NSAttributedString.Key.backgroundColor.rawValue: UIColor.black as AnyObject,
 				NSAttributedString.Key.foregroundColor.rawValue: UIColor.white as AnyObject
 				])
-		builder += AttributedTextFormItem()
+		builder += RFAttributedTextFormItem()
 			.title("Orange 🍊", [
 				NSAttributedString.Key.foregroundColor.rawValue: UIColor.orange as AnyObject,
 				NSAttributedString.Key.font.rawValue: UIFont.boldSystemFont(ofSize: 24) as AnyObject,

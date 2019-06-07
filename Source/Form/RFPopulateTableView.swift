@@ -137,9 +137,9 @@ class RFPopulateTableView: FormItemVisitor {
         }
     }
 
-    // MARK: AttributedTextFormItem
+    // MARK: RFAttributedTextFormItem
 
-	func visit(object: AttributedTextFormItem) {
+	func visit(object: RFAttributedTextFormItem) {
 		var model = RFAttributedTextCellModel()
 		model.titleAttributedText = object.title
 		model.valueAttributedText = object.value

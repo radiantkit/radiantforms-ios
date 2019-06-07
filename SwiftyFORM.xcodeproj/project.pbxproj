@@ -119,7 +119,7 @@
 		42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* CellDeselector.swift */; };
 		42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */; };
 		739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */; };
-		739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */; };
+		739649151D2B6CC100E12A96 /* RFAttributedTextFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,7 +248,7 @@
 		42F7521D1D6917CD0014C6ED /* CellDeselector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDeselector.swift; sourceTree = "<group>"; };
 		42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider.swift; sourceTree = "<group>"; };
 		739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextCell.swift; sourceTree = "<group>"; };
-		739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextFormItem.swift; sourceTree = "<group>"; };
+		739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextFormItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				739649141D2B6CC000E12A96 /* AttributedTextFormItem.swift */,
 				42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */,
 				42D0050D1B96241100986B3B /* CustomFormItem.swift */,
 				42108D0B1B34E9F60067FEAA /* DatePickerFormItem.swift */,
@@ -301,6 +300,7 @@
 				422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */,
 				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
 				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
+				739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -615,7 +615,7 @@
 				428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */,
 				42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */,
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
-				739649151D2B6CC100E12A96 /* AttributedTextFormItem.swift in Sources */,
+				739649151D2B6CC100E12A96 /* RFAttributedTextFormItem.swift in Sources */,
 				4212E0131D3A3ABE002287D0 /* RFCellForRowDelegate.swift in Sources */,
 				4219E1C61DB827CF00B3204A /* RFCountSpecification.swift in Sources */,
 				428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */,
