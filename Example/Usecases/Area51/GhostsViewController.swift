@@ -19,26 +19,26 @@ class GhostsViewController: RFFormViewController {
 		builder += submitButton
 	}
 
-	lazy var scarySlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var scarySlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(0.0).maximumValue(100.0).value(50.0)
 		return instance
 		}()
 
-	lazy var transparantSlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var transparantSlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(0.0).maximumValue(100.0).value(50.0)
 		return instance
 		}()
 
-	lazy var humanLookingSlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var humanLookingSlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(0.0).maximumValue(100.0).value(50.0)
 		return instance
 		}()
 
-	lazy var makingNoisesSlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var makingNoisesSlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(0.0).maximumValue(100.0).value(50.0)
 		return instance
 		}()

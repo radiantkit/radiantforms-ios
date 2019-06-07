@@ -15,14 +15,14 @@ class RateAppViewController: RFFormViewController {
 		builder += submitButton
 	}
 
-	lazy var goodSlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var goodSlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(-100.0).maximumValue(100.0).value(0)
 		return instance
 		}()
 
-	lazy var lookSlider: SliderFormItem = {
-		let instance = SliderFormItem()
+	lazy var lookSlider: RFSliderFormItem = {
+		let instance = RFSliderFormItem()
 		instance.minimumValue(-100.0).maximumValue(100.0).value(0)
 		return instance
 		}()

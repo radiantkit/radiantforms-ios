@@ -18,24 +18,24 @@ class SlidersViewController: RFFormViewController {
 		updateSummary()
 	}
 
-	lazy var slider0: SliderFormItem = {
-		let instance = SliderFormItem().minimumValue(-1.0).maximumValue(1.0).value(-0.5)
+	lazy var slider0: RFSliderFormItem = {
+		let instance = RFSliderFormItem().minimumValue(-1.0).maximumValue(1.0).value(-0.5)
 		instance.sliderDidChangeBlock = { [weak self] (value: Float) in
 			self?.updateSummary()
 		}
 		return instance
 	}()
 
-	lazy var slider1: SliderFormItem = {
-		let instance = SliderFormItem().minimumValue(-100.0).maximumValue(100.0).value(42)
+	lazy var slider1: RFSliderFormItem = {
+		let instance = RFSliderFormItem().minimumValue(-100.0).maximumValue(100.0).value(42)
 		instance.sliderDidChangeBlock = { [weak self] (value: Float) in
 			self?.updateSummary()
 		}
 		return instance
 	}()
 
-	lazy var slider2: SliderFormItem = {
-		let instance = SliderFormItem().minimumValue(0.0).maximumValue(100.0).value(80)
+	lazy var slider2: RFSliderFormItem = {
+		let instance = RFSliderFormItem().minimumValue(0.0).maximumValue(100.0).value(80)
 		instance.sliderDidChangeBlock = { [weak self] (value: Float) in
 			self?.updateSummary()
 		}

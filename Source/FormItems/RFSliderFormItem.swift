@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class SliderFormItem: RFFormItem {
+public class RFSliderFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -58,3 +58,6 @@ public class SliderFormItem: RFFormItem {
 		sliderDidChangeBlock(value)
 	}
 }
+
+@available(*, unavailable, renamed: "RFSliderFormItem")
+typealias SliderFormItem = RFSliderFormItem

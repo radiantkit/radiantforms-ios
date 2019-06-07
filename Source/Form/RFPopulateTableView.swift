@@ -478,7 +478,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 	// MARK: SliderFormItem
 
-	func visit(object: SliderFormItem) {
+	func visit(object: RFSliderFormItem) {
 		var model = RFSliderCellModel()
 		model.minimumValue = object.minimumValue
 		model.maximumValue = object.maximumValue
