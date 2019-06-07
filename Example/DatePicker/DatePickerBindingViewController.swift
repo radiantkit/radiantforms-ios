@@ -36,8 +36,8 @@ class DatePickerBindingViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var incrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var incrementButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Next Day"
 		instance.action = { [weak self] in
 			self?.increment()
@@ -45,8 +45,8 @@ class DatePickerBindingViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var decrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var decrementButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Previous Day"
 		instance.action = { [weak self] in
 			self?.decrement()

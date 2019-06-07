@@ -24,8 +24,8 @@ class SteppersViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var submitButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var submitButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit"
 		instance.action = { [weak self] in
 			let catCount = self?.catStepper.value ?? 0

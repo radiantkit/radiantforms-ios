@@ -122,8 +122,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()
@@ -153,8 +153,8 @@ class SignUpViewController: RFFormViewController {
 		subscribeToNewsletter.value = randomBool()
 	}
 
-	lazy var jsonButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var jsonButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "View JSON"
 		instance.action = { [weak self] in
 			if let vc = self {

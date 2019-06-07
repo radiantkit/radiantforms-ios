@@ -63,8 +63,8 @@ class OptionsViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()

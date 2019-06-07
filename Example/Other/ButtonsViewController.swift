@@ -27,11 +27,11 @@ class ButtonsViewController: RFFormViewController {
 
     // MARK: - Toggle Buttons
     
-    lazy var toggleButton0: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton0: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 0"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton0 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton0 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -41,11 +41,11 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var toggleButton1: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton1: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 1"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton1 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton1 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -55,11 +55,11 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var toggleButton2: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var toggleButton2: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Toggle Button 2"
         instance.action = { [weak self] in
-            guard let buttonFormItem: ButtonFormItem = self?.alertButton2 else {
+            guard let buttonFormItem: RFButtonFormItem = self?.alertButton2 else {
                 return
             }
             buttonFormItem.isHidden = !buttonFormItem.isHidden
@@ -82,8 +82,8 @@ class ButtonsViewController: RFFormViewController {
         alertButtonSectionHeader.isHidden = isHidden0 && isHidden1 && isHidden2
     }
     
-    lazy var alertButton0: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton0: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 0"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 0", "Button clicked")
@@ -91,8 +91,8 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var alertButton1: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton1: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 1"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 1", "Button clicked")
@@ -100,8 +100,8 @@ class ButtonsViewController: RFFormViewController {
         return instance
     }()
     
-    lazy var alertButton2: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var alertButton2: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Button 2"
         instance.action = { [weak self] in
             self?.form_simpleAlert("Button 2", "Button clicked")

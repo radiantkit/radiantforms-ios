@@ -14,7 +14,7 @@
 		420F6CC91D69C17F009D5F57 /* RFAssignAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */; };
 		420F6CCB1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */; };
 		420F6CCD1D6A1044009D5F57 /* RFToggleExpandCollapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */; };
-		42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */; };
+		42108D171B34E9F60067FEAA /* RFButtonFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */; };
 		42108D181B34E9F60067FEAA /* DatePickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0B1B34E9F60067FEAA /* DatePickerFormItem.swift */; };
 		42108D191B34E9F60067FEAA /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0C1B34E9F60067FEAA /* FormItem.swift */; };
 		42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */; };
@@ -140,7 +140,7 @@
 		420F6CC81D69C17F009D5F57 /* RFAssignAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAssignAppearance.swift; sourceTree = "<group>"; };
 		420F6CCA1D69EBAC009D5F57 /* UITableView+ScrollToVisibleAfterExpand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ScrollToVisibleAfterExpand.swift"; sourceTree = "<group>"; };
 		420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFToggleExpandCollapse.swift; sourceTree = "<group>"; };
-		42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFormItem.swift; sourceTree = "<group>"; };
+		42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFButtonFormItem.swift; sourceTree = "<group>"; };
 		42108D0B1B34E9F60067FEAA /* DatePickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerFormItem.swift; sourceTree = "<group>"; };
 		42108D0C1B34E9F60067FEAA /* FormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaFormItem.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				42108D0A1B34E9F60067FEAA /* ButtonFormItem.swift */,
 				42D0050D1B96241100986B3B /* CustomFormItem.swift */,
 				42108D0B1B34E9F60067FEAA /* DatePickerFormItem.swift */,
 				42108D0C1B34E9F60067FEAA /* FormItem.swift */,
@@ -301,6 +300,7 @@
 				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
 				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
 				739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */,
+				42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -613,7 +613,7 @@
 				428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */,
 				428683461B346CFE0028DB2F /* RFPopulateTableView.swift in Sources */,
 				428683321B346CFE0028DB2F /* RFOptionViewControllerCell.swift in Sources */,
-				42108D171B34E9F60067FEAA /* ButtonFormItem.swift in Sources */,
+				42108D171B34E9F60067FEAA /* RFButtonFormItem.swift in Sources */,
 				42CDA6BD229C26640050FE51 /* RFThemeBuilder.swift in Sources */,
 				739649151D2B6CC100E12A96 /* RFAttributedTextFormItem.swift in Sources */,
 				4212E0131D3A3ABE002287D0 /* RFCellForRowDelegate.swift in Sources */,

@@ -39,8 +39,8 @@ class SettingsViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var resetUserDefaultsButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var resetUserDefaultsButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Reset UserDefaults"
 		instance.action = { [weak self] in
 			self?.form_simpleAlert("Reset UserDefaults", "Button clicked")
@@ -48,8 +48,8 @@ class SettingsViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var deleteCacheButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var deleteCacheButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Delete Cache"
 		instance.action = { [weak self] in
 			self?.form_simpleAlert("Delete Cache", "Button clicked")

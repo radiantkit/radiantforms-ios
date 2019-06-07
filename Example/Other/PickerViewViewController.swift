@@ -55,8 +55,8 @@ class PickerViewViewController: RFFormViewController {
 		summary.value = "\(v0) , \(v1) , \(v2)"
 	}
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()

@@ -16,8 +16,8 @@ class StoryboardDemoViewController: RFFormViewController {
 		return instance
 	}()
 	
-	lazy var voteButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var voteButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit Vote"
 		instance.action = { [weak self] in
 			self?.voteButtonAction()

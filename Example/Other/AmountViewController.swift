@@ -33,8 +33,8 @@ class AmountViewController: RFFormViewController {
 
     // MARK: - Assign random values
     
-    lazy var randomizeGoodButton: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var randomizeGoodButton: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Randomize Good"
         instance.action = { [weak self] in
             self?.randomizeGood()
@@ -50,8 +50,8 @@ class AmountViewController: RFFormViewController {
         moneySymbol.value = pickRandomAmountValue([0, 1, 12223333, 12345678, 44440000, 99999999])
     }
     
-    lazy var randomizeBadButton: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var randomizeBadButton: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Randomize Bad"
         instance.action = { [weak self] in
             self?.randomizeBad()
@@ -70,8 +70,8 @@ class AmountViewController: RFFormViewController {
 
 	// MARK: - Show Values
 
-    lazy var showValuesButton: ButtonFormItem = {
-        let instance = ButtonFormItem()
+    lazy var showValuesButton: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
         instance.title = "Show Values"
         instance.action = { [weak self] in
             self?.showValuesAction()

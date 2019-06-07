@@ -132,7 +132,7 @@ public class RFDumpVisitor: FormItemVisitor {
 		dict["minuteInterval"] = object.minuteInterval
 	}
 
-	public func visit(object: ButtonFormItem) {
+	public func visit(object: RFButtonFormItem) {
 		dict["class"] = "ButtonFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier

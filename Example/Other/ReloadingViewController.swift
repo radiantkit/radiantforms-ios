@@ -30,8 +30,8 @@ class ReloadingViewController: RFFormViewController {
 		}
 	}
 
-	lazy var reloadButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var reloadButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Reload Form"
 		instance.action = { [weak self] in
 			self?.reloadForm()

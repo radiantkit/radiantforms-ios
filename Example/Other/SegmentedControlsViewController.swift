@@ -47,8 +47,8 @@ class SegmentedControlsViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var submitButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var submitButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Place order"
 		instance.action = { [weak self] in
 			if let actualSelf = self {
@@ -67,8 +67,8 @@ class SegmentedControlsViewController: RFFormViewController {
 		return s
 	}
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()

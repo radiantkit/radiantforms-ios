@@ -43,8 +43,8 @@ class GhostsViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var submitButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var submitButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit"
 		instance.action = { [weak self] in
 			self?.submit()

@@ -27,8 +27,8 @@ class RateAppViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var submitButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var submitButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Submit My Rating"
 		instance.action = { [weak self] in
 			self?.submitMyRating()

@@ -160,9 +160,9 @@ class RFPopulateTableView: FormItemVisitor {
 		}
 	}
 
-	// MARK: ButtonFormItem
+	// MARK: RFButtonFormItem
 
-	func visit(object: ButtonFormItem) {
+	func visit(object: RFButtonFormItem) {
         var model = RFButtonCellModel()
 		model.title = object.title
 		model.action = object.action
