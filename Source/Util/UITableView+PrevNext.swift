@@ -124,7 +124,7 @@ extension UITableView {
 	/// Find a cell below that can be jumped to. Skip cells that cannot be jumped to.
 	///
 	/// Usage: when the user hits TAB on the keyboard, then we want to jump to a cell below.
-	func form_indexPathForNextResponder(_ initialIndexPath: IndexPath) -> IndexPath? {
+	func rf_indexPathForNextResponder(_ initialIndexPath: IndexPath) -> IndexPath? {
 		guard let dataSource = self.dataSource else { return nil }
 		var indexPath: IndexPath! = initialIndexPath
 		while true {
@@ -140,6 +140,11 @@ extension UITableView {
 		}
 	}
 
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_indexPathForNextResponder instead")
+    func form_indexPathForNextResponder(_ initialIndexPath: IndexPath) -> IndexPath? {
+        return rf_indexPathForNextResponder(initialIndexPath)
+    }
+    
 	/// Jump to a cell above.
 	///
 	/// Usage: when the user types SHIFT TAB on the keyboard, then we want to jump to a cell above.
@@ -157,7 +162,7 @@ extension UITableView {
 	/// Usage: when the user hits TAB on the keyboard, then we want to jump to a cell below.
 	func form_makeNextCellFirstResponder(_ cell: UITableViewCell) {
 		guard let indexPath0 = rf_indexPathForCell(cell) else { return }
-		guard let indexPath1 = form_indexPathForNextResponder(indexPath0) else { return }
+		guard let indexPath1 = rf_indexPathForNextResponder(indexPath0) else { return }
 		guard let dataSource = self.dataSource else { return }
 		scrollToRow(at: indexPath1, at: .middle, animated: true)
 		let cell = dataSource.tableView(self, cellForRowAt: indexPath1)
@@ -175,7 +180,7 @@ extension UITableView {
 	/// Determines if it's possible to jump to a cell below.
 	func form_canMakeNextCellFirstResponder(_ cell: UITableViewCell) -> Bool {
 		guard let indexPath0 = rf_indexPathForCell(cell) else { return false }
-		if form_indexPathForNextResponder(indexPath0) == nil { return false }
+		if rf_indexPathForNextResponder(indexPath0) == nil { return false }
 		if self.dataSource == nil { return false }
 		return true
 	}
