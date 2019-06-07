@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class TextViewFormItem: RFFormItem {
+public class RFTextViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -42,3 +42,6 @@ public class TextViewFormItem: RFFormItem {
 		syncCellWithValue(value)
 	}
 }
+
+@available(*, unavailable, renamed: "RFTextViewFormItem")
+typealias TextViewFormItem = RFTextViewFormItem

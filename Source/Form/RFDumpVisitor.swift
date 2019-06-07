@@ -91,8 +91,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["placeholder"] = object.placeholder
 	}
 
-	public func visit(object: TextViewFormItem) {
-		dict["class"] = "TextViewFormItem"
+	public func visit(object: RFTextViewFormItem) {
+		dict["class"] = "RFTextViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

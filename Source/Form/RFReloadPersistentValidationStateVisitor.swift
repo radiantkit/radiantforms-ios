@@ -34,7 +34,7 @@ class RFReloadPersistentValidationStateVisitor: RFFormItemVisitor {
 	func visit(object: RFStaticTextFormItem) {}
 	func visit(object: RFStepperFormItem) {}
 	func visit(object: RFSwitchFormItem) {}
-	func visit(object: TextViewFormItem) {}
+	func visit(object: RFTextViewFormItem) {}
 	func visit(object: ViewControllerFormItem) {}
 }
 
