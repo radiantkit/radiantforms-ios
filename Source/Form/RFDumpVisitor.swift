@@ -42,7 +42,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 	private var dict = StringToAny()
 
     public func visit(object: RFAmountFormItem) {
-        dict["class"] = "AmountFormItem"
+        dict["class"] = "RFAmountFormItem"
         dict["elementIdentifier"] = object.elementIdentifier
         dict["styleIdentifier"] = object.styleIdentifier
         dict["styleClass"] = object.styleClass
@@ -57,7 +57,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 	}
 
 	public func visit(object: RFCustomFormItem) {
-		dict["class"] = "CustomFormItem"
+		dict["class"] = "RFCustomFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -133,7 +133,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 	}
 
 	public func visit(object: RFButtonFormItem) {
-		dict["class"] = "ButtonFormItem"
+		dict["class"] = "RFButtonFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
@@ -188,7 +188,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 	}
 
 	public func visit(object: RFSectionFormItem) {
-		dict["class"] = "SectionFormItem"
+		dict["class"] = "RFSectionFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
