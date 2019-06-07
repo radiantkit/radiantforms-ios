@@ -304,9 +304,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .item
 	}
 
-	// MARK: PrecisionSliderFormItem
+	// MARK: RFPrecisionSliderFormItem
 
-	func visit(object: PrecisionSliderFormItem) {
+	func visit(object: RFPrecisionSliderFormItem) {
 		let model = RFPrecisionSliderCellModel()
 		model.decimalPlaces = object.decimalPlaces
 		model.minimumValue = object.minimumValue
@@ -344,7 +344,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		weak var weakObject = object
 		model.valueDidChange = { (changeModel: RFPrecisionSliderCellModel.SliderDidChangeModel) in
 			SwiftyFormLog("value did change \(changeModel.value)")
-			let model = PrecisionSliderFormItem.SliderDidChangeModel(
+			let model = RFPrecisionSliderFormItem.SliderDidChangeModel(
 				value: changeModel.value,
 				valueUpdated: changeModel.valueUpdated,
 				zoom: changeModel.zoom,

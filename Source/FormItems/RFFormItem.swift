@@ -11,7 +11,7 @@ public protocol RFFormItemVisitor {
 	func visit(object: RFOptionPickerFormItem)
 	func visit(object: OptionRowFormItem)
 	func visit(object: RFPickerViewFormItem)
-	func visit(object: PrecisionSliderFormItem)
+	func visit(object: RFPrecisionSliderFormItem)
 	func visit(object: RFSectionFooterTitleFormItem)
 	func visit(object: RFSectionFooterViewFormItem)
 	func visit(object: RFSectionFormItem)

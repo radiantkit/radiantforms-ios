@@ -176,8 +176,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["maximumValue"] = object.maximumValue
 	}
 
-	public func visit(object: PrecisionSliderFormItem) {
-		dict["class"] = "PrecisionSliderFormItem"
+	public func visit(object: RFPrecisionSliderFormItem) {
+		dict["class"] = "RFPrecisionSliderFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

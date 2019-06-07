@@ -23,8 +23,8 @@ class ColorPickerViewController: RFFormViewController {
 		updateColor()
 	}
 
-	lazy var slider0: PrecisionSliderFormItem = {
-		let instance = PrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
+	lazy var slider0: RFPrecisionSliderFormItem = {
+		let instance = RFPrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
 		instance.title = "Red"
 		instance.sliderDidChangeBlock = { [weak self] _ in
 			self?.updateSummary()
@@ -33,8 +33,8 @@ class ColorPickerViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var slider1: PrecisionSliderFormItem = {
-		let instance = PrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
+	lazy var slider1: RFPrecisionSliderFormItem = {
+		let instance = RFPrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
 		instance.title = "Green"
 		instance.sliderDidChangeBlock = { [weak self] _ in
 			self?.updateSummary()
@@ -43,8 +43,8 @@ class ColorPickerViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var slider2: PrecisionSliderFormItem = {
-		let instance = PrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
+	lazy var slider2: RFPrecisionSliderFormItem = {
+		let instance = RFPrecisionSliderFormItem().decimalPlaces(3).minimumValue(0).maximumValue(1000).value(500)
 		instance.title = "Blue"
 		instance.sliderDidChangeBlock = { [weak self] _ in
 			self?.updateSummary()
@@ -86,7 +86,7 @@ class ColorPickerViewController: RFFormViewController {
 		return instance
 	}()
 
-	func assignRandomValue(_ formItem: PrecisionSliderFormItem) {
+	func assignRandomValue(_ formItem: RFPrecisionSliderFormItem) {
 		formItem.value = randomInt(0, 1000)
 	}
 

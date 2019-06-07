@@ -55,7 +55,7 @@
 		425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */; };
 		425DED651D28257000EDF891 /* RFSegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */; };
 		4262DF971B34824E00DC2083 /* SwiftFORMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */; };
-		42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */; };
+		42685D4B1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4A1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift */; };
 		42685D4D1D340733008ABC3D /* RFPrecisionSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */; };
 		42685D4F1D340D99008ABC3D /* RFTableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */; };
 		4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F7182264A7BA0098EF22 /* RFAmountCell.swift */; };
@@ -181,7 +181,7 @@
 		425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlCell.swift; sourceTree = "<group>"; };
 		425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlFormItem.swift; sourceTree = "<group>"; };
 		4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SwiftFORMImages.xcassets; sourceTree = "<group>"; };
-		42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderFormItem.swift; sourceTree = "<group>"; };
+		42685D4A1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderFormItem.swift; sourceTree = "<group>"; };
 		42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderCell.swift; sourceTree = "<group>"; };
 		42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewCellArray.swift; sourceTree = "<group>"; };
 		4280F7182264A7BA0098EF22 /* RFAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmountCell.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
 				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
 				739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */,
 				42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */,
@@ -301,6 +300,7 @@
 				42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */,
 				42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */,
+				42685D4A1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */,
 				425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* RFSliderFormItem.swift */,
@@ -668,7 +668,7 @@
 				422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */,
 				428683301B346CFE0028DB2F /* RFSimpleToolbar.swift in Sources */,
 				42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */,
-				42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */,
+				42685D4B1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift in Sources */,
 				4286833C1B346CFE0028DB2F /* RFCellHeightProvider.swift in Sources */,
 				42108D1D1B34E9F60067FEAA /* RFSliderFormItem.swift in Sources */,
 				42031FA322AA40A40028F18C /* RFFormItem.swift in Sources */,

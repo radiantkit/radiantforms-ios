@@ -10,8 +10,8 @@ class StoryboardDemoViewController: RFFormViewController {
 		builder += voteButton
 	}
 	
-	lazy var voteCountSlider: PrecisionSliderFormItem = {
-		let instance = PrecisionSliderFormItem().decimalPlaces(0).minimumValue(0).maximumValue(1000).value(500).behavior(.expandedAlways)
+	lazy var voteCountSlider: RFPrecisionSliderFormItem = {
+		let instance = RFPrecisionSliderFormItem().decimalPlaces(0).minimumValue(0).maximumValue(1000).value(500).behavior(.expandedAlways)
 		instance.title = "Vote Count"
 		return instance
 	}()
