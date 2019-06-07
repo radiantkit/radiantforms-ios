@@ -84,7 +84,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-    // MARK: AmountFormItem
+    // MARK: RFAmountFormItem
     
     func visit(object: RFAmountFormItem) {
         let numberFormatter: NumberFormatter = object.numberFormatter ?? RFAmountCell_NumberFormatter(fractionDigits: object.fractionDigits)
@@ -171,7 +171,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .item
 	}
 
-	// MARK: CustomFormItem
+	// MARK: RFCustomFormItem
 
 	func visit(object: RFCustomFormItem) {
 		let context = RFCustomFormItem.Context(
@@ -185,7 +185,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 			print("ERROR: Could not create cell for custom form item: \(error)")
 
 			var model = RFStaticTextCellModel()
-			model.title = "CustomFormItem"
+			model.title = "RFCustomFormItem"
 			model.value = "Exception"
 			let cell = RFStaticTextCell(model: model)
 			cells.append(cell)
@@ -288,7 +288,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: OptionRowFormItem
+	// MARK: RFOptionRowFormItem
 
 	func visit(object: RFOptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
@@ -389,7 +389,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .sectionEnd
 	}
 
-	// MARK: SectionFormItem
+	// MARK: RFSectionFormItem
 
 	func visit(object: RFSectionFormItem) {
 		switch lastItemType {
@@ -476,7 +476,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: SliderFormItem
+	// MARK: RFSliderFormItem
 
 	func visit(object: RFSliderFormItem) {
 		var model = RFSliderCellModel()
