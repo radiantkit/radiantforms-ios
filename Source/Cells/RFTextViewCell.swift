@@ -104,7 +104,7 @@ public class RFTextViewCell: UITableViewCell {
 
 	public func gotoNext() {
 		SwiftyFormLog("make next cell first responder")
-		form_makeNextCellFirstResponder()
+		rf_makeNextCellFirstResponder()
 	}
 
 	public func dismissKeyboard() {

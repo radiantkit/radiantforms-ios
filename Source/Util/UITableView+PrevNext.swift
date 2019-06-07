@@ -223,10 +223,15 @@ extension UITableViewCell {
 	/// Jump to the next cell, located below the current cell.
 	///
 	/// Usage: when the user hits TAB on the keyboard, then we want to jump to a cell below.
-	func form_makeNextCellFirstResponder() {
+	func rf_makeNextCellFirstResponder() {
 		form_tableView()?.rf_makeNextCellFirstResponder(self)
 	}
 
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_makeNextCellFirstResponder instead")
+    func form_makeNextCellFirstResponder() {
+        rf_makeNextCellFirstResponder()
+    }
+    
 	/// Determines if it's possible to jump to the cell above.
 	func form_canMakePreviousCellFirstResponder() -> Bool {
 		return form_tableView()?.rf_canMakePreviousCellFirstResponder(self) ?? false

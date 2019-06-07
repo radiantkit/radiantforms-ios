@@ -166,7 +166,7 @@ public class RFAmountCell: UITableViewCell {
     
     public func gotoNext() {
         SwiftyFormLog("make next cell first responder")
-        form_makeNextCellFirstResponder()
+        rf_makeNextCellFirstResponder()
     }
     
     public func dismissKeyboard() {
