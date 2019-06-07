@@ -87,7 +87,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 		} else {
 			_ = becomeFirstResponder()
 		}
-		form_deselectRow()
+		rf_deselectRow()
 	}
 
 	// MARK: UIResponder

@@ -122,7 +122,7 @@ public class RFPrecisionSliderToggleCell: UITableViewCell, RFCellHeightProvider,
 		} else {
 			_ = becomeFirstResponder()
 		}
-		form_deselectRow()
+		rf_deselectRow()
 	}
 
 	// MARK: UIResponder

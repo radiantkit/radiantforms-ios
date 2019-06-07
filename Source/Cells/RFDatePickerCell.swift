@@ -239,7 +239,7 @@ extension RFDatePickerToggleCell: RFSelectRowDelegate {
         } else {
             _ = becomeFirstResponder()
         }
-        form_deselectRow()
+        rf_deselectRow()
     }
 }
 
