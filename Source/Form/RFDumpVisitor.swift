@@ -231,8 +231,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: PickerViewFormItem) {
-		dict["class"] = "PickerViewFormItem"
+	public func visit(object: RFPickerViewFormItem) {
+		dict["class"] = "RFPickerViewFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

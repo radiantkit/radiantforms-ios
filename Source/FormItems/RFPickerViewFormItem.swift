@@ -8,7 +8,7 @@ import Foundation
 
 Behind the scenes this creates a `UIPickerView`.
 */
-public class PickerViewFormItem: RFFormItem {
+public class RFPickerViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -111,3 +111,6 @@ public class PickerViewFormItem: RFFormItem {
 		valueDidChangeBlock(value)
 	}
 }
+
+@available(*, unavailable, renamed: "RFPickerViewFormItem")
+typealias PickerViewFormItem = RFPickerViewFormItem

@@ -702,9 +702,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		return command
 	}
 
-	// MARK: PickerViewFormItem
+	// MARK: RFPickerViewFormItem
 
-	func visit(object: PickerViewFormItem) {
+	func visit(object: RFPickerViewFormItem) {
 		let model = RFPickerViewCellModel()
 		model.title = object.title
 		model.value = object.value

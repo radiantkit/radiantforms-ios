@@ -36,7 +36,7 @@
 		4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */; };
 		4219E1CB1DB827CF00B3204A /* RFSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1C41DB827CF00B3204A /* RFSpecification.swift */; };
 		4219E1D51DBE9EFB00B3204A /* RFJSONHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4219E1D41DBE9EFB00B3204A /* RFJSONHelperTests.swift */; };
-		422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */; };
+		422437E01D71890500EC41E8 /* RFPickerViewFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */; };
 		422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E11D71924400EC41E8 /* RFPickerViewCell.swift */; };
 		4229CE0A1D43C450002C28A7 /* RFPrecisionSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */; };
 		423E31411D6383FE0048D8C3 /* RFTableViewSectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E31401D6383FE0048D8C3 /* RFTableViewSectionArray.swift */; };
@@ -162,7 +162,7 @@
 		4219E1C31DB827CF00B3204A /* RFRegularExpressionSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecification.swift; sourceTree = "<group>"; };
 		4219E1C41DB827CF00B3204A /* RFSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecification.swift; sourceTree = "<group>"; };
 		4219E1D41DBE9EFB00B3204A /* RFJSONHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFJSONHelperTests.swift; sourceTree = "<group>"; };
-		422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewFormItem.swift; sourceTree = "<group>"; };
+		422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewFormItem.swift; sourceTree = "<group>"; };
 		422437E11D71924400EC41E8 /* RFPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPickerViewCell.swift; sourceTree = "<group>"; };
 		4229CE081D43C386002C28A7 /* RFPrecisionSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderTests.swift; sourceTree = "<group>"; };
 		423E31401D6383FE0048D8C3 /* RFTableViewSectionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewSectionArray.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */,
 				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
 				4280F71A2264A99F0098EF22 /* RFAmountFormItem.swift */,
 				739649141D2B6CC000E12A96 /* RFAttributedTextFormItem.swift */,
@@ -301,6 +300,7 @@
 				42031FA222AA40A40028F18C /* RFFormItem.swift */,
 				42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */,
 				42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */,
+				422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -663,7 +663,7 @@
 				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,
 				42F7521E1D6917CD0014C6ED /* CellDeselector.swift in Sources */,
 				428683331B346CFE0028DB2F /* RFSliderCell.swift in Sources */,
-				422437E01D71890500EC41E8 /* PickerViewFormItem.swift in Sources */,
+				422437E01D71890500EC41E8 /* RFPickerViewFormItem.swift in Sources */,
 				4280F7192264A7BA0098EF22 /* RFAmountCell.swift in Sources */,
 				422437E21D71924400EC41E8 /* RFPickerViewCell.swift in Sources */,
 				428683301B346CFE0028DB2F /* RFSimpleToolbar.swift in Sources */,

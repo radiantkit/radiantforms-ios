@@ -15,8 +15,8 @@ class PickerViewViewController: RFFormViewController {
 		updateSummary()
 	}
 
-	lazy var picker0: PickerViewFormItem = {
-		let instance = PickerViewFormItem().title("1 component").behavior(.expanded)
+	lazy var picker0: RFPickerViewFormItem = {
+		let instance = RFPickerViewFormItem().title("1 component").behavior(.expanded)
 		instance.pickerTitles = [["0", "1", "2", "3", "4", "5", "6"]]
 		instance.valueDidChangeBlock = { [weak self] _ in
 			self?.updateSummary()
@@ -24,8 +24,8 @@ class PickerViewViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var picker1: PickerViewFormItem = {
-		let instance = PickerViewFormItem().title("2 components")
+	lazy var picker1: RFPickerViewFormItem = {
+		let instance = RFPickerViewFormItem().title("2 components")
 		instance.pickerTitles = [["00", "01", "02", "03"], ["10", "11", "12", "13", "14"]]
 		instance.humanReadableValueSeparator = " :: "
 		instance.valueDidChangeBlock = { [weak self] _ in
@@ -34,8 +34,8 @@ class PickerViewViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var picker2: PickerViewFormItem = {
-		let instance = PickerViewFormItem().title("3 components")
+	lazy var picker2: RFPickerViewFormItem = {
+		let instance = RFPickerViewFormItem().title("3 components")
 		instance.pickerTitles = [["00", "01", "02", "03"], ["10", "11", "12"], ["20", "21", "22", "23", "24"]]
 		instance.humanReadableValueSeparator = " % "
 		instance.valueDidChangeBlock = { [weak self] _ in
@@ -64,7 +64,7 @@ class PickerViewViewController: RFFormViewController {
 		return instance
 	}()
 
-	func assignRandomValues(_ pickerView: PickerViewFormItem) {
+	func assignRandomValues(_ pickerView: RFPickerViewFormItem) {
 		var selectedRows = [Int]()
 		for rows in pickerView.pickerTitles {
 			if rows.count > 0 {
