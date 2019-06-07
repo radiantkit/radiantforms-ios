@@ -252,9 +252,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: MetaFormItem
+	// MARK: RFMetaFormItem
 
-	func visit(object: MetaFormItem) {
+	func visit(object: RFMetaFormItem) {
 		// this item is not visual
 	}
 

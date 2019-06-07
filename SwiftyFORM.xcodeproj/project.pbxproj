@@ -17,7 +17,7 @@
 		420F6CCD1D6A1044009D5F57 /* RFToggleExpandCollapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */; };
 		42108D171B34E9F60067FEAA /* RFButtonFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */; };
 		42108D181B34E9F60067FEAA /* RFDatePickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */; };
-		42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */; };
+		42108D1A1B34E9F60067FEAA /* RFMetaFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */; };
 		42108D1B1B34E9F60067FEAA /* OptionPickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */; };
 		42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */; };
 		42108D1D1B34E9F60067FEAA /* SliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D101B34E9F60067FEAA /* SliderFormItem.swift */; };
@@ -143,7 +143,7 @@
 		420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFToggleExpandCollapse.swift; sourceTree = "<group>"; };
 		42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFButtonFormItem.swift; sourceTree = "<group>"; };
 		42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerFormItem.swift; sourceTree = "<group>"; };
-		42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaFormItem.swift; sourceTree = "<group>"; };
+		42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFMetaFormItem.swift; sourceTree = "<group>"; };
 		42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPickerFormItem.swift; sourceTree = "<group>"; };
 		42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionFormItem.swift; sourceTree = "<group>"; };
 		42108D101B34E9F60067FEAA /* SliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderFormItem.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */,
 				42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */,
 				42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */,
@@ -301,6 +300,7 @@
 				42D0050D1B96241100986B3B /* RFCustomFormItem.swift */,
 				42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */,
 				42031FA222AA40A40028F18C /* RFFormItem.swift */,
+				42108D0D1B34E9F60067FEAA /* RFMetaFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -641,7 +641,7 @@
 				4219E1C91DB827CF00B3204A /* RFPredicateSpecification.swift in Sources */,
 				42B060F92292913900FD4585 /* RFTheme.swift in Sources */,
 				428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */,
-				42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */,
+				42108D1A1B34E9F60067FEAA /* RFMetaFormItem.swift in Sources */,
 				4286832E1B346CFE0028DB2F /* RFButtonCell.swift in Sources */,
 				428683411B346CFE0028DB2F /* RFSelectOptionDelegate.swift in Sources */,
 				428683421B346CFE0028DB2F /* RFFormTableView.swift in Sources */,

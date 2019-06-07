@@ -48,8 +48,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
         dict["styleClass"] = object.styleClass
     }
     
-	public func visit(object: MetaFormItem) {
-		dict["class"] = "MetaFormItem"
+	public func visit(object: RFMetaFormItem) {
+		dict["class"] = "RFMetaFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

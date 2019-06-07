@@ -112,8 +112,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var metaData: MetaFormItem = {
-		let instance = MetaFormItem()
+	lazy var metaData: RFMetaFormItem = {
+		let instance = RFMetaFormItem()
 		var dict = [String: AnyObject?]()
 		dict["key0"] = "I'm hidden text" as AnyObject?
 		dict["key1"] = "I'm included when exporting to JSON" as AnyObject?
