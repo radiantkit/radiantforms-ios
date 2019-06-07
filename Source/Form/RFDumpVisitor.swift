@@ -7,7 +7,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 	public init() {
 	}
 
-	class func dump(_ prettyPrinted: Bool = true, items: [FormItem]) -> Data {
+	class func dump(_ prettyPrinted: Bool = true, items: [RFFormItem]) -> Data {
 		var result = [StringToAny]()
 		var rowNumber: Int = 0
 		for item in items {

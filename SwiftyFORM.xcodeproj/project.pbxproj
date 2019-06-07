@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42031FA322AA40A40028F18C /* RFFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FA222AA40A40028F18C /* RFFormItem.swift */; };
 		42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E711B358A7E0068B084 /* ShowInfo.swift */; };
 		42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E721B358A7E0068B084 /* SubmitButton.swift */; };
 		420F32BC22A6B2C400A4B067 /* RFPrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */; };
@@ -16,7 +17,6 @@
 		420F6CCD1D6A1044009D5F57 /* RFToggleExpandCollapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */; };
 		42108D171B34E9F60067FEAA /* RFButtonFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */; };
 		42108D181B34E9F60067FEAA /* RFDatePickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */; };
-		42108D191B34E9F60067FEAA /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0C1B34E9F60067FEAA /* FormItem.swift */; };
 		42108D1A1B34E9F60067FEAA /* MetaFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */; };
 		42108D1B1B34E9F60067FEAA /* OptionPickerFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */; };
 		42108D1C1B34E9F60067FEAA /* SectionFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */; };
@@ -133,6 +133,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42031FA222AA40A40028F18C /* RFFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormItem.swift; sourceTree = "<group>"; };
 		42096E711B358A7E0068B084 /* ShowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfo.swift; sourceTree = "<group>"; };
 		42096E721B358A7E0068B084 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrevNextTests.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 		420F6CCC1D6A1044009D5F57 /* RFToggleExpandCollapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFToggleExpandCollapse.swift; sourceTree = "<group>"; };
 		42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFButtonFormItem.swift; sourceTree = "<group>"; };
 		42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerFormItem.swift; sourceTree = "<group>"; };
-		42108D0C1B34E9F60067FEAA /* FormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaFormItem.swift; sourceTree = "<group>"; };
 		42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPickerFormItem.swift; sourceTree = "<group>"; };
 		42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionFormItem.swift; sourceTree = "<group>"; };
@@ -291,7 +291,6 @@
 		42108D091B34E9F60067FEAA /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
-				42108D0C1B34E9F60067FEAA /* FormItem.swift */,
 				42108D0D1B34E9F60067FEAA /* MetaFormItem.swift */,
 				42108D0E1B34E9F60067FEAA /* OptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* PickerViewFormItem.swift */,
@@ -301,6 +300,7 @@
 				42108D0A1B34E9F60067FEAA /* RFButtonFormItem.swift */,
 				42D0050D1B96241100986B3B /* RFCustomFormItem.swift */,
 				42108D0B1B34E9F60067FEAA /* RFDatePickerFormItem.swift */,
+				42031FA222AA40A40028F18C /* RFFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* SectionFormItem.swift */,
 				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
@@ -605,7 +605,6 @@
 				4219E1C71DB827CF00B3204A /* RFEmailSpecification.swift in Sources */,
 				42B060FB229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift in Sources */,
 				4286833E1B346CFE0028DB2F /* RFOptionListViewController.swift in Sources */,
-				42108D191B34E9F60067FEAA /* FormItem.swift in Sources */,
 				42D005101B96243000986B3B /* RFWillDisplayCellDelegate.swift in Sources */,
 				42108D211B34E9F60067FEAA /* TextFieldFormItem.swift in Sources */,
 				428683341B346CFE0028DB2F /* RFStaticTextCell.swift in Sources */,
@@ -672,6 +671,7 @@
 				42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */,
 				4286833C1B346CFE0028DB2F /* RFCellHeightProvider.swift in Sources */,
 				42108D1D1B34E9F60067FEAA /* SliderFormItem.swift in Sources */,
+				42031FA322AA40A40028F18C /* RFFormItem.swift in Sources */,
 				4259A2C41C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift in Sources */,
 				428683351B346CFE0028DB2F /* RFStepperCell.swift in Sources */,
 				4286833F1B346CFE0028DB2F /* RFFormBuilder.swift in Sources */,

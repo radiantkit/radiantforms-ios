@@ -27,7 +27,7 @@ public protocol RFFormItemVisitor {
 	func visit(object: ViewControllerFormItem)
 }
 
-open class FormItem {
+open class RFFormItem {
 
 	public init() {
 	}
@@ -67,3 +67,6 @@ open class FormItem {
 
 @available(*, unavailable, renamed: "RFFormItemVisitor")
 typealias FormItemVisitor = RFFormItemVisitor
+
+@available(*, unavailable, renamed: "RFFormItem")
+typealias FormItem = RFFormItem

@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class RFCustomFormItem: FormItem {
+public class RFCustomFormItem: RFFormItem {
 	public struct Context {
 		public let viewController: UIViewController
 	}

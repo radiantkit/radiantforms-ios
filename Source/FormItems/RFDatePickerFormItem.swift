@@ -22,7 +22,7 @@ public enum RFDatePickerFormItemMode {
 
 Behind the scenes this creates a `UIDatePicker`.
 */
-public class RFDatePickerFormItem: FormItem {
+public class RFDatePickerFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}

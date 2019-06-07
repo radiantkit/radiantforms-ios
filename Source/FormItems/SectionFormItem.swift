@@ -1,13 +1,13 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class SectionFormItem: FormItem {
+public class SectionFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 }
 
-public class SectionHeaderTitleFormItem: FormItem {
+public class SectionHeaderTitleFormItem: RFFormItem {
 	public init(title: String? = nil) {
 		self.title = title
 		super.init()
@@ -32,7 +32,7 @@ public class SectionHeaderTitleFormItem: FormItem {
 	}
 }
 
-public class SectionHeaderViewFormItem: FormItem {
+public class SectionHeaderViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -41,7 +41,7 @@ public class SectionHeaderViewFormItem: FormItem {
 	public var viewBlock: CreateUIView?
 }
 
-public class SectionFooterTitleFormItem: FormItem {
+public class SectionFooterTitleFormItem: RFFormItem {
 	public init(title: String? = nil) {
 		self.title = title
 		super.init()
@@ -60,7 +60,7 @@ public class SectionFooterTitleFormItem: FormItem {
 	}
 }
 
-public class SectionFooterViewFormItem: FormItem {
+public class SectionFooterViewFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}

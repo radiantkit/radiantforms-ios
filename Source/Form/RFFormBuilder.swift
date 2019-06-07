@@ -2,8 +2,8 @@
 import UIKit
 
 class RFAlignLeft {
-	fileprivate let items: [FormItem]
-	init(items: [FormItem]) {
+	fileprivate let items: [RFFormItem]
+	init(items: [RFFormItem]) {
 		self.items = items
 	}
 }
@@ -14,7 +14,7 @@ public enum RFToolbarMode {
 }
 
 public class RFFormBuilder {
-	private var innerItems = [FormItem]()
+	private var innerItems = [RFFormItem]()
 	private var alignLeftItems = [RFAlignLeft]()
 
 	public init() {
@@ -34,26 +34,26 @@ public class RFFormBuilder {
 	}
 
 	@discardableResult
-	public func append(_ item: FormItem) -> FormItem {
+	public func append(_ item: RFFormItem) -> RFFormItem {
 		innerItems.append(item)
 		return item
 	}
 
-	public func appendMulti(_ items: [FormItem]) {
+	public func appendMulti(_ items: [RFFormItem]) {
 		innerItems += items
 	}
 
-	public func alignLeft(_ items: [FormItem]) {
+	public func alignLeft(_ items: [RFFormItem]) {
 		let alignLeftItem = RFAlignLeft(items: items)
 		alignLeftItems.append(alignLeftItem)
 	}
 
 	public func alignLeftElementsWithClass(_ styleClass: String) {
-		let items: [FormItem] = innerItems.filter { $0.styleClass == styleClass }
+		let items: [RFFormItem] = innerItems.filter { $0.styleClass == styleClass }
 		alignLeft(items)
 	}
 
-	public var items: [FormItem] {
+	public var items: [RFFormItem] {
 		return innerItems
 	}
 
@@ -101,7 +101,7 @@ public class RFFormBuilder {
 
 	public enum FormValidateResult {
 		case valid
-		case invalid(item: FormItem, message: String)
+		case invalid(item: RFFormItem, message: String)
 	}
 
 	public func validate() -> FormValidateResult {
@@ -125,7 +125,7 @@ public class RFFormBuilder {
 
 }
 
-public func += (left: RFFormBuilder, right: FormItem) {
+public func += (left: RFFormBuilder, right: RFFormItem) {
 	left.append(right)
 }
 

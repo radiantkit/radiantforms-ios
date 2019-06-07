@@ -3,7 +3,7 @@ import Foundation
 
 public typealias RFAmountValue = UInt64
 
-public class RFAmountFormItem: FormItem {
+public class RFAmountFormItem: RFFormItem {
     override func accept(visitor: RFFormItemVisitor) {
         visitor.visit(object: self)
     }

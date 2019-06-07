@@ -3,7 +3,7 @@ import Foundation
 
 class RFReloadPersistentValidationStateVisitor: RFFormItemVisitor {
 
-	class func validateAndUpdateUI(_ items: [FormItem]) {
+	class func validateAndUpdateUI(_ items: [RFFormItem]) {
 		let visitor = RFReloadPersistentValidationStateVisitor()
 		for item in items {
 			item.accept(visitor: visitor)

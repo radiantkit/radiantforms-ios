@@ -2,7 +2,7 @@
 import Foundation
 
 /// This is an invisible field, that is submitted along with the json
-public class MetaFormItem: FormItem {
+public class MetaFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}

@@ -15,7 +15,7 @@ import Foundation
 Behind the scenes this creates a `RFPrecisionSlider`. This is not a standard Apple control.
 Please contact Simon Strandgaard if you have questions regarding it.
 */
-public class PrecisionSliderFormItem: FormItem {
+public class PrecisionSliderFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
