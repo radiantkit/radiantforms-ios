@@ -76,7 +76,7 @@ extension UITableView {
 	/// Unlike UITableView.indexPathForCell() which only looksup inside the visible area.
 	/// UITableView doesn't let you lookup cells outside the visible area.
 	/// UITableView.indexPathForCell() returns nil when the cell is outside the visible area.
-	func form_indexPathForCell(_ cell: UITableViewCell) -> IndexPath? {
+	func rf_indexPathForCell(_ cell: UITableViewCell) -> IndexPath? {
 		guard let dataSource = self.dataSource else { return nil }
 		let sectionCount: Int = dataSource.numberOfSections?(in: self) ?? 0
 		for section: Int in 0 ..< sectionCount {
@@ -91,6 +91,11 @@ extension UITableView {
 		}
 		return nil
 	}
+
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_indexPathForCell instead")
+    func form_indexPathForCell(_ cell: UITableViewCell) -> IndexPath? {
+        return rf_indexPathForCell(cell)
+    }
 
 	/// Find a cell above that can be jumped to. Skip cells that cannot be jumped to.
 	///
@@ -134,7 +139,7 @@ extension UITableView {
 	///
 	/// Usage: when the user types SHIFT TAB on the keyboard, then we want to jump to a cell above.
 	func form_makePreviousCellFirstResponder(_ cell: UITableViewCell) {
-		guard let indexPath0 = form_indexPathForCell(cell) else { return }
+		guard let indexPath0 = rf_indexPathForCell(cell) else { return }
 		guard let indexPath1 = form_indexPathForPreviousResponder(indexPath0) else { return }
 		guard let dataSource = self.dataSource else { return }
 		scrollToRow(at: indexPath1, at: .middle, animated: true)
@@ -146,7 +151,7 @@ extension UITableView {
 	///
 	/// Usage: when the user hits TAB on the keyboard, then we want to jump to a cell below.
 	func form_makeNextCellFirstResponder(_ cell: UITableViewCell) {
-		guard let indexPath0 = form_indexPathForCell(cell) else { return }
+		guard let indexPath0 = rf_indexPathForCell(cell) else { return }
 		guard let indexPath1 = form_indexPathForNextResponder(indexPath0) else { return }
 		guard let dataSource = self.dataSource else { return }
 		scrollToRow(at: indexPath1, at: .middle, animated: true)
@@ -156,7 +161,7 @@ extension UITableView {
 
 	/// Determines if it's possible to jump to a cell above.
 	func form_canMakePreviousCellFirstResponder(_ cell: UITableViewCell) -> Bool {
-		guard let indexPath0 = form_indexPathForCell(cell) else { return false }
+		guard let indexPath0 = rf_indexPathForCell(cell) else { return false }
 		if form_indexPathForPreviousResponder(indexPath0) == nil { return false }
 		if self.dataSource == nil { return false }
 		return true
@@ -164,7 +169,7 @@ extension UITableView {
 
 	/// Determines if it's possible to jump to a cell below.
 	func form_canMakeNextCellFirstResponder(_ cell: UITableViewCell) -> Bool {
-		guard let indexPath0 = form_indexPathForCell(cell) else { return false }
+		guard let indexPath0 = rf_indexPathForCell(cell) else { return false }
 		if form_indexPathForNextResponder(indexPath0) == nil { return false }
 		if self.dataSource == nil { return false }
 		return true
