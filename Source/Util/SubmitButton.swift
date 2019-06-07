@@ -22,10 +22,10 @@ extension RFFormViewController {
 	public func form_showSubmitResult(_ result: RFFormBuilder.FormValidateResult) {
 		switch result {
 		case .valid:
-			form_simpleAlert("Valid", "All the fields are valid")
+			rf_simpleAlert("Valid", "All the fields are valid")
 		case let .invalid(item, message):
 			let title = item.elementIdentifier ?? "Invalid"
-			form_simpleAlert(title, message)
+			rf_simpleAlert(title, message)
 		}
 	}
 }

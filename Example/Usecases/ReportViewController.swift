@@ -37,7 +37,7 @@ class ReportViewController: RFFormViewController, MFMailComposeViewControllerDel
 			let mc = configuredMailComposeViewController()
 			present(mc, animated: true, completion: nil)
 		} else {
-			form_simpleAlert("Could Not Send Mail", "Your device could not send mail. Please check mail configuration and try again.")
+			rf_simpleAlert("Could Not Send Mail", "Your device could not send mail. Please check mail configuration and try again.")
 		}
 	}
 
@@ -63,16 +63,16 @@ class ReportViewController: RFFormViewController, MFMailComposeViewControllerDel
 	func showMailResultAlert(_ result: MFMailComposeResult, error: Error?) {
 		switch result {
 		case .cancelled:
-			form_simpleAlert("Status", "Mail cancelled")
+			rf_simpleAlert("Status", "Mail cancelled")
 		case .saved:
-			form_simpleAlert("Status", "Mail saved")
+			rf_simpleAlert("Status", "Mail saved")
 		case .sent:
-			form_simpleAlert("Status", "Mail sent")
+			rf_simpleAlert("Status", "Mail sent")
 		case .failed:
-			form_simpleAlert("Mail failed", "error: \(String(describing: error))")
+			rf_simpleAlert("Mail failed", "error: \(String(describing: error))")
 		#if swift(>=5.0)
 		@unknown default:
-			form_simpleAlert("Mail failed", "Encountered an unknown MFMailComposeResult")
+			rf_simpleAlert("Mail failed", "Encountered an unknown MFMailComposeResult")
 		#endif
 		}
 	}
