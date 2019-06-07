@@ -224,8 +224,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["styleClass"] = object.styleClass
 	}
 
-	public func visit(object: SegmentedControlFormItem) {
-		dict["class"] = "SegmentedControlFormItem"
+	public func visit(object: RFSegmentedControlFormItem) {
+		dict["class"] = "RFSegmentedControlFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass

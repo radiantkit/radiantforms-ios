@@ -53,7 +53,7 @@
 		4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */; };
 		4259A2C41C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */; };
 		425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */; };
-		425DED651D28257000EDF891 /* SegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */; };
+		425DED651D28257000EDF891 /* RFSegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */; };
 		4262DF971B34824E00DC2083 /* SwiftFORMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */; };
 		42685D4B1D34039B008ABC3D /* PrecisionSliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */; };
 		42685D4D1D340733008ABC3D /* RFPrecisionSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */; };
@@ -179,7 +179,7 @@
 		4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTrueFalseTests.swift; sourceTree = "<group>"; };
 		4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessoryButtonDelegate.swift; sourceTree = "<group>"; };
 		425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlCell.swift; sourceTree = "<group>"; };
-		425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlFormItem.swift; sourceTree = "<group>"; };
+		425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlFormItem.swift; sourceTree = "<group>"; };
 		4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SwiftFORMImages.xcassets; sourceTree = "<group>"; };
 		42685D4A1D34039B008ABC3D /* PrecisionSliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSliderFormItem.swift; sourceTree = "<group>"; };
 		42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderCell.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 				42108D0E1B34E9F60067FEAA /* RFOptionPickerFormItem.swift */,
 				422437DF1D71890500EC41E8 /* RFPickerViewFormItem.swift */,
 				42108D0F1B34E9F60067FEAA /* RFSectionFormItem.swift */,
-				425DED641D28257000EDF891 /* SegmentedControlFormItem.swift */,
+				425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */,
 				42108D101B34E9F60067FEAA /* SliderFormItem.swift */,
 				42108D111B34E9F60067FEAA /* StaticTextFormItem.swift */,
 				42108D121B34E9F60067FEAA /* StepperFormItem.swift */,
@@ -679,7 +679,7 @@
 				420F6CCD1D6A1044009D5F57 /* RFToggleExpandCollapse.swift in Sources */,
 				423E31431D6384700048D8C3 /* RFTableViewSectionPart.swift in Sources */,
 				42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */,
-				425DED651D28257000EDF891 /* SegmentedControlFormItem.swift in Sources */,
+				425DED651D28257000EDF891 /* RFSegmentedControlFormItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

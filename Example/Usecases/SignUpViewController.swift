@@ -98,8 +98,8 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-    lazy var shoeSize: SegmentedControlFormItem = {
-        let instance = SegmentedControlFormItem()
+    lazy var shoeSize: RFSegmentedControlFormItem = {
+        let instance = RFSegmentedControlFormItem()
         instance.title = "Shoe Size"
         instance.items = ["S", "M", "L", "XL"]
         return instance
@@ -137,7 +137,7 @@ class SignUpViewController: RFFormViewController {
 		return offsetDate(today, years: -i)
 	}
 
-    func assignRandomValue(_ formItem: SegmentedControlFormItem) {
+    func assignRandomValue(_ formItem: RFSegmentedControlFormItem) {
         let count = formItem.items.count
         if count > 0 {
             formItem.selected = randomInt(0, count - 1)

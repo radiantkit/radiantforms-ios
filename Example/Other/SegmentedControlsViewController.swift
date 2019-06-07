@@ -18,29 +18,29 @@ class SegmentedControlsViewController: RFFormViewController {
 		builder += randomizeButton
 	}
 
-	lazy var animal: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var animal: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Animal"
 		instance.items = ["Cat", "Dog", "Fish"]
 		return instance
 	}()
 
-	lazy var spicy: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var spicy: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Spicy"
 		instance.items = ["Hot", "Yes", "No"]
 		return instance
 	}()
 
-	lazy var drink: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var drink: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Drink"
 		instance.items = ["Beer", "Wine"]
 		return instance
 	}()
 
-	lazy var popcorn: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var popcorn: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Popcorn"
 		instance.items = ["S", "M", "XL", "XXL"]
 		instance.selected = 3
@@ -76,7 +76,7 @@ class SegmentedControlsViewController: RFFormViewController {
 		return instance
 	}()
 
-	func assignRandomValue(_ formItem: SegmentedControlFormItem) {
+	func assignRandomValue(_ formItem: RFSegmentedControlFormItem) {
 		let count = formItem.items.count
 		if count > 0 {
 			formItem.selected = randomInt(0, count - 1)

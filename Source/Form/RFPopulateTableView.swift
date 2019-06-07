@@ -449,9 +449,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		lastItemType = .header
 	}
 
-	// MARK: SegmentedControlFormItem
+	// MARK: RFSegmentedControlFormItem
 
-	func visit(object: SegmentedControlFormItem) {
+	func visit(object: RFSegmentedControlFormItem) {
 		var model = RFSegmentedControlCellModel()
 		model.title = object.title
 		model.items = object.items
