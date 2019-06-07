@@ -30,7 +30,7 @@ public class RFDumpVisitor: RFFormItemVisitor {
 				dict["validate-message"] = message
 			}
 
-			dict.update(dumpVisitor.dict)
+			dict.rf_update(dumpVisitor.dict)
 
 			result.append(dict)
 			rowNumber += 1
