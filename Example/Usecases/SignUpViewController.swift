@@ -40,14 +40,14 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var maleOrFemale: ViewControllerFormItem = {
-		let instance = ViewControllerFormItem()
+	lazy var maleOrFemale: RFViewControllerFormItem = {
+		let instance = RFViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
 		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
 			let vc = MaleFemaleViewController(dismissCommand: dismissCommand)
 			return vc
 		}
-		instance.willPopViewController = { (context: ViewControllerFormItemPopContext) in
+		instance.willPopViewController = { (context: RFViewControllerFormItemPopContext) in
 			if let x = context.returnedObject as? SwiftyFORM.OptionRowFormItem {
 				context.cell.detailTextLabel?.text = x.title
 			} else {

@@ -14,7 +14,7 @@ struct OptionRow {
 
 class MyOptionForm {
 	let optionRows: [OptionRow]
-	let vc0 = ViewControllerFormItem()
+	let vc0 = RFViewControllerFormItem()
 
 	init(optionRows: [OptionRow]) {
 		self.optionRows = optionRows

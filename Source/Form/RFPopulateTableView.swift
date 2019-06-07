@@ -2,7 +2,7 @@
 import UIKit
 
 protocol RFWillPopCommandProtocol {
-	func execute(_ context: ViewControllerFormItemPopContext)
+	func execute(_ context: RFViewControllerFormItemPopContext)
 }
 
 class RFWillPopCustomViewController: RFWillPopCommandProtocol {
@@ -11,8 +11,8 @@ class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 		self.object = object
 	}
 
-	func execute(_ context: ViewControllerFormItemPopContext) {
-		if let vc = object as? ViewControllerFormItem {
+	func execute(_ context: RFViewControllerFormItemPopContext) {
+		if let vc = object as? RFViewControllerFormItem {
 			vc.willPopViewController?(context)
 			return
 		}
@@ -20,12 +20,12 @@ class RFWillPopCustomViewController: RFWillPopCommandProtocol {
 }
 
 class RFWillPopOptionViewController: RFWillPopCommandProtocol {
-	let object: ViewControllerFormItem
-	init(object: ViewControllerFormItem) {
+	let object: RFViewControllerFormItem
+	init(object: RFViewControllerFormItem) {
 		self.object = object
 	}
 
-	func execute(_ context: ViewControllerFormItemPopContext) {
+	func execute(_ context: RFViewControllerFormItemPopContext) {
 		object.willPopViewController?(context)
 	}
 }
@@ -669,9 +669,9 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: ViewControllerFormItem
+	// MARK: RFViewControllerFormItem
 
-	func visit(object: ViewControllerFormItem) {
+	func visit(object: RFViewControllerFormItem) {
 		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
 		let willPopViewController = RFWillPopCustomViewController(object: object)
 
@@ -694,7 +694,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
 			SwiftyFormLog("pop: \(String(describing: returnObject))")
 			if let vc = weakViewController {
-				let context = ViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
+				let context = RFViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
 				willPopCommand.execute(context)
 				_ = vc.navigationController?.popViewController(animated: true)
 			}
