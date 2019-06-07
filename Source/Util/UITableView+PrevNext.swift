@@ -148,7 +148,7 @@ extension UITableView {
 	/// Jump to a cell above.
 	///
 	/// Usage: when the user types SHIFT TAB on the keyboard, then we want to jump to a cell above.
-	func form_makePreviousCellFirstResponder(_ cell: UITableViewCell) {
+	func rf_makePreviousCellFirstResponder(_ cell: UITableViewCell) {
 		guard let indexPath0 = rf_indexPathForCell(cell) else { return }
 		guard let indexPath1 = rf_indexPathForPreviousResponder(indexPath0) else { return }
 		guard let dataSource = self.dataSource else { return }
@@ -156,6 +156,11 @@ extension UITableView {
 		let cell = dataSource.tableView(self, cellForRowAt: indexPath1)
 		cell.becomeFirstResponder()
 	}
+
+    @available(*, deprecated, message: "Will be removed with Version2, use rf_makePreviousCellFirstResponder instead")
+    func form_makePreviousCellFirstResponder(_ cell: UITableViewCell) {
+        return rf_makePreviousCellFirstResponder(cell)
+    }
 
 	/// Jump to a cell below.
 	///
@@ -192,7 +197,7 @@ extension UITableViewCell {
 	///
 	/// Usage: when the user types SHIFT TAB on the keyboard, then we want to jump to a cell above.
 	func form_makePreviousCellFirstResponder() {
-		form_tableView()?.form_makePreviousCellFirstResponder(self)
+		form_tableView()?.rf_makePreviousCellFirstResponder(self)
 	}
 
 	/// Jump to the next cell, located below the current cell.
