@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-public protocol FormItemVisitor {
+public protocol RFFormItemVisitor {
     func visit(object: RFAmountFormItem)
 	func visit(object: RFAttributedTextFormItem)
 	func visit(object: RFButtonFormItem)
@@ -32,7 +32,7 @@ open class FormItem {
 	public init() {
 	}
 
-	func accept(visitor: FormItemVisitor) {}
+	func accept(visitor: RFFormItemVisitor) {}
     
     public var isHidden: Bool = false
 
@@ -63,3 +63,7 @@ open class FormItem {
 		return self
 	}
 }
+
+
+@available(*, unavailable, renamed: "RFFormItemVisitor")
+typealias FormItemVisitor = RFFormItemVisitor

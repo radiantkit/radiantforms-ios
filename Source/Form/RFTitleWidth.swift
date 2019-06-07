@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import UIKit
 
-class RFObtainTitleWidth: FormItemVisitor {
+class RFObtainTitleWidth: RFFormItemVisitor {
 	var width: CGFloat = 0
 
 	func visit(object: TextFieldFormItem) {
@@ -32,7 +32,7 @@ class RFObtainTitleWidth: FormItemVisitor {
 	func visit(object: ViewControllerFormItem) {}
 }
 
-class RFAssignTitleWidth: FormItemVisitor {
+class RFAssignTitleWidth: RFFormItemVisitor {
 	fileprivate var width: CGFloat = 0
 
 	init(width: CGFloat) {

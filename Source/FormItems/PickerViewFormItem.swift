@@ -9,7 +9,7 @@ import Foundation
 Behind the scenes this creates a `UIPickerView`.
 */
 public class PickerViewFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 

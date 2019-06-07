@@ -16,7 +16,7 @@ Behind the scenes this creates a `RFPrecisionSlider`. This is not a standard App
 Please contact Simon Strandgaard if you have questions regarding it.
 */
 public class PrecisionSliderFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 

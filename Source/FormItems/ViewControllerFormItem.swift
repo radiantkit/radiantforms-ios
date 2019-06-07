@@ -16,7 +16,7 @@ public class ViewControllerFormItemPopContext {
 }
 
 public class ViewControllerFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 

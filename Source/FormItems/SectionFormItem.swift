@@ -2,7 +2,7 @@
 import Foundation
 
 public class SectionFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 }
@@ -13,7 +13,7 @@ public class SectionHeaderTitleFormItem: FormItem {
 		super.init()
 	}
 
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -33,7 +33,7 @@ public class SectionHeaderTitleFormItem: FormItem {
 }
 
 public class SectionHeaderViewFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -47,7 +47,7 @@ public class SectionFooterTitleFormItem: FormItem {
 		super.init()
 	}
 
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 
@@ -61,7 +61,7 @@ public class SectionFooterTitleFormItem: FormItem {
 }
 
 public class SectionFooterViewFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 

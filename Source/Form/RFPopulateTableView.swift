@@ -35,7 +35,7 @@ struct RFPopulateTableViewModel {
 	var toolbarMode: RFToolbarMode
 }
 
-class RFPopulateTableView: FormItemVisitor {
+class RFPopulateTableView: RFFormItemVisitor {
 	let model: RFPopulateTableViewModel
 
 	var cells: RFTableViewCellArray = RFTableViewCellArray.createEmpty()

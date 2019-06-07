@@ -2,7 +2,7 @@
 import Foundation
 
 public class StaticTextFormItem: FormItem {
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 

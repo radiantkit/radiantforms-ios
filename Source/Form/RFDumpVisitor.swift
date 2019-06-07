@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
 import Foundation
 
-public class RFDumpVisitor: FormItemVisitor {
+public class RFDumpVisitor: RFFormItemVisitor {
 	private typealias StringToAny = [String: Any?]
 
 	public init() {

@@ -13,7 +13,7 @@ public class RFCustomFormItem: FormItem {
 	public typealias CreateCell = (Context) throws -> UITableViewCell
 	public var createCell: CreateCell = { _ in throw CustomFormItemError.couldNotCreate }
 
-	override func accept(visitor: FormItemVisitor) {
+	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
 }
