@@ -54,7 +54,7 @@ public class RFKeyboardHandler {
 	@objc func keyboardWillShow(_ notification: Notification) {
 //		SwiftyFormLog("show\n\n\n\n\n\n\n\n")
 		innerKeyboardVisible = true
-		guard let cell = tableView.form_firstResponder()?.form_cell() else {
+		guard let cell = tableView.rf_firstResponder()?.form_cell() else {
 			return
 		}
 		guard let indexPath = tableView.indexPath(for: cell) else {
