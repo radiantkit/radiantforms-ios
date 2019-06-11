@@ -20,6 +20,7 @@ public class RFFormTableView: UITableView {
     @objc public dynamic var sectionFooter_textLabel_textColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        RFSimpleToolbar.configureAppearance(whenContainedInInstancesOf: containerTypes, theme: theme)
 
         do {
             let appearanceProxy: RFFormTableView = RFFormTableView.appearance(whenContainedInInstancesOf: containerTypes)

@@ -17,6 +17,19 @@ public class RFSimpleToolbar: UIToolbar {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        do {
+            let appearanceProxy: UINavigationBar = UINavigationBar.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.barTintColor = theme.navigationBar.barTintColor
+            appearanceProxy.tintColor = theme.navigationBar.tintColor
+        }
+        do {
+            let appearanceProxy: RFSimpleToolbar = RFSimpleToolbar.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.barTintColor = theme.toolBar.barTintColor
+            appearanceProxy.tintColor = theme.toolBar.tintColor
+        }
+    }
+
 	public lazy var previousButton: UIBarButtonItem = {
 		let image = UIImage(named: "SwiftFORMArrowLeft", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
