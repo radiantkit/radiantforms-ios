@@ -1,8 +1,8 @@
 <h3 align="center">
-<a href="https://github.com/neoneye/SwiftyFORM">
-<img src="Documentation/swiftyform_logo.png" alt="SwiftyFORM by Simon Strandgaard"/>
+<a href="https://github.com/radiantkit/radiantforms-ios">
+<img src="Documentation/swiftyform_logo.png" alt="RadiantForms by Simon Strandgaard"/>
 <br />
-SwiftyFORM
+RadiantForms
 </a>
 </h3>
 
@@ -15,13 +15,13 @@ SwiftyFORM
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
-**SwiftyFORM is an iOS framework for creating forms.**
+**RadiantForms is an iOS framework for creating forms.**
 
 Because form code is hard to write, hard to read, hard to reason about. Has a slow turn around time. Is painful to maintain.
 
 [SwiftyFORM demo on YouTube](https://youtu.be/PKbVJ91uQdA)
 
-Development happens in the [`develop`](https://github.com/neoneye/SwiftyFORM/tree/develop) branch.
+Development happens in the [`develop`](https://github.com/radiantkit/radiantforms-ios/tree/develop) branch.
 
 
 <a href="mailto:neoneye@gmail.com?subject=Hire Simon Strandgaard">
@@ -31,8 +31,8 @@ Development happens in the [`develop`](https://github.com/neoneye/SwiftyFORM/tre
 ## Requirements
 
 - iOS 10.0+
-- Xcode 10.0+
-- Swift 4.2+
+- Xcode 10.2.1+
+- Swift 5.0+
 
 
 ## Features
