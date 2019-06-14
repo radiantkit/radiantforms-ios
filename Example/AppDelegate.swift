@@ -8,32 +8,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        let builder = RFThemeBuilder()
-        builder.tintColor = UIColor.red
-        builder.apply()
-
-        
-        RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [],
-            theme: RFTheme.lightTheme()
-        )
-        RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [AmountViewController_Light.self],
-            theme: RFTheme.lightTheme()
-        )
-        RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [AmountViewController_Dark.self],
-            theme: RFTheme.darkTheme()
-        )
-        RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [SignUpViewController_Light.self],
-            theme: RFTheme.lightTheme()
-        )
-        RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [SignUpViewController_Dark.self],
-            theme: RFTheme.darkTheme()
-        )
+        do {
+            let builder = RFThemeBuilder.light
+            builder.tintColor = UIColor.red
+            builder.apply()
+            builder.apply(AmountViewController_Light.self)
+            builder.apply(SignUpViewController_Light.self)
+        }
+        do {
+            let builder = RFThemeBuilder.dark
+            builder.tintColor = UIColor.red
+            builder.apply(AmountViewController_Dark.self)
+            builder.apply(SignUpViewController_Dark.self)
+        }
 
         let vc = FirstViewController()
 		let window = UIWindow(frame: UIScreen.main.bounds)
