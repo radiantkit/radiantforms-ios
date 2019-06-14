@@ -3,6 +3,7 @@ import UIKit
 
 public struct RFButtonCellModel {
 	var title: String = ""
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var action: () -> Void = {
 		SwiftyFormLog("action")
@@ -24,6 +25,7 @@ public class RFButtonCell: UITableViewCell {
 	}
 
 	public func loadWithModel(_ model: RFButtonCellModel) {
+        textLabel?.font = model.titleFont.resolve()
 		textLabel?.text = model.title
 		textLabel?.textAlignment = NSTextAlignment.center
 	}

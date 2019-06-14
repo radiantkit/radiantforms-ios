@@ -13,6 +13,8 @@ public struct RFTextViewCellModel {
 	var title: String = ""
 	var placeholder: String = ""
 	var toolbarMode: RFToolbarMode = .simple
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+    var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (String) -> Void = { (value: String) in
 		SwiftyFormLog("value \(value)")
@@ -31,13 +33,13 @@ public class RFTextViewCell: UITableViewCell {
 		selectionStyle = .none
 
 		titleLabel.text = model.title
-		titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+		titleLabel.font = model.titleFont.resolve()
 
 		placeholderLabel.text = model.placeholder
-		placeholderLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+		placeholderLabel.font = model.valueFont.resolve()
 		placeholderLabel.textColor = UIColor.lightGray
 
-		textView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+		textView.font = model.valueFont.resolve()
 		textView.textColor = UIColor.black
 		textView.backgroundColor = UIColor.clear
 		textView.isScrollEnabled = false

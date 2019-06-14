@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42031FA322AA40A40028F18C /* RFFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FA222AA40A40028F18C /* RFFormItem.swift */; };
+		42031FF422B387C60028F18C /* RFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FF322B387C60028F18C /* RFFont.swift */; };
+		42031FF622B3BDEF0028F18C /* RFFontStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FF522B3BDEF0028F18C /* RFFontStrategy.swift */; };
 		42096E731B358A7E0068B084 /* ShowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E711B358A7E0068B084 /* ShowInfo.swift */; };
 		42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42096E721B358A7E0068B084 /* SubmitButton.swift */; };
 		420F32BC22A6B2C400A4B067 /* RFPrevNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */; };
@@ -134,6 +136,8 @@
 
 /* Begin PBXFileReference section */
 		42031FA222AA40A40028F18C /* RFFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFFormItem.swift; sourceTree = "<group>"; };
+		42031FF322B387C60028F18C /* RFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFFont.swift; sourceTree = "<group>"; };
+		42031FF522B3BDEF0028F18C /* RFFontStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFFontStrategy.swift; sourceTree = "<group>"; };
 		42096E711B358A7E0068B084 /* ShowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfo.swift; sourceTree = "<group>"; };
 		42096E721B358A7E0068B084 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		420F32BB22A6B2C400A4B067 /* RFPrevNextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrevNextTests.swift; sourceTree = "<group>"; };
@@ -395,6 +399,8 @@
 				428683071B346CFE0028DB2F /* RFCommand.swift */,
 				420F6CC61D69BBA5009D5F57 /* RFDontCollapseWhenScrolling.swift */,
 				428683081B346CFE0028DB2F /* RFDumpVisitor.swift */,
+				42031FF322B387C60028F18C /* RFFont.swift */,
+				42031FF522B3BDEF0028F18C /* RFFontStrategy.swift */,
 				4286830C1B346CFE0028DB2F /* RFFormBuilder.swift */,
 				4286830F1B346CFE0028DB2F /* RFFormTableView.swift */,
 				4286830D1B346CFE0028DB2F /* RFFormViewController.swift */,
@@ -589,6 +595,7 @@
 			files = (
 				42D0050E1B96241100986B3B /* RFCustomFormItem.swift in Sources */,
 				428683491B346CFE0028DB2F /* RFValidateResult.swift in Sources */,
+				42031FF622B3BDEF0028F18C /* RFFontStrategy.swift in Sources */,
 				42108D221B34E9F60067FEAA /* RFTextViewFormItem.swift in Sources */,
 				4219E1CA1DB827CF00B3204A /* RFRegularExpressionSpecification.swift in Sources */,
 				42D297571D49611300561780 /* RFPrecisionSlider_InnerModel.swift in Sources */,
@@ -623,6 +630,7 @@
 				4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */,
 				4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */,
 				42108D231B34E9F60067FEAA /* RFViewControllerFormItem.swift in Sources */,
+				42031FF422B387C60028F18C /* RFFont.swift in Sources */,
 				428683361B346CFE0028DB2F /* RFSwitchCell.swift in Sources */,
 				4286833A1B346CFE0028DB2F /* RFCommand.swift in Sources */,
 				428683311B346CFE0028DB2F /* RFOptionCell.swift in Sources */,

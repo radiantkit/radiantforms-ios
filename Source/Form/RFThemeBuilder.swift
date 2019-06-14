@@ -3,15 +3,27 @@ import UIKit
 
 public class RFThemeBuilder: NSObject {
     private var theme: RFTheme
-    
-    @objc public override init() {
-        self.theme = RFTheme.lightTheme()
+
+    public init(theme: RFTheme) {
+        self.theme = theme
         super.init()
     }
     
-    @objc public func apply() {
+    @objc public static var light: RFThemeBuilder {
+        return RFThemeBuilder(theme: RFTheme.lightTheme())
+    }
+    
+    @objc public static var dark: RFThemeBuilder {
+        return RFThemeBuilder(theme: RFTheme.darkTheme())
+    }
+
+    public func apply(_ containerTypes: UIAppearanceContainer.Type ...) {
+        self.applyWhenContainedInInstancesOf(containerTypes)
+    }
+    
+    @objc public func applyWhenContainedInInstancesOf(_ containerTypes: [UIAppearanceContainer.Type]) {
         RFFormTableView.configureAppearance(
-            whenContainedInInstancesOf: [],
+            whenContainedInInstancesOf: containerTypes,
             theme: self.theme
         )
     }

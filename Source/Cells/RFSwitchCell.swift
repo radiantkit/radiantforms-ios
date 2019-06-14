@@ -4,6 +4,8 @@ import UIKit
 public struct RFSwitchCellModel {
 	var title: String = ""
 
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+
 	var valueDidChange: (Bool) -> Void = { (value: Bool) in
 		SwiftyFormLog("value \(value)")
 	}
@@ -18,7 +20,7 @@ public class RFSwitchCell: UITableViewCell {
 		self.switchView = UISwitch()
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        textLabel?.font = model.titleFont.resolve()
 		textLabel?.text = model.title
 
 		switchView.addTarget(self, action: #selector(valueChanged), for: .valueChanged)

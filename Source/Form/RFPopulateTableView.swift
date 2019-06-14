@@ -33,6 +33,7 @@ class RFWillPopOptionViewController: RFWillPopCommandProtocol {
 struct RFPopulateTableViewModel {
 	var viewController: UIViewController
 	var toolbarMode: RFToolbarMode
+    var fontStrategy: RFFontStrategy
 }
 
 class RFPopulateTableView: RFFormItemVisitor {
@@ -100,6 +101,8 @@ class RFPopulateTableView: RFFormItemVisitor {
         model.maxIntegerDigits = object.maxIntegerDigits
         model.fractionDigits = object.fractionDigits
         model.returnKeyType = object.returnKeyType
+        model.titleFont = self.model.fontStrategy.titleFont()
+        model.valueFont = self.model.fontStrategy.valueFont()
         model.model = object
 
         weak var weakObject = object
@@ -166,6 +169,7 @@ class RFPopulateTableView: RFFormItemVisitor {
         var model = RFButtonCellModel()
 		model.title = object.title
 		model.action = object.action
+        model.titleFont = self.model.fontStrategy.titleFont()
         let cell = RFButtonCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
@@ -204,6 +208,8 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.maximumDate = object.maximumDate
 		model.minuteInterval = object.minuteInterval
 		model.date = object.value
+        model.titleFont = self.model.fontStrategy.titleFont()
+        model.valueFont = self.model.fontStrategy.valueFont()
 
 		switch object.behavior {
 		case .collapsed, .expanded:
@@ -456,6 +462,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.title = object.title
 		model.items = object.items
 		model.value = object.selected
+        model.titleFont = self.model.fontStrategy.titleFont()
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Int) in
@@ -532,6 +539,8 @@ class RFPopulateTableView: RFFormItemVisitor {
 		var model = RFStepperCellModel()
 		model.title = object.title
 		model.value = object.value
+        model.titleFont = self.model.fontStrategy.titleFont()
+        model.valueFont = self.model.fontStrategy.valueFont()
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Int) in
@@ -561,6 +570,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 	func visit(object: RFSwitchFormItem) {
 		var model = RFSwitchCellModel()
 		model.title = object.title
+        model.titleFont = self.model.fontStrategy.titleFont()
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Bool) in
@@ -598,6 +608,8 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.autocapitalizationType = object.autocapitalizationType
 		model.spellCheckingType = object.spellCheckingType
 		model.secureTextEntry = object.secureTextEntry
+        model.titleFont = self.model.fontStrategy.titleFont()
+        model.valueFont = self.model.fontStrategy.valueFont()
 		model.model = object
 		weak var weakObject = object
 		model.valueDidChange = { (value: String) in
@@ -650,6 +662,8 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.toolbarMode = self.model.toolbarMode
 		model.title = object.title
 		model.placeholder = object.placeholder
+        model.titleFont = self.model.fontStrategy.titleFont()
+        model.valueFont = self.model.fontStrategy.valueFont()
 		weak var weakObject = object
 		model.valueDidChange = { (value: String) in
 			SwiftyFormLog("value \(value)")
@@ -673,6 +687,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 	func visit(object: RFViewControllerFormItem) {
 		let model = RFViewControllerCellModel(title: object.title, placeholder: object.placeholder)
+        model.titleFont = self.model.fontStrategy.titleFont()
 		let willPopViewController = RFWillPopCustomViewController(object: object)
 
 		weak var weakViewController = self.model.viewController

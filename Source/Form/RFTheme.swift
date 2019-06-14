@@ -14,6 +14,8 @@ public struct RFTheme {
     internal let switchCell: RFTheme_SwitchCell
     internal let textFieldCell: RFTheme_TextFieldCell
     internal let viewControllerCell: RFTheme_ViewControllerCell
+    internal let navigationBar: RFTheme_NavigationBar
+    internal let toolBar: RFTheme_ToolBar
     
     public static func lightTheme() -> RFTheme {
         return RFTheme(
@@ -29,7 +31,9 @@ public struct RFTheme {
             stepperCell: .lightTheme,
             switchCell: .lightTheme,
             textFieldCell: .lightTheme,
-            viewControllerCell: .lightTheme
+            viewControllerCell: .lightTheme,
+            navigationBar: .lightTheme,
+            toolBar: .lightTheme
         )
     }
     
@@ -47,7 +51,9 @@ public struct RFTheme {
             stepperCell: .darkTheme,
             switchCell: .darkTheme,
             textFieldCell: .darkTheme,
-            viewControllerCell: .darkTheme
+            viewControllerCell: .darkTheme,
+            navigationBar: .darkTheme,
+            toolBar: .darkTheme
         )
     }
 }
@@ -101,6 +107,14 @@ internal enum RFTheme_TextFieldCell {
 }
 
 internal enum RFTheme_ViewControllerCell {
+    case lightTheme, darkTheme
+}
+
+internal enum RFTheme_NavigationBar {
+    case lightTheme, darkTheme
+}
+
+internal enum RFTheme_ToolBar {
     case lightTheme, darkTheme
 }
 
@@ -395,3 +409,44 @@ internal extension RFTheme_ViewControllerCell {
         }
     }
 }
+
+internal extension RFTheme_NavigationBar {
+    var barTintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.white
+        case .darkTheme:
+            return UIColor.darkGray
+        }
+    }
+    
+    var tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.blue
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+}
+
+internal extension RFTheme_ToolBar {
+    var barTintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.white
+        case .darkTheme:
+            return UIColor.darkGray
+        }
+    }
+    
+    var tintColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.blue
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+}
+

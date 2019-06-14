@@ -23,7 +23,9 @@ public struct RFAmountCellModel {
     var maxIntegerDigits: UInt8 = 10
     var fractionDigits: UInt8 = 3
     var model: RFAmountFormItem! = nil
-    
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+    var valueFont: RFFont = RFPreferredFontForTextStyle.body
+
     var valueDidChange: (RFAmountValue) -> Void = { (value: RFAmountValue) in
         SwiftyFormLog("value \(value)")
     }
@@ -57,9 +59,9 @@ public class RFAmountCell: UITableViewCell {
         
         selectionStyle = .none
         
-        titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        
+        titleLabel.font = model.titleFont.resolve()
+        textField.font = model.valueFont.resolve()
+
         textField.configure()
         textField.delegate = self
 

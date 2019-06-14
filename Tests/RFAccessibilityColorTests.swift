@@ -25,11 +25,11 @@ class Mock_UIAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarker
     }
 }
 
-protocol Component {
+protocol RFColorComponent {
     var color: UIColor { get }
 }
 
-class Leaf: Component {
+class RFColorLeaf: RFColorComponent {
     private let _color: UIColor
     
     init(color: UIColor) {
@@ -41,17 +41,17 @@ class Leaf: Component {
     }
 }
 
-class InBrightContext: Component {
-    private let inner: Component
+class RFInBrightContext: RFColorComponent {
+    private let inner: RFColorComponent
     private let uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled
-    init(inner: Component, uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled) {
+    init(inner: RFColorComponent, uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled) {
         self.inner = inner
         self.uiAccessibility_IsDarkerSystemColorsEnabled = uiAccessibility_IsDarkerSystemColorsEnabled
     }
     
     var color: UIColor {
         if self.uiAccessibility_IsDarkerSystemColorsEnabled.isDarkerSystemColorsEnabled {
-            return InBrightContext.darkened(inner.color)
+            return RFInBrightContext.darkened(inner.color)
         } else {
             return inner.color
         }
@@ -68,17 +68,17 @@ class InBrightContext: Component {
     }
 }
 
-class InDarkContext: Component {
-    private let inner: Component
+class RFInDarkContext: RFColorComponent {
+    private let inner: RFColorComponent
     private let uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled
-    init(inner: Component, uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled) {
+    init(inner: RFColorComponent, uiAccessibility_IsDarkerSystemColorsEnabled: UIAccessibility_IsDarkerSystemColorsEnabled) {
         self.inner = inner
         self.uiAccessibility_IsDarkerSystemColorsEnabled = uiAccessibility_IsDarkerSystemColorsEnabled
     }
     
     var color: UIColor {
         if self.uiAccessibility_IsDarkerSystemColorsEnabled.isDarkerSystemColorsEnabled {
-            return InDarkContext.brightened(inner.color)
+            return RFInDarkContext.brightened(inner.color)
         } else {
             return inner.color
         }
@@ -104,9 +104,9 @@ class InDarkContext: Component {
 class RFAccessibilityColorTests: XCTestCase {
     func testInBrightContext() {
         func difference(_ input: UIColor, _ expected: UIColor) -> CGFloat {
-            let color0: Component = Leaf(color: input)
+            let color0: RFColorComponent = RFColorLeaf(color: input)
             let mock: UIAccessibility_IsDarkerSystemColorsEnabled = Mock_UIAccessibility_IsDarkerSystemColorsEnabled(isDarkerSystemColorsEnabled: true)
-            let color1: Component = InBrightContext(inner: color0, uiAccessibility_IsDarkerSystemColorsEnabled: mock)
+            let color1: RFColorComponent = RFInBrightContext(inner: color0, uiAccessibility_IsDarkerSystemColorsEnabled: mock)
             let actual: UIColor = color1.color
             return calculateDifference(actual, expected)
         }
@@ -146,9 +146,9 @@ class RFAccessibilityColorTests: XCTestCase {
     
     func testInDarkContext() {
         func difference(_ input: UIColor, _ expected: UIColor) -> CGFloat {
-            let color0: Component = Leaf(color: input)
+            let color0: RFColorComponent = RFColorLeaf(color: input)
             let mock: UIAccessibility_IsDarkerSystemColorsEnabled = Mock_UIAccessibility_IsDarkerSystemColorsEnabled(isDarkerSystemColorsEnabled: true)
-            let color1: Component = InDarkContext(inner: color0, uiAccessibility_IsDarkerSystemColorsEnabled: mock)
+            let color1: RFColorComponent = RFInDarkContext(inner: color0, uiAccessibility_IsDarkerSystemColorsEnabled: mock)
             let actual: UIColor = color1.color
             return calculateDifference(actual, expected)
         }

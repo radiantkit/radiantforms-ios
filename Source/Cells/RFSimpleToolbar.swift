@@ -17,26 +17,39 @@ public class RFSimpleToolbar: UIToolbar {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        do {
+            let appearanceProxy: UINavigationBar = UINavigationBar.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.barTintColor = theme.navigationBar.barTintColor
+            appearanceProxy.tintColor = theme.navigationBar.tintColor
+        }
+        do {
+            let appearanceProxy: RFSimpleToolbar = RFSimpleToolbar.appearance(whenContainedInInstancesOf: containerTypes)
+            appearanceProxy.barTintColor = theme.toolBar.barTintColor
+            appearanceProxy.tintColor = theme.toolBar.tintColor
+        }
+    }
+
 	public lazy var previousButton: UIBarButtonItem = {
 		let image = UIImage(named: "SwiftFORMArrowLeft", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
-			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(RFSimpleToolbar.previousButtonAction(_:)))
+			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(previousButtonAction))
 		}
-		return UIBarButtonItem(title: "◀︎", style: .plain, target: self, action: #selector(RFSimpleToolbar.previousButtonAction(_:)))
+		return UIBarButtonItem(title: "◀︎", style: .plain, target: self, action: #selector(previousButtonAction))
 		}()
 
 	public lazy var nextButton: UIBarButtonItem = {
 		let image = UIImage(named: "SwiftFORMArrowRight", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
-			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(RFSimpleToolbar.nextButtonAction(_:)))
+			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(nextButtonAction))
 		}
-		return UIBarButtonItem(title: "▶", style: .plain, target: self, action: #selector(RFSimpleToolbar.nextButtonAction(_:)))
+		return UIBarButtonItem(title: "▶", style: .plain, target: self, action: #selector(nextButtonAction))
 		}()
 
 	public lazy var closeButton: UIBarButtonItem = {
-		let item = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(RFSimpleToolbar.closeButtonAction(_:)))
+		let item = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(closeButtonAction))
 		return item
 		}()
 
@@ -55,15 +68,15 @@ public class RFSimpleToolbar: UIToolbar {
 		return items
 	}
 
-	@objc public func previousButtonAction(_ sender: UIBarButtonItem!) {
+	@objc public func previousButtonAction() {
 		jumpToPrevious()
 	}
 
-	@objc public func nextButtonAction(_ sender: UIBarButtonItem!) {
+	@objc public func nextButtonAction() {
 		jumpToNext()
 	}
 
-	@objc public func closeButtonAction(_ sender: UIBarButtonItem!) {
+	@objc public func closeButtonAction() {
 		dismissKeyboard()
 	}
 
