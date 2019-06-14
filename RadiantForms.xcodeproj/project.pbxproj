@@ -117,7 +117,7 @@
 		42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */; };
 		42D297571D49611300561780 /* RFPrecisionSlider_InnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */; };
 		42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */; };
-		42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */; };
+		42D5DE701A38167400D5C368 /* RadiantForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* RadiantForms.framework */; };
 		42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */; };
 		42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */; };
 		739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */; };
@@ -247,8 +247,8 @@
 		42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
 		42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerModel.swift; sourceTree = "<group>"; };
 		42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerZoomMode.swift; sourceTree = "<group>"; };
-		42D5DE651A38167400D5C368 /* SwiftyFORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyFORMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D5DE651A38167400D5C368 /* RadiantForms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RadiantForms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadiantFormsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+DeselectRow.swift"; sourceTree = "<group>"; };
 		42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider.swift; sourceTree = "<group>"; };
 		739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextCell.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */,
+				42D5DE701A38167400D5C368 /* RadiantForms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +286,8 @@
 		4208F23619F95C73003E834D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42D5DE651A38167400D5C368 /* SwiftyFORM.framework */,
-				42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */,
+				42D5DE651A38167400D5C368 /* RadiantForms.framework */,
+				42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,9 +492,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		42D5DE641A38167400D5C368 /* SwiftyFORM */ = {
+		42D5DE641A38167400D5C368 /* RadiantForms */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORM" */;
+			buildConfigurationList = 42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantForms" */;
 			buildPhases = (
 				42D5DE601A38167400D5C368 /* Sources */,
 				42D5DE611A38167400D5C368 /* Frameworks */,
@@ -505,14 +505,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftyFORM;
+			name = RadiantForms;
 			productName = BoronFrame;
-			productReference = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */;
+			productReference = 42D5DE651A38167400D5C368 /* RadiantForms.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		42D5DE6E1A38167400D5C368 /* SwiftyFORMTests */ = {
+		42D5DE6E1A38167400D5C368 /* RadiantFormsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORMTests" */;
+			buildConfigurationList = 42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantFormsTests" */;
 			buildPhases = (
 				42D5DE6B1A38167400D5C368 /* Sources */,
 				42D5DE6C1A38167400D5C368 /* Frameworks */,
@@ -523,9 +523,9 @@
 			dependencies = (
 				42D5DE721A38167400D5C368 /* PBXTargetDependency */,
 			);
-			name = SwiftyFORMTests;
+			name = RadiantFormsTests;
 			productName = BoronFrameTests;
-			productReference = 42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */;
+			productReference = 42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -549,7 +549,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4208F23019F95C73003E834D /* Build configuration list for PBXProject "SwiftyFORM" */;
+			buildConfigurationList = 4208F23019F95C73003E834D /* Build configuration list for PBXProject "RadiantForms" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -563,8 +563,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42D5DE641A38167400D5C368 /* SwiftyFORM */,
-				42D5DE6E1A38167400D5C368 /* SwiftyFORMTests */,
+				42D5DE641A38167400D5C368 /* RadiantForms */,
+				42D5DE6E1A38167400D5C368 /* RadiantFormsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -719,7 +719,7 @@
 /* Begin PBXTargetDependency section */
 		42D5DE721A38167400D5C368 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42D5DE641A38167400D5C368 /* SwiftyFORM */;
+			target = 42D5DE641A38167400D5C368 /* RadiantForms */;
 			targetProxy = 42D5DE711A38167400D5C368 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -846,7 +846,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
-				PRODUCT_NAME = SwiftyFORM;
+				PRODUCT_NAME = RadiantForms;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -867,7 +867,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
-				PRODUCT_NAME = SwiftyFORM;
+				PRODUCT_NAME = RadiantForms;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -886,7 +886,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
-				PRODUCT_NAME = SwiftyFORMTests;
+				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Debug;
 		};
@@ -897,14 +897,14 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
-				PRODUCT_NAME = SwiftyFORMTests;
+				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4208F23019F95C73003E834D /* Build configuration list for PBXProject "SwiftyFORM" */ = {
+		4208F23019F95C73003E834D /* Build configuration list for PBXProject "RadiantForms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4208F25419F95C73003E834D /* Debug */,
@@ -913,7 +913,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORM" */ = {
+		42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantForms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42D5DE781A38167400D5C368 /* Debug */,
@@ -922,7 +922,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORMTests" */ = {
+		42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantFormsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42D5DE7A1A38167400D5C368 /* Debug */,

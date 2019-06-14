@@ -1,6 +1,6 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
 class SignUpViewController: RFFormViewController {
 	override func loadView() {
@@ -48,7 +48,7 @@ class SignUpViewController: RFFormViewController {
 			return vc
 		}
 		instance.willPopViewController = { (context: RFViewControllerFormItemPopContext) in
-			if let x = context.returnedObject as? SwiftyFORM.RFOptionRowFormItem {
+			if let x = context.returnedObject as? RFOptionRowFormItem {
 				context.cell.detailTextLabel?.text = x.title
 			} else {
 				context.cell.detailTextLabel?.text = nil

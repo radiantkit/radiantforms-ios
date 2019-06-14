@@ -1,5 +1,5 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
-import SwiftyFORM
+import RadiantForms
 
 class PickerViewViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {

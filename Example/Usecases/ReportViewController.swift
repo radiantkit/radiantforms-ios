@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 import MessageUI
-import SwiftyFORM
+import RadiantForms
 
 class ReportViewController: RFFormViewController, MFMailComposeViewControllerDelegate {
 	let sendButton = RFButtonFormItem()
