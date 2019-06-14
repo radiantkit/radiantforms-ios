@@ -885,7 +885,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantFormsTests;
 				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Debug;
@@ -896,7 +896,7 @@
 				DEVELOPMENT_TEAM = 22DR89XVRF;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantFormsTests;
 				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Release;
