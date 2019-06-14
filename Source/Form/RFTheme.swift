@@ -1,4 +1,5 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
+import UIKit
 
 public struct RFTheme {
     internal let tableViewBackground: RFTheme_TableViewBackground
