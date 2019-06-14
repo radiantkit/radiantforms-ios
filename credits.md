@@ -1,6 +1,6 @@
-# SwiftyFORM Credits
+# RadiantForms Credits
 
-This is a partial list of people that have contributed to SwiftyFORM. Thank you!
+This is a partial list of people that have contributed to RadiantForms. Thank you!
 
 * [Paul Crompton](https://github.com/PCrompton)
 * [Jerwin Pastoral](https://github.com/JerwinPRO)
