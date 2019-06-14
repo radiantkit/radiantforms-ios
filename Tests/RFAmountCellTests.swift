@@ -122,7 +122,8 @@ class RFAmountCellTests: XCTestCase {
     // MARK: - Helper
     
     func createCell(_ formItem: RFAmountFormItem) -> RFAmountCell {
-        let populateTableViewModel = RFPopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none)
+        let font: RFPopulateFont = RFPopulateFont_Default()
+        let populateTableViewModel = RFPopulateTableViewModel(viewController: UIViewController(), toolbarMode: .none, font: font)
         let populateTableView = RFPopulateTableView(model: populateTableViewModel)
         assert(populateTableView.cells.allItems.count == 0)
         formItem.accept(visitor: populateTableView)

@@ -62,7 +62,8 @@ public class RFFormBuilder {
 	}
 
 	public func result(_ viewController: UIViewController) -> RFTableViewSectionArray {
-		let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode)
+        let font: RFPopulateFont = RFPopulateFont_Default()
+        let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode, font: font)
 
 		let v = RFPopulateTableView(model: model)
 		if suppressHeaderForFirstSection {
