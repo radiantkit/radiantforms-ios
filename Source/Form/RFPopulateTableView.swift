@@ -33,7 +33,7 @@ class RFWillPopOptionViewController: RFWillPopCommandProtocol {
 struct RFPopulateTableViewModel {
 	var viewController: UIViewController
 	var toolbarMode: RFToolbarMode
-    var font: RFPopulateFont
+    var font: RFFontStrategy
 }
 
 class RFPopulateTableView: RFFormItemVisitor {

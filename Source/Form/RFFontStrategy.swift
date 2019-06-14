@@ -1,12 +1,12 @@
 // MIT license. Copyright (c) 2019 SwiftyFORM. All rights reserved.
 import UIKit
 
-public protocol RFPopulateFont {
+public protocol RFFontStrategy {
     func titleFont() -> RFFont
     func valueFont() -> RFFont
 }
 
-public class RFPopulateFont_Default: RFPopulateFont {
+public class RFFontStrategy_Default: RFFontStrategy {
     public func titleFont() -> RFFont {
         return RFPreferredFontForTextStyle.body
     }
@@ -16,7 +16,7 @@ public class RFPopulateFont_Default: RFPopulateFont {
     }
 }
 
-public class RFPopulateFont_BoldTitle: RFPopulateFont {
+public class RFFontStrategy_BoldTitle: RFFontStrategy {
     public func titleFont() -> RFFont {
         return RFPreferredFontForTextStyle.headline
     }

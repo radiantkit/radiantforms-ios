@@ -62,7 +62,7 @@ public class RFFormBuilder {
 	}
 
 	public func result(_ viewController: UIViewController) -> RFTableViewSectionArray {
-        let font: RFPopulateFont = RFPopulateFont_Default()
+        let font: RFFontStrategy = RFFontStrategy_Default()
         let model = RFPopulateTableViewModel(viewController: viewController, toolbarMode: toolbarMode, font: font)
 
 		let v = RFPopulateTableView(model: model)
