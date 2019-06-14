@@ -4,8 +4,8 @@ import RadiantForms
 
 class FirstViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
-		builder.navigationTitle = "SwiftyFORM"
-		builder.demo_showInfo("Welcome to the\nSwiftyFORM example app\nthat shows everything")
+		builder.navigationTitle = "RadiantForms"
+		builder.demo_showInfo("Welcome to the\nform example app\nthat shows everything")
 
         builder += RFSectionHeaderTitleFormItem().title("Theme")
         builder += RFViewControllerFormItem().title("Amount (Dark)").viewController(AmountViewController_Dark.self)
@@ -29,7 +29,7 @@ class FirstViewController: RFFormViewController {
 		builder += RFViewControllerFormItem().title("Storyboard Demo").viewController(StoryboardDemoViewController.self)
 		builder += RFViewControllerFormItem().title("Area 51").storyboard("Area51", bundle: nil)
 
-		builder += RFSectionHeaderTitleFormItem().title("Non-SwiftyFORM")
+		builder += RFSectionHeaderTitleFormItem().title("Non-RadiantForms")
 		builder += RFViewControllerFormItem().title("UICollectionViewController").viewController(MyCollectionViewController.self)
 		builder += RFViewControllerFormItem().title("UITableViewController").viewController(MyTableViewController.self)
 

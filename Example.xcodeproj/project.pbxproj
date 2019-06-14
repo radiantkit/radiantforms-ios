@@ -263,13 +263,13 @@
 			path = HeaderFooter;
 			sourceTree = "<group>";
 		};
-		4267986E1D8DB17B002275CA /* Non-SwiftyFORM */ = {
+		4267986E1D8DB17B002275CA /* Non-RadiantForms */ = {
 			isa = PBXGroup;
 			children = (
 				4267986F1D8DB17B002275CA /* MyCollectionViewController.swift */,
 				426798701D8DB17B002275CA /* MyTableViewController.swift */,
 			);
-			path = "Non-SwiftyFORM";
+			path = "Non-RadiantForms";
 			sourceTree = "<group>";
 		};
 		42685D3E1D2D6AB2008ABC3D /* WorkInProgress */ = {
@@ -344,7 +344,7 @@
 				426798691D8DB160002275CA /* HeaderFooter */,
 				42CEBFA11A3BA2B50048E072 /* Images.xcassets */,
 				4244C6921D6B864600FE1ECB /* LaunchScreen.storyboard */,
-				4267986E1D8DB17B002275CA /* Non-SwiftyFORM */,
+				4267986E1D8DB17B002275CA /* Non-RadiantForms */,
 				42589DC21B3447EA007CA8C1 /* Other */,
 				42B1BB451E82C1B40090156A /* Settings */,
 				420AC6171F88D0B400898C85 /* Storyboard */,

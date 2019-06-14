@@ -102,7 +102,7 @@ extension RFCharacterSetSpecification {
 }
 
 /// - warning:
-/// These functions will be removed in the future, starting with SwiftyFORM 2.0.0
+/// These functions will be removed in the future, starting with RadiantForms 2.0.0
 extension RFCharacterSetSpecification {
 	public static func alphanumericCharacterSet() -> RFCharacterSetSpecification {
 		return RFCharacterSetSpecification.alphanumerics
