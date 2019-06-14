@@ -31,7 +31,7 @@ public class RFSimpleToolbar: UIToolbar {
     }
 
 	public lazy var previousButton: UIBarButtonItem = {
-		let image = UIImage(named: "SwiftFORMArrowLeft", in: Bundle(for: type(of: self)), compatibleWith: nil)
+		let image = UIImage(named: "RadiantForms_ArrowLeft", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
 			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(previousButtonAction))
@@ -40,7 +40,7 @@ public class RFSimpleToolbar: UIToolbar {
 		}()
 
 	public lazy var nextButton: UIBarButtonItem = {
-		let image = UIImage(named: "SwiftFORMArrowRight", in: Bundle(for: type(of: self)), compatibleWith: nil)
+		let image = UIImage(named: "RadiantForms_ArrowRight", in: Bundle(for: type(of: self)), compatibleWith: nil)
 		if let image = image {
 			let image2 = image.withRenderingMode(.alwaysTemplate)
 			return UIBarButtonItem(image: image2, style: .plain, target: self, action: #selector(nextButtonAction))
