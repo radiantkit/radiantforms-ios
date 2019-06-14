@@ -8,4 +8,5 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/radiantkit/radiantforms-ios.git', :tag => s.version }
   s.source_files = 'Source/*/*.swift'
   s.ios.deployment_target = '9.0'
+  s.swift_versions = ['4.0', '4.2', '5.0']
 end
