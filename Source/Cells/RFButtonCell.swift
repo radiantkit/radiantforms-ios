@@ -6,7 +6,7 @@ public struct RFButtonCellModel {
     var titleFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var action: () -> Void = {
-		SwiftyFormLog("action")
+		RFLog("action")
 	}
 
 }

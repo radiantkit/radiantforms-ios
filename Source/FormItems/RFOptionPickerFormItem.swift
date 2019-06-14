@@ -48,7 +48,7 @@ public class RFOptionPickerFormItem: RFFormItem {
 		for option in options {
 			if option.title == title {
 				self.setSelectedOptionRow(option)
-				SwiftyFormLog("initial selected option: \(option)")
+				RFLog("initial selected option: \(option)")
 			}
 		}
 	}
@@ -57,14 +57,14 @@ public class RFOptionPickerFormItem: RFFormItem {
 		for option in options {
 			if option.identifier == identifier {
 				self.setSelectedOptionRow(option)
-				SwiftyFormLog("initial selected option: \(option)")
+				RFLog("initial selected option: \(option)")
 			}
 		}
 	}
 
 	public typealias SyncBlock = (_ selected: RFOptionRowModel?) -> Void
 	public var syncCellWithValue: SyncBlock = { (selected: RFOptionRowModel?) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerSelected: RFOptionRowModel?
@@ -78,14 +78,14 @@ public class RFOptionPickerFormItem: RFFormItem {
 	}
 
 	public func setSelectedOptionRow(_ selected: RFOptionRowModel?) {
-		SwiftyFormLog("option: \(String(describing: selected?.title))")
+		RFLog("option: \(String(describing: selected?.title))")
 		innerSelected = selected
 		syncCellWithValue(selected)
 	}
 
 	public typealias ValueDidChange = (_ selected: RFOptionRowModel?) -> Void
 	public var valueDidChange: ValueDidChange = { (selected: RFOptionRowModel?) in
-		SwiftyFormLog("value did change not overridden")
+		RFLog("value did change not overridden")
 	}
 }
 

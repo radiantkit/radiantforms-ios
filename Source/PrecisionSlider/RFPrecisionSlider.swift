@@ -211,7 +211,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 	}()
 
 	@objc func handleOneTouchDoubleTap(_ gesture: UIPinchGestureRecognizer) {
-		SwiftyFormLog("zoom in")
+		RFLog("zoom in")
 		let originalZoom = model.zoom
 		let originalValue = self.value
 
@@ -267,7 +267,7 @@ class RFPrecisionSlider: UIView, UICollectionViewDelegateFlowLayout, UICollectio
 	}()
 
 	@objc func handleTwoTouchDoubleTap(_ gesture: UIPinchGestureRecognizer) {
-		SwiftyFormLog("zoom out")
+		RFLog("zoom out")
 		let originalZoom = model.zoom
 		let originalValue = self.value
 

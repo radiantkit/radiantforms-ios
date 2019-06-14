@@ -17,7 +17,7 @@ public class RFPickerViewCellModel {
 	var humanReadableValueSeparator: String?
 
 	var valueDidChange: ([Int]) -> Void = { (selectedRows: [Int]) in
-		SwiftyFormLog("selectedRows \(selectedRows)")
+		RFLog("selectedRows \(selectedRows)")
 	}
 
 	var humanReadableValue: String {
@@ -65,7 +65,7 @@ public class RFPickerViewToggleCell: UITableViewCell, RFSelectRowDelegate, RFDon
 			print("Expected the number of components to be the same")
 			return
 		}
-		SwiftyFormLog("set value \(value), animated \(animated)")
+		RFLog("set value \(value), animated \(animated)")
 		model.value = value
 		updateValue()
 

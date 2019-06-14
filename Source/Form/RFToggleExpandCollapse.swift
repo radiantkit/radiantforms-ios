@@ -10,7 +10,7 @@ public protocol RFExpandedCell {
 
 public struct RFToggleExpandCollapse {
 	public static func execute(toggleCell: UITableViewCell, expandedCell: UITableViewCell, tableView: UITableView, sectionArray: RFTableViewSectionArray) {
-		//SwiftyFormLog("will expand collapse")
+		//RFLog("will expand collapse")
 
 		// If the expanded cell already is visible then collapse it
 		let whatToCollapse = RFWhatToCollapse.process(
@@ -68,7 +68,7 @@ public struct RFToggleExpandCollapse {
 			CATransaction.commit()
 		}
 
-		//SwiftyFormLog("did expand collapse")
+		//RFLog("did expand collapse")
 	}
 }
 

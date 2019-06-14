@@ -24,7 +24,7 @@ public class RFSliderFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: Float, _ animated: Bool) -> Void
 	var syncCellWithValue: SyncBlock = { (value: Float, animated: Bool) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: Float = 0.0
@@ -50,7 +50,7 @@ public class RFSliderFormItem: RFFormItem {
 
 	public typealias SliderDidChangeBlock = (_ value: Float) -> Void
 	public var sliderDidChangeBlock: SliderDidChangeBlock = { (value: Float) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func sliderDidChange(_ value: Float) {

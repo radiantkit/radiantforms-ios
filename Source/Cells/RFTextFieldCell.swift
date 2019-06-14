@@ -17,11 +17,11 @@ public struct RFTextFieldCellModel {
 	var model: RFTextFieldFormItem! = nil
 
 	var valueDidChange: (String) -> Void = { (value: String) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
     
     var didEndEditing: (String) -> Void = { (value: String) in
-        SwiftyFormLog("value \(value)")
+        RFLog("value \(value)")
     }
 }
 
@@ -133,17 +133,17 @@ public class RFTextFieldCell: UITableViewCell {
 	}
 
 	public func gotoPrevious() {
-		SwiftyFormLog("make previous cell first responder")
+		RFLog("make previous cell first responder")
 		rf_makePreviousCellFirstResponder()
 	}
 
 	public func gotoNext() {
-		SwiftyFormLog("make next cell first responder")
+		RFLog("make next cell first responder")
 		rf_makeNextCellFirstResponder()
 	}
 
 	public func dismissKeyboard() {
-		SwiftyFormLog("dismiss keyboard")
+		RFLog("dismiss keyboard")
 		_ = resignFirstResponder()
 	}
 
@@ -202,7 +202,7 @@ public class RFTextFieldCell: UITableViewCell {
 		}
 		do {
 			let size = errorLabel.sizeThatFits(area.size)
-//			SwiftyFormLog("error label size \(size)")
+//			RFLog("error label size \(size)")
 			if size.height > 0.1 {
 				var r = topRect
 				r.origin.y = topRect.maxY - 6
@@ -217,7 +217,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 	public override func layoutSubviews() {
 		super.layoutSubviews()
-		//SwiftyFormLog("layoutSubviews")
+		//RFLog("layoutSubviews")
 		let sizes: RFTextFieldCell_Sizes = compute()
 		titleLabel.frame = sizes.titleLabelFrame
 		textField.frame = sizes.textFieldFrame
@@ -230,16 +230,16 @@ public class RFTextFieldCell: UITableViewCell {
 		let result: RFValidateResult = model.model.liveValidateValueText()
 		switch result {
 		case .valid:
-			SwiftyFormLog("valid")
+			RFLog("valid")
 		case .hardInvalid:
-			SwiftyFormLog("hard invalid")
+			RFLog("hard invalid")
 		case .softInvalid:
-			SwiftyFormLog("soft invalid")
+			RFLog("soft invalid")
 		}
 	}
 
 	public func setValueWithoutSync(_ value: String) {
-		SwiftyFormLog("set value \(value)")
+		RFLog("set value \(value)")
 		textField.text = value
 		_ = validateAndUpdateErrorIfNeeded(value, shouldInstallTimer: false, checkSubmitRule: false)
 	}
@@ -282,17 +282,17 @@ public class RFTextFieldCell: UITableViewCell {
 			if lastResult == result {
 				switch result {
 				case .valid:
-					//SwiftyFormLog("same valid")
+					//RFLog("same valid")
 					return true
 				case .hardInvalid:
-					//SwiftyFormLog("same hard invalid")
+					//RFLog("same hard invalid")
 					invalidateTimer()
 					if shouldInstallTimer {
 						installTimer()
 					}
 					return false
 				case .softInvalid:
-					//SwiftyFormLog("same soft invalid")
+					//RFLog("same soft invalid")
 					invalidateTimer()
 					if shouldInstallTimer {
 						installTimer()
@@ -305,7 +305,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 		switch result {
 		case .valid:
-			//SwiftyFormLog("different valid")
+			//RFLog("different valid")
 			if let tv = tableView {
 				tv.beginUpdates()
 				errorLabel.text = nil
@@ -316,7 +316,7 @@ public class RFTextFieldCell: UITableViewCell {
 			}
 			return true
 		case let .hardInvalid(message):
-			//SwiftyFormLog("different hard invalid")
+			//RFLog("different hard invalid")
 			if let tv = tableView {
 				tv.beginUpdates()
 				errorLabel.text = message
@@ -330,7 +330,7 @@ public class RFTextFieldCell: UITableViewCell {
 			}
 			return false
 		case let .softInvalid(message):
-			//SwiftyFormLog("different soft invalid")
+			//RFLog("different soft invalid")
 			if let tv = tableView {
 				tv.beginUpdates()
 				errorLabel.text = message
@@ -348,7 +348,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 	@objc public func timerUpdate() {
 		invalidateTimer()
-		//SwiftyFormLog("timer update")
+		//RFLog("timer update")
 
 		let s = textField.text ?? ""
 		_ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: false)
@@ -356,7 +356,7 @@ public class RFTextFieldCell: UITableViewCell {
 
 	public func reloadPersistentValidationState() {
 		invalidateTimer()
-		//SwiftyFormLog("reload persistent message")
+		//RFLog("reload persistent message")
 
 		let s = textField.text ?? ""
 		_ = validateAndUpdateErrorIfNeeded(s, shouldInstallTimer: false, checkSubmitRule: true)
@@ -411,7 +411,7 @@ extension RFTextFieldCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextFieldCell_Sizes = compute()
 		let value = sizes.cellHeight
-		//SwiftyFormLog("compute height of row: \(value)")
+		//RFLog("compute height of row: \(value)")
 		return value
 	}
 }

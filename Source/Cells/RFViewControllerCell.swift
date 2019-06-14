@@ -41,12 +41,12 @@ public class RFViewControllerCell: UITableViewCell {
 
 extension RFViewControllerCell: RFSelectRowDelegate {
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
-		SwiftyFormLog("will invoke")
+		RFLog("will invoke")
 		// hide keyboard when the user taps this kind of row
 		tableView.rf_firstResponder()?.resignFirstResponder()
 
 		innerDidSelectRow(self, model)
-		SwiftyFormLog("did invoke")
+		RFLog("did invoke")
 	}
 }
 

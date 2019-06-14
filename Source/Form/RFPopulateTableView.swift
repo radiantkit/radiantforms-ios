@@ -107,7 +107,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
         weak var weakObject = object
         model.valueDidChange = { (value: RFAmountValue) in
-            SwiftyFormLog("value \(value)")
+            RFLog("value \(value)")
             weakObject?.valueDidChange(value)
             return
         }
@@ -119,7 +119,7 @@ class RFPopulateTableView: RFFormItemVisitor {
         
         weak var weakCell = cell
         object.syncCellWithValue = { (value: RFAmountValue) in
-            SwiftyFormLog("sync value \(value)")
+            RFLog("sync value \(value)")
             weakCell?.setValueWithoutSync(value)
             return
         }
@@ -152,7 +152,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: NSAttributedString?) in
-			SwiftyFormLog("sync value \(String(describing: value))")
+			RFLog("sync value \(String(describing: value))")
 			if let c = weakCell {
 				var m = RFAttributedTextCellModel()
 				m.titleAttributedText = c.model.titleAttributedText
@@ -239,13 +239,13 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (date: Date, animated: Bool) in
-			SwiftyFormLog("sync date \(date)")
+			RFLog("sync date \(date)")
 			weakCell?.setDateWithoutSync(date, animated: animated)
 		}
 
 		weak var weakObject = object
 		model.valueDidChange = { (date: Date) in
-			SwiftyFormLog("value did change \(date)")
+			RFLog("value did change \(date)")
 			weakObject?.valueDidChange(date)
 		}
 	}
@@ -275,7 +275,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: RFOptionRowModel?) in
-			SwiftyFormLog("propagate from cell to model. value \(String(describing: value))")
+			RFLog("propagate from cell to model. value \(String(describing: value))")
 			weakObject?.innerSelected = value
 			weakObject?.valueDidChange(value)
 		}
@@ -289,7 +289,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (selected: RFOptionRowModel?) in
-			SwiftyFormLog("propagate from model to cell. option: \(String(describing: selected?.title))")
+			RFLog("propagate from model to cell. option: \(String(describing: selected?.title))")
 			weakCell?.setSelectedOptionRowWithoutPropagation(selected)
 		}
 	}
@@ -299,7 +299,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 	func visit(object: RFOptionRowFormItem) {
 		weak var weakViewController = self.model.viewController
 		let cell = RFOptionCell(model: object) {
-			SwiftyFormLog("did select option")
+			RFLog("did select option")
 			if let vc = weakViewController {
 				if let x = vc as? RFSelectOptionDelegate {
 					x.form_willSelectOption(option: object)
@@ -349,7 +349,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (changeModel: RFPrecisionSliderCellModel.SliderDidChangeModel) in
-			SwiftyFormLog("value did change \(changeModel.value)")
+			RFLog("value did change \(changeModel.value)")
 			let model = RFPrecisionSliderFormItem.SliderDidChangeModel(
 				value: changeModel.value,
 				valueUpdated: changeModel.valueUpdated,
@@ -362,7 +362,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 		weak var weakCell = cell
 		weak var weakCellExpanded = cellExpanded
 		object.syncCellWithValue = { (value: Int) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			if let model = weakCell?.model {
 				model.value = value
 			}
@@ -466,7 +466,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Int) in
-			SwiftyFormLog("value did change \(value)")
+			RFLog("value did change \(value)")
 			weakObject?.valueDidChange(value)
 			return
 		}
@@ -477,7 +477,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: Int) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value)
 			return
 		}
@@ -493,7 +493,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Float) in
-			SwiftyFormLog("value did change \(value)")
+			RFLog("value did change \(value)")
 			weakObject?.sliderDidChange(value)
 			return
 		}
@@ -504,7 +504,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: Float, animated: Bool) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
 		}
@@ -522,7 +522,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: String) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			if let c = weakCell {
 				var m = RFStaticTextCellModel()
 				m.title = c.model.title
@@ -544,7 +544,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Int) in
-			SwiftyFormLog("value \(value)")
+			RFLog("value \(value)")
 			weakObject?.innerValue = value
 			return
 		}
@@ -553,13 +553,13 @@ class RFPopulateTableView: RFFormItemVisitor {
 		cells.append(cell)
 		lastItemType = .item
 
-		SwiftyFormLog("will assign value \(object.value)")
+		RFLog("will assign value \(object.value)")
 		cell.setValueWithoutSync(object.value, animated: true)
-		SwiftyFormLog("did assign value \(object.value)")
+		RFLog("did assign value \(object.value)")
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: Int, animated: Bool) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
 		}
@@ -574,7 +574,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakObject = object
 		model.valueDidChange = { (value: Bool) in
-			SwiftyFormLog("value did change \(value)")
+			RFLog("value did change \(value)")
 			weakObject?.switchDidChange(value)
 			return
 		}
@@ -583,13 +583,13 @@ class RFPopulateTableView: RFFormItemVisitor {
 		cells.append(cell)
 		lastItemType = .item
 
-		SwiftyFormLog("will assign value \(object.value)")
+		RFLog("will assign value \(object.value)")
 		cell.setValueWithoutSync(object.value, animated: false)
-		SwiftyFormLog("did assign value \(object.value)")
+		RFLog("did assign value \(object.value)")
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: Bool, animated: Bool) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
 		}
@@ -613,12 +613,12 @@ class RFPopulateTableView: RFFormItemVisitor {
 		model.model = object
 		weak var weakObject = object
 		model.valueDidChange = { (value: String) in
-			SwiftyFormLog("value \(value)")
+			RFLog("value \(value)")
 			weakObject?.textDidChange(value)
 			return
 		}
         model.didEndEditing = { (value: String) in
-            SwiftyFormLog("value \(value)")
+            RFLog("value \(value)")
             weakObject?.editingEnd(value)
             return
         }
@@ -629,7 +629,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: String) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value)
 			return
 		}
@@ -666,7 +666,7 @@ class RFPopulateTableView: RFFormItemVisitor {
         model.valueFont = self.model.fontStrategy.valueFont()
 		weak var weakObject = object
 		model.valueDidChange = { (value: String) in
-			SwiftyFormLog("value \(value)")
+			RFLog("value \(value)")
 			weakObject?.innerValue = value
 			return
 		}
@@ -677,7 +677,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: String) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value)
 			return
 		}
@@ -692,7 +692,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakViewController = self.model.viewController
 		let cell = RFViewControllerCell(model: model) { (cell: RFViewControllerCell, _: RFViewControllerCellModel) in
-			SwiftyFormLog("push")
+			RFLog("push")
 			if let vc = weakViewController {
 				let dismissCommand = RFPopulateTableView.prepareDismissCommand(willPopViewController, parentViewController: vc, cell: cell)
 				if let childViewController = object.createViewController?(dismissCommand) {
@@ -707,7 +707,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 	class func prepareDismissCommand(_ willPopCommand: RFWillPopCommandProtocol, parentViewController: UIViewController, cell: RFViewControllerCell) -> RFCommandProtocol {
 		weak var weakViewController = parentViewController
 		let command = RFCommandBlock { (childViewController: UIViewController, returnObject: AnyObject?) in
-			SwiftyFormLog("pop: \(String(describing: returnObject))")
+			RFLog("pop: \(String(describing: returnObject))")
 			if let vc = weakViewController {
 				let context = RFViewControllerFormItemPopContext(parentViewController: vc, childViewController: childViewController, cell: cell, returnedObject: returnObject)
 				willPopCommand.execute(context)
@@ -754,13 +754,13 @@ class RFPopulateTableView: RFFormItemVisitor {
 
 		weak var weakCell = cell
 		object.syncCellWithValue = { (value: [Int], animated: Bool) in
-			SwiftyFormLog("sync value \(value)")
+			RFLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 		}
 
 		weak var weakObject = object
 		model.valueDidChange = { (selectedRows: [Int]) in
-			SwiftyFormLog("value did change \(selectedRows)")
+			RFLog("value did change \(selectedRows)")
 			weakObject?.valueDidChange(selectedRows)
 		}
 	}

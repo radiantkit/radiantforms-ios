@@ -17,7 +17,7 @@ class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
 	}
 
 	override func populate(_ builder: RFFormBuilder) {
-		SwiftyFormLog("preselect option \(String(describing: optionField.selected?.title))")
+		RFLog("preselect option \(String(describing: optionField.selected?.title))")
 		builder.navigationTitle = optionField.title
 		for optionRow: RFOptionRowModel in optionField.options {
 			let option = RFOptionRowFormItem()
@@ -33,7 +33,7 @@ class RFOptionListViewController: RFFormViewController, RFSelectOptionDelegate {
 			fatalError("Expected RFOptionRowModel when selecting option \(option.title)")
 		}
 
-		SwiftyFormLog("select option \(option.title)")
+		RFLog("select option \(option.title)")
 		selectOptionHandler(selected)
 	}
 }

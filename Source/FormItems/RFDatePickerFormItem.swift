@@ -76,7 +76,7 @@ public class RFDatePickerFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ date: Date, _ animated: Bool) -> Void
 	var syncCellWithValue: SyncBlock = { (date: Date, animated: Bool) in
-		SwiftyFormLog("sync is not overridden: \(date)")
+		RFLog("sync is not overridden: \(date)")
 	}
 
 	internal var innerValue = Date()
@@ -102,7 +102,7 @@ public class RFDatePickerFormItem: RFFormItem {
 
 	public typealias ValueDidChangeBlock = (_ value: Date) -> Void
 	public var valueDidChangeBlock: ValueDidChangeBlock = { (value: Date) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func valueDidChange(_ value: Date) {

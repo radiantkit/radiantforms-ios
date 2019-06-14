@@ -99,7 +99,7 @@
 		428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* RFDebugViewController.swift */; };
 		428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683231B346CFE0028DB2F /* Dictionary+Update.swift */; };
 		428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */; };
-		428683561B346CFE0028DB2F /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* Logging.swift */; };
+		428683561B346CFE0028DB2F /* RFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* RFLog.swift */; };
 		428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */; };
 		428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */; };
 		4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683291B346CFE0028DB2F /* UIView+LookupCell.swift */; };
@@ -228,7 +228,7 @@
 		428683221B346CFE0028DB2F /* RFDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDebugViewController.swift; sourceTree = "<group>"; };
 		428683231B346CFE0028DB2F /* Dictionary+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Update.swift"; sourceTree = "<group>"; };
 		428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFKeyboardHandler.swift; sourceTree = "<group>"; };
-		428683251B346CFE0028DB2F /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		428683251B346CFE0028DB2F /* RFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFLog.swift; sourceTree = "<group>"; };
 		428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+PrevNext.swift"; sourceTree = "<group>"; };
 		428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		428683291B346CFE0028DB2F /* UIView+LookupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LookupCell.swift"; sourceTree = "<group>"; };
@@ -431,11 +431,11 @@
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
-				428683251B346CFE0028DB2F /* Logging.swift */,
 				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
 				4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */,
 				4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */,
 				428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */,
+				428683251B346CFE0028DB2F /* RFLog.swift */,
 				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
@@ -665,7 +665,7 @@
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
 				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
 				4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */,
-				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
+				428683561B346CFE0028DB2F /* RFLog.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
 				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,
 				42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */,

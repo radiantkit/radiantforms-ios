@@ -27,7 +27,7 @@ public struct RFAmountCellModel {
     var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
     var valueDidChange: (RFAmountValue) -> Void = { (value: RFAmountValue) in
-        SwiftyFormLog("value \(value)")
+        RFLog("value \(value)")
     }
     
     var maxIntegerAndFractionDigits: UInt {
@@ -162,17 +162,17 @@ public class RFAmountCell: UITableViewCell {
     }
     
     public func gotoPrevious() {
-        SwiftyFormLog("make previous cell first responder")
+        RFLog("make previous cell first responder")
         rf_makePreviousCellFirstResponder()
     }
     
     public func gotoNext() {
-        SwiftyFormLog("make next cell first responder")
+        RFLog("make next cell first responder")
         rf_makeNextCellFirstResponder()
     }
     
     public func dismissKeyboard() {
-        SwiftyFormLog("dismiss keyboard")
+        RFLog("dismiss keyboard")
         _ = resignFirstResponder()
     }
     
@@ -234,7 +234,7 @@ public class RFAmountCell: UITableViewCell {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        //SwiftyFormLog("layoutSubviews")
+        //RFLog("layoutSubviews")
         let sizes: RFAmountCellSizes = compute()
         titleLabel.frame = sizes.titleLabelFrame
         textField.frame = sizes.textFieldFrame
@@ -248,7 +248,7 @@ public class RFAmountCell: UITableViewCell {
     
     public func createInternalValue(_ digitsString: String) -> UInt64? {
         guard let internalValue: UInt64 = UInt64(digitsString) else {
-            SwiftyFormLog("Failed to create internalValue from string")
+            RFLog("Failed to create internalValue from string")
             return nil
         }
         return internalValue
@@ -260,7 +260,7 @@ public class RFAmountCell: UITableViewCell {
 
     public func parseAndFormatAmount(_ value: RFAmountValue) -> String {
         if value == 0 {
-            SwiftyFormLog("The value is zero")
+            RFLog("The value is zero")
             return ""
         }
         return self.formatAmount(value)
@@ -274,7 +274,7 @@ public class RFAmountCell: UITableViewCell {
     }
     
     public func setValueWithoutSync(_ value: RFAmountValue) {
-        SwiftyFormLog("set value \(value)")
+        RFLog("set value \(value)")
         let formattedValue: String = self.parseAndFormatAmount(value)
         textField.text = formattedValue
     }
@@ -307,14 +307,14 @@ extension RFAmountCell: UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //SwiftyFormLog("enter. NSRange: \(range)   replacementString: '\(string)'")
+        //RFLog("enter. NSRange: \(range)   replacementString: '\(string)'")
         
         let currentText: String = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else {
-            SwiftyFormLog("ERROR: Unable to create Range from NSRange")
+            RFLog("ERROR: Unable to create Range from NSRange")
             return false
         }
-        //SwiftyFormLog("stringRange: \(stringRange)   NSRange: \(range)   currentText: '\(currentText)'")
+        //RFLog("stringRange: \(stringRange)   NSRange: \(range)   currentText: '\(currentText)'")
 
         let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
         
@@ -323,19 +323,19 @@ extension RFAmountCell: UITextFieldDelegate {
             return true
         }
         guard let internalValue: UInt64 = self.createInternalValue(digitsString) else {
-            SwiftyFormLog("Cannot create an internalValue")
+            RFLog("Cannot create an internalValue")
             return false
         }
         if internalValue == 0 {
             textField.text = nil
-            SwiftyFormLog("Show placeholder, when the internalValue is zero")
+            RFLog("Show placeholder, when the internalValue is zero")
             valueDidChange()
             return false
         }
         
         let internalValueString: String = String(internalValue)
         guard internalValueString.count <= self.model.maxIntegerAndFractionDigits else {
-            SwiftyFormLog("The internalValue must stay shorter than the max number of digits")
+            RFLog("The internalValue must stay shorter than the max number of digits")
             return false
         }
         
@@ -343,7 +343,7 @@ extension RFAmountCell: UITextFieldDelegate {
         textField.text = s
         valueDidChange()
         
-        //SwiftyFormLog("Leave.  s: '\(s)'")
+        //RFLog("Leave.  s: '\(s)'")
         return false
     }
     
@@ -358,7 +358,7 @@ extension RFAmountCell: RFCellHeightProvider {
     public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         let sizes: RFAmountCellSizes = compute()
         let value = sizes.cellHeight
-        //SwiftyFormLog("compute height of row: \(value)")
+        //RFLog("compute height of row: \(value)")
         return value
     }
 }

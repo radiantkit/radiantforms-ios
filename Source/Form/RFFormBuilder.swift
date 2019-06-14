@@ -83,9 +83,9 @@ public class RFFormBuilder {
 				$0.accept(visitor: v)
 				return v.width
 			}
-			//SwiftyFormLog("widthArray: \(widthArray)")
+			//RFLog("widthArray: \(widthArray)")
 			let width = widthArray.max()!
-			//SwiftyFormLog("max width: \(width)")
+			//RFLog("max width: \(width)")
 
 			for item in alignLeftItem.items {
 				let v = RFAssignTitleWidth(width: width)
@@ -111,13 +111,13 @@ public class RFFormBuilder {
 			item.accept(visitor: v)
 			switch v.result {
 			case .valid:
-				// SwiftyFormLog("valid")
+				// RFLog("valid")
 				continue
 			case .hardInvalid(let message):
-				//SwiftyFormLog("invalid message \(message)")
+				//RFLog("invalid message \(message)")
 				return .invalid(item: item, message: message)
 			case .softInvalid(let message):
-				//SwiftyFormLog("invalid message \(message)")
+				//RFLog("invalid message \(message)")
 				return .invalid(item: item, message: message)
 			}
 		}

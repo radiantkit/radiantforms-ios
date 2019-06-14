@@ -16,7 +16,7 @@ public class RFStepperFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: Int, _ animated: Bool) -> Void
 	var syncCellWithValue: SyncBlock = { (value: Int, animated: Bool) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: Int = 0

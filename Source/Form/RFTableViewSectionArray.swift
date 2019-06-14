@@ -110,35 +110,35 @@ extension RFTableViewSectionArray: UITableViewDataSource {
 extension RFTableViewSectionArray: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
+            RFLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
-            SwiftyFormLog("Section has a custom view. Will not apply appearance.")
+            RFLog("Section has a custom view. Will not apply appearance.")
             return
         }
         guard let color: UIColor = formTableView.sectionHeader_textLabel_textColor else {
-            SwiftyFormLog("No color provided. Will not apply appearance")
+            RFLog("No color provided. Will not apply appearance")
             return
         }
-        SwiftyFormLog("Applying appearance to section header")
+        RFLog("Applying appearance to section header")
         header.textLabel?.textColor = color
     }
     
     public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         guard let formTableView: RFFormTableView = tableView as? RFFormTableView else {
-            SwiftyFormLog("ERROR: Expected tableView to be of type RFFormTableView.")
+            RFLog("ERROR: Expected tableView to be of type RFFormTableView.")
             return
         }
         guard let footer: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView else {
-            SwiftyFormLog("Section has a custom view. Will not apply appearance.")
+            RFLog("Section has a custom view. Will not apply appearance.")
             return
         }
         guard let color: UIColor = formTableView.sectionFooter_textLabel_textColor else {
-            SwiftyFormLog("No color provided. Will not apply appearance")
+            RFLog("No color provided. Will not apply appearance")
             return
         }
-        SwiftyFormLog("Applying appearance to section footer")
+        RFLog("Applying appearance to section footer")
         footer.textLabel?.textColor = color
     }
     
