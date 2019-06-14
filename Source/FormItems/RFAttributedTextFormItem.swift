@@ -31,7 +31,7 @@ public class RFAttributedTextFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: NSAttributedString?) -> Void
 	var syncCellWithValue: SyncBlock = { (value: NSAttributedString?) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: NSAttributedString?

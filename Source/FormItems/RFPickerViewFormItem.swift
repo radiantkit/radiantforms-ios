@@ -66,7 +66,7 @@ public class RFPickerViewFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: [Int], _ animated: Bool) -> Void
 	var syncCellWithValue: SyncBlock = { (value: [Int], animated: Bool) in
-		SwiftyFormLog("sync is not overridden: \(value)")
+		RFLog("sync is not overridden: \(value)")
 	}
 
 	fileprivate func maybeAssignFallbackValue() {
@@ -103,7 +103,7 @@ public class RFPickerViewFormItem: RFFormItem {
 
 	public typealias ValueDidChangeBlock = (_ value: [Int]) -> Void
 	public var valueDidChangeBlock: ValueDidChangeBlock = { (value: [Int]) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func valueDidChange(_ value: [Int]) {

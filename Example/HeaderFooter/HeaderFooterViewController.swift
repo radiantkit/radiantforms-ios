@@ -1,5 +1,6 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
-import SwiftyFORM
+import UIKit
+import RadiantForms
 
 class HeaderFooterViewController: RFFormViewController {
 

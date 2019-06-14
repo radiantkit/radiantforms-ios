@@ -1,5 +1,5 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
-import Foundation
+import UIKit
 
 public class RFTextFieldFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
@@ -29,7 +29,7 @@ public class RFTextFieldFormItem: RFFormItem {
 
 	public typealias SyncBlock = (_ value: String) -> Void
 	public var syncCellWithValue: SyncBlock = { (string: String) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: String = ""
@@ -44,7 +44,7 @@ public class RFTextFieldFormItem: RFFormItem {
 
 	public typealias TextDidChangeBlock = (_ value: String) -> Void
 	public var textDidChangeBlock: TextDidChangeBlock = { (value: String) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
     
     public func textDidChange(_ value: String) {
@@ -54,7 +54,7 @@ public class RFTextFieldFormItem: RFFormItem {
     
 	public typealias TextEditingEndBlock = (_ value: String) -> Void
 	public var textEditingEndBlock: TextEditingEndBlock = { (value: String) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 	
 	public func editingEnd(_ value: String) {

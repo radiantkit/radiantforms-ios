@@ -52,7 +52,7 @@ public class RFKeyboardHandler {
 
 	/// The keyboard will appear, scroll content so it's not covered by the keyboard.
 	@objc func keyboardWillShow(_ notification: Notification) {
-//		SwiftyFormLog("show\n\n\n\n\n\n\n\n")
+//		RFLog("show\n\n\n\n\n\n\n\n")
 		innerKeyboardVisible = true
 		guard let cell = tableView.rf_firstResponder()?.rf_cell() else {
 			return
@@ -62,7 +62,7 @@ public class RFKeyboardHandler {
 		}
 
 		let rectForRow = tableView.rectForRow(at: indexPath)
-//		SwiftyFormLog("rectForRow \(NSStringFromCGRect(rectForRow))")
+//		RFLog("rectForRow \(NSStringFromCGRect(rectForRow))")
 
 		guard let userInfo: [AnyHashable: Any] = notification.userInfo else {
 			return
@@ -72,15 +72,15 @@ public class RFKeyboardHandler {
 		}
 
         let keyboardFrameEnd = (userInfo[RFKeyboardCompatibility.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//		SwiftyFormLog("keyboardFrameEnd \(NSStringFromCGRect(keyboardFrameEnd))")
+//		RFLog("keyboardFrameEnd \(NSStringFromCGRect(keyboardFrameEnd))")
 
 		let keyboardFrame = window.convert(keyboardFrameEnd, to: tableView.superview)
-//		SwiftyFormLog("keyboardFrame \(keyboardFrame)")
+//		RFLog("keyboardFrame \(keyboardFrame)")
 
 		let convertedRectForRow = window.convert(rectForRow, from: tableView)
-//		SwiftyFormLog("convertedRectForRow \(NSStringFromCGRect(convertedRectForRow))")
+//		RFLog("convertedRectForRow \(NSStringFromCGRect(convertedRectForRow))")
 
-//		SwiftyFormLog("tableView.frame \(NSStringFromCGRect(tableView.frame))")
+//		RFLog("tableView.frame \(NSStringFromCGRect(tableView.frame))")
 
 		var scrollToVisible = false
 		var scrollToRect = CGRect.zero
@@ -89,17 +89,17 @@ public class RFKeyboardHandler {
 		let y0 = convertedRectForRow.maxY + spaceBetweenCellAndKeyboard
 		let y1 = keyboardFrameEnd.minY
 		let obscured = y0 > y1
-//		SwiftyFormLog("values \(y0) \(y1) \(obscured)")
+//		RFLog("values \(y0) \(y1) \(obscured)")
 		if obscured {
-			SwiftyFormLog("cell is obscured by keyboard, we are scrolling")
+			RFLog("cell is obscured by keyboard, we are scrolling")
 			scrollToVisible = true
 			scrollToRect = rectForRow
 			scrollToRect.size.height += spaceBetweenCellAndKeyboard
 		} else {
-			SwiftyFormLog("cell is fully visible, no need to scroll")
+			RFLog("cell is fully visible, no need to scroll")
 		}
 		let inset: CGFloat = tableView.frame.maxY - keyboardFrame.origin.y
-		//SwiftyFormLog("inset \(inset)")
+		//RFLog("inset \(inset)")
 
 		var contentInset: UIEdgeInsets = tableView.contentInset
 		var scrollIndicatorInsets: UIEdgeInsets = tableView.scrollIndicatorInsets
@@ -117,7 +117,7 @@ public class RFKeyboardHandler {
 
 	/// The keyboard will disappear, restore content insets.
 	@objc func keyboardWillHide(_ notification: Notification) {
-//		SwiftyFormLog("\n\n\n\nhide")
+//		RFLog("\n\n\n\nhide")
 		innerKeyboardVisible = false
 
 		var contentInset: UIEdgeInsets = tableView.contentInset
@@ -126,8 +126,8 @@ public class RFKeyboardHandler {
 		contentInset.bottom = 0
 		scrollIndicatorInsets.bottom = 0
 
-//		SwiftyFormLog("contentInset \(NSStringFromUIEdgeInsets(contentInset))")
-//		SwiftyFormLog("scrollIndicatorInsets \(NSStringFromUIEdgeInsets(scrollIndicatorInsets))")
+//		RFLog("contentInset \(NSStringFromUIEdgeInsets(contentInset))")
+//		RFLog("scrollIndicatorInsets \(NSStringFromUIEdgeInsets(scrollIndicatorInsets))")
 
 		// Restore insets
 		tableView.contentInset = contentInset

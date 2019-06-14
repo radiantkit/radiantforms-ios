@@ -1,5 +1,5 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
-import Foundation
+import UIKit
 
 public typealias RFAmountValue = UInt64
 
@@ -18,7 +18,7 @@ public class RFAmountFormItem: RFFormItem {
     
     public typealias SyncBlock = (_ value: RFAmountValue) -> Void
     public var syncCellWithValue: SyncBlock = { (_) in
-        SwiftyFormLog("sync is not overridden")
+        RFLog("sync is not overridden")
     }
     
     internal var innerValue: RFAmountValue = 0
@@ -33,7 +33,7 @@ public class RFAmountFormItem: RFFormItem {
     
     public typealias ValueDidChangeBlock = (_ value: RFAmountValue) -> Void
     public var valueDidChangeBlock: ValueDidChangeBlock = { (value: RFAmountValue) in
-        SwiftyFormLog("not overridden")
+        RFLog("not overridden")
     }
     
     public func valueDidChange(_ value: RFAmountValue) {

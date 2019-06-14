@@ -7,7 +7,7 @@ public struct RFSwitchCellModel {
     var titleFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (Bool) -> Void = { (value: Bool) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
 }
 
@@ -43,12 +43,12 @@ public class RFSwitchCell: UITableViewCell {
     }
     
 	@objc public func valueChanged() {
-		SwiftyFormLog("value did change")
+		RFLog("value did change")
 		model.valueDidChange(switchView.isOn)
 	}
 
 	public func setValueWithoutSync(_ value: Bool, animated: Bool) {
-		SwiftyFormLog("set value \(value), animated \(animated)")
+		RFLog("set value \(value), animated \(animated)")
 		switchView.setOn(value, animated: animated)
 	}
 }

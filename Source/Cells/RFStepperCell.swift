@@ -9,7 +9,7 @@ public struct RFStepperCellModel {
     var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (Int) -> Void = { (value: Int) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
 }
 
@@ -77,7 +77,7 @@ public class RFStepperCell: UITableViewCell {
 	}
 
 	@objc public func valueChanged() {
-		SwiftyFormLog("value did change")
+		RFLog("value did change")
 
 		let value: Double = stepperView.value
 		let intValue: Int = Int(round(value))
@@ -96,7 +96,7 @@ public class RFStepperCell: UITableViewCell {
 	}
 
 	public func setValueWithoutSync(_ value: Int, animated: Bool) {
-		SwiftyFormLog("set value \(value)")
+		RFLog("set value \(value)")
 
 		stepperView.value = Double(value)
 		updateValue(value)

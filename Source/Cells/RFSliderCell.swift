@@ -8,7 +8,7 @@ public struct RFSliderCellModel {
 	var maximumValue: Float = 1.0
 
 	var valueDidChange: (Float) -> Void = { (value: Float) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
 }
 
@@ -52,12 +52,12 @@ public class RFSliderCell: UITableViewCell, RFCellHeightProvider {
 	}
 
 	@objc public func valueChanged() {
-		SwiftyFormLog("value did change")
+		RFLog("value did change")
 		model.valueDidChange(slider.value)
 	}
 
 	public func setValueWithoutSync(_ value: Float, animated: Bool) {
-		SwiftyFormLog("set value \(value), animated \(animated)")
+		RFLog("set value \(value), animated \(animated)")
 		slider.setValue(value, animated: animated)
 	}
 }

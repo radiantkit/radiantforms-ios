@@ -6,17 +6,17 @@ open class RFFormViewController: UIViewController {
 	public var keyboardHandler: RFKeyboardHandler?
 
 	public init() {
-		SwiftyFormLog("super init")
+		RFLog("super init")
 		super.init(nibName: nil, bundle: nil)
 	}
 
 	required public init?(coder aDecoder: NSCoder) {
-		SwiftyFormLog("super init")
+		RFLog("super init")
 		super.init(coder: aDecoder)
 	}
 
 	override open func loadView() {
-		SwiftyFormLog("super loadview")
+		RFLog("super loadview")
 		view = tableView
 		keyboardHandler = RFKeyboardHandler(tableView: tableView)
 		populateAndSetup()
@@ -44,7 +44,7 @@ open class RFFormViewController: UIViewController {
 
     /// This function is required. A subclass must always implement this function.
 	open func populate(_ builder: RFFormBuilder) {
-		SwiftyFormLog("subclass must implement populate()")
+		RFLog("subclass must implement populate()")
 	}
 
     /// This function is optional. A subclass may implement this function.

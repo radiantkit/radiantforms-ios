@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,8 +34,6 @@
 		42589DDC1B3447EA007CA8C1 /* TextFieldTabThroughFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DC91B3447EA007CA8C1 /* TextFieldTabThroughFormViewController.swift */; };
 		42589DDD1B3447EA007CA8C1 /* TextFieldValidInvalidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DCA1B3447EA007CA8C1 /* TextFieldValidInvalidViewController.swift */; };
 		42589DDF1B3447EA007CA8C1 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DCD1B3447EA007CA8C1 /* TextViewViewController.swift */; };
-		425A32671B71571A006A433E /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429910DB1B347FD8001F9195 /* SwiftyFORM.framework */; };
-		425A32681B71571A006A433E /* SwiftyFORM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 429910DB1B347FD8001F9195 /* SwiftyFORM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4267986C1D8DB160002275CA /* HeaderFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267986A1D8DB160002275CA /* HeaderFooterViewController.swift */; };
 		4267986D1D8DB160002275CA /* NoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267986B1D8DB160002275CA /* NoHeaderViewController.swift */; };
 		426798711D8DB17B002275CA /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267986F1D8DB17B002275CA /* MyCollectionViewController.swift */; };
@@ -44,6 +42,8 @@
 		42685D401D2D6AB2008ABC3D /* WorkInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */; };
 		42685D421D2D6B01008ABC3D /* ScientificSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */; };
 		4280F71D2264AD180098EF22 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71C2264AD180098EF22 /* AmountViewController.swift */; };
+		42A6640E22B41FBD006B123A /* RadiantForms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 429F06B722B41CF70056FB8A /* RadiantForms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42A6641022B41FF8006B123A /* RadiantForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429F06B722B41CF70056FB8A /* RadiantForms.framework */; };
 		42B1BB471E82C1C10090156A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B1BB461E82C1C10090156A /* Settings.storyboard */; };
 		42B1BB491E82C1EF0090156A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BB481E82C1EF0090156A /* SettingsViewController.swift */; };
 		42B1BB581E8462D50090156A /* ReloadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BB571E8462D50090156A /* ReloadingViewController.swift */; };
@@ -64,33 +64,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		425A32691B71571A006A433E /* PBXContainerItemProxy */ = {
+		429F06B622B41CF70056FB8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D5DE641A38167400D5C368;
-			remoteInfo = SwiftyFORM;
-		};
-		429910DA1B347FD8001F9195 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */;
+			containerPortal = 429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 42D5DE651A38167400D5C368;
-			remoteInfo = SwiftyFORM;
+			remoteInfo = RadiantForms;
 		};
-		429910DC1B347FD8001F9195 /* PBXContainerItemProxy */ = {
+		429F06B822B41CF70056FB8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */;
+			containerPortal = 429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 42D5DE6F1A38167400D5C368;
-			remoteInfo = SwiftyFORMTests;
+			remoteInfo = RadiantFormsTests;
 		};
-		429910DE1B348018001F9195 /* PBXContainerItemProxy */ = {
+		429F06BA22B41D050056FB8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */;
+			containerPortal = 429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 42D5DE641A38167400D5C368;
-			remoteInfo = SwiftyFORM;
+			remoteInfo = RadiantForms;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -101,7 +94,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				425A32681B71571A006A433E /* SwiftyFORM.framework in Embed Frameworks */,
+				42A6640E22B41FBD006B123A /* RadiantForms.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +137,7 @@
 		42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkInProgressViewController.swift; sourceTree = "<group>"; };
 		42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificSliderViewController.swift; sourceTree = "<group>"; };
 		4280F71C2264AD180098EF22 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
-		429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftyFORM.xcodeproj; sourceTree = "<group>"; };
+		429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RadiantForms.xcodeproj; sourceTree = "<group>"; };
 		42B1BB461E82C1C10090156A /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		42B1BB481E82C1EF0090156A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		42B1BB571E8462D50090156A /* ReloadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadingViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				425A32671B71571A006A433E /* SwiftyFORM.framework in Frameworks */,
+				42A6641022B41FF8006B123A /* RadiantForms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +263,13 @@
 			path = HeaderFooter;
 			sourceTree = "<group>";
 		};
-		4267986E1D8DB17B002275CA /* Non-SwiftyFORM */ = {
+		4267986E1D8DB17B002275CA /* Non-RadiantForms */ = {
 			isa = PBXGroup;
 			children = (
 				4267986F1D8DB17B002275CA /* MyCollectionViewController.swift */,
 				426798701D8DB17B002275CA /* MyTableViewController.swift */,
 			);
-			path = "Non-SwiftyFORM";
+			path = "Non-RadiantForms";
 			sourceTree = "<group>";
 		};
 		42685D3E1D2D6AB2008ABC3D /* WorkInProgress */ = {
@@ -288,13 +281,20 @@
 			path = WorkInProgress;
 			sourceTree = "<group>";
 		};
-		429910D61B347FD7001F9195 /* Products */ = {
+		429F06B122B41CF60056FB8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				429910DB1B347FD8001F9195 /* SwiftyFORM.framework */,
-				429910DD1B347FD8001F9195 /* SwiftyFORMTests.xctest */,
+				429F06B722B41CF70056FB8A /* RadiantForms.framework */,
+				429F06B922B41CF70056FB8A /* RadiantFormsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		42A6640F22B41FF8006B123A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		42B1BB451E82C1B40090156A /* Settings */ = {
@@ -319,9 +319,10 @@
 		42CEBF8C1A3BA2B50048E072 = {
 			isa = PBXGroup;
 			children = (
-				429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */,
+				429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */,
 				42CEBF971A3BA2B50048E072 /* Example */,
 				42CEBF961A3BA2B50048E072 /* Products */,
+				42A6640F22B41FF8006B123A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,7 +344,7 @@
 				426798691D8DB160002275CA /* HeaderFooter */,
 				42CEBFA11A3BA2B50048E072 /* Images.xcassets */,
 				4244C6921D6B864600FE1ECB /* LaunchScreen.storyboard */,
-				4267986E1D8DB17B002275CA /* Non-SwiftyFORM */,
+				4267986E1D8DB17B002275CA /* Non-RadiantForms */,
 				42589DC21B3447EA007CA8C1 /* Other */,
 				42B1BB451E82C1B40090156A /* Settings */,
 				420AC6171F88D0B400898C85 /* Storyboard */,
@@ -399,8 +400,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				429910DF1B348018001F9195 /* PBXTargetDependency */,
-				425A326A1B71571A006A433E /* PBXTargetDependency */,
+				429F06BB22B41D050056FB8A /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = demo_swift_ios8;
@@ -425,7 +425,7 @@
 				};
 			};
 			buildConfigurationList = 42CEBF901A3BA2B50048E072 /* Build configuration list for PBXProject "Example" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -437,8 +437,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 429910D61B347FD7001F9195 /* Products */;
-					ProjectRef = 429910D51B347FD7001F9195 /* SwiftyFORM.xcodeproj */;
+					ProductGroup = 429F06B122B41CF60056FB8A /* Products */;
+					ProjectRef = 429910D51B347FD7001F9195 /* RadiantForms.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -449,18 +449,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		429910DB1B347FD8001F9195 /* SwiftyFORM.framework */ = {
+		429F06B722B41CF70056FB8A /* RadiantForms.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = SwiftyFORM.framework;
-			remoteRef = 429910DA1B347FD8001F9195 /* PBXContainerItemProxy */;
+			path = RadiantForms.framework;
+			remoteRef = 429F06B622B41CF70056FB8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		429910DD1B347FD8001F9195 /* SwiftyFORMTests.xctest */ = {
+		429F06B922B41CF70056FB8A /* RadiantFormsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SwiftyFORMTests.xctest;
-			remoteRef = 429910DC1B347FD8001F9195 /* PBXContainerItemProxy */;
+			path = RadiantFormsTests.xctest;
+			remoteRef = 429F06B822B41CF70056FB8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -538,15 +538,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		425A326A1B71571A006A433E /* PBXTargetDependency */ = {
+		429F06BB22B41D050056FB8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyFORM;
-			targetProxy = 425A32691B71571A006A433E /* PBXContainerItemProxy */;
-		};
-		429910DF1B348018001F9195 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyFORM;
-			targetProxy = 429910DE1B348018001F9195 /* PBXContainerItemProxy */;
+			name = RadiantForms;
+			targetProxy = 429F06BA22B41D050056FB8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -662,7 +657,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -676,9 +672,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22DR89XVRF;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.neoneye.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.neoneye.RadiantForms.Example;
 				PRODUCT_NAME = Example;
 			};
 			name = Debug;
@@ -690,9 +689,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22DR89XVRF;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.neoneye.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.neoneye.RadiantForms.Example;
 				PRODUCT_NAME = Example;
 			};
 			name = Release;

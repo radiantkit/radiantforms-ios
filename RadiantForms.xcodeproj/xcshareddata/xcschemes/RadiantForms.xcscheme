@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42D5DE641A38167400D5C368"
-               BuildableName = "SwiftyFORM.framework"
-               BlueprintName = "SwiftyFORM"
-               ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+               BuildableName = "RadiantForms.framework"
+               BlueprintName = "RadiantForms"
+               ReferencedContainer = "container:RadiantForms.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42D5DE6E1A38167400D5C368"
-               BuildableName = "SwiftyFORMTests.xctest"
-               BlueprintName = "SwiftyFORMTests"
-               ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+               BuildableName = "RadiantFormsTests.xctest"
+               BlueprintName = "RadiantFormsTests"
+               ReferencedContainer = "container:RadiantForms.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42D5DE6E1A38167400D5C368"
-               BuildableName = "SwiftyFORMTests.xctest"
-               BlueprintName = "SwiftyFORMTests"
-               ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+               BuildableName = "RadiantFormsTests.xctest"
+               BlueprintName = "RadiantFormsTests"
+               ReferencedContainer = "container:RadiantForms.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42D5DE641A38167400D5C368"
-            BuildableName = "SwiftyFORM.framework"
-            BlueprintName = "SwiftyFORM"
-            ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+            BuildableName = "RadiantForms.framework"
+            BlueprintName = "RadiantForms"
+            ReferencedContainer = "container:RadiantForms.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42D5DE641A38167400D5C368"
-            BuildableName = "SwiftyFORM.framework"
-            BlueprintName = "SwiftyFORM"
-            ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+            BuildableName = "RadiantForms.framework"
+            BlueprintName = "RadiantForms"
+            ReferencedContainer = "container:RadiantForms.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42D5DE641A38167400D5C368"
-            BuildableName = "SwiftyFORM.framework"
-            BlueprintName = "SwiftyFORM"
-            ReferencedContainer = "container:SwiftyFORM.xcodeproj">
+            BuildableName = "RadiantForms.framework"
+            BlueprintName = "RadiantForms"
+            ReferencedContainer = "container:RadiantForms.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

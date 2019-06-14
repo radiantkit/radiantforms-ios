@@ -147,7 +147,7 @@ public class RFPrecisionSliderFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: Int) -> Void
 	var syncCellWithValue: SyncBlock = { (value: Int) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: Int = 0
@@ -185,7 +185,7 @@ public class RFPrecisionSliderFormItem: RFFormItem {
 
 	public typealias SliderDidChangeBlock = (_ changeModel: SliderDidChangeModel) -> Void
 	public var sliderDidChangeBlock: SliderDidChangeBlock = { (changeModel: SliderDidChangeModel) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func sliderDidChange(_ changeModel: SliderDidChangeModel) {

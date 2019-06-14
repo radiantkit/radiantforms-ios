@@ -1,5 +1,5 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
-import Foundation
+import UIKit
 
 public class RFCustomFormItem: RFFormItem {
 	public struct Context {

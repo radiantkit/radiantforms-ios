@@ -49,7 +49,7 @@ public class RFSegmentedControlFormItem: RFFormItem {
 
 	typealias SyncBlock = (_ value: Int) -> Void
 	var syncCellWithValue: SyncBlock = { (value: Int) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: Int = 0
@@ -65,7 +65,7 @@ public class RFSegmentedControlFormItem: RFFormItem {
 
 	public typealias ValueDidChangeBlock = (_ value: Int) -> Void
 	public var valueDidChangeBlock: ValueDidChangeBlock = { (value: Int) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func valueDidChange(_ value: Int) {

@@ -16,7 +16,7 @@ public class RFSwitchFormItem: RFFormItem {
 
 	public typealias SyncBlock = (_ value: Bool, _ animated: Bool) -> Void
 	public var syncCellWithValue: SyncBlock = { (value: Bool, animated: Bool) in
-		SwiftyFormLog("sync is not overridden")
+		RFLog("sync is not overridden")
 	}
 
 	internal var innerValue: Bool = false
@@ -31,7 +31,7 @@ public class RFSwitchFormItem: RFFormItem {
 
 	public typealias SwitchDidChangeBlock = (_ value: Bool) -> Void
 	public var switchDidChangeBlock: SwitchDidChangeBlock = { (value: Bool) in
-		SwiftyFormLog("not overridden")
+		RFLog("not overridden")
 	}
 
 	public func switchDidChange(_ value: Bool) {

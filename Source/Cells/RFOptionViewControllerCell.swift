@@ -8,7 +8,7 @@ public struct RFOptionViewControllerCellModel {
 	var selectedOptionRow: RFOptionRowModel?
 
 	var valueDidChange: (RFOptionRowModel?) -> Void = { (value: RFOptionRowModel?) in
-		SwiftyFormLog("value \(String(describing: value))")
+		RFLog("value \(String(describing: value))")
 	}
 }
 
@@ -41,22 +41,22 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 
 	fileprivate func updateValue() {
 		let s = humanReadableValue()
-		SwiftyFormLog("update value \(String(describing: s))")
+		RFLog("update value \(String(describing: s))")
 		detailTextLabel?.text = s
 	}
 
 	public func setSelectedOptionRowWithoutPropagation(_ option: RFOptionRowModel?) {
-		SwiftyFormLog("set selected option: \(String(describing: option?.title)) \(String(describing: option?.identifier))")
+		RFLog("set selected option: \(String(describing: option?.title)) \(String(describing: option?.identifier))")
 
 		selectedOptionRow = option
 		updateValue()
 	}
 
 	fileprivate func viaOptionList_userPickedOption(_ option: RFOptionRowModel) {
-		SwiftyFormLog("user picked option: \(option.title) \(option.identifier)")
+		RFLog("user picked option: \(option.title) \(option.identifier)")
 
 		if selectedOptionRow === option {
-			SwiftyFormLog("no change")
+			RFLog("no change")
 			return
 		}
 
@@ -66,18 +66,18 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 	}
 
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
-		SwiftyFormLog("will invoke")
+		RFLog("will invoke")
 
 		guard let vc: UIViewController = parentViewController else {
-			SwiftyFormLog("Expected a parent view controller")
+			RFLog("Expected a parent view controller")
 			return
 		}
 		guard let nc: UINavigationController = vc.navigationController else {
-			SwiftyFormLog("Expected parent view controller to have a navigation controller")
+			RFLog("Expected parent view controller to have a navigation controller")
 			return
 		}
 		guard let optionField = model.optionField else {
-			SwiftyFormLog("Expected model to have an optionField")
+			RFLog("Expected model to have an optionField")
 			return
 		}
 
@@ -90,7 +90,7 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 		}
 		nc.pushViewController(childViewController, animated: true)
 
-		SwiftyFormLog("did invoke")
+		RFLog("did invoke")
 	}
 }
 

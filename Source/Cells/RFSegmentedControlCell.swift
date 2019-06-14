@@ -10,7 +10,7 @@ public struct RFSegmentedControlCellModel {
     var titleFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (Int) -> Void = { (value: Int) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
 }
 
@@ -46,12 +46,12 @@ public class RFSegmentedControlCell: UITableViewCell {
     }
 
     @objc public func valueChanged() {
-		SwiftyFormLog("value did change")
+		RFLog("value did change")
 		model.valueDidChange(segmentedControl.selectedSegmentIndex)
 	}
 
 	public func setValueWithoutSync(_ value: Int) {
-		SwiftyFormLog("set value \(value)")
+		RFLog("set value \(value)")
 		segmentedControl.selectedSegmentIndex = value
 	}
 }

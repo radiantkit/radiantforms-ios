@@ -1,6 +1,6 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
 class DatePickerInitialValueViewController: RFFormViewController {
 	lazy var datePicker_time_noValue: RFDatePickerFormItem = {

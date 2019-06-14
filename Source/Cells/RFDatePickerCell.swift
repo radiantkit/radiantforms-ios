@@ -21,7 +21,7 @@ public class RFDatePickerCellModel {
     var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (Date) -> Void = { (date: Date) in
-		SwiftyFormLog("date \(date)")
+		RFLog("date \(date)")
 	}
 
 	var resolvedLocale: Locale {
@@ -83,7 +83,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 			return .none
 		#if swift(>=5.0)
 		@unknown default:
-			SwiftyFormLog("Encountered an unknown UIDatePicker.Mode")
+			RFLog("Encountered an unknown UIDatePicker.Mode")
 			return .none
 		#endif
 		}
@@ -101,7 +101,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 			return .short
 		#if swift(>=5.0)
 		@unknown default:
-			SwiftyFormLog("Encountered an unknown UIDatePicker.Mode")
+			RFLog("Encountered an unknown UIDatePicker.Mode")
 			return .none
 		#endif
 		}
@@ -112,7 +112,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 			return "Unsupported"
 		}
 		let date = model.date
-		//SwiftyFormLog("date: \(date)")
+		//RFLog("date: \(date)")
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = model.resolvedLocale
 		dateFormatter.dateStyle = obtainDateStyle(model.datePickerMode)
@@ -125,7 +125,7 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 	}
 
 	func setDateWithoutSync(_ date: Date, animated: Bool) {
-		SwiftyFormLog("set date \(date), animated \(animated)")
+		RFLog("set date \(date), animated \(animated)")
 		model.date = date
 		updateValue()
 

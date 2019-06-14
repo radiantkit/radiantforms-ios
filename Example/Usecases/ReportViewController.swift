@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 import MessageUI
-import SwiftyFORM
+import RadiantForms
 
 class ReportViewController: RFFormViewController, MFMailComposeViewControllerDelegate {
 	let sendButton = RFButtonFormItem()
@@ -42,8 +42,8 @@ class ReportViewController: RFFormViewController, MFMailComposeViewControllerDel
 	}
 
 	func configuredMailComposeViewController() -> MFMailComposeViewController {
-		let emailTitle = "SwiftyFORM feedback"
-		let messageBody = "Insert a message to the user of your app, or write to the SwiftyFORM developer.\n---------\n\n\nHi Simon (the SwiftyFORM developer),\n\nI use your framework in my app.\n\nBest regards from Antarctica"
+		let emailTitle = "RadiantForms feedback"
+		let messageBody = "Insert a message to the user of your app, or write to the RadiantForms developer.\n---------\n\n\nHi Simon (the RadiantForms developer),\n\nI use your framework in my app.\n\nBest regards from Antarctica"
 		let toRecipents = ["neoneye@gmail.com"]
 
 		let mc = MFMailComposeViewController()

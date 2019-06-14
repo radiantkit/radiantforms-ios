@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 import XCTest
-@testable import SwiftyFORM
+@testable import RadiantForms
 
 class RFValidatorTests: XCTestCase {
 

@@ -14,7 +14,7 @@ extension RFFormViewController {
 	@objc public func form_submitAction(_ sender: AnyObject?) {
 		formBuilder.validateAndUpdateUI()
 		let result = formBuilder.validate()
-		SwiftyFormLog("result \(result)")
+		RFLog("result \(result)")
 		form_showSubmitResult(result)
 	}
 

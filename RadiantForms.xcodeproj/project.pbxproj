@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,10 +53,11 @@
 		4245B3FC1DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */; };
 		4245B3FD1DA429B500BCB4C7 /* RFSpecificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */; };
 		4245B3FE1DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */; };
+		4256C32F22B42D8900D489C7 /* RadiantForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 4256C32E22B42C4800D489C7 /* RadiantForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4259A2C41C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */; };
 		425DED631D2823A600EDF891 /* RFSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */; };
 		425DED651D28257000EDF891 /* RFSegmentedControlFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */; };
-		4262DF971B34824E00DC2083 /* SwiftFORMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */; };
+		4262DF971B34824E00DC2083 /* RadiantForms.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4262DF961B34824E00DC2083 /* RadiantForms.xcassets */; };
 		42685D4B1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4A1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift */; };
 		42685D4D1D340733008ABC3D /* RFPrecisionSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */; };
 		42685D4F1D340D99008ABC3D /* RFTableViewCellArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */; };
@@ -67,7 +68,6 @@
 		4280F729227833290098EF22 /* UITableView+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F728227833290098EF22 /* UITableView+Compatibility.swift */; };
 		4280F72B2278363B0098EF22 /* CGRect+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */; };
 		4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */; };
-		4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 428682F71B346CFE0028DB2F /* SwiftyFORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4286832E1B346CFE0028DB2F /* RFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FA1B346CFE0028DB2F /* RFButtonCell.swift */; };
 		4286832F1B346CFE0028DB2F /* RFDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */; };
 		428683301B346CFE0028DB2F /* RFSimpleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428682FC1B346CFE0028DB2F /* RFSimpleToolbar.swift */; };
@@ -99,7 +99,7 @@
 		428683531B346CFE0028DB2F /* RFDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683221B346CFE0028DB2F /* RFDebugViewController.swift */; };
 		428683541B346CFE0028DB2F /* Dictionary+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683231B346CFE0028DB2F /* Dictionary+Update.swift */; };
 		428683551B346CFE0028DB2F /* RFKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */; };
-		428683561B346CFE0028DB2F /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* Logging.swift */; };
+		428683561B346CFE0028DB2F /* RFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683251B346CFE0028DB2F /* RFLog.swift */; };
 		428683581B346CFE0028DB2F /* UITableView+PrevNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */; };
 		428683591B346CFE0028DB2F /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */; };
 		4286835A1B346CFE0028DB2F /* UIView+LookupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683291B346CFE0028DB2F /* UIView+LookupCell.swift */; };
@@ -117,7 +117,7 @@
 		42D297551D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */; };
 		42D297571D49611300561780 /* RFPrecisionSlider_InnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */; };
 		42D297591D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */; };
-		42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */; };
+		42D5DE701A38167400D5C368 /* RadiantForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D5DE651A38167400D5C368 /* RadiantForms.framework */; };
 		42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */; };
 		42FABBC41D4143650066E45A /* RFPrecisionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */; };
 		739649131D2B6B7400E12A96 /* RFAttributedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */; };
@@ -181,10 +181,11 @@
 		4245B3F21DA429B500BCB4C7 /* RFRegularExpressionSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFRegularExpressionSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F31DA429B500BCB4C7 /* RFSpecificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTests.swift; sourceTree = "<group>"; };
 		4245B3F41DA429B500BCB4C7 /* RFSpecificationTrueFalseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSpecificationTrueFalseTests.swift; sourceTree = "<group>"; };
+		4256C32E22B42C4800D489C7 /* RadiantForms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadiantForms.h; sourceTree = "<group>"; };
 		4259A2C31C23759B00DB4CEB /* RFAccessoryButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAccessoryButtonDelegate.swift; sourceTree = "<group>"; };
 		425DED621D2823A600EDF891 /* RFSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlCell.swift; sourceTree = "<group>"; };
 		425DED641D28257000EDF891 /* RFSegmentedControlFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSegmentedControlFormItem.swift; sourceTree = "<group>"; };
-		4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SwiftFORMImages.xcassets; sourceTree = "<group>"; };
+		4262DF961B34824E00DC2083 /* RadiantForms.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RadiantForms.xcassets; sourceTree = "<group>"; };
 		42685D4A1D34039B008ABC3D /* RFPrecisionSliderFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderFormItem.swift; sourceTree = "<group>"; };
 		42685D4C1D340733008ABC3D /* RFPrecisionSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSliderCell.swift; sourceTree = "<group>"; };
 		42685D4E1D340D99008ABC3D /* RFTableViewCellArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTableViewCellArray.swift; sourceTree = "<group>"; };
@@ -195,7 +196,6 @@
 		4280F728227833290098EF22 /* UITableView+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Compatibility.swift"; sourceTree = "<group>"; };
 		4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFKeyboardCompatibility.swift; sourceTree = "<group>"; };
-		428682F71B346CFE0028DB2F /* SwiftyFORM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFORM.h; sourceTree = "<group>"; };
 		428682FA1B346CFE0028DB2F /* RFButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFButtonCell.swift; sourceTree = "<group>"; };
 		428682FB1B346CFE0028DB2F /* RFDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDatePickerCell.swift; sourceTree = "<group>"; };
 		428682FC1B346CFE0028DB2F /* RFSimpleToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFSimpleToolbar.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		428683221B346CFE0028DB2F /* RFDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDebugViewController.swift; sourceTree = "<group>"; };
 		428683231B346CFE0028DB2F /* Dictionary+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Update.swift"; sourceTree = "<group>"; };
 		428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFKeyboardHandler.swift; sourceTree = "<group>"; };
-		428683251B346CFE0028DB2F /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		428683251B346CFE0028DB2F /* RFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFLog.swift; sourceTree = "<group>"; };
 		428683271B346CFE0028DB2F /* UITableView+PrevNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+PrevNext.swift"; sourceTree = "<group>"; };
 		428683281B346CFE0028DB2F /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		428683291B346CFE0028DB2F /* UIView+LookupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LookupCell.swift"; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 		42D297541D49579E00561780 /* RFPrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
 		42D297561D49611300561780 /* RFPrecisionSlider_InnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerModel.swift; sourceTree = "<group>"; };
 		42D297581D4BAEFB00561780 /* RFPrecisionSlider_InnerZoomMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider_InnerZoomMode.swift; sourceTree = "<group>"; };
-		42D5DE651A38167400D5C368 /* SwiftyFORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyFORMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D5DE651A38167400D5C368 /* RadiantForms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RadiantForms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadiantFormsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F7521D1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+DeselectRow.swift"; sourceTree = "<group>"; };
 		42FABBC31D4143650066E45A /* RFPrecisionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFPrecisionSlider.swift; sourceTree = "<group>"; };
 		739649121D2B6B7400E12A96 /* RFAttributedTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFAttributedTextCell.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D5DE701A38167400D5C368 /* SwiftyFORM.framework in Frameworks */,
+				42D5DE701A38167400D5C368 /* RadiantForms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +286,8 @@
 		4208F23619F95C73003E834D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42D5DE651A38167400D5C368 /* SwiftyFORM.framework */,
-				42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */,
+				42D5DE651A38167400D5C368 /* RadiantForms.framework */,
+				42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,9 +357,9 @@
 				42108D091B34E9F60067FEAA /* FormItems */,
 				428683181B346CFE0028DB2F /* Info.plist */,
 				42FABBC21D4143510066E45A /* PrecisionSlider */,
+				4256C32E22B42C4800D489C7 /* RadiantForms.h */,
+				4262DF961B34824E00DC2083 /* RadiantForms.xcassets */,
 				4219E1BD1DB827CF00B3204A /* Specification */,
-				4262DF961B34824E00DC2083 /* SwiftFORMImages.xcassets */,
-				428682F71B346CFE0028DB2F /* SwiftyFORM.h */,
 				428683211B346CFE0028DB2F /* Util */,
 			);
 			path = Source;
@@ -431,11 +431,11 @@
 				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				4280F72A2278363B0098EF22 /* CGRect+Compatibility.swift */,
 				428683231B346CFE0028DB2F /* Dictionary+Update.swift */,
-				428683251B346CFE0028DB2F /* Logging.swift */,
 				428683221B346CFE0028DB2F /* RFDebugViewController.swift */,
 				4280F71F2265E3D10098EF22 /* RFEdgeInsetLabel.swift */,
 				4280F72D2278438A0098EF22 /* RFKeyboardCompatibility.swift */,
 				428683241B346CFE0028DB2F /* RFKeyboardHandler.swift */,
+				428683251B346CFE0028DB2F /* RFLog.swift */,
 				42B060FA229434C800FD4585 /* RFTextFieldAppearanceStrategy.swift */,
 				42096E711B358A7E0068B084 /* ShowInfo.swift */,
 				42096E721B358A7E0068B084 /* SubmitButton.swift */,
@@ -485,16 +485,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4286832C1B346CFE0028DB2F /* SwiftyFORM.h in Headers */,
+				4256C32F22B42D8900D489C7 /* RadiantForms.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		42D5DE641A38167400D5C368 /* SwiftyFORM */ = {
+		42D5DE641A38167400D5C368 /* RadiantForms */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORM" */;
+			buildConfigurationList = 42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantForms" */;
 			buildPhases = (
 				42D5DE601A38167400D5C368 /* Sources */,
 				42D5DE611A38167400D5C368 /* Frameworks */,
@@ -505,14 +505,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftyFORM;
+			name = RadiantForms;
 			productName = BoronFrame;
-			productReference = 42D5DE651A38167400D5C368 /* SwiftyFORM.framework */;
+			productReference = 42D5DE651A38167400D5C368 /* RadiantForms.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		42D5DE6E1A38167400D5C368 /* SwiftyFORMTests */ = {
+		42D5DE6E1A38167400D5C368 /* RadiantFormsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORMTests" */;
+			buildConfigurationList = 42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantFormsTests" */;
 			buildPhases = (
 				42D5DE6B1A38167400D5C368 /* Sources */,
 				42D5DE6C1A38167400D5C368 /* Frameworks */,
@@ -523,9 +523,9 @@
 			dependencies = (
 				42D5DE721A38167400D5C368 /* PBXTargetDependency */,
 			);
-			name = SwiftyFORMTests;
+			name = RadiantFormsTests;
 			productName = BoronFrameTests;
-			productReference = 42D5DE6F1A38167400D5C368 /* SwiftyFORMTests.xctest */;
+			productReference = 42D5DE6F1A38167400D5C368 /* RadiantFormsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -535,7 +535,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Simon Strandgaard";
 				TargetAttributes = {
 					42D5DE641A38167400D5C368 = {
@@ -549,12 +549,11 @@
 					};
 				};
 			};
-			buildConfigurationList = 4208F23019F95C73003E834D /* Build configuration list for PBXProject "SwiftyFORM" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4208F23019F95C73003E834D /* Build configuration list for PBXProject "RadiantForms" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -563,8 +562,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42D5DE641A38167400D5C368 /* SwiftyFORM */,
-				42D5DE6E1A38167400D5C368 /* SwiftyFORMTests */,
+				42D5DE641A38167400D5C368 /* RadiantForms */,
+				42D5DE6E1A38167400D5C368 /* RadiantFormsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -574,7 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4262DF971B34824E00DC2083 /* SwiftFORMImages.xcassets in Resources */,
+				4262DF971B34824E00DC2083 /* RadiantForms.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +665,7 @@
 				4286835C1B346CFE0028DB2F /* UIViewController+Alert.swift in Sources */,
 				4219E1C81DB827CF00B3204A /* RFSpecification+Operator.swift in Sources */,
 				4280F7202265E3D10098EF22 /* RFEdgeInsetLabel.swift in Sources */,
-				428683561B346CFE0028DB2F /* Logging.swift in Sources */,
+				428683561B346CFE0028DB2F /* RFLog.swift in Sources */,
 				42096E741B358A7E0068B084 /* SubmitButton.swift in Sources */,
 				4280F72E2278438A0098EF22 /* RFKeyboardCompatibility.swift in Sources */,
 				42F7521E1D6917CD0014C6ED /* UITableViewCell+DeselectRow.swift in Sources */,
@@ -719,7 +718,7 @@
 /* Begin PBXTargetDependency section */
 		42D5DE721A38167400D5C368 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42D5DE641A38167400D5C368 /* SwiftyFORM */;
+			target = 42D5DE641A38167400D5C368 /* RadiantForms */;
 			targetProxy = 42D5DE711A38167400D5C368 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -729,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -787,6 +787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -826,7 +827,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -844,9 +846,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
-				PRODUCT_NAME = SwiftyFORM;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantForms;
+				PRODUCT_NAME = RadiantForms;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -865,9 +871,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
-				PRODUCT_NAME = SwiftyFORM;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantForms;
+				PRODUCT_NAME = RadiantForms;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -884,9 +894,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
-				PRODUCT_NAME = SwiftyFORMTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantFormsTests;
+				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Debug;
 		};
@@ -895,16 +909,20 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 22DR89XVRF;
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
-				PRODUCT_NAME = SwiftyFORMTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neoneye.RadiantFormsTests;
+				PRODUCT_NAME = RadiantFormsTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4208F23019F95C73003E834D /* Build configuration list for PBXProject "SwiftyFORM" */ = {
+		4208F23019F95C73003E834D /* Build configuration list for PBXProject "RadiantForms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4208F25419F95C73003E834D /* Debug */,
@@ -913,7 +931,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORM" */ = {
+		42D5DE7C1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantForms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42D5DE781A38167400D5C368 /* Debug */,
@@ -922,7 +940,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "SwiftyFORMTests" */ = {
+		42D5DE7D1A38167400D5C368 /* Build configuration list for PBXNativeTarget "RadiantFormsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42D5DE7A1A38167400D5C368 /* Debug */,

@@ -17,7 +17,7 @@ public struct RFTextViewCellModel {
     var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (String) -> Void = { (value: String) in
-		SwiftyFormLog("value \(value)")
+		RFLog("value \(value)")
 	}
 }
 
@@ -100,17 +100,17 @@ public class RFTextViewCell: UITableViewCell {
 	}
 
 	public func gotoPrevious() {
-		SwiftyFormLog("make previous cell first responder")
+		RFLog("make previous cell first responder")
 		rf_makePreviousCellFirstResponder()
 	}
 
 	public func gotoNext() {
-		SwiftyFormLog("make next cell first responder")
+		RFLog("make next cell first responder")
 		rf_makeNextCellFirstResponder()
 	}
 
 	public func dismissKeyboard() {
-		SwiftyFormLog("dismiss keyboard")
+		RFLog("dismiss keyboard")
 		_ = resignFirstResponder()
 	}
 
@@ -128,7 +128,7 @@ public class RFTextViewCell: UITableViewCell {
 	}
 
 	public func setValueWithoutSync(_ value: String) {
-		SwiftyFormLog("set value \(value)")
+		RFLog("set value \(value)")
 		textView.text = value
 		updateValue()
 	}
@@ -228,7 +228,7 @@ extension RFTextViewCell: RFCellHeightProvider {
 	public func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
 		let sizes: RFTextViewFormItemCellSizes = compute()
 		let value = sizes.cellHeight
-		//SwiftyFormLog("compute height of row: \(value)")
+		//RFLog("compute height of row: \(value)")
 		return value
 	}
 }

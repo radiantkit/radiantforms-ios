@@ -24,13 +24,13 @@ public class RFOptionCell: UITableViewCell, RFSelectRowDelegate {
 	}
 
 	public func form_didSelectRow(indexPath: IndexPath, tableView: UITableView) {
-		SwiftyFormLog("will invoke")
+		RFLog("will invoke")
 		accessoryType = .checkmark
 
 		tableView.deselectRow(at: indexPath, animated: true)
 
 		innerDidSelectOption()
-		SwiftyFormLog("did invoke")
+		RFLog("did invoke")
 	}
 }
 

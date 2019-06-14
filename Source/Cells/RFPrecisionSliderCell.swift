@@ -22,7 +22,7 @@ public class RFPrecisionSliderCellModel {
 
 	public typealias SliderDidChangeBlock = (_ changeModel: SliderDidChangeModel) -> Void
 	var valueDidChange: SliderDidChangeBlock = { (changeModel: SliderDidChangeModel) in
-		SwiftyFormLog("value \(changeModel.value)  zoom \(changeModel.zoom)")
+		RFLog("value \(changeModel.value)  zoom \(changeModel.zoom)")
 	}
 
 	var actualValue: Double {
@@ -268,7 +268,7 @@ extension RFPrecisionSliderCellModel {
 		if instance.zoom > instance.maximumZoom {
 			instance.zoom = instance.maximumZoom
 		}
-		//SwiftyFormLog("slider model: \(instance)")
+		//RFLog("slider model: \(instance)")
 		return instance
 	}
 }
@@ -362,7 +362,7 @@ public class RFPrecisionSliderExpandedCell: UITableViewCell, RFCellHeightProvide
 		guard let model = collapsedCell?.model else {
 			return
 		}
-		SwiftyFormLog("set value \(value)")
+		RFLog("set value \(value)")
 
 		let decimalScale: Double = pow(Double(10), Double(model.decimalPlaces))
 		let scaledValue = Double(value) / decimalScale

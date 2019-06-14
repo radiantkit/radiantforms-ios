@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import Foundation
 import XCTest
-@testable import SwiftyFORM
+@testable import RadiantForms
 
 class RFPrecisionSliderTests: XCTestCase {
 	func format0(_ value: Int) -> String {
