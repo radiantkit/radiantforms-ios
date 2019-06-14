@@ -4,6 +4,7 @@ import UIKit
 public class RFViewControllerCellModel {
 	public let title: String
 	public let placeholder: String
+    public var titleFont: RFFont = RFPreferredFontForTextStyle.body
 	public init(title: String, placeholder: String) {
 		self.title = title
 		self.placeholder = placeholder
@@ -20,7 +21,7 @@ public class RFViewControllerCell: UITableViewCell {
 		super.init(style: .value1, reuseIdentifier: nil)
 		accessoryType = .disclosureIndicator
 		textLabel?.text = model.title
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        textLabel?.font = model.titleFont.resolve()
 		detailTextLabel?.text = model.placeholder
 	}
 

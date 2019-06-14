@@ -17,6 +17,8 @@ public class RFDatePickerCellModel {
 	var date: Date = Date()
 	var expandCollapseWhenSelectingRow = true
 	var selectionStyle = UITableViewCell.SelectionStyle.default
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+    var valueFont: RFFont = RFPreferredFontForTextStyle.body
 
 	var valueDidChange: (Date) -> Void = { (date: Date) in
 		SwiftyFormLog("date \(date)")
@@ -56,8 +58,10 @@ public class RFDatePickerToggleCell: UITableViewCell, RFDontCollapseWhenScrollin
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = model.selectionStyle
 		textLabel?.text = model.title
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-
+        
+        textLabel?.font = model.titleFont.resolve()
+        detailTextLabel?.font = model.valueFont.resolve()
+        
 		updateValue()
 
 		assignDefaultColors()

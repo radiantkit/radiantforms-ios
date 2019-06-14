@@ -5,6 +5,9 @@ public struct RFStepperCellModel {
 	var title: String = ""
 	var value: Int = 0
 
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+    var valueFont: RFFont = RFPreferredFontForTextStyle.body
+
 	var valueDidChange: (Int) -> Void = { (value: Int) in
 		SwiftyFormLog("value \(value)")
 	}
@@ -20,10 +23,10 @@ public class RFStepperCell: UITableViewCell {
 		self.model = model
 		super.init(style: .value1, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        textLabel?.font = model.titleFont.resolve()
 		textLabel?.text = model.title
 
-		valueLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+		valueLabel.font = model.valueFont.resolve()
 		valueLabel.textColor = UIColor.gray
 		containerView.addSubview(stepperView)
 		containerView.addSubview(valueLabel)

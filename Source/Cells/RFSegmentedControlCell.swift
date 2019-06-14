@@ -7,6 +7,8 @@ public struct RFSegmentedControlCellModel {
 	var items: [String] = ["a", "b", "c"]
 	var value = 0
 
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+
 	var valueDidChange: (Int) -> Void = { (value: Int) in
 		SwiftyFormLog("value \(value)")
 	}
@@ -21,7 +23,7 @@ public class RFSegmentedControlCell: UITableViewCell {
 		self.segmentedControl = UISegmentedControl(items: model.items)
 		super.init(style: .default, reuseIdentifier: nil)
 		selectionStyle = .none
-        textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        textLabel?.font = model.titleFont.resolve()
         textLabel?.text = model.title
         segmentedControl.selectedSegmentIndex = model.value
 		segmentedControl.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
