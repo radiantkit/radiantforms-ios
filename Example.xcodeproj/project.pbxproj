@@ -673,7 +673,7 @@
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.neoneye.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.neoneye.RadiantForms.Example;
 				PRODUCT_NAME = Example;
 			};
 			name = Debug;
@@ -687,7 +687,7 @@
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "dk.neoneye.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.neoneye.RadiantForms.Example;
 				PRODUCT_NAME = Example;
 			};
 			name = Release;
