@@ -24,6 +24,11 @@ public class RFPreferredFontForTextStyle {
     public static var headline: RFFont {
         return RFPreferredFontForTextStyle(textStyle: .headline)
     }
+    
+    /// Creates a `UIFont.TextStyle.caption2`
+    public static var caption2: RFFont {
+        return RFPreferredFontForTextStyle(textStyle: .caption2)
+    }
 }
 
 extension RFPreferredFontForTextStyle: RFFont {
