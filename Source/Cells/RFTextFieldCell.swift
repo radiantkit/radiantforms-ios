@@ -11,6 +11,9 @@ public struct RFTextFieldCellModel {
 	var autocapitalizationType: UITextAutocapitalizationType = .none
 	var spellCheckingType: UITextSpellCheckingType = .no
 	var secureTextEntry = false
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
+    var valueFont: RFFont = RFPreferredFontForTextStyle.body
+    var errorLabelFont: RFFont = RFPreferredFontForTextStyle.caption2
 	var model: RFTextFieldFormItem! = nil
 
 	var valueDidChange: (String) -> Void = { (value: String) in
@@ -38,9 +41,9 @@ public class RFTextFieldCell: UITableViewCell {
 
 		selectionStyle = .none
 
-		titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-		textField.font  = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-		errorLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+		titleLabel.font = model.titleFont.resolve()
+		textField.font  = model.valueFont.resolve()
+		errorLabel.font = model.errorLabelFont.resolve()
 
 		errorLabel.textColor = UIColor.black
 		errorLabel.numberOfLines = 0
