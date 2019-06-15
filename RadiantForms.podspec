@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'RadiantForms'
-  s.version = '2.0-beta1'
+  s.version = '2.0-beta2'
   s.license = 'MIT'
   s.summary = 'RadiantForms is an iOS framework for creating forms'
   s.homepage = 'https://github.com/radiantkit/radiantforms-ios'

@@ -1,16 +1,11 @@
 ## 📄 Change Log
 
-### Pending
+### 2.0-beta1
 
- * Renamed from `TextFieldFormItemCell` to `TextFieldCell`.
- * Renamed from `TextFieldFormItemCellModel` to `TextFieldCellModel`.
- * Renamed from `TextCellState` to `TextFieldCell_State`.
- * Renamed from `TextFieldFormItemCellSizes` to `TextFieldCell_Sizes`.
- * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
- * Renamed from `ViewControllerFormItemCell` to `ViewControllerCell`.
- * Renamed from `ViewControllerFormItemCellModel` to `ViewControllerCellModel`.
- * Added `AmountFormItem` and `AmountCell`.
- * Added `FormItem.isHidden` that determines whether the field is shown/hidden.
+ * Renamed project from `SwiftyFORM` to `RadiantForms`.
+ * Added `RFAmountFormItem` and `RFAmountCell`.
+ * Added `RFFormItem.isHidden` that determines whether the field is shown/hidden.
+ * Preparations for custom theming.
  
 ### 1.7.0
 
