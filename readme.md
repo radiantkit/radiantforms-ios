@@ -110,5 +110,5 @@ Development happens in the [`develop`](https://github.com/radiantkit/radiantform
 
 
 <a href="mailto:neoneye@gmail.com?subject=Hire Simon Strandgaard">
-<img src="Documentation/hire_simon_strandgaard@2x.png" width="211" height="34"></a>
+<img src="readme_assets/hire_simon_strandgaard@2x.png" width="211" height="34"></a>
 
