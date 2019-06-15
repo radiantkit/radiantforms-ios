@@ -1,4 +1,4 @@
-<h3 align="center">RadiantForms</h3>
+<h1 align="center">RadiantForms</h1>
 
 ---
 
@@ -13,12 +13,6 @@
 Because form code is hard to write, hard to read, hard to reason about. Has a slow turn around time. Is painful to maintain.
 
 [SwiftyFORM demo on YouTube](https://youtu.be/PKbVJ91uQdA)
-
-Development happens in the [`develop`](https://github.com/radiantkit/radiantforms-ios/tree/develop) branch.
-
-
-<a href="mailto:neoneye@gmail.com?subject=Hire Simon Strandgaard">
-<img src="Documentation/hire_simon_strandgaard@2x.png" width="211" height="34"></a>
 
 
 ## Requirements
@@ -108,10 +102,16 @@ Then, run the following command:
 $ pod install
 ```
 
-# Communication
+# Development
+
+Development happens in the [`develop`](https://github.com/radiantkit/radiantforms-ios/tree/develop) branch.
 
 - If you want to contribute, submit a pull request.
 - If you found a bug, have suggestions or need help, please, open an issue.
 - If you need help, write me: neoneye@gmail.com
 - If you want to [give me](https://www.paypal.me/SimonStrandgaard) some motivation ;-)
+
+
+<a href="mailto:neoneye@gmail.com?subject=Hire Simon Strandgaard">
+<img src="Documentation/hire_simon_strandgaard@2x.png" width="211" height="34"></a>
 
