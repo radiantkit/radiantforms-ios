@@ -1,9 +1,9 @@
 <h1 align="center">RadiantForms</h1>
 
-[![Build Status](https://travis-ci.org/neoneye/SwiftyFORM.svg?branch=master)](https://travis-ci.org/neoneye/SwiftyFORM)
-[![Version](https://img.shields.io/cocoapods/v/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
-[![License](https://img.shields.io/cocoapods/l/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
+[![Build Status](https://travis-ci.org/radiantkit/radiantforms-ios.svg?branch=master)](https://travis-ci.org/radiantkit/radiantforms-ios)
+[![Version](https://img.shields.io/cocoapods/v/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
+[![License](https://img.shields.io/cocoapods/l/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
+[![Platform](https://img.shields.io/cocoapods/p/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
 
 ---
 
