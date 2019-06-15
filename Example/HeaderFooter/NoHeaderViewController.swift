@@ -1,21 +1,21 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
-import SwiftyFORM
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
+import RadiantForms
 
-class NoHeaderViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class NoHeaderViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "No Header"
 		builder.suppressHeaderForFirstSection = true
 
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += SectionFormItem()
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += SectionFormItem()
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
-		builder += StaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFSectionFormItem()
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFSectionFormItem()
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
+		builder += RFStaticTextFormItem().title("Empty Row")
 	}
 }

@@ -1,37 +1,37 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class ReloadingViewController: FormViewController {
+class ReloadingViewController: RFFormViewController {
 	var populateCount = 0
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		populateCount += 1
 
 		builder.navigationTitle = "Reload Form"
 		builder.toolbarMode = .none
 
-		builder += SectionHeaderTitleFormItem().title("Action")
+		builder += RFSectionHeaderTitleFormItem().title("Action")
 		builder += reloadButton
 
-		builder += SectionHeaderTitleFormItem().title("Populate")
-		builder += StaticTextFormItem().title("Number of reloads").value(String(populateCount))
+		builder += RFSectionHeaderTitleFormItem().title("Populate")
+		builder += RFStaticTextFormItem().title("Number of reloads").value(String(populateCount))
 
 		if populateCount & 1 == 1 {
-			builder += SectionHeaderTitleFormItem().title("Good")
-			builder += StaticTextFormItem().title("Cure cancer")
-			builder += StaticTextFormItem().title("World peace")
-			builder += StaticTextFormItem().title("Science")
+			builder += RFSectionHeaderTitleFormItem().title("Good")
+			builder += RFStaticTextFormItem().title("Cure cancer")
+			builder += RFStaticTextFormItem().title("World peace")
+			builder += RFStaticTextFormItem().title("Science")
 		} else {
-			builder += SectionHeaderTitleFormItem().title("Bad")
-			builder += StaticTextFormItem().title("Ignorance")
-			builder += StaticTextFormItem().title("Dictatorship")
-			builder += StaticTextFormItem().title("Polution")
+			builder += RFSectionHeaderTitleFormItem().title("Bad")
+			builder += RFStaticTextFormItem().title("Ignorance")
+			builder += RFStaticTextFormItem().title("Dictatorship")
+			builder += RFStaticTextFormItem().title("Polution")
 		}
 	}
 
-	lazy var reloadButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var reloadButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Reload Form"
 		instance.action = { [weak self] in
 			self?.reloadForm()

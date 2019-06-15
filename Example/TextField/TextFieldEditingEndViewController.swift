@@ -1,17 +1,17 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class TextFieldEditingEndViewController: FormViewController {
-    override func populate(_ builder: FormBuilder) {
+class TextFieldEditingEndViewController: RFFormViewController {
+    override func populate(_ builder: RFFormBuilder) {
         builder.navigationTitle = "Editing End"
         builder.demo_showInfo("Shows an alert after editing has finished")
-        builder += SectionHeaderTitleFormItem().title("Write a new nickname")
+        builder += RFSectionHeaderTitleFormItem().title("Write a new nickname")
         builder += textField
     }
 
-	lazy var textField: TextFieldFormItem = {
-		var instance = TextFieldFormItem()
+	lazy var textField: RFTextFieldFormItem = {
+		var instance = RFTextFieldFormItem()
 		instance.title = "Nickname"
 		instance.placeholder = "Example EvilBot1337"
 		instance.autocorrectionType = .no

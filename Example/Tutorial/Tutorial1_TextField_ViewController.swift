@@ -1,8 +1,8 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
-import SwiftyFORM
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
+import RadiantForms
 
-class Tutorial1_TextField_ViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += TextFieldFormItem().title("Email").placeholder("Please specify").keyboardType(.emailAddress)
+class Tutorial1_TextField_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFTextFieldFormItem().title("Email").placeholder("Please specify").keyboardType(.emailAddress)
 	}
 }

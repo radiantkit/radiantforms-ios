@@ -1,22 +1,22 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class TextFieldKeyboardTypesViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
+class TextFieldKeyboardTypesViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Keyboard Types"
 		builder.toolbarMode = .none
 		builder.demo_showInfo("Shows all the UIKeyboardType variants")
-		builder += TextFieldFormItem().styleClass("align").title("ASCIICapable").placeholder("Lorem Ipsum").keyboardType(.asciiCapable)
-		builder += TextFieldFormItem().title("NumbersAndPunctuation").placeholder("123.45").keyboardType(.numbersAndPunctuation)
-		builder += TextFieldFormItem().styleClass("align").title("URL").placeholder("example.com/blog").keyboardType(.URL)
-		builder += TextFieldFormItem().styleClass("align").title("NumberPad").placeholder("0123456789").keyboardType(.numberPad)
-		builder += TextFieldFormItem().styleClass("align").title("PhonePad").placeholder("+999#22;123456,27").keyboardType(.phonePad)
-		builder += TextFieldFormItem().styleClass("align").title("EmailAddress").placeholder("johnappleseed@apple.com").keyboardType(.emailAddress)
-		builder += TextFieldFormItem().styleClass("align").title("DecimalPad").placeholder("1234.5678").keyboardType(.decimalPad)
-		builder += TextFieldFormItem().styleClass("align").title("Twitter").placeholder("@user or #hashtag").keyboardType(.twitter)
-		builder += TextFieldFormItem().styleClass("align").title("WebSearch").placeholder("how to do this.").keyboardType(.webSearch)
+		builder += RFTextFieldFormItem().styleClass("align").title("ASCIICapable").placeholder("Lorem Ipsum").keyboardType(.asciiCapable)
+		builder += RFTextFieldFormItem().title("NumbersAndPunctuation").placeholder("123.45").keyboardType(.numbersAndPunctuation)
+		builder += RFTextFieldFormItem().styleClass("align").title("URL").placeholder("example.com/blog").keyboardType(.URL)
+		builder += RFTextFieldFormItem().styleClass("align").title("NumberPad").placeholder("0123456789").keyboardType(.numberPad)
+		builder += RFTextFieldFormItem().styleClass("align").title("PhonePad").placeholder("+999#22;123456,27").keyboardType(.phonePad)
+		builder += RFTextFieldFormItem().styleClass("align").title("EmailAddress").placeholder("johnappleseed@apple.com").keyboardType(.emailAddress)
+		builder += RFTextFieldFormItem().styleClass("align").title("DecimalPad").placeholder("1234.5678").keyboardType(.decimalPad)
+		builder += RFTextFieldFormItem().styleClass("align").title("Twitter").placeholder("@user or #hashtag").keyboardType(.twitter)
+		builder += RFTextFieldFormItem().styleClass("align").title("WebSearch").placeholder("how to do this.").keyboardType(.webSearch)
 		builder.alignLeftElementsWithClass("align")
-		builder += SectionFooterTitleFormItem().title("Footer text")
+		builder += RFSectionFooterTitleFormItem().title("Footer text")
 	}
 }

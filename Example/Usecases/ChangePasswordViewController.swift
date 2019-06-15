@@ -1,54 +1,54 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class ChangePasswordViewController: FormViewController {
+class ChangePasswordViewController: RFFormViewController {
 	override func loadView() {
 		super.loadView()
 		form_installSubmitButton()
 	}
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Password"
 		builder.toolbarMode = .simple
-		builder += SectionHeaderTitleFormItem().title("Your Old Password")
+		builder += RFSectionHeaderTitleFormItem().title("Your Old Password")
 		builder += passwordOld
-		builder += SectionHeaderTitleFormItem().title("Your New Password")
+		builder += RFSectionHeaderTitleFormItem().title("Your New Password")
 		builder += passwordNew
 		builder += passwordNewRepeated
 		builder.alignLeft([passwordOld, passwordNew, passwordNewRepeated])
 	}
 
-	lazy var passwordOld: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordOld: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Old password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 
-	lazy var passwordNew: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordNew: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("New password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 
-	lazy var passwordNewRepeated: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var passwordNewRepeated: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("Repeat password").password().placeholder("required")
 		instance.keyboardType = .numberPad
 		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigits, message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
+		instance.validate(RFCharacterSetSpecification.decimalDigits, message: "Must be digits")
+		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
+		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
 		}()
 }

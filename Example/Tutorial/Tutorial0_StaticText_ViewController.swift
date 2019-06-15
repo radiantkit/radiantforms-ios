@@ -1,8 +1,8 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
-import SwiftyFORM
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
+import RadiantForms
 
-class Tutorial0_StaticText_ViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += StaticTextFormItem().title("Hello").value("World")
+class Tutorial0_StaticText_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFStaticTextFormItem().title("Hello").value("World")
 	}
 }

@@ -1,58 +1,58 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class SegmentedControlsViewController: FormViewController {
+class SegmentedControlsViewController: RFFormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Segmented Controls"
-		builder += SectionHeaderTitleFormItem(title: "Please select")
+		builder += RFSectionHeaderTitleFormItem(title: "Please select")
 		builder += animal
 		builder += spicy
 		builder += drink
 		builder += popcorn
-		builder += SectionHeaderTitleFormItem(title: "World-wide delivery")
+		builder += RFSectionHeaderTitleFormItem(title: "World-wide delivery")
 		builder += submitButton
-		builder += SectionFooterTitleFormItem(title: "The animal may die during transport!")
-		builder += SectionFormItem()
+		builder += RFSectionFooterTitleFormItem(title: "The animal may die during transport!")
+		builder += RFSectionFormItem()
 		builder += randomizeButton
 	}
 
-	lazy var animal: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var animal: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Animal"
 		instance.items = ["Cat", "Dog", "Fish"]
 		return instance
 	}()
 
-	lazy var spicy: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var spicy: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Spicy"
 		instance.items = ["Hot", "Yes", "No"]
 		return instance
 	}()
 
-	lazy var drink: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var drink: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Drink"
 		instance.items = ["Beer", "Wine"]
 		return instance
 	}()
 
-	lazy var popcorn: SegmentedControlFormItem = {
-		let instance = SegmentedControlFormItem()
+	lazy var popcorn: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
 		instance.title = "Popcorn"
 		instance.items = ["S", "M", "XL", "XXL"]
 		instance.selected = 3
 		return instance
 	}()
 
-	lazy var submitButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var submitButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Place order"
 		instance.action = { [weak self] in
 			if let actualSelf = self {
-				actualSelf.form_simpleAlert("My Receipt", actualSelf.receipt)
+				actualSelf.rf_simpleAlert("My Receipt", actualSelf.receipt)
 			}
 		}
 		return instance
@@ -67,8 +67,8 @@ class SegmentedControlsViewController: FormViewController {
 		return s
 	}
 
-	lazy var randomizeButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var randomizeButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
 		instance.action = { [weak self] in
 			self?.randomize()
@@ -76,7 +76,7 @@ class SegmentedControlsViewController: FormViewController {
 		return instance
 	}()
 
-	func assignRandomValue(_ formItem: SegmentedControlFormItem) {
+	func assignRandomValue(_ formItem: RFSegmentedControlFormItem) {
 		let count = formItem.items.count
 		if count > 0 {
 			formItem.selected = randomInt(0, count - 1)

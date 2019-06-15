@@ -1,13 +1,13 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class LoadingCell: UITableViewCell, CellHeightProvider {
+class LoadingCell: UITableViewCell, RFCellHeightProvider {
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	var xibHeight: CGFloat = 160
 
 	static func createCell() throws -> LoadingCell {
-		let cell: LoadingCell = try Bundle.main.form_loadView("LoadingCell")
+		let cell: LoadingCell = try Bundle.main.rf_loadView("LoadingCell")
 		return cell
 	}
 

@@ -1,10 +1,10 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class DatePickerRangeViewController: FormViewController {
-	lazy var datePicker_time_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+class DatePickerRangeViewController: RFFormViewController {
+	lazy var datePicker_time_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// -(5 * 60 * 60 + 5 * 60 + 5) == -18305
@@ -12,8 +12,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// -5 * 24 * 60 * 60 == -432000
@@ -21,8 +21,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_min: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_min: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// -5 * 24 * 60 * 60 == -432000
@@ -30,8 +30,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_time_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// 5 * 60 * 60 + 5 * 60 + 5 == 18305
@@ -39,8 +39,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// 5 * 24 * 60 * 60 == 432000
@@ -48,8 +48,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_max: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_max: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// 5 * 24 * 60 * 60 == 432000
@@ -57,8 +57,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_time_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_time_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Time"
 		instance.datePickerMode = .time
 		// 5 * 60 * 60 + 5 * 60 + 5 == 18305
@@ -67,8 +67,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_date_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_date_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		// 5 * 24 * 60 * 60 == 432000
@@ -77,8 +77,8 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	lazy var datePicker_dateAndTime_minmax: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker_dateAndTime_minmax: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "DateAndTime"
 		instance.datePickerMode = .dateAndTime
 		// 5 * 24 * 60 * 60 == 432000
@@ -87,19 +87,19 @@ class DatePickerRangeViewController: FormViewController {
 		return instance
 		}()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Range"
 		builder.toolbarMode = .simple
 		builder.demo_showInfo("Demonstration of\nUIDatePicker with range")
-		builder += SectionHeaderTitleFormItem().title("Minimum limit")
+		builder += RFSectionHeaderTitleFormItem().title("Minimum limit")
 		builder += datePicker_time_min
 		builder += datePicker_date_min
 		builder += datePicker_dateAndTime_min
-		builder += SectionHeaderTitleFormItem().title("Maximum limit")
+		builder += RFSectionHeaderTitleFormItem().title("Maximum limit")
 		builder += datePicker_time_max
 		builder += datePicker_date_max
 		builder += datePicker_dateAndTime_max
-		builder += SectionHeaderTitleFormItem().title("Minimum and maximum limits")
+		builder += RFSectionHeaderTitleFormItem().title("Minimum and maximum limits")
 		builder += datePicker_time_minmax
 		builder += datePicker_date_minmax
 		builder += datePicker_dateAndTime_minmax

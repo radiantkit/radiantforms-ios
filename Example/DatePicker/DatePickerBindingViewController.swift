@@ -1,22 +1,22 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
-import SwiftyFORM
+import RadiantForms
 
-class DatePickerBindingViewController: FormViewController {
+class DatePickerBindingViewController: RFFormViewController {
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "DatePicker & Bindings"
 		builder.toolbarMode = .simple
-		builder += SectionHeaderTitleFormItem(title: "Always expanded")
+		builder += RFSectionHeaderTitleFormItem(title: "Always expanded")
 		builder += datePicker
 		builder += incrementButton
 		builder += decrementButton
 
-		builder += SectionFormItem()
+		builder += RFSectionFormItem()
 		builder += summary
 
-		builder += SectionFormItem()
-		builder += StaticTextFormItem().title("Collapse & expand")
+		builder += RFSectionFormItem()
+		builder += RFStaticTextFormItem().title("Collapse & expand")
 		builder += userName
 		builder += toggleDatePicker0
 		builder += toggleDatePicker1
@@ -25,8 +25,8 @@ class DatePickerBindingViewController: FormViewController {
 		updateSummary()
 	}
 
-	lazy var datePicker: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var datePicker: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Date"
 		instance.datePickerMode = .date
 		instance.behavior = .expandedAlways
@@ -36,8 +36,8 @@ class DatePickerBindingViewController: FormViewController {
 		return instance
 	}()
 
-	lazy var incrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var incrementButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Next Day"
 		instance.action = { [weak self] in
 			self?.increment()
@@ -45,8 +45,8 @@ class DatePickerBindingViewController: FormViewController {
 		return instance
 	}()
 
-	lazy var decrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
+	lazy var decrementButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
 		instance.title = "Previous Day"
 		instance.action = { [weak self] in
 			self?.decrement()
@@ -54,8 +54,8 @@ class DatePickerBindingViewController: FormViewController {
 		return instance
 	}()
 
-	lazy var summary: StaticTextFormItem = {
-		return StaticTextFormItem().title("Date").value("-")
+	lazy var summary: RFStaticTextFormItem = {
+		return RFStaticTextFormItem().title("Date").value("-")
 	}()
 
 	func updateSummary() {
@@ -84,32 +84,32 @@ class DatePickerBindingViewController: FormViewController {
 
 	// MARK: Collapse / expand
 
-	lazy var userName: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
+	lazy var userName: RFTextFieldFormItem = {
+		let instance = RFTextFieldFormItem()
 		instance.title("User Name").placeholder("required")
 		instance.keyboardType = .asciiCapable
 		instance.autocorrectionType = .no
 		return instance
 	}()
 
-	lazy var toggleDatePicker0: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker0: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 0"
 		instance.datePickerMode = .time
 		instance.behavior = .expanded
 		return instance
 	}()
 
-	lazy var toggleDatePicker1: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker1: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 1"
 		instance.datePickerMode = .time
 		instance.behavior = .collapsed
 		return instance
 	}()
 
-	lazy var toggleDatePicker2: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
+	lazy var toggleDatePicker2: RFDatePickerFormItem = {
+		let instance = RFDatePickerFormItem()
 		instance.title = "Toggle 2"
 		instance.datePickerMode = .time
 		instance.behavior = .collapsed

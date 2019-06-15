@@ -1,5 +1,17 @@
 ## 📄 Change Log
 
+### Pending
+
+ * Renamed from `TextFieldFormItemCell` to `TextFieldCell`.
+ * Renamed from `TextFieldFormItemCellModel` to `TextFieldCellModel`.
+ * Renamed from `TextCellState` to `TextFieldCell_State`.
+ * Renamed from `TextFieldFormItemCellSizes` to `TextFieldCell_Sizes`.
+ * Renamed from `CustomTextField` to `TextFieldCell_TextField`.
+ * Renamed from `ViewControllerFormItemCell` to `ViewControllerCell`.
+ * Renamed from `ViewControllerFormItemCellModel` to `ViewControllerCellModel`.
+ * Added `AmountFormItem` and `AmountCell`.
+ * Added `FormItem.isHidden` that determines whether the field is shown/hidden.
+ 
 ### 1.7.0
 
  * Upgraded from Xcode9.x to Xcode10.0

@@ -1,8 +1,8 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
-import SwiftyFORM
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
+import RadiantForms
 
-class Tutorial2_ChildViewController_ViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += ViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
+class Tutorial2_ChildViewController_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
 	}
 }

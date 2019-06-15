@@ -1,28 +1,28 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 import MessageUI
-import SwiftyFORM
+import RadiantForms
 
-class ReportViewController: FormViewController, MFMailComposeViewControllerDelegate {
-	let sendButton = ButtonFormItem()
+class ReportViewController: RFFormViewController, MFMailComposeViewControllerDelegate {
+	let sendButton = RFButtonFormItem()
 
-	override func populate(_ builder: FormBuilder) {
+	override func populate(_ builder: RFFormBuilder) {
 		configureButton()
 
 		builder.navigationTitle = "Report"
 		builder.demo_showInfo("Report a problem\nTroubleshooting\nNeed help")
-		builder += SectionHeaderTitleFormItem().title("Send report to the developer")
+		builder += RFSectionHeaderTitleFormItem().title("Send report to the developer")
 		builder += sendButton
 		
-		builder += SectionHeaderTitleFormItem().title("App info")
-		builder += StaticTextFormItem().title("Name").value(AppInfo.appName)
-		builder += StaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
-		builder += StaticTextFormItem().title("UTC").value(AppInfo.packageDate)
-		builder += StaticTextFormItem().title("Defines").value(AppInfo.defines)
+		builder += RFSectionHeaderTitleFormItem().title("App info")
+		builder += RFStaticTextFormItem().title("Name").value(AppInfo.appName)
+		builder += RFStaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
+		builder += RFStaticTextFormItem().title("UTC").value(AppInfo.packageDate)
+		builder += RFStaticTextFormItem().title("Defines").value(AppInfo.defines)
 
-		builder += SectionHeaderTitleFormItem().title("Device info")
-		builder += StaticTextFormItem().title("Device").value(AppInfo.deviceName)
-		builder += StaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
+		builder += RFSectionHeaderTitleFormItem().title("Device info")
+		builder += RFStaticTextFormItem().title("Device").value(AppInfo.deviceName)
+		builder += RFStaticTextFormItem().title("iOS").value(AppInfo.systemVersion)
 	}
 
 	func configureButton() {
@@ -37,13 +37,13 @@ class ReportViewController: FormViewController, MFMailComposeViewControllerDeleg
 			let mc = configuredMailComposeViewController()
 			present(mc, animated: true, completion: nil)
 		} else {
-			form_simpleAlert("Could Not Send Mail", "Your device could not send mail. Please check mail configuration and try again.")
+			rf_simpleAlert("Could Not Send Mail", "Your device could not send mail. Please check mail configuration and try again.")
 		}
 	}
 
 	func configuredMailComposeViewController() -> MFMailComposeViewController {
-		let emailTitle = "SwiftyFORM feedback"
-		let messageBody = "Insert a message to the user of your app, or write to the SwiftyFORM developer.\n---------\n\n\nHi Simon (the SwiftyFORM developer),\n\nI use your framework in my app.\n\nBest regards from Antarctica"
+		let emailTitle = "RadiantForms feedback"
+		let messageBody = "Insert a message to the user of your app, or write to the RadiantForms developer.\n---------\n\n\nHi Simon (the RadiantForms developer),\n\nI use your framework in my app.\n\nBest regards from Antarctica"
 		let toRecipents = ["neoneye@gmail.com"]
 
 		let mc = MFMailComposeViewController()
@@ -63,13 +63,17 @@ class ReportViewController: FormViewController, MFMailComposeViewControllerDeleg
 	func showMailResultAlert(_ result: MFMailComposeResult, error: Error?) {
 		switch result {
 		case .cancelled:
-			form_simpleAlert("Status", "Mail cancelled")
+			rf_simpleAlert("Status", "Mail cancelled")
 		case .saved:
-			form_simpleAlert("Status", "Mail saved")
+			rf_simpleAlert("Status", "Mail saved")
 		case .sent:
-			form_simpleAlert("Status", "Mail sent")
+			rf_simpleAlert("Status", "Mail sent")
 		case .failed:
-			form_simpleAlert("Mail failed", "error: \(String(describing: error))")
+			rf_simpleAlert("Mail failed", "error: \(String(describing: error))")
+		#if swift(>=5.0)
+		@unknown default:
+			rf_simpleAlert("Mail failed", "Encountered an unknown MFMailComposeResult")
+		#endif
 		}
 	}
 }

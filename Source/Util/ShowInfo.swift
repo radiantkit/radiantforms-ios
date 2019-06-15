@@ -1,7 +1,7 @@
-// MIT license. Copyright (c) 2018 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 
-extension FormBuilder {
+extension RFFormBuilder {
 	/// Install a text header.
 	///
  	/// The text can span multiple lines.
@@ -9,16 +9,16 @@ extension FormBuilder {
 	///
 	/// - parameter text: The text to be shown.
 	public func demo_showInfo(_ text: String) {
-		let headerView = SectionHeaderViewFormItem()
+		let headerView = RFSectionHeaderViewFormItem()
 		headerView.viewBlock = {
-			return InfoView(frame: CGRect(x: 0, y: 0, width: 0, height: 100), text: text)
+			return RFInfoView(frame: CGRect(x: 0, y: 0, width: 0, height: 100), text: text)
 		}
 		self.append(headerView)
 	}
 }
 
 /// Centered multiline text useful for headers
-public class InfoView: UIView {
+public class RFInfoView: UIView {
 	public let label: UILabel
 
 	public init(frame: CGRect, text: String) {
@@ -43,3 +43,6 @@ public class InfoView: UIView {
 		label.frame = CGRect(x: bounds.midX - size.width / 2, y: bounds.midY - size.height / 2, width: size.width, height: size.height)
 	}
 }
+
+@available(*, unavailable, renamed: "RFInfoView")
+typealias InfoView = RFInfoView
