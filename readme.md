@@ -1,10 +1,4 @@
-<h3 align="center">
-<a href="https://github.com/radiantkit/radiantforms-ios">
-<img src="Documentation/swiftyform_logo.png" alt="RadiantForms by Simon Strandgaard"/>
-<br />
-RadiantForms
-</a>
-</h3>
+<h3 align="center">RadiantForms</h3>
 
 ---
 
@@ -53,10 +47,11 @@ Development happens in the [`develop`](https://github.com/radiantkit/radiantform
 ### Tutorial 0 - Static text
 
 ```swift
-import SwiftyFORM
-class MyViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += StaticTextFormItem().title("Hello").value("World")
+import RadiantForms
+
+class Tutorial0_StaticText_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFStaticTextFormItem().title("Hello").value("World")
 	}
 }
 ```
@@ -64,10 +59,11 @@ class MyViewController: FormViewController {
 ### Tutorial 1 - TextField
 
 ```swift
-import SwiftyFORM
-class MyViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += TextFieldFormItem().title("Email").placeholder("Please specify").keyboardType(.emailAddress)
+import RadiantForms
+
+class Tutorial1_TextField_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFTextFieldFormItem().title("Email").placeholder("Please specify").keyboardType(.emailAddress)
 	}
 }
 ```
@@ -75,137 +71,12 @@ class MyViewController: FormViewController {
 ### Tutorial 2 - Open child view controller
 
 ```swift
-import SwiftyFORM
-class MyViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += ViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
+import RadiantForms
+
+class Tutorial2_ChildViewController_ViewController: RFFormViewController {
+	override func populate(_ builder: RFFormBuilder) {
+		builder += RFViewControllerFormItem().title("Go to view controller").viewController(FirstViewController.self)
 	}
-}
-```
-
-### Advanced - date picker
-
-![DatePicker with prev button and next button](https://github.com/neoneye/SwiftyFORM/raw/master/Documentation/datepicker_nextprev.jpg "DatePicker with prev button and next button")
-
-```swift
-class DatePickerBindingViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder += datePicker
-		builder += incrementButton
-		builder += decrementButton
-		builder += SectionFormItem()
-		builder += summary
-		updateSummary()
-	}
-	
-	lazy var datePicker: DatePickerFormItem = {
-		let instance = DatePickerFormItem()
-		instance.title = "Date"
-		instance.datePickerMode = .date
-		instance.behavior = .expandedAlways
-		instance.valueDidChangeBlock = { [weak self] _ in
-			self?.updateSummary()
-		}
-		return instance
-	}()
-	
-	lazy var incrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
-		instance.title = "Next Day"
-		instance.action = { [weak self] in
-			self?.increment()
-		}
-		return instance
-	}()
-	
-	lazy var decrementButton: ButtonFormItem = {
-		let instance = ButtonFormItem()
-		instance.title = "Previous Day"
-		instance.action = { [weak self] in
-			self?.decrement()
-		}
-		return instance
-	}()
-	
-	lazy var summary: StaticTextFormItem = {
-		return StaticTextFormItem().title("Date").value("-")
-	}()
-	
-	func updateSummary() {
-		summary.value = "\(datePicker.value)"
-	}
-	
-	func offsetDate(_ date: Date, days: Int) -> Date {
-		var dateComponents = DateComponents()
-		dateComponents.day = days
-		let calendar = Calendar.current
-		guard let resultDate = calendar.date(byAdding: dateComponents, to: date) else {
-			return date
-		}
-		return resultDate
-	}
-	
-	func increment() {
-		datePicker.setValue(offsetDate(datePicker.value, days: 1), animated: true)
-		updateSummary()
-	}
-
-	func decrement() {
-		datePicker.setValue(offsetDate(datePicker.value, days: -1), animated: true)
-		updateSummary()
-	}
-}
-```
-
-
-### Advanced - Validation
-
-![Change password form](https://github.com/neoneye/SwiftyFORM/raw/master/Documentation/change_password_form.gif "Change password form")
-
-```swift
-class ChangePasswordViewController: FormViewController {
-	override func populate(_ builder: FormBuilder) {
-		builder.navigationTitle = "Password"
-		builder += SectionHeaderTitleFormItem().title("Your Old Password")
-		builder += passwordOld
-		builder += SectionHeaderTitleFormItem().title("Your New Password")
-		builder += passwordNew
-		builder += passwordNewRepeated
-		builder.alignLeft([passwordOld, passwordNew, passwordNewRepeated])
-	}
-	
-	lazy var passwordOld: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
-		instance.title("Old password").password().placeholder("required")
-		instance.keyboardType = .numberPad
-		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigitCharacterSet(), message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
-		return instance
-		}()
-	
-	lazy var passwordNew: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
-		instance.title("New password").password().placeholder("required")
-		instance.keyboardType = .numberPad
-		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigitCharacterSet(), message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
-		return instance
-		}()
-	
-	lazy var passwordNewRepeated: TextFieldFormItem = {
-		let instance = TextFieldFormItem()
-		instance.title("Repeat password").password().placeholder("required")
-		instance.keyboardType = .numberPad
-		instance.autocorrectionType = .no
-		instance.validate(CharacterSetSpecification.decimalDigitCharacterSet(), message: "Must be digits")
-		instance.submitValidate(CountSpecification.min(4), message: "Length must be minimum 4 digits")
-		instance.validate(CountSpecification.max(6), message: "Length must be maximum 6 digits")
-		return instance
-		}()
 }
 ```
 
@@ -237,26 +108,6 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
-## Carthage
-
-[Link to demo project that shows a minimal SwiftyFORM app using Carthage](https://github.com/neoneye/SwiftyFORM-Carthage-Example).
-
-To integrate SwiftyFORM into your Xcode project using Carthage, specify it in your `Cartfile`:
-```
-github "neoneye/SwiftyFORM" ~> 1.4
-```
-
-Then, run the following command:
-```bash
-$ carthage update
-```
-
-Finally, add `SwiftyFORM.framework` (will be built by Carthage under `Carthage/Build/iOS/`) to your project's _Linked Frameworks and Libraries_ in the _General_ tab, and add a new _Run Script_ Build Phase:
-- Set `/bin/bash` as the shell
-- write `/usr/local/bin/carthage copy-frameworks` in the script body
-- add `$(SRCROOT)/Carthage/Build/iOS/SwiftyFORM.framework` to the input files 
-
 
 # Communication
 
