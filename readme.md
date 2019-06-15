@@ -1,12 +1,9 @@
-<h1 align="center">RadiantForms</h1>
+# RadiantForms
 
 [![Build Status](https://travis-ci.org/radiantkit/radiantforms-ios.svg?branch=master)](https://travis-ci.org/radiantkit/radiantforms-ios)
 [![Version](https://img.shields.io/cocoapods/v/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
 [![License](https://img.shields.io/cocoapods/l/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
 [![Platform](https://img.shields.io/cocoapods/p/RadiantForms.svg?style=flat)](http://cocoapods.org/pods/RadiantForms)
-
----
-
 
 **RadiantForms is an iOS framework for creating forms.**
 
