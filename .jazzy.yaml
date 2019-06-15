@@ -1,0 +1,7 @@
+# RadiantForms document generator jazzy settings
+
+copyright: Copyright 2019 RadiantKit
+author: Simon Strandgaard
+xcodebuild_arguments: [-target, RadientForms]
+clean: true
+output: ./Documentation
