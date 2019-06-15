@@ -1,18 +1,18 @@
 <h1 align="center">RadiantForms</h1>
 
----
-
 [![Build Status](https://travis-ci.org/neoneye/SwiftyFORM.svg?branch=master)](https://travis-ci.org/neoneye/SwiftyFORM)
 [![Version](https://img.shields.io/cocoapods/v/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
 [![License](https://img.shields.io/cocoapods/l/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
+
+---
 
 
 **RadiantForms is an iOS framework for creating forms.**
 
 Because form code is hard to write, hard to read, hard to reason about. Has a slow turn around time. Is painful to maintain.
 
-[SwiftyFORM demo on YouTube](https://youtu.be/PKbVJ91uQdA)
+[Demo on YouTube](https://youtu.be/PKbVJ91uQdA)
 
 
 ## Requirements
