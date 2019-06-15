@@ -1,13 +1,6 @@
-language:
-swift
+language: swift
 
-osx_image:
-xcode10.2
+osx_image: xcode10.2
 
 script: 
-- xcodebuild clean build test -project SwiftyFORM.xcodeproj -scheme SwiftyFORM -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6'
-
-branches:
-  only:
-  - master
-  - develop
+- xcodebuild clean build test -project RadiantForms.xcodeproj -scheme 'RadiantForms' -destination 'platform=iOS Simulator,name=iPhone 6s,OS=12.2'
