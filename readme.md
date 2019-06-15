@@ -6,7 +6,6 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
 [![License](https://img.shields.io/cocoapods/l/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyFORM.svg?style=flat)](http://cocoapods.org/pods/SwiftyFORM)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 **RadiantForms is an iOS framework for creating forms.**
