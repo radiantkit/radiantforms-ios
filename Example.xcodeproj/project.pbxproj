@@ -25,7 +25,6 @@
 		423D17071BAF3A9B00A9859F /* Area51.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423D17041BAF3A9B00A9859F /* Area51.storyboard */; };
 		423D17081BAF3A9B00A9859F /* GhostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D17051BAF3A9B00A9859F /* GhostsViewController.swift */; };
 		423E313E1D5BA98A0048D8C3 /* DatePickerBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423E313D1D5BA98A0048D8C3 /* DatePickerBindingViewController.swift */; };
-		4244C6941D6B864600FE1ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4244C6921D6B864600FE1ECB /* LaunchScreen.storyboard */; };
 		42589DB61B3447E1007CA8C1 /* DatePickerLocaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DAF1B3447E1007CA8C1 /* DatePickerLocaleViewController.swift */; };
 		42589DB71B3447E1007CA8C1 /* DatePickerRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DB01B3447E1007CA8C1 /* DatePickerRangeViewController.swift */; };
 		42589DB81B3447E1007CA8C1 /* DatePickerInitialValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42589DB11B3447E1007CA8C1 /* DatePickerInitialValueViewController.swift */; };
@@ -120,7 +119,6 @@
 		423D17041BAF3A9B00A9859F /* Area51.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Area51.storyboard; sourceTree = "<group>"; };
 		423D17051BAF3A9B00A9859F /* GhostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostsViewController.swift; sourceTree = "<group>"; };
 		423E313D1D5BA98A0048D8C3 /* DatePickerBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerBindingViewController.swift; sourceTree = "<group>"; };
-		4244C6931D6B864600FE1ECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42589DAF1B3447E1007CA8C1 /* DatePickerLocaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerLocaleViewController.swift; sourceTree = "<group>"; };
 		42589DB01B3447E1007CA8C1 /* DatePickerRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerRangeViewController.swift; sourceTree = "<group>"; };
 		42589DB11B3447E1007CA8C1 /* DatePickerInitialValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerInitialValueViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				42108D251B356C5B0067FEAA /* FirstViewController.swift */,
 				426798691D8DB160002275CA /* HeaderFooter */,
 				42CEBFA11A3BA2B50048E072 /* Images.xcassets */,
-				4244C6921D6B864600FE1ECB /* LaunchScreen.storyboard */,
 				4267986E1D8DB17B002275CA /* Non-RadiantForms */,
 				42589DC21B3447EA007CA8C1 /* Other */,
 				42B1BB451E82C1B40090156A /* Settings */,
@@ -472,7 +469,6 @@
 			files = (
 				42D005161B9631F400986B3B /* LoadingCell.xib in Resources */,
 				42CEBFA21A3BA2B50048E072 /* Images.xcassets in Resources */,
-				4244C6941D6B864600FE1ECB /* LaunchScreen.storyboard in Resources */,
 				420AC61C1F88D21000898C85 /* VoteViewController.storyboard in Resources */,
 				423D17071BAF3A9B00A9859F /* Area51.storyboard in Resources */,
 				42B1BB471E82C1C10090156A /* Settings.storyboard in Resources */,
@@ -544,17 +540,6 @@
 			targetProxy = 429F06BA22B41D050056FB8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4244C6921D6B864600FE1ECB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4244C6931D6B864600FE1ECB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		42CEBFB21A3BA2B50048E072 /* Debug */ = {
