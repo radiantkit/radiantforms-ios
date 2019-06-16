@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RFAmountCell Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/RFAmountCell" class="dashAnchor"></a>
+
+    <a title="RFAmountCell Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          RadiantForms Docs
+        </a>
+         (9% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">RadiantForms Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      RFAmountCell Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAmountCell.html">RFAmountCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAmountCell/TitleWidthMode.html">– TitleWidthMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAmountCellSizes.html">RFAmountCellSizes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:@M@RadiantForms@objc(cs)RFAmountCell_TextField">RFAmountCell_TextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAmountFormItem.html">RFAmountFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAndSpecification.html">RFAndSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAttributedTextCell.html">RFAttributedTextCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFAttributedTextFormItem.html">RFAttributedTextFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFButtonCell.html">RFButtonCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFButtonFormItem.html">RFButtonFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCharacterSetSpecification.html">RFCharacterSetSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCommandBlock.html">RFCommandBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCountSpecification.html">RFCountSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCustomFormItem.html">RFCustomFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCustomFormItem/Context.html">– Context</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFCustomFormItem/CustomFormItemError.html">– CustomFormItemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:12RadiantForms21RFDatePickerCellModelC">RFDatePickerCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDatePickerExpandedCell.html">RFDatePickerExpandedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDatePickerFormItem.html">RFDatePickerFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDatePickerFormItem/Behavior.html">– Behavior</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDatePickerToggleCell.html">RFDatePickerToggleCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDebugViewController.html">RFDebugViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFDumpVisitor.html">RFDumpVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFEdgeInsetLabel.html">RFEdgeInsetLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFEmailSpecification.html">RFEmailSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFalseSpecification.html">RFFalseSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFontStrategy_BoldTitle.html">RFFontStrategy_BoldTitle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFontStrategy_Default.html">RFFontStrategy_Default</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFormBuilder.html">RFFormBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFormBuilder/FormValidateResult.html">– FormValidateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFormItem.html">RFFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFormTableView.html">RFFormTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFFormViewController.html">RFFormViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFInfoView.html">RFInfoView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFKeyboardCompatibility.html">RFKeyboardCompatibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:12RadiantForms17RFKeyboardHandlerC">RFKeyboardHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFMetaFormItem.html">RFMetaFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFNotSpecification.html">RFNotSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOptionCell.html">RFOptionCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOptionPickerFormItem.html">RFOptionPickerFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOptionRowFormItem.html">RFOptionRowFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOptionRowModel.html">RFOptionRowModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOptionViewControllerCell.html">RFOptionViewControllerCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFOrSpecification.html">RFOrSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:12RadiantForms21RFPickerViewCellModelC">RFPickerViewCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPickerViewExpandedCell.html">RFPickerViewExpandedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPickerViewFormItem.html">RFPickerViewFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPickerViewFormItem/Behavior.html">– Behavior</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPickerViewToggleCell.html">RFPickerViewToggleCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderCellModel.html">RFPrecisionSliderCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderCellModel.html#/s:12RadiantForms26RFPrecisionSliderCellModelC0d9DidChangeF0V">– SliderDidChangeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderExpandedCell.html">RFPrecisionSliderExpandedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderFormItem.html">RFPrecisionSliderFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderFormItem/Behavior.html">– Behavior</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderFormItem/SliderDidChangeModel.html">– SliderDidChangeModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPrecisionSliderToggleCell.html">RFPrecisionSliderToggleCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPredicateSpecification.html">RFPredicateSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFPreferredFontForTextStyle.html">RFPreferredFontForTextStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFRegularExpressionSpecification.html">RFRegularExpressionSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSectionFooterTitleFormItem.html">RFSectionFooterTitleFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSectionFooterViewFormItem.html">RFSectionFooterViewFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/s:12RadiantForms17RFSectionFormItemC">RFSectionFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSectionHeaderTitleFormItem.html">RFSectionHeaderTitleFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSectionHeaderViewFormItem.html">RFSectionHeaderViewFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSegmentedControlCell.html">RFSegmentedControlCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSegmentedControlFormItem.html">RFSegmentedControlFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSimpleToolbar.html">RFSimpleToolbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSliderCell.html">RFSliderCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSliderFormItem.html">RFSliderFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFStaticTextCell.html">RFStaticTextCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFStaticTextFormItem.html">RFStaticTextFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFStepperCell.html">RFStepperCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFStepperFormItem.html">RFStepperFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSwitchCell.html">RFSwitchCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFSwitchFormItem.html">RFSwitchFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTableViewCellArray.html">RFTableViewCellArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTableViewCellArrayItem.html">RFTableViewCellArrayItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTableViewSection.html">RFTableViewSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTableViewSectionArray.html">RFTableViewSectionArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldAppearanceStrategy_Default.html">RFTextFieldAppearanceStrategy_Default</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldAppearanceStrategy_TintFirstResponder.html">RFTextFieldAppearanceStrategy_TintFirstResponder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldCell.html">RFTextFieldCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldCell/TitleWidthMode.html">– TitleWidthMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldCell_Sizes.html">RFTextFieldCell_Sizes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldCell_TextField.html">RFTextFieldCell_TextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextFieldFormItem.html">RFTextFieldFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextViewCell.html">RFTextViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTextViewFormItem.html">RFTextViewFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFThemeBuilder.html">RFThemeBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFTrueSpecification.html">RFTrueSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFValidator.html">RFValidator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFValidatorBuilder.html">RFValidatorBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFViewControllerCell.html">RFViewControllerCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFViewControllerCellModel.html">RFViewControllerCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFViewControllerFormItem.html">RFViewControllerFormItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RFViewControllerFormItemPopContext.html">RFViewControllerFormItemPopContext</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFDatePickerFormItemMode.html">RFDatePickerFormItemMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFDebugViewController_WhatToShow.html">RFDebugViewController_WhatToShow</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFTableViewSectionPart.html">RFTableViewSectionPart</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFTextFieldCell_State.html">RFTextFieldCell_State</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFToolbarMode.html">RFToolbarMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFValidateResult.html">RFValidateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RFValidateRule.html">RFValidateRule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Bundle/RFLoadViewError.html">– RFLoadViewError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/IndexPath.html">IndexPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms1nopyAA15RFSpecification_pAaC_pF">!(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms2neoiySbAA15RFSpecification_p_ypSgtF">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms1aoiyAA15RFSpecification_pAaC_p_AaC_ptF">&amp;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms2peoiyyAA13RFFormBuilderC_AA0D4ItemCtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms2eeoiySbAA15RFSpecification_p_ypSgtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms2eeoiySbAA16RFValidateResultO_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:12RadiantForms1ooiyAA15RFSpecification_pAaC_p_AaC_ptF">|(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFAccessoryButtonDelegate.html">RFAccessoryButtonDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFAssignAppearance.html">RFAssignAppearance</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFCellForRowDelegate.html">RFCellForRowDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFCellHeightProvider.html">RFCellHeightProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFCommandProtocol.html">RFCommandProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:12RadiantForms27RFDontCollapseWhenScrollingP">RFDontCollapseWhenScrolling</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFExpandedCell.html">RFExpandedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFFont.html">RFFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFFontStrategy.html">RFFontStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFFormItemVisitor.html">RFFormItemVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFSelectOptionDelegate.html">RFSelectOptionDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFSelectRowDelegate.html">RFSelectRowDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFSpecification.html">RFSpecification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFTextFieldAppearanceStrategy.html">RFTextFieldAppearanceStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RFWillDisplayCellDelegate.html">RFWillDisplayCellDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms17RFAmountCellModelV">RFAmountCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms25RFAttributedTextCellModelV">RFAttributedTextCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms17RFButtonCellModelV">RFButtonCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms31RFOptionViewControllerCellModelV">RFOptionViewControllerCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RFPrecisionSliderCellFormatter.html">RFPrecisionSliderCellFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms27RFSegmentedControlCellModelV">RFSegmentedControlCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms17RFSliderCellModelV">RFSliderCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms21RFStaticTextCellModelV">RFStaticTextCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms18RFStepperCellModelV">RFStepperCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms17RFSwitchCellModelV">RFSwitchCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms20RFTextFieldCellModelV">RFTextFieldCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms19RFTextViewCellModelV">RFTextViewCellModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:12RadiantForms27RFTextViewFormItemCellSizesV">RFTextViewFormItemCellSizes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RFTheme.html">RFTheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RFToggleExpandCollapse.html">RFToggleExpandCollapse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:12RadiantForms13RFAmountValuea">RFAmountValue</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>RFAmountCell</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RFAmountCell</span> <span class="p">:</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC5modelAA0cD5ModelVvp"></a>
+                    <a name="//apple_ref/swift/Property/model" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC5modelAA0cD5ModelVvp">model</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">model</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:12RadiantForms17RFAmountCellModelV">RFAmountCellModel</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC10titleLabelSo7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/titleLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC10titleLabelSo7UILabelCvp">titleLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="kt">UILabel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC9textFieldAA0cd5_TextF0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/textField" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC9textFieldAA0cd5_TextF0Cvp">textField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/c:@M@RadiantForms@objc(cs)RFAmountCell_TextField">RFAmountCell_TextField</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC5modelAcA0cD5ModelV_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(model:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC5modelAcA0cD5ModelV_tcfc">init(model:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">model</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:12RadiantForms17RFAmountCellModelV">RFAmountCellModel</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)initWithCoder:"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)initWithCoder:">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIAppearance"></a>
+                <a name="//apple_ref/swift/Section/UIAppearance" class="dashAnchor"></a>
+                <a href="#/UIAppearance">
+                  <h3 class="section-name">UIAppearance</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(py)titleLabel_textColor"></a>
+                    <a name="//apple_ref/swift/Property/titleLabel_textColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(py)titleLabel_textColor">titleLabel_textColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">titleLabel_textColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(py)rightView_textColor"></a>
+                    <a name="//apple_ref/swift/Property/rightView_textColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(py)rightView_textColor">rightView_textColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">rightView_textColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(py)textField_placeholderColor"></a>
+                    <a name="//apple_ref/swift/Property/textField_placeholderColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(py)textField_placeholderColor">textField_placeholderColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">textField_placeholderColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(py)textField_appearanceStrategy"></a>
+                    <a name="//apple_ref/swift/Property/textField_appearanceStrategy" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(py)textField_appearanceStrategy">textField_appearanceStrategy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">textField_appearanceStrategy</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RFTextFieldAppearanceStrategy.html">RFTextFieldAppearanceStrategy</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC19configureAppearance26whenContainedInInstancesOf5themeySaySo21UIAppearanceContainer_pXpG_AA7RFThemeVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/configureAppearance(whenContainedInInstancesOf:theme:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC19configureAppearance26whenContainedInInstancesOf5themeySaySo21UIAppearanceContainer_pXpG_AA7RFThemeVtFZ">configureAppearance(whenContainedInInstancesOf:theme:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">configureAppearance</span><span class="p">(</span><span class="n">whenContainedInInstancesOf</span> <span class="nv">containerTypes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIAppearanceContainer</span><span class="o">.</span><span class="k">Type</span><span class="p">],</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Structs/RFTheme.html">RFTheme</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/RightView,%20for%20unit%20indicators%20or%20currency%20codes"></a>
+                <a name="//apple_ref/swift/Section/RightView, for unit indicators or currency codes" class="dashAnchor"></a>
+                <a href="#/RightView,%20for%20unit%20indicators%20or%20currency%20codes">
+                  <h3 class="section-name">RightView, for unit indicators or currency codes</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC9rightViewSo7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/rightView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC9rightViewSo7UILabelCvp">rightView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">rightView</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Toolbar,%20Prev/Next%20Buttons"></a>
+                <a name="//apple_ref/swift/Section/Toolbar, Prev/Next Buttons" class="dashAnchor"></a>
+                <a href="#/Toolbar,%20Prev/Next%20Buttons">
+                  <h3 class="section-name">Toolbar, Prev/Next Buttons</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC7toolbarAA15RFSimpleToolbarCvp"></a>
+                    <a name="//apple_ref/swift/Property/toolbar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC7toolbarAA15RFSimpleToolbarCvp">toolbar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">toolbar</span><span class="p">:</span> <span class="kt"><a href="../Classes/RFSimpleToolbar.html">RFSimpleToolbar</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC20updateToolbarButtonsyyF"></a>
+                    <a name="//apple_ref/swift/Method/updateToolbarButtons()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC20updateToolbarButtonsyyF">updateToolbarButtons()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateToolbarButtons</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC12gotoPreviousyyF"></a>
+                    <a name="//apple_ref/swift/Method/gotoPrevious()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC12gotoPreviousyyF">gotoPrevious()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">gotoPrevious</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC8gotoNextyyF"></a>
+                    <a name="//apple_ref/swift/Method/gotoNext()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC8gotoNextyyF">gotoNext()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">gotoNext</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC15dismissKeyboardyyF"></a>
+                    <a name="//apple_ref/swift/Method/dismissKeyboard()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC15dismissKeyboardyyF">dismissKeyboard()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dismissKeyboard</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)handleTap"></a>
+                    <a name="//apple_ref/swift/Method/handleTap()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)handleTap">handleTap()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">handleTap</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC20tapGestureRecognizerSo05UITapfG0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/tapGestureRecognizer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC20tapGestureRecognizerSo05UITapfG0Cvp">tapGestureRecognizer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">tapGestureRecognizer</span><span class="p">:</span> <span class="kt">UITapGestureRecognizer</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC14TitleWidthModeO"></a>
+                    <a name="//apple_ref/swift/Enum/TitleWidthMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC14TitleWidthModeO">TitleWidthMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Classes/RFAmountCell/TitleWidthMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TitleWidthMode</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC14titleWidthModeAC05TitlefG0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/titleWidthMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC14titleWidthModeAC05TitlefG0Ovp">titleWidthMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">titleWidthMode</span><span class="p">:</span> <span class="kt">RFAmountCell</span><span class="o">.</span><span class="kt"><a href="../Classes/RFAmountCell/TitleWidthMode.html">TitleWidthMode</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC7computeAA0cD5SizesCyF"></a>
+                    <a name="//apple_ref/swift/Method/compute()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC7computeAA0cD5SizesCyF">compute()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">compute</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RFAmountCellSizes.html">RFAmountCellSizes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)layoutSubviews"></a>
+                    <a name="//apple_ref/swift/Method/layoutSubviews()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)layoutSubviews">layoutSubviews()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC23extractDigitsFromStringyS2SFZ"></a>
+                    <a name="//apple_ref/swift/Method/extractDigitsFromString(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC23extractDigitsFromStringyS2SFZ">extractDigitsFromString(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all non-digits, such as symbols, whitespace, formatting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">extractDigitsFromString</span><span class="p">(</span><span class="n">_</span> <span class="nv">formattedString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC19createInternalValueys6UInt64VSgSSF"></a>
+                    <a name="//apple_ref/swift/Method/createInternalValue(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC19createInternalValueys6UInt64VSgSSF">createInternalValue(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createInternalValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">digitsString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC12formatAmountySSs6UInt64VF"></a>
+                    <a name="//apple_ref/swift/Method/formatAmount(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC12formatAmountySSs6UInt64VF">formatAmount(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">formatAmount</span><span class="p">(</span><span class="n">_</span> <span class="nv">internalValue</span><span class="p">:</span> <span class="kt">UInt64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC20parseAndFormatAmountySSs6UInt64VF"></a>
+                    <a name="//apple_ref/swift/Method/parseAndFormatAmount(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC20parseAndFormatAmountySSs6UInt64VF">parseAndFormatAmount(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseAndFormatAmount</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:12RadiantForms13RFAmountValuea">RFAmountValue</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)valueDidChange"></a>
+                    <a name="//apple_ref/swift/Method/valueDidChange()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)valueDidChange">valueDidChange()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueDidChange</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC19setValueWithoutSyncyys6UInt64VF"></a>
+                    <a name="//apple_ref/swift/Method/setValueWithoutSync(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC19setValueWithoutSyncyys6UInt64VF">setValueWithoutSync(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setValueWithoutSync</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:12RadiantForms13RFAmountValuea">RFAmountValue</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIResponder"></a>
+                <a name="//apple_ref/swift/Section/UIResponder" class="dashAnchor"></a>
+                <a href="#/UIResponder">
+                  <h3 class="section-name">UIResponder</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(py)canBecomeFirstResponder"></a>
+                    <a name="//apple_ref/swift/Property/canBecomeFirstResponder" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(py)canBecomeFirstResponder">canBecomeFirstResponder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">canBecomeFirstResponder</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)becomeFirstResponder"></a>
+                    <a name="//apple_ref/swift/Method/becomeFirstResponder()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)becomeFirstResponder">becomeFirstResponder()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">becomeFirstResponder</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RadiantForms@objc(cs)RFAmountCell(im)resignFirstResponder"></a>
+                    <a name="//apple_ref/swift/Method/resignFirstResponder()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RadiantForms@objc(cs)RFAmountCell(im)resignFirstResponder">resignFirstResponder()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">resignFirstResponder</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldDidBeginEditing:"></a>
+                    <a name="//apple_ref/swift/Method/textFieldDidBeginEditing(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldDidBeginEditing:">textFieldDidBeginEditing(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">textFieldDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldDidEndEditing:"></a>
+                    <a name="//apple_ref/swift/Method/textFieldDidEndEditing(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldDidEndEditing:">textFieldDidEndEditing(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">textFieldDidEndEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textField:shouldChangeCharactersInRange:replacementString:"></a>
+                    <a name="//apple_ref/swift/Method/textField(_:shouldChangeCharactersIn:replacementString:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textField:shouldChangeCharactersInRange:replacementString:">textField(_:shouldChangeCharactersIn:replacementString:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">textField</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">,</span> <span class="n">shouldChangeCharactersIn</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSRange</span><span class="p">,</span> <span class="n">replacementString</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldShouldReturn:"></a>
+                    <a name="//apple_ref/swift/Method/textFieldShouldReturn(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RadiantForms@objc(cs)RFAmountCell(im)textFieldShouldReturn:">textFieldShouldReturn(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">textFieldShouldReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC15form_cellHeight9indexPath9tableView12CoreGraphics7CGFloatV10Foundation05IndexI0V_So07UITableK0CtF"></a>
+                    <a name="//apple_ref/swift/Method/form_cellHeight(indexPath:tableView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC15form_cellHeight9indexPath9tableView12CoreGraphics7CGFloatV10Foundation05IndexI0V_So07UITableK0CtF">form_cellHeight(indexPath:tableView:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">form_cellHeight</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RadiantForms12RFAmountCellC16form_willDisplay9tableView17forRowAtIndexPathySo07UITableI0C_10Foundation0mN0VtF"></a>
+                    <a name="//apple_ref/swift/Method/form_willDisplay(tableView:forRowAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RadiantForms12RFAmountCellC16form_willDisplay9tableView17forRowAtIndexPathySo07UITableI0C_10Foundation0mN0VtF">form_willDisplay(tableView:forRowAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">form_willDisplay</span><span class="p">(</span><span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">forRowAtIndexPath</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://github.com/radiantkit/radiantforms-ios" target="_blank" rel="external">Simon Strandgaard</a>. All rights reserved. (Last updated: 2019-06-16)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

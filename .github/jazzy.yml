@@ -1,0 +1,21 @@
+# Documentation
+#
+# GitHub requires the dirname to be `docs` in the root directory.
+#
+# Steps to generate the "docs" directory
+#
+# PROMPT> pwd
+# /Users/username/deep/path/to/radiantforms-ios
+# PROMPT> jazzy --config .github/jazzy.yml
+# Using config file /Users/username/deep/path/to/radiantforms-ios/.github/jazzy.yml
+# Running xcodebuild
+# ...
+# building search index
+# jam out ♪♫ to your fresh new docs in `docs`
+# PROMPT>
+
+theme: fullwidth
+
+output: ../docs
+
+xcodebuild_arguments: [-workspace, RadiantForms.xcworkspace, -scheme, RadiantForms]
