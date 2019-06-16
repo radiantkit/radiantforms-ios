@@ -105,10 +105,5 @@ Development happens in the [`develop`](https://github.com/radiantkit/radiantform
 
 - If you want to contribute, submit a pull request.
 - If you found a bug, have suggestions or need help, please, open an issue.
-- If you need help, write me: neoneye@gmail.com
-- If you want to [give me](https://www.paypal.me/SimonStrandgaard) some motivation ;-)
-
-
-<a href="mailto:neoneye@gmail.com?subject=Hire Simon Strandgaard">
-<img src="readme_assets/hire_simon_strandgaard@2x.png" width="211" height="34"></a>
+- If you need help, feel free to write me: neoneye@gmail.com
 
