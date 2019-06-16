@@ -1,5 +1,12 @@
 ## 📄 Change Log
 
+### 2.0-beta7
+
+ * Activated Travis CI to check for every commit that the project still works.
+   See the [Travis CI dashboard](https://travis-ci.org/radiantkit/radiantforms-ios).
+ * Documentation can now be generated using jazzy.
+   See the [Documentation](https://radiantkit.github.io/radiantforms-ios/).
+
 ### 2.0-beta1
 
  * Renamed project from `SwiftyFORM` to `RadiantForms`.
