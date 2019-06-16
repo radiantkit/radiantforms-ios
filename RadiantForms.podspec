@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
   s.license = 'MIT'
   s.summary = 'RadiantForms is an iOS framework for creating forms'
   s.homepage = 'https://github.com/radiantkit/radiantforms-ios'
+  s.documentation_url = 'https://radiantkit.github.io/radiantforms-ios'
   s.authors = { 'Simon Strandgaard' => 'simon@iroots.dk' }
   s.source = { :git => 'https://github.com/radiantkit/radiantforms-ios.git', :tag => s.version }
   s.source_files = 'Source/*/*.swift'
