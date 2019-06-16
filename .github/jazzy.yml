@@ -19,3 +19,5 @@ theme: fullwidth
 output: ../docs
 
 xcodebuild_arguments: [-workspace, RadiantForms.xcworkspace, -scheme, RadiantForms]
+
+github_url: https://github.com/radiantkit/radiantforms-ios
