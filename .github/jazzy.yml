@@ -1,4 +1,8 @@
-# Steps to generate the "Documentation" directory
+# Documentation
+#
+# GitHub requires the dirname to be `docs` in the root directory.
+#
+# Steps to generate the "docs" directory
 #
 # PROMPT> pwd
 # /Users/username/deep/path/to/radiantforms-ios
@@ -7,11 +11,11 @@
 # Running xcodebuild
 # ...
 # building search index
-# jam out ♪♫ to your fresh new docs in `Documentation`
+# jam out ♪♫ to your fresh new docs in `docs`
 # PROMPT>
 
 theme: fullwidth
 
-output: ../Documentation
+output: ../docs
 
 xcodebuild_arguments: [-workspace, RadiantForms.xcworkspace, -scheme, RadiantForms]
