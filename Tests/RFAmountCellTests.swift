@@ -105,12 +105,27 @@ class RFAmountCellTests: XCTestCase {
     }
 
     func testNumberFormatter3() {
-        let formItem = RFAmountFormItem()
-        formItem.numberFormatter = self.createNumberFormattter(
-            fractionDigits: formItem.fractionDigits,
-            decimalSeparator: "_d_",
-            groupingSeparator: "_g_"
-        )
+		let formItem = RFAmountFormItem()
+		let numberFormatter: NumberFormatter = self.createNumberFormattter(
+			fractionDigits: formItem.fractionDigits,
+			decimalSeparator: "_d_",
+			groupingSeparator: "_g_"
+		)
+		do {
+			let internalValue: UInt64 = 1234567
+			let decimal0: Decimal = Decimal(internalValue)
+			let negativeExponent: Int = -3
+			let decimal1: Decimal = Decimal(sign: .plus, exponent: negativeExponent, significand: decimal0)
+			let value: Double = 12345.6789
+
+//			let s: String = numberFormatter.string(from: decimal1 as NSNumber) ?? ""
+			let s: String = numberFormatter.string(from: value as NSNumber) ?? ""
+			XCTAssertEqual(s, "1_g_234_d_567")
+			// With Xcode11.0 beta yields this error:
+			// XCTAssertEqual failed: ("12345.7") is not equal to ("1_g_234_d_567")
+			// I don't recall ever having this problem with Xcode10.
+		}
+        formItem.numberFormatter = numberFormatter
         let cell: RFAmountCell = createCell(formItem)
         XCTAssertEqual(cell.formatAmount(0), "0_d_000")
         XCTAssertEqual(cell.formatAmount(1), "0_d_001")
@@ -139,17 +154,29 @@ class RFAmountCellTests: XCTestCase {
 
     func createNumberFormattter(fractionDigits: UInt8, decimalSeparator: String, groupingSeparator: String) -> NumberFormatter {
         let f = NumberFormatter()
+//		f.formatterBehavior = .behavior10_4
+		f.formatterBehavior = .default
         f.numberStyle = .decimal
+//		f.numberStyle = .currency
+//		f.numberStyle = .currencyAccounting
+//		f.numberStyle = .currencyISOCode
+
         f.currencyCode = ""
         f.currencySymbol = ""
         f.currencyGroupingSeparator = ""
         f.perMillSymbol = ""
         f.groupingSeparator = groupingSeparator
+		f.groupingSize = 3
+		f.usesGroupingSeparator = true
+		f.usesSignificantDigits = true
+		f.generatesDecimalNumbers = true
         f.minimumFractionDigits = Int(fractionDigits)
         f.maximumFractionDigits = Int(fractionDigits)
         f.negativeSuffix = ""
         f.negativePrefix = "-"
         f.decimalSeparator = decimalSeparator
+		f.locale = Locale(identifier: "en_US")
+//		f.locale = Locale(identifier: "da_DK")
         return f
     }
 }
