@@ -10,7 +10,7 @@ public struct RFTheme {
     internal var amountCell: RFTheme_AmountCell
     internal let buttonCell: RFTheme_ButtonCell
     internal let datePickerCell: RFTheme_DatePickerCell
-    internal let optionViewControllerCell: RFTheme_OptionViewControllerCell
+    internal var optionViewControllerCell: RFTheme_OptionViewControllerCell
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let switchCell: RFTheme_SwitchCell
@@ -99,6 +99,7 @@ internal enum RFTheme_DatePickerCell {
 
 internal enum RFTheme_OptionViewControllerCell {
     case lightTheme, darkTheme
+    indirect case detailTextLabel_textColor(color: UIColor, theme: RFTheme_OptionViewControllerCell)
 }
 
 internal enum RFTheme_SegmentedControlCell {
@@ -346,6 +347,8 @@ internal extension RFTheme_OptionViewControllerCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        case .detailTextLabel_textColor(_, let theme):
+            return theme.textLabel_textColor
         }
     }
     
@@ -355,6 +358,8 @@ internal extension RFTheme_OptionViewControllerCell {
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .detailTextLabel_textColor(let color, _):
+            return color
         }
     }
 }
