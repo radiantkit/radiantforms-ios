@@ -505,6 +505,15 @@ internal extension RFTheme_ViewControllerCell {
             return UIColor.white
         }
     }
+
+    var detailTextLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        }
+    }
 }
 
 internal extension RFTheme_NavigationBar {

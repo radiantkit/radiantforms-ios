@@ -32,10 +32,12 @@ public class RFViewControllerCell: UITableViewCell {
     // MARK: - UIAppearance
     
     @objc public dynamic var textLabel_textColor: UIColor?
-    
+    @objc public dynamic var detailTextLabel_textColor: UIColor?
+
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         let appearanceProxy: RFViewControllerCell = RFViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
         appearanceProxy.textLabel_textColor = theme.viewControllerCell.textLabel_textColor
+        appearanceProxy.detailTextLabel_textColor = theme.viewControllerCell.detailTextLabel_textColor
     }
 }
 
@@ -53,6 +55,7 @@ extension RFViewControllerCell: RFSelectRowDelegate {
 extension RFViewControllerCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
+        self.detailTextLabel?.textColor = self.detailTextLabel_textColor
     }
 }
 
