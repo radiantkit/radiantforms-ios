@@ -166,5 +166,8 @@ class SignUpViewController: RFFormViewController {
 
 }
 
-class SignUpViewController_Dark: SignUpViewController {}
-class SignUpViewController_Light: SignUpViewController {}
+class SignUpViewController_DarkDefault: SignUpViewController {}
+class SignUpViewController_LightDefault: SignUpViewController {}
+
+class SignUpViewController_DarkFun: SignUpViewController {}
+class SignUpViewController_LightFun: SignUpViewController {}
