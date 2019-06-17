@@ -16,6 +16,7 @@ class SignUpViewController: RFFormViewController {
 		builder += userName
 		builder += password
 		builder += email
+        builder += role
 		builder += maleOrFemale
 		builder += birthday
 		builder.alignLeft([userName, password, email])
@@ -40,7 +41,15 @@ class SignUpViewController: RFFormViewController {
 		return instance
 		}()
 
-	lazy var maleOrFemale: RFViewControllerFormItem = {
+    lazy var role: RFOptionPickerFormItem = {
+        let instance = RFOptionPickerFormItem()
+        instance.title("Role").placeholder("required")
+        instance.append("User").append("Admin").append("Tester")
+        instance.selectOptionWithTitle("User")
+        return instance
+    }()
+
+    lazy var maleOrFemale: RFViewControllerFormItem = {
 		let instance = RFViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
 		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
