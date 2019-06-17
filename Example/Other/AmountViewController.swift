@@ -208,5 +208,8 @@ class AmountViewController: RFFormViewController {
     }()
 }
 
-class AmountViewController_Dark: AmountViewController {}
-class AmountViewController_Light: AmountViewController {}
+class AmountViewController_DarkDefault: AmountViewController {}
+class AmountViewController_LightDefault: AmountViewController {}
+
+class AmountViewController_DarkFun: AmountViewController {}
+class AmountViewController_LightFun: AmountViewController {}

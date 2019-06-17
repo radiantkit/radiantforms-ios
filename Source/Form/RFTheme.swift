@@ -7,13 +7,13 @@ public struct RFTheme {
     internal let sectionHeader: RFTheme_SectionHeader
     internal let sectionFooter: RFTheme_SectionFooter
     internal let cellBackground: RFTheme_CellBackground
-    internal let amountCell: RFTheme_AmountCell
+    internal var amountCell: RFTheme_AmountCell
     internal let buttonCell: RFTheme_ButtonCell
     internal let datePickerCell: RFTheme_DatePickerCell
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let switchCell: RFTheme_SwitchCell
-    internal let textFieldCell: RFTheme_TextFieldCell
+    internal var textFieldCell: RFTheme_TextFieldCell
     internal let viewControllerCell: RFTheme_ViewControllerCell
     internal let navigationBar: RFTheme_NavigationBar
     internal let toolBar: RFTheme_ToolBar
@@ -81,6 +81,9 @@ internal enum RFTheme_CellBackground {
 
 internal enum RFTheme_AmountCell {
     case lightTheme, darkTheme
+    indirect case textField_textColor(color: UIColor, theme: RFTheme_AmountCell)
+    indirect case textField_tintColor(color: UIColor, theme: RFTheme_AmountCell)
+    indirect case textField_appearanceStrategy_useTintFirstResponder(theme: RFTheme_AmountCell)
 }
 
 internal enum RFTheme_ButtonCell {
@@ -105,6 +108,9 @@ internal enum RFTheme_SwitchCell {
 
 internal enum RFTheme_TextFieldCell {
     case lightTheme, darkTheme
+    indirect case textField_textColor(color: UIColor, theme: RFTheme_TextFieldCell)
+    indirect case textField_tintColor(color: UIColor, theme: RFTheme_TextFieldCell)
+    indirect case textField_appearanceStrategy_useTintFirstResponder(theme: RFTheme_TextFieldCell)
 }
 
 internal enum RFTheme_ViewControllerCell {
@@ -182,6 +188,12 @@ internal extension RFTheme_AmountCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        case .textField_textColor(_, let theme):
+            return theme.titleLabel_textColor
+        case .textField_tintColor(_, let theme):
+            return theme.titleLabel_textColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.titleLabel_textColor
         }
     }
 
@@ -191,6 +203,12 @@ internal extension RFTheme_AmountCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        case .textField_textColor(_, let theme):
+            return theme.rightView_textColor
+        case .textField_tintColor(_, let theme):
+            return theme.rightView_textColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.rightView_textColor
         }
     }
 
@@ -200,6 +218,12 @@ internal extension RFTheme_AmountCell {
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .textField_textColor(let color, _):
+            return color
+        case .textField_tintColor(_, let theme):
+            return theme.textField_textColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_textColor
         }
     }
     
@@ -209,6 +233,12 @@ internal extension RFTheme_AmountCell {
             return .light
         case .darkTheme:
             return .dark
+        case .textField_textColor(_, let theme):
+            return theme.textField_keyboardAppearance
+        case .textField_tintColor(_, let theme):
+            return theme.textField_keyboardAppearance
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_keyboardAppearance
         }
     }
 
@@ -218,6 +248,12 @@ internal extension RFTheme_AmountCell {
             return UIColor(white: 0.7, alpha: 1)
         case .darkTheme:
             return UIColor(white: 0.4, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_placeholderColor
+        case .textField_tintColor(_, let theme):
+            return theme.textField_placeholderColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_placeholderColor
         }
     }
 
@@ -227,14 +263,32 @@ internal extension RFTheme_AmountCell {
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_tintColor
+        case .textField_tintColor(let color, _):
+            return color
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_tintColor
         }
     }
     
     var textField_appearanceStrategy: RFTextFieldAppearanceStrategy {
-        return RFTextFieldAppearanceStrategy_Default(
-            tintColor: self.textField_tintColor,
-            textColor: self.textField_textColor
-        )
+        switch self {
+        case .lightTheme, .darkTheme:
+            return RFTextFieldAppearanceStrategy_Default(
+                tintColor: self.textField_tintColor,
+                textColor: self.textField_textColor
+            )
+        case .textField_textColor(_, let theme):
+            return theme.textField_appearanceStrategy
+        case .textField_tintColor(_, let theme):
+            return theme.textField_appearanceStrategy
+        case .textField_appearanceStrategy_useTintFirstResponder(_):
+            return RFTextFieldAppearanceStrategy_TintFirstResponder(
+                tintColor: self.textField_tintColor,
+                textColor: self.textField_textColor
+            )
+        }
     }
 }
 
@@ -349,6 +403,12 @@ internal extension RFTheme_TextFieldCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        case .textField_textColor(_, let theme):
+            return theme.titleLabel_textColor
+        case .textField_tintColor(_, let theme):
+            return theme.titleLabel_textColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.titleLabel_textColor
         }
     }
     
@@ -358,6 +418,12 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .textField_textColor(let color, _):
+            return color
+        case .textField_tintColor(_, let theme):
+            return theme.textField_textColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_textColor
         }
     }
     
@@ -367,6 +433,12 @@ internal extension RFTheme_TextFieldCell {
             return .light
         case .darkTheme:
             return .dark
+        case .textField_textColor(_, let theme):
+            return theme.textField_keyboardAppearance
+        case .textField_tintColor(_, let theme):
+            return theme.textField_keyboardAppearance
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_keyboardAppearance
         }
     }
     
@@ -376,6 +448,12 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(white: 0.7, alpha: 1)
         case .darkTheme:
             return UIColor(white: 0.4, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_placeholderColor
+        case .textField_tintColor(_, let theme):
+            return theme.textField_placeholderColor
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_placeholderColor
         }
     }
     
@@ -385,14 +463,32 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_tintColor
+        case .textField_tintColor(let color, _):
+            return color
+        case .textField_appearanceStrategy_useTintFirstResponder(let theme):
+            return theme.textField_tintColor
         }
     }
     
     var textField_appearanceStrategy: RFTextFieldAppearanceStrategy {
-        return RFTextFieldAppearanceStrategy_Default(
-            tintColor: self.textField_tintColor,
-            textColor: self.textField_textColor
-        )
+        switch self {
+        case .lightTheme, .darkTheme:
+            return RFTextFieldAppearanceStrategy_Default(
+                tintColor: self.textField_tintColor,
+                textColor: self.textField_textColor
+            )
+        case .textField_textColor(_, let theme):
+            return theme.textField_appearanceStrategy
+        case .textField_tintColor(_, let theme):
+            return theme.textField_appearanceStrategy
+        case .textField_appearanceStrategy_useTintFirstResponder(_):
+            return RFTextFieldAppearanceStrategy_TintFirstResponder(
+                tintColor: self.textField_tintColor,
+                textColor: self.textField_textColor
+            )
+        }
     }
     
     var errorLabel_textColor: UIColor {

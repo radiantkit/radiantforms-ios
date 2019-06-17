@@ -10,16 +10,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let builder = RFThemeBuilder.light
-            builder.tintColor = UIColor.red
             builder.apply()
-            builder.applyTo(AmountViewController_Light.self)
-            builder.applyTo(SignUpViewController_Light.self)
+        }
+		do {
+			let builder = RFThemeBuilder.dark
+			builder.applyTo(AmountViewController_DarkDefault.self)
+			builder.applyTo(SignUpViewController_DarkDefault.self)
+		}
+        do {
+            let builder = RFThemeBuilder.light
+            builder.tintColor = UIColor.green
+            builder.useTintFirstResponderStrategy()
+            builder.applyTo(AmountViewController_LightFun.self)
+            builder.applyTo(SignUpViewController_LightFun.self)
         }
         do {
             let builder = RFThemeBuilder.dark
-            builder.tintColor = UIColor.red
-            builder.applyTo(AmountViewController_Dark.self)
-            builder.applyTo(SignUpViewController_Dark.self)
+            builder.tintColor = UIColor.orange
+            builder.useTintFirstResponderStrategy()
+            builder.applyTo(AmountViewController_DarkFun.self)
+            builder.applyTo(SignUpViewController_DarkFun.self)
         }
 
         let vc = FirstViewController()

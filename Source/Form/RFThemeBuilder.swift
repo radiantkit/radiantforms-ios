@@ -39,7 +39,18 @@ public class RFThemeBuilder: NSObject {
             return self._tintColor
         }
         set {
+            if let color: UIColor = newValue {
+                theme.amountCell = RFTheme_AmountCell.textField_textColor(color: color, theme: theme.amountCell)
+                theme.amountCell = RFTheme_AmountCell.textField_tintColor(color: color, theme: theme.amountCell)
+                theme.textFieldCell = RFTheme_TextFieldCell.textField_textColor(color: color, theme: theme.textFieldCell)
+                theme.textFieldCell = RFTheme_TextFieldCell.textField_tintColor(color: color, theme: theme.textFieldCell)
+            }
             self._tintColor = newValue
         }
+    }
+    
+    @objc public func useTintFirstResponderStrategy() {
+        theme.amountCell = RFTheme_AmountCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.amountCell)
+        theme.textFieldCell = RFTheme_TextFieldCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.textFieldCell)
     }
 }
