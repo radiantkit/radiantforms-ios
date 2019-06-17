@@ -13,7 +13,7 @@ public struct RFTheme {
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let switchCell: RFTheme_SwitchCell
-    internal let textFieldCell: RFTheme_TextFieldCell
+    internal var textFieldCell: RFTheme_TextFieldCell
     internal let viewControllerCell: RFTheme_ViewControllerCell
     internal let navigationBar: RFTheme_NavigationBar
     internal let toolBar: RFTheme_ToolBar
@@ -105,6 +105,8 @@ internal enum RFTheme_SwitchCell {
 
 internal enum RFTheme_TextFieldCell {
     case lightTheme, darkTheme
+    indirect case textField_textColor(color: UIColor, theme: RFTheme_TextFieldCell)
+    indirect case textField_tintColor(color: UIColor, theme: RFTheme_TextFieldCell)
 }
 
 internal enum RFTheme_ViewControllerCell {
@@ -349,6 +351,10 @@ internal extension RFTheme_TextFieldCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        case .textField_textColor(_, let theme):
+            return theme.titleLabel_textColor
+        case .textField_tintColor(_, let theme):
+            return theme.titleLabel_textColor
         }
     }
     
@@ -358,6 +364,10 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .textField_textColor(let color, _):
+            return color
+        case .textField_tintColor(_, let theme):
+            return theme.textField_textColor
         }
     }
     
@@ -367,6 +377,10 @@ internal extension RFTheme_TextFieldCell {
             return .light
         case .darkTheme:
             return .dark
+        case .textField_textColor(_, let theme):
+            return theme.textField_keyboardAppearance
+        case .textField_tintColor(_, let theme):
+            return theme.textField_keyboardAppearance
         }
     }
     
@@ -376,6 +390,10 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(white: 0.7, alpha: 1)
         case .darkTheme:
             return UIColor(white: 0.4, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_placeholderColor
+        case .textField_tintColor(_, let theme):
+            return theme.textField_placeholderColor
         }
     }
     
@@ -385,6 +403,10 @@ internal extension RFTheme_TextFieldCell {
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
         case .darkTheme:
             return UIColor(red: 0, green: 0.45, blue: 1, alpha: 1)
+        case .textField_textColor(_, let theme):
+            return theme.textField_tintColor
+        case .textField_tintColor(let color, _):
+            return color
         }
     }
     

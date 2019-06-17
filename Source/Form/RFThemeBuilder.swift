@@ -39,6 +39,10 @@ public class RFThemeBuilder: NSObject {
             return self._tintColor
         }
         set {
+            if let color: UIColor = newValue {
+                theme.textFieldCell = RFTheme_TextFieldCell.textField_textColor(color: color, theme: theme.textFieldCell)
+                theme.textFieldCell = RFTheme_TextFieldCell.textField_tintColor(color: color, theme: theme.textFieldCell)
+            }
             self._tintColor = newValue
         }
     }
