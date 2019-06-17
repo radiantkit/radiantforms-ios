@@ -18,6 +18,7 @@ public struct RFTheme {
     internal let viewControllerCell: RFTheme_ViewControllerCell
     internal let navigationBar: RFTheme_NavigationBar
     internal let toolBar: RFTheme_ToolBar
+    internal var fontStrategy: RFTheme_FontStrategy
     
     public static func lightTheme() -> RFTheme {
         return RFTheme(
@@ -36,7 +37,8 @@ public struct RFTheme {
             textFieldCell: .lightTheme,
             viewControllerCell: .lightTheme,
             navigationBar: .lightTheme,
-            toolBar: .lightTheme
+            toolBar: .lightTheme,
+            fontStrategy: .defaultStrategy
         )
     }
     
@@ -57,7 +59,8 @@ public struct RFTheme {
             textFieldCell: .darkTheme,
             viewControllerCell: .darkTheme,
             navigationBar: .darkTheme,
-            toolBar: .darkTheme
+            toolBar: .darkTheme,
+            fontStrategy: .defaultStrategy
         )
     }
 }
@@ -131,6 +134,11 @@ internal enum RFTheme_NavigationBar {
 
 internal enum RFTheme_ToolBar {
     case lightTheme, darkTheme
+}
+
+internal enum RFTheme_FontStrategy {
+    case defaultStrategy
+    case boldTitle
 }
 
 
@@ -584,6 +592,17 @@ internal extension RFTheme_ToolBar {
             return UIColor.blue
         case .darkTheme:
             return UIColor.white
+        }
+    }
+}
+
+internal extension RFTheme_FontStrategy {
+    func resolveFontStrategy() -> RFFontStrategy {
+        switch self {
+        case .defaultStrategy:
+            return RFFontStrategy_Default()
+        case .boldTitle:
+            return RFFontStrategy_BoldTitle()
         }
     }
 }
