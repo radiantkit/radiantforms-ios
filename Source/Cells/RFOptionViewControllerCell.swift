@@ -92,6 +92,24 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 
 		RFLog("did invoke")
 	}
+
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    @objc public dynamic var detailTextLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        let appearanceProxy: RFOptionViewControllerCell = RFOptionViewControllerCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.optionViewControllerCell.textLabel_textColor
+        appearanceProxy.detailTextLabel_textColor = theme.optionViewControllerCell.detailTextLabel_textColor
+    }
+}
+
+extension RFOptionViewControllerCell: RFWillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+        self.detailTextLabel?.textColor = self.detailTextLabel_textColor
+    }
 }
 
 

@@ -10,6 +10,7 @@ public struct RFTheme {
     internal var amountCell: RFTheme_AmountCell
     internal let buttonCell: RFTheme_ButtonCell
     internal let datePickerCell: RFTheme_DatePickerCell
+    internal var optionViewControllerCell: RFTheme_OptionViewControllerCell
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let switchCell: RFTheme_SwitchCell
@@ -28,6 +29,7 @@ public struct RFTheme {
             amountCell: .lightTheme,
             buttonCell: .lightTheme,
             datePickerCell: .lightTheme,
+            optionViewControllerCell: .lightTheme,
             segmentedControlCell: .lightTheme,
             stepperCell: .lightTheme,
             switchCell: .lightTheme,
@@ -48,6 +50,7 @@ public struct RFTheme {
             amountCell: .darkTheme,
             buttonCell: .darkTheme,
             datePickerCell: .darkTheme,
+            optionViewControllerCell: .darkTheme,
             segmentedControlCell: .darkTheme,
             stepperCell: .darkTheme,
             switchCell: .darkTheme,
@@ -92,6 +95,11 @@ internal enum RFTheme_ButtonCell {
 
 internal enum RFTheme_DatePickerCell {
     case lightTheme, darkTheme
+}
+
+internal enum RFTheme_OptionViewControllerCell {
+    case lightTheme, darkTheme
+    indirect case detailTextLabel_textColor(color: UIColor, theme: RFTheme_OptionViewControllerCell)
 }
 
 internal enum RFTheme_SegmentedControlCell {
@@ -332,6 +340,30 @@ internal extension RFTheme_DatePickerCell {
     }
 }
 
+internal extension RFTheme_OptionViewControllerCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        case .detailTextLabel_textColor(_, let theme):
+            return theme.textLabel_textColor
+        }
+    }
+    
+    var detailTextLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .detailTextLabel_textColor(let color, _):
+            return color
+        }
+    }
+}
+
 internal extension RFTheme_SegmentedControlCell {
     var textLabel_textColor: UIColor {
         switch self {
@@ -503,6 +535,15 @@ internal extension RFTheme_ViewControllerCell {
             return UIColor.black
         case .darkTheme:
             return UIColor.white
+        }
+    }
+
+    var detailTextLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         }
     }
 }

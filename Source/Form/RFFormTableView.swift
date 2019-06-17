@@ -41,6 +41,7 @@ public class RFFormTableView: UITableView {
             RFAmountCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFButtonCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFDatePickerToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFOptionViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFSegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFStepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFSwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)

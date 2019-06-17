@@ -16,6 +16,7 @@ class SignUpViewController: RFFormViewController {
 		builder += userName
 		builder += password
 		builder += email
+        builder += role
 		builder += maleOrFemale
 		builder += birthday
 		builder.alignLeft([userName, password, email])
@@ -38,9 +39,17 @@ class SignUpViewController: RFFormViewController {
 		instance.submitValidate(RFCountSpecification.min(6), message: "Length must be minimum 6 letters")
 		instance.validate(RFCountSpecification.max(8), message: "Length must be maximum 8 letters")
 		return instance
-		}()
+    }()
 
-	lazy var maleOrFemale: RFViewControllerFormItem = {
+    lazy var role: RFOptionPickerFormItem = {
+        let instance = RFOptionPickerFormItem()
+        instance.title("Role").placeholder("required")
+        instance.append("User").append("Admin").append("Tester")
+        instance.selectOptionWithTitle("User")
+        return instance
+    }()
+
+    lazy var maleOrFemale: RFViewControllerFormItem = {
 		let instance = RFViewControllerFormItem()
 		instance.title("Male or Female").placeholder("required")
 		instance.createViewController = { (dismissCommand: RFCommandProtocol) in
@@ -55,7 +64,7 @@ class SignUpViewController: RFFormViewController {
 			}
 		}
 		return instance
-		}()
+    }()
 
 	lazy var password: RFTextFieldFormItem = {
 		let instance = RFTextFieldFormItem()
@@ -66,7 +75,7 @@ class SignUpViewController: RFFormViewController {
 		instance.submitValidate(RFCountSpecification.min(4), message: "Length must be minimum 4 digits")
 		instance.validate(RFCountSpecification.max(6), message: "Length must be maximum 6 digits")
 		return instance
-		}()
+    }()
 
 	lazy var email: RFTextFieldFormItem = {
 		let instance = RFTextFieldFormItem()
@@ -76,7 +85,7 @@ class SignUpViewController: RFFormViewController {
 		instance.validate(RFCountSpecification.max(60), message: "Length must be maximum 60 letters")
 		instance.softValidate(RFEmailSpecification(), message: "Must be a valid email address")
 		return instance
-		}()
+    }()
 
 	func offsetDate(_ date: Date, years: Int) -> Date {
 		var dateComponents = DateComponents()
@@ -96,7 +105,7 @@ class SignUpViewController: RFFormViewController {
 		instance.minimumDate = self.offsetDate(today, years: -150)
 		instance.maximumDate = today
 		return instance
-		}()
+    }()
 
     lazy var shoeSize: RFSegmentedControlFormItem = {
         let instance = RFSegmentedControlFormItem()
@@ -110,7 +119,7 @@ class SignUpViewController: RFFormViewController {
 		instance.title = "Subscribe to newsletter"
 		instance.value = true
 		return instance
-		}()
+    }()
 
 	lazy var metaData: RFMetaFormItem = {
 		let instance = RFMetaFormItem()
@@ -120,7 +129,7 @@ class SignUpViewController: RFFormViewController {
 		dict["key2"] = "Can be used to pass extra info along with the JSON" as AnyObject?
 		instance.value(dict as AnyObject?).elementIdentifier("metaData")
 		return instance
-		}()
+    }()
 
 	lazy var randomizeButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
@@ -129,7 +138,7 @@ class SignUpViewController: RFFormViewController {
 			self?.randomize()
 		}
 		return instance
-		}()
+    }()
 
 	func randomDate() -> Date {
 		let i = randomInt(20, 60)
@@ -162,7 +171,7 @@ class SignUpViewController: RFFormViewController {
 			}
 		}
 		return instance
-		}()
+    }()
 
 }
 
