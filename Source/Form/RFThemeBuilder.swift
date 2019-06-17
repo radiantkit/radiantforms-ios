@@ -50,6 +50,7 @@ public class RFThemeBuilder: NSObject {
     }
     
     @objc public func useTintFirstResponderStrategy() {
+        theme.amountCell = RFTheme_AmountCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.amountCell)
         theme.textFieldCell = RFTheme_TextFieldCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.textFieldCell)
     }
 }
