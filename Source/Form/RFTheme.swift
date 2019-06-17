@@ -10,6 +10,7 @@ public struct RFTheme {
     internal var amountCell: RFTheme_AmountCell
     internal let buttonCell: RFTheme_ButtonCell
     internal let datePickerCell: RFTheme_DatePickerCell
+    internal let optionViewControllerCell: RFTheme_OptionViewControllerCell
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let switchCell: RFTheme_SwitchCell
@@ -28,6 +29,7 @@ public struct RFTheme {
             amountCell: .lightTheme,
             buttonCell: .lightTheme,
             datePickerCell: .lightTheme,
+            optionViewControllerCell: .lightTheme,
             segmentedControlCell: .lightTheme,
             stepperCell: .lightTheme,
             switchCell: .lightTheme,
@@ -48,6 +50,7 @@ public struct RFTheme {
             amountCell: .darkTheme,
             buttonCell: .darkTheme,
             datePickerCell: .darkTheme,
+            optionViewControllerCell: .darkTheme,
             segmentedControlCell: .darkTheme,
             stepperCell: .darkTheme,
             switchCell: .darkTheme,
@@ -91,6 +94,10 @@ internal enum RFTheme_ButtonCell {
 }
 
 internal enum RFTheme_DatePickerCell {
+    case lightTheme, darkTheme
+}
+
+internal enum RFTheme_OptionViewControllerCell {
     case lightTheme, darkTheme
 }
 
@@ -328,6 +335,26 @@ internal extension RFTheme_DatePickerCell {
             return UIColor.gray
         case .darkTheme:
             return UIColor.gray
+        }
+    }
+}
+
+internal extension RFTheme_OptionViewControllerCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
+    }
+    
+    var detailTextLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
+        case .darkTheme:
+            return UIColor(red: 0.558, green: 0.558, blue: 0.578, alpha: 1)
         }
     }
 }
