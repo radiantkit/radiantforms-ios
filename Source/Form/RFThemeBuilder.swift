@@ -16,8 +16,12 @@ public class RFThemeBuilder: NSObject {
     @objc public static var dark: RFThemeBuilder {
         return RFThemeBuilder(theme: RFTheme.darkTheme())
     }
-
-    public func apply(_ containerTypes: UIAppearanceContainer.Type ...) {
+    
+    @objc public func apply() {
+        self.applyWhenContainedInInstancesOf([])
+    }
+    
+    public func applyTo(_ containerTypes: UIAppearanceContainer.Type ...) {
         self.applyWhenContainedInInstancesOf(containerTypes)
     }
     
