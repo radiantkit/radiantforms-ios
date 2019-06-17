@@ -3,6 +3,7 @@ import UIKit
 
 public struct RFOptionViewControllerCellModel {
 	var title: String = ""
+    var titleFont: RFFont = RFPreferredFontForTextStyle.body
 	var placeholder: String = ""
 	var optionField: RFOptionPickerFormItem?
 	var selectedOptionRow: RFOptionRowModel?
@@ -24,6 +25,7 @@ public class RFOptionViewControllerCell: UITableViewCell, RFSelectRowDelegate {
 		super.init(style: .value1, reuseIdentifier: nil)
 		accessoryType = .disclosureIndicator
 		textLabel?.text = model.title
+        textLabel?.font = model.titleFont.resolve()
 		updateValue()
 	}
 

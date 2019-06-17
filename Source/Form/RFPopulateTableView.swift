@@ -269,6 +269,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 	func visit(object: RFOptionPickerFormItem) {
 		var model = RFOptionViewControllerCellModel()
 		model.title = object.title
+        model.titleFont = self.model.fontStrategy.titleFont()
 		model.placeholder = object.placeholder
 		model.optionField = object
 		model.selectedOptionRow = object.selected
