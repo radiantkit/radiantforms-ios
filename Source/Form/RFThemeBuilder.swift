@@ -48,4 +48,8 @@ public class RFThemeBuilder: NSObject {
             self._tintColor = newValue
         }
     }
+    
+    @objc public func useTintFirstResponderStrategy() {
+        theme.textFieldCell = RFTheme_TextFieldCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.textFieldCell)
+    }
 }
