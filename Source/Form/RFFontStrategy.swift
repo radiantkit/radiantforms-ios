@@ -32,14 +32,17 @@ internal class RFFontStrategySingleton {
     
     private typealias TypeName2FontStrategy = [String: RFFontStrategy]
     private var dict = TypeName2FontStrategy()
+    private var globalFontStrategyOrNil: RFFontStrategy?
     
     func register(containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        let fontStrategy: RFFontStrategy = theme.fontStrategy.resolveFontStrategy()
         guard containerTypes.count <= 1 else {
             RFLog("ERROR: Expected containerTypes array to be exactly 1 element, but got more. Cannot register fontStrategy.")
             return
         }
         guard let firstContainerType: UIAppearanceContainer.Type = containerTypes.first else {
-            RFLog("ERROR: Expected containerTypesarray to be exactly 1 element, but got less. Cannot register fontStrategy.")
+            self.globalFontStrategyOrNil = fontStrategy
+            RFLog("Registered a global fontStrategy: '\(type(of: fontStrategy))'")
             return
         }
         guard let vctype = firstContainerType as? RFFormViewController.Type else {
@@ -48,7 +51,6 @@ internal class RFFontStrategySingleton {
         }
         
         let typename: String = String(describing: vctype)
-        let fontStrategy: RFFontStrategy = theme.fontStrategy.resolveFontStrategy()
         self.dict[typename] = fontStrategy
         RFLog("registered typename: '\(typename)'  fontStrategy: '\(type(of: fontStrategy))'")
     }
@@ -71,11 +73,14 @@ internal class RFFontStrategySingleton {
     func resolve(viewController: UIViewController) -> RFFontStrategy {
         let fontStrategyOrNil: RFFontStrategy? = self.find(viewController: viewController)
         if let fontStrategy: RFFontStrategy = fontStrategyOrNil {
-            RFLog("Resolve: Found registered fontStrategy. fontStrategy: '\(type(of: fontStrategy))'")
+            RFLog("Resolve: Using the a registered fontStrategy. fontStrategy: '\(type(of: fontStrategy))'")
             return fontStrategy
-        } else {
-            RFLog("No registered fontStrategy. Using default font strategy.")
-            return RFFontStrategy_Default()
         }
+        if let fontStrategy: RFFontStrategy = self.globalFontStrategyOrNil {
+            RFLog("Resolve: Using the global fontStrategy. fontStrategy: '\(type(of: fontStrategy))'")
+            return fontStrategy
+        }
+        RFLog("No registered fontStrategy. Using default font strategy.")
+        return RFFontStrategy_Default()
     }
 }
