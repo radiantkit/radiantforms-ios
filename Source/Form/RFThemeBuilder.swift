@@ -26,6 +26,11 @@ public class RFThemeBuilder: NSObject {
     }
     
     @objc public func applyWhenContainedInInstancesOf(_ containerTypes: [UIAppearanceContainer.Type]) {
+        RFFontStrategySingleton.shared.register(
+            containerTypes: containerTypes,
+            theme: self.theme
+        )
+
         RFFormTableView.configureAppearance(
             whenContainedInInstancesOf: containerTypes,
             theme: self.theme
@@ -53,5 +58,9 @@ public class RFThemeBuilder: NSObject {
     @objc public func useTintFirstResponderStrategy() {
         theme.amountCell = RFTheme_AmountCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.amountCell)
         theme.textFieldCell = RFTheme_TextFieldCell.textField_appearanceStrategy_useTintFirstResponder(theme: theme.textFieldCell)
+    }
+    
+    @objc public func useBoldTitleFontStrategy() {
+        theme.fontStrategy = RFTheme_FontStrategy.boldTitle
     }
 }

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let builder = RFThemeBuilder.light
             builder.tintColor = UIColor.green
             builder.useTintFirstResponderStrategy()
+            builder.useBoldTitleFontStrategy()
             builder.applyTo(AmountViewController_LightFun.self)
             builder.applyTo(SignUpViewController_LightFun.self)
         }
