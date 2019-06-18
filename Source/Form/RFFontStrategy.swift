@@ -35,35 +35,33 @@ internal class RFFontStrategySingleton {
     
     func register(containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
         guard containerTypes.count <= 1 else {
-            print("ERROR: Expected containerTypes array to be exactly 1 element, but got more. Cannot register fontStrategy.")
+            RFLog("ERROR: Expected containerTypes array to be exactly 1 element, but got more. Cannot register fontStrategy.")
             return
         }
         guard let firstContainerType: UIAppearanceContainer.Type = containerTypes.first else {
-            print("ERROR: Expected containerTypesarray to be exactly 1 element, but got less. Cannot register fontStrategy.")
+            RFLog("ERROR: Expected containerTypesarray to be exactly 1 element, but got less. Cannot register fontStrategy.")
             return
         }
         guard let vctype = firstContainerType as? RFFormViewController.Type else {
-            print("ERROR: Expected vc to be subclass of RFFormViewController. Cannot register fontStrategy.")
+            RFLog("ERROR: Expected vc to be subclass of RFFormViewController. Cannot register fontStrategy.")
             return
         }
         
         let typename: String = String(describing: vctype)
         let fontStrategy: RFFontStrategy = theme.fontStrategy.resolveFontStrategy()
         self.dict[typename] = fontStrategy
-        print("registered typename: '\(typename)'  fontStrategy: '\(type(of: fontStrategy))'")
+        RFLog("registered typename: '\(typename)'  fontStrategy: '\(type(of: fontStrategy))'")
     }
     
     /// Lookup `RFFontStrategy` for a given `viewController`.
     /// Returns `nil` if there is no registered font strategy.
     func find(viewController: UIViewController) -> RFFontStrategy? {
         guard let vctype = type(of: viewController) as? RFFormViewController.Type else {
-            print("ERROR: Expected viewController to be subclass of RFFormViewController. Cannot register fontStrategy.")
+            RFLog("ERROR: Expected viewController to be subclass of RFFormViewController. Cannot register fontStrategy.")
             return nil
         }
         
         let typename: String = String(describing: vctype)
-        //print("typename: '\(typename)'")
-        
         let fontStrategyOrNil: RFFontStrategy? = self.dict[typename]
         return fontStrategyOrNil
     }
@@ -73,10 +71,10 @@ internal class RFFontStrategySingleton {
     func resolve(viewController: UIViewController) -> RFFontStrategy {
         let fontStrategyOrNil: RFFontStrategy? = self.find(viewController: viewController)
         if let fontStrategy: RFFontStrategy = fontStrategyOrNil {
-            print("Resolve: Found registered fontStrategy. fontStrategy: '\(type(of: fontStrategy))'")
+            RFLog("Resolve: Found registered fontStrategy. fontStrategy: '\(type(of: fontStrategy))'")
             return fontStrategy
         } else {
-            print("No registered fontStrategy. Using default font strategy.")
+            RFLog("No registered fontStrategy. Using default font strategy.")
             return RFFontStrategy_Default()
         }
     }
