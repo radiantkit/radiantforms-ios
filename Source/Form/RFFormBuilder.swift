@@ -126,8 +126,14 @@ public class RFFormBuilder {
 
 }
 
+/// Append one `RFFormItem` instance to the builder.
 public func += (left: RFFormBuilder, right: RFFormItem) {
-	left.append(right)
+    left.append(right)
+}
+
+/// Append multiple `RFFormItem` instances to the builder.
+public func += (left: RFFormBuilder, right: [RFFormItem]) {
+    right.forEach { left.append($0) }
 }
 
 @available(*, unavailable, renamed: "RFAlignLeft")

@@ -20,11 +20,14 @@ class AmountViewController: RFFormViewController {
         builder += moneySymbol
 
         builder += RFSectionHeaderTitleFormItem().title("Placeholder")
-        builder += noPlaceholder
-        builder += zeroPlaceholder
-        builder += multiZeroPlaceholder
-        builder += xPlaceholder
-        builder += requiredPlaceholder
+        let items: [RFFormItem] = [
+            noPlaceholder,
+            zeroPlaceholder,
+            multiZeroPlaceholder,
+            xPlaceholder,
+            requiredPlaceholder
+        ]
+        builder += items
 
         builder += RFSectionHeaderTitleFormItem().title("Initial Value")
         builder += initialValueValidA
