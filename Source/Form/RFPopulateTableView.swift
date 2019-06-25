@@ -182,11 +182,13 @@ class RFPopulateTableView: RFFormItemVisitor {
 			viewController: model.viewController
 		)
 		do {
-			let cell = try object.createCell(context)
+            let cell: UITableViewCell = try object.createCell(context)
+            object.latestCreatedCell = cell
 			cells.append(cell)
 			lastItemType = .item
 		} catch {
 			print("ERROR: Could not create cell for custom form item: \(error)")
+            object.latestCreatedCell = nil
 
 			var model = RFStaticTextCellModel()
 			model.title = "RFCustomFormItem"

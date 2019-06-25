@@ -13,6 +13,13 @@ public class RFCustomFormItem: RFFormItem {
 	public typealias CreateCell = (Context) throws -> UITableViewCell
 	public var createCell: CreateCell = { _ in throw CustomFormItemError.couldNotCreate }
 
+    /// Holds a weak reference to the latest created cell.
+    ///
+    /// This reference becomes `nil` when the cell gets deallocated.
+    ///
+    /// Useful for modifying the cell in the future, such as when dismissing a child view controller.
+    public weak var latestCreatedCell: UITableViewCell?
+    
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
