@@ -1,19 +1,29 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import Foundation
 
+public typealias RFOptionRowModelPayload = Any
+
 public class RFOptionRowModel {
     public let title: String
     public let identifier: String
+    public let payload: RFOptionRowModelPayload?
     
-    public init(_ title: String, _ identifier: String) {
+    public init(title: String, identifier: String, payload: RFOptionRowModelPayload?) {
         self.title = title
         self.identifier = identifier
+        self.payload = payload
     }
 }
 
 extension RFOptionRowModel: CustomStringConvertible {
     public var description: String {
-        return "\(title)-\(identifier)"
+        let payloadString: String
+        if let payload: RFOptionRowModelPayload = self.payload {
+            payloadString = String(describing: payload)
+        } else {
+            payloadString = "no payload"
+        }
+        return "RFOptionRowModel(title: '\(title)', identifier: '\(identifier)', payload: '\(payloadString)')"
     }
 }
 
@@ -41,9 +51,14 @@ public class RFOptionPickerFormItem: RFFormItem {
 
 	public var options = [RFOptionRowModel]()
 
+    /// Add an option to the picker, that the user can select.
+    ///
+    /// - Parameter title: The localized text that is displayed to the user.
+    /// - Parameter identifier: An optional identifier. Useful for preselecting an option.
+    /// - Parameter payload: An optional payload.
 	@discardableResult
-	public func append(_ name: String, identifier: String? = nil) -> Self {
-		options.append(RFOptionRowModel(name, identifier ?? name))
+    public func append(_ title: String, identifier: String? = nil, payload: RFOptionRowModelPayload? = nil) -> Self {
+        options.append(RFOptionRowModel(title: title, identifier: identifier ?? title, payload: payload))
 		return self
 	}
 

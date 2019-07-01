@@ -11,6 +11,7 @@ class OptionsViewController: RFFormViewController {
 		builder += exploreSpace
 		builder += worldPeace
 		builder += stopGlobalWarming
+        builder += cureDiseases
 		builder += RFSectionFormItem()
 		builder += randomizeButton
 	}
@@ -40,8 +41,12 @@ class OptionsViewController: RFFormViewController {
 	lazy var worldPeace: RFOptionPickerFormItem = {
 		let instance = RFOptionPickerFormItem()
 		instance.title("World Peace?").placeholder("required")
-		instance.append("Strongly disagree").append("Disagree").append("Neutral").append("Agree").append("Strongly agree")
-		instance.selectOptionWithTitle("Neutral")
+        instance.append("Strongly disagree", identifier: "strongly_disagree")
+        instance.append("Disagree", identifier: "disagree")
+        instance.append("Neutral", identifier: "neutral")
+        instance.append("Agree", identifier: "agree")
+        instance.append("Strongly agree", identifier: "strongly_agree")
+        instance.selectOptionWithIdentifier("neutral")
 		instance.valueDidChange = { (selected: RFOptionRowModel?) in
 			print("world peace: \(String(describing: selected))")
 		}
@@ -49,13 +54,21 @@ class OptionsViewController: RFFormViewController {
 		}()
 
 	lazy var stopGlobalWarming: RFOptionPickerFormItem = {
+        // Payloads is copy by reference
+        typealias MyDictionary = [String: Any]
+        let payload_stronglyDisagree: MyDictionary = ["opinion": "I strongly disagree"]
+        let payload_disagree: MyDictionary = ["opinion": "I disagree"]
+        let payload_neutral: MyDictionary = ["opinion": "I'm neutral"]
+        let payload_agree: MyDictionary = ["opinion": "I agree"]
+        let payload_stronglyAgree: MyDictionary = ["opinion": "I strongly agree"]
+        
 		let instance = RFOptionPickerFormItem()
 		instance.title("Stop Global Warming?").placeholder("required")
-		instance.append("Strongly disagree", identifier: "strongly_disagree")
-		instance.append("Disagree", identifier: "disagree")
-		instance.append("Neutral", identifier: "neutral")
-		instance.append("Agree", identifier: "agree")
-		instance.append("Strongly agree", identifier: "strongly_agree")
+        instance.append("Strongly disagree", identifier: "strongly_disagree", payload: payload_stronglyDisagree)
+        instance.append("Disagree", identifier: "disagree", payload: payload_disagree)
+        instance.append("Neutral", identifier: "neutral", payload: payload_neutral)
+        instance.append("Agree", identifier: "agree", payload: payload_agree)
+        instance.append("Strongly agree", identifier: "strongly_agree", payload: payload_stronglyAgree)
 		instance.selectOptionWithIdentifier("neutral")
 		instance.valueDidChange = { (selected: RFOptionRowModel?) in
 			print("stop global warming: \(String(describing: selected))")
@@ -63,6 +76,28 @@ class OptionsViewController: RFFormViewController {
 		return instance
 		}()
 
+    lazy var cureDiseases: RFOptionPickerFormItem = {
+        // Payloads is copy by value
+        let payload_stronglyDisagree: Int = -2
+        let payload_disagree: Int = -1
+        let payload_neutral: Int = 0
+        let payload_agree: Int = 1
+        let payload_stronglyAgree: Int = 2
+        
+        let instance = RFOptionPickerFormItem()
+        instance.title("Cure Diseases?").placeholder("required")
+        instance.append("Strongly disagree", identifier: "strongly_disagree", payload: payload_stronglyDisagree)
+        instance.append("Disagree", identifier: "disagree", payload: payload_disagree)
+        instance.append("Neutral", identifier: "neutral", payload: payload_neutral)
+        instance.append("Agree", identifier: "agree", payload: payload_agree)
+        instance.append("Strongly agree", identifier: "strongly_agree", payload: payload_stronglyAgree)
+        instance.selectOptionWithIdentifier("neutral")
+        instance.valueDidChange = { (selected: RFOptionRowModel?) in
+            print("cure diseases: \(String(describing: selected))")
+        }
+        return instance
+    }()
+    
 	lazy var randomizeButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
 		instance.title = "Randomize"
@@ -89,5 +124,6 @@ class OptionsViewController: RFFormViewController {
 		assignRandomOption(exploreSpace)
 		assignRandomOption(worldPeace)
 		assignRandomOption(stopGlobalWarming)
+        assignRandomOption(cureDiseases)
 	}
 }
