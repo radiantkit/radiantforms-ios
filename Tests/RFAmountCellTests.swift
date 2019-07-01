@@ -7,10 +7,40 @@ class RFAmountCellTests: XCTestCase {
     
     func testExtractDigitsFromString() {
         XCTAssertEqual(RFAmountCell.extractDigitsFromString(""), "")
+
+		// Keep only digits
         XCTAssertEqual(RFAmountCell.extractDigitsFromString(" 1,234.56 "), "123456")
         XCTAssertEqual(RFAmountCell.extractDigitsFromString("0001234"), "0001234")
         XCTAssertEqual(RFAmountCell.extractDigitsFromString("1 234 567"), "1234567")
-        XCTAssertEqual(RFAmountCell.extractDigitsFromString("-1"), "1")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("-1"), "1")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("+1"), "1")
+
+		// Discard non-digits
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("23h59m"), "2359")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("æøå"), "")
+
+		// Discard modifiers
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("¨"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("¨o"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("ö"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("11¨22"), "1122")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("¨¨"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("´"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("´a"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("´á"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("´0"), "0")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("`"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("`0"), "0")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("^"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("^0"), "0")
+
+		// Discard special symbols
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("$"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("11$22"), "1122")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("\n"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("\\"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("/"), "")
+		XCTAssertEqual(RFAmountCell.extractDigitsFromString("%"), "")
     }
     
     func testParseAndFormatAmount() {
