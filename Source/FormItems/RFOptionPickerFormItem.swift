@@ -1,19 +1,22 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import Foundation
 
-public class RFOptionRowModel: CustomStringConvertible {
-	public let title: String
-	public let identifier: String
-
-	public init(_ title: String, _ identifier: String) {
-		self.title = title
-		self.identifier = identifier
-	}
-
-	public var description: String {
-		return "\(title)-\(identifier)"
-	}
+public class RFOptionRowModel {
+    public let title: String
+    public let identifier: String
+    
+    public init(_ title: String, _ identifier: String) {
+        self.title = title
+        self.identifier = identifier
+    }
 }
+
+extension RFOptionRowModel: CustomStringConvertible {
+    public var description: String {
+        return "\(title)-\(identifier)"
+    }
+}
+
 
 public class RFOptionPickerFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
