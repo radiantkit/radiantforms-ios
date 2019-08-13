@@ -57,6 +57,8 @@
 		42D0051A1B96395D00986B3B /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005191B96395D00986B3B /* CustomViewController.swift */; };
 		42D2975D1D4CD6C100561780 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D2975C1D4CD6C100561780 /* Random.swift */; };
 		42ED169A1D294D0C001B4D61 /* SegmentedControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ED16991D294D0C001B4D61 /* SegmentedControlsViewController.swift */; };
+		42F3C4072302FD38003212A3 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F3C4042302FD38003212A3 /* TextCell.swift */; };
+		42F3C4082302FD38003212A3 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F3C4062302FD38003212A3 /* TextCell.xib */; };
 		42FABBC91D4152490066E45A /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBC81D4152490066E45A /* ColorPickerViewController.swift */; };
 		42FABBCB1D4173FF0066E45A /* PrecisionSlidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FABBCA1D4173FF0066E45A /* PrecisionSlidersViewController.swift */; };
 		CD5878FB1FA324CD00BB3B8E /* TextFieldEditingEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5878FA1FA324CD00BB3B8E /* TextFieldEditingEndViewController.swift */; };
@@ -152,6 +154,8 @@
 		42D005191B96395D00986B3B /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		42D2975C1D4CD6C100561780 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		42ED16991D294D0C001B4D61 /* SegmentedControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlsViewController.swift; sourceTree = "<group>"; };
+		42F3C4042302FD38003212A3 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		42F3C4062302FD38003212A3 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		42FABBC81D4152490066E45A /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		42FABBCA1D4173FF0066E45A /* PrecisionSlidersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlidersViewController.swift; sourceTree = "<group>"; };
 		CD5878FA1FA324CD00BB3B8E /* TextFieldEditingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEditingEndViewController.swift; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				42D005191B96395D00986B3B /* CustomViewController.swift */,
 				42D005131B9631F400986B3B /* LoadingCell.swift */,
 				42D005141B9631F400986B3B /* LoadingCell.xib */,
+				42F3C4042302FD38003212A3 /* TextCell.swift */,
+				42F3C4062302FD38003212A3 /* TextCell.xib */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F3C4082302FD38003212A3 /* TextCell.xib in Resources */,
 				42D005161B9631F400986B3B /* LoadingCell.xib in Resources */,
 				42CEBFA21A3BA2B50048E072 /* Images.xcassets in Resources */,
 				420AC61C1F88D21000898C85 /* VoteViewController.storyboard in Resources */,
@@ -504,6 +511,7 @@
 				42096E6C1B357CEE0068B084 /* SlidersViewController.swift in Sources */,
 				42D005151B9631F400986B3B /* LoadingCell.swift in Sources */,
 				42096E701B35853E0068B084 /* ChangePasswordViewController.swift in Sources */,
+				42F3C4072302FD38003212A3 /* TextCell.swift in Sources */,
 				42C6DD9B1D76264F00D82DC9 /* Tutorial2_ChildViewController_ViewController.swift in Sources */,
 				42108D2E1B3576110067FEAA /* ReportViewController.swift in Sources */,
 				42D2975D1D4CD6C100561780 /* Random.swift in Sources */,

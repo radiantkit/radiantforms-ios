@@ -2,10 +2,33 @@
 import UIKit
 import RadiantForms
 
+extension RFFormBuilder {
+    /// Install a text cell.
+    ///
+    /// The text can span multiple lines.
+    /// The text is centered.
+    ///
+    /// - parameter text: The text to be shown.
+    public func demo_showInfo2(_ text: String) {
+        let item = RFCustomFormItem()
+        item.createCell = { _ in
+            let cell = try TextCell.createCell(text: text)
+            return cell
+        }
+        self.append(item)
+    }
+}
+
+
 class FirstViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "RadiantForms"
 		builder.demo_showInfo("Welcome to the\nform example app\nthat shows everything")
+        
+		builder.demo_showInfo2("Row A\nRow B\nRow C")
+        builder.demo_showInfo2("One liner")
+        builder.demo_showInfo2("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        builder.demo_showInfo2("Row A\nRow B\nRow C")
 
         builder += RFSectionHeaderTitleFormItem().title("Theme")
         builder += RFViewControllerFormItem().title("Amount (Dark Default)").viewController(AmountViewController_DarkDefault.self)
