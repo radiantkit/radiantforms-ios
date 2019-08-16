@@ -60,7 +60,7 @@ class FirstViewController: RFFormViewController {
 		builder += RFViewControllerFormItem().title("No Header").viewController(NoHeaderViewController.self)
 
 		builder += RFSectionHeaderTitleFormItem().title("Other")
-		builder += RFViewControllerFormItem().title("Static & Attributed Text").viewController(StaticTextAndAttributedTextViewController.self)
+		builder += RFViewControllerFormItem().title("Text").viewController(TextViewController.self)
 		builder += RFViewControllerFormItem().title("Buttons").viewController(ButtonsViewController.self)
 		builder += RFViewControllerFormItem().title("Sliders").viewController(SlidersViewController.self)
 		builder += RFViewControllerFormItem().title("Segmented Controls").viewController(SegmentedControlsViewController.self)

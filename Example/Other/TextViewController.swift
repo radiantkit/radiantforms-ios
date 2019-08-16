@@ -2,10 +2,15 @@
 import UIKit
 import RadiantForms
 
-class StaticTextAndAttributedTextViewController: RFFormViewController {
+class TextViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Text"
 		builder.toolbarMode = .none
+
+        builder += RFSectionHeaderTitleFormItem(title: "Text")
+        builder += RFTextFormItem("Multiline 0. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+        builder += RFTextFormItem("Multiline 1. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        builder += RFTextFormItem("Multiline 2. Row A\nRow B\nRow C\nRow D")
 
 		builder += RFSectionHeaderTitleFormItem(title: "Static Text")
 		builder += RFStaticTextFormItem().title("Title 0").value("Value 0")
@@ -27,6 +32,13 @@ class StaticTextAndAttributedTextViewController: RFFormViewController {
 				NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.form_single.rawValue as AnyObject
 				])
 			.value("Heart ❤️", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.red as AnyObject])
+        builder += RFAttributedTextFormItem()
+            .title("Banana 🍌\nNot visible line", [
+                NSAttributedString.Key.foregroundColor.rawValue: UIColor.yellow as AnyObject,
+                NSAttributedString.Key.font.rawValue: UIFont.boldSystemFont(ofSize: 24) as AnyObject,
+                NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.form_single.rawValue as AnyObject
+                ])
+            .value("Apple 🍏\nNot visible line", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.green as AnyObject])
 	}
 }
 
