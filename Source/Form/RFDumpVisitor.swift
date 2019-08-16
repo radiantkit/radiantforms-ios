@@ -149,8 +149,8 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["state"] = object.selected
 	}
 
-	public func visit(object: RFSwitchFormItem) {
-		dict["class"] = "RFSwitchFormItem"
+	public func visit(object: RFToggleFormItem) {
+		dict["class"] = "RFToggleFormItem"
 		dict["elementIdentifier"] = object.elementIdentifier
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
