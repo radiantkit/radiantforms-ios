@@ -30,6 +30,7 @@ class RFObtainTitleWidth: RFFormItemVisitor {
 	func visit(object: RFSwitchFormItem) {}
 	func visit(object: RFTextViewFormItem) {}
 	func visit(object: RFViewControllerFormItem) {}
+    func visit(object: RFTextFormItem) {}
 }
 
 class RFAssignTitleWidth: RFFormItemVisitor {
@@ -65,6 +66,7 @@ class RFAssignTitleWidth: RFFormItemVisitor {
 	func visit(object: RFSwitchFormItem) {}
 	func visit(object: RFTextViewFormItem) {}
 	func visit(object: RFViewControllerFormItem) {}
+    func visit(object: RFTextFormItem) {}
 }
 
 @available(*, unavailable, renamed: "RFObtainTitleWidth")

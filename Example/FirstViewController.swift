@@ -10,12 +10,8 @@ extension RFFormBuilder {
     ///
     /// - parameter text: The text to be shown.
     public func demo_showInfo2(_ text: String) {
-        let item = RFCustomFormItem()
-        item.createCell = { _ in
-            let model = RFTextCellModel(text: text)
-            let cell = RFTextCell(model: model)
-            return cell
-        }
+        let item = RFTextFormItem()
+        item.text = text
         self.append(item)
     }
 

@@ -767,6 +767,14 @@ class RFPopulateTableView: RFFormItemVisitor {
 			weakObject?.valueDidChange(selectedRows)
 		}
 	}
+    
+    // MARK: - RFTextFormItem
+
+    func visit(object: RFTextFormItem) {
+        let model = RFTextCellModel(text: object.text)
+        let cell = RFTextCell(model: model)
+        cells.append(cell)
+    }
 }
 
 

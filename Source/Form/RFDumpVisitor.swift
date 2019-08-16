@@ -237,6 +237,14 @@ public class RFDumpVisitor: RFFormItemVisitor {
 		dict["styleIdentifier"] = object.styleIdentifier
 		dict["styleClass"] = object.styleClass
 	}
+    
+    public func visit(object: RFTextFormItem) {
+        dict["class"] = "RFTextFormItem"
+        dict["elementIdentifier"] = object.elementIdentifier
+        dict["styleIdentifier"] = object.styleIdentifier
+        dict["styleClass"] = object.styleClass
+        dict["text"] = object.text
+    }
 }
 
 internal struct RFJSONHelper {

@@ -2,18 +2,14 @@
 import UIKit
 
 public struct RFTextCellModel {
-    public var text: String = ""
-
-    public init(text: String) {
-        self.text = text
-    }
+    var text: String = ""
 }
 
+/// Cell for displaying multiline text spanning the full width.
+///
+/// The cell is not selectable.
 public class RFTextCell: UITableViewCell {
-    public var model: RFTextCellModel
-    
     public init(model: RFTextCellModel) {
-        self.model = model
         super.init(style: .default, reuseIdentifier: nil)
         textLabel?.numberOfLines = 0
         selectionStyle = .none
