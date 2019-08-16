@@ -27,6 +27,13 @@ class StaticTextAndAttributedTextViewController: RFFormViewController {
 				NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.form_single.rawValue as AnyObject
 				])
 			.value("Heart ❤️", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.red as AnyObject])
+        builder += RFAttributedTextFormItem()
+            .title("Banana 🍌\nNot visible line", [
+                NSAttributedString.Key.foregroundColor.rawValue: UIColor.yellow as AnyObject,
+                NSAttributedString.Key.font.rawValue: UIFont.boldSystemFont(ofSize: 24) as AnyObject,
+                NSAttributedString.Key.underlineStyle.rawValue: NSUnderlineStyle.form_single.rawValue as AnyObject
+                ])
+            .value("Apple 🍏\nNot visible line", [NSAttributedString.Key.foregroundColor.rawValue: UIColor.green as AnyObject])
 	}
 }
 
