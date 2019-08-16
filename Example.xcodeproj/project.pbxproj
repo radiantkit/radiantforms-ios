@@ -37,7 +37,7 @@
 		4267986D1D8DB160002275CA /* NoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267986B1D8DB160002275CA /* NoHeaderViewController.swift */; };
 		426798711D8DB17B002275CA /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267986F1D8DB17B002275CA /* MyCollectionViewController.swift */; };
 		426798721D8DB17B002275CA /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426798701D8DB17B002275CA /* MyTableViewController.swift */; };
-		42685D371D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D361D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift */; };
+		42685D371D2C3885008ABC3D /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D361D2C3885008ABC3D /* TextViewController.swift */; };
 		42685D401D2D6AB2008ABC3D /* WorkInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */; };
 		42685D421D2D6B01008ABC3D /* ScientificSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */; };
 		4280F71D2264AD180098EF22 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280F71C2264AD180098EF22 /* AmountViewController.swift */; };
@@ -133,7 +133,7 @@
 		4267986B1D8DB160002275CA /* NoHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoHeaderViewController.swift; sourceTree = "<group>"; };
 		4267986F1D8DB17B002275CA /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		426798701D8DB17B002275CA /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
-		42685D361D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTextAndAttributedTextViewController.swift; sourceTree = "<group>"; };
+		42685D361D2C3885008ABC3D /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		42685D3F1D2D6AB2008ABC3D /* WorkInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkInProgressViewController.swift; sourceTree = "<group>"; };
 		42685D411D2D6B01008ABC3D /* ScientificSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificSliderViewController.swift; sourceTree = "<group>"; };
 		4280F71C2264AD180098EF22 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 				42ED16991D294D0C001B4D61 /* SegmentedControlsViewController.swift */,
 				420F6CCE1D6A27B8009D5F57 /* SlidersAndTextFieldsViewController.swift */,
 				42096E6B1B357CEE0068B084 /* SlidersViewController.swift */,
-				42685D361D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift */,
 				42B5BC0E1B8CC2A000A70A54 /* SteppersViewController.swift */,
+				42685D361D2C3885008ABC3D /* TextViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				42589DDD1B3447EA007CA8C1 /* TextFieldValidInvalidViewController.swift in Sources */,
 				42ED169A1D294D0C001B4D61 /* SegmentedControlsViewController.swift in Sources */,
 				42685D421D2D6B01008ABC3D /* ScientificSliderViewController.swift in Sources */,
-				42685D371D2C3885008ABC3D /* StaticTextAndAttributedTextViewController.swift in Sources */,
+				42685D371D2C3885008ABC3D /* TextViewController.swift in Sources */,
 				42096E6C1B357CEE0068B084 /* SlidersViewController.swift in Sources */,
 				42D005151B9631F400986B3B /* LoadingCell.swift in Sources */,
 				42096E701B35853E0068B084 /* ChangePasswordViewController.swift in Sources */,
