@@ -12,7 +12,8 @@ extension RFFormBuilder {
     public func demo_showInfo2(_ text: String) {
         let item = RFCustomFormItem()
         item.createCell = { _ in
-            let cell = try TextCell.createCell(text: text)
+            let model = RFTextCellModel(text: text)
+            let cell = RFTextCell(model: model)
             return cell
         }
         self.append(item)
