@@ -2,15 +2,14 @@
 import Foundation
 
 public class RFTextFormItem: RFFormItem {
+    public let text: String
+
+    public init(_ text: String) {
+        self.text = text
+        super.init()
+    }
+
     override func accept(visitor: RFFormItemVisitor) {
         visitor.visit(object: self)
-    }
-    
-    public var text: String = ""
-    
-    @discardableResult
-    public func text(_ text: String) -> Self {
-        self.text = text
-        return self
     }
 }
