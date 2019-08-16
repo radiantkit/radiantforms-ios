@@ -14,6 +14,7 @@ public struct RFTheme {
     internal let segmentedControlCell: RFTheme_SegmentedControlCell
     internal let stepperCell: RFTheme_StepperCell
     internal let toggleCell: RFTheme_ToggleCell
+    internal let textCell: RFTheme_TextCell
     internal var textFieldCell: RFTheme_TextFieldCell
     internal let viewControllerCell: RFTheme_ViewControllerCell
     internal let navigationBar: RFTheme_NavigationBar
@@ -34,6 +35,7 @@ public struct RFTheme {
             segmentedControlCell: .lightTheme,
             stepperCell: .lightTheme,
             toggleCell: .lightTheme,
+            textCell: .lightTheme,
             textFieldCell: .lightTheme,
             viewControllerCell: .lightTheme,
             navigationBar: .lightTheme,
@@ -56,6 +58,7 @@ public struct RFTheme {
             segmentedControlCell: .darkTheme,
             stepperCell: .darkTheme,
             toggleCell: .darkTheme,
+            textCell: .darkTheme,
             textFieldCell: .darkTheme,
             viewControllerCell: .darkTheme,
             navigationBar: .darkTheme,
@@ -114,6 +117,10 @@ internal enum RFTheme_StepperCell {
 }
 
 internal enum RFTheme_ToggleCell {
+    case lightTheme, darkTheme
+}
+
+internal enum RFTheme_TextCell {
     case lightTheme, darkTheme
 }
 
@@ -404,6 +411,17 @@ internal extension RFTheme_ToggleCell {
     
     var toggle_onTintColor: UIColor {
         return UIColor(red: 0.298, green: 0.85, blue: 0.39, alpha: 1)
+    }
+}
+
+internal extension RFTheme_TextCell {
+    var textLabel_textColor: UIColor {
+        switch self {
+        case .lightTheme:
+            return UIColor.black
+        case .darkTheme:
+            return UIColor.white
+        }
     }
 }
 

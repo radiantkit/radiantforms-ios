@@ -23,4 +23,20 @@ public class RFTextCell: UITableViewCell {
     public func loadWithModel(_ model: RFTextCellModel) {
         textLabel?.text = model.text
     }
+
+    // MARK: - UIAppearance
+    
+    @objc public dynamic var textLabel_textColor: UIColor?
+    
+    public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
+        let appearanceProxy: RFTextCell = RFTextCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.textCell.textLabel_textColor
+    }
 }
+
+extension RFTextCell: RFWillDisplayCellDelegate {
+    public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
+        self.textLabel?.textColor = self.textLabel_textColor
+    }
+}
+
