@@ -21,6 +21,8 @@
 		42108D2F1B3576110067FEAA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D2B1B3576110067FEAA /* SignUpViewController.swift */; };
 		42108D341B357A440067FEAA /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42108D331B357A440067FEAA /* ButtonsViewController.swift */; };
 		422437E41D719A4E00EC41E8 /* PickerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422437E31D719A4E00EC41E8 /* PickerViewViewController.swift */; };
+		42305800230C101300054E85 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423057FF230C101300054E85 /* ColorPickerCell.swift */; };
+		42305803230C105300054E85 /* ColorPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42305802230C105300054E85 /* ColorPickerCell.xib */; };
 		423D17061BAF3A9B00A9859F /* AliensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D17031BAF3A9B00A9859F /* AliensViewController.swift */; };
 		423D17071BAF3A9B00A9859F /* Area51.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423D17041BAF3A9B00A9859F /* Area51.storyboard */; };
 		423D17081BAF3A9B00A9859F /* GhostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D17051BAF3A9B00A9859F /* GhostsViewController.swift */; };
@@ -115,6 +117,8 @@
 		42108D2B1B3576110067FEAA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		42108D331B357A440067FEAA /* ButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
 		422437E31D719A4E00EC41E8 /* PickerViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewViewController.swift; sourceTree = "<group>"; };
+		423057FF230C101300054E85 /* ColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
+		42305802230C105300054E85 /* ColorPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorPickerCell.xib; sourceTree = "<group>"; };
 		423D17031BAF3A9B00A9859F /* AliensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliensViewController.swift; sourceTree = "<group>"; };
 		423D17041BAF3A9B00A9859F /* Area51.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Area51.storyboard; sourceTree = "<group>"; };
 		423D17051BAF3A9B00A9859F /* GhostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostsViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 		42D005111B96319900986B3B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				423057FF230C101300054E85 /* ColorPickerCell.swift */,
+				42305802230C105300054E85 /* ColorPickerCell.xib */,
 				42D005191B96395D00986B3B /* CustomViewController.swift */,
 				42D005131B9631F400986B3B /* LoadingCell.swift */,
 				42D005141B9631F400986B3B /* LoadingCell.xib */,
@@ -472,6 +478,7 @@
 				420AC61C1F88D21000898C85 /* VoteViewController.storyboard in Resources */,
 				423D17071BAF3A9B00A9859F /* Area51.storyboard in Resources */,
 				42B1BB471E82C1C10090156A /* Settings.storyboard in Resources */,
+				42305803230C105300054E85 /* ColorPickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +535,7 @@
 				42B5BC0F1B8CC2A000A70A54 /* SteppersViewController.swift in Sources */,
 				42B1BB581E8462D50090156A /* ReloadingViewController.swift in Sources */,
 				42589DB71B3447E1007CA8C1 /* DatePickerRangeViewController.swift in Sources */,
+				42305800230C101300054E85 /* ColorPickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

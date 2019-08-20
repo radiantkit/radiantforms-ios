@@ -66,7 +66,7 @@ class FirstViewController: RFFormViewController {
 		builder += RFViewControllerFormItem().title("Segmented Controls").viewController(SegmentedControlsViewController.self)
 		builder += RFViewControllerFormItem().title("Options").viewController(OptionsViewController.self)
 		builder += RFViewControllerFormItem().title("Steppers").viewController(SteppersViewController.self)
-		builder += RFViewControllerFormItem().title("Custom Cells").viewController(CustomViewController.self)
+		builder += RFViewControllerFormItem().title("Custom UITableViewCell").viewController(CustomViewController.self)
 		builder += RFViewControllerFormItem().title("PickerView").viewController(PickerViewViewController.self)
 		builder += RFViewControllerFormItem().title("Sliders & TextFields").viewController(SlidersAndTextFieldsViewController.self)
 		builder += RFViewControllerFormItem().title("Precision Sliders").viewController(PrecisionSlidersViewController.self)
