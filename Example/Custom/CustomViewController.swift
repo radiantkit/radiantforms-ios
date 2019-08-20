@@ -5,10 +5,14 @@ import RadiantForms
 class CustomViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
-		builder.navigationTitle = "Custom cells"
+		builder.navigationTitle = "Custom UITableViewCell"
 		builder.toolbarMode = .simple
-		builder.demo_showInfo("Demonstration of\ncustom cells using\nCustomFormItem")
+		builder.demo_showInfo("Demonstration of\ncustom cells using\nRFCustomFormItem")
 
+        builder += RFTextFormItem("Please specify your favorite color:")
+        builder += colorPicker
+        builder += colorSubmitButton
+        
 		builder += RFSectionHeaderTitleFormItem(title: "World news")
 		let loaderItem0 = RFCustomFormItem()
 		loaderItem0.createCell = { _ in
@@ -44,5 +48,36 @@ class CustomViewController: RFFormViewController {
 		}
 		builder += loaderItem4
 	}
-
+    
+    // MARK: - Color picker
+    
+    lazy var colorPicker: RFCustomFormItem = {
+        let instance = RFCustomFormItem()
+        instance.createCell = { [weak instance] _ in
+            let cell = try ColorPickerCell.createCell()
+            cell.didPickValue = { [weak instance] (value) in
+                guard let strongInstance = instance else {
+                    fatalError("Expected instance to be non-nil, but got nil")
+                }
+                strongInstance.payload = value
+            }
+            return cell
+        }
+        return instance
+    }()
+    
+    lazy var colorSubmitButton: RFButtonFormItem = {
+        let instance = RFButtonFormItem().title("Submit color")
+        instance.action = { [weak self] in
+            guard let strongSelf = self else {
+                fatalError("Expected self to be non-nil, but got nil")
+            }
+            guard let color = strongSelf.colorPicker.payload as? ColorPickerCellValue else {
+                strongSelf.rf_simpleAlert("Submitted", "No preferred color selected")
+                return
+            }
+            strongSelf.rf_simpleAlert("Submitted", "Selected color is \(color)")
+        }
+        return instance
+    }()
 }
